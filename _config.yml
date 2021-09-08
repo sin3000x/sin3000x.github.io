@@ -3,7 +3,7 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
+title: Ideas
 subtitle: ''
 description: ''
 keywords:
@@ -104,4 +104,4 @@ theme: landscape
 deploy:
   type: git
   repo: https://github.com/sin3000x/sin3000x.github.io
-  branch: master
+  branch: gh-pages
