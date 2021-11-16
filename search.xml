@@ -64,31 +64,6 @@ I_n={(2n)!!\over(2n+1)!!}.
       </tags>
   </entry>
   <entry>
-    <title>定积分性质例题</title>
-    <url>/posts/5066/</url>
-    <content><![CDATA[<p><strong>问题：在<span class="math inline">\([0,\pi]\)</span>上的连续函数<span class="math inline">\(f\)</span>满足</strong> <span class="math display">\[
-\int_0^\pi f(x)\sin x\,\mathrm dx=\int_0^\pi f(x)\cos x\,\mathrm dx=0,
-\]</span> <strong>证明<span class="math inline">\(f\)</span>在<span class="math inline">\((0,\pi)\)</span>内至少有两个零点.</strong></p>
-<span id="more"></span>
-<p><strong>证明:</strong></p>
-<p>不妨设<span class="math inline">\(f\)</span>不恒为0.</p>
-<p>若<span class="math inline">\(f(x)\)</span>在<span class="math inline">\((0,\pi)\)</span>内无零点, 则不变号, 不妨设<span class="math inline">\(f(x)&gt;0\)</span>. 此时<span class="math display">\[f(x)\sin x&gt;0,\forall x\in(0,\pi)\implies\int_0^1f(x)\sin x\,\mathrm dx&gt;0,\]</span> 与条件矛盾. 于是<span class="math inline">\(f(x)\)</span>在<span class="math inline">\((0,\pi)\)</span>上变号, 至少有一个零点.</p>
-<p>若只有一个变号零点<span class="math inline">\(x_0\in(0,\pi)\)</span>, 不妨设在<span class="math inline">\((0,x_0)\)</span>上<span class="math inline">\(f(x)&gt;0\)</span>, <span class="math inline">\((x_0,\pi)\)</span>上<span class="math inline">\(f(x)&lt;0\)</span>. 那么 <span class="math display">\[
-F(x)=f(x)\sin(x-x_0)\leq0,~\forall x\in(0,\pi).
-\]</span> 又因为 <span class="math display">\[
-\begin{align*}\int_0^\pi F(x)\,\mathrm dx&amp;=\cos x_0\int_0^\pi f(x)\sin x\,\mathrm dx-\sin x_0\int_0^\pi f(x)\cos x\,\mathrm dx\\
-&amp;=\cos x_0\cdot0-\sin x_0\cdot 0\\
-&amp;=0,
-\end{align*}
-\]</span> 故<span class="math inline">\(F(x)\equiv0\)</span>, 于是<span class="math inline">\(f(x)\equiv0,~\forall x\in(0,\pi)\)</span>, 矛盾.</p>
-<p>于是<span class="math inline">\(f(x)\)</span>在<span class="math inline">\((0,\pi)\)</span>上至少有两个零点.</p>
-]]></content>
-      <tags>
-        <tag>数学</tag>
-        <tag>微积分</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>$f(A)$的特征值</title>
     <url>/posts/3877/</url>
     <content><![CDATA[<p><strong>引理 (Schur's Lemma): 若<span class="math inline">\(A\)</span>是数域<span class="math inline">\(F\)</span>上的<span class="math inline">\(n\)</span>阶方阵, 且<span class="math inline">\(A\)</span>的特征值都在<span class="math inline">\(F\)</span>中, 那么<span class="math inline">\(A\)</span>与一个上三角阵相似.</strong></p>
@@ -122,6 +97,31 @@ f(A)=f(Q^{-1}TQ)=Q^{-1}f(T)Q.
     <content><![CDATA[<p>第一篇. 果然搭建环境啥的才是最坑的.</p>
 <p>总算把world给哈喽出来了, 你先在这哈着吧.</p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>定积分性质例题</title>
+    <url>/posts/5066/</url>
+    <content><![CDATA[<p><strong>问题：在<span class="math inline">\([0,\pi]\)</span>上的连续函数<span class="math inline">\(f\)</span>满足</strong> <span class="math display">\[
+\int_0^\pi f(x)\sin x\,\mathrm dx=\int_0^\pi f(x)\cos x\,\mathrm dx=0,
+\]</span> <strong>证明<span class="math inline">\(f\)</span>在<span class="math inline">\((0,\pi)\)</span>内至少有两个零点.</strong></p>
+<span id="more"></span>
+<p><strong>证明:</strong></p>
+<p>不妨设<span class="math inline">\(f\)</span>不恒为0.</p>
+<p>若<span class="math inline">\(f(x)\)</span>在<span class="math inline">\((0,\pi)\)</span>内无零点, 则不变号, 不妨设<span class="math inline">\(f(x)&gt;0\)</span>. 此时<span class="math display">\[f(x)\sin x&gt;0,\forall x\in(0,\pi)\implies\int_0^1f(x)\sin x\,\mathrm dx&gt;0,\]</span> 与条件矛盾. 于是<span class="math inline">\(f(x)\)</span>在<span class="math inline">\((0,\pi)\)</span>上变号, 至少有一个零点.</p>
+<p>若只有一个变号零点<span class="math inline">\(x_0\in(0,\pi)\)</span>, 不妨设在<span class="math inline">\((0,x_0)\)</span>上<span class="math inline">\(f(x)&gt;0\)</span>, <span class="math inline">\((x_0,\pi)\)</span>上<span class="math inline">\(f(x)&lt;0\)</span>. 那么 <span class="math display">\[
+F(x)=f(x)\sin(x-x_0)\leq0,~\forall x\in(0,\pi).
+\]</span> 又因为 <span class="math display">\[
+\begin{align*}\int_0^\pi F(x)\,\mathrm dx&amp;=\cos x_0\int_0^\pi f(x)\sin x\,\mathrm dx-\sin x_0\int_0^\pi f(x)\cos x\,\mathrm dx\\
+&amp;=\cos x_0\cdot0-\sin x_0\cdot 0\\
+&amp;=0,
+\end{align*}
+\]</span> 故<span class="math inline">\(F(x)\equiv0\)</span>, 于是<span class="math inline">\(f(x)\equiv0,~\forall x\in(0,\pi)\)</span>, 矛盾.</p>
+<p>于是<span class="math inline">\(f(x)\)</span>在<span class="math inline">\((0,\pi)\)</span>上至少有两个零点.</p>
+]]></content>
+      <tags>
+        <tag>数学</tag>
+        <tag>微积分</tag>
+      </tags>
   </entry>
   <entry>
     <title>利用积分下求导计算无穷积分</title>
@@ -180,6 +180,35 @@ Q=\begin{bmatrix}1&amp;\\&amp;\frac12\end{bmatrix}\begin{bmatrix}0&amp;1\\1&amp;
 ]]></content>
       <tags>
         <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>为什么用开覆盖定义紧集</title>
+    <url>/posts/47720/</url>
+    <content><![CDATA[<p>【定义】一个集合是紧集的意思是，它的任何一个开覆盖都有有限子覆盖。</p>
+<p>【有限覆盖定理】这是说欧式空间中的有界闭集（一维情况下是<span class="math inline">\([a,b]\)</span>）都是紧集。</p>
+<p>【Heine-Borel定理】上面的逆命题，欧式空间中的紧集都是有界闭集。于是就说明了欧式空间中的紧集<span class="math inline">\(\iff\)</span>有界闭集。</p>
+<span id="more"></span>
+<h2 id="为什么用开覆盖而不是闭覆盖呢">为什么用开覆盖而不是闭覆盖呢？</h2>
+<p>简单地思考一下容易发现，如果用闭覆盖定义紧集一点也不好玩：</p>
+<p>我们知道单点集<span class="math inline">\(\{a\}\)</span>是闭集（更严谨地，在<span class="math inline">\(T_1\)</span>空间中），那么把集合<span class="math inline">\(A\)</span>中所有元素拿出来，这些单点集的总体构成一个闭覆盖。比如说对于区间<span class="math inline">\([0,1]\)</span>，这种闭覆盖就是 <span class="math display">\[
+\bigcup_{x\in[0,1]}\{x\}
+\]</span> 它有有限子覆盖吗？</p>
+<p>这个闭覆盖的有限成员都是有限个单点集<span class="math inline">\(\{x_1\},\ldots,\{x_n\}\)</span>，明显当<span class="math inline">\(A\)</span>是无限集的时候无法覆盖<span class="math inline">\(A\)</span>。所以按这种方式定义的紧集就是有限集，本质上没有提出新概念。</p>
+<h2 id="用开覆盖定义的紧集有什么用">用开覆盖定义的紧集有什么用？</h2>
+<p>在某种“良好的”集合上：</p>
+<ul>
+<li>连续函数总是一致连续的</li>
+<li>连续函数总是有界的</li>
+<li>连续函数总能取到最值</li>
+<li>任何数列都有收敛子列</li>
+</ul>
+<p>数学家花了一番功夫才发现，这种“良好的”集合其实就是紧集。紧集的定义也有很多等价刻画，比如在欧式空间中就可以简单地定义为有界闭集，在更一般的度量空间中可以定义为序列紧集等等。但是，这些好理解的定义也有局限性，它们只在某些结构良好的空间中成立。</p>
+<p>而在用开覆盖来定义的紧集，虽然抽象，但可以推广到一般的拓扑空间，成了现在使用最广的定义。</p>
+]]></content>
+      <tags>
+        <tag>数学</tag>
+        <tag>拓扑</tag>
       </tags>
   </entry>
   <entry>
@@ -363,35 +392,6 @@ a_n={n!\over(2n+1)!!}\cdot{1\over n+1}，
       <tags>
         <tag>数学</tag>
         <tag>级数</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>为什么用开覆盖定义紧集</title>
-    <url>/posts/47720/</url>
-    <content><![CDATA[<p>【定义】一个集合是紧集的意思是，它的任何一个开覆盖都有有限子覆盖。</p>
-<p>【有限覆盖定理】这是说欧式空间中的有界闭集（一维情况下是<span class="math inline">\([a,b]\)</span>）都是紧集。</p>
-<p>【Heine-Borel定理】上面的逆命题，欧式空间中的紧集都是有界闭集。于是就说明了欧式空间中的紧集<span class="math inline">\(\iff\)</span>有界闭集。</p>
-<span id="more"></span>
-<h2 id="为什么用开覆盖而不是闭覆盖呢">为什么用开覆盖而不是闭覆盖呢？</h2>
-<p>简单地思考一下容易发现，如果用闭覆盖定义紧集一点也不好玩：</p>
-<p>我们知道单点集<span class="math inline">\(\{a\}\)</span>是闭集（更严谨地，在<span class="math inline">\(T_1\)</span>空间中），那么把集合<span class="math inline">\(A\)</span>中所有元素拿出来，这些单点集的总体构成一个闭覆盖。比如说对于区间<span class="math inline">\([0,1]\)</span>，这种闭覆盖就是 <span class="math display">\[
-\bigcup_{x\in[0,1]}\{x\}
-\]</span> 它有有限子覆盖吗？</p>
-<p>这个闭覆盖的有限成员都是有限个单点集<span class="math inline">\(\{x_1\},\ldots,\{x_n\}\)</span>，明显当<span class="math inline">\(A\)</span>是无限集的时候无法覆盖<span class="math inline">\(A\)</span>。所以按这种方式定义的紧集就是有限集，本质上没有提出新概念。</p>
-<h2 id="用开覆盖定义的紧集有什么用">用开覆盖定义的紧集有什么用？</h2>
-<p>在某种“良好的”集合上：</p>
-<ul>
-<li>连续函数总是一致连续的</li>
-<li>连续函数总是有界的</li>
-<li>连续函数总能取到最值</li>
-<li>任何数列都有收敛子列</li>
-</ul>
-<p>数学家花了一番功夫才发现，这种“良好的”集合其实就是紧集。紧集的定义也有很多等价刻画，比如在欧式空间中就可以简单地定义为有界闭集，在更一般的度量空间中可以定义为序列紧集等等。但是，这些好理解的定义也有局限性，它们只在某些结构良好的空间中成立。</p>
-<p>而在用开覆盖来定义的紧集，虽然抽象，但可以推广到一般的拓扑空间，成了现在使用最广的定义。</p>
-]]></content>
-      <tags>
-        <tag>数学</tag>
-        <tag>拓扑</tag>
       </tags>
   </entry>
 </search>
