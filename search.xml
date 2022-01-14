@@ -1,35 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>常见的ODE解法</title>
-    <url>/posts/65228/</url>
-    <content><![CDATA[<h3 id="可分离变量-ypyqx">1. 可分离变量 <span class="math inline">\(y'=p(y)q(x)\)</span></h3>
-<p>分离变量后两边积分.</p>
-<h3 id="一阶齐次线性-ypxy0">2. 一阶齐次线性 <span class="math inline">\(y'+p(x)y=0\)</span></h3>
-<p><span class="math display">\[
-y=Ce^{-\int p(x)dx}
-\]</span></p>
-<h3 id="一阶非齐次线性-ypxyqx">3. 一阶非齐次线性 <span class="math inline">\(y'+p(x)y=q(x)\)</span></h3>
-<ul>
-<li><p><span class="math inline">\(y=e^{-\int p(x)dx}\left(C+\int q(x)e^{\int p(x)}dx\right)\)</span></p></li>
-<li><p>取积分因子 <span class="math inline">\(\mu(x)=e^{\int p(x)dx}\)</span>.</p></li>
-</ul>
-<blockquote>
-<p>🌰 <span class="math inline">\(y'-2y/x=0\)</span>. <span class="math display">\[\begin{aligned}
-&amp;\mu(x)=e^{\int-\frac2x dx}=e^{-2\ln x}=\frac{1}{x^2}\\
-&amp;\implies{1\over x^2}y'-{2\over x^3}y=0\\
-&amp;\implies\left({y\over x^2}\right)'=0\\
-&amp;\implies y=Cx^2
-\end{aligned}
-\]</span></p>
-</blockquote>
-]]></content>
-      <tags>
-        <tag>数学</tag>
-        <tag>分析</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>$\arcsin^2x$的展开式</title>
     <url>/posts/20316/</url>
     <content><![CDATA[<p>证明 <span class="math display">\[
@@ -93,6 +64,35 @@ I_n={(2n)!!\over(2n+1)!!}.
       </tags>
   </entry>
   <entry>
+    <title>常见的ODE解法</title>
+    <url>/posts/65228/</url>
+    <content><![CDATA[<h3 id="可分离变量-ypyqx">1. 可分离变量 <span class="math inline">\(y'=p(y)q(x)\)</span></h3>
+<p>分离变量后两边积分.</p>
+<h3 id="一阶齐次线性-ypxy0">2. 一阶齐次线性 <span class="math inline">\(y'+p(x)y=0\)</span></h3>
+<p><span class="math display">\[
+y=Ce^{-\int p(x)dx}
+\]</span></p>
+<h3 id="一阶非齐次线性-ypxyqx">3. 一阶非齐次线性 <span class="math inline">\(y'+p(x)y=q(x)\)</span></h3>
+<ul>
+<li><p><span class="math inline">\(y=e^{-\int p(x)dx}\left(C+\int q(x)e^{\int p(x)}dx\right)\)</span></p></li>
+<li><p>取积分因子 <span class="math inline">\(\mu(x)=e^{\int p(x)dx}\)</span>.</p></li>
+</ul>
+<blockquote>
+<p>🌰 <span class="math inline">\(y'-2y/x=0\)</span>. <span class="math display">\[\begin{aligned}
+&amp;\mu(x)=e^{\int-\frac2x dx}=e^{-2\ln x}=\frac{1}{x^2}\\
+&amp;\implies{1\over x^2}y'-{2\over x^3}y=0\\
+&amp;\implies\left({y\over x^2}\right)'=0\\
+&amp;\implies y=Cx^2
+\end{aligned}
+\]</span></p>
+</blockquote>
+]]></content>
+      <tags>
+        <tag>数学</tag>
+        <tag>分析</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>分块矩阵的行列式</title>
     <url>/posts/42453/</url>
     <content><![CDATA[<h2 id="结论">结论</h2>
@@ -107,7 +107,7 @@ I_n={(2n)!!\over(2n+1)!!}.
 <li><p><span class="math inline">\(\begin{equation}\det\begin{pmatrix}  A&amp;0\\ C&amp;D \end{pmatrix}=\det(A)\det(D)\label{lower}\end{equation}\)</span></p></li>
 <li><p><span class="math inline">\(\begin{equation}\label{upper}\det\begin{pmatrix}  A&amp;B\\ 0&amp;D \end{pmatrix}=\det(A)\det(D)\end{equation}\)</span></p></li>
 <li><p><span class="math inline">\(\begin{equation}\label{diag}\det\begin{pmatrix}  A&amp;0\\ 0&amp;D \end{pmatrix}=\det(A)\det(D)\end{equation}\)</span></p></li>
-<li><p>当 <span class="math inline">\(CD=DC\)</span> 时, <span class="math display">\[\begin{equation}\label{commute}\det(\Gamma)=\det(AD-BC)\end{equation}\]</span></p></li>
+<li><p><span class="math inline">\(\begin{equation}\label{commute}\text{当 $CD=DC$ 时, }\det(\Gamma)=\det(AD-BC)\end{equation}\)</span></p></li>
 <li><p><span class="math inline">\(\begin{equation}\label{AB}\det\begin{pmatrix} A&amp;B\\B&amp;A \end{pmatrix}=\det(A+B)\det(A-B)\end{equation}\)</span></p></li>
 </ul>
 <h2 id="证明">证明</h2>
@@ -156,31 +156,6 @@ I_n={(2n)!!\over(2n+1)!!}.
       </tags>
   </entry>
   <entry>
-    <title>定积分性质例题</title>
-    <url>/posts/5066/</url>
-    <content><![CDATA[<p><strong>问题：在<span class="math inline">\([0,\pi]\)</span>上的连续函数<span class="math inline">\(f\)</span>满足</strong> <span class="math display">\[
-\int_0^\pi f(x)\sin x\,\mathrm dx=\int_0^\pi f(x)\cos x\,\mathrm dx=0,
-\]</span> <strong>证明<span class="math inline">\(f\)</span>在<span class="math inline">\((0,\pi)\)</span>内至少有两个零点.</strong></p>
-<span id="more"></span>
-<p><strong>证明:</strong></p>
-<p>不妨设<span class="math inline">\(f\)</span>不恒为0.</p>
-<p>若<span class="math inline">\(f(x)\)</span>在<span class="math inline">\((0,\pi)\)</span>内无零点, 则不变号, 不妨设<span class="math inline">\(f(x)&gt;0\)</span>. 此时<span class="math display">\[f(x)\sin x&gt;0,\forall x\in(0,\pi)\implies\int_0^1f(x)\sin x\,\mathrm dx&gt;0,\]</span> 与条件矛盾. 于是<span class="math inline">\(f(x)\)</span>在<span class="math inline">\((0,\pi)\)</span>上变号, 至少有一个零点.</p>
-<p>若只有一个变号零点<span class="math inline">\(x_0\in(0,\pi)\)</span>, 不妨设在<span class="math inline">\((0,x_0)\)</span>上<span class="math inline">\(f(x)&gt;0\)</span>, <span class="math inline">\((x_0,\pi)\)</span>上<span class="math inline">\(f(x)&lt;0\)</span>. 那么 <span class="math display">\[
-F(x)=f(x)\sin(x-x_0)\leq0,~\forall x\in(0,\pi).
-\]</span> 又因为 <span class="math display">\[
-\begin{align*}\int_0^\pi F(x)\,\mathrm dx&amp;=\cos x_0\int_0^\pi f(x)\sin x\,\mathrm dx-\sin x_0\int_0^\pi f(x)\cos x\,\mathrm dx\\
-&amp;=\cos x_0\cdot0-\sin x_0\cdot 0\\
-&amp;=0,
-\end{align*}
-\]</span> 故<span class="math inline">\(F(x)\equiv0\)</span>, 于是<span class="math inline">\(f(x)\equiv0,~\forall x\in(0,\pi)\)</span>, 矛盾.</p>
-<p>于是<span class="math inline">\(f(x)\)</span>在<span class="math inline">\((0,\pi)\)</span>上至少有两个零点.</p>
-]]></content>
-      <tags>
-        <tag>数学</tag>
-        <tag>微积分</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>$f(A)$的特征值</title>
     <url>/posts/3877/</url>
     <content><![CDATA[<p><strong>引理 (Schur's Lemma): 若<span class="math inline">\(A\)</span>是数域<span class="math inline">\(F\)</span>上的<span class="math inline">\(n\)</span>阶方阵, 且<span class="math inline">\(A\)</span>的特征值都在<span class="math inline">\(F\)</span>中, 那么<span class="math inline">\(A\)</span>与一个上三角阵相似.</strong></p>
@@ -209,11 +184,50 @@ f(A)=f(Q^{-1}TQ)=Q^{-1}f(T)Q.
       </tags>
   </entry>
   <entry>
+    <title>定积分性质例题</title>
+    <url>/posts/5066/</url>
+    <content><![CDATA[<p><strong>问题：在<span class="math inline">\([0,\pi]\)</span>上的连续函数<span class="math inline">\(f\)</span>满足</strong> <span class="math display">\[
+\int_0^\pi f(x)\sin x\,\mathrm dx=\int_0^\pi f(x)\cos x\,\mathrm dx=0,
+\]</span> <strong>证明<span class="math inline">\(f\)</span>在<span class="math inline">\((0,\pi)\)</span>内至少有两个零点.</strong></p>
+<span id="more"></span>
+<p><strong>证明:</strong></p>
+<p>不妨设<span class="math inline">\(f\)</span>不恒为0.</p>
+<p>若<span class="math inline">\(f(x)\)</span>在<span class="math inline">\((0,\pi)\)</span>内无零点, 则不变号, 不妨设<span class="math inline">\(f(x)&gt;0\)</span>. 此时<span class="math display">\[f(x)\sin x&gt;0,\forall x\in(0,\pi)\implies\int_0^1f(x)\sin x\,\mathrm dx&gt;0,\]</span> 与条件矛盾. 于是<span class="math inline">\(f(x)\)</span>在<span class="math inline">\((0,\pi)\)</span>上变号, 至少有一个零点.</p>
+<p>若只有一个变号零点<span class="math inline">\(x_0\in(0,\pi)\)</span>, 不妨设在<span class="math inline">\((0,x_0)\)</span>上<span class="math inline">\(f(x)&gt;0\)</span>, <span class="math inline">\((x_0,\pi)\)</span>上<span class="math inline">\(f(x)&lt;0\)</span>. 那么 <span class="math display">\[
+F(x)=f(x)\sin(x-x_0)\leq0,~\forall x\in(0,\pi).
+\]</span> 又因为 <span class="math display">\[
+\begin{align*}\int_0^\pi F(x)\,\mathrm dx&amp;=\cos x_0\int_0^\pi f(x)\sin x\,\mathrm dx-\sin x_0\int_0^\pi f(x)\cos x\,\mathrm dx\\
+&amp;=\cos x_0\cdot0-\sin x_0\cdot 0\\
+&amp;=0,
+\end{align*}
+\]</span> 故<span class="math inline">\(F(x)\equiv0\)</span>, 于是<span class="math inline">\(f(x)\equiv0,~\forall x\in(0,\pi)\)</span>, 矛盾.</p>
+<p>于是<span class="math inline">\(f(x)\)</span>在<span class="math inline">\((0,\pi)\)</span>上至少有两个零点.</p>
+]]></content>
+      <tags>
+        <tag>数学</tag>
+        <tag>微积分</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hello World</title>
     <url>/posts/16107/</url>
     <content><![CDATA[<p>第一篇. 果然搭建环境啥的才是最坑的.</p>
 <p>总算把world给哈喽出来了, 你先在这哈着吧.</p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>利用积分下求导计算无穷积分</title>
+    <url>/posts/30510/</url>
+    <content><![CDATA[<p>计算 <span class="math display">\[
+\int_{-\infty}^{+\infty}{x\sin x\over (x^2+a^2)(x^2+b^2)}\,\mathrm dx.
+\]</span> 其实是测试一下内嵌pdf.</p>
+<span id="more"></span>
+<div class="pdfobject-container" data-target="/file/integrate.pdf" data-height="500px"></div>
+]]></content>
+      <tags>
+        <tag>数学</tag>
+        <tag>微积分</tag>
+      </tags>
   </entry>
   <entry>
     <title>为什么用开覆盖定义紧集</title>
@@ -245,20 +259,6 @@ f(A)=f(Q^{-1}TQ)=Q^{-1}f(T)Q.
       </tags>
   </entry>
   <entry>
-    <title>利用积分下求导计算无穷积分</title>
-    <url>/posts/30510/</url>
-    <content><![CDATA[<p>计算 <span class="math display">\[
-\int_{-\infty}^{+\infty}{x\sin x\over (x^2+a^2)(x^2+b^2)}\,\mathrm dx.
-\]</span> 其实是测试一下内嵌pdf.</p>
-<span id="more"></span>
-<div class="pdfobject-container" data-target="/file/integrate.pdf" data-height="500px"></div>
-]]></content>
-      <tags>
-        <tag>数学</tag>
-        <tag>微积分</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>实对称阵的合同对角化</title>
     <url>/posts/5692/</url>
     <content><![CDATA[<p>设对实对称阵<span class="math inline">\(A\)</span>满足<span class="math inline">\(Q^TAQ=\Lambda\)</span>，其中<span class="math inline">\(\Lambda\)</span>是<span class="math inline">\(A\)</span>的特征值组成的对角阵，问<span class="math inline">\(Q\)</span>是否正交。</p>
@@ -287,6 +287,20 @@ Q=\begin{bmatrix}1&amp;\\&amp;\frac12\end{bmatrix}\begin{bmatrix}0&amp;1\\1&amp;
       <tags>
         <tag>数学</tag>
         <tag>线性代数</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>科普是一项非常难的工作</title>
+    <url>/posts/20918/</url>
+    <content><![CDATA[<p>要想当一个好学生，只需要把知识学懂。</p>
+<p>要想当一个好老师，需要一些基础知识，还需要良好的性格和表达能力、心理学和教育学经验。</p>
+<p>要想当一个好教授，需要有专业知识、科研水平，只需要一般般的表达能力。</p>
+<p><strong>而要当一个好的科普工作者，需要有远超学生的理解能力，教授一样的专业水平，老师一样的教学功力，艺术家一样的审美，作家一样的文笔，诗人一样的清高，科学家一样对知识的热爱，艺人一样对大众心理的把控能力，运动员一样的毅力，还要有自身的人格魅力、抗压抗打击能力。</strong></p>
+<p>科普是一项非常难的工作，比讲课教书难得多。因为它面对的不是专业人士，而是乌合之众。这导致科普工作者必须用通俗语言来解释专业知识，却又不至于过于通俗而产生误导。稍微有一点漏洞就会被抓住攻击——有问题的科普比谣言更可怕，比迷信更害人。</p>
+<p>所以，科普工作者是一个神圣的标签，这个名号比想象中要严苛得多。</p>
+]]></content>
+      <tags>
+        <tag>随笔</tag>
       </tags>
   </entry>
   <entry>
@@ -375,20 +389,6 @@ I(a)=\frac12\int_0^\infty{t\ln\left(1+{2at\over 1+t^2}\right)\over 1+t^2}\,\math
       <tags>
         <tag>数学</tag>
         <tag>微积分</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>科普是一项非常难的工作</title>
-    <url>/posts/20918/</url>
-    <content><![CDATA[<p>要想当一个好学生，只需要把知识学懂。</p>
-<p>要想当一个好老师，需要一些基础知识，还需要良好的性格和表达能力、心理学和教育学经验。</p>
-<p>要想当一个好教授，需要有专业知识、科研水平，只需要一般般的表达能力。</p>
-<p><strong>而要当一个好的科普工作者，需要有远超学生的理解能力，教授一样的专业水平，老师一样的教学功力，艺术家一样的审美，作家一样的文笔，诗人一样的清高，科学家一样对知识的热爱，艺人一样对大众心理的把控能力，运动员一样的毅力，还要有自身的人格魅力、抗压抗打击能力。</strong></p>
-<p>科普是一项非常难的工作，比讲课教书难得多。因为它面对的不是专业人士，而是乌合之众。这导致科普工作者必须用通俗语言来解释专业知识，却又不至于过于通俗而产生误导。稍微有一点漏洞就会被抓住攻击——有问题的科普比谣言更可怕，比迷信更害人。</p>
-<p>所以，科普工作者是一个神圣的标签，这个名号比想象中要严苛得多。</p>
-]]></content>
-      <tags>
-        <tag>随笔</tag>
       </tags>
   </entry>
   <entry>
