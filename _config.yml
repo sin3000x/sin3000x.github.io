@@ -3,22 +3,26 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Ideas
+title: 记问之学，不足以为人师
 subtitle: ''
 description: ''
 keywords:
-author: John Doe
-language: en
+author: Jeremy Gu
+language: zh-CN
 timezone: ''
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
 url: http://sin3000x.github.io
-permalink: :year/:month/:day/:title/
+# permalink: :year/:month/:day/:title/
+permalink: posts/:abbrlink/
 permalink_defaults:
 pretty_urls:
   trailing_index: true # Set to false to remove trailing 'index.html' from permalinks
   trailing_html: true # Set to false to remove trailing '.html' from permalinks
+permalink_pinyin:
+  enable: true
+  separator: '-' # default: '-'
 
 # Directory
 source_dir: source
@@ -97,11 +101,28 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: landscape
+theme: next-new
+markdown:
+  plugins:
+    # - hexo-math
+githubEmojis:
+  enable: true
+  className: github-emoji
+  inject: true
+  styles:
+  customEmojis:
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: git
-  repo: https://github.com/sin3000x/sin3000x.github.io
+  # repo: https://github.com/sin3000x/sin3000x.github.io
+  repo: git@github.com:sin3000x/sin3000x.github.io.git
   branch: gh-pages
+
+# search
+search:
+  path: search.xml
+  field: post
+  format: html
+  limit: 10000
