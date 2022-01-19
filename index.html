@@ -201,7 +201,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2022-01-19 20:37:34 / 修改时间：20:53:33" itemprop="dateCreated datePublished" datetime="2022-01-19T20:37:34+00:00">2022-01-19</time>
+              <time title="创建时间：2022-01-19 20:37:34 / 修改时间：21:26:34" itemprop="dateCreated datePublished" datetime="2022-01-19T20:37:34+00:00">2022-01-19</time>
             </span>
 
           
@@ -215,7 +215,9 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p><span class="math display">\[\iint_D F(x,y)\d x\d y=\]</span></p>
+          <p><span class="math display">\[\iint_D F(x,y)\d x\d y=\iint_\Delta F(r\cos\theta,r\sin\theta)r\d r\d\theta\]</span></p>
+<p><span class="math display">\[\iiint_D F(x,y,z)\d x\d y\d z=\iiint_\Delta F(r\sin\theta\cos\phi,r\sin\theta\sin\phi,r\cos\theta)r^2\sin\theta\d r\d \theta\d \phi\]</span></p>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Kugelkoord-lokale-Basis-s.svg/480px-Kugelkoord-lokale-Basis-s.svg.png" width="250" height="250"></p>
 
       
     </div>
@@ -1081,11 +1083,11 @@ document.querySelectorAll('.pdfobject-container').forEach(element => {
         }
       },
       tex: {
-        inlineMath: {'[+]': [['$', '$']]},
-        tags: 'ams',
         macros: {
           d: '{\\,\\mathrm{d}}'
-        }
+        },
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams',
       },
       options: {
         renderActions: {

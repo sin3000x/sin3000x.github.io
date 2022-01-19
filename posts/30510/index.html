@@ -483,11 +483,11 @@ document.querySelectorAll('.pdfobject-container').forEach(element => {
         }
       },
       tex: {
-        inlineMath: {'[+]': [['$', '$']]},
-        tags: 'ams',
         macros: {
           d: '{\\,\\mathrm{d}}'
-        }
+        },
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams',
       },
       options: {
         renderActions: {
