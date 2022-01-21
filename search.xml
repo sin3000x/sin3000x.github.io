@@ -1,339 +1,629 @@
 <?xml version="1.0" encoding="utf-8"?>
-<search> 
-  
-  
-    
-    <entry>
-      <title>极坐标和球坐标换元</title>
-      <link href="/posts/26639/"/>
-      <url>/posts/26639/</url>
-      
-        <content type="html"><![CDATA[<p><span class="math display">\[\iint_D F(x,y)\d x\d y=\iint_\Delta F(r\cos\theta,r\sin\theta)r\d r\d\theta\]</span></p><p><span class="math display">\[\iiint_D F(x,y,z)\d x\d y\d z=\iiint_\Delta F(r\sin\theta\cos\phi,r\sin\theta\sin\phi,r\cos\theta)r^2\sin\theta\d r\d \theta\d \phi\]</span></p><p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Kugelkoord-lokale-Basis-s.svg/480px-Kugelkoord-lokale-Basis-s.svg.png" width="250" height="250"></p>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> 数学 </tag>
-            
-            <tag> 微积分 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>微分形式</title>
-      <link href="/posts/12522/"/>
-      <url>/posts/12522/</url>
-      
-        <content type="html"><![CDATA[<p>0次形式: <span class="math inline">\(f\)</span></p><p>1次形式: <span class="math inline">\(P\,dx+Q\,dy+R\,dz\)</span></p><p>2次形式: <span class="math inline">\(P\,dy\land dz+Q\,dz\land dx+R\,dx\land dy\)</span></p><p>3次形式: <span class="math inline">\(R\,dx\land dy\land dz\)</span></p><span id="more"></span><h2 id="运算律">运算律</h2><p><span class="math inline">\(dx\land dx=0\)</span> 等, <span class="math inline">\(dx\land dy=-dy\land dx\)</span> 等.</p><h2 id="外微分运算">外微分运算</h2><p><span class="math display">\[df={\partial f\over\partial x}dx+{\partial f\over\partial y}dy+{\partial f\over\partial z}dz\]</span> <span class="math inline">\(w=P\,dx+Q\,dy+R\,dz\)</span> 时</p><p><span class="math display">\[\begin{aligned}dw&amp;=(R_y'-Q_z')dy\land dz+(P_z'-R_x')dz\land dx+(Q_x'-P_y')dx\land dy\\&amp;=\begin{vmatrix}dy\land dz&amp;dz\land dx&amp;dx\land dy\\{\partial\over\partial x} &amp; {\partial\over\partial y} &amp; {\partial\over\partial z}\\P&amp;Q&amp;R\end{vmatrix}\end{aligned}\]</span></p><p><span class="math inline">\(w=P\,dy\land dz+Q\,dz\land dx+R\,dx\land dy\)</span> 时</p><p><span class="math display">\[dw=(P_x'+Q_y'+R_z')dx\land dy\land dz\]</span></p>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> 数学 </tag>
-            
-            <tag> 分析 </tag>
-            
-            <tag> 微积分 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>高维分部积分</title>
-      <link href="/posts/22001/"/>
-      <url>/posts/22001/</url>
-      
-        <content type="html"><![CDATA[<p><span class="math display">\[\int_\Omega u\nabla\cdot \boldsymbol{v}\,d\Omega=\int_{\partial\Omega}u\boldsymbol{v}\cdot\boldsymbol{n}\,dS-\int_\Omega\nabla u\cdot\boldsymbol{v}\,d\Omega\]</span></p><span id="more"></span><p>对比</p><p><span class="math display">\[\int_a^bu v'\,dx=\left.uv\right|_a^b-\int_a^bu'v\,dx\]</span> 特殊情况 (Green's first identity):</p><p><span class="math display">\[\int_\Omega\nabla u\cdot\nabla v\,d\Omega=\int_{\partial\Omega}v\nabla u\cdot\boldsymbol{n}\,dS-\int_\Omega v\nabla^2u\,d\Omega\]</span></p><hr><p>散度乘法法则:</p><p><span class="math display">\[\nabla\cdot(u\boldsymbol{v})=u\nabla\cdot \boldsymbol{v}+\nabla u\cdot \boldsymbol{v}\]</span></p>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> 数学 </tag>
-            
-            <tag> 分析 </tag>
-            
-            <tag> 微积分 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>控制收敛定理 (DCT)</title>
-      <link href="/posts/34980/"/>
-      <url>/posts/34980/</url>
-      
-        <content type="html"><![CDATA[<p><span class="math display">\[\lim_{n\to\infty}\int_S f_n \,d\mu=\int_S f\,d\mu\]</span></p><span id="more"></span><p>条件:</p><ul><li><span class="math inline">\(f_n\)</span> 可测, 逐点收敛到 <span class="math inline">\(f\)</span>.</li><li><span class="math inline">\(f_n\)</span> 被可积函数 <span class="math inline">\(g\)</span> 控制: <span class="math inline">\(|f_n(x)|\leq g(x)\)</span>, 且 <span class="math inline">\(\int_S|g|\,d\mu&lt;\infty.\)</span></li></ul><p>结论:</p><ul><li><span class="math inline">\(f\)</span> 可积</li><li><span class="math inline">\(\lim_{n\to\infty}\int_S|f_n-f|\,d\mu=0\)</span></li><li><span class="math inline">\(\lim_{n\to\infty}\int_S f_n \,d\mu=\int_S f\,d\mu\)</span></li></ul>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> 数学 </tag>
-            
-            <tag> 分析 </tag>
-            
-            <tag> 实变函数 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>分块矩阵的行列式</title>
-      <link href="/posts/42453/"/>
-      <url>/posts/42453/</url>
-      
-        <content type="html"><![CDATA[<h2 id="结论">结论</h2><p>设分块矩阵 <span class="math inline">\(\Gamma=\begin{pmatrix}A&amp;B\\C&amp;D\end{pmatrix}\)</span>, 那么</p><ul><li><span class="math inline">\(A\)</span> 可逆时, <span class="math inline">\(\det(\Gamma)=\det(A)\det(D-CA^{-1}B)\)</span></li><li><span class="math inline">\(D\)</span> 可逆时, <span class="math inline">\(\det(\Gamma)=\det(A-BD^{-1}C)\det(D)\)</span></li></ul><span id="more"></span><h2 id="特殊情况">特殊情况</h2><ul><li><p><span class="math inline">\(\begin{equation}\det\begin{pmatrix}  A&amp;0\\ C&amp;D \end{pmatrix}=\det(A)\det(D)\label{lower}\end{equation}\)</span></p></li><li><p><span class="math inline">\(\begin{equation}\label{upper}\det\begin{pmatrix}  A&amp;B\\ 0&amp;D \end{pmatrix}=\det(A)\det(D)\end{equation}\)</span></p></li><li><p><span class="math inline">\(\begin{equation}\label{diag}\det\begin{pmatrix}  A&amp;0\\ 0&amp;D \end{pmatrix}=\det(A)\det(D)\end{equation}\)</span></p></li><li><p><span class="math inline">\(\begin{equation}\label{commute}\text{当 $CD=DC$ 时, }\det(\Gamma)=\det(AD-BC)\end{equation}\)</span></p></li><li><p><span class="math inline">\(\begin{equation}\label{AB}\det\begin{pmatrix} A&amp;B\\B&amp;A \end{pmatrix}=\det(A+B)\det(A-B)\end{equation}\)</span></p></li></ul><h2 id="证明">证明</h2><p>先证 <span class="math inline">\(\eqref{lower}\)</span> : 对 <span class="math inline">\(A\)</span> 部分进行(倍加)<strong>行变换</strong>化为下三角阵, 再对 <span class="math inline">\(D\)</span> 部分进行<strong>列变换</strong>化为下三角阵. 这并不影响 <span class="math inline">\(A\)</span> , <span class="math inline">\(D\)</span> 和分块矩阵的行列式, 且都化为了对角线的乘积. 结论显然.</p><p><span class="math inline">\(\eqref{upper}\)</span> 的证明可以通过取转置得到, <span class="math inline">\(\eqref{diag}\)</span> 是一种特殊情况.</p><p>对于一般情况, 需要利用 <span class="math display">\[\begin{pmatrix}    A&amp;B\\C&amp;D\end{pmatrix}\begin{pmatrix}    I&amp;0\\ -D^{-1}C&amp;I\end{pmatrix}=\begin{pmatrix}    A-BD^{-1}C&amp;B\\0&amp;D\end{pmatrix}.\]</span> 可以把它想成是一种列变换: 把第二列右乘 <span class="math inline">\(-D^{-1}C\)</span> 加到第一列. 两边取行列式并利用 <span class="math inline">\(\det(AB)=\det(A)\det(B)\)</span> 和 <span class="math inline">\(\eqref{upper}\)</span> , 就得到了 <span class="math inline">\(\det(\Gamma)=\det(A-BD^{-1}C)\det(D)\)</span> . 另外一个结论可以利用行变换类似得到.</p><hr><p>下面证 <span class="math inline">\(\eqref{commute}\)</span> . 注意已知 <span class="math inline">\(CD=DC\)</span>.</p><p>我们可以利用 <span class="math display">\[\begin{pmatrix}    A&amp;B\\C&amp;D\end{pmatrix}\begin{pmatrix}    D&amp;0\\-C&amp;I\end{pmatrix}=\begin{pmatrix}    AD-BC&amp;B\\0&amp;D\end{pmatrix}.\]</span> 两边取行列式就得到了 <span class="math display">\[\det(\Gamma)\det(D)=\det(AD-BC)\det(D).\]</span> 如果 <span class="math inline">\(\det(D)\ne0\)</span> , 那么消去 <span class="math inline">\(\det(D)\)</span> 即得结论.</p><p>也可以利用开头的结论<span class="math display">\[\begin{aligned}    \det(\Gamma)    &amp;=\det(A-BD^{-1}C)\det(D)\\    &amp;=\det(AD-BD^{-1}CD)\\    &amp;=\det(AD-BD^{-1}DC)\\    &amp;=\det(AD-BC).\\\end{aligned}\]</span></p><p>当 <span class="math inline">\(\det(D)=0\)</span> 时, 可以给 <span class="math inline">\(D\)</span> 一个扰动. 也就是说, 我们用 <span class="math inline">\(D_\varepsilon=D+\varepsilon I\)</span> 代替 <span class="math inline">\(D\)</span> , 其中 <span class="math inline">\(D_\varepsilon\)</span> 可逆且 <span class="math inline">\(\varepsilon\)</span> 是可以任意小的正数. 这个结论可以利用特征值的性质证明, 也可以利用关于<span class="math inline">\(\varepsilon\)</span>的多项式 <span class="math inline">\(\det(D_\varepsilon)\)</span> 只在有限个点上取 <span class="math inline">\(0\)</span>.</p><p>不难看到 <span class="math inline">\(D_\varepsilon\)</span> 仍然是与 <span class="math inline">\(C\)</span> 可交换的. 然后利用上面的方法可以得到<span class="math display">\[\det(\Gamma)=\det(AD_\varepsilon-BC).\]</span> 令 <span class="math inline">\(\varepsilon\to0\)</span> 便得到了 <span class="math inline">\(\det(\Gamma)=\det(AD-BC).\)</span></p><p>这是由于等号右边是关于 <span class="math inline">\(\varepsilon\)</span> 的多项式, 所以连续, 而 <span class="math inline">\(D_0=D\)</span>.</p><hr><p>对 <span class="math inline">\(\eqref{AB}\)</span>, 只需要对<span class="math display">\[\begin{pmatrix}    I&amp;0\\-I&amp;I\end{pmatrix}\begin{pmatrix}    A&amp;B\\B&amp;A\end{pmatrix}\begin{pmatrix}    I&amp;0\\I&amp;I\end{pmatrix}=\begin{pmatrix}    A+B&amp;B\\0&amp;A-B\end{pmatrix}\]</span>两边取行列式.</p>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> 数学 </tag>
-            
-            <tag> 线性代数 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>常见的ODE解法</title>
-      <link href="/posts/65228/"/>
-      <url>/posts/65228/</url>
-      
-        <content type="html"><![CDATA[<h3 id="可分离变量-ypyqx">1. 可分离变量 <span class="math inline">\(y'=p(y)q(x)\)</span></h3><p>分离变量后两边积分.</p><h3 id="一阶齐次线性-ypxy0">2. 一阶齐次线性 <span class="math inline">\(y'+p(x)y=0\)</span></h3><p><span class="math display">\[y=Ce^{-\int p(x)dx}\]</span></p><h3 id="一阶非齐次线性-ypxyqx">3. 一阶非齐次线性 <span class="math inline">\(y'+p(x)y=q(x)\)</span></h3><ul><li><p><span class="math inline">\(y=e^{-\int p(x)dx}\left(C+\int q(x)e^{\int p(x)}dx\right)\)</span></p></li><li><p>取积分因子 <span class="math inline">\(\mu(x)=e^{\int p(x)dx}\)</span>.</p></li></ul><blockquote><p>🌰 <span class="math inline">\(y'-2y/x=0\)</span>. <span class="math display">\[\begin{aligned}&amp;\mu(x)=e^{\int-\frac2x dx}=e^{-2\ln x}=\frac{1}{x^2}\\&amp;\implies{1\over x^2}y'-{2\over x^3}y=0\\&amp;\implies\left({y\over x^2}\right)'=0\\&amp;\implies y=Cx^2\end{aligned}\]</span></p></blockquote>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> 数学 </tag>
-            
-            <tag> 分析 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>为什么用开覆盖定义紧集</title>
-      <link href="/posts/47720/"/>
-      <url>/posts/47720/</url>
-      
-        <content type="html"><![CDATA[<p>【定义】一个集合是紧集的意思是，它的任何一个开覆盖都有有限子覆盖。</p><p>【有限覆盖定理】这是说欧式空间中的有界闭集（一维情况下是<span class="math inline">\([a,b]\)</span>）都是紧集。</p><p>【Heine-Borel定理】上面的逆命题，欧式空间中的紧集都是有界闭集。于是就说明了欧式空间中的紧集<span class="math inline">\(\iff\)</span>有界闭集。</p><span id="more"></span><h2 id="为什么用开覆盖而不是闭覆盖呢">为什么用开覆盖而不是闭覆盖呢？</h2><p>简单地思考一下容易发现，如果用闭覆盖定义紧集一点也不好玩：</p><p>我们知道单点集<span class="math inline">\(\{a\}\)</span>是闭集（更严谨地，在<span class="math inline">\(T_1\)</span>空间中），那么把集合<span class="math inline">\(A\)</span>中所有元素拿出来，这些单点集的总体构成一个闭覆盖。比如说对于区间<span class="math inline">\([0,1]\)</span>，这种闭覆盖就是 <span class="math display">\[\bigcup_{x\in[0,1]}\{x\}\]</span> 它有有限子覆盖吗？</p><p>这个闭覆盖的有限成员都是有限个单点集<span class="math inline">\(\{x_1\},\ldots,\{x_n\}\)</span>，明显当<span class="math inline">\(A\)</span>是无限集的时候无法覆盖<span class="math inline">\(A\)</span>。所以按这种方式定义的紧集就是有限集，本质上没有提出新概念。</p><h2 id="用开覆盖定义的紧集有什么用">用开覆盖定义的紧集有什么用？</h2><p>在某种“良好的”集合上：</p><ul><li>连续函数总是一致连续的</li><li>连续函数总是有界的</li><li>连续函数总能取到最值</li><li>任何数列都有收敛子列</li></ul><p>数学家花了一番功夫才发现，这种“良好的”集合其实就是紧集。紧集的定义也有很多等价刻画，比如在欧式空间中就可以简单地定义为有界闭集，在更一般的度量空间中可以定义为序列紧集等等。但是，这些好理解的定义也有局限性，它们只在某些结构良好的空间中成立。</p><p>而在用开覆盖来定义的紧集，虽然抽象，但可以推广到一般的拓扑空间，成了现在使用最广的定义。</p>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> 数学 </tag>
-            
-            <tag> 拓扑 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>实对称阵的合同对角化</title>
-      <link href="/posts/5692/"/>
-      <url>/posts/5692/</url>
-      
-        <content type="html"><![CDATA[<p>设对实对称阵<span class="math inline">\(A\)</span>满足<span class="math inline">\(Q^TAQ=\Lambda\)</span>，其中<span class="math inline">\(\Lambda\)</span>是<span class="math inline">\(A\)</span>的特征值组成的对角阵，问<span class="math inline">\(Q\)</span>是否正交。</p><p>答案是否定的。</p><span id="more"></span><h2 id="分析">分析</h2><p>构造反例时为了方便，可以直接取<span class="math inline">\(A\)</span>为对角阵<span class="math inline">\(\Lambda\)</span>，因为对角阵的对角元就是特征值。</p><p>问题化为：找非正交阵<span class="math inline">\(Q\)</span>，满足<span class="math inline">\(Q^T\Lambda Q=\Lambda\)</span>。下面尝试把<span class="math inline">\(\Lambda\)</span>写成<span class="math inline">\(Q^T\Lambda Q\)</span>的形式： <span class="math display">\[\begin{align*}\Lambda&amp;=(\Lambda^{\frac12}\Lambda^{-\frac12})\Lambda(\Lambda^{-\frac12}\Lambda^{\frac12})\\&amp;=(\Lambda^{\frac12}V^T\Lambda^{-\frac12})\Lambda(\Lambda^{-\frac12}V\Lambda^{\frac12})\\&amp;=Q^T\Lambda Q,\end{align*}\]</span> 其中引入了正交阵<span class="math inline">\(V\)</span>，可见<span class="math inline">\(Q=\Lambda^{-\frac12}V\Lambda^{\frac12}\)</span>是一种选择。什么时候<span class="math inline">\(Q\)</span>不正交呢？</p><p>正交矩阵的一个性质是元素的绝对值都不超过1，所以我们选择合适的<span class="math inline">\(\Lambda\)</span>和<span class="math inline">\(V\)</span>，使<span class="math inline">\(Q\)</span>中有元素绝对值大于1即可。实际上 <span class="math display">\[q_{ij}=v_{ij}\sqrt{\frac{\lambda_j}{\lambda_i}}，\]</span> <span class="math inline">\(i\)</span>和<span class="math inline">\(j\)</span>不能相等，因为<span class="math inline">\(|q_{ii}|=|v_{ii}|\leq1\)</span>。</p><p>所以构造步骤为：取正交阵<span class="math inline">\(V\)</span>，需要其中某个非对角元<span class="math inline">\(v_{ij}\ne0\)</span>。然后取对角阵<span class="math inline">\(\Lambda\)</span>，其中<span class="math inline">\(\lambda_j/\lambda_i\)</span>足够大，使得<span class="math inline">\(\left|v_{ij}\sqrt{\frac{\lambda_j}{\lambda_i}}\right|&gt;1\)</span>。再构造<span class="math inline">\(Q=\Lambda^{-\frac12}V\Lambda^{\frac12}\)</span>，那么<span class="math inline">\(Q\)</span>不是正交阵，而<span class="math inline">\(Q^T\Lambda Q=\Lambda\)</span>。</p><h2 id="一个具体的例子">一个具体的例子</h2><p>取 <span class="math display">\[V=\begin{bmatrix}0&amp;1\\1&amp;0\end{bmatrix},\ \Lambda=\begin{bmatrix}1 &amp;\\&amp; 4\end{bmatrix},\]</span> 那么 <span class="math display">\[Q=\begin{bmatrix}1&amp;\\&amp;\frac12\end{bmatrix}\begin{bmatrix}0&amp;1\\1&amp;0\end{bmatrix}\begin{bmatrix}1&amp;\\&amp;2\end{bmatrix}=\begin{bmatrix}0&amp;2\\\frac12&amp;0\end{bmatrix}\ \text{不是正交阵},\]</span> 而<span class="math inline">\(Q^T\Lambda Q=\Lambda\)</span>。</p>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> 数学 </tag>
-            
-            <tag> 线性代数 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>$\arcsin^2x$的展开式</title>
-      <link href="/posts/20316/"/>
-      <url>/posts/20316/</url>
-      
-        <content type="html"><![CDATA[<p>证明 <span class="math display">\[\arcsin^2x=\frac12\sum_{n=1}^\infty{(2x)^{2n}\over n^2{2n\choose n}}.\]</span> <span id="more"></span></p><p>先求导： <span class="math display">\[(\arcsin^2 x)'={2\arcsin x\over\sqrt{1-x^2}}\]</span> 利用恒等式<span class="math inline">\(\arcsin x=\arctan\left(x\over\sqrt{1-x^2}\right)\)</span>，有 <span class="math display">\[\begin{align*}{\arcsin x\over\sqrt{1-x^2}}&amp;={1\over\sqrt{1-x^2}}\arctan\left(x\over\sqrt{1-x^2}\right)\\&amp;=\frac1x\cdot{1\over\sqrt{1-x^2\over x^2}}\arctan\left({1\over\sqrt{1-x^2\over x^2}}\right)\\&amp;=\left.\frac1x\cdot{1\over\sqrt{1-x^2\over x^2}}\arctan\left({t\over\sqrt{1-x^2\over x^2}}\right)\right|_{t=0}^{t=1}\\&amp;=\frac1x\int_0^1{\mathrm dt\over t^2+{1-x^2\over x^2}}\\&amp;=x\int_0^1{\mathrm dt\over 1-x^2+x^2t^2}\\&amp;=x\int_0^1\sum_{n=0}^\infty(x^2-x^2t^2)^n\,\mathrm dt\\&amp;=\int_0^1\sum_{n=0}^\infty (1-t^2)^nx^{2n+1}\,\mathrm dt\\&amp;=\sum_{n=0}^\infty\left(\int_0^1(1-t^2)^n\,\mathrm dt\right) x^{2n+1}.\end{align*}\]</span> 其中利用分部积分 <span class="math display">\[\begin{align*}I_n&amp;=\int_0^1(1-t^2)^n\,\mathrm dt\\&amp;=\int_0^1(1-t^2)(1-t^2)^{n-1}\,\mathrm dt\\&amp;=\int_0^1(1-t^2)^{n-1}\,\mathrm dt-\int_0^1t^2(1-t^2)^{n-1}\,\mathrm dt\\&amp;=I_{n-1}+\frac{1}{2n}\int_0^1t\,\mathrm d(1-t^2)^{n}\\&amp;=I_{n-1}+\frac{1}{2n}\left.t(1-t^2)^n\right|_0^1-\frac{1}{2n}\int_0^1(1-t^2)^n\,\mathrm dt\\&amp;=I_{n-1}-\frac{1}{2n}I_n\\&amp;={2n\over2n+1}I_{n-1},%&amp;=\left.t(1-t^2)\right|_{0}^1-n\int_0^1t(1-t^2)^{n-1}\,\mathrm dt\\%&amp;=-n\left(\left.t^2(1-t^2)^{n-1}\right|_0^1-\int_0^1\left((1-t^2)^{n-1}-2(n-1)t^2(1-t^2)^{n-2}\right)\,\mathrm dt\right)\\%&amp;=n\int_0^1(1-t^2)^{n-1}\,\mathrm dt+2n(n-1)\int_0^1t^2(1-t^2)^{n-2}\,\mathrm dt%&amp;=\int_0^1\sum_{k=0}^n{n\choose k}(-t^2)^k\,\mathrm dt\\%&amp;=\int_0^1\sum_{k=0}^n{n\choose k}(-1)^kt^{2k}\,\mathrm dt\\%&amp;=\sum_{k=0}^n{n\choose k}(-1)^k\int_0^1t^{2k}\,\mathrm dt\\%&amp;=\sum_{k=0}^n{(-1)^k{n\choose k}\over 2k+1}\end{align*}\]</span> 递推可得 <span class="math display">\[I_n={(2n)!!\over(2n+1)!!}.\]</span> 故 <span class="math display">\[\begin{align*}{\arcsin x\over\sqrt{1-x^2}}&amp;=\sum_{n=0}^\infty\left(\int_0^1(1-t^2)^n\,\mathrm dt\right) x^{2n+1}\\&amp;=\sum_{n=0}^\infty{(2n)!!\over(2n+1)!!}x^{2n+1}.\end{align*}\]</span> 于是积分： <span class="math display">\[\begin{align*}\arcsin^2x&amp;=\int_0^x(\arcsin^2t)'\,\mathrm dt\\&amp;=2\int_0^x{\arcsin t\over\sqrt{1-t^2}}\,\mathrm dt\\&amp;=2\int_0^x\sum_{n=0}^\infty{(2n)!!\over(2n+1)!!}t^{2n+1}\,\mathrm dt\\&amp;=2\sum_{n=0}^\infty{(2n)!!\over(2n+1)!!}\int_0^x t^{2n+1}\,\mathrm dt\\&amp;=2\sum_{n=0}^\infty{(2n)!!\over(2n+1)!!}\cdot{x^{2n+2}\over2n+2}\\&amp;=2\sum_{n=0}^\infty{(2^nn!)^2\over(2n+1)!}\cdot{x^{2n+2}\over2n+2}\\&amp;=2\sum_{n=0}^\infty{2^{2n}(n!)^2\over(2n+2)!}x^{2n+2}\\&amp;=2\sum_{n=0}^\infty{2^{2n+2}\left((n+1)!\right)^2\over2^2(n+1)^2(2n+2)!}x^{2n+2}\\&amp;=\frac12\sum_{n=0}^\infty{(2x)^{2n+2}\over(n+1)^2{2n+2\choose n+1}}\\&amp;=\frac12\sum_{n=1}^\infty{(2x)^{2n}\over n^2{2n\choose n}}.\end{align*}\]</span></p>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> 数学 </tag>
-            
-            <tag> 级数 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>计算级数</title>
-      <link href="/posts/42963/"/>
-      <url>/posts/42963/</url>
-      
-        <content type="html"><![CDATA[<p>计算 <span class="math display">\[\sum_{n=1}^\infty{n!\over(2n+1)!!}\cdot{1\over n+1}.\]</span></p><span id="more"></span><hr><h2 id="方法一arcsin2x的展开">方法一：<span class="math inline">\(\arcsin^2x\)</span>的展开</h2><p>把双阶乘改写成阶乘。定义 <span class="math display">\[\begin{align*}a_n&amp;={n!\over(2n+1)!!}\cdot{1\over n+1}\\&amp;={n!\over 1\cdot3\cdot5\cdots(2n+1)}\cdot{1\over n+1}\\&amp;={2\cdot4\cdots(2n+2)\cdot n!\over1\cdot2\cdot3\cdots(2n+1)\cdot(2n+2)}\cdot{1\over n+1}\\&amp;={2^{n+1}(n+1)!\cdot n!\over(2n+2)!}\cdot{1\over n+1}\\&amp;={2^{n+1}(n!)^2\over(2n+2)!}\\&amp;={2^{n+1}(n!)^2\over(2n+2)(2n+1)(2n)!}\\&amp;={2^n(n!)^2\over(n+1)(2n+1)(2n)!}\\&amp;={2^n\over(n+1)(2n+1){(2n)!\over(n!)^2}}\\&amp;={2^n\over(n+1)(2n+1){2n\choose n}}\end{align*}\]</span> 求和的时候移动一下下标，把分母的<span class="math inline">\(n+1\)</span>变成<span class="math inline">\(n\)</span>： <span class="math display">\[\begin{align*}\sum_{n=1}^\infty a_n&amp;=\sum_{n=1}^\infty {2^n\over(n+1)(2n+1){2n\choose n}}\\&amp;=\sum_{n=2}^\infty{2^{n-1}\over n(2n-1){2n-2\choose n-1}}\\&amp;=\sum_{n=2}^\infty{2^{n}\over 2n(2n-1){(2n-2)!\over\left((n-1)!\right)^2}}\\&amp;=\sum_{n=2}^\infty{2^n\over{(2n)!\over\left((n-1)!\right)^2}}\\&amp;=\sum_{n=2}^\infty{2^n\over n^2{(2n)!\over (n!)^2}}\\&amp;=\sum_{n=2}^\infty{2^n\over n^2{2n\choose n}}\end{align*}\]</span> 热知识：<span class="math inline">\(\arcsin^2 x\)</span>的展开式满足 <span class="math display">\[2\arcsin^2\left(\frac x2\right)=\sum_{n=1}^\infty{x^{2n}\over n^2{2n\choose n}}.\]</span> 它的证明比较占篇幅，我写在<a href="/posts/20316/" title="这里">这里</a>.</p><p>其中令<span class="math inline">\(x=\sqrt2\)</span>： <span class="math display">\[2\arcsin^2\left(\frac{\sqrt2}{2}\right)=\sum_{n=1}^\infty{2^n\over n^2{2n\choose n}}=2\left(\frac{\pi}{4}\right)^2={\pi^2\over8}.\]</span> 于是 <span class="math display">\[\sum_{n=1}^\infty a_n=\sum_{n=2}^\infty{2^n\over n^2{2n\choose n}}={\pi^2\over8}-1.\]</span></p><hr><h2 id="方法二累次积分">方法二：累次积分</h2><p>记 <span class="math display">\[a_n={n!\over(2n+1)!!}\cdot{1\over n+1}，\]</span> 把两个因子都表示成积分： <span class="math display">\[{1\over n+1}=\int_0^1x^n\,\mathrm dx\]</span></p><p><span class="math display">\[\begin{align*}{n!\over(2n+1)!!}&amp;={n!\over 1\cdot3\cdot5\cdots(2n+1)}\\&amp;={2\cdot4\cdots(2n)\cdot n!\over1\cdot2\cdot3\cdots(2n)\cdot(2n+1)}\\&amp;={2^n(n!)^2\over(2n+1)!}\\&amp;={2^n(\Gamma(n+1))^2\over\Gamma(2n+2)}\\&amp;=2^n\cdot\mathrm B(n+1,n+1)\\&amp;=2^n\int_0^1y^n(1-y)^n\,\mathrm dy\\&amp;=\int_0^1(2y(1-y))^n\,\mathrm dy\end{align*}\]</span></p><p>其中后者我们利用了<span class="math inline">\(\Gamma(n+1)=n!\)</span>，以及<span class="math inline">\(\mathrm B(x,y)={\Gamma(x)\Gamma(y)\over\Gamma(x+y)}\)</span>.</p><p>于是（从<span class="math inline">\(0\)</span>开始加使得级数结果更加简单）， <span class="math display">\[\begin{align*}\sum_{n=0}^\infty a_n&amp;=\sum_{n=0}^\infty\left(\int_0^1x^n\,\mathrm dx\right)\left(\int_0^1(2y(1-y))^n\,\mathrm dy\right)\\&amp;=\int_0^1\int_0^1\sum_{n=0}^\infty(2xy(1-y))^n\,\mathrm dx\,\mathrm dy\\&amp;=\int_0^1\int_0^1{1\over1-2xy(1-y)}\,\mathrm dx\,\mathrm dy.\end{align*}\]</span> 做代换<span class="math inline">\(y={1+u\over2}\)</span>，使得<span class="math inline">\(y(1-y)={1+u\over2}\cdot{1-u\over2}={1-u^2\over4}.\)</span></p><p>于是， <span class="math display">\[\begin{align*}\int_0^1\int_0^1{1\over1-2xy(1-y)}\,\mathrm dx\,\mathrm dy&amp;=\int_0^1\left(\frac12\int_{-1}^1{1\over1-x\cdot{1-u^2\over2}}\,\mathrm du\right)\,\mathrm dx\\&amp;=\int_0^1\left(\int_{-1}^1{1\over2-x(1-u^2)}\,\mathrm du\right)\,\mathrm dx\\&amp;=\int_0^1\left(\int_{-1}^1{1\over2-x+xu^2}\,\mathrm du\right)\,\mathrm dx\\&amp;=\int_0^1\left(\frac1x\int_{-1}^1{1\over u^2+{2-x\over x}}\,\mathrm du\right)\,\mathrm dx\\&amp;=\int_0^1\left(\left.\frac1x\sqrt{x\over2-x}\arctan{u\over\sqrt{2-x\over x}}\right|_{u=-1}^{u=1}\right)\,\mathrm dx\\&amp;=\int_0^1\left(\frac2x\sqrt{x\over2-x}\arctan{1\over\sqrt{2-x\over x}}\right)\,\mathrm dx\\&amp;=\int_0^1\left({2\over \sqrt{x(2-x)}}\arctan{\sqrt{x\over 2-x}}\right)\,\mathrm dx.\end{align*}\]</span> 做代换<span class="math inline">\(x=1-t\)</span>，使得<span class="math inline">\(x(2-x)=(1-t)(1+t)=1-t^2\)</span>.</p><p>于是， <span class="math display">\[\begin{align*}\text{原积分}=\int_0^1{2\over\sqrt{1-t^2}}\arctan\sqrt{1-t\over1+t}\,\mathrm dt\end{align*}\]</span> 做代换<span class="math inline">\(t=\cos\theta\)</span>，利用半角公式<span class="math inline">\(\tan\frac\theta2=\sqrt{1-\cos\theta\over1+\cos\theta}\)</span>： <span class="math display">\[\begin{align*}\text{原积分}&amp;=\int_0^\frac\pi2{2\over\sin\theta}\arctan\left(\tan\frac\theta2\right)\sin\theta\,\mathrm d\theta\\&amp;=\int_0^\frac\pi2\theta\,\mathrm d\theta\\&amp;={\pi^2\over8}.\end{align*}\]</span> 最终， <span class="math display">\[\sum_{n=1}^\infty a_n=-a_0+\sum_{n=0}^\infty a_n={\pi^2\over8}-1.\]</span></p>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> 数学 </tag>
-            
-            <tag> 级数 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>定积分性质例题</title>
-      <link href="/posts/5066/"/>
-      <url>/posts/5066/</url>
-      
-        <content type="html"><![CDATA[<p><strong>问题：在<span class="math inline">\([0,\pi]\)</span>上的连续函数<span class="math inline">\(f\)</span>满足</strong> <span class="math display">\[\int_0^\pi f(x)\sin x\,\mathrm dx=\int_0^\pi f(x)\cos x\,\mathrm dx=0,\]</span> <strong>证明<span class="math inline">\(f\)</span>在<span class="math inline">\((0,\pi)\)</span>内至少有两个零点.</strong></p><span id="more"></span><p><strong>证明:</strong></p><p>不妨设<span class="math inline">\(f\)</span>不恒为0.</p><p>若<span class="math inline">\(f(x)\)</span>在<span class="math inline">\((0,\pi)\)</span>内无零点, 则不变号, 不妨设<span class="math inline">\(f(x)&gt;0\)</span>. 此时<span class="math display">\[f(x)\sin x&gt;0,\forall x\in(0,\pi)\implies\int_0^1f(x)\sin x\,\mathrm dx&gt;0,\]</span> 与条件矛盾. 于是<span class="math inline">\(f(x)\)</span>在<span class="math inline">\((0,\pi)\)</span>上变号, 至少有一个零点.</p><p>若只有一个变号零点<span class="math inline">\(x_0\in(0,\pi)\)</span>, 不妨设在<span class="math inline">\((0,x_0)\)</span>上<span class="math inline">\(f(x)&gt;0\)</span>, <span class="math inline">\((x_0,\pi)\)</span>上<span class="math inline">\(f(x)&lt;0\)</span>. 那么 <span class="math display">\[F(x)=f(x)\sin(x-x_0)\leq0,~\forall x\in(0,\pi).\]</span> 又因为 <span class="math display">\[\begin{align*}\int_0^\pi F(x)\,\mathrm dx&amp;=\cos x_0\int_0^\pi f(x)\sin x\,\mathrm dx-\sin x_0\int_0^\pi f(x)\cos x\,\mathrm dx\\&amp;=\cos x_0\cdot0-\sin x_0\cdot 0\\&amp;=0,\end{align*}\]</span> 故<span class="math inline">\(F(x)\equiv0\)</span>, 于是<span class="math inline">\(f(x)\equiv0,~\forall x\in(0,\pi)\)</span>, 矛盾.</p><p>于是<span class="math inline">\(f(x)\)</span>在<span class="math inline">\((0,\pi)\)</span>上至少有两个零点.</p>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> 数学 </tag>
-            
-            <tag> 微积分 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>计算定积分</title>
-      <link href="/posts/45803/"/>
-      <url>/posts/45803/</url>
-      
-        <content type="html"><![CDATA[<p>计算 <span class="math display">\[\int_0^1{\ln\left(x+\sqrt{1-x^2}\right)\over x}\,\mathrm dx.\]</span> <span id="more"></span></p><hr><h2 id="方法一-feynmans-trick">方法一 （Feynman's Trick）</h2><p>定义 <span class="math display">\[I(a)=\int_{0}^{1} \frac{\ln \left(a x+\sqrt{1-x^{2}}\right)}{x}\,\mathrm d x,\]</span> 那么 <span class="math display">\[\begin{align*}I^{\prime}(a)&amp;=\int_0^1{x\over ax+\sqrt{1-x^2}}\frac1x\,\mathrm dx\\&amp;=\int_{0}^{1} \frac{\mathrm d x}{a x+\sqrt{1-x^{2}}}\\&amp;=\int_0^{\frac\pi2}{\cos t\over a\sin t+\cos t}\,\mathrm dt\\&amp;=: I\end{align*}\]</span> 定义 <span class="math display">\[J=\int_0^{\frac\pi2}{\sin t\over a\sin t +\cos t}\,\mathrm dt,\]</span> 组合积分法： <span class="math display">\[I+aJ=\int_0^\frac\pi2{a\sin t+\cos t\over a\sin t +\cos t}\,\mathrm dt=\frac\pi2\]</span></p><p><span class="math display">\[\begin{align*}aI-J&amp;=\int_0^\frac\pi2{a\cos t-\sin t\over a\sin t+\cos t}\,\mathrm dx\\&amp;=\int_0^\frac\pi2{\mathrm d(a\sin t+\cos t)\over a\sin t+\cos t}\\&amp;=\left.\ln(a\sin t+\cos t)\right|_0^\frac\pi2\\&amp;=\ln a\end{align*}\]</span></p><p>解得 (Cramer法则) <span class="math display">\[\begin{align*}I&amp;={\begin{vmatrix}\frac\pi2&amp;a\\\ln a&amp;-1\end{vmatrix}\over\begin{vmatrix}1&amp;a\\a&amp;-1\end{vmatrix}}\\&amp;=\frac{1}{1+a^{2}}\left(\frac{\pi}{2}+a \ln a\right).\end{align*}\]</span> 此外， <span class="math display">\[\begin{align*}I(0)&amp;=\int_0^1{\ln\sqrt{1-x^2}\over x}\,\mathrm dx\\&amp;=\int_0^1{\ln\sqrt{1-t}\over\sqrt{t}}{\mathrm dt\over 2\sqrt t}&amp;&amp;\text{by $x^2=t$}\\&amp;=\frac14\int_0^1{\ln(1-t)\over t}\,\mathrm dx\\&amp;=-\frac14\int_0^1\sum_{n=1}^\infty{x^{n-1}\over n}\,\mathrm dx&amp;&amp;\text{by Taylor Series}\\&amp;=-\frac14\sum_{n=1}^\infty\frac1n\int_0^1x^{n-1}\,\mathrm dx\\&amp;=-\frac14\sum_{n=1}^\infty\frac{1}{n^2}\\&amp;=-\frac{\pi^2}{24},\end{align*}\]</span> 于是 <span class="math display">\[\begin{align*}\text{原积分}&amp;=I(1)\\&amp;=I(0)+\int_0^1I'(a)\,\mathrm da\\&amp;=-\frac{\pi^2}{24}+\int_0^1\frac{1}{1+a^{2}}\left(\frac{\pi}{2}+a \ln a\right)\,\mathrm da\\&amp;=-\frac{\pi^2}{24}+\frac{\pi}{2}\int_0^1\frac{1}{1+a^{2}}\,\mathrm dx+\int_0^1\frac{a}{1+a^{2}}\ln a\,\mathrm da\\&amp;=-\frac{\pi^2}{24}+\frac\pi2\cdot\frac\pi4+\int_0^1\sum_{n=0}^\infty(-1)^na^{2n+1}\ln a\,\mathrm da\\&amp;=\frac{\pi^2}{12}+\sum_{n=0}^\infty{(-1)^{n+1}\over(2n+2)^2}\\&amp;=\frac{\pi^2}{12}-\frac14\sum_{n=1}^\infty{(-1)^{n}\over n^2}\\&amp;=\frac{\pi^2}{12}-\frac14\cdot\frac{\pi^2}{12}\\&amp;=\frac{\pi^2}{16}.\end{align*}\]</span> <em>注：积分号下求导、积分与求和换序需要有定理保障.</em></p><hr><h2 id="方法二feynmans-trick">方法二（Feynman's Trick）</h2><p><span class="math display">\[I=\int_0^1{\ln(x+\sqrt{1-x^2})\over x}\,\mathrm dx=\int_0^1{\ln \left[x\left(1+{\sqrt{1-x^2\over x^2}}\right)\right]\over x}\,\mathrm dx\]</span></p><p>故作代换<span class="math inline">\(t=\sqrt{1-x^2\over x^2}\)</span>, 那么<span class="math inline">\(x=\frac{1}{\sqrt{1+t^2}}\)</span>, <span class="math inline">\(\mathrm dx=-t(1+t^2)^{-\frac32}\,\mathrm dt:\)</span> <span class="math display">\[\begin{align*}I&amp;=\int_0^\infty{\ln\left[(1+t^2)^{-\frac12}(1+t)\right]\over(1+t^2)^{-\frac12}}\cdot t(1+t^2)^{-\frac32}\,\mathrm dt\\&amp;=\int_0^\infty{t\ln\left({1+t\over\sqrt{1+t^2}}\right)\over 1+t^2}\,\mathrm dt\\&amp;=\frac12\int_0^\infty{t\ln\left({(1+t)^2\over{1+t^2}}\right)\over 1+t^2}\,\mathrm dt\\&amp;=\frac12\int_0^\infty{t\ln\left(1+{2t\over 1+t^2}\right)\over 1+t^2}\,\mathrm dt\\\end{align*}\]</span> 定义 <span class="math display">\[I(a)=\frac12\int_0^\infty{t\ln\left(1+{2at\over 1+t^2}\right)\over 1+t^2}\,\mathrm dt,\]</span> 那么 <span class="math display">\[\begin{align*}I'(a)&amp;=\frac12\int_0^\infty {t\over 1+t^2}\cdot{1\over 1+{2at\over 1+t^2}}\cdot{2t\over 1+t^2}\,\mathrm dt\\&amp;=\int_0^\infty{t^2\over(t^2+1)(t^2+2at+1)}\,\mathrm d t\\&amp;=\frac{1}{2a}\int_0^\infty\left({t\over t^2+1}-{t\over t^2+2at+1}\right)\,\mathrm dt\\&amp;=\frac{1}{2a}\int_0^\infty\left(\frac12\cdot{\mathrm d(t^2+1)\over t^2+1}-\frac12\cdot{\mathrm d(t^2+2at+1)\over t^2+2at+1}+{a\over t^2+2at+1}\,\mathrm dt\right)\\&amp;=\frac{1}{4a}\left.\ln({t^2+1\over t^2+2at+1})\right|_{t=0}^\infty+\frac12\int_0^\infty{1\over(t+a)^2+1-a^2}\,\mathrm dt\\&amp;=0+\frac12\cdot{1\over1-a^2}\int_0^\infty{1\over1+\left({t+a\over\sqrt{1-a^2}}\right)^2}\,\mathrm dt\\&amp;=0+\frac12\cdot{1\over\sqrt{1-a^2}}\int_0^\infty{1\over1+\left({t+a\over\sqrt{1-a^2}}\right)^2}\,\mathrm d\left(t+a\over\sqrt{1-a^2}\right)\\&amp;={1\over 2\sqrt{1-a^2}}\left.\arctan\left(t+a\over\sqrt{1-a^2}\right)\right|_{t=0}^\infty\\&amp;={\frac\pi2-\arctan\left(a\over\sqrt{1-a^2}\right)\over2\sqrt{1-a^2}}\\&amp;={\arctan\left(\sqrt{1-a^2}\over a\right)\over 2\sqrt{1-a^2}}\end{align*}\]</span> 且<span class="math inline">\(I(0)=0\)</span>, 于是 <span class="math display">\[\begin{align*}\text{原积分}&amp;=I(1)\\&amp;=I(0)+\int_0^1 I'(a)\,\mathrm da\\&amp;=\int_0^1{\arctan\left(\sqrt{1-a^2}\over a\right)\over 2\sqrt{1-a^2}}\,\mathrm da\\&amp;=\int_0^\frac\pi2{\arctan({\sin x\over\cos x})\over 2\sin x}\sin x\,\mathrm dx\\&amp;=\int_0^\frac\pi2\frac x2\,\mathrm dx\\&amp;={\pi^2\over16}.\end{align*}\]</span></p>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> 数学 </tag>
-            
-            <tag> 微积分 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>科普是一项非常难的工作</title>
-      <link href="/posts/20918/"/>
-      <url>/posts/20918/</url>
-      
-        <content type="html"><![CDATA[<p>要想当一个好学生，只需要把知识学懂。</p><p>要想当一个好老师，需要一些基础知识，还需要良好的性格和表达能力、心理学和教育学经验。</p><p>要想当一个好教授，需要有专业知识、科研水平，只需要一般般的表达能力。</p><p><strong>而要当一个好的科普工作者，需要有远超学生的理解能力，教授一样的专业水平，老师一样的教学功力，艺术家一样的审美，作家一样的文笔，诗人一样的清高，科学家一样对知识的热爱，艺人一样对大众心理的把控能力，运动员一样的毅力，还要有自身的人格魅力、抗压抗打击能力。</strong></p><p>科普是一项非常难的工作，比讲课教书难得多。因为它面对的不是专业人士，而是乌合之众。这导致科普工作者必须用通俗语言来解释专业知识，却又不至于过于通俗而产生误导。稍微有一点漏洞就会被抓住攻击——有问题的科普比谣言更可怕，比迷信更害人。</p><p>所以，科普工作者是一个神圣的标签，这个名号比想象中要严苛得多。</p>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> 随笔 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>利用积分下求导计算无穷积分</title>
-      <link href="/posts/30510/"/>
-      <url>/posts/30510/</url>
-      
-        <content type="html"><![CDATA[<p>计算 <span class="math display">\[\int_{-\infty}^{+\infty}{x\sin x\over (x^2+a^2)(x^2+b^2)}\,\mathrm dx.\]</span> 其实是测试一下内嵌pdf.</p><span id="more"></span><div class="pdfobject-container" data-target="/file/integrate.pdf" data-height="500px"></div>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> 数学 </tag>
-            
-            <tag> 微积分 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>$f(A)$的特征值</title>
-      <link href="/posts/3877/"/>
-      <url>/posts/3877/</url>
-      
-        <content type="html"><![CDATA[<p><strong>引理 (Schur's Lemma): 若<span class="math inline">\(A\)</span>是数域<span class="math inline">\(F\)</span>上的<span class="math inline">\(n\)</span>阶方阵, 且<span class="math inline">\(A\)</span>的特征值都在<span class="math inline">\(F\)</span>中, 那么<span class="math inline">\(A\)</span>与一个上三角阵相似.</strong></p><p><strong>证明: </strong></p><p>归纳法. 当<span class="math inline">\(n=1\)</span>时显然成立: 此时<span class="math inline">\(A\)</span>本身是上三角阵.</p><p>假设结论对<span class="math inline">\(n-1\)</span>阶方阵成立, 且<span class="math inline">\(A\in F^{n\times n}\)</span>的特征值都在<span class="math inline">\(F\)</span>中. 记特征向量<span class="math inline">\(v_1\)</span>对应的特征值是<span class="math inline">\(\lambda_1\in F\)</span>, 并把<span class="math inline">\(v_1\)</span>扩展为<span class="math inline">\(F^n\)</span>的一组基<span class="math inline">\(\mathcal B=(v_1,\ldots,v_n)\)</span>. 在这组基下, <span class="math inline">\(A\)</span>被相似变换为矩阵<span class="math display">\[[A]_\mathcal{B}=\begin{bmatrix}\lambda_1 &amp; *\\ 0 &amp; A_1\end{bmatrix},\]</span> 其中<span class="math inline">\(A_1\in F^{(n-1)\times (n-1)}\)</span>.</p><span id="more"></span><p>由于相似矩阵有相同的特征多项式, 于是<span class="math display">\[\det(xI-A)=\det(xI-[A]_\mathcal B)=(x-\lambda_1)\det(xI-A_1).\]</span> 又因为<span class="math inline">\(\det(xI-A)\)</span>的根都在<span class="math inline">\(F\)</span>中, 所以<span class="math inline">\(\det(xI-A_1)\)</span>的根也都在<span class="math inline">\(F\)</span>中, 这说明<span class="math inline">\(A_1\)</span>是特征值都在<span class="math inline">\(F\)</span>中的<span class="math inline">\(n-1\)</span>阶方阵.</p><p>于是根据归纳假设, 存在可逆阵<span class="math inline">\(P\in F^{(n-1)\times(n-1)}\)</span>使得<span class="math display">\[U=PA_1P^{-1}\]</span>是上三角阵. 那么只需构造可逆阵<span class="math display">\[Q=\begin{bmatrix}1&amp;0\\0&amp;P\end{bmatrix},\]</span>便有<span class="math display">\[Q[A]_\mathcal B Q^{-1}=\begin{bmatrix}1&amp;0\\0&amp;P\end{bmatrix}\begin{bmatrix}\lambda_1&amp;*\\0&amp;A_1\end{bmatrix}\begin{bmatrix}1&amp;0\\0&amp;P^{-1}\end{bmatrix}=\begin{bmatrix}\lambda_1&amp;*\\0&amp;U\end{bmatrix}\]</span>是上三角阵.</p><p>这说明<span class="math inline">\(A\)</span>与一个上三角阵相似, 归纳法完成.</p><p><em>注: 一个更强的结论是Jordan标准型.</em></p><hr><p><strong>定理: 若<span class="math inline">\(A\)</span>是数域<span class="math inline">\(F\)</span>上的<span class="math inline">\(n\)</span>阶方阵, 且<span class="math inline">\(A\)</span>的特征值都在<span class="math inline">\(F\)</span>中. <span class="math inline">\(f\)</span>是<span class="math inline">\(F\)</span>上的多项式, 那么<span class="math inline">\(a\)</span>是<span class="math inline">\(f(A)\)</span>的特征值<span class="math inline">\(\iff\)</span><span class="math inline">\(a=f(\lambda)\)</span>, 其中<span class="math inline">\(\lambda\)</span>是<span class="math inline">\(A\)</span>的特征值.</strong></p><p><strong>证明:</strong></p><p><span class="math inline">\((\Longleftarrow)\)</span>容易, 略.</p><p><span class="math inline">\((\Longrightarrow)\)</span>根据引理, <span class="math inline">\(A\)</span>与一个上三角阵<span class="math inline">\(T\)</span>相似: <span class="math display">\[A=Q^{-1}TQ.\]</span> 由于<span class="math inline">\(f\)</span>是多项式, 那么 <span class="math display">\[f(A)=f(Q^{-1}TQ)=Q^{-1}f(T)Q.\]</span> 根据上三角阵的性质, <span class="math inline">\(f(T)\)</span>也是上三角阵, 且<span class="math inline">\(f(T)\)</span>的对角元恰好是<span class="math inline">\(f(\lambda)\)</span>, 其中<span class="math inline">\(\lambda\)</span>是<span class="math inline">\(T\)</span>的对角元.</p><p>因为相似矩阵有相同的特征值, 且上三角阵的对角元与其特征值对应, 于是<span class="math inline">\(f(A)\)</span>的特征值都是<span class="math inline">\(f(\lambda)\)</span>的形式, 其中<span class="math inline">\(\lambda\)</span>是<span class="math inline">\(A\)</span>的特征值.</p>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> 数学 </tag>
-            
-            <tag> 线性代数 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Hello World</title>
-      <link href="/posts/16107/"/>
-      <url>/posts/16107/</url>
-      
-        <content type="html"><![CDATA[<p>第一篇. 果然搭建环境啥的才是最坑的.</p><p>总算把world给哈喽出来了, 你先在这哈着吧.</p>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-  
-  
+<search>
+  <entry>
+    <title>控制收敛定理 (DCT)</title>
+    <url>/posts/34980/</url>
+    <content><![CDATA[<p><span class="math display">\[\lim_{n\to\infty}\int_S f_n \,d\mu=\int_S f\,d\mu\]</span></p>
+<span id="more"></span>
+<p>条件:</p>
+<ul>
+<li><span class="math inline">\(f_n\)</span> 可测, 逐点收敛到 <span class="math inline">\(f\)</span>.</li>
+<li><span class="math inline">\(f_n\)</span> 被可积函数 <span class="math inline">\(g\)</span> 控制: <span class="math inline">\(|f_n(x)|\leq g(x)\)</span>, 且 <span class="math inline">\(\int_S|g|\,d\mu&lt;\infty.\)</span></li>
+</ul>
+<p>结论:</p>
+<ul>
+<li><span class="math inline">\(f\)</span> 可积</li>
+<li><span class="math inline">\(\lim_{n\to\infty}\int_S|f_n-f|\,d\mu=0\)</span></li>
+<li><span class="math inline">\(\lim_{n\to\infty}\int_S f_n \,d\mu=\int_S f\,d\mu\)</span></li>
+</ul>
+]]></content>
+      <tags>
+        <tag>数学</tag>
+        <tag>实变函数</tag>
+        <tag>分析</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>分块矩阵的行列式</title>
+    <url>/posts/42453/</url>
+    <content><![CDATA[<h2 id="结论">结论</h2>
+<p>设分块矩阵 <span class="math inline">\(\Gamma=\begin{pmatrix}A&amp;B\\C&amp;D\end{pmatrix}\)</span>, 那么</p>
+<ul>
+<li><span class="math inline">\(A\)</span> 可逆时, <span class="math inline">\(\det(\Gamma)=\det(A)\det(D-CA^{-1}B)\)</span></li>
+<li><span class="math inline">\(D\)</span> 可逆时, <span class="math inline">\(\det(\Gamma)=\det(A-BD^{-1}C)\det(D)\)</span></li>
+</ul>
+<span id="more"></span>
+<h2 id="特殊情况">特殊情况</h2>
+<ul>
+<li><p><span class="math inline">\(\begin{equation}\det\begin{pmatrix}  A&amp;0\\ C&amp;D \end{pmatrix}=\det(A)\det(D)\label{lower}\end{equation}\)</span></p></li>
+<li><p><span class="math inline">\(\begin{equation}\label{upper}\det\begin{pmatrix}  A&amp;B\\ 0&amp;D \end{pmatrix}=\det(A)\det(D)\end{equation}\)</span></p></li>
+<li><p><span class="math inline">\(\begin{equation}\label{diag}\det\begin{pmatrix}  A&amp;0\\ 0&amp;D \end{pmatrix}=\det(A)\det(D)\end{equation}\)</span></p></li>
+<li><p><span class="math inline">\(\begin{equation}\label{commute}\text{当 $CD=DC$ 时, }\det(\Gamma)=\det(AD-BC)\end{equation}\)</span></p></li>
+<li><p><span class="math inline">\(\begin{equation}\label{AB}\det\begin{pmatrix} A&amp;B\\B&amp;A \end{pmatrix}=\det(A+B)\det(A-B)\end{equation}\)</span></p></li>
+</ul>
+<h2 id="证明">证明</h2>
+<p>先证 <span class="math inline">\(\eqref{lower}\)</span> : 对 <span class="math inline">\(A\)</span> 部分进行(倍加)<strong>行变换</strong>化为下三角阵, 再对 <span class="math inline">\(D\)</span> 部分进行<strong>列变换</strong>化为下三角阵. 这并不影响 <span class="math inline">\(A\)</span> , <span class="math inline">\(D\)</span> 和分块矩阵的行列式, 且都化为了对角线的乘积. 结论显然.</p>
+<p><span class="math inline">\(\eqref{upper}\)</span> 的证明可以通过取转置得到, <span class="math inline">\(\eqref{diag}\)</span> 是一种特殊情况.</p>
+<p>对于一般情况, 需要利用 <span class="math display">\[\begin{pmatrix}
+    A&amp;B\\C&amp;D
+\end{pmatrix}\begin{pmatrix}
+    I&amp;0\\ -D^{-1}C&amp;I
+\end{pmatrix}=\begin{pmatrix}
+    A-BD^{-1}C&amp;B\\0&amp;D
+\end{pmatrix}.\]</span> 可以把它想成是一种列变换: 把第二列右乘 <span class="math inline">\(-D^{-1}C\)</span> 加到第一列. 两边取行列式并利用 <span class="math inline">\(\det(AB)=\det(A)\det(B)\)</span> 和 <span class="math inline">\(\eqref{upper}\)</span> , 就得到了 <span class="math inline">\(\det(\Gamma)=\det(A-BD^{-1}C)\det(D)\)</span> . 另外一个结论可以利用行变换类似得到.</p>
+<hr>
+<p>下面证 <span class="math inline">\(\eqref{commute}\)</span> . 注意已知 <span class="math inline">\(CD=DC\)</span>.</p>
+<p>我们可以利用 <span class="math display">\[\begin{pmatrix}
+    A&amp;B\\C&amp;D
+\end{pmatrix}\begin{pmatrix}
+    D&amp;0\\-C&amp;I
+\end{pmatrix}=\begin{pmatrix}
+    AD-BC&amp;B\\0&amp;D
+\end{pmatrix}.\]</span> 两边取行列式就得到了 <span class="math display">\[\det(\Gamma)\det(D)=\det(AD-BC)\det(D).\]</span> 如果 <span class="math inline">\(\det(D)\ne0\)</span> , 那么消去 <span class="math inline">\(\det(D)\)</span> 即得结论.</p>
+<p>也可以利用开头的结论<span class="math display">\[\begin{aligned}
+    \det(\Gamma)
+    &amp;=\det(A-BD^{-1}C)\det(D)\\
+    &amp;=\det(AD-BD^{-1}CD)\\
+    &amp;=\det(AD-BD^{-1}DC)\\
+    &amp;=\det(AD-BC).\\
+\end{aligned}\]</span></p>
+<p>当 <span class="math inline">\(\det(D)=0\)</span> 时, 可以给 <span class="math inline">\(D\)</span> 一个扰动. 也就是说, 我们用 <span class="math inline">\(D_\varepsilon=D+\varepsilon I\)</span> 代替 <span class="math inline">\(D\)</span> , 其中 <span class="math inline">\(D_\varepsilon\)</span> 可逆且 <span class="math inline">\(\varepsilon\)</span> 是可以任意小的正数. 这个结论可以利用特征值的性质证明, 也可以利用关于<span class="math inline">\(\varepsilon\)</span>的多项式 <span class="math inline">\(\det(D_\varepsilon)\)</span> 只在有限个点上取 <span class="math inline">\(0\)</span>.</p>
+<p>不难看到 <span class="math inline">\(D_\varepsilon\)</span> 仍然是与 <span class="math inline">\(C\)</span> 可交换的. 然后利用上面的方法可以得到<span class="math display">\[\det(\Gamma)=\det(AD_\varepsilon-BC).\]</span> 令 <span class="math inline">\(\varepsilon\to0\)</span> 便得到了 <span class="math inline">\(\det(\Gamma)=\det(AD-BC).\)</span></p>
+<p>这是由于等号右边是关于 <span class="math inline">\(\varepsilon\)</span> 的多项式, 所以连续, 而 <span class="math inline">\(D_0=D\)</span>.</p>
+<hr>
+<p>对 <span class="math inline">\(\eqref{AB}\)</span>, 只需要对<span class="math display">\[\begin{pmatrix}
+    I&amp;0\\-I&amp;I
+\end{pmatrix}\begin{pmatrix}
+    A&amp;B\\B&amp;A
+\end{pmatrix}\begin{pmatrix}
+    I&amp;0\\I&amp;I
+\end{pmatrix}=\begin{pmatrix}
+    A+B&amp;B\\0&amp;A-B
+\end{pmatrix}\]</span>两边取行列式.</p>
+]]></content>
+      <tags>
+        <tag>数学</tag>
+        <tag>线性代数</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>常见的ODE解法</title>
+    <url>/posts/65228/</url>
+    <content><![CDATA[<h3 id="可分离变量-ypyqx">1. 可分离变量 <span class="math inline">\(y'=p(y)q(x)\)</span></h3>
+<p>分离变量后两边积分.</p>
+<h3 id="一阶齐次线性-ypxy0">2. 一阶齐次线性 <span class="math inline">\(y'+p(x)y=0\)</span></h3>
+<p><span class="math display">\[
+y=Ce^{-\int p(x)dx}
+\]</span></p>
+<h3 id="一阶非齐次线性-ypxyqx">3. 一阶非齐次线性 <span class="math inline">\(y'+p(x)y=q(x)\)</span></h3>
+<ul>
+<li><p><span class="math inline">\(y=e^{-\int p(x)dx}\left(C+\int q(x)e^{\int p(x)}dx\right)\)</span></p></li>
+<li><p>取积分因子 <span class="math inline">\(\mu(x)=e^{\int p(x)dx}\)</span>.</p></li>
+</ul>
+<blockquote>
+<p>🌰 <span class="math inline">\(y'-2y/x=0\)</span>. <span class="math display">\[\begin{aligned}
+&amp;\mu(x)=e^{\int-\frac2x dx}=e^{-2\ln x}=\frac{1}{x^2}\\
+&amp;\implies{1\over x^2}y'-{2\over x^3}y=0\\
+&amp;\implies\left({y\over x^2}\right)'=0\\
+&amp;\implies y=Cx^2
+\end{aligned}
+\]</span></p>
+</blockquote>
+]]></content>
+      <tags>
+        <tag>数学</tag>
+        <tag>分析</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>$f(A)$的特征值</title>
+    <url>/posts/3877/</url>
+    <content><![CDATA[<p><strong>引理 (Schur's Lemma): 若<span class="math inline">\(A\)</span>是数域<span class="math inline">\(F\)</span>上的<span class="math inline">\(n\)</span>阶方阵, 且<span class="math inline">\(A\)</span>的特征值都在<span class="math inline">\(F\)</span>中, 那么<span class="math inline">\(A\)</span>与一个上三角阵相似.</strong></p>
+<p><strong>证明: </strong></p>
+<p>归纳法. 当<span class="math inline">\(n=1\)</span>时显然成立: 此时<span class="math inline">\(A\)</span>本身是上三角阵.</p>
+<p>假设结论对<span class="math inline">\(n-1\)</span>阶方阵成立, 且<span class="math inline">\(A\in F^{n\times n}\)</span>的特征值都在<span class="math inline">\(F\)</span>中. 记特征向量<span class="math inline">\(v_1\)</span>对应的特征值是<span class="math inline">\(\lambda_1\in F\)</span>, 并把<span class="math inline">\(v_1\)</span>扩展为<span class="math inline">\(F^n\)</span>的一组基<span class="math inline">\(\mathcal B=(v_1,\ldots,v_n)\)</span>. 在这组基下, <span class="math inline">\(A\)</span>被相似变换为矩阵<span class="math display">\[[A]_\mathcal{B}=\begin{bmatrix}\lambda_1 &amp; *\\ 0 &amp; A_1\end{bmatrix},\]</span> 其中<span class="math inline">\(A_1\in F^{(n-1)\times (n-1)}\)</span>.</p>
+<span id="more"></span>
+<p>由于相似矩阵有相同的特征多项式, 于是<span class="math display">\[\det(xI-A)=\det(xI-[A]_\mathcal B)=(x-\lambda_1)\det(xI-A_1).\]</span> 又因为<span class="math inline">\(\det(xI-A)\)</span>的根都在<span class="math inline">\(F\)</span>中, 所以<span class="math inline">\(\det(xI-A_1)\)</span>的根也都在<span class="math inline">\(F\)</span>中, 这说明<span class="math inline">\(A_1\)</span>是特征值都在<span class="math inline">\(F\)</span>中的<span class="math inline">\(n-1\)</span>阶方阵.</p>
+<p>于是根据归纳假设, 存在可逆阵<span class="math inline">\(P\in F^{(n-1)\times(n-1)}\)</span>使得<span class="math display">\[U=PA_1P^{-1}\]</span>是上三角阵. 那么只需构造可逆阵<span class="math display">\[Q=\begin{bmatrix}1&amp;0\\0&amp;P\end{bmatrix},\]</span>便有<span class="math display">\[Q[A]_\mathcal B Q^{-1}=\begin{bmatrix}1&amp;0\\0&amp;P\end{bmatrix}\begin{bmatrix}\lambda_1&amp;*\\0&amp;A_1\end{bmatrix}\begin{bmatrix}1&amp;0\\0&amp;P^{-1}\end{bmatrix}=\begin{bmatrix}\lambda_1&amp;*\\0&amp;U\end{bmatrix}\]</span>是上三角阵.</p>
+<p>这说明<span class="math inline">\(A\)</span>与一个上三角阵相似, 归纳法完成.</p>
+<p><em>注: 一个更强的结论是Jordan标准型.</em></p>
+<hr>
+<p><strong>定理: 若<span class="math inline">\(A\)</span>是数域<span class="math inline">\(F\)</span>上的<span class="math inline">\(n\)</span>阶方阵, 且<span class="math inline">\(A\)</span>的特征值都在<span class="math inline">\(F\)</span>中. <span class="math inline">\(f\)</span>是<span class="math inline">\(F\)</span>上的多项式, 那么<span class="math inline">\(a\)</span>是<span class="math inline">\(f(A)\)</span>的特征值<span class="math inline">\(\iff\)</span><span class="math inline">\(a=f(\lambda)\)</span>, 其中<span class="math inline">\(\lambda\)</span>是<span class="math inline">\(A\)</span>的特征值.</strong></p>
+<p><strong>证明:</strong></p>
+<p><span class="math inline">\((\Longleftarrow)\)</span>容易, 略.</p>
+<p><span class="math inline">\((\Longrightarrow)\)</span>根据引理, <span class="math inline">\(A\)</span>与一个上三角阵<span class="math inline">\(T\)</span>相似: <span class="math display">\[
+A=Q^{-1}TQ.
+\]</span> 由于<span class="math inline">\(f\)</span>是多项式, 那么 <span class="math display">\[
+f(A)=f(Q^{-1}TQ)=Q^{-1}f(T)Q.
+\]</span> 根据上三角阵的性质, <span class="math inline">\(f(T)\)</span>也是上三角阵, 且<span class="math inline">\(f(T)\)</span>的对角元恰好是<span class="math inline">\(f(\lambda)\)</span>, 其中<span class="math inline">\(\lambda\)</span>是<span class="math inline">\(T\)</span>的对角元.</p>
+<p>因为相似矩阵有相同的特征值, 且上三角阵的对角元与其特征值对应, 于是<span class="math inline">\(f(A)\)</span>的特征值都是<span class="math inline">\(f(\lambda)\)</span>的形式, 其中<span class="math inline">\(\lambda\)</span>是<span class="math inline">\(A\)</span>的特征值.</p>
+]]></content>
+      <tags>
+        <tag>数学</tag>
+        <tag>线性代数</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>$\arcsin^2x$的展开式</title>
+    <url>/posts/20316/</url>
+    <content><![CDATA[<p>证明 <span class="math display">\[
+\arcsin^2x=\frac12\sum_{n=1}^\infty{(2x)^{2n}\over n^2{2n\choose n}}.
+\]</span> <span id="more"></span></p>
+<p>先求导： <span class="math display">\[
+(\arcsin^2 x)'={2\arcsin x\over\sqrt{1-x^2}}
+\]</span> 利用恒等式<span class="math inline">\(\arcsin x=\arctan\left(x\over\sqrt{1-x^2}\right)\)</span>，有 <span class="math display">\[
+\begin{align*}
+{\arcsin x\over\sqrt{1-x^2}}&amp;={1\over\sqrt{1-x^2}}\arctan\left(x\over\sqrt{1-x^2}\right)\\
+&amp;=\frac1x\cdot{1\over\sqrt{1-x^2\over x^2}}\arctan\left({1\over\sqrt{1-x^2\over x^2}}\right)\\
+&amp;=\left.\frac1x\cdot{1\over\sqrt{1-x^2\over x^2}}\arctan\left({t\over\sqrt{1-x^2\over x^2}}\right)\right|_{t=0}^{t=1}\\
+&amp;=\frac1x\int_0^1{\mathrm dt\over t^2+{1-x^2\over x^2}}\\
+&amp;=x\int_0^1{\mathrm dt\over 1-x^2+x^2t^2}\\
+&amp;=x\int_0^1\sum_{n=0}^\infty(x^2-x^2t^2)^n\,\mathrm dt\\
+&amp;=\int_0^1\sum_{n=0}^\infty (1-t^2)^nx^{2n+1}\,\mathrm dt\\
+&amp;=\sum_{n=0}^\infty\left(\int_0^1(1-t^2)^n\,\mathrm dt\right) x^{2n+1}.
+\end{align*}
+\]</span> 其中利用分部积分 <span class="math display">\[
+\begin{align*}
+I_n&amp;=\int_0^1(1-t^2)^n\,\mathrm dt\\
+&amp;=\int_0^1(1-t^2)(1-t^2)^{n-1}\,\mathrm dt\\
+&amp;=\int_0^1(1-t^2)^{n-1}\,\mathrm dt-\int_0^1t^2(1-t^2)^{n-1}\,\mathrm dt\\
+&amp;=I_{n-1}+\frac{1}{2n}\int_0^1t\,\mathrm d(1-t^2)^{n}\\
+&amp;=I_{n-1}+\frac{1}{2n}\left.t(1-t^2)^n\right|_0^1-\frac{1}{2n}\int_0^1(1-t^2)^n\,\mathrm dt\\
+&amp;=I_{n-1}-\frac{1}{2n}I_n\\
+&amp;={2n\over2n+1}I_{n-1},
+%&amp;=\left.t(1-t^2)\right|_{0}^1-n\int_0^1t(1-t^2)^{n-1}\,\mathrm dt\\
+%&amp;=-n\left(\left.t^2(1-t^2)^{n-1}\right|_0^1-\int_0^1\left((1-t^2)^{n-1}-2(n-1)t^2(1-t^2)^{n-2}\right)\,\mathrm dt\right)\\
+%&amp;=n\int_0^1(1-t^2)^{n-1}\,\mathrm dt+2n(n-1)\int_0^1t^2(1-t^2)^{n-2}\,\mathrm dt
+%&amp;=\int_0^1\sum_{k=0}^n{n\choose k}(-t^2)^k\,\mathrm dt\\
+%&amp;=\int_0^1\sum_{k=0}^n{n\choose k}(-1)^kt^{2k}\,\mathrm dt\\
+%&amp;=\sum_{k=0}^n{n\choose k}(-1)^k\int_0^1t^{2k}\,\mathrm dt\\
+%&amp;=\sum_{k=0}^n{(-1)^k{n\choose k}\over 2k+1}
+\end{align*}
+\]</span> 递推可得 <span class="math display">\[
+I_n={(2n)!!\over(2n+1)!!}.
+\]</span> 故 <span class="math display">\[
+\begin{align*}
+{\arcsin x\over\sqrt{1-x^2}}&amp;=\sum_{n=0}^\infty\left(\int_0^1(1-t^2)^n\,\mathrm dt\right) x^{2n+1}\\
+&amp;=\sum_{n=0}^\infty{(2n)!!\over(2n+1)!!}x^{2n+1}.
+\end{align*}
+\]</span> 于是积分： <span class="math display">\[
+\begin{align*}
+\arcsin^2x&amp;=\int_0^x(\arcsin^2t)'\,\mathrm dt\\
+&amp;=2\int_0^x{\arcsin t\over\sqrt{1-t^2}}\,\mathrm dt\\
+&amp;=2\int_0^x\sum_{n=0}^\infty{(2n)!!\over(2n+1)!!}t^{2n+1}\,\mathrm dt\\
+&amp;=2\sum_{n=0}^\infty{(2n)!!\over(2n+1)!!}\int_0^x t^{2n+1}\,\mathrm dt\\
+&amp;=2\sum_{n=0}^\infty{(2n)!!\over(2n+1)!!}\cdot{x^{2n+2}\over2n+2}\\
+&amp;=2\sum_{n=0}^\infty{(2^nn!)^2\over(2n+1)!}\cdot{x^{2n+2}\over2n+2}\\
+&amp;=2\sum_{n=0}^\infty{2^{2n}(n!)^2\over(2n+2)!}x^{2n+2}\\
+&amp;=2\sum_{n=0}^\infty{2^{2n+2}\left((n+1)!\right)^2\over2^2(n+1)^2(2n+2)!}x^{2n+2}\\
+&amp;=\frac12\sum_{n=0}^\infty{(2x)^{2n+2}\over(n+1)^2{2n+2\choose n+1}}\\
+&amp;=\frac12\sum_{n=1}^\infty{(2x)^{2n}\over n^2{2n\choose n}}.
+\end{align*}
+\]</span></p>
+]]></content>
+      <tags>
+        <tag>数学</tag>
+        <tag>级数</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>泛函基础</title>
+    <url>/posts/64221/</url>
+    <content><![CDATA[<h2 id="banach-空间">Banach 空间</h2>
+<p>一个完备的赋范空间.</p>
+<blockquote>
+<p>🌰 欧式空间装备了 <span class="math inline">\(p\)</span> 范数.</p>
+</blockquote>
+<span id="more"></span>
+<h2 id="hilbert-空间">Hilbert 空间</h2>
+<p>一个完备的内积空间.</p>
+<blockquote>
+<p>🌰 欧式空间装备了 <span class="math inline">\((u,v)_{\R^n}=u^Tv\)</span>.</p>
+<p>🌰 平方可积的函数空间装备了<span class="math display">\[(u,v)_{L^2(\Omega)}=\int_\Omega uv\d x\]</span></p>
+</blockquote>
+<ul>
+<li><span class="math inline">\(H_0^1(\Omega)\)</span>: 平方可积, 边界为0, 导数平方可积的函数空间, 装备了 <span class="math display">\[(u,v)_{H_0^1(\Omega)}=\int_\Omega \nabla u\cdot \nabla v\d x\]</span></li>
+<li><span class="math inline">\(H(\mathrm{div}, \Omega)\)</span>: 平方可积, 散度平方可积的(向量值)函数空间, 装备了 <span class="math display">\[(u,v)_{H(\mathrm{div,\Omega})}=\int_\Omega u\cdot v+\nabla\cdot u\nabla\cdot v\d x\]</span></li>
+<li><span class="math inline">\(H(\mathrm{curl}, \Omega)\)</span>: 平方可积, 旋度平方可积的(向量值)函数空间, 装备了 <span class="math display">\[(u,v)_{H(\mathrm{curl,\Omega})}=\int_\Omega u\cdot v+\nabla\times u\cdot\nabla\times v\d x\]</span></li>
+</ul>
+<h3 id="线性泛函">线性泛函</h3>
+<p>一个映射 <span class="math inline">\(j\colon X\to\R\)</span> (把 Hilbert 空间中的函数变成数), 满足 <span class="math display">\[j(\alpha u+\beta v)=\alpha j(u)+\beta j(v)\]</span></p>
+<blockquote>
+<p>🌰 在给定区间上积分; 在给定点取值; 在给定点求方向导数</p>
+</blockquote>
+<p>有界线性泛函: 存在 <span class="math inline">\(L\in[0,\infty)\)</span> 使得 <span class="math display">\[|j(u)|\leq L\|u\|_X,\quad\forall u\in X.\]</span></p>
+<p><strong>引理: 有界性<span class="math inline">\(\iff\)</span>连续性.</strong></p>
+<h3 id="对偶空间">对偶空间</h3>
+<p>一个 Hilbert 空间 <span class="math inline">\(X\)</span> 的对偶空间 <span class="math inline">\(X^*\)</span> 是所有有界线性泛函的集合, 装备了范数<span class="math display">\[\|j\|_{X^*}=\sup_{\|u\|_X=1}|j(u)|,\]</span> 也是一个 Hilbert 空间.</p>
+<p><span class="math inline">\(j\)</span> 对 <span class="math inline">\(u\)</span> 的<strong>作用</strong>: <span class="math inline">\(\langle j,u\rangle=j(u)\)</span></p>
+<blockquote>
+<p>🌰 给定 <span class="math inline">\(f\)</span>, <span class="math inline">\(F(v)=\int_\Omega fv\d x\)</span> 是 <span class="math inline">\(H_0^1(\Omega)\)</span> 的对偶空间中的元素.</p>
+</blockquote>
+<p><strong>引理: <span class="math inline">\(V\subset W\implies W^*\subset V^*\)</span>.</strong></p>
+<h3 id="riesz-表示定理">Riesz 表示定理</h3>
+<p><span class="math inline">\(X^*\)</span> 上的有界线性泛函 <span class="math inline">\(j\)</span> 可以被原空间 <span class="math inline">\(X\)</span> 上的元素 <span class="math inline">\(g\)</span> 表示: <span class="math display">\[\langle j,u\rangle=(g,u).\]</span> 且范数相同:<span class="math display">\[\|j\|_{X^*}=\|g\|_X.\]</span> 这是说, 任何有界线性泛函的作用都是某个内积.</p>
+<blockquote>
+<p>🌰 <span class="math inline">\(L^2(\Omega)\)</span> 上的有界线性泛函 <span class="math inline">\(j(v)=\int_\Omega v\d x\)</span>, 实际上就是 <span class="math inline">\(v\)</span> 和常函数 <span class="math inline">\(1\)</span> 的内积.</p>
+</blockquote>
+<h2 id="lebesgue-空间">Lebesgue 空间</h2>
+<p>Lebesgue <span class="math inline">\(p\)</span> 范数: <span class="math display">\[\|u\|_{L^p(\Omega)}=\left(\int_\Omega|u|^p\d x\right)^{1\over p}\]</span></p>
+<p><span class="math display">\[\|u\|_{L^\infty(\Omega)}=\mathrm{ess\ sup}\{|u(x)|\colon x\in\Omega\}\]</span></p>
+<p>Lebesgue 空间: <span class="math display">\[L^p(\Omega)=\{u\colon\Omega\to\R\colon \|u\|_{L^p(\Omega)}&lt;\infty\}\]</span></p>
+<p><em>注: <span class="math inline">\(L^p(\Omega)\)</span> 中的元素实际上是函数的等价类.</em></p>
+<blockquote>
+<p>🌰 <span class="math inline">\(x^{-q}\in L^p((0,1))\iff q&lt;1/p.\)</span></p>
+</blockquote>
+<p><strong>定理: <span class="math inline">\(p\in[1,\infty]\)</span> 的 Lebesgue 空间都是 Banach 空间, <span class="math inline">\(p=2\)</span> 时也是 Hilbert 空间.</strong></p>
+]]></content>
+      <tags>
+        <tag>数学</tag>
+        <tag>分析</tag>
+        <tag>泛函分析</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>定积分性质例题</title>
+    <url>/posts/5066/</url>
+    <content><![CDATA[<p><strong>问题：在<span class="math inline">\([0,\pi]\)</span>上的连续函数<span class="math inline">\(f\)</span>满足</strong> <span class="math display">\[
+\int_0^\pi f(x)\sin x\,\mathrm dx=\int_0^\pi f(x)\cos x\,\mathrm dx=0,
+\]</span> <strong>证明<span class="math inline">\(f\)</span>在<span class="math inline">\((0,\pi)\)</span>内至少有两个零点.</strong></p>
+<span id="more"></span>
+<p><strong>证明:</strong></p>
+<p>不妨设<span class="math inline">\(f\)</span>不恒为0.</p>
+<p>若<span class="math inline">\(f(x)\)</span>在<span class="math inline">\((0,\pi)\)</span>内无零点, 则不变号, 不妨设<span class="math inline">\(f(x)&gt;0\)</span>. 此时<span class="math display">\[f(x)\sin x&gt;0,\forall x\in(0,\pi)\implies\int_0^1f(x)\sin x\,\mathrm dx&gt;0,\]</span> 与条件矛盾. 于是<span class="math inline">\(f(x)\)</span>在<span class="math inline">\((0,\pi)\)</span>上变号, 至少有一个零点.</p>
+<p>若只有一个变号零点<span class="math inline">\(x_0\in(0,\pi)\)</span>, 不妨设在<span class="math inline">\((0,x_0)\)</span>上<span class="math inline">\(f(x)&gt;0\)</span>, <span class="math inline">\((x_0,\pi)\)</span>上<span class="math inline">\(f(x)&lt;0\)</span>. 那么 <span class="math display">\[
+F(x)=f(x)\sin(x-x_0)\leq0,~\forall x\in(0,\pi).
+\]</span> 又因为 <span class="math display">\[
+\begin{align*}\int_0^\pi F(x)\,\mathrm dx&amp;=\cos x_0\int_0^\pi f(x)\sin x\,\mathrm dx-\sin x_0\int_0^\pi f(x)\cos x\,\mathrm dx\\
+&amp;=\cos x_0\cdot0-\sin x_0\cdot 0\\
+&amp;=0,
+\end{align*}
+\]</span> 故<span class="math inline">\(F(x)\equiv0\)</span>, 于是<span class="math inline">\(f(x)\equiv0,~\forall x\in(0,\pi)\)</span>, 矛盾.</p>
+<p>于是<span class="math inline">\(f(x)\)</span>在<span class="math inline">\((0,\pi)\)</span>上至少有两个零点.</p>
+]]></content>
+      <tags>
+        <tag>数学</tag>
+        <tag>微积分</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/posts/16107/</url>
+    <content><![CDATA[<p>第一篇. 果然搭建环境啥的才是最坑的.</p>
+<p>总算把world给哈喽出来了, 你先在这哈着吧.</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>高维分部积分</title>
+    <url>/posts/22001/</url>
+    <content><![CDATA[<p><span class="math display">\[\int_\Omega u\nabla\cdot \boldsymbol{v}\,d\Omega=\int_{\partial\Omega}u\boldsymbol{v}\cdot\boldsymbol{n}\,dS-\int_\Omega\nabla u\cdot\boldsymbol{v}\,d\Omega\]</span></p>
+<span id="more"></span>
+<p>对比</p>
+<p><span class="math display">\[\int_a^bu v'\,dx=\left.uv\right|_a^b-\int_a^bu'v\,dx\]</span> 特殊情况 (Green's first identity):</p>
+<p><span class="math display">\[
+\int_\Omega\nabla u\cdot\nabla v\,d\Omega=\int_{\partial\Omega}v\nabla u\cdot\boldsymbol{n}\,dS-\int_\Omega v\nabla^2u\,d\Omega
+\]</span></p>
+<hr>
+<p>散度乘法法则:</p>
+<p><span class="math display">\[\nabla\cdot(u\boldsymbol{v})=u\nabla\cdot \boldsymbol{v}+\nabla u\cdot \boldsymbol{v}\]</span></p>
+]]></content>
+      <tags>
+        <tag>数学</tag>
+        <tag>分析</tag>
+        <tag>微积分</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>极坐标和球坐标换元</title>
+    <url>/posts/26639/</url>
+    <content><![CDATA[<p><span class="math display">\[\iint_D F(x,y)\d x\d y=\iint_\Delta F(r\cos\theta,r\sin\theta)r\d r\d\theta\]</span></p>
+<p><span class="math display">\[\iiint_D F(x,y,z)\d x\d y\d z=\iiint_\Delta F(r\sin\theta\cos\phi,r\sin\theta\sin\phi,r\cos\theta)r^2\sin\theta\d r\d \theta\d \phi\]</span></p>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Kugelkoord-lokale-Basis-s.svg/480px-Kugelkoord-lokale-Basis-s.svg.png" width="250" height="250"></p>
+]]></content>
+      <tags>
+        <tag>数学</tag>
+        <tag>微积分</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>利用积分下求导计算无穷积分</title>
+    <url>/posts/30510/</url>
+    <content><![CDATA[<p>计算 <span class="math display">\[
+\int_{-\infty}^{+\infty}{x\sin x\over (x^2+a^2)(x^2+b^2)}\,\mathrm dx.
+\]</span> 其实是测试一下内嵌pdf.</p>
+<span id="more"></span>
+<div class="pdfobject-container" data-target="/file/integrate.pdf" data-height="500px"></div>
+]]></content>
+      <tags>
+        <tag>数学</tag>
+        <tag>微积分</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>微分形式</title>
+    <url>/posts/12522/</url>
+    <content><![CDATA[<p>0次形式: <span class="math inline">\(f\)</span></p>
+<p>1次形式: <span class="math inline">\(P\,dx+Q\,dy+R\,dz\)</span></p>
+<p>2次形式: <span class="math inline">\(P\,dy\land dz+Q\,dz\land dx+R\,dx\land dy\)</span></p>
+<p>3次形式: <span class="math inline">\(R\,dx\land dy\land dz\)</span></p>
+<span id="more"></span>
+<h2 id="运算律">运算律</h2>
+<p><span class="math inline">\(dx\land dx=0\)</span> 等, <span class="math inline">\(dx\land dy=-dy\land dx\)</span> 等.</p>
+<h2 id="外微分运算">外微分运算</h2>
+<p><span class="math display">\[df={\partial f\over\partial x}dx+{\partial f\over\partial y}dy+{\partial f\over\partial z}dz\]</span> <span class="math inline">\(w=P\,dx+Q\,dy+R\,dz\)</span> 时</p>
+<p><span class="math display">\[\begin{aligned}
+dw&amp;=(R_y'-Q_z')dy\land dz+(P_z'-R_x')dz\land dx+(Q_x'-P_y')dx\land dy\\
+&amp;=
+\begin{vmatrix}
+dy\land dz&amp;dz\land dx&amp;dx\land dy\\
+{\partial\over\partial x} &amp; {\partial\over\partial y} &amp; {\partial\over\partial z}\\
+P&amp;Q&amp;R
+\end{vmatrix}
+\end{aligned}\]</span></p>
+<p><span class="math inline">\(w=P\,dy\land dz+Q\,dz\land dx+R\,dx\land dy\)</span> 时</p>
+<p><span class="math display">\[dw=(P_x'+Q_y'+R_z')dx\land dy\land dz\]</span></p>
+]]></content>
+      <tags>
+        <tag>数学</tag>
+        <tag>分析</tag>
+        <tag>微积分</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>为什么用开覆盖定义紧集</title>
+    <url>/posts/47720/</url>
+    <content><![CDATA[<p>【定义】一个集合是紧集的意思是，它的任何一个开覆盖都有有限子覆盖。</p>
+<p>【有限覆盖定理】这是说欧式空间中的有界闭集（一维情况下是<span class="math inline">\([a,b]\)</span>）都是紧集。</p>
+<p>【Heine-Borel定理】上面的逆命题，欧式空间中的紧集都是有界闭集。于是就说明了欧式空间中的紧集<span class="math inline">\(\iff\)</span>有界闭集。</p>
+<span id="more"></span>
+<h2 id="为什么用开覆盖而不是闭覆盖呢">为什么用开覆盖而不是闭覆盖呢？</h2>
+<p>简单地思考一下容易发现，如果用闭覆盖定义紧集一点也不好玩：</p>
+<p>我们知道单点集<span class="math inline">\(\{a\}\)</span>是闭集（更严谨地，在<span class="math inline">\(T_1\)</span>空间中），那么把集合<span class="math inline">\(A\)</span>中所有元素拿出来，这些单点集的总体构成一个闭覆盖。比如说对于区间<span class="math inline">\([0,1]\)</span>，这种闭覆盖就是 <span class="math display">\[
+\bigcup_{x\in[0,1]}\{x\}
+\]</span> 它有有限子覆盖吗？</p>
+<p>这个闭覆盖的有限成员都是有限个单点集<span class="math inline">\(\{x_1\},\ldots,\{x_n\}\)</span>，明显当<span class="math inline">\(A\)</span>是无限集的时候无法覆盖<span class="math inline">\(A\)</span>。所以按这种方式定义的紧集就是有限集，本质上没有提出新概念。</p>
+<h2 id="用开覆盖定义的紧集有什么用">用开覆盖定义的紧集有什么用？</h2>
+<p>在某种“良好的”集合上：</p>
+<ul>
+<li>连续函数总是一致连续的</li>
+<li>连续函数总是有界的</li>
+<li>连续函数总能取到最值</li>
+<li>任何数列都有收敛子列</li>
+</ul>
+<p>数学家花了一番功夫才发现，这种“良好的”集合其实就是紧集。紧集的定义也有很多等价刻画，比如在欧式空间中就可以简单地定义为有界闭集，在更一般的度量空间中可以定义为序列紧集等等。但是，这些好理解的定义也有局限性，它们只在某些结构良好的空间中成立。</p>
+<p>而在用开覆盖来定义的紧集，虽然抽象，但可以推广到一般的拓扑空间，成了现在使用最广的定义。</p>
+]]></content>
+      <tags>
+        <tag>数学</tag>
+        <tag>拓扑</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>实对称阵的合同对角化</title>
+    <url>/posts/5692/</url>
+    <content><![CDATA[<p>设对实对称阵<span class="math inline">\(A\)</span>满足<span class="math inline">\(Q^TAQ=\Lambda\)</span>，其中<span class="math inline">\(\Lambda\)</span>是<span class="math inline">\(A\)</span>的特征值组成的对角阵，问<span class="math inline">\(Q\)</span>是否正交。</p>
+<p>答案是否定的。</p>
+<span id="more"></span>
+<h2 id="分析">分析</h2>
+<p>构造反例时为了方便，可以直接取<span class="math inline">\(A\)</span>为对角阵<span class="math inline">\(\Lambda\)</span>，因为对角阵的对角元就是特征值。</p>
+<p>问题化为：找非正交阵<span class="math inline">\(Q\)</span>，满足<span class="math inline">\(Q^T\Lambda Q=\Lambda\)</span>。下面尝试把<span class="math inline">\(\Lambda\)</span>写成<span class="math inline">\(Q^T\Lambda Q\)</span>的形式： <span class="math display">\[
+\begin{align*}
+\Lambda&amp;=(\Lambda^{\frac12}\Lambda^{-\frac12})\Lambda(\Lambda^{-\frac12}\Lambda^{\frac12})\\
+&amp;=(\Lambda^{\frac12}V^T\Lambda^{-\frac12})\Lambda(\Lambda^{-\frac12}V\Lambda^{\frac12})\\
+&amp;=Q^T\Lambda Q,
+\end{align*}
+\]</span> 其中引入了正交阵<span class="math inline">\(V\)</span>，可见<span class="math inline">\(Q=\Lambda^{-\frac12}V\Lambda^{\frac12}\)</span>是一种选择。什么时候<span class="math inline">\(Q\)</span>不正交呢？</p>
+<p>正交矩阵的一个性质是元素的绝对值都不超过1，所以我们选择合适的<span class="math inline">\(\Lambda\)</span>和<span class="math inline">\(V\)</span>，使<span class="math inline">\(Q\)</span>中有元素绝对值大于1即可。实际上 <span class="math display">\[
+q_{ij}=v_{ij}\sqrt{\frac{\lambda_j}{\lambda_i}}，
+\]</span> <span class="math inline">\(i\)</span>和<span class="math inline">\(j\)</span>不能相等，因为<span class="math inline">\(|q_{ii}|=|v_{ii}|\leq1\)</span>。</p>
+<p>所以构造步骤为：取正交阵<span class="math inline">\(V\)</span>，需要其中某个非对角元<span class="math inline">\(v_{ij}\ne0\)</span>。然后取对角阵<span class="math inline">\(\Lambda\)</span>，其中<span class="math inline">\(\lambda_j/\lambda_i\)</span>足够大，使得<span class="math inline">\(\left|v_{ij}\sqrt{\frac{\lambda_j}{\lambda_i}}\right|&gt;1\)</span>。再构造<span class="math inline">\(Q=\Lambda^{-\frac12}V\Lambda^{\frac12}\)</span>，那么<span class="math inline">\(Q\)</span>不是正交阵，而<span class="math inline">\(Q^T\Lambda Q=\Lambda\)</span>。</p>
+<h2 id="一个具体的例子">一个具体的例子</h2>
+<p>取 <span class="math display">\[
+V=\begin{bmatrix}0&amp;1\\1&amp;0\end{bmatrix},\ \Lambda=\begin{bmatrix}1 &amp;\\&amp; 4\end{bmatrix},
+\]</span> 那么 <span class="math display">\[
+Q=\begin{bmatrix}1&amp;\\&amp;\frac12\end{bmatrix}\begin{bmatrix}0&amp;1\\1&amp;0\end{bmatrix}\begin{bmatrix}1&amp;\\&amp;2\end{bmatrix}=\begin{bmatrix}0&amp;2\\\frac12&amp;0\end{bmatrix}\ \text{不是正交阵},
+\]</span> 而<span class="math inline">\(Q^T\Lambda Q=\Lambda\)</span>。</p>
+]]></content>
+      <tags>
+        <tag>数学</tag>
+        <tag>线性代数</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>科普是一项非常难的工作</title>
+    <url>/posts/20918/</url>
+    <content><![CDATA[<p>要想当一个好学生，只需要把知识学懂。</p>
+<p>要想当一个好老师，需要一些基础知识，还需要良好的性格和表达能力、心理学和教育学经验。</p>
+<p>要想当一个好教授，需要有专业知识、科研水平，只需要一般般的表达能力。</p>
+<p><strong>而要当一个好的科普工作者，需要有远超学生的理解能力，教授一样的专业水平，老师一样的教学功力，艺术家一样的审美，作家一样的文笔，诗人一样的清高，科学家一样对知识的热爱，艺人一样对大众心理的把控能力，运动员一样的毅力，还要有自身的人格魅力、抗压抗打击能力。</strong></p>
+<p>科普是一项非常难的工作，比讲课教书难得多。因为它面对的不是专业人士，而是乌合之众。这导致科普工作者必须用通俗语言来解释专业知识，却又不至于过于通俗而产生误导。稍微有一点漏洞就会被抓住攻击——有问题的科普比谣言更可怕，比迷信更害人。</p>
+<p>所以，科普工作者是一个神圣的标签，这个名号比想象中要严苛得多。</p>
+]]></content>
+      <tags>
+        <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>计算级数</title>
+    <url>/posts/42963/</url>
+    <content><![CDATA[<p>计算 <span class="math display">\[
+\sum_{n=1}^\infty
+{n!\over(2n+1)!!}\cdot{1\over n+1}.
+\]</span></p>
+<span id="more"></span>
+<hr>
+<h2 id="方法一arcsin2x的展开">方法一：<span class="math inline">\(\arcsin^2x\)</span>的展开</h2>
+<p>把双阶乘改写成阶乘。定义 <span class="math display">\[
+\begin{align*}
+a_n&amp;={n!\over(2n+1)!!}\cdot{1\over n+1}\\
+&amp;={n!\over 1\cdot3\cdot5\cdots(2n+1)}\cdot{1\over n+1}\\
+&amp;={2\cdot4\cdots(2n+2)\cdot n!\over1\cdot2\cdot3\cdots(2n+1)\cdot(2n+2)}\cdot{1\over n+1}\\
+&amp;={2^{n+1}(n+1)!\cdot n!\over(2n+2)!}\cdot{1\over n+1}\\
+&amp;={2^{n+1}(n!)^2\over(2n+2)!}\\
+&amp;={2^{n+1}(n!)^2\over(2n+2)(2n+1)(2n)!}\\
+&amp;={2^n(n!)^2\over(n+1)(2n+1)(2n)!}\\
+&amp;={2^n\over(n+1)(2n+1){(2n)!\over(n!)^2}}\\
+&amp;={2^n\over(n+1)(2n+1){2n\choose n}}
+\end{align*}
+\]</span> 求和的时候移动一下下标，把分母的<span class="math inline">\(n+1\)</span>变成<span class="math inline">\(n\)</span>： <span class="math display">\[
+\begin{align*}
+\sum_{n=1}^\infty a_n&amp;=\sum_{n=1}^\infty {2^n\over(n+1)(2n+1){2n\choose n}}\\
+&amp;=\sum_{n=2}^\infty{2^{n-1}\over n(2n-1){2n-2\choose n-1}}\\
+&amp;=\sum_{n=2}^\infty{2^{n}\over 2n(2n-1){(2n-2)!\over\left((n-1)!\right)^2}}\\
+&amp;=\sum_{n=2}^\infty{2^n\over{(2n)!\over\left((n-1)!\right)^2}}\\
+&amp;=\sum_{n=2}^\infty{2^n\over n^2{(2n)!\over (n!)^2}}\\
+&amp;=\sum_{n=2}^\infty{2^n\over n^2{2n\choose n}}
+\end{align*}
+\]</span> 热知识：<span class="math inline">\(\arcsin^2 x\)</span>的展开式满足 <span class="math display">\[
+2\arcsin^2\left(\frac x2\right)=\sum_{n=1}^\infty{x^{2n}\over n^2{2n\choose n}}.
+\]</span> 它的证明比较占篇幅，我写在<a href="/posts/20316/" title="这里">这里</a>.</p>
+<p>其中令<span class="math inline">\(x=\sqrt2\)</span>： <span class="math display">\[
+2\arcsin^2\left(\frac{\sqrt2}{2}\right)=\sum_{n=1}^\infty{2^n\over n^2{2n\choose n}}=2\left(\frac{\pi}{4}\right)^2={\pi^2\over8}.
+\]</span> 于是 <span class="math display">\[
+\sum_{n=1}^\infty a_n=\sum_{n=2}^\infty{2^n\over n^2{2n\choose n}}={\pi^2\over8}-1.
+\]</span></p>
+<hr>
+<h2 id="方法二累次积分">方法二：累次积分</h2>
+<p>记 <span class="math display">\[
+a_n={n!\over(2n+1)!!}\cdot{1\over n+1}，
+\]</span> 把两个因子都表示成积分： <span class="math display">\[
+{1\over n+1}=\int_0^1x^n\,\mathrm dx
+\]</span></p>
+<p><span class="math display">\[
+\begin{align*}
+{n!\over(2n+1)!!}&amp;={n!\over 1\cdot3\cdot5\cdots(2n+1)}\\
+&amp;={2\cdot4\cdots(2n)\cdot n!\over1\cdot2\cdot3\cdots(2n)\cdot(2n+1)}\\
+&amp;={2^n(n!)^2\over(2n+1)!}\\
+&amp;={2^n(\Gamma(n+1))^2\over\Gamma(2n+2)}\\
+&amp;=2^n\cdot\mathrm B(n+1,n+1)\\
+&amp;=2^n\int_0^1y^n(1-y)^n\,\mathrm dy\\
+&amp;=\int_0^1(2y(1-y))^n\,\mathrm dy
+\end{align*}
+\]</span></p>
+<p>其中后者我们利用了<span class="math inline">\(\Gamma(n+1)=n!\)</span>，以及<span class="math inline">\(\mathrm B(x,y)={\Gamma(x)\Gamma(y)\over\Gamma(x+y)}\)</span>.</p>
+<p>于是（从<span class="math inline">\(0\)</span>开始加使得级数结果更加简单）， <span class="math display">\[
+\begin{align*}
+\sum_{n=0}^\infty a_n&amp;=\sum_{n=0}^\infty\left(\int_0^1x^n\,\mathrm dx\right)\left(\int_0^1(2y(1-y))^n\,\mathrm dy\right)\\
+&amp;=\int_0^1\int_0^1\sum_{n=0}^\infty(2xy(1-y))^n\,\mathrm dx\,\mathrm dy\\
+&amp;=\int_0^1\int_0^1{1\over1-2xy(1-y)}\,\mathrm dx\,\mathrm dy.
+\end{align*}
+\]</span> 做代换<span class="math inline">\(y={1+u\over2}\)</span>，使得<span class="math inline">\(y(1-y)={1+u\over2}\cdot{1-u\over2}={1-u^2\over4}.\)</span></p>
+<p>于是， <span class="math display">\[
+\begin{align*}
+\int_0^1\int_0^1{1\over1-2xy(1-y)}\,\mathrm dx\,\mathrm dy&amp;=\int_0^1\left(\frac12\int_{-1}^1{1\over1-x\cdot{1-u^2\over2}}\,\mathrm du\right)\,\mathrm dx\\
+&amp;=\int_0^1\left(\int_{-1}^1{1\over2-x(1-u^2)}\,\mathrm du\right)\,\mathrm dx\\
+&amp;=\int_0^1\left(\int_{-1}^1{1\over2-x+xu^2}\,\mathrm du\right)\,\mathrm dx\\
+&amp;=\int_0^1\left(\frac1x\int_{-1}^1{1\over u^2+{2-x\over x}}\,\mathrm du\right)\,\mathrm dx\\
+&amp;=\int_0^1\left(\left.\frac1x\sqrt{x\over2-x}\arctan{u\over\sqrt{2-x\over x}}\right|_{u=-1}^{u=1}\right)\,\mathrm dx\\
+&amp;=\int_0^1\left(\frac2x\sqrt{x\over2-x}\arctan{1\over\sqrt{2-x\over x}}\right)\,\mathrm dx\\
+&amp;=\int_0^1\left({2\over \sqrt{x(2-x)}}\arctan{\sqrt{x\over 2-x}}\right)\,\mathrm dx.
+\end{align*}
+\]</span> 做代换<span class="math inline">\(x=1-t\)</span>，使得<span class="math inline">\(x(2-x)=(1-t)(1+t)=1-t^2\)</span>.</p>
+<p>于是， <span class="math display">\[
+\begin{align*}
+\text{原积分}=\int_0^1{2\over\sqrt{1-t^2}}\arctan\sqrt{1-t\over1+t}\,\mathrm dt
+\end{align*}
+\]</span> 做代换<span class="math inline">\(t=\cos\theta\)</span>，利用半角公式<span class="math inline">\(\tan\frac\theta2=\sqrt{1-\cos\theta\over1+\cos\theta}\)</span>： <span class="math display">\[
+\begin{align*}
+\text{原积分}&amp;=\int_0^\frac\pi2{2\over\sin\theta}\arctan\left(\tan\frac\theta2\right)\sin\theta\,\mathrm d\theta\\
+&amp;=\int_0^\frac\pi2\theta\,\mathrm d\theta\\
+&amp;={\pi^2\over8}.
+\end{align*}
+\]</span> 最终， <span class="math display">\[
+\sum_{n=1}^\infty a_n=-a_0+\sum_{n=0}^\infty a_n={\pi^2\over8}-1.
+\]</span></p>
+]]></content>
+      <tags>
+        <tag>数学</tag>
+        <tag>级数</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>计算定积分</title>
+    <url>/posts/45803/</url>
+    <content><![CDATA[<p>计算 <span class="math display">\[
+\int_0^1{\ln\left(x+\sqrt{1-x^2}\right)\over x}\,\mathrm dx.
+\]</span> <span id="more"></span></p>
+<hr>
+<h2 id="方法一-feynmans-trick">方法一 （Feynman's Trick）</h2>
+<p>定义 <span class="math display">\[
+I(a)=\int_{0}^{1} \frac{\ln \left(a x+\sqrt{1-x^{2}}\right)}{x}\,\mathrm d x,
+\]</span> 那么 <span class="math display">\[
+\begin{align*}I^{\prime}(a)&amp;=\int_0^1{x\over ax+\sqrt{1-x^2}}\frac1x\,\mathrm dx\\
+&amp;=\int_{0}^{1} \frac{\mathrm d x}{a x+\sqrt{1-x^{2}}}\\
+&amp;=\int_0^{\frac\pi2}{\cos t\over a\sin t+\cos t}\,\mathrm dt
+\\&amp;=: I\end{align*}
+\]</span> 定义 <span class="math display">\[
+J=\int_0^{\frac\pi2}{\sin t\over a\sin t +\cos t}\,\mathrm dt,
+\]</span> 组合积分法： <span class="math display">\[
+I+aJ=\int_0^\frac\pi2{a\sin t+\cos t\over a\sin t +\cos t}\,\mathrm dt=\frac\pi2
+\]</span></p>
+<p><span class="math display">\[
+\begin{align*}
+aI-J&amp;=\int_0^\frac\pi2{a\cos t-\sin t\over a\sin t+\cos t}\,\mathrm dx\\
+&amp;=\int_0^\frac\pi2{\mathrm d(a\sin t+\cos t)\over a\sin t+\cos t}\\
+&amp;=\left.\ln(a\sin t+\cos t)\right|_0^\frac\pi2\\
+&amp;=\ln a
+\end{align*}
+\]</span></p>
+<p>解得 (Cramer法则) <span class="math display">\[
+\begin{align*}
+I&amp;={\begin{vmatrix}\frac\pi2&amp;a\\\ln a&amp;-1\end{vmatrix}\over\begin{vmatrix}1&amp;a\\a&amp;-1\end{vmatrix}}\\&amp;=\frac{1}{1+a^{2}}\left(\frac{\pi}{2}+a \ln a\right).
+\end{align*}
+\]</span> 此外， <span class="math display">\[
+\begin{align*}I(0)&amp;=\int_0^1{\ln\sqrt{1-x^2}\over x}\,\mathrm dx\\&amp;=\int_0^1{\ln\sqrt{1-t}\over\sqrt{t}}{\mathrm dt\over 2
+\sqrt t}&amp;&amp;\text{by $x^2=t$}\\&amp;=\frac14\int_0^1{\ln(1-t)\over t}\,\mathrm dx\\&amp;=-\frac14\int_0^1\sum_{n=1}^\infty{x^{n-1}\over n}\,\mathrm dx&amp;&amp;\text{by Taylor Series}\\
+&amp;=-\frac14\sum_{n=1}^\infty\frac1n\int_0^1x^{n-1}\,\mathrm dx\\&amp;=-\frac14\sum_{n=1}^\infty\frac{1}{n^2}\\&amp;=-\frac{\pi^2}{24},\end{align*}
+\]</span> 于是 <span class="math display">\[
+\begin{align*}\text{原积分}&amp;=I(1)\\&amp;=I(0)+\int_0^1I'(a)\,\mathrm da\\
+&amp;=-\frac{\pi^2}{24}+\int_0^1\frac{1}{1+a^{2}}\left(\frac{\pi}{2}+a \ln a\right)\,\mathrm da\\
+&amp;=-\frac{\pi^2}{24}+\frac{\pi}{2}\int_0^1\frac{1}{1+a^{2}}\,\mathrm dx+\int_0^1\frac{a}{1+a^{2}}\ln a\,\mathrm da\\
+&amp;=-\frac{\pi^2}{24}+\frac\pi2\cdot\frac\pi4+
+\int_0^1\sum_{n=0}^\infty(-1)^na^{2n+1}\ln a\,\mathrm da\\
+&amp;=\frac{\pi^2}{12}+\sum_{n=0}^\infty{(-1)^{n+1}\over(2n+2)^2}\\
+&amp;=\frac{\pi^2}{12}-\frac14\sum_{n=1}^\infty{(-1)^{n}\over n^2}\\
+&amp;=\frac{\pi^2}{12}-\frac14\cdot\frac{\pi^2}{12}\\
+&amp;=\frac{\pi^2}{16}.\end{align*}
+\]</span> <em>注：积分号下求导、积分与求和换序需要有定理保障.</em></p>
+<hr>
+<h2 id="方法二feynmans-trick">方法二（Feynman's Trick）</h2>
+<p><span class="math display">\[
+I=\int_0^1{\ln(x+\sqrt{1-x^2})\over x}\,\mathrm dx
+=\int_0^1{\ln \left[x\left(1+{\sqrt{1-x^2\over x^2}}\right)\right]\over x}\,\mathrm dx
+\]</span></p>
+<p>故作代换<span class="math inline">\(t=\sqrt{1-x^2\over x^2}\)</span>, 那么<span class="math inline">\(x=\frac{1}{\sqrt{1+t^2}}\)</span>, <span class="math inline">\(\mathrm dx=-t(1+t^2)^{-\frac32}\,\mathrm dt:\)</span> <span class="math display">\[
+\begin{align*}
+I&amp;=\int_0^\infty{\ln\left[(1+t^2)^{-\frac12}(1+t)\right]\over(1+t^2)^{-\frac12}}\cdot t(1+t^2)^{-\frac32}\,\mathrm dt\\
+&amp;=\int_0^\infty{t\ln\left({1+t\over\sqrt{1+t^2}}\right)\over 1+t^2}\,\mathrm dt\\
+&amp;=\frac12\int_0^\infty{t\ln\left({(1+t)^2\over{1+t^2}}\right)\over 1+t^2}\,\mathrm dt\\
+&amp;=\frac12\int_0^\infty{t\ln\left(1+{2t\over 1+t^2}\right)\over 1+t^2}\,\mathrm dt\\
+\end{align*}
+\]</span> 定义 <span class="math display">\[
+I(a)=\frac12\int_0^\infty{t\ln\left(1+{2at\over 1+t^2}\right)\over 1+t^2}\,\mathrm dt,
+\]</span> 那么 <span class="math display">\[
+\begin{align*}I'(a)&amp;=\frac12\int_0^\infty {t\over 1+t^2}\cdot{1\over 1+{2at\over 1+t^2}}\cdot{2t\over 1+t^2}\,\mathrm dt\\
+&amp;=\int_0^\infty{t^2\over(t^2+1)(t^2+2at+1)}\,\mathrm d t\\
+&amp;=\frac{1}{2a}\int_0^\infty\left({t\over t^2+1}-{t\over t^2+2at+1}\right)\,\mathrm dt\\
+&amp;=\frac{1}{2a}\int_0^\infty\left(\frac12\cdot{\mathrm d(t^2+1)\over t^2+1}-\frac12\cdot{\mathrm d(t^2+2at+1)\over t^2+2at+1}+{a\over t^2+2at+1}\,\mathrm dt\right)\\
+&amp;=\frac{1}{4a}\left.\ln({t^2+1\over t^2+2at+1})\right|_{t=0}^\infty+\frac12\int_0^\infty{1\over(t+a)^2+1-a^2}\,\mathrm dt\\
+&amp;=0+\frac12\cdot{1\over1-a^2}\int_0^\infty{1\over1+\left({t+a\over\sqrt{1-a^2}}\right)^2}\,\mathrm dt\\
+&amp;=0+\frac12\cdot{1\over\sqrt{1-a^2}}\int_0^\infty{1\over1+\left({t+a\over\sqrt{1-a^2}}\right)^2}\,\mathrm d\left(t+a\over\sqrt{1-a^2}\right)\\
+&amp;={1\over 2\sqrt{1-a^2}}\left.\arctan\left(t+a\over\sqrt{1-a^2}\right)\right|_{t=0}^\infty\\
+&amp;={\frac\pi2-\arctan\left(a\over\sqrt{1-a^2}\right)\over2\sqrt{1-a^2}}\\
+&amp;={\arctan\left(\sqrt{1-a^2}\over a\right)\over 2\sqrt{1-a^2}}
+\end{align*}
+\]</span> 且<span class="math inline">\(I(0)=0\)</span>, 于是 <span class="math display">\[
+\begin{align*}\text{原积分}&amp;=I(1)\\&amp;=I(0)+\int_0^1 I'(a)\,\mathrm da\\
+&amp;=\int_0^1{\arctan\left(\sqrt{1-a^2}\over a\right)\over 2\sqrt{1-a^2}}\,\mathrm da\\
+&amp;=\int_0^\frac\pi2{\arctan({\sin x\over\cos x})\over 2\sin x}\sin x\,\mathrm dx\\
+&amp;=\int_0^\frac\pi2\frac x2\,\mathrm dx\\
+&amp;={\pi^2\over16}.
+\end{align*}
+\]</span></p>
+]]></content>
+      <tags>
+        <tag>数学</tag>
+        <tag>微积分</tag>
+      </tags>
+  </entry>
 </search>
