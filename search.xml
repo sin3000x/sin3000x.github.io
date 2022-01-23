@@ -30,26 +30,66 @@ y=Ce^{-\int p(x)dx}
       </tags>
   </entry>
   <entry>
-    <title>控制收敛定理 (DCT)</title>
-    <url>/posts/34980/</url>
-    <content><![CDATA[<p><span class="math display">\[\lim_{n\to\infty}\int_S f_n \,d\mu=\int_S f\,d\mu\]</span></p>
+    <title>分块矩阵的行列式</title>
+    <url>/posts/42453/</url>
+    <content><![CDATA[<h2 id="结论">结论</h2>
+<p>设分块矩阵 <span class="math inline">\(\Gamma=\begin{pmatrix}A&amp;B\\C&amp;D\end{pmatrix}\)</span>, 那么</p>
+<ul>
+<li><span class="math inline">\(A\)</span> 可逆时, <span class="math inline">\(\det(\Gamma)=\det(A)\det(D-CA^{-1}B)\)</span></li>
+<li><span class="math inline">\(D\)</span> 可逆时, <span class="math inline">\(\det(\Gamma)=\det(A-BD^{-1}C)\det(D)\)</span></li>
+</ul>
 <span id="more"></span>
-<p>条件:</p>
+<h2 id="特殊情况">特殊情况</h2>
 <ul>
-<li><span class="math inline">\(f_n\)</span> 可测, 逐点收敛到 <span class="math inline">\(f\)</span>.</li>
-<li><span class="math inline">\(f_n\)</span> 被可积函数 <span class="math inline">\(g\)</span> 控制: <span class="math inline">\(|f_n(x)|\leq g(x)\)</span>, 且 <span class="math inline">\(\int_S|g|\,d\mu&lt;\infty.\)</span></li>
+<li><p><span class="math inline">\(\begin{equation}\det\begin{pmatrix}  A&amp;0\\ C&amp;D \end{pmatrix}=\det(A)\det(D)\label{lower}\end{equation}\)</span></p></li>
+<li><p><span class="math inline">\(\begin{equation}\label{upper}\det\begin{pmatrix}  A&amp;B\\ 0&amp;D \end{pmatrix}=\det(A)\det(D)\end{equation}\)</span></p></li>
+<li><p><span class="math inline">\(\begin{equation}\label{diag}\det\begin{pmatrix}  A&amp;0\\ 0&amp;D \end{pmatrix}=\det(A)\det(D)\end{equation}\)</span></p></li>
+<li><p><span class="math inline">\(\begin{equation}\label{commute}\text{当 $CD=DC$ 时, }\det(\Gamma)=\det(AD-BC)\end{equation}\)</span></p></li>
+<li><p><span class="math inline">\(\begin{equation}\label{AB}\det\begin{pmatrix} A&amp;B\\B&amp;A \end{pmatrix}=\det(A+B)\det(A-B)\end{equation}\)</span></p></li>
 </ul>
-<p>结论:</p>
-<ul>
-<li><span class="math inline">\(f\)</span> 可积</li>
-<li><span class="math inline">\(\lim_{n\to\infty}\int_S|f_n-f|\,d\mu=0\)</span></li>
-<li><span class="math inline">\(\lim_{n\to\infty}\int_S f_n \,d\mu=\int_S f\,d\mu\)</span></li>
-</ul>
+<h2 id="证明">证明</h2>
+<p>先证 <span class="math inline">\(\eqref{lower}\)</span> : 对 <span class="math inline">\(A\)</span> 部分进行(倍加)<strong>行变换</strong>化为下三角阵, 再对 <span class="math inline">\(D\)</span> 部分进行<strong>列变换</strong>化为下三角阵. 这并不影响 <span class="math inline">\(A\)</span> , <span class="math inline">\(D\)</span> 和分块矩阵的行列式, 且都化为了对角线的乘积. 结论显然.</p>
+<p><span class="math inline">\(\eqref{upper}\)</span> 的证明可以通过取转置得到, <span class="math inline">\(\eqref{diag}\)</span> 是一种特殊情况.</p>
+<p>对于一般情况, 需要利用 <span class="math display">\[\begin{pmatrix}
+    A&amp;B\\C&amp;D
+\end{pmatrix}\begin{pmatrix}
+    I&amp;0\\ -D^{-1}C&amp;I
+\end{pmatrix}=\begin{pmatrix}
+    A-BD^{-1}C&amp;B\\0&amp;D
+\end{pmatrix}.\]</span> 可以把它想成是一种列变换: 把第二列右乘 <span class="math inline">\(-D^{-1}C\)</span> 加到第一列. 两边取行列式并利用 <span class="math inline">\(\det(AB)=\det(A)\det(B)\)</span> 和 <span class="math inline">\(\eqref{upper}\)</span> , 就得到了 <span class="math inline">\(\det(\Gamma)=\det(A-BD^{-1}C)\det(D)\)</span> . 另外一个结论可以利用行变换类似得到.</p>
+<hr>
+<p>下面证 <span class="math inline">\(\eqref{commute}\)</span> . 注意已知 <span class="math inline">\(CD=DC\)</span>.</p>
+<p>我们可以利用 <span class="math display">\[\begin{pmatrix}
+    A&amp;B\\C&amp;D
+\end{pmatrix}\begin{pmatrix}
+    D&amp;0\\-C&amp;I
+\end{pmatrix}=\begin{pmatrix}
+    AD-BC&amp;B\\0&amp;D
+\end{pmatrix}.\]</span> 两边取行列式就得到了 <span class="math display">\[\det(\Gamma)\det(D)=\det(AD-BC)\det(D).\]</span> 如果 <span class="math inline">\(\det(D)\ne0\)</span> , 那么消去 <span class="math inline">\(\det(D)\)</span> 即得结论.</p>
+<p>也可以利用开头的结论<span class="math display">\[\begin{aligned}
+    \det(\Gamma)
+    &amp;=\det(A-BD^{-1}C)\det(D)\\
+    &amp;=\det(AD-BD^{-1}CD)\\
+    &amp;=\det(AD-BD^{-1}DC)\\
+    &amp;=\det(AD-BC).\\
+\end{aligned}\]</span></p>
+<p>当 <span class="math inline">\(\det(D)=0\)</span> 时, 可以给 <span class="math inline">\(D\)</span> 一个扰动. 也就是说, 我们用 <span class="math inline">\(D_\varepsilon=D+\varepsilon I\)</span> 代替 <span class="math inline">\(D\)</span> , 其中 <span class="math inline">\(D_\varepsilon\)</span> 可逆且 <span class="math inline">\(\varepsilon\)</span> 是可以任意小的正数. 这个结论可以利用特征值的性质证明, 也可以利用关于<span class="math inline">\(\varepsilon\)</span>的多项式 <span class="math inline">\(\det(D_\varepsilon)\)</span> 只在有限个点上取 <span class="math inline">\(0\)</span>.</p>
+<p>不难看到 <span class="math inline">\(D_\varepsilon\)</span> 仍然是与 <span class="math inline">\(C\)</span> 可交换的. 然后利用上面的方法可以得到<span class="math display">\[\det(\Gamma)=\det(AD_\varepsilon-BC).\]</span> 令 <span class="math inline">\(\varepsilon\to0\)</span> 便得到了 <span class="math inline">\(\det(\Gamma)=\det(AD-BC).\)</span></p>
+<p>这是由于等号右边是关于 <span class="math inline">\(\varepsilon\)</span> 的多项式, 所以连续, 而 <span class="math inline">\(D_0=D\)</span>.</p>
+<hr>
+<p>对 <span class="math inline">\(\eqref{AB}\)</span>, 只需要对<span class="math display">\[\begin{pmatrix}
+    I&amp;0\\-I&amp;I
+\end{pmatrix}\begin{pmatrix}
+    A&amp;B\\B&amp;A
+\end{pmatrix}\begin{pmatrix}
+    I&amp;0\\I&amp;I
+\end{pmatrix}=\begin{pmatrix}
+    A+B&amp;B\\0&amp;A-B
+\end{pmatrix}\]</span>两边取行列式.</p>
 ]]></content>
       <tags>
         <tag>数学</tag>
-        <tag>分析</tag>
-        <tag>实变函数</tag>
+        <tag>线性代数</tag>
       </tags>
   </entry>
   <entry>
@@ -113,6 +153,29 @@ I_n={(2n)!!\over(2n+1)!!}.
       <tags>
         <tag>数学</tag>
         <tag>级数</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>控制收敛定理 (DCT)</title>
+    <url>/posts/34980/</url>
+    <content><![CDATA[<p><span class="math display">\[\lim_{n\to\infty}\int_S f_n \,d\mu=\int_S f\,d\mu\]</span></p>
+<span id="more"></span>
+<p>条件:</p>
+<ul>
+<li><span class="math inline">\(f_n\)</span> 可测, 逐点收敛到 <span class="math inline">\(f\)</span>.</li>
+<li><span class="math inline">\(f_n\)</span> 被可积函数 <span class="math inline">\(g\)</span> 控制: <span class="math inline">\(|f_n(x)|\leq g(x)\)</span>, 且 <span class="math inline">\(\int_S|g|\,d\mu&lt;\infty.\)</span></li>
+</ul>
+<p>结论:</p>
+<ul>
+<li><span class="math inline">\(f\)</span> 可积</li>
+<li><span class="math inline">\(\lim_{n\to\infty}\int_S|f_n-f|\,d\mu=0\)</span></li>
+<li><span class="math inline">\(\lim_{n\to\infty}\int_S f_n \,d\mu=\int_S f\,d\mu\)</span></li>
+</ul>
+]]></content>
+      <tags>
+        <tag>数学</tag>
+        <tag>分析</tag>
+        <tag>实变函数</tag>
       </tags>
   </entry>
   <entry>
@@ -199,69 +262,6 @@ f(A)=f(Q^{-1}TQ)=Q^{-1}f(T)Q.
       </tags>
   </entry>
   <entry>
-    <title>分块矩阵的行列式</title>
-    <url>/posts/42453/</url>
-    <content><![CDATA[<h2 id="结论">结论</h2>
-<p>设分块矩阵 <span class="math inline">\(\Gamma=\begin{pmatrix}A&amp;B\\C&amp;D\end{pmatrix}\)</span>, 那么</p>
-<ul>
-<li><span class="math inline">\(A\)</span> 可逆时, <span class="math inline">\(\det(\Gamma)=\det(A)\det(D-CA^{-1}B)\)</span></li>
-<li><span class="math inline">\(D\)</span> 可逆时, <span class="math inline">\(\det(\Gamma)=\det(A-BD^{-1}C)\det(D)\)</span></li>
-</ul>
-<span id="more"></span>
-<h2 id="特殊情况">特殊情况</h2>
-<ul>
-<li><p><span class="math inline">\(\begin{equation}\det\begin{pmatrix}  A&amp;0\\ C&amp;D \end{pmatrix}=\det(A)\det(D)\label{lower}\end{equation}\)</span></p></li>
-<li><p><span class="math inline">\(\begin{equation}\label{upper}\det\begin{pmatrix}  A&amp;B\\ 0&amp;D \end{pmatrix}=\det(A)\det(D)\end{equation}\)</span></p></li>
-<li><p><span class="math inline">\(\begin{equation}\label{diag}\det\begin{pmatrix}  A&amp;0\\ 0&amp;D \end{pmatrix}=\det(A)\det(D)\end{equation}\)</span></p></li>
-<li><p><span class="math inline">\(\begin{equation}\label{commute}\text{当 $CD=DC$ 时, }\det(\Gamma)=\det(AD-BC)\end{equation}\)</span></p></li>
-<li><p><span class="math inline">\(\begin{equation}\label{AB}\det\begin{pmatrix} A&amp;B\\B&amp;A \end{pmatrix}=\det(A+B)\det(A-B)\end{equation}\)</span></p></li>
-</ul>
-<h2 id="证明">证明</h2>
-<p>先证 <span class="math inline">\(\eqref{lower}\)</span> : 对 <span class="math inline">\(A\)</span> 部分进行(倍加)<strong>行变换</strong>化为下三角阵, 再对 <span class="math inline">\(D\)</span> 部分进行<strong>列变换</strong>化为下三角阵. 这并不影响 <span class="math inline">\(A\)</span> , <span class="math inline">\(D\)</span> 和分块矩阵的行列式, 且都化为了对角线的乘积. 结论显然.</p>
-<p><span class="math inline">\(\eqref{upper}\)</span> 的证明可以通过取转置得到, <span class="math inline">\(\eqref{diag}\)</span> 是一种特殊情况.</p>
-<p>对于一般情况, 需要利用 <span class="math display">\[\begin{pmatrix}
-    A&amp;B\\C&amp;D
-\end{pmatrix}\begin{pmatrix}
-    I&amp;0\\ -D^{-1}C&amp;I
-\end{pmatrix}=\begin{pmatrix}
-    A-BD^{-1}C&amp;B\\0&amp;D
-\end{pmatrix}.\]</span> 可以把它想成是一种列变换: 把第二列右乘 <span class="math inline">\(-D^{-1}C\)</span> 加到第一列. 两边取行列式并利用 <span class="math inline">\(\det(AB)=\det(A)\det(B)\)</span> 和 <span class="math inline">\(\eqref{upper}\)</span> , 就得到了 <span class="math inline">\(\det(\Gamma)=\det(A-BD^{-1}C)\det(D)\)</span> . 另外一个结论可以利用行变换类似得到.</p>
-<hr>
-<p>下面证 <span class="math inline">\(\eqref{commute}\)</span> . 注意已知 <span class="math inline">\(CD=DC\)</span>.</p>
-<p>我们可以利用 <span class="math display">\[\begin{pmatrix}
-    A&amp;B\\C&amp;D
-\end{pmatrix}\begin{pmatrix}
-    D&amp;0\\-C&amp;I
-\end{pmatrix}=\begin{pmatrix}
-    AD-BC&amp;B\\0&amp;D
-\end{pmatrix}.\]</span> 两边取行列式就得到了 <span class="math display">\[\det(\Gamma)\det(D)=\det(AD-BC)\det(D).\]</span> 如果 <span class="math inline">\(\det(D)\ne0\)</span> , 那么消去 <span class="math inline">\(\det(D)\)</span> 即得结论.</p>
-<p>也可以利用开头的结论<span class="math display">\[\begin{aligned}
-    \det(\Gamma)
-    &amp;=\det(A-BD^{-1}C)\det(D)\\
-    &amp;=\det(AD-BD^{-1}CD)\\
-    &amp;=\det(AD-BD^{-1}DC)\\
-    &amp;=\det(AD-BC).\\
-\end{aligned}\]</span></p>
-<p>当 <span class="math inline">\(\det(D)=0\)</span> 时, 可以给 <span class="math inline">\(D\)</span> 一个扰动. 也就是说, 我们用 <span class="math inline">\(D_\varepsilon=D+\varepsilon I\)</span> 代替 <span class="math inline">\(D\)</span> , 其中 <span class="math inline">\(D_\varepsilon\)</span> 可逆且 <span class="math inline">\(\varepsilon\)</span> 是可以任意小的正数. 这个结论可以利用特征值的性质证明, 也可以利用关于<span class="math inline">\(\varepsilon\)</span>的多项式 <span class="math inline">\(\det(D_\varepsilon)\)</span> 只在有限个点上取 <span class="math inline">\(0\)</span>.</p>
-<p>不难看到 <span class="math inline">\(D_\varepsilon\)</span> 仍然是与 <span class="math inline">\(C\)</span> 可交换的. 然后利用上面的方法可以得到<span class="math display">\[\det(\Gamma)=\det(AD_\varepsilon-BC).\]</span> 令 <span class="math inline">\(\varepsilon\to0\)</span> 便得到了 <span class="math inline">\(\det(\Gamma)=\det(AD-BC).\)</span></p>
-<p>这是由于等号右边是关于 <span class="math inline">\(\varepsilon\)</span> 的多项式, 所以连续, 而 <span class="math inline">\(D_0=D\)</span>.</p>
-<hr>
-<p>对 <span class="math inline">\(\eqref{AB}\)</span>, 只需要对<span class="math display">\[\begin{pmatrix}
-    I&amp;0\\-I&amp;I
-\end{pmatrix}\begin{pmatrix}
-    A&amp;B\\B&amp;A
-\end{pmatrix}\begin{pmatrix}
-    I&amp;0\\I&amp;I
-\end{pmatrix}=\begin{pmatrix}
-    A+B&amp;B\\0&amp;A-B
-\end{pmatrix}\]</span>两边取行列式.</p>
-]]></content>
-      <tags>
-        <tag>数学</tag>
-        <tag>线性代数</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>定积分性质例题</title>
     <url>/posts/5066/</url>
     <content><![CDATA[<p><strong>问题：在<span class="math inline">\([0,\pi]\)</span>上的连续函数<span class="math inline">\(f\)</span>满足</strong> <span class="math display">\[
@@ -330,6 +330,82 @@ F(x)=f(x)\sin(x-x_0)\leq0,~\forall x\in(0,\pi).
         <tag>数学</tag>
         <tag>分析</tag>
         <tag>微积分</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>最小二乘法</title>
+    <url>/posts/36991/</url>
+    <content><![CDATA[<p><span class="math display">\[\min\|Ax-b\|_2\]</span> 其中 <span class="math inline">\(A\in\R^{m\times n}\)</span>, <span class="math inline">\(x\in\R^n\)</span>, <span class="math inline">\(b\in\R^m.\)</span> 这个的问题的情境是 <span class="math inline">\(m\geq n\)</span>, 也就是一个过度约束的问题 (<span class="math inline">\(b\)</span> 不在 <span class="math inline">\(A\)</span> 的值域中).</p>
+<p>等价于解正规方程: <span class="math display">\[A^TAx=A^Tb,\]</span> 当且仅当 <span class="math inline">\(A\)</span> 满秩时有唯一解 <span class="math inline">\(x=(A^TA)^{-1}A^Tb.\)</span> 可以利用伪逆写成 <span class="math inline">\(x=A^\dagger b.\)</span></p>
+<p>从几何的角度, 又可以理解为把 <span class="math inline">\(b\)</span> 利用正交投影算子投影到 <span class="math inline">\(A\)</span> 的值域: <span class="math inline">\(Pb=Ax\)</span>.</p>
+<p>下面总结几种常用算法.</p>
+<span id="more"></span>
+<h2 id="解正规方程">解正规方程</h2>
+<p>利用 Cholesky 分解, 解方程组 <span class="math inline">\(R^TRx=A^Tb\)</span>.</p>
+<blockquote>
+<ol type="1">
+<li>计算矩阵 <span class="math inline">\(A^TA\)</span> 和向量 <span class="math inline">\(A^Tb\)</span></li>
+<li>计算 <span class="math inline">\(A^TA\)</span> 的 Cholesky 分解: <span class="math inline">\(A^TA=R^TR\)</span></li>
+<li>解方程组 <span class="math inline">\(R^Ty=A^Tb\)</span></li>
+<li>解方程组 <span class="math inline">\(Rx=y\)</span></li>
+</ol>
+</blockquote>
+<p><span class="math inline">\(A^T\in\R^{n\times m}\)</span>, <span class="math inline">\(A\in\R^{m\times n}\)</span>, <span class="math inline">\(A^TA\)</span> 正常需要 <span class="math inline">\(2mn^2\)</span> 次运算, 但可以利用对称性减少为 <span class="math inline">\(mn^2\)</span>.</p>
+<p><span class="math inline">\(n\times n\)</span> 正定阵的 Cholesky 分解需要 <span class="math inline">\(\dfrac{n^3}{3}\)</span> 次运算.</p>
+<p>共需要 <span class="math inline">\(mn^2+\dfrac13 n^3\)</span> 次运算.</p>
+<h2 id="qr-分解">QR 分解</h2>
+<p>记 <span class="math inline">\(A\)</span> 的 thin QR <span class="math display">\[A=QR\]</span> 与 full QR <span class="math display">\[A=\begin{bmatrix}
+    Q\ Q_{\perp}
+\end{bmatrix}
+\begin{bmatrix}
+    R\\0
+\end{bmatrix}.\]</span> 于是</p>
+<p><span class="math display">\[
+\begin{aligned}
+\|Ax-b\|_2&amp;=\left\lVert\begin{bmatrix}
+    Q^T\\Q_\perp^T
+\end{bmatrix}(Ax-b)\right\rVert_2\\
+&amp;=\left\lVert\begin{bmatrix}
+    Q^T\\Q_\perp^T
+\end{bmatrix}(QRx-b)\right\rVert_2\\
+&amp;=\left\lVert\begin{bmatrix}
+    R\\0
+\end{bmatrix}x-\begin{bmatrix}
+    Q^Tb\\Q_\perp^Tb
+\end{bmatrix}\right\rVert_2\\
+\end{aligned}
+\]</span> 当 <span class="math inline">\(Rx=Q^Tb\)</span> 即 <span class="math inline">\(x=R^{-1}Q^Tb\)</span> 时取得最小值, 此时可见 <span class="math inline">\(A^\dagger=R^{-1}Q.\)</span></p>
+<hr>
+<p>从几何的角度, <span class="math inline">\(A=QR\)</span> 给出了投影算子 <span class="math inline">\(P\)</span> 的基: <span class="math inline">\(P=QQ^T.\)</span> 于是 <span class="math inline">\(QRx=QQ^Tb\)</span>, 也得到了 <span class="math inline">\(x=R^{-1}Q^Tb.\)</span></p>
+<hr>
+<p>从正规方程的角度,</p>
+<p><span class="math display">\[A^TAx=A^Tb\implies R^TQ^TQRx=R^TQ^Tb\implies Rx=Q^Tb,\]</span> 殊途同归.</p>
+<blockquote>
+<ol type="1">
+<li>计算 reduced QR 分解 <span class="math inline">\(A=QR\)</span></li>
+<li>计算 <span class="math inline">\(Q^Tb\)</span></li>
+<li>解方程组 <span class="math inline">\(Rx=Q^Tb\)</span></li>
+</ol>
+</blockquote>
+<p>主要计算量在于 QR 分解, 它需要 <span class="math inline">\(2mn^2-\dfrac{2}{3}n^3\)</span> 次运算.</p>
+<h2 id="svd">SVD</h2>
+<p><span class="math inline">\(A=U\Sigma V^T\)</span> 也给出了 <span class="math inline">\(P\)</span> 的基: <span class="math inline">\(P=UU^T\)</span>, 根据 <span class="math inline">\(U\Sigma V^Tx=UU^Tb\)</span> 可以得到 <span class="math inline">\(x=V\Sigma^{-1}U^Tb\)</span>. 此时也得到了 <span class="math inline">\(A^\dagger=V\Sigma^{-1}U^T.\)</span></p>
+<blockquote>
+<ol type="1">
+<li>计算 reduced SVD <span class="math inline">\(A=U\Sigma V^T\)</span></li>
+<li>计算 <span class="math inline">\(U^Tb\)</span></li>
+<li>解方程组 <span class="math inline">\(\Sigma y=U^Tb\)</span></li>
+<li>计算 <span class="math inline">\(x=Vy\)</span></li>
+</ol>
+</blockquote>
+<p>其中的方程组比 QR 方法的三角型更容易解, 是对角型的.</p>
+<hr>
+<p>同样可以利用正规方程: <span class="math display">\[A^TAx=A^Tb\implies V\Sigma^TU^TU\Sigma V^Tx=V\Sigma^T U^Tb\implies \Sigma V^Tx=U^Tb\]</span></p>
+<p>计算量主要在于 SVD, 当 <span class="math inline">\(m\gg n\)</span> 时和 QR 差不多, 当 <span class="math inline">\(m\approx n\)</span> 时计算量更大. 典型估计是 <span class="math inline">\(2mn^2+11n^3\)</span> 次运算.</p>
+]]></content>
+      <tags>
+        <tag>数学</tag>
+        <tag>线性代数</tag>
       </tags>
   </entry>
   <entry>
@@ -411,108 +487,6 @@ P&amp;Q&amp;R
 \]</span> 其实是测试一下内嵌pdf.</p>
 <span id="more"></span>
 <div class="pdfobject-container" data-target="/file/integrate.pdf" data-height="500px"></div>
-]]></content>
-      <tags>
-        <tag>数学</tag>
-        <tag>微积分</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>科普是一项非常难的工作</title>
-    <url>/posts/20918/</url>
-    <content><![CDATA[<p>要想当一个好学生，只需要把知识学懂。</p>
-<p>要想当一个好老师，需要一些基础知识，还需要良好的性格和表达能力、心理学和教育学经验。</p>
-<p>要想当一个好教授，需要有专业知识、科研水平，只需要一般般的表达能力。</p>
-<p><strong>而要当一个好的科普工作者，需要有远超学生的理解能力，教授一样的专业水平，老师一样的教学功力，艺术家一样的审美，作家一样的文笔，诗人一样的清高，科学家一样对知识的热爱，艺人一样对大众心理的把控能力，运动员一样的毅力，还要有自身的人格魅力、抗压抗打击能力。</strong></p>
-<p>科普是一项非常难的工作，比讲课教书难得多。因为它面对的不是专业人士，而是乌合之众。这导致科普工作者必须用通俗语言来解释专业知识，却又不至于过于通俗而产生误导。稍微有一点漏洞就会被抓住攻击——有问题的科普比谣言更可怕，比迷信更害人。</p>
-<p>所以，科普工作者是一个神圣的标签，这个名号比想象中要严苛得多。</p>
-]]></content>
-      <tags>
-        <tag>随笔</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>计算定积分</title>
-    <url>/posts/45803/</url>
-    <content><![CDATA[<p>计算 <span class="math display">\[
-\int_0^1{\ln\left(x+\sqrt{1-x^2}\right)\over x}\,\mathrm dx.
-\]</span> <span id="more"></span></p>
-<hr>
-<h2 id="方法一-feynmans-trick">方法一 （Feynman's Trick）</h2>
-<p>定义 <span class="math display">\[
-I(a)=\int_{0}^{1} \frac{\ln \left(a x+\sqrt{1-x^{2}}\right)}{x}\,\mathrm d x,
-\]</span> 那么 <span class="math display">\[
-\begin{align*}I^{\prime}(a)&amp;=\int_0^1{x\over ax+\sqrt{1-x^2}}\frac1x\,\mathrm dx\\
-&amp;=\int_{0}^{1} \frac{\mathrm d x}{a x+\sqrt{1-x^{2}}}\\
-&amp;=\int_0^{\frac\pi2}{\cos t\over a\sin t+\cos t}\,\mathrm dt
-\\&amp;=: I\end{align*}
-\]</span> 定义 <span class="math display">\[
-J=\int_0^{\frac\pi2}{\sin t\over a\sin t +\cos t}\,\mathrm dt,
-\]</span> 组合积分法： <span class="math display">\[
-I+aJ=\int_0^\frac\pi2{a\sin t+\cos t\over a\sin t +\cos t}\,\mathrm dt=\frac\pi2
-\]</span></p>
-<p><span class="math display">\[
-\begin{align*}
-aI-J&amp;=\int_0^\frac\pi2{a\cos t-\sin t\over a\sin t+\cos t}\,\mathrm dx\\
-&amp;=\int_0^\frac\pi2{\mathrm d(a\sin t+\cos t)\over a\sin t+\cos t}\\
-&amp;=\left.\ln(a\sin t+\cos t)\right|_0^\frac\pi2\\
-&amp;=\ln a
-\end{align*}
-\]</span></p>
-<p>解得 (Cramer法则) <span class="math display">\[
-\begin{align*}
-I&amp;={\begin{vmatrix}\frac\pi2&amp;a\\\ln a&amp;-1\end{vmatrix}\over\begin{vmatrix}1&amp;a\\a&amp;-1\end{vmatrix}}\\&amp;=\frac{1}{1+a^{2}}\left(\frac{\pi}{2}+a \ln a\right).
-\end{align*}
-\]</span> 此外， <span class="math display">\[
-\begin{align*}I(0)&amp;=\int_0^1{\ln\sqrt{1-x^2}\over x}\,\mathrm dx\\&amp;=\int_0^1{\ln\sqrt{1-t}\over\sqrt{t}}{\mathrm dt\over 2
-\sqrt t}&amp;&amp;\text{by $x^2=t$}\\&amp;=\frac14\int_0^1{\ln(1-t)\over t}\,\mathrm dx\\&amp;=-\frac14\int_0^1\sum_{n=1}^\infty{x^{n-1}\over n}\,\mathrm dx&amp;&amp;\text{by Taylor Series}\\
-&amp;=-\frac14\sum_{n=1}^\infty\frac1n\int_0^1x^{n-1}\,\mathrm dx\\&amp;=-\frac14\sum_{n=1}^\infty\frac{1}{n^2}\\&amp;=-\frac{\pi^2}{24},\end{align*}
-\]</span> 于是 <span class="math display">\[
-\begin{align*}\text{原积分}&amp;=I(1)\\&amp;=I(0)+\int_0^1I'(a)\,\mathrm da\\
-&amp;=-\frac{\pi^2}{24}+\int_0^1\frac{1}{1+a^{2}}\left(\frac{\pi}{2}+a \ln a\right)\,\mathrm da\\
-&amp;=-\frac{\pi^2}{24}+\frac{\pi}{2}\int_0^1\frac{1}{1+a^{2}}\,\mathrm dx+\int_0^1\frac{a}{1+a^{2}}\ln a\,\mathrm da\\
-&amp;=-\frac{\pi^2}{24}+\frac\pi2\cdot\frac\pi4+
-\int_0^1\sum_{n=0}^\infty(-1)^na^{2n+1}\ln a\,\mathrm da\\
-&amp;=\frac{\pi^2}{12}+\sum_{n=0}^\infty{(-1)^{n+1}\over(2n+2)^2}\\
-&amp;=\frac{\pi^2}{12}-\frac14\sum_{n=1}^\infty{(-1)^{n}\over n^2}\\
-&amp;=\frac{\pi^2}{12}-\frac14\cdot\frac{\pi^2}{12}\\
-&amp;=\frac{\pi^2}{16}.\end{align*}
-\]</span> <em>注：积分号下求导、积分与求和换序需要有定理保障.</em></p>
-<hr>
-<h2 id="方法二feynmans-trick">方法二（Feynman's Trick）</h2>
-<p><span class="math display">\[
-I=\int_0^1{\ln(x+\sqrt{1-x^2})\over x}\,\mathrm dx
-=\int_0^1{\ln \left[x\left(1+{\sqrt{1-x^2\over x^2}}\right)\right]\over x}\,\mathrm dx
-\]</span></p>
-<p>故作代换<span class="math inline">\(t=\sqrt{1-x^2\over x^2}\)</span>, 那么<span class="math inline">\(x=\frac{1}{\sqrt{1+t^2}}\)</span>, <span class="math inline">\(\mathrm dx=-t(1+t^2)^{-\frac32}\,\mathrm dt:\)</span> <span class="math display">\[
-\begin{align*}
-I&amp;=\int_0^\infty{\ln\left[(1+t^2)^{-\frac12}(1+t)\right]\over(1+t^2)^{-\frac12}}\cdot t(1+t^2)^{-\frac32}\,\mathrm dt\\
-&amp;=\int_0^\infty{t\ln\left({1+t\over\sqrt{1+t^2}}\right)\over 1+t^2}\,\mathrm dt\\
-&amp;=\frac12\int_0^\infty{t\ln\left({(1+t)^2\over{1+t^2}}\right)\over 1+t^2}\,\mathrm dt\\
-&amp;=\frac12\int_0^\infty{t\ln\left(1+{2t\over 1+t^2}\right)\over 1+t^2}\,\mathrm dt\\
-\end{align*}
-\]</span> 定义 <span class="math display">\[
-I(a)=\frac12\int_0^\infty{t\ln\left(1+{2at\over 1+t^2}\right)\over 1+t^2}\,\mathrm dt,
-\]</span> 那么 <span class="math display">\[
-\begin{align*}I'(a)&amp;=\frac12\int_0^\infty {t\over 1+t^2}\cdot{1\over 1+{2at\over 1+t^2}}\cdot{2t\over 1+t^2}\,\mathrm dt\\
-&amp;=\int_0^\infty{t^2\over(t^2+1)(t^2+2at+1)}\,\mathrm d t\\
-&amp;=\frac{1}{2a}\int_0^\infty\left({t\over t^2+1}-{t\over t^2+2at+1}\right)\,\mathrm dt\\
-&amp;=\frac{1}{2a}\int_0^\infty\left(\frac12\cdot{\mathrm d(t^2+1)\over t^2+1}-\frac12\cdot{\mathrm d(t^2+2at+1)\over t^2+2at+1}+{a\over t^2+2at+1}\,\mathrm dt\right)\\
-&amp;=\frac{1}{4a}\left.\ln({t^2+1\over t^2+2at+1})\right|_{t=0}^\infty+\frac12\int_0^\infty{1\over(t+a)^2+1-a^2}\,\mathrm dt\\
-&amp;=0+\frac12\cdot{1\over1-a^2}\int_0^\infty{1\over1+\left({t+a\over\sqrt{1-a^2}}\right)^2}\,\mathrm dt\\
-&amp;=0+\frac12\cdot{1\over\sqrt{1-a^2}}\int_0^\infty{1\over1+\left({t+a\over\sqrt{1-a^2}}\right)^2}\,\mathrm d\left(t+a\over\sqrt{1-a^2}\right)\\
-&amp;={1\over 2\sqrt{1-a^2}}\left.\arctan\left(t+a\over\sqrt{1-a^2}\right)\right|_{t=0}^\infty\\
-&amp;={\frac\pi2-\arctan\left(a\over\sqrt{1-a^2}\right)\over2\sqrt{1-a^2}}\\
-&amp;={\arctan\left(\sqrt{1-a^2}\over a\right)\over 2\sqrt{1-a^2}}
-\end{align*}
-\]</span> 且<span class="math inline">\(I(0)=0\)</span>, 于是 <span class="math display">\[
-\begin{align*}\text{原积分}&amp;=I(1)\\&amp;=I(0)+\int_0^1 I'(a)\,\mathrm da\\
-&amp;=\int_0^1{\arctan\left(\sqrt{1-a^2}\over a\right)\over 2\sqrt{1-a^2}}\,\mathrm da\\
-&amp;=\int_0^\frac\pi2{\arctan({\sin x\over\cos x})\over 2\sin x}\sin x\,\mathrm dx\\
-&amp;=\int_0^\frac\pi2\frac x2\,\mathrm dx\\
-&amp;={\pi^2\over16}.
-\end{align*}
-\]</span></p>
 ]]></content>
       <tags>
         <tag>数学</tag>
@@ -643,6 +617,108 @@ a_n={n!\over(2n+1)!!}\cdot{1\over n+1}，
       <tags>
         <tag>数学</tag>
         <tag>级数</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>科普是一项非常难的工作</title>
+    <url>/posts/20918/</url>
+    <content><![CDATA[<p>要想当一个好学生，只需要把知识学懂。</p>
+<p>要想当一个好老师，需要一些基础知识，还需要良好的性格和表达能力、心理学和教育学经验。</p>
+<p>要想当一个好教授，需要有专业知识、科研水平，只需要一般般的表达能力。</p>
+<p><strong>而要当一个好的科普工作者，需要有远超学生的理解能力，教授一样的专业水平，老师一样的教学功力，艺术家一样的审美，作家一样的文笔，诗人一样的清高，科学家一样对知识的热爱，艺人一样对大众心理的把控能力，运动员一样的毅力，还要有自身的人格魅力、抗压抗打击能力。</strong></p>
+<p>科普是一项非常难的工作，比讲课教书难得多。因为它面对的不是专业人士，而是乌合之众。这导致科普工作者必须用通俗语言来解释专业知识，却又不至于过于通俗而产生误导。稍微有一点漏洞就会被抓住攻击——有问题的科普比谣言更可怕，比迷信更害人。</p>
+<p>所以，科普工作者是一个神圣的标签，这个名号比想象中要严苛得多。</p>
+]]></content>
+      <tags>
+        <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>计算定积分</title>
+    <url>/posts/45803/</url>
+    <content><![CDATA[<p>计算 <span class="math display">\[
+\int_0^1{\ln\left(x+\sqrt{1-x^2}\right)\over x}\,\mathrm dx.
+\]</span> <span id="more"></span></p>
+<hr>
+<h2 id="方法一-feynmans-trick">方法一 （Feynman's Trick）</h2>
+<p>定义 <span class="math display">\[
+I(a)=\int_{0}^{1} \frac{\ln \left(a x+\sqrt{1-x^{2}}\right)}{x}\,\mathrm d x,
+\]</span> 那么 <span class="math display">\[
+\begin{align*}I^{\prime}(a)&amp;=\int_0^1{x\over ax+\sqrt{1-x^2}}\frac1x\,\mathrm dx\\
+&amp;=\int_{0}^{1} \frac{\mathrm d x}{a x+\sqrt{1-x^{2}}}\\
+&amp;=\int_0^{\frac\pi2}{\cos t\over a\sin t+\cos t}\,\mathrm dt
+\\&amp;=: I\end{align*}
+\]</span> 定义 <span class="math display">\[
+J=\int_0^{\frac\pi2}{\sin t\over a\sin t +\cos t}\,\mathrm dt,
+\]</span> 组合积分法： <span class="math display">\[
+I+aJ=\int_0^\frac\pi2{a\sin t+\cos t\over a\sin t +\cos t}\,\mathrm dt=\frac\pi2
+\]</span></p>
+<p><span class="math display">\[
+\begin{align*}
+aI-J&amp;=\int_0^\frac\pi2{a\cos t-\sin t\over a\sin t+\cos t}\,\mathrm dx\\
+&amp;=\int_0^\frac\pi2{\mathrm d(a\sin t+\cos t)\over a\sin t+\cos t}\\
+&amp;=\left.\ln(a\sin t+\cos t)\right|_0^\frac\pi2\\
+&amp;=\ln a
+\end{align*}
+\]</span></p>
+<p>解得 (Cramer法则) <span class="math display">\[
+\begin{align*}
+I&amp;={\begin{vmatrix}\frac\pi2&amp;a\\\ln a&amp;-1\end{vmatrix}\over\begin{vmatrix}1&amp;a\\a&amp;-1\end{vmatrix}}\\&amp;=\frac{1}{1+a^{2}}\left(\frac{\pi}{2}+a \ln a\right).
+\end{align*}
+\]</span> 此外， <span class="math display">\[
+\begin{align*}I(0)&amp;=\int_0^1{\ln\sqrt{1-x^2}\over x}\,\mathrm dx\\&amp;=\int_0^1{\ln\sqrt{1-t}\over\sqrt{t}}{\mathrm dt\over 2
+\sqrt t}&amp;&amp;\text{by $x^2=t$}\\&amp;=\frac14\int_0^1{\ln(1-t)\over t}\,\mathrm dx\\&amp;=-\frac14\int_0^1\sum_{n=1}^\infty{x^{n-1}\over n}\,\mathrm dx&amp;&amp;\text{by Taylor Series}\\
+&amp;=-\frac14\sum_{n=1}^\infty\frac1n\int_0^1x^{n-1}\,\mathrm dx\\&amp;=-\frac14\sum_{n=1}^\infty\frac{1}{n^2}\\&amp;=-\frac{\pi^2}{24},\end{align*}
+\]</span> 于是 <span class="math display">\[
+\begin{align*}\text{原积分}&amp;=I(1)\\&amp;=I(0)+\int_0^1I'(a)\,\mathrm da\\
+&amp;=-\frac{\pi^2}{24}+\int_0^1\frac{1}{1+a^{2}}\left(\frac{\pi}{2}+a \ln a\right)\,\mathrm da\\
+&amp;=-\frac{\pi^2}{24}+\frac{\pi}{2}\int_0^1\frac{1}{1+a^{2}}\,\mathrm dx+\int_0^1\frac{a}{1+a^{2}}\ln a\,\mathrm da\\
+&amp;=-\frac{\pi^2}{24}+\frac\pi2\cdot\frac\pi4+
+\int_0^1\sum_{n=0}^\infty(-1)^na^{2n+1}\ln a\,\mathrm da\\
+&amp;=\frac{\pi^2}{12}+\sum_{n=0}^\infty{(-1)^{n+1}\over(2n+2)^2}\\
+&amp;=\frac{\pi^2}{12}-\frac14\sum_{n=1}^\infty{(-1)^{n}\over n^2}\\
+&amp;=\frac{\pi^2}{12}-\frac14\cdot\frac{\pi^2}{12}\\
+&amp;=\frac{\pi^2}{16}.\end{align*}
+\]</span> <em>注：积分号下求导、积分与求和换序需要有定理保障.</em></p>
+<hr>
+<h2 id="方法二feynmans-trick">方法二（Feynman's Trick）</h2>
+<p><span class="math display">\[
+I=\int_0^1{\ln(x+\sqrt{1-x^2})\over x}\,\mathrm dx
+=\int_0^1{\ln \left[x\left(1+{\sqrt{1-x^2\over x^2}}\right)\right]\over x}\,\mathrm dx
+\]</span></p>
+<p>故作代换<span class="math inline">\(t=\sqrt{1-x^2\over x^2}\)</span>, 那么<span class="math inline">\(x=\frac{1}{\sqrt{1+t^2}}\)</span>, <span class="math inline">\(\mathrm dx=-t(1+t^2)^{-\frac32}\,\mathrm dt:\)</span> <span class="math display">\[
+\begin{align*}
+I&amp;=\int_0^\infty{\ln\left[(1+t^2)^{-\frac12}(1+t)\right]\over(1+t^2)^{-\frac12}}\cdot t(1+t^2)^{-\frac32}\,\mathrm dt\\
+&amp;=\int_0^\infty{t\ln\left({1+t\over\sqrt{1+t^2}}\right)\over 1+t^2}\,\mathrm dt\\
+&amp;=\frac12\int_0^\infty{t\ln\left({(1+t)^2\over{1+t^2}}\right)\over 1+t^2}\,\mathrm dt\\
+&amp;=\frac12\int_0^\infty{t\ln\left(1+{2t\over 1+t^2}\right)\over 1+t^2}\,\mathrm dt\\
+\end{align*}
+\]</span> 定义 <span class="math display">\[
+I(a)=\frac12\int_0^\infty{t\ln\left(1+{2at\over 1+t^2}\right)\over 1+t^2}\,\mathrm dt,
+\]</span> 那么 <span class="math display">\[
+\begin{align*}I'(a)&amp;=\frac12\int_0^\infty {t\over 1+t^2}\cdot{1\over 1+{2at\over 1+t^2}}\cdot{2t\over 1+t^2}\,\mathrm dt\\
+&amp;=\int_0^\infty{t^2\over(t^2+1)(t^2+2at+1)}\,\mathrm d t\\
+&amp;=\frac{1}{2a}\int_0^\infty\left({t\over t^2+1}-{t\over t^2+2at+1}\right)\,\mathrm dt\\
+&amp;=\frac{1}{2a}\int_0^\infty\left(\frac12\cdot{\mathrm d(t^2+1)\over t^2+1}-\frac12\cdot{\mathrm d(t^2+2at+1)\over t^2+2at+1}+{a\over t^2+2at+1}\,\mathrm dt\right)\\
+&amp;=\frac{1}{4a}\left.\ln({t^2+1\over t^2+2at+1})\right|_{t=0}^\infty+\frac12\int_0^\infty{1\over(t+a)^2+1-a^2}\,\mathrm dt\\
+&amp;=0+\frac12\cdot{1\over1-a^2}\int_0^\infty{1\over1+\left({t+a\over\sqrt{1-a^2}}\right)^2}\,\mathrm dt\\
+&amp;=0+\frac12\cdot{1\over\sqrt{1-a^2}}\int_0^\infty{1\over1+\left({t+a\over\sqrt{1-a^2}}\right)^2}\,\mathrm d\left(t+a\over\sqrt{1-a^2}\right)\\
+&amp;={1\over 2\sqrt{1-a^2}}\left.\arctan\left(t+a\over\sqrt{1-a^2}\right)\right|_{t=0}^\infty\\
+&amp;={\frac\pi2-\arctan\left(a\over\sqrt{1-a^2}\right)\over2\sqrt{1-a^2}}\\
+&amp;={\arctan\left(\sqrt{1-a^2}\over a\right)\over 2\sqrt{1-a^2}}
+\end{align*}
+\]</span> 且<span class="math inline">\(I(0)=0\)</span>, 于是 <span class="math display">\[
+\begin{align*}\text{原积分}&amp;=I(1)\\&amp;=I(0)+\int_0^1 I'(a)\,\mathrm da\\
+&amp;=\int_0^1{\arctan\left(\sqrt{1-a^2}\over a\right)\over 2\sqrt{1-a^2}}\,\mathrm da\\
+&amp;=\int_0^\frac\pi2{\arctan({\sin x\over\cos x})\over 2\sin x}\sin x\,\mathrm dx\\
+&amp;=\int_0^\frac\pi2\frac x2\,\mathrm dx\\
+&amp;={\pi^2\over16}.
+\end{align*}
+\]</span></p>
+]]></content>
+      <tags>
+        <tag>数学</tag>
+        <tag>微积分</tag>
       </tags>
   </entry>
 </search>
