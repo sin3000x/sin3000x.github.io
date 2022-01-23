@@ -5,7 +5,7 @@ tags:
   - 分析
   - 泛函分析
 mathjax: true
-abbrlink: 64221
+abbrlink: 64221;
 date: 2022-01-21 13:22:56
 ---
 ## Banach 空间
@@ -58,7 +58,7 @@ $$\|u\|_{L^\infty(\Omega)}=\mathrm{ess\ sup}\{|u(x)|\colon x\in\Omega\}$$
 
 Lebesgue 空间: $$L^p(\Omega)=\{u\colon\Omega\to\R\colon \|u\|_{L^p(\Omega)}<\infty\}$$
 
-*注: $L^p(\Omega)$ 中的元素实际上是函数的等价类.*
+*注: $L^p(\Omega)$ 中的元素实际上是函数的等价类, 因为 Lebesgue 积分不区分几乎处处相等的函数.*
 
 > 🌰 $x^{-q}\in L^p((0,1))\iff q<1/p.$
 
