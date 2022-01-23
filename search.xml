@@ -1,6 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>控制收敛定理 (DCT)</title>
+    <url>/posts/34980/</url>
+    <content><![CDATA[<p><span class="math display">\[\lim_{n\to\infty}\int_S f_n \,d\mu=\int_S f\,d\mu\]</span></p>
+<span id="more"></span>
+<p>条件:</p>
+<ul>
+<li><span class="math inline">\(f_n\)</span> 可测, 逐点收敛到 <span class="math inline">\(f\)</span>.</li>
+<li><span class="math inline">\(f_n\)</span> 被可积函数 <span class="math inline">\(g\)</span> 控制: <span class="math inline">\(|f_n(x)|\leq g(x)\)</span>, 且 <span class="math inline">\(\int_S|g|\,d\mu&lt;\infty.\)</span></li>
+</ul>
+<p>结论:</p>
+<ul>
+<li><span class="math inline">\(f\)</span> 可积</li>
+<li><span class="math inline">\(\lim_{n\to\infty}\int_S|f_n-f|\,d\mu=0\)</span></li>
+<li><span class="math inline">\(\lim_{n\to\infty}\int_S f_n \,d\mu=\int_S f\,d\mu\)</span></li>
+</ul>
+]]></content>
+      <tags>
+        <tag>数学</tag>
+        <tag>实变函数</tag>
+        <tag>分析</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>常见的ODE解法</title>
     <url>/posts/65228/</url>
     <content><![CDATA[<h3 id="可分离变量-ypyqx">1. 可分离变量 <span class="math inline">\(y'=p(y)q(x)\)</span></h3>
@@ -27,69 +50,6 @@ y=Ce^{-\int p(x)dx}
       <tags>
         <tag>数学</tag>
         <tag>分析</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>分块矩阵的行列式</title>
-    <url>/posts/42453/</url>
-    <content><![CDATA[<h2 id="结论">结论</h2>
-<p>设分块矩阵 <span class="math inline">\(\Gamma=\begin{pmatrix}A&amp;B\\C&amp;D\end{pmatrix}\)</span>, 那么</p>
-<ul>
-<li><span class="math inline">\(A\)</span> 可逆时, <span class="math inline">\(\det(\Gamma)=\det(A)\det(D-CA^{-1}B)\)</span></li>
-<li><span class="math inline">\(D\)</span> 可逆时, <span class="math inline">\(\det(\Gamma)=\det(A-BD^{-1}C)\det(D)\)</span></li>
-</ul>
-<span id="more"></span>
-<h2 id="特殊情况">特殊情况</h2>
-<ul>
-<li><p><span class="math inline">\(\begin{equation}\det\begin{pmatrix}  A&amp;0\\ C&amp;D \end{pmatrix}=\det(A)\det(D)\label{lower}\end{equation}\)</span></p></li>
-<li><p><span class="math inline">\(\begin{equation}\label{upper}\det\begin{pmatrix}  A&amp;B\\ 0&amp;D \end{pmatrix}=\det(A)\det(D)\end{equation}\)</span></p></li>
-<li><p><span class="math inline">\(\begin{equation}\label{diag}\det\begin{pmatrix}  A&amp;0\\ 0&amp;D \end{pmatrix}=\det(A)\det(D)\end{equation}\)</span></p></li>
-<li><p><span class="math inline">\(\begin{equation}\label{commute}\text{当 $CD=DC$ 时, }\det(\Gamma)=\det(AD-BC)\end{equation}\)</span></p></li>
-<li><p><span class="math inline">\(\begin{equation}\label{AB}\det\begin{pmatrix} A&amp;B\\B&amp;A \end{pmatrix}=\det(A+B)\det(A-B)\end{equation}\)</span></p></li>
-</ul>
-<h2 id="证明">证明</h2>
-<p>先证 <span class="math inline">\(\eqref{lower}\)</span> : 对 <span class="math inline">\(A\)</span> 部分进行(倍加)<strong>行变换</strong>化为下三角阵, 再对 <span class="math inline">\(D\)</span> 部分进行<strong>列变换</strong>化为下三角阵. 这并不影响 <span class="math inline">\(A\)</span> , <span class="math inline">\(D\)</span> 和分块矩阵的行列式, 且都化为了对角线的乘积. 结论显然.</p>
-<p><span class="math inline">\(\eqref{upper}\)</span> 的证明可以通过取转置得到, <span class="math inline">\(\eqref{diag}\)</span> 是一种特殊情况.</p>
-<p>对于一般情况, 需要利用 <span class="math display">\[\begin{pmatrix}
-    A&amp;B\\C&amp;D
-\end{pmatrix}\begin{pmatrix}
-    I&amp;0\\ -D^{-1}C&amp;I
-\end{pmatrix}=\begin{pmatrix}
-    A-BD^{-1}C&amp;B\\0&amp;D
-\end{pmatrix}.\]</span> 可以把它想成是一种列变换: 把第二列右乘 <span class="math inline">\(-D^{-1}C\)</span> 加到第一列. 两边取行列式并利用 <span class="math inline">\(\det(AB)=\det(A)\det(B)\)</span> 和 <span class="math inline">\(\eqref{upper}\)</span> , 就得到了 <span class="math inline">\(\det(\Gamma)=\det(A-BD^{-1}C)\det(D)\)</span> . 另外一个结论可以利用行变换类似得到.</p>
-<hr>
-<p>下面证 <span class="math inline">\(\eqref{commute}\)</span> . 注意已知 <span class="math inline">\(CD=DC\)</span>.</p>
-<p>我们可以利用 <span class="math display">\[\begin{pmatrix}
-    A&amp;B\\C&amp;D
-\end{pmatrix}\begin{pmatrix}
-    D&amp;0\\-C&amp;I
-\end{pmatrix}=\begin{pmatrix}
-    AD-BC&amp;B\\0&amp;D
-\end{pmatrix}.\]</span> 两边取行列式就得到了 <span class="math display">\[\det(\Gamma)\det(D)=\det(AD-BC)\det(D).\]</span> 如果 <span class="math inline">\(\det(D)\ne0\)</span> , 那么消去 <span class="math inline">\(\det(D)\)</span> 即得结论.</p>
-<p>也可以利用开头的结论<span class="math display">\[\begin{aligned}
-    \det(\Gamma)
-    &amp;=\det(A-BD^{-1}C)\det(D)\\
-    &amp;=\det(AD-BD^{-1}CD)\\
-    &amp;=\det(AD-BD^{-1}DC)\\
-    &amp;=\det(AD-BC).\\
-\end{aligned}\]</span></p>
-<p>当 <span class="math inline">\(\det(D)=0\)</span> 时, 可以给 <span class="math inline">\(D\)</span> 一个扰动. 也就是说, 我们用 <span class="math inline">\(D_\varepsilon=D+\varepsilon I\)</span> 代替 <span class="math inline">\(D\)</span> , 其中 <span class="math inline">\(D_\varepsilon\)</span> 可逆且 <span class="math inline">\(\varepsilon\)</span> 是可以任意小的正数. 这个结论可以利用特征值的性质证明, 也可以利用关于<span class="math inline">\(\varepsilon\)</span>的多项式 <span class="math inline">\(\det(D_\varepsilon)\)</span> 只在有限个点上取 <span class="math inline">\(0\)</span>.</p>
-<p>不难看到 <span class="math inline">\(D_\varepsilon\)</span> 仍然是与 <span class="math inline">\(C\)</span> 可交换的. 然后利用上面的方法可以得到<span class="math display">\[\det(\Gamma)=\det(AD_\varepsilon-BC).\]</span> 令 <span class="math inline">\(\varepsilon\to0\)</span> 便得到了 <span class="math inline">\(\det(\Gamma)=\det(AD-BC).\)</span></p>
-<p>这是由于等号右边是关于 <span class="math inline">\(\varepsilon\)</span> 的多项式, 所以连续, 而 <span class="math inline">\(D_0=D\)</span>.</p>
-<hr>
-<p>对 <span class="math inline">\(\eqref{AB}\)</span>, 只需要对<span class="math display">\[\begin{pmatrix}
-    I&amp;0\\-I&amp;I
-\end{pmatrix}\begin{pmatrix}
-    A&amp;B\\B&amp;A
-\end{pmatrix}\begin{pmatrix}
-    I&amp;0\\I&amp;I
-\end{pmatrix}=\begin{pmatrix}
-    A+B&amp;B\\0&amp;A-B
-\end{pmatrix}\]</span>两边取行列式.</p>
-]]></content>
-      <tags>
-        <tag>数学</tag>
-        <tag>线性代数</tag>
       </tags>
   </entry>
   <entry>
@@ -156,29 +116,6 @@ I_n={(2n)!!\over(2n+1)!!}.
       </tags>
   </entry>
   <entry>
-    <title>控制收敛定理 (DCT)</title>
-    <url>/posts/34980/</url>
-    <content><![CDATA[<p><span class="math display">\[\lim_{n\to\infty}\int_S f_n \,d\mu=\int_S f\,d\mu\]</span></p>
-<span id="more"></span>
-<p>条件:</p>
-<ul>
-<li><span class="math inline">\(f_n\)</span> 可测, 逐点收敛到 <span class="math inline">\(f\)</span>.</li>
-<li><span class="math inline">\(f_n\)</span> 被可积函数 <span class="math inline">\(g\)</span> 控制: <span class="math inline">\(|f_n(x)|\leq g(x)\)</span>, 且 <span class="math inline">\(\int_S|g|\,d\mu&lt;\infty.\)</span></li>
-</ul>
-<p>结论:</p>
-<ul>
-<li><span class="math inline">\(f\)</span> 可积</li>
-<li><span class="math inline">\(\lim_{n\to\infty}\int_S|f_n-f|\,d\mu=0\)</span></li>
-<li><span class="math inline">\(\lim_{n\to\infty}\int_S f_n \,d\mu=\int_S f\,d\mu\)</span></li>
-</ul>
-]]></content>
-      <tags>
-        <tag>数学</tag>
-        <tag>分析</tag>
-        <tag>实变函数</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>$f(A)$的特征值</title>
     <url>/posts/3877/</url>
     <content><![CDATA[<p><strong>引理 (Schur's Lemma): 若<span class="math inline">\(A\)</span>是数域<span class="math inline">\(F\)</span>上的<span class="math inline">\(n\)</span>阶方阵, 且<span class="math inline">\(A\)</span>的特征值都在<span class="math inline">\(F\)</span>中, 那么<span class="math inline">\(A\)</span>与一个上三角阵相似.</strong></p>
@@ -200,6 +137,69 @@ A=Q^{-1}TQ.
 f(A)=f(Q^{-1}TQ)=Q^{-1}f(T)Q.
 \]</span> 根据上三角阵的性质, <span class="math inline">\(f(T)\)</span>也是上三角阵, 且<span class="math inline">\(f(T)\)</span>的对角元恰好是<span class="math inline">\(f(\lambda)\)</span>, 其中<span class="math inline">\(\lambda\)</span>是<span class="math inline">\(T\)</span>的对角元.</p>
 <p>因为相似矩阵有相同的特征值, 且上三角阵的对角元与其特征值对应, 于是<span class="math inline">\(f(A)\)</span>的特征值都是<span class="math inline">\(f(\lambda)\)</span>的形式, 其中<span class="math inline">\(\lambda\)</span>是<span class="math inline">\(A\)</span>的特征值.</p>
+]]></content>
+      <tags>
+        <tag>数学</tag>
+        <tag>线性代数</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>分块矩阵的行列式</title>
+    <url>/posts/42453/</url>
+    <content><![CDATA[<h2 id="结论">结论</h2>
+<p>设分块矩阵 <span class="math inline">\(\Gamma=\begin{pmatrix}A&amp;B\\C&amp;D\end{pmatrix}\)</span>, 那么</p>
+<ul>
+<li><span class="math inline">\(A\)</span> 可逆时, <span class="math inline">\(\det(\Gamma)=\det(A)\det(D-CA^{-1}B)\)</span></li>
+<li><span class="math inline">\(D\)</span> 可逆时, <span class="math inline">\(\det(\Gamma)=\det(A-BD^{-1}C)\det(D)\)</span></li>
+</ul>
+<span id="more"></span>
+<h2 id="特殊情况">特殊情况</h2>
+<ul>
+<li><p><span class="math inline">\(\begin{equation}\det\begin{pmatrix}  A&amp;0\\ C&amp;D \end{pmatrix}=\det(A)\det(D)\label{lower}\end{equation}\)</span></p></li>
+<li><p><span class="math inline">\(\begin{equation}\label{upper}\det\begin{pmatrix}  A&amp;B\\ 0&amp;D \end{pmatrix}=\det(A)\det(D)\end{equation}\)</span></p></li>
+<li><p><span class="math inline">\(\begin{equation}\label{diag}\det\begin{pmatrix}  A&amp;0\\ 0&amp;D \end{pmatrix}=\det(A)\det(D)\end{equation}\)</span></p></li>
+<li><p><span class="math inline">\(\begin{equation}\label{commute}\text{当 $CD=DC$ 时, }\det(\Gamma)=\det(AD-BC)\end{equation}\)</span></p></li>
+<li><p><span class="math inline">\(\begin{equation}\label{AB}\det\begin{pmatrix} A&amp;B\\B&amp;A \end{pmatrix}=\det(A+B)\det(A-B)\end{equation}\)</span></p></li>
+</ul>
+<h2 id="证明">证明</h2>
+<p>先证 <span class="math inline">\(\eqref{lower}\)</span> : 对 <span class="math inline">\(A\)</span> 部分进行(倍加)<strong>行变换</strong>化为下三角阵, 再对 <span class="math inline">\(D\)</span> 部分进行<strong>列变换</strong>化为下三角阵. 这并不影响 <span class="math inline">\(A\)</span> , <span class="math inline">\(D\)</span> 和分块矩阵的行列式, 且都化为了对角线的乘积. 结论显然.</p>
+<p><span class="math inline">\(\eqref{upper}\)</span> 的证明可以通过取转置得到, <span class="math inline">\(\eqref{diag}\)</span> 是一种特殊情况.</p>
+<p>对于一般情况, 需要利用 <span class="math display">\[\begin{pmatrix}
+    A&amp;B\\C&amp;D
+\end{pmatrix}\begin{pmatrix}
+    I&amp;0\\ -D^{-1}C&amp;I
+\end{pmatrix}=\begin{pmatrix}
+    A-BD^{-1}C&amp;B\\0&amp;D
+\end{pmatrix}.\]</span> 可以把它想成是一种列变换: 把第二列右乘 <span class="math inline">\(-D^{-1}C\)</span> 加到第一列. 两边取行列式并利用 <span class="math inline">\(\det(AB)=\det(A)\det(B)\)</span> 和 <span class="math inline">\(\eqref{upper}\)</span> , 就得到了 <span class="math inline">\(\det(\Gamma)=\det(A-BD^{-1}C)\det(D)\)</span> . 另外一个结论可以利用行变换类似得到.</p>
+<hr>
+<p>下面证 <span class="math inline">\(\eqref{commute}\)</span> . 注意已知 <span class="math inline">\(CD=DC\)</span>.</p>
+<p>我们可以利用 <span class="math display">\[\begin{pmatrix}
+    A&amp;B\\C&amp;D
+\end{pmatrix}\begin{pmatrix}
+    D&amp;0\\-C&amp;I
+\end{pmatrix}=\begin{pmatrix}
+    AD-BC&amp;B\\0&amp;D
+\end{pmatrix}.\]</span> 两边取行列式就得到了 <span class="math display">\[\det(\Gamma)\det(D)=\det(AD-BC)\det(D).\]</span> 如果 <span class="math inline">\(\det(D)\ne0\)</span> , 那么消去 <span class="math inline">\(\det(D)\)</span> 即得结论.</p>
+<p>也可以利用开头的结论<span class="math display">\[\begin{aligned}
+    \det(\Gamma)
+    &amp;=\det(A-BD^{-1}C)\det(D)\\
+    &amp;=\det(AD-BD^{-1}CD)\\
+    &amp;=\det(AD-BD^{-1}DC)\\
+    &amp;=\det(AD-BC).\\
+\end{aligned}\]</span></p>
+<p>当 <span class="math inline">\(\det(D)=0\)</span> 时, 可以给 <span class="math inline">\(D\)</span> 一个扰动. 也就是说, 我们用 <span class="math inline">\(D_\varepsilon=D+\varepsilon I\)</span> 代替 <span class="math inline">\(D\)</span> , 其中 <span class="math inline">\(D_\varepsilon\)</span> 可逆且 <span class="math inline">\(\varepsilon\)</span> 是可以任意小的正数. 这个结论可以利用特征值的性质证明, 也可以利用关于<span class="math inline">\(\varepsilon\)</span>的多项式 <span class="math inline">\(\det(D_\varepsilon)\)</span> 只在有限个点上取 <span class="math inline">\(0\)</span>.</p>
+<p>不难看到 <span class="math inline">\(D_\varepsilon\)</span> 仍然是与 <span class="math inline">\(C\)</span> 可交换的. 然后利用上面的方法可以得到<span class="math display">\[\det(\Gamma)=\det(AD_\varepsilon-BC).\]</span> 令 <span class="math inline">\(\varepsilon\to0\)</span> 便得到了 <span class="math inline">\(\det(\Gamma)=\det(AD-BC).\)</span></p>
+<p>这是由于等号右边是关于 <span class="math inline">\(\varepsilon\)</span> 的多项式, 所以连续, 而 <span class="math inline">\(D_0=D\)</span>.</p>
+<hr>
+<p>对 <span class="math inline">\(\eqref{AB}\)</span>, 只需要对<span class="math display">\[\begin{pmatrix}
+    I&amp;0\\-I&amp;I
+\end{pmatrix}\begin{pmatrix}
+    A&amp;B\\B&amp;A
+\end{pmatrix}\begin{pmatrix}
+    I&amp;0\\I&amp;I
+\end{pmatrix}=\begin{pmatrix}
+    A+B&amp;B\\0&amp;A-B
+\end{pmatrix}\]</span>两边取行列式.</p>
 ]]></content>
       <tags>
         <tag>数学</tag>
@@ -262,6 +262,12 @@ f(A)=f(Q^{-1}TQ)=Q^{-1}f(T)Q.
       </tags>
   </entry>
   <entry>
+    <title>Hello World</title>
+    <url>/posts/16107/</url>
+    <content><![CDATA[<p>插入图片: </p><figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">&lt;img src="/file/..." width="250" height="250"/&gt;</span><br></pre></td></tr></tbody></table></figure><p></p>
+]]></content>
+  </entry>
+  <entry>
     <title>定积分性质例题</title>
     <url>/posts/5066/</url>
     <content><![CDATA[<p><strong>问题：在<span class="math inline">\([0,\pi]\)</span>上的连续函数<span class="math inline">\(f\)</span>满足</strong> <span class="math display">\[
@@ -285,13 +291,6 @@ F(x)=f(x)\sin(x-x_0)\leq0,~\forall x\in(0,\pi).
         <tag>数学</tag>
         <tag>微积分</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/posts/16107/</url>
-    <content><![CDATA[<p>第一篇. 果然搭建环境啥的才是最坑的.</p>
-<p>总算把world给哈喽出来了, 你先在这哈着吧.</p>
-]]></content>
   </entry>
   <entry>
     <title>Hesse 矩阵与Jacobi 矩阵</title>
@@ -330,6 +329,39 @@ F(x)=f(x)\sin(x-x_0)\leq0,~\forall x\in(0,\pi).
         <tag>数学</tag>
         <tag>分析</tag>
         <tag>微积分</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>拉格朗日插值</title>
+    <url>/posts/17585/</url>
+    <content><![CDATA[<p><span class="math display">\[p(x)=\sum_{k=0}^n y_kl_k(x)\]</span></p>
+<h2 id="基函数">基函数</h2>
+<p>给定点 <span class="math inline">\(x_0,\ldots,x_n\)</span>. 问题归结于寻找<strong>基函数</strong> <span class="math display">\[l_k(x_j)=\begin{cases}
+    1\quad j=k\\
+    0\quad j\ne k
+\end{cases},\]</span> 因为插值多项式可以写成它们的线性组合.</p>
+<span id="more"></span>
+<p>根据零点分布可以设 <span class="math display">\[l_k(x)=c\prod_{j\ne k}(x-x_j),\]</span> 代入 <span class="math inline">\(x_k\)</span> 得到</p>
+<p><span class="math display">\[
+1=l_k(x_k)=c\prod_{j\ne k}(x_k-x_j),
+\]</span></p>
+<p>于是 <span class="math inline">\(c=\dfrac{1}{\prod_{j\ne k}(x_k-x_j)}\)</span>. 这就得到了 <span class="math display">\[l_k(x)=\frac{\prod_{j\ne k}(x-x_j)}{\prod_{j\ne k}(x_k-x_j)}.\]</span></p>
+<p>它实际上就是一个特殊的多项式. 比如这是给定 <span class="math inline">\(x_{0}:x_4=-2:2\)</span>, 在 <span class="math inline">\(x_3\)</span> 处取 <span class="math inline">\(1\)</span> 的基函数 <span class="math display">\[l_3(x)=\frac{(x+2)(x+1)x(x-2)}{(1+2)(1+1)\cdot1\cdot(1-2)}\]</span></p>
+<p><img src="/file/l_basis.svg"></p>
+<p>定义节点函数 <span class="math display">\[l(x)=\prod_{k=0}^n(x-x_k),\]</span> 可以得到基函数 <span class="math display">\[l_j(x)={l(x)\over l'(x_j)(x-x_j)}\]</span></p>
+<h2 id="barycentric-插值公式">Barycentric 插值公式</h2>
+<p><span class="math display">\[
+p(x)={\sum_{k=0}^n{\lambda_k y_k\over x-x_k}\over\sum_{k=0}^n{\lambda_k\over x-x_k}},
+\]</span> 其中 <span class="math display">\[\lambda_k={1\over\prod_{j\ne k}(x_k-x_j)}\]</span></p>
+<h2 id="误差">误差</h2>
+<p><span class="math inline">\(f\in C^{n+1}([a,b])\)</span>时 <span class="math display">\[f(x)-p(x)={f^{(n+1)}(\xi)\over (n+1)!}l(x),\]</span> 其中 <span class="math inline">\(\xi\in(a,b)\)</span> 与 <span class="math inline">\(x\)</span> 有关.</p>
+<hr>
+<p><span class="math inline">\(f\)</span> 在包含节点的区域 <span class="math inline">\(\Omega\)</span> 上解析时</p>
+<p><span class="math display">\[p(x)={1\over 2\pi i}\int_\Gamma{f(t)(l(t)-l(x))\over l(t)(t-x)}\d x\]</span> <span class="math display">\[f(x)-p(x)={1\over 2\pi i}\int_\Gamma {l(x)\over l(t)}{f(t)\over t-x}\d t\]</span></p>
+]]></content>
+      <tags>
+        <tag>数学</tag>
+        <tag>数值分析</tag>
       </tags>
   </entry>
   <entry>
@@ -451,6 +483,20 @@ P&amp;Q&amp;R
       </tags>
   </entry>
   <entry>
+    <title>利用积分下求导计算无穷积分</title>
+    <url>/posts/30510/</url>
+    <content><![CDATA[<p>计算 <span class="math display">\[
+\int_{-\infty}^{+\infty}{x\sin x\over (x^2+a^2)(x^2+b^2)}\,\mathrm dx.
+\]</span> 其实是测试一下内嵌pdf.</p>
+<span id="more"></span>
+<div class="pdfobject-container" data-target="/file/integrate.pdf" data-height="500px"></div>
+]]></content>
+      <tags>
+        <tag>数学</tag>
+        <tag>微积分</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>为什么用开覆盖定义紧集</title>
     <url>/posts/47720/</url>
     <content><![CDATA[<p>【定义】一个集合是紧集的意思是，它的任何一个开覆盖都有有限子覆盖。</p>
@@ -477,20 +523,6 @@ P&amp;Q&amp;R
       <tags>
         <tag>数学</tag>
         <tag>拓扑</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>利用积分下求导计算无穷积分</title>
-    <url>/posts/30510/</url>
-    <content><![CDATA[<p>计算 <span class="math display">\[
-\int_{-\infty}^{+\infty}{x\sin x\over (x^2+a^2)(x^2+b^2)}\,\mathrm dx.
-\]</span> 其实是测试一下内嵌pdf.</p>
-<span id="more"></span>
-<div class="pdfobject-container" data-target="/file/integrate.pdf" data-height="500px"></div>
-]]></content>
-      <tags>
-        <tag>数学</tag>
-        <tag>微积分</tag>
       </tags>
   </entry>
   <entry>
@@ -522,6 +554,20 @@ Q=\begin{bmatrix}1&amp;\\&amp;\frac12\end{bmatrix}\begin{bmatrix}0&amp;1\\1&amp;
       <tags>
         <tag>数学</tag>
         <tag>线性代数</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>科普是一项非常难的工作</title>
+    <url>/posts/20918/</url>
+    <content><![CDATA[<p>要想当一个好学生，只需要把知识学懂。</p>
+<p>要想当一个好老师，需要一些基础知识，还需要良好的性格和表达能力、心理学和教育学经验。</p>
+<p>要想当一个好教授，需要有专业知识、科研水平，只需要一般般的表达能力。</p>
+<p><strong>而要当一个好的科普工作者，需要有远超学生的理解能力，教授一样的专业水平，老师一样的教学功力，艺术家一样的审美，作家一样的文笔，诗人一样的清高，科学家一样对知识的热爱，艺人一样对大众心理的把控能力，运动员一样的毅力，还要有自身的人格魅力、抗压抗打击能力。</strong></p>
+<p>科普是一项非常难的工作，比讲课教书难得多。因为它面对的不是专业人士，而是乌合之众。这导致科普工作者必须用通俗语言来解释专业知识，却又不至于过于通俗而产生误导。稍微有一点漏洞就会被抓住攻击——有问题的科普比谣言更可怕，比迷信更害人。</p>
+<p>所以，科普工作者是一个神圣的标签，这个名号比想象中要严苛得多。</p>
+]]></content>
+      <tags>
+        <tag>随笔</tag>
       </tags>
   </entry>
   <entry>
@@ -617,20 +663,6 @@ a_n={n!\over(2n+1)!!}\cdot{1\over n+1}，
       <tags>
         <tag>数学</tag>
         <tag>级数</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>科普是一项非常难的工作</title>
-    <url>/posts/20918/</url>
-    <content><![CDATA[<p>要想当一个好学生，只需要把知识学懂。</p>
-<p>要想当一个好老师，需要一些基础知识，还需要良好的性格和表达能力、心理学和教育学经验。</p>
-<p>要想当一个好教授，需要有专业知识、科研水平，只需要一般般的表达能力。</p>
-<p><strong>而要当一个好的科普工作者，需要有远超学生的理解能力，教授一样的专业水平，老师一样的教学功力，艺术家一样的审美，作家一样的文笔，诗人一样的清高，科学家一样对知识的热爱，艺人一样对大众心理的把控能力，运动员一样的毅力，还要有自身的人格魅力、抗压抗打击能力。</strong></p>
-<p>科普是一项非常难的工作，比讲课教书难得多。因为它面对的不是专业人士，而是乌合之众。这导致科普工作者必须用通俗语言来解释专业知识，却又不至于过于通俗而产生误导。稍微有一点漏洞就会被抓住攻击——有问题的科普比谣言更可怕，比迷信更害人。</p>
-<p>所以，科普工作者是一个神圣的标签，这个名号比想象中要严苛得多。</p>
-]]></content>
-      <tags>
-        <tag>随笔</tag>
       </tags>
   </entry>
   <entry>
