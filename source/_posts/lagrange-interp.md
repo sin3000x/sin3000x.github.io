@@ -26,6 +26,8 @@ $$
 
 于是 $c=\dfrac{1}{\prod_{j\ne k}(x_k-x_j)}$. 这就得到了 $$l_k(x)=\frac{\prod_{j\ne k}(x-x_j)}{\prod_{j\ne k}(x_k-x_j)}.$$
 
+*注: 这个 $c$ 实际上是 Barycentric 权重, 即后面定义的 $\lambda_k$.*
+
 它实际上就是一个特殊的多项式. 比如这是给定 $x_{0}:x_4=-2:2$, 在 $x_3$ 处取 $1$ 的基函数 $$l_3(x)=\frac{(x+2)(x+1)x(x-2)}{(1+2)(1+1)\cdot1\cdot(1-2)}$$
 
 <img src="/file/l_basis.svg"/>
