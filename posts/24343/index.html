@@ -20,21 +20,21 @@
     var CONFIG = {"hostname":"sin3000x.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="Hessian 是数量场的二阶导: \[H_{i,j}&#x3D;{\partial f\over\partial x_i\partial x_j}\] Jacobian 是向量场的一阶导: \[J_{i,j}&#x3D;{\partial\bm{f_i}\over\partial x_j}\] 二者的关系: Hessian 是数量场梯度的 Jacobian, 即 \(H(f)&#x3D;J(\nabla f)\).  🌰">
+  <meta name="description" content="Quadrature Rule 指的是形式 \[Q(f)&#x3D;\sum_{k&#x3D;0}^nw_kf(x_k)\] 有时把 \(f(x_k)\) 简写作 \(f_k\).">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hesse 矩阵与Jacobi 矩阵">
-<meta property="og:url" content="http://sin3000x.github.io/posts/44547/index.html">
+<meta property="og:title" content="数值积分">
+<meta property="og:url" content="http://sin3000x.github.io/posts/24343/index.html">
 <meta property="og:site_name" content="记问之学，不足以为人师">
-<meta property="og:description" content="Hessian 是数量场的二阶导: \[H_{i,j}&#x3D;{\partial f\over\partial x_i\partial x_j}\] Jacobian 是向量场的一阶导: \[J_{i,j}&#x3D;{\partial\bm{f_i}\over\partial x_j}\] 二者的关系: Hessian 是数量场梯度的 Jacobian, 即 \(H(f)&#x3D;J(\nabla f)\).  🌰">
+<meta property="og:description" content="Quadrature Rule 指的是形式 \[Q(f)&#x3D;\sum_{k&#x3D;0}^nw_kf(x_k)\] 有时把 \(f(x_k)\) 简写作 \(f_k\).">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-01-21T17:10:59.000Z">
-<meta property="article:modified_time" content="2022-01-21T17:32:08.782Z">
+<meta property="article:published_time" content="2022-01-26T12:35:25.000Z">
+<meta property="article:modified_time" content="2022-01-26T16:23:59.790Z">
 <meta property="article:author" content="Jeremy Gu">
 <meta property="article:tag" content="数学">
-<meta property="article:tag" content="分析">
+<meta property="article:tag" content="数值分析">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://sin3000x.github.io/posts/44547/">
+<link rel="canonical" href="http://sin3000x.github.io/posts/24343/">
 
 
 <script id="page-configurations">
@@ -47,7 +47,7 @@
   };
 </script>
 
-  <title>Hesse 矩阵与Jacobi 矩阵 | 记问之学，不足以为人师</title>
+  <title>数值积分 | 记问之学，不足以为人师</title>
   
 
 
@@ -183,7 +183,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://sin3000x.github.io/posts/44547/">
+    <link itemprop="mainEntityOfPage" href="http://sin3000x.github.io/posts/24343/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -196,7 +196,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Hesse 矩阵与Jacobi 矩阵
+          数值积分
         </h1>
 
         <div class="post-meta">
@@ -207,7 +207,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2022-01-21 17:10:59 / 修改时间：17:32:08" itemprop="dateCreated datePublished" datetime="2022-01-21T17:10:59+00:00">2022-01-21</time>
+              <time title="创建时间：2022-01-26 12:35:25 / 修改时间：16:23:59" itemprop="dateCreated datePublished" datetime="2022-01-26T12:35:25+00:00">2022-01-26</time>
             </span>
 
           
@@ -228,16 +228,41 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>Hessian 是<strong>数量场</strong>的二阶导: <span class="math display">\[H_{i,j}={\partial f\over\partial x_i\partial x_j}\]</span></p>
-<p>Jacobian 是<strong>向量场</strong>的一阶导: <span class="math display">\[J_{i,j}={\partial\bm{f_i}\over\partial x_j}\]</span></p>
-<p>二者的关系: Hessian 是数量场梯度的 Jacobian, 即 <span class="math inline">\(H(f)=J(\nabla f)\)</span>.</p>
-<blockquote>
-<p>🌰 <span class="math inline">\(f(x,y)=x^2+y^2\)</span></p>
+        <p><strong>Quadrature Rule</strong> 指的是形式 <span class="math display">\[Q(f)=\sum_{k=0}^nw_kf(x_k)\]</span></p>
+<p>有时把 <span class="math inline">\(f(x_k)\)</span> 简写作 <span class="math inline">\(f_k\)</span>.</p>
+<span id="more"></span>
+<h2 id="interpolation-rule">Interpolation Rule</h2>
+<p>在插值多项式上求积分, 即 <span class="math display">\[w_k=\int_a^b l_k(x)\d x\]</span></p>
+<h3 id="midpoint-rule">Midpoint Rule</h3>
+<p>在中点处取 <span class="math inline">\(0\)</span> 次多项式. <span class="math display">\[Q(f)=(b-a)f(x_0),\]</span> 其中 <span class="math inline">\(x_0\)</span> 是区间中点. 精度为 <span class="math inline">\(1\)</span>.</p>
+<h3 id="newton-cotes-rules">Newton-Cotes Rules</h3>
+<p>区间上的等距节点. <span class="math inline">\(n\)</span> 为奇数时精度为 <span class="math inline">\(n\)</span>, 偶数时精度为 <span class="math inline">\(n+1\)</span>.</p>
 <ul>
-<li><span class="math inline">\(H(f)=\begin{bmatrix}2&amp;0\\0&amp;2\end{bmatrix}\)</span></li>
-<li><span class="math inline">\(J(\nabla f)=J\left(\begin{bmatrix} 2x\\2y \end{bmatrix}\right)=\begin{bmatrix}2&amp;0\\0&amp;2\end{bmatrix}\)</span></li>
+<li><span class="math inline">\(n=1\)</span>: trapezium rule 精度为 <span class="math inline">\(1\)</span> <span class="math display">\[\frac h2(f_0+f_1)\]</span> 误差 <span class="math display">\[I-Q=-\frac{1}{12}h^3 f''(\xi),\ \xi\in(a,b)\]</span></li>
+<li><span class="math inline">\(n=2\)</span>: Simpson's rule 精度为 <span class="math inline">\(3\)</span> <span class="math display">\[\frac h3\left(f(x_0)+4f(x_1)+f(x_2)\right)\]</span> 误差 <span class="math display">\[I-Q=-\frac{h^5}{90}f^{(4)}(\xi)=-\frac{(b-a)^5}{2880}f^{(4)}(\xi),\ \xi\in(a,b)\]</span></li>
 </ul>
-</blockquote>
+<h2 id="gauss-rule">Gauss Rule</h2>
+<p>寻找关于权重 <span class="math inline">\(w(x)\)</span> 精度最高的节点, 实际上是关于 <span class="math inline">\(w(x)\)</span> 的正交多项式的零点. 精度是 <span class="math inline">\(2n+1\)</span>.</p>
+<h3 id="gauss-legendre-quadrature-wx1">Gauss-Legendre Quadrature <span class="math inline">\(w(x)=1\)</span></h3>
+<ul>
+<li><span class="math inline">\(n=0\)</span>: <span class="math display">\[\int_{-1}^1f(x)\d x\approx 2f(0)\]</span> 是中点法.</li>
+<li><span class="math inline">\(n=1\)</span>: <span class="math display">\[\int_{-1}^1f(x)\d x\approx f\left(-\frac{1}{\sqrt 3}\right)+f\left(\frac{1}{\sqrt 3}\right)\]</span></li>
+</ul>
+<h3 id="gauss-chebyshev-quadrature-wx1-x2-12">Gauss-Chebyshev Quadrature <span class="math inline">\(w(x)=(1-x^2)^{-1/2}\)</span></h3>
+<p><span class="math inline">\(x_0,\ldots,x_n\)</span> 取 <span class="math inline">\(T_{n+1}(x)\)</span> 的零点, 即 Chebyshev 分点 <span class="math display">\[x_k=\cos\left(\frac\pi2\frac{2k+1}{n+1}\right)\]</span></p>
+<p>此时权重都是 <span class="math inline">\(\displaystyle w_k=\frac{\pi}{n+1}\)</span></p>
+<h2 id="composite-quadrature-rules">Composite Quadrature Rules</h2>
+<p>把区间等分后做积分.</p>
+<h3 id="composite-midpoint-rule">Composite Midpoint Rule</h3>
+<p><span class="math display">\[
+M(h)=\sum_{k=0}^{n-1}hf\left(a+h\left(k+\frac12\right)\right)
+\]</span> 误差 <span class="math display">\[I-M=\frac{h^2}{24}(b-a)f''(\xi)\]</span></p>
+<h3 id="composite-trapezium-rule">Composite Trapezium Rule</h3>
+<p><span class="math display">\[T(h)=\frac h2\left(f(t_0)+2f(t_1)+2f(t_2)+\cdots+2f(t_{n-1})+f(t_n)\right)\]</span> 误差 <span class="math display">\[I-T=-\frac{h^2}{12}(b-a)f''(\xi)\]</span></p>
+<h3 id="composite-simpsons-rule">Composite Simpson's Rule</h3>
+<p><span class="math display">\[S(h)=\frac{h}{3}\left(f(t_0)+4f(t_1)+2f(t_2)+4f(t_3)+\cdots+2f(t_{2m-2})+4f(t_{2m-1})+f(t_{2m})\right)\]</span> 误差 <span class="math display">\[I-S=-\frac{h^4}{180}(b-a)f^{(4)}(\xi)\]</span></p>
+<h2 id="extrapolation">Extrapolation</h2>
+<p>做组合消除误差. 令 <span class="math inline">\(T_{k,1}=T(h/2^{k-1})\)</span> 并构造表 <span class="math display">\[T_{i,j}={4^{j-1}T_{i,j-1}-T_{i-1,j-1}\over 4^{j-1}-1}\]</span> 每向右一列误差 <span class="math inline">\(\times h^2\)</span>.</p>
 
     </div>
 
@@ -248,7 +273,7 @@
       <footer class="post-footer">
           <div class="post-tags">
               <a href="/tags/%E6%95%B0%E5%AD%A6/" rel="tag"># 数学</a>
-              <a href="/tags/%E5%88%86%E6%9E%90/" rel="tag"># 分析</a>
+              <a href="/tags/%E6%95%B0%E5%80%BC%E5%88%86%E6%9E%90/" rel="tag"># 数值分析</a>
           </div>
 
         
@@ -257,12 +282,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/posts/64221/" rel="prev" title="泛函基础">
-      <i class="fa fa-chevron-left"></i> 泛函基础
+    <a href="/posts/57010/" rel="prev" title="线性方程组的迭代法">
+      <i class="fa fa-chevron-left"></i> 线性方程组的迭代法
     </a></div>
       <div class="post-nav-item">
-    <a href="/posts/36991/" rel="next" title="最小二乘法">
-      最小二乘法 <i class="fa fa-chevron-right"></i>
+    <a href="/posts/23214/" rel="next" title="数值 ODE">
+      数值 ODE <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -322,6 +347,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#interpolation-rule"><span class="nav-number">1.</span> <span class="nav-text">Interpolation Rule</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#midpoint-rule"><span class="nav-number">1.1.</span> <span class="nav-text">Midpoint Rule</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#newton-cotes-rules"><span class="nav-number">1.2.</span> <span class="nav-text">Newton-Cotes Rules</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#gauss-rule"><span class="nav-number">2.</span> <span class="nav-text">Gauss Rule</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#gauss-legendre-quadrature-wx1"><span class="nav-number">2.1.</span> <span class="nav-text">Gauss-Legendre Quadrature \(w(x)&#x3D;1\)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#gauss-chebyshev-quadrature-wx1-x2-12"><span class="nav-number">2.2.</span> <span class="nav-text">Gauss-Chebyshev Quadrature \(w(x)&#x3D;(1-x^2)^{-1&#x2F;2}\)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#composite-quadrature-rules"><span class="nav-number">3.</span> <span class="nav-text">Composite Quadrature Rules</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#composite-midpoint-rule"><span class="nav-number">3.1.</span> <span class="nav-text">Composite Midpoint Rule</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#composite-trapezium-rule"><span class="nav-number">3.2.</span> <span class="nav-text">Composite Trapezium Rule</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#composite-simpsons-rule"><span class="nav-number">3.3.</span> <span class="nav-text">Composite Simpson&#39;s Rule</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#extrapolation"><span class="nav-number">4.</span> <span class="nav-text">Extrapolation</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -470,6 +496,64 @@ document.querySelectorAll('.pdfobject-container').forEach(element => {
   
 
   
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        macros: {
+          d: '{\\,\\mathrm{d}}',
+          R: '{\\mathbb{R}}',
+          bm: ["{\\boldsymbol #1}", 1]
+        },
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams',
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
 
   
 
