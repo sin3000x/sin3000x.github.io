@@ -28,7 +28,7 @@
 <meta property="og:description" content="Banach 空间 一个完备的赋范空间.  🌰 欧式空间装备了 \(p\) 范数.">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-01-21T13:22:56.000Z">
-<meta property="article:modified_time" content="2022-01-21T16:57:49.277Z">
+<meta property="article:modified_time" content="2022-03-25T18:20:25.242Z">
 <meta property="article:author" content="Jeremy Gu">
 <meta property="article:tag" content="数学">
 <meta property="article:tag" content="分析">
@@ -206,10 +206,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2022-01-21 13:22:56 / 修改时间：16:57:49" itemprop="dateCreated datePublished" datetime="2022-01-21T13:22:56+00:00">2022-01-21</time>
+              <time title="创建时间：2022-01-21 13:22:56" itemprop="dateCreated datePublished" datetime="2022-01-21T13:22:56+00:00">2022-01-21</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-03-25 18:20:25" itemprop="dateModified" datetime="2022-03-25T18:20:25+00:00">2022-03-25</time>
+              </span>
 
           
             <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
@@ -269,11 +275,59 @@
 <p>Lebesgue <span class="math inline">\(p\)</span> 范数: <span class="math display">\[\|u\|_{L^p(\Omega)}=\left(\int_\Omega|u|^p\d x\right)^{1\over p}\]</span></p>
 <p><span class="math display">\[\|u\|_{L^\infty(\Omega)}=\mathrm{ess\ sup}\{|u(x)|\colon x\in\Omega\}\]</span></p>
 <p>Lebesgue 空间: <span class="math display">\[L^p(\Omega)=\{u\colon\Omega\to\R\colon \|u\|_{L^p(\Omega)}&lt;\infty\}\]</span></p>
-<p><em>注: <span class="math inline">\(L^p(\Omega)\)</span> 中的元素实际上是函数的等价类, 因为 Lebesgue 积分不区分几乎处处相等的函数.</em></p>
+<p><span class="math inline">\(p\)</span> 越大, 越不能容忍奇点处的发散.</p>
 <blockquote>
-<p>🌰 <span class="math inline">\(x^{-q}\in L^p((0,1))\iff q&lt;1/p.\)</span></p>
+<p>取 <span class="math inline">\(\Omega=(0,1)\)</span>, 那么 <span class="math inline">\(L^1\)</span> 接受 <span class="math inline">\({1\over x^{0.99}}\)</span> 而不接受 <span class="math inline">\(\frac 1x\)</span>. 前者在 0 处的发散率慢一些.</p>
+<p><span class="math inline">\(L^2\)</span> 接受 <span class="math inline">\({1\over x^{0.4999}}\)</span>, 而不接受 <span class="math inline">\(1\over\sqrt x\)</span>.</p>
 </blockquote>
+<p><em>注: <span class="math inline">\(L^p(\Omega)\)</span> 中的元素实际上是函数的等价类, 因为 Lebesgue 积分不区分几乎处处相等的函数.</em></p>
 <p><strong>定理: <span class="math inline">\(p\in[1,\infty]\)</span> 的 Lebesgue 空间都是 Banach 空间, <span class="math inline">\(p=2\)</span> 时也是 Hilbert 空间.</strong></p>
+<h2 id="sobolev-空间">Sobolev 空间</h2>
+<h3 id="弱导数">弱导数</h3>
+<p>这是利用分部积分做的推广, <span class="math inline">\(g\)</span> 是 <span class="math inline">\(f_i'\)</span> 的弱化. 其中 <span class="math inline">\(\phi\)</span> 是任意的测试函数. <span class="math display">\[\int_\Omega g\phi\d x=-\int_\Omega f{\partial\phi\over\partial x_i}\d x,\ \forall\phi\in C_0^\infty(\Omega).\]</span> 其中 <span class="math inline">\(f,g\)</span> 在 <span class="math inline">\(L_{\text{loc}}^1(\Omega)\)</span> 中, 这指的是在 <span class="math inline">\(\Omega^\circ\)</span> 中的任意紧子集上 <span class="math inline">\(L^1\)</span> 可积. 这个集合包括 <span class="math inline">\(L^1(\Omega)\)</span> 和 <span class="math inline">\(C^0(\Omega)\)</span>.</p>
+<p>弱导数在不区分零测集时唯一.</p>
+<blockquote>
+<p>任何<strong>分段可导</strong>的<strong>连续</strong>函数都是弱可导的.</p>
+</blockquote>
+<h3 id="多维指标">多维指标</h3>
+<p>如果 <span class="math inline">\(\alpha=(\alpha_1,\ldots,\alpha_n)\)</span>, 那么 <span class="math display">\[\phi^{(\alpha)}=\left(\partial_{x_1}\right)^{\alpha_1}\cdots(\partial_{x_n})^{\alpha_n}\phi.\]</span> 定义 <span class="math inline">\(|\alpha|=\alpha_1+\cdots+\alpha_n\)</span>.</p>
+<h3 id="高阶弱导数">高阶弱导数</h3>
+<p>推广 <span class="math inline">\(f^{(\alpha)}\)</span> 为 <span class="math inline">\(D^\alpha f\)</span>, 需要存在一个 <span class="math inline">\(g\)</span>: <span class="math display">\[\int_{\Omega}g\phi\d x=(-1)^{|\alpha|}\int_{\Omega}fg^{(\alpha)}\d x, \quad\forall\phi\in C_0^\infty(\Omega).\]</span></p>
+<h3 id="sobolev-范数">Sobolev 范数</h3>
+<p><span class="math display">\[
+\|f\|_{W_p^k(\Omega)}=\left(\sum_{|\alpha|\leq k}\|D^\alpha f\|_{L^p(\Omega)}^p\right)^\frac1p
+\]</span> <span class="math display">\[
+\|f\|_{W_\infty^k(\Omega)}=\max_{|\alpha|\leq k}\|D^\alpha f\|_{L^\infty(\Omega)}
+\]</span> ### Sobolev 空间 <span class="math display">\[W_p^k(\Omega)=\{f\in L_{\text{loc}}^1(\Omega)\colon \|f\|_{W_p^k(\Omega)}&lt;\infty\}\]</span> 是一个 Banach 空间. <span class="math display">\[H^k(\Omega)=W_2^k(\Omega)\]</span> 是 Hilbert 空间.</p>
+<blockquote>
+<p><span class="math inline">\(W_p^0(\Omega)=L^p(\Omega)\)</span> 不要求导数.</p>
+</blockquote>
+<h2 id="sobolev-不等式">Sobolev 不等式</h2>
+<p>如果有足够的弱导数, 那么函数连续有界:</p>
+<p><span class="math inline">\(\Omega\in\R^n\)</span> 是 Lipschitz 区域, <span class="math inline">\(k\)</span> 是正整数, <span class="math inline">\(p\geq1\)</span>. 若有 <span class="math display">\[
+\begin{gathered}
+k\geq n,\quad p=1\\
+k&gt;n/p,\quad p&gt;1
+\end{gathered}
+\]</span> 那么存在常数 <span class="math inline">\(C\)</span> 使得 <span class="math inline">\(\forall u\in W_p^k(\Omega)\)</span>, <span class="math display">\[
+\|u\|_{L^\infty(\Omega)}\leq C\|u\|_{W_p^k(\Omega)}.
+\]</span> <span class="math inline">\(u\)</span> 的等价类中有一个连续函数.</p>
+<h3 id="n1"><span class="math inline">\(n=1\)</span></h3>
+<p>只要 <span class="math inline">\(k\geq1\)</span>, 换言之只要有一阶弱导数, 就连续.</p>
+<p><strong>定理: 有界区域上的分段光滑函数在 <span class="math inline">\(H^1\)</span> 中 <span class="math inline">\(\iff\)</span> 连续.</strong></p>
+<p><span class="math display">\[H^1\subset C\]</span></p>
+<h3 id="n2"><span class="math inline">\(n=2\)</span></h3>
+<p><span class="math display">\[
+W_1^1(\Omega)\not\subset C(\Omega),\quad W_1^2(\Omega)\subset C(\Omega)
+\]</span> <span class="math display">\[
+H^1\not\subset C,\quad H^2\subset C
+\]</span></p>
+<h3 id="n3"><span class="math inline">\(n=3\)</span></h3>
+<p><span class="math display">\[
+W_1^2\not\subset C,\quad W_1^3\subset C
+\]</span> <span class="math display">\[
+H^2\subset C
+\]</span></p>
 
     </div>
 
@@ -359,7 +413,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#banach-%E7%A9%BA%E9%97%B4"><span class="nav-number">1.</span> <span class="nav-text">Banach 空间</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hilbert-%E7%A9%BA%E9%97%B4"><span class="nav-number">2.</span> <span class="nav-text">Hilbert 空间</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BA%BF%E6%80%A7%E6%B3%9B%E5%87%BD"><span class="nav-number">2.1.</span> <span class="nav-text">线性泛函</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%B9%E5%81%B6%E7%A9%BA%E9%97%B4"><span class="nav-number">2.2.</span> <span class="nav-text">对偶空间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#riesz-%E8%A1%A8%E7%A4%BA%E5%AE%9A%E7%90%86"><span class="nav-number">2.3.</span> <span class="nav-text">Riesz 表示定理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#lebesgue-%E7%A9%BA%E9%97%B4"><span class="nav-number">3.</span> <span class="nav-text">Lebesgue 空间</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#banach-%E7%A9%BA%E9%97%B4"><span class="nav-number">1.</span> <span class="nav-text">Banach 空间</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hilbert-%E7%A9%BA%E9%97%B4"><span class="nav-number">2.</span> <span class="nav-text">Hilbert 空间</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BA%BF%E6%80%A7%E6%B3%9B%E5%87%BD"><span class="nav-number">2.1.</span> <span class="nav-text">线性泛函</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%B9%E5%81%B6%E7%A9%BA%E9%97%B4"><span class="nav-number">2.2.</span> <span class="nav-text">对偶空间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#riesz-%E8%A1%A8%E7%A4%BA%E5%AE%9A%E7%90%86"><span class="nav-number">2.3.</span> <span class="nav-text">Riesz 表示定理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#lebesgue-%E7%A9%BA%E9%97%B4"><span class="nav-number">3.</span> <span class="nav-text">Lebesgue 空间</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sobolev-%E7%A9%BA%E9%97%B4"><span class="nav-number">4.</span> <span class="nav-text">Sobolev 空间</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%B1%E5%AF%BC%E6%95%B0"><span class="nav-number">4.1.</span> <span class="nav-text">弱导数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%9A%E7%BB%B4%E6%8C%87%E6%A0%87"><span class="nav-number">4.2.</span> <span class="nav-text">多维指标</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%AB%98%E9%98%B6%E5%BC%B1%E5%AF%BC%E6%95%B0"><span class="nav-number">4.3.</span> <span class="nav-text">高阶弱导数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sobolev-%E8%8C%83%E6%95%B0"><span class="nav-number">4.4.</span> <span class="nav-text">Sobolev 范数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sobolev-%E4%B8%8D%E7%AD%89%E5%BC%8F"><span class="nav-number">5.</span> <span class="nav-text">Sobolev 不等式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#n1"><span class="nav-number">5.1.</span> <span class="nav-text">\(n&#x3D;1\)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#n2"><span class="nav-number">5.2.</span> <span class="nav-text">\(n&#x3D;2\)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#n3"><span class="nav-number">5.3.</span> <span class="nav-text">\(n&#x3D;3\)</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 

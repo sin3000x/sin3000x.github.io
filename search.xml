@@ -1,6 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>控制收敛定理 (DCT)</title>
+    <url>/posts/34980/</url>
+    <content><![CDATA[<p><span class="math display">\[\lim_{n\to\infty}\int_S f_n \,d\mu=\int_S f\,d\mu\]</span></p>
+<span id="more"></span>
+<p>条件:</p>
+<ul>
+<li><span class="math inline">\(f_n\)</span> 可测, 逐点收敛到 <span class="math inline">\(f\)</span>.</li>
+<li><span class="math inline">\(f_n\)</span> 被可积函数 <span class="math inline">\(g\)</span> 控制: <span class="math inline">\(|f_n(x)|\leq g(x)\)</span>, 且 <span class="math inline">\(\int_S|g|\,d\mu&lt;\infty.\)</span></li>
+</ul>
+<p>结论:</p>
+<ul>
+<li><span class="math inline">\(f\)</span> 可积</li>
+<li><span class="math inline">\(\lim_{n\to\infty}\int_S|f_n-f|\,d\mu=0\)</span></li>
+<li><span class="math inline">\(\lim_{n\to\infty}\int_S f_n \,d\mu=\int_S f\,d\mu\)</span></li>
+</ul>
+]]></content>
+      <tags>
+        <tag>数学</tag>
+        <tag>实变函数</tag>
+        <tag>分析</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>常见的ODE解法</title>
     <url>/posts/65228/</url>
     <content><![CDATA[<h3 id="可分离变量-ypyqx">1. 可分离变量 <span class="math inline">\(y'=p(y)q(x)\)</span></h3>
@@ -27,29 +50,6 @@ y=Ce^{-\int p(x)dx}
       <tags>
         <tag>数学</tag>
         <tag>分析</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>控制收敛定理 (DCT)</title>
-    <url>/posts/34980/</url>
-    <content><![CDATA[<p><span class="math display">\[\lim_{n\to\infty}\int_S f_n \,d\mu=\int_S f\,d\mu\]</span></p>
-<span id="more"></span>
-<p>条件:</p>
-<ul>
-<li><span class="math inline">\(f_n\)</span> 可测, 逐点收敛到 <span class="math inline">\(f\)</span>.</li>
-<li><span class="math inline">\(f_n\)</span> 被可积函数 <span class="math inline">\(g\)</span> 控制: <span class="math inline">\(|f_n(x)|\leq g(x)\)</span>, 且 <span class="math inline">\(\int_S|g|\,d\mu&lt;\infty.\)</span></li>
-</ul>
-<p>结论:</p>
-<ul>
-<li><span class="math inline">\(f\)</span> 可积</li>
-<li><span class="math inline">\(\lim_{n\to\infty}\int_S|f_n-f|\,d\mu=0\)</span></li>
-<li><span class="math inline">\(\lim_{n\to\infty}\int_S f_n \,d\mu=\int_S f\,d\mu\)</span></li>
-</ul>
-]]></content>
-      <tags>
-        <tag>数学</tag>
-        <tag>分析</tag>
-        <tag>实变函数</tag>
       </tags>
   </entry>
   <entry>
@@ -249,23 +249,65 @@ f(A)=f(Q^{-1}TQ)=Q^{-1}f(T)Q.
 <p>Lebesgue <span class="math inline">\(p\)</span> 范数: <span class="math display">\[\|u\|_{L^p(\Omega)}=\left(\int_\Omega|u|^p\d x\right)^{1\over p}\]</span></p>
 <p><span class="math display">\[\|u\|_{L^\infty(\Omega)}=\mathrm{ess\ sup}\{|u(x)|\colon x\in\Omega\}\]</span></p>
 <p>Lebesgue 空间: <span class="math display">\[L^p(\Omega)=\{u\colon\Omega\to\R\colon \|u\|_{L^p(\Omega)}&lt;\infty\}\]</span></p>
-<p><em>注: <span class="math inline">\(L^p(\Omega)\)</span> 中的元素实际上是函数的等价类, 因为 Lebesgue 积分不区分几乎处处相等的函数.</em></p>
+<p><span class="math inline">\(p\)</span> 越大, 越不能容忍奇点处的发散.</p>
 <blockquote>
-<p>🌰 <span class="math inline">\(x^{-q}\in L^p((0,1))\iff q&lt;1/p.\)</span></p>
+<p>取 <span class="math inline">\(\Omega=(0,1)\)</span>, 那么 <span class="math inline">\(L^1\)</span> 接受 <span class="math inline">\({1\over x^{0.99}}\)</span> 而不接受 <span class="math inline">\(\frac 1x\)</span>. 前者在 0 处的发散率慢一些.</p>
+<p><span class="math inline">\(L^2\)</span> 接受 <span class="math inline">\({1\over x^{0.4999}}\)</span>, 而不接受 <span class="math inline">\(1\over\sqrt x\)</span>.</p>
 </blockquote>
+<p><em>注: <span class="math inline">\(L^p(\Omega)\)</span> 中的元素实际上是函数的等价类, 因为 Lebesgue 积分不区分几乎处处相等的函数.</em></p>
 <p><strong>定理: <span class="math inline">\(p\in[1,\infty]\)</span> 的 Lebesgue 空间都是 Banach 空间, <span class="math inline">\(p=2\)</span> 时也是 Hilbert 空间.</strong></p>
+<h2 id="sobolev-空间">Sobolev 空间</h2>
+<h3 id="弱导数">弱导数</h3>
+<p>这是利用分部积分做的推广, <span class="math inline">\(g\)</span> 是 <span class="math inline">\(f_i'\)</span> 的弱化. 其中 <span class="math inline">\(\phi\)</span> 是任意的测试函数. <span class="math display">\[\int_\Omega g\phi\d x=-\int_\Omega f{\partial\phi\over\partial x_i}\d x,\ \forall\phi\in C_0^\infty(\Omega).\]</span> 其中 <span class="math inline">\(f,g\)</span> 在 <span class="math inline">\(L_{\text{loc}}^1(\Omega)\)</span> 中, 这指的是在 <span class="math inline">\(\Omega^\circ\)</span> 中的任意紧子集上 <span class="math inline">\(L^1\)</span> 可积. 这个集合包括 <span class="math inline">\(L^1(\Omega)\)</span> 和 <span class="math inline">\(C^0(\Omega)\)</span>.</p>
+<p>弱导数在不区分零测集时唯一.</p>
+<blockquote>
+<p>任何<strong>分段可导</strong>的<strong>连续</strong>函数都是弱可导的.</p>
+</blockquote>
+<h3 id="多维指标">多维指标</h3>
+<p>如果 <span class="math inline">\(\alpha=(\alpha_1,\ldots,\alpha_n)\)</span>, 那么 <span class="math display">\[\phi^{(\alpha)}=\left(\partial_{x_1}\right)^{\alpha_1}\cdots(\partial_{x_n})^{\alpha_n}\phi.\]</span> 定义 <span class="math inline">\(|\alpha|=\alpha_1+\cdots+\alpha_n\)</span>.</p>
+<h3 id="高阶弱导数">高阶弱导数</h3>
+<p>推广 <span class="math inline">\(f^{(\alpha)}\)</span> 为 <span class="math inline">\(D^\alpha f\)</span>, 需要存在一个 <span class="math inline">\(g\)</span>: <span class="math display">\[\int_{\Omega}g\phi\d x=(-1)^{|\alpha|}\int_{\Omega}fg^{(\alpha)}\d x, \quad\forall\phi\in C_0^\infty(\Omega).\]</span></p>
+<h3 id="sobolev-范数">Sobolev 范数</h3>
+<p><span class="math display">\[
+\|f\|_{W_p^k(\Omega)}=\left(\sum_{|\alpha|\leq k}\|D^\alpha f\|_{L^p(\Omega)}^p\right)^\frac1p
+\]</span> <span class="math display">\[
+\|f\|_{W_\infty^k(\Omega)}=\max_{|\alpha|\leq k}\|D^\alpha f\|_{L^\infty(\Omega)}
+\]</span> ### Sobolev 空间 <span class="math display">\[W_p^k(\Omega)=\{f\in L_{\text{loc}}^1(\Omega)\colon \|f\|_{W_p^k(\Omega)}&lt;\infty\}\]</span> 是一个 Banach 空间. <span class="math display">\[H^k(\Omega)=W_2^k(\Omega)\]</span> 是 Hilbert 空间.</p>
+<blockquote>
+<p><span class="math inline">\(W_p^0(\Omega)=L^p(\Omega)\)</span> 不要求导数.</p>
+</blockquote>
+<h2 id="sobolev-不等式">Sobolev 不等式</h2>
+<p>如果有足够的弱导数, 那么函数连续有界:</p>
+<p><span class="math inline">\(\Omega\in\R^n\)</span> 是 Lipschitz 区域, <span class="math inline">\(k\)</span> 是正整数, <span class="math inline">\(p\geq1\)</span>. 若有 <span class="math display">\[
+\begin{gathered}
+k\geq n,\quad p=1\\
+k&gt;n/p,\quad p&gt;1
+\end{gathered}
+\]</span> 那么存在常数 <span class="math inline">\(C\)</span> 使得 <span class="math inline">\(\forall u\in W_p^k(\Omega)\)</span>, <span class="math display">\[
+\|u\|_{L^\infty(\Omega)}\leq C\|u\|_{W_p^k(\Omega)}.
+\]</span> <span class="math inline">\(u\)</span> 的等价类中有一个连续函数.</p>
+<h3 id="n1"><span class="math inline">\(n=1\)</span></h3>
+<p>只要 <span class="math inline">\(k\geq1\)</span>, 换言之只要有一阶弱导数, 就连续.</p>
+<p><strong>定理: 有界区域上的分段光滑函数在 <span class="math inline">\(H^1\)</span> 中 <span class="math inline">\(\iff\)</span> 连续.</strong></p>
+<p><span class="math display">\[H^1\subset C\]</span></p>
+<h3 id="n2"><span class="math inline">\(n=2\)</span></h3>
+<p><span class="math display">\[
+W_1^1(\Omega)\not\subset C(\Omega),\quad W_1^2(\Omega)\subset C(\Omega)
+\]</span> <span class="math display">\[
+H^1\not\subset C,\quad H^2\subset C
+\]</span></p>
+<h3 id="n3"><span class="math inline">\(n=3\)</span></h3>
+<p><span class="math display">\[
+W_1^2\not\subset C,\quad W_1^3\subset C
+\]</span> <span class="math display">\[
+H^2\subset C
+\]</span></p>
 ]]></content>
       <tags>
         <tag>数学</tag>
         <tag>分析</tag>
         <tag>泛函分析</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/posts/16107/</url>
-    <content><![CDATA[<p>插入图片: </p><figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">&lt;img src="/file/..." width="250" height="250"/&gt;</span><br></pre></td></tr></tbody></table></figure><p></p>
-]]></content>
   </entry>
   <entry>
     <title>定积分性质例题</title>
@@ -291,6 +333,12 @@ F(x)=f(x)\sin(x-x_0)\leq0,~\forall x\in(0,\pi).
         <tag>数学</tag>
         <tag>微积分</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/posts/16107/</url>
+    <content><![CDATA[<p>插入图片: </p><figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">&lt;img src="/file/..." width="250" height="250"/&gt;</span><br></pre></td></tr></tbody></table></figure><p></p>
+]]></content>
   </entry>
   <entry>
     <title>Hesse 矩阵与Jacobi 矩阵</title>
@@ -435,6 +483,11 @@ p(x)={\sum_{k=0}^n{\lambda_k y_k\over x-x_k}\over\sum_{k=0}^n{\lambda_k\over x-x
 <hr>
 <p>同样可以利用正规方程: <span class="math display">\[A^TAx=A^Tb\implies V\Sigma^TU^TU\Sigma V^Tx=V\Sigma^T U^Tb\implies \Sigma V^Tx=U^Tb\]</span></p>
 <p>计算量主要在于 SVD, 当 <span class="math inline">\(m\gg n\)</span> 时和 QR 差不多, 当 <span class="math inline">\(m\approx n\)</span> 时计算量更大. 典型估计是 <span class="math inline">\(2mn^2+11n^3\)</span> 次运算.</p>
+<h2 id="伪逆">伪逆</h2>
+<ul>
+<li><span class="math inline">\(A\)</span> 列满秩: <span class="math inline">\(A^\dagger=(A^TA)^{-1}A^T\)</span></li>
+<li><span class="math inline">\(A\)</span> 行满秩: <span class="math inline">\(A^\dagger=A^T(AA^T)^{-1}\)</span></li>
+</ul>
 ]]></content>
       <tags>
         <tag>数学</tag>
