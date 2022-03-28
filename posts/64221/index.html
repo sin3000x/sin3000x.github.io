@@ -28,7 +28,7 @@
 <meta property="og:description" content="Banach 空间 一个完备的赋范空间.  🌰 欧式空间装备了 \(p\) 范数.">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-01-21T13:22:56.000Z">
-<meta property="article:modified_time" content="2022-03-25T18:20:25.242Z">
+<meta property="article:modified_time" content="2022-03-26T21:43:39.414Z">
 <meta property="article:author" content="Jeremy Gu">
 <meta property="article:tag" content="数学">
 <meta property="article:tag" content="分析">
@@ -214,7 +214,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-03-25 18:20:25" itemprop="dateModified" datetime="2022-03-25T18:20:25+00:00">2022-03-25</time>
+                <time title="修改时间：2022-03-26 21:43:39" itemprop="dateModified" datetime="2022-03-26T21:43:39+00:00">2022-03-26</time>
               </span>
 
           
@@ -260,8 +260,9 @@
 <p>有界线性泛函: 存在 <span class="math inline">\(L\in[0,\infty)\)</span> 使得 <span class="math display">\[|j(u)|\leq L\|u\|_X,\quad\forall u\in X.\]</span></p>
 <p><strong>引理: 有界性<span class="math inline">\(\iff\)</span>连续性.</strong></p>
 <h3 id="对偶空间">对偶空间</h3>
-<p>一个 Hilbert 空间 <span class="math inline">\(X\)</span> 的对偶空间 <span class="math inline">\(X^*\)</span> 是所有有界线性泛函的集合, 装备了范数<span class="math display">\[\|j\|_{X^*}=\sup_{\|u\|_X=1}|j(u)|,\]</span> 也是一个 Hilbert 空间.</p>
-<p><span class="math inline">\(j\)</span> 对 <span class="math inline">\(u\)</span> 的<strong>作用</strong>: <span class="math inline">\(\langle j,u\rangle=j(u)\)</span></p>
+<p>一个 Hilbert 空间 <span class="math inline">\(X\)</span> 的对偶空间 <span class="math inline">\(X^*\)</span> 是所有有界线性泛函的集合, 装备了范数<span class="math display">\[\|j\|_{X^*}=\sup_{\|u\|_X=1}|j(u)|,\]</span> 也是一个 Hilbert 空间. 根据定义, <span class="math display">\[
+|j(u)|\leq \|j\|_{X^*}\|u\|_X.
+\]</span> <span class="math inline">\(j\)</span> 对 <span class="math inline">\(u\)</span> 的<strong>作用</strong>: <span class="math inline">\(\langle j,u\rangle=j(u)\)</span></p>
 <blockquote>
 <p>🌰 给定 <span class="math inline">\(f\)</span>, <span class="math inline">\(F(v)=\int_\Omega fv\d x\)</span> 是 <span class="math inline">\(H_0^1(\Omega)\)</span> 的对偶空间中的元素.</p>
 </blockquote>
@@ -271,6 +272,9 @@
 <blockquote>
 <p>🌰 <span class="math inline">\(L^2(\Omega)\)</span> 上的有界线性泛函 <span class="math inline">\(j(v)=\int_\Omega v\d x\)</span>, 实际上就是 <span class="math inline">\(v\)</span> 和常函数 <span class="math inline">\(1\)</span> 的内积.</p>
 </blockquote>
+<p>Rieze 映射 <span class="math inline">\(\mathcal{R}\colon X^*\to X\)</span>, <span class="math inline">\(j\mapsto g\)</span> 是一个保距同构. 实际上根据定义, <span class="math display">\[
+(\mathcal{R}j,v)=j(v).
+\]</span></p>
 <h2 id="lebesgue-空间">Lebesgue 空间</h2>
 <p>Lebesgue <span class="math inline">\(p\)</span> 范数: <span class="math display">\[\|u\|_{L^p(\Omega)}=\left(\int_\Omega|u|^p\d x\right)^{1\over p}\]</span></p>
 <p><span class="math display">\[\|u\|_{L^\infty(\Omega)}=\mathrm{ess\ sup}\{|u(x)|\colon x\in\Omega\}\]</span></p>
@@ -298,7 +302,12 @@
 \|f\|_{W_p^k(\Omega)}=\left(\sum_{|\alpha|\leq k}\|D^\alpha f\|_{L^p(\Omega)}^p\right)^\frac1p
 \]</span> <span class="math display">\[
 \|f\|_{W_\infty^k(\Omega)}=\max_{|\alpha|\leq k}\|D^\alpha f\|_{L^\infty(\Omega)}
-\]</span> ### Sobolev 空间 <span class="math display">\[W_p^k(\Omega)=\{f\in L_{\text{loc}}^1(\Omega)\colon \|f\|_{W_p^k(\Omega)}&lt;\infty\}\]</span> 是一个 Banach 空间. <span class="math display">\[H^k(\Omega)=W_2^k(\Omega)\]</span> 是 Hilbert 空间.</p>
+\]</span></p>
+<h3 id="sobolev-空间-1">Sobolev 空间</h3>
+<p><span class="math display">\[W_p^k(\Omega)=\{f\in L_{\text{loc}}^1(\Omega)\colon \|f\|_{W_p^k(\Omega)}&lt;\infty\}\]</span> 是一个 Banach 空间. <span class="math display">\[H^k(\Omega)=W_2^k(\Omega)\]</span> 是 Hilbert 空间.</p>
+<p>它的范数 <span class="math display">\[
+\|f\|_{H^k}^2=\sum_{|\alpha|\leq k}\|D^\alpha f\|_{L^2}^2
+\]</span> 比如 <span class="math inline">\(\|f\|_{H^1}^2=\|f\|_{L^2}^2+\|f'\|_{L^2}^2\)</span>.</p>
 <blockquote>
 <p><span class="math inline">\(W_p^0(\Omega)=L^p(\Omega)\)</span> 不要求导数.</p>
 </blockquote>
@@ -413,7 +422,7 @@ H^2\subset C
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#banach-%E7%A9%BA%E9%97%B4"><span class="nav-number">1.</span> <span class="nav-text">Banach 空间</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hilbert-%E7%A9%BA%E9%97%B4"><span class="nav-number">2.</span> <span class="nav-text">Hilbert 空间</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BA%BF%E6%80%A7%E6%B3%9B%E5%87%BD"><span class="nav-number">2.1.</span> <span class="nav-text">线性泛函</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%B9%E5%81%B6%E7%A9%BA%E9%97%B4"><span class="nav-number">2.2.</span> <span class="nav-text">对偶空间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#riesz-%E8%A1%A8%E7%A4%BA%E5%AE%9A%E7%90%86"><span class="nav-number">2.3.</span> <span class="nav-text">Riesz 表示定理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#lebesgue-%E7%A9%BA%E9%97%B4"><span class="nav-number">3.</span> <span class="nav-text">Lebesgue 空间</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sobolev-%E7%A9%BA%E9%97%B4"><span class="nav-number">4.</span> <span class="nav-text">Sobolev 空间</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%B1%E5%AF%BC%E6%95%B0"><span class="nav-number">4.1.</span> <span class="nav-text">弱导数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%9A%E7%BB%B4%E6%8C%87%E6%A0%87"><span class="nav-number">4.2.</span> <span class="nav-text">多维指标</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%AB%98%E9%98%B6%E5%BC%B1%E5%AF%BC%E6%95%B0"><span class="nav-number">4.3.</span> <span class="nav-text">高阶弱导数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sobolev-%E8%8C%83%E6%95%B0"><span class="nav-number">4.4.</span> <span class="nav-text">Sobolev 范数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sobolev-%E4%B8%8D%E7%AD%89%E5%BC%8F"><span class="nav-number">5.</span> <span class="nav-text">Sobolev 不等式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#n1"><span class="nav-number">5.1.</span> <span class="nav-text">\(n&#x3D;1\)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#n2"><span class="nav-number">5.2.</span> <span class="nav-text">\(n&#x3D;2\)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#n3"><span class="nav-number">5.3.</span> <span class="nav-text">\(n&#x3D;3\)</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#banach-%E7%A9%BA%E9%97%B4"><span class="nav-number">1.</span> <span class="nav-text">Banach 空间</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hilbert-%E7%A9%BA%E9%97%B4"><span class="nav-number">2.</span> <span class="nav-text">Hilbert 空间</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BA%BF%E6%80%A7%E6%B3%9B%E5%87%BD"><span class="nav-number">2.1.</span> <span class="nav-text">线性泛函</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%B9%E5%81%B6%E7%A9%BA%E9%97%B4"><span class="nav-number">2.2.</span> <span class="nav-text">对偶空间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#riesz-%E8%A1%A8%E7%A4%BA%E5%AE%9A%E7%90%86"><span class="nav-number">2.3.</span> <span class="nav-text">Riesz 表示定理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#lebesgue-%E7%A9%BA%E9%97%B4"><span class="nav-number">3.</span> <span class="nav-text">Lebesgue 空间</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sobolev-%E7%A9%BA%E9%97%B4"><span class="nav-number">4.</span> <span class="nav-text">Sobolev 空间</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%B1%E5%AF%BC%E6%95%B0"><span class="nav-number">4.1.</span> <span class="nav-text">弱导数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%9A%E7%BB%B4%E6%8C%87%E6%A0%87"><span class="nav-number">4.2.</span> <span class="nav-text">多维指标</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%AB%98%E9%98%B6%E5%BC%B1%E5%AF%BC%E6%95%B0"><span class="nav-number">4.3.</span> <span class="nav-text">高阶弱导数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sobolev-%E8%8C%83%E6%95%B0"><span class="nav-number">4.4.</span> <span class="nav-text">Sobolev 范数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sobolev-%E7%A9%BA%E9%97%B4-1"><span class="nav-number">4.5.</span> <span class="nav-text">Sobolev 空间</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sobolev-%E4%B8%8D%E7%AD%89%E5%BC%8F"><span class="nav-number">5.</span> <span class="nav-text">Sobolev 不等式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#n1"><span class="nav-number">5.1.</span> <span class="nav-text">\(n&#x3D;1\)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#n2"><span class="nav-number">5.2.</span> <span class="nav-text">\(n&#x3D;2\)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#n3"><span class="nav-number">5.3.</span> <span class="nav-text">\(n&#x3D;3\)</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
