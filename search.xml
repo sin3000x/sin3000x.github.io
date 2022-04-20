@@ -1,29 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>控制收敛定理 (DCT)</title>
-    <url>/posts/34980/</url>
-    <content><![CDATA[<p><span class="math display">\[\lim_{n\to\infty}\int_S f_n \,d\mu=\int_S f\,d\mu\]</span></p>
-<span id="more"></span>
-<p>条件:</p>
-<ul>
-<li><span class="math inline">\(f_n\)</span> 可测, 逐点收敛到 <span class="math inline">\(f\)</span>.</li>
-<li><span class="math inline">\(f_n\)</span> 被可积函数 <span class="math inline">\(g\)</span> 控制: <span class="math inline">\(|f_n(x)|\leq g(x)\)</span>, 且 <span class="math inline">\(\int_S|g|\,d\mu&lt;\infty.\)</span></li>
-</ul>
-<p>结论:</p>
-<ul>
-<li><span class="math inline">\(f\)</span> 可积</li>
-<li><span class="math inline">\(\lim_{n\to\infty}\int_S|f_n-f|\,d\mu=0\)</span></li>
-<li><span class="math inline">\(\lim_{n\to\infty}\int_S f_n \,d\mu=\int_S f\,d\mu\)</span></li>
-</ul>
-]]></content>
-      <tags>
-        <tag>数学</tag>
-        <tag>实变函数</tag>
-        <tag>分析</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>常见的ODE解法</title>
     <url>/posts/65228/</url>
     <content><![CDATA[<h3 id="可分离变量-ypyqx">1. 可分离变量 <span class="math inline">\(y'=p(y)q(x)\)</span></h3>
@@ -113,6 +90,29 @@ I_n={(2n)!!\over(2n+1)!!}.
       <tags>
         <tag>数学</tag>
         <tag>级数</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>控制收敛定理 (DCT)</title>
+    <url>/posts/34980/</url>
+    <content><![CDATA[<p><span class="math display">\[\lim_{n\to\infty}\int_S f_n \,d\mu=\int_S f\,d\mu\]</span></p>
+<span id="more"></span>
+<p>条件:</p>
+<ul>
+<li><span class="math inline">\(f_n\)</span> 可测, 逐点收敛到 <span class="math inline">\(f\)</span>.</li>
+<li><span class="math inline">\(f_n\)</span> 被可积函数 <span class="math inline">\(g\)</span> 控制: <span class="math inline">\(|f_n(x)|\leq g(x)\)</span>, 且 <span class="math inline">\(\int_S|g|\,d\mu&lt;\infty.\)</span></li>
+</ul>
+<p>结论:</p>
+<ul>
+<li><span class="math inline">\(f\)</span> 可积</li>
+<li><span class="math inline">\(\lim_{n\to\infty}\int_S|f_n-f|\,d\mu=0\)</span></li>
+<li><span class="math inline">\(\lim_{n\to\infty}\int_S f_n \,d\mu=\int_S f\,d\mu\)</span></li>
+</ul>
+]]></content>
+      <tags>
+        <tag>数学</tag>
+        <tag>分析</tag>
+        <tag>实变函数</tag>
       </tags>
   </entry>
   <entry>
@@ -651,6 +651,23 @@ y_{n+1}=\sum_{k=1}^l a_ky_{n+1-k}+h\sum_{k=0}^l b_k f_{n+1-k}
       </tags>
   </entry>
   <entry>
+    <title>留数的计算方法</title>
+    <url>/posts/51485/</url>
+    <content><![CDATA[<ol type="1">
+<li><p>在分式 <span class="math inline">\(f=g/h\)</span> 中, 若分母有简单零点 <span class="math inline">\(z_0\)</span> 而分子没有, 那么 <span class="math inline">\(f\)</span> 在 <span class="math inline">\(z_0\)</span> 处的留数为 <span class="math display">\[
+\frac{g(z_0)}{h'(z_0)}
+\]</span></p></li>
+<li><p>假设 <span class="math inline">\(z_0\)</span> 是 <span class="math inline">\(n\)</span> 阶极点, 那么该点处的留数为 <span class="math display">\[
+ \frac{1}{(n-1)!}\left(\left(\frac{\d}{\d z}\right)^{n-1}(z-z_0)^n f(z)\right)_{z=z_0}
+\]</span></p></li>
+</ol>
+]]></content>
+      <tags>
+        <tag>数学</tag>
+        <tag>复变函数</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>三角函数和双曲函数</title>
     <url>/posts/12845/</url>
     <content><![CDATA[<h2 id="定义">定义</h2>
@@ -694,6 +711,41 @@ y_{n+1}=\sum_{k=1}^l a_ky_{n+1-k}+h\sum_{k=0}^l b_k f_{n+1-k}
       <tags>
         <tag>数学</tag>
         <tag>分析</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>一些英文术语</title>
+    <url>/posts/18686/</url>
+    <content><![CDATA[<table>
+<thead>
+<tr class="header">
+<th>中文</th>
+<th>英文</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>二次</td>
+<td>quadratic</td>
+</tr>
+<tr class="even">
+<td>三次</td>
+<td>cubic</td>
+</tr>
+<tr class="odd">
+<td>四次</td>
+<td>quartic</td>
+</tr>
+<tr class="even">
+<td>五次</td>
+<td>quintic</td>
+</tr>
+</tbody>
+</table>
+]]></content>
+      <tags>
+        <tag>数学</tag>
+        <tag>英语</tag>
       </tags>
   </entry>
   <entry>
