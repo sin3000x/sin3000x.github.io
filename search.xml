@@ -1,6 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>控制收敛定理 (DCT)</title>
+    <url>/posts/34980/</url>
+    <content><![CDATA[<p><span class="math display">\[\lim_{n\to\infty}\int_S f_n \,d\mu=\int_S f\,d\mu\]</span></p>
+<span id="more"></span>
+<p>条件:</p>
+<ul>
+<li><span class="math inline">\(f_n\)</span> 可测, 逐点收敛到 <span class="math inline">\(f\)</span>.</li>
+<li><span class="math inline">\(f_n\)</span> 被可积函数 <span class="math inline">\(g\)</span> 控制: <span class="math inline">\(|f_n(x)|\leq g(x)\)</span>, 且 <span class="math inline">\(\int_S|g|\,d\mu&lt;\infty.\)</span></li>
+</ul>
+<p>结论:</p>
+<ul>
+<li><span class="math inline">\(f\)</span> 可积</li>
+<li><span class="math inline">\(\lim_{n\to\infty}\int_S|f_n-f|\,d\mu=0\)</span></li>
+<li><span class="math inline">\(\lim_{n\to\infty}\int_S f_n \,d\mu=\int_S f\,d\mu\)</span></li>
+</ul>
+]]></content>
+      <tags>
+        <tag>数学</tag>
+        <tag>实变函数</tag>
+        <tag>分析</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>常见的ODE解法</title>
     <url>/posts/65228/</url>
     <content><![CDATA[<h3 id="可分离变量-ypyqx">1. 可分离变量 <span class="math inline">\(y'=p(y)q(x)\)</span></h3>
@@ -90,29 +113,6 @@ I_n={(2n)!!\over(2n+1)!!}.
       <tags>
         <tag>数学</tag>
         <tag>级数</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>控制收敛定理 (DCT)</title>
-    <url>/posts/34980/</url>
-    <content><![CDATA[<p><span class="math display">\[\lim_{n\to\infty}\int_S f_n \,d\mu=\int_S f\,d\mu\]</span></p>
-<span id="more"></span>
-<p>条件:</p>
-<ul>
-<li><span class="math inline">\(f_n\)</span> 可测, 逐点收敛到 <span class="math inline">\(f\)</span>.</li>
-<li><span class="math inline">\(f_n\)</span> 被可积函数 <span class="math inline">\(g\)</span> 控制: <span class="math inline">\(|f_n(x)|\leq g(x)\)</span>, 且 <span class="math inline">\(\int_S|g|\,d\mu&lt;\infty.\)</span></li>
-</ul>
-<p>结论:</p>
-<ul>
-<li><span class="math inline">\(f\)</span> 可积</li>
-<li><span class="math inline">\(\lim_{n\to\infty}\int_S|f_n-f|\,d\mu=0\)</span></li>
-<li><span class="math inline">\(\lim_{n\to\infty}\int_S f_n \,d\mu=\int_S f\,d\mu\)</span></li>
-</ul>
-]]></content>
-      <tags>
-        <tag>数学</tag>
-        <tag>分析</tag>
-        <tag>实变函数</tag>
       </tags>
   </entry>
   <entry>
@@ -423,6 +423,37 @@ p(x)={\sum_{k=0}^n{\lambda_k y_k\over x-x_k}\over\sum_{k=0}^n{\lambda_k\over x-x
       </tags>
   </entry>
   <entry>
+    <title>分部积分的表格法</title>
+    <url>/posts/42394/</url>
+    <content><![CDATA[<p><span class="math display">\[\int (x^2+x)\e^{2x}\d x\]</span> 第一行求导, 第二行积分, 直到求导结果为 0: <img src="/file/xex.png" width="400"> 正负交替相加: <span class="math display">\[
+\text{原式}=\left({x^2+x\over2}-{2x+1\over4}+\frac14\right)\e^{2x}=\frac12 x^2\e^{2x}+C.
+\]</span> <span id="more"></span></p>
+<hr>
+<p>若多次求导不能为 0, 需要在最后加一个积分项, 其符号与上一个相反. 比如出现循环:</p>
+<p><span class="math display">\[
+\int \e^{x}\sin 2x\d x
+\]</span></p>
+<p><img src="/file/sine.png" width="350"></p>
+<p><span class="math display">\[
+\int \e^x\sin 2x\d x=(\sin 2x-2\cos 2x)\e^x-4\int\e^{x}\sin 2x\d x,
+\]</span></p>
+<p>那么 <span class="math display">\[
+\text{原式}=\frac15(\sin 2x-2\cos2x)\e^x+C.
+\]</span></p>
+<hr>
+<p>或者积分被简化: <span class="math display">\[
+\int 2x\arctan x\d x
+\]</span> <img src="/file/xarctanx.png" width="250"></p>
+<p><span class="math display">\[
+\text{原式}=(x^2+1)\arctan x-\int 1\d x=(x^2+1)\arctan x-x+C.
+\]</span></p>
+]]></content>
+      <categories>
+        <category>数学</category>
+        <category>微积分</category>
+      </categories>
+  </entry>
+  <entry>
     <title>最小二乘法</title>
     <url>/posts/36991/</url>
     <content><![CDATA[<p><span class="math display">\[\min\|Ax-b\|_2\]</span> 其中 <span class="math inline">\(A\in\R^{m\times n}\)</span>, <span class="math inline">\(x\in\R^n\)</span>, <span class="math inline">\(b\in\R^m.\)</span> 这个的问题的情境是 <span class="math inline">\(m\geq n\)</span>, 也就是一个过度约束的问题 (<span class="math inline">\(b\)</span> 不在 <span class="math inline">\(A\)</span> 的值域中).</p>
@@ -498,10 +529,10 @@ p(x)={\sum_{k=0}^n{\lambda_k y_k\over x-x_k}\over\sum_{k=0}^n{\lambda_k\over x-x
 <li><span class="math inline">\(A\)</span> 行满秩: <span class="math inline">\(A^\dagger=A^T(AA^T)^{-1}\)</span></li>
 </ul>
 ]]></content>
-      <tags>
-        <tag>数学</tag>
-        <tag>线性代数</tag>
-      </tags>
+      <categories>
+        <category>数学</category>
+        <category>线性代数</category>
+      </categories>
   </entry>
   <entry>
     <title>微分形式</title>
@@ -662,10 +693,10 @@ y_{n+1}=\sum_{k=1}^l a_ky_{n+1-k}+h\sum_{k=0}^l b_k f_{n+1-k}
 \]</span></p></li>
 </ol>
 ]]></content>
-      <tags>
-        <tag>数学</tag>
-        <tag>复变函数</tag>
-      </tags>
+      <categories>
+        <category>数学</category>
+        <category>复变函数</category>
+      </categories>
   </entry>
   <entry>
     <title>三角函数和双曲函数</title>
