@@ -331,7 +331,7 @@
       <link href="/posts/22001/"/>
       <url>/posts/22001/</url>
       
-        <content type="html"><![CDATA[<p><span class="math display">\[\int_\Omega u\nabla\cdot \boldsymbol{v}\,d\Omega=\int_{\partial\Omega}u\boldsymbol{v}\cdot\boldsymbol{n}\,dS-\int_\Omega\nabla u\cdot\boldsymbol{v}\,d\Omega\]</span></p><span id="more"></span><p>对比</p><p><span class="math display">\[\int_a^bu v'\,dx=\left.uv\right|_a^b-\int_a^bu'v\,dx\]</span> 特殊情况 (Green's first identity):</p><p><span class="math display">\[\int_\Omega\nabla u\cdot\nabla v\,d\Omega=\int_{\partial\Omega}v\nabla u\cdot\boldsymbol{n}\,dS-\int_\Omega v\nabla^2u\,d\Omega\]</span></p><hr><p>散度乘法法则:</p><p><span class="math display">\[\nabla\cdot(u\boldsymbol{v})=u\nabla\cdot \boldsymbol{v}+\nabla u\cdot \boldsymbol{v}\]</span></p>]]></content>
+        <content type="html"><![CDATA[<p><span class="math display">\[\int_\Omega u\nabla\cdot \boldsymbol{v}\d x=\int_{\partial\Omega}u\boldsymbol{v}\cdot\boldsymbol{n}\d s-\int_\Omega\nabla u\cdot\boldsymbol{v}\d x\]</span></p><span id="more"></span><p>特殊情况 (Green's first identity):</p><p><span class="math display">\[\int_\Omega\nabla u\cdot\nabla v\d x=\int_{\partial\Omega}v\nabla u\cdot\boldsymbol{n}\d s-\int_\Omega v\nabla^2u\d x\]</span></p><p><span class="math display">\[\int_\Omega(\nabla\times\nabla\times\bm u)\cdot\bm v\d x=\int_\Omega (\nabla\times \bm u)\cdot(\nabla\times\bm v)\d x-\int_{\partial\Omega}(\bm v\times\nabla\times\bm u)\cdot n\d s\]</span></p><hr><p><span class="math inline">\(\nabla\)</span> 的性质:</p><p><span class="math display">\[\begin{equation}\label{eq:div}\nabla\cdot(u\boldsymbol{v})=u\nabla\cdot \boldsymbol{v}+\nabla u\cdot \boldsymbol{v}\end{equation}\]</span></p><p><span class="math display">\[\begin{equation}\label{eq:div-cross}\nabla\cdot(\bm {u}\times \bm{v})=(\nabla\times \bm u)\cdot \bm v-\bm u\cdot(\nabla\times \bm v)\end{equation}\]</span></p><p>对 <span class="math inline">\((\ref{eq:div})\)</span> 两边积分即得 <span class="math display">\[\int_\Omega u\nabla\cdot \bm{v}\d  x=\int_{\partial\Omega}u\boldsymbol{v}\cdot\boldsymbol{n}\d s-\int_\Omega\nabla u\cdot\boldsymbol{v}\d x,\]</span> 其中用到了散度定理.</p><p>在 <span class="math inline">\((\ref{eq:div-cross})\)</span> 中取 <span class="math inline">\(\bm v\)</span> 和 <span class="math inline">\(\nabla\times\bm u\)</span> 得到 <span class="math display">\[\nabla\cdot(\bm v\times\nabla\times \bm u)=(\nabla\times\bm v)\cdot(\nabla\times\bm u)-\bm v\cdot(\nabla\times\nabla\times\bm u),\]</span> 两边积分即得 <span class="math display">\[\int_\Omega(\nabla\times\nabla\times\bm u)\cdot\bm v\d x=\int_\Omega (\nabla\times \bm u)\cdot(\nabla\times\bm v)\d x-\int_{\partial\Omega}(\bm v\times\nabla\times\bm u)\cdot \bm n\d s.\]</span></p><p>其中根据混合积的性质, 后一项等于 <span class="math display">\[\begin{align*}\int_{\partial\Omega}\bm n\cdot(\bm v\times\nabla\times\bm u)\d s=\int_{\partial\Omega}\bm v\cdot(\nabla\times\bm u\times \bm n)\d s\end{align*}.\]</span></p>]]></content>
       
       
       <categories>
@@ -362,9 +362,9 @@
             
             <tag> 数学 </tag>
             
-            <tag> 分析 </tag>
-            
             <tag> 实变函数 </tag>
+            
+            <tag> 分析 </tag>
             
         </tags>
       
