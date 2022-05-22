@@ -1,29 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>控制收敛定理 (DCT)</title>
-    <url>/posts/34980/</url>
-    <content><![CDATA[<p><span class="math display">\[\lim_{n\to\infty}\int_S f_n \,d\mu=\int_S f\,d\mu\]</span></p>
-<span id="more"></span>
-<p>条件:</p>
-<ul>
-<li><span class="math inline">\(f_n\)</span> 可测, 逐点收敛到 <span class="math inline">\(f\)</span>.</li>
-<li><span class="math inline">\(f_n\)</span> 被可积函数 <span class="math inline">\(g\)</span> 控制: <span class="math inline">\(|f_n(x)|\leq g(x)\)</span>, 且 <span class="math inline">\(\int_S|g|\,d\mu&lt;\infty.\)</span></li>
-</ul>
-<p>结论:</p>
-<ul>
-<li><span class="math inline">\(f\)</span> 可积</li>
-<li><span class="math inline">\(\lim_{n\to\infty}\int_S|f_n-f|\,d\mu=0\)</span></li>
-<li><span class="math inline">\(\lim_{n\to\infty}\int_S f_n \,d\mu=\int_S f\,d\mu\)</span></li>
-</ul>
-]]></content>
-      <tags>
-        <tag>数学</tag>
-        <tag>实变函数</tag>
-        <tag>分析</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>常见的ODE解法</title>
     <url>/posts/65228/</url>
     <content><![CDATA[<h3 id="可分离变量-ypyqx">1. 可分离变量 <span class="math inline">\(y'=p(y)q(x)\)</span></h3>
@@ -53,66 +30,26 @@ y=Ce^{-\int p(x)dx}
       </tags>
   </entry>
   <entry>
-    <title>$\arcsin^2x$的展开式</title>
-    <url>/posts/20316/</url>
-    <content><![CDATA[<p>证明 <span class="math display">\[
-\arcsin^2x=\frac12\sum_{n=1}^\infty{(2x)^{2n}\over n^2{2n\choose n}}.
-\]</span> <span id="more"></span></p>
-<p>先求导： <span class="math display">\[
-(\arcsin^2 x)'={2\arcsin x\over\sqrt{1-x^2}}
-\]</span> 利用恒等式<span class="math inline">\(\arcsin x=\arctan\left(x\over\sqrt{1-x^2}\right)\)</span>，有 <span class="math display">\[
-\begin{align*}
-{\arcsin x\over\sqrt{1-x^2}}&amp;={1\over\sqrt{1-x^2}}\arctan\left(x\over\sqrt{1-x^2}\right)\\
-&amp;=\frac1x\cdot{1\over\sqrt{1-x^2\over x^2}}\arctan\left({1\over\sqrt{1-x^2\over x^2}}\right)\\
-&amp;=\left.\frac1x\cdot{1\over\sqrt{1-x^2\over x^2}}\arctan\left({t\over\sqrt{1-x^2\over x^2}}\right)\right|_{t=0}^{t=1}\\
-&amp;=\frac1x\int_0^1{\mathrm dt\over t^2+{1-x^2\over x^2}}\\
-&amp;=x\int_0^1{\mathrm dt\over 1-x^2+x^2t^2}\\
-&amp;=x\int_0^1\sum_{n=0}^\infty(x^2-x^2t^2)^n\,\mathrm dt\\
-&amp;=\int_0^1\sum_{n=0}^\infty (1-t^2)^nx^{2n+1}\,\mathrm dt\\
-&amp;=\sum_{n=0}^\infty\left(\int_0^1(1-t^2)^n\,\mathrm dt\right) x^{2n+1}.
-\end{align*}
-\]</span> 其中利用分部积分 <span class="math display">\[
-\begin{align*}
-I_n&amp;=\int_0^1(1-t^2)^n\,\mathrm dt\\
-&amp;=\int_0^1(1-t^2)(1-t^2)^{n-1}\,\mathrm dt\\
-&amp;=\int_0^1(1-t^2)^{n-1}\,\mathrm dt-\int_0^1t^2(1-t^2)^{n-1}\,\mathrm dt\\
-&amp;=I_{n-1}+\frac{1}{2n}\int_0^1t\,\mathrm d(1-t^2)^{n}\\
-&amp;=I_{n-1}+\frac{1}{2n}\left.t(1-t^2)^n\right|_0^1-\frac{1}{2n}\int_0^1(1-t^2)^n\,\mathrm dt\\
-&amp;=I_{n-1}-\frac{1}{2n}I_n\\
-&amp;={2n\over2n+1}I_{n-1},
-%&amp;=\left.t(1-t^2)\right|_{0}^1-n\int_0^1t(1-t^2)^{n-1}\,\mathrm dt\\
-%&amp;=-n\left(\left.t^2(1-t^2)^{n-1}\right|_0^1-\int_0^1\left((1-t^2)^{n-1}-2(n-1)t^2(1-t^2)^{n-2}\right)\,\mathrm dt\right)\\
-%&amp;=n\int_0^1(1-t^2)^{n-1}\,\mathrm dt+2n(n-1)\int_0^1t^2(1-t^2)^{n-2}\,\mathrm dt
-%&amp;=\int_0^1\sum_{k=0}^n{n\choose k}(-t^2)^k\,\mathrm dt\\
-%&amp;=\int_0^1\sum_{k=0}^n{n\choose k}(-1)^kt^{2k}\,\mathrm dt\\
-%&amp;=\sum_{k=0}^n{n\choose k}(-1)^k\int_0^1t^{2k}\,\mathrm dt\\
-%&amp;=\sum_{k=0}^n{(-1)^k{n\choose k}\over 2k+1}
-\end{align*}
-\]</span> 递推可得 <span class="math display">\[
-I_n={(2n)!!\over(2n+1)!!}.
-\]</span> 故 <span class="math display">\[
-\begin{align*}
-{\arcsin x\over\sqrt{1-x^2}}&amp;=\sum_{n=0}^\infty\left(\int_0^1(1-t^2)^n\,\mathrm dt\right) x^{2n+1}\\
-&amp;=\sum_{n=0}^\infty{(2n)!!\over(2n+1)!!}x^{2n+1}.
-\end{align*}
-\]</span> 于是积分： <span class="math display">\[
-\begin{align*}
-\arcsin^2x&amp;=\int_0^x(\arcsin^2t)'\,\mathrm dt\\
-&amp;=2\int_0^x{\arcsin t\over\sqrt{1-t^2}}\,\mathrm dt\\
-&amp;=2\int_0^x\sum_{n=0}^\infty{(2n)!!\over(2n+1)!!}t^{2n+1}\,\mathrm dt\\
-&amp;=2\sum_{n=0}^\infty{(2n)!!\over(2n+1)!!}\int_0^x t^{2n+1}\,\mathrm dt\\
-&amp;=2\sum_{n=0}^\infty{(2n)!!\over(2n+1)!!}\cdot{x^{2n+2}\over2n+2}\\
-&amp;=2\sum_{n=0}^\infty{(2^nn!)^2\over(2n+1)!}\cdot{x^{2n+2}\over2n+2}\\
-&amp;=2\sum_{n=0}^\infty{2^{2n}(n!)^2\over(2n+2)!}x^{2n+2}\\
-&amp;=2\sum_{n=0}^\infty{2^{2n+2}\left((n+1)!\right)^2\over2^2(n+1)^2(2n+2)!}x^{2n+2}\\
-&amp;=\frac12\sum_{n=0}^\infty{(2x)^{2n+2}\over(n+1)^2{2n+2\choose n+1}}\\
-&amp;=\frac12\sum_{n=1}^\infty{(2x)^{2n}\over n^2{2n\choose n}}.
-\end{align*}
-\]</span></p>
+    <title>控制收敛定理 (DCT)</title>
+    <url>/posts/34980/</url>
+    <content><![CDATA[<p><span class="math display">\[\lim_{n\to\infty}\int_S f_n \,d\mu=\int_S f\,d\mu\]</span></p>
+<span id="more"></span>
+<p>条件:</p>
+<ul>
+<li><span class="math inline">\(f_n\)</span> 可测, 逐点收敛到 <span class="math inline">\(f\)</span>.</li>
+<li><span class="math inline">\(f_n\)</span> 被可积函数 <span class="math inline">\(g\)</span> 控制: <span class="math inline">\(|f_n(x)|\leq g(x)\)</span>, 且 <span class="math inline">\(\int_S|g|\,d\mu&lt;\infty.\)</span></li>
+</ul>
+<p>结论:</p>
+<ul>
+<li><span class="math inline">\(f\)</span> 可积</li>
+<li><span class="math inline">\(\lim_{n\to\infty}\int_S|f_n-f|\,d\mu=0\)</span></li>
+<li><span class="math inline">\(\lim_{n\to\infty}\int_S f_n \,d\mu=\int_S f\,d\mu\)</span></li>
+</ul>
 ]]></content>
       <tags>
         <tag>数学</tag>
-        <tag>级数</tag>
+        <tag>分析</tag>
+        <tag>实变函数</tag>
       </tags>
   </entry>
   <entry>
@@ -186,6 +123,69 @@ I_n={(2n)!!\over(2n+1)!!}.
       </categories>
   </entry>
   <entry>
+    <title>$\arcsin^2x$的展开式</title>
+    <url>/posts/20316/</url>
+    <content><![CDATA[<p>证明 <span class="math display">\[
+\arcsin^2x=\frac12\sum_{n=1}^\infty{(2x)^{2n}\over n^2{2n\choose n}}.
+\]</span> <span id="more"></span></p>
+<p>先求导： <span class="math display">\[
+(\arcsin^2 x)'={2\arcsin x\over\sqrt{1-x^2}}
+\]</span> 利用恒等式<span class="math inline">\(\arcsin x=\arctan\left(x\over\sqrt{1-x^2}\right)\)</span>，有 <span class="math display">\[
+\begin{align*}
+{\arcsin x\over\sqrt{1-x^2}}&amp;={1\over\sqrt{1-x^2}}\arctan\left(x\over\sqrt{1-x^2}\right)\\
+&amp;=\frac1x\cdot{1\over\sqrt{1-x^2\over x^2}}\arctan\left({1\over\sqrt{1-x^2\over x^2}}\right)\\
+&amp;=\left.\frac1x\cdot{1\over\sqrt{1-x^2\over x^2}}\arctan\left({t\over\sqrt{1-x^2\over x^2}}\right)\right|_{t=0}^{t=1}\\
+&amp;=\frac1x\int_0^1{\mathrm dt\over t^2+{1-x^2\over x^2}}\\
+&amp;=x\int_0^1{\mathrm dt\over 1-x^2+x^2t^2}\\
+&amp;=x\int_0^1\sum_{n=0}^\infty(x^2-x^2t^2)^n\,\mathrm dt\\
+&amp;=\int_0^1\sum_{n=0}^\infty (1-t^2)^nx^{2n+1}\,\mathrm dt\\
+&amp;=\sum_{n=0}^\infty\left(\int_0^1(1-t^2)^n\,\mathrm dt\right) x^{2n+1}.
+\end{align*}
+\]</span> 其中利用分部积分 <span class="math display">\[
+\begin{align*}
+I_n&amp;=\int_0^1(1-t^2)^n\,\mathrm dt\\
+&amp;=\int_0^1(1-t^2)(1-t^2)^{n-1}\,\mathrm dt\\
+&amp;=\int_0^1(1-t^2)^{n-1}\,\mathrm dt-\int_0^1t^2(1-t^2)^{n-1}\,\mathrm dt\\
+&amp;=I_{n-1}+\frac{1}{2n}\int_0^1t\,\mathrm d(1-t^2)^{n}\\
+&amp;=I_{n-1}+\frac{1}{2n}\left.t(1-t^2)^n\right|_0^1-\frac{1}{2n}\int_0^1(1-t^2)^n\,\mathrm dt\\
+&amp;=I_{n-1}-\frac{1}{2n}I_n\\
+&amp;={2n\over2n+1}I_{n-1},
+%&amp;=\left.t(1-t^2)\right|_{0}^1-n\int_0^1t(1-t^2)^{n-1}\,\mathrm dt\\
+%&amp;=-n\left(\left.t^2(1-t^2)^{n-1}\right|_0^1-\int_0^1\left((1-t^2)^{n-1}-2(n-1)t^2(1-t^2)^{n-2}\right)\,\mathrm dt\right)\\
+%&amp;=n\int_0^1(1-t^2)^{n-1}\,\mathrm dt+2n(n-1)\int_0^1t^2(1-t^2)^{n-2}\,\mathrm dt
+%&amp;=\int_0^1\sum_{k=0}^n{n\choose k}(-t^2)^k\,\mathrm dt\\
+%&amp;=\int_0^1\sum_{k=0}^n{n\choose k}(-1)^kt^{2k}\,\mathrm dt\\
+%&amp;=\sum_{k=0}^n{n\choose k}(-1)^k\int_0^1t^{2k}\,\mathrm dt\\
+%&amp;=\sum_{k=0}^n{(-1)^k{n\choose k}\over 2k+1}
+\end{align*}
+\]</span> 递推可得 <span class="math display">\[
+I_n={(2n)!!\over(2n+1)!!}.
+\]</span> 故 <span class="math display">\[
+\begin{align*}
+{\arcsin x\over\sqrt{1-x^2}}&amp;=\sum_{n=0}^\infty\left(\int_0^1(1-t^2)^n\,\mathrm dt\right) x^{2n+1}\\
+&amp;=\sum_{n=0}^\infty{(2n)!!\over(2n+1)!!}x^{2n+1}.
+\end{align*}
+\]</span> 于是积分： <span class="math display">\[
+\begin{align*}
+\arcsin^2x&amp;=\int_0^x(\arcsin^2t)'\,\mathrm dt\\
+&amp;=2\int_0^x{\arcsin t\over\sqrt{1-t^2}}\,\mathrm dt\\
+&amp;=2\int_0^x\sum_{n=0}^\infty{(2n)!!\over(2n+1)!!}t^{2n+1}\,\mathrm dt\\
+&amp;=2\sum_{n=0}^\infty{(2n)!!\over(2n+1)!!}\int_0^x t^{2n+1}\,\mathrm dt\\
+&amp;=2\sum_{n=0}^\infty{(2n)!!\over(2n+1)!!}\cdot{x^{2n+2}\over2n+2}\\
+&amp;=2\sum_{n=0}^\infty{(2^nn!)^2\over(2n+1)!}\cdot{x^{2n+2}\over2n+2}\\
+&amp;=2\sum_{n=0}^\infty{2^{2n}(n!)^2\over(2n+2)!}x^{2n+2}\\
+&amp;=2\sum_{n=0}^\infty{2^{2n+2}\left((n+1)!\right)^2\over2^2(n+1)^2(2n+2)!}x^{2n+2}\\
+&amp;=\frac12\sum_{n=0}^\infty{(2x)^{2n+2}\over(n+1)^2{2n+2\choose n+1}}\\
+&amp;=\frac12\sum_{n=1}^\infty{(2x)^{2n}\over n^2{2n\choose n}}.
+\end{align*}
+\]</span></p>
+]]></content>
+      <tags>
+        <tag>数学</tag>
+        <tag>级数</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>分块矩阵的行列式</title>
     <url>/posts/42453/</url>
     <content><![CDATA[<h2 id="结论">结论</h2>
@@ -249,6 +249,12 @@ I_n={(2n)!!\over(2n+1)!!}.
       </tags>
   </entry>
   <entry>
+    <title>Hello World</title>
+    <url>/posts/16107/</url>
+    <content><![CDATA[<p>插入图片: </p><figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">&lt;img src="/file/..." width="250" height="250"/&gt;</span><br></pre></td></tr></tbody></table></figure><p></p>
+]]></content>
+  </entry>
+  <entry>
     <title>$f(A)$的特征值</title>
     <url>/posts/3877/</url>
     <content><![CDATA[<p><strong>引理 (Schur's Lemma): 若<span class="math inline">\(A\)</span>是数域<span class="math inline">\(F\)</span>上的<span class="math inline">\(n\)</span>阶方阵, 且<span class="math inline">\(A\)</span>的特征值都在<span class="math inline">\(F\)</span>中, 那么<span class="math inline">\(A\)</span>与一个上三角阵相似.</strong></p>
@@ -274,6 +280,31 @@ f(A)=f(Q^{-1}TQ)=Q^{-1}f(T)Q.
       <tags>
         <tag>数学</tag>
         <tag>线性代数</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>定积分性质例题</title>
+    <url>/posts/5066/</url>
+    <content><![CDATA[<p><strong>问题：在<span class="math inline">\([0,\pi]\)</span>上的连续函数<span class="math inline">\(f\)</span>满足</strong> <span class="math display">\[
+\int_0^\pi f(x)\sin x\,\mathrm dx=\int_0^\pi f(x)\cos x\,\mathrm dx=0,
+\]</span> <strong>证明<span class="math inline">\(f\)</span>在<span class="math inline">\((0,\pi)\)</span>内至少有两个零点.</strong></p>
+<span id="more"></span>
+<p><strong>证明:</strong></p>
+<p>不妨设<span class="math inline">\(f\)</span>不恒为0.</p>
+<p>若<span class="math inline">\(f(x)\)</span>在<span class="math inline">\((0,\pi)\)</span>内无零点, 则不变号, 不妨设<span class="math inline">\(f(x)&gt;0\)</span>. 此时<span class="math display">\[f(x)\sin x&gt;0,\forall x\in(0,\pi)\implies\int_0^1f(x)\sin x\,\mathrm dx&gt;0,\]</span> 与条件矛盾. 于是<span class="math inline">\(f(x)\)</span>在<span class="math inline">\((0,\pi)\)</span>上变号, 至少有一个零点.</p>
+<p>若只有一个变号零点<span class="math inline">\(x_0\in(0,\pi)\)</span>, 不妨设在<span class="math inline">\((0,x_0)\)</span>上<span class="math inline">\(f(x)&gt;0\)</span>, <span class="math inline">\((x_0,\pi)\)</span>上<span class="math inline">\(f(x)&lt;0\)</span>. 那么 <span class="math display">\[
+F(x)=f(x)\sin(x-x_0)\leq0,~\forall x\in(0,\pi).
+\]</span> 又因为 <span class="math display">\[
+\begin{align*}\int_0^\pi F(x)\,\mathrm dx&amp;=\cos x_0\int_0^\pi f(x)\sin x\,\mathrm dx-\sin x_0\int_0^\pi f(x)\cos x\,\mathrm dx\\
+&amp;=\cos x_0\cdot0-\sin x_0\cdot 0\\
+&amp;=0,
+\end{align*}
+\]</span> 故<span class="math inline">\(F(x)\equiv0\)</span>, 于是<span class="math inline">\(f(x)\equiv0,~\forall x\in(0,\pi)\)</span>, 矛盾.</p>
+<p>于是<span class="math inline">\(f(x)\)</span>在<span class="math inline">\((0,\pi)\)</span>上至少有两个零点.</p>
+]]></content>
+      <tags>
+        <tag>数学</tag>
+        <tag>微积分</tag>
       </tags>
   </entry>
   <entry>
@@ -388,56 +419,6 @@ H^2\subset C
       </categories>
   </entry>
   <entry>
-    <title>定积分性质例题</title>
-    <url>/posts/5066/</url>
-    <content><![CDATA[<p><strong>问题：在<span class="math inline">\([0,\pi]\)</span>上的连续函数<span class="math inline">\(f\)</span>满足</strong> <span class="math display">\[
-\int_0^\pi f(x)\sin x\,\mathrm dx=\int_0^\pi f(x)\cos x\,\mathrm dx=0,
-\]</span> <strong>证明<span class="math inline">\(f\)</span>在<span class="math inline">\((0,\pi)\)</span>内至少有两个零点.</strong></p>
-<span id="more"></span>
-<p><strong>证明:</strong></p>
-<p>不妨设<span class="math inline">\(f\)</span>不恒为0.</p>
-<p>若<span class="math inline">\(f(x)\)</span>在<span class="math inline">\((0,\pi)\)</span>内无零点, 则不变号, 不妨设<span class="math inline">\(f(x)&gt;0\)</span>. 此时<span class="math display">\[f(x)\sin x&gt;0,\forall x\in(0,\pi)\implies\int_0^1f(x)\sin x\,\mathrm dx&gt;0,\]</span> 与条件矛盾. 于是<span class="math inline">\(f(x)\)</span>在<span class="math inline">\((0,\pi)\)</span>上变号, 至少有一个零点.</p>
-<p>若只有一个变号零点<span class="math inline">\(x_0\in(0,\pi)\)</span>, 不妨设在<span class="math inline">\((0,x_0)\)</span>上<span class="math inline">\(f(x)&gt;0\)</span>, <span class="math inline">\((x_0,\pi)\)</span>上<span class="math inline">\(f(x)&lt;0\)</span>. 那么 <span class="math display">\[
-F(x)=f(x)\sin(x-x_0)\leq0,~\forall x\in(0,\pi).
-\]</span> 又因为 <span class="math display">\[
-\begin{align*}\int_0^\pi F(x)\,\mathrm dx&amp;=\cos x_0\int_0^\pi f(x)\sin x\,\mathrm dx-\sin x_0\int_0^\pi f(x)\cos x\,\mathrm dx\\
-&amp;=\cos x_0\cdot0-\sin x_0\cdot 0\\
-&amp;=0,
-\end{align*}
-\]</span> 故<span class="math inline">\(F(x)\equiv0\)</span>, 于是<span class="math inline">\(f(x)\equiv0,~\forall x\in(0,\pi)\)</span>, 矛盾.</p>
-<p>于是<span class="math inline">\(f(x)\)</span>在<span class="math inline">\((0,\pi)\)</span>上至少有两个零点.</p>
-]]></content>
-      <tags>
-        <tag>数学</tag>
-        <tag>微积分</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/posts/16107/</url>
-    <content><![CDATA[<p>插入图片: </p><figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">&lt;img src="/file/..." width="250" height="250"/&gt;</span><br></pre></td></tr></tbody></table></figure><p></p>
-]]></content>
-  </entry>
-  <entry>
-    <title>Hesse 矩阵与Jacobi 矩阵</title>
-    <url>/posts/44547/</url>
-    <content><![CDATA[<p>Hessian 是<strong>数量场</strong>的二阶导: <span class="math display">\[H_{i,j}={\partial f\over\partial x_i\partial x_j}\]</span></p>
-<p>Jacobian 是<strong>向量场</strong>的一阶导: <span class="math display">\[J_{i,j}={\partial\bm{f_i}\over\partial x_j}\]</span></p>
-<p>二者的关系: Hessian 是数量场梯度的 Jacobian, 即 <span class="math inline">\(H(f)=J(\nabla f)\)</span>.</p>
-<blockquote>
-<p>🌰 <span class="math inline">\(f(x,y)=x^2+y^2\)</span></p>
-<ul>
-<li><span class="math inline">\(H(f)=\begin{bmatrix}2&amp;0\\0&amp;2\end{bmatrix}\)</span></li>
-<li><span class="math inline">\(J(\nabla f)=J\left(\begin{bmatrix} 2x\\2y \end{bmatrix}\right)=\begin{bmatrix}2&amp;0\\0&amp;2\end{bmatrix}\)</span></li>
-</ul>
-</blockquote>
-]]></content>
-      <tags>
-        <tag>数学</tag>
-        <tag>分析</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>高维分部积分</title>
     <url>/posts/22001/</url>
     <content><![CDATA[<p><span class="math display">\[\int_\Omega u\nabla\cdot \boldsymbol{v}\d x=\int_{\partial\Omega}u\boldsymbol{v}\cdot\boldsymbol{n}\d s-\int_\Omega\nabla u\cdot\boldsymbol{v}\d x\]</span></p>
@@ -510,6 +491,25 @@ F(x)=f(x)\sin(x-x_0)\leq0,~\forall x\in(0,\pi).
         <category>微积分</category>
         <category>单变量微积分</category>
       </categories>
+  </entry>
+  <entry>
+    <title>Hesse 矩阵与Jacobi 矩阵</title>
+    <url>/posts/44547/</url>
+    <content><![CDATA[<p>Hessian 是<strong>数量场</strong>的二阶导: <span class="math display">\[H_{i,j}={\partial f\over\partial x_i\partial x_j}\]</span></p>
+<p>Jacobian 是<strong>向量场</strong>的一阶导: <span class="math display">\[J_{i,j}={\partial\bm{f_i}\over\partial x_j}\]</span></p>
+<p>二者的关系: Hessian 是数量场梯度的 Jacobian, 即 <span class="math inline">\(H(f)=J(\nabla f)\)</span>.</p>
+<blockquote>
+<p>🌰 <span class="math inline">\(f(x,y)=x^2+y^2\)</span></p>
+<ul>
+<li><span class="math inline">\(H(f)=\begin{bmatrix}2&amp;0\\0&amp;2\end{bmatrix}\)</span></li>
+<li><span class="math inline">\(J(\nabla f)=J\left(\begin{bmatrix} 2x\\2y \end{bmatrix}\right)=\begin{bmatrix}2&amp;0\\0&amp;2\end{bmatrix}\)</span></li>
+</ul>
+</blockquote>
+]]></content>
+      <tags>
+        <tag>数学</tag>
+        <tag>分析</tag>
+      </tags>
   </entry>
   <entry>
     <title>拉格朗日插值</title>
@@ -657,50 +657,6 @@ P&amp;Q&amp;R
       </tags>
   </entry>
   <entry>
-    <title>数值积分</title>
-    <url>/posts/24343/</url>
-    <content><![CDATA[<p><strong>Quadrature Rule</strong> 指的是形式 <span class="math display">\[Q(f)=\sum_{k=0}^nw_kf(x_k)\]</span></p>
-<p>有时把 <span class="math inline">\(f(x_k)\)</span> 简写作 <span class="math inline">\(f_k\)</span>.</p>
-<span id="more"></span>
-<h2 id="interpolation-rule">Interpolation Rule</h2>
-<p>在插值多项式上求积分, 即 <span class="math display">\[w_k=\int_a^b l_k(x)\d x\]</span></p>
-<h3 id="midpoint-rule">Midpoint Rule</h3>
-<p>在中点处取 <span class="math inline">\(0\)</span> 次多项式. <span class="math display">\[Q(f)=(b-a)f(x_0),\]</span> 其中 <span class="math inline">\(x_0\)</span> 是区间中点. 精度为 <span class="math inline">\(1\)</span>.</p>
-<h3 id="newton-cotes-rules">Newton-Cotes Rules</h3>
-<p>区间上的等距节点. <span class="math inline">\(n\)</span> 为奇数时精度为 <span class="math inline">\(n\)</span>, 偶数时精度为 <span class="math inline">\(n+1\)</span>.</p>
-<ul>
-<li><span class="math inline">\(n=1\)</span>: trapezium rule 精度为 <span class="math inline">\(1\)</span> <span class="math display">\[\frac h2(f_0+f_1)\]</span> 误差 <span class="math display">\[I-Q=-\frac{1}{12}h^3 f''(\xi),\ \xi\in(a,b)\]</span></li>
-<li><span class="math inline">\(n=2\)</span>: Simpson's rule 精度为 <span class="math inline">\(3\)</span> <span class="math display">\[\frac h3\left(f(x_0)+4f(x_1)+f(x_2)\right)\]</span> 误差 <span class="math display">\[I-Q=-\frac{h^5}{90}f^{(4)}(\xi)=-\frac{(b-a)^5}{2880}f^{(4)}(\xi),\ \xi\in(a,b)\]</span></li>
-</ul>
-<h2 id="gauss-rule">Gauss Rule</h2>
-<p>寻找关于权重 <span class="math inline">\(w(x)\)</span> 精度最高的节点, 实际上是关于 <span class="math inline">\(w(x)\)</span> 的正交多项式的零点. 精度是 <span class="math inline">\(2n+1\)</span>.</p>
-<h3 id="gauss-legendre-quadrature-wx1">Gauss-Legendre Quadrature <span class="math inline">\(w(x)=1\)</span></h3>
-<ul>
-<li><span class="math inline">\(n=0\)</span>: <span class="math display">\[\int_{-1}^1f(x)\d x\approx 2f(0)\]</span> 是中点法.</li>
-<li><span class="math inline">\(n=1\)</span>: <span class="math display">\[\int_{-1}^1f(x)\d x\approx f\left(-\frac{1}{\sqrt 3}\right)+f\left(\frac{1}{\sqrt 3}\right)\]</span></li>
-</ul>
-<h3 id="gauss-chebyshev-quadrature-wx1-x2-12">Gauss-Chebyshev Quadrature <span class="math inline">\(w(x)=(1-x^2)^{-1/2}\)</span></h3>
-<p><span class="math inline">\(x_0,\ldots,x_n\)</span> 取 <span class="math inline">\(T_{n+1}(x)\)</span> 的零点, 即 Chebyshev 分点 <span class="math display">\[x_k=\cos\left(\frac\pi2\frac{2k+1}{n+1}\right)\]</span></p>
-<p>此时权重都是 <span class="math inline">\(\displaystyle w_k=\frac{\pi}{n+1}\)</span></p>
-<h2 id="composite-quadrature-rules">Composite Quadrature Rules</h2>
-<p>把区间等分后做积分.</p>
-<h3 id="composite-midpoint-rule">Composite Midpoint Rule</h3>
-<p><span class="math display">\[
-M(h)=\sum_{k=0}^{n-1}hf\left(a+h\left(k+\frac12\right)\right)
-\]</span> 误差 <span class="math display">\[I-M=\frac{h^2}{24}(b-a)f''(\xi)\]</span></p>
-<h3 id="composite-trapezium-rule">Composite Trapezium Rule</h3>
-<p><span class="math display">\[T(h)=\frac h2\left(f(t_0)+2f(t_1)+2f(t_2)+\cdots+2f(t_{n-1})+f(t_n)\right)\]</span> 误差 <span class="math display">\[I-T=-\frac{h^2}{12}(b-a)f''(\xi)\]</span></p>
-<h3 id="composite-simpsons-rule">Composite Simpson's Rule</h3>
-<p><span class="math display">\[S(h)=\frac{h}{3}\left(f(t_0)+4f(t_1)+2f(t_2)+4f(t_3)+\cdots+2f(t_{2m-2})+4f(t_{2m-1})+f(t_{2m})\right)\]</span> 误差 <span class="math display">\[I-S=-\frac{h^4}{180}(b-a)f^{(4)}(\xi)\]</span></p>
-<h2 id="extrapolation">Extrapolation</h2>
-<p>做组合消除误差. 令 <span class="math inline">\(T_{k,1}=T(h/2^{k-1})\)</span> 并构造表 <span class="math display">\[T_{i,j}={4^{j-1}T_{i,j-1}-T_{i-1,j-1}\over 4^{j-1}-1}\]</span> 每向右一列误差 <span class="math inline">\(\times h^2\)</span>.</p>
-]]></content>
-      <categories>
-        <category>数学</category>
-        <category>数值分析</category>
-      </categories>
-  </entry>
-  <entry>
     <title>数值 ODE</title>
     <url>/posts/23214/</url>
     <content><![CDATA[<p><span class="math inline">\(f_n\)</span> 是 <span class="math inline">\(f(x_n,y_n)\)</span> 的简记, <span class="math inline">\(y_n\)</span> 是 <span class="math inline">\(y(x_n)\)</span> 的估计.</p>
@@ -774,25 +730,47 @@ y_{n+1}=\sum_{k=1}^l a_ky_{n+1-k}+h\sum_{k=0}^l b_k f_{n+1-k}
       </tags>
   </entry>
   <entry>
-    <title>留数的计算方法</title>
-    <url>/posts/51485/</url>
-    <content><![CDATA[<ol type="1">
-<li>在分式 <span class="math inline">\(f=g/h\)</span> 中, 若分母有简单零点 <span class="math inline">\(z_0\)</span> 而分子没有, 那么 <span class="math inline">\(f\)</span> 在 <span class="math inline">\(z_0\)</span> 处的留数为 <span class="math display">\[
-\frac{g(z_0)}{h'(z_0)}
-\]</span></li>
-</ol>
-<blockquote>
-<p><span class="math inline">\(\dfrac{1}{z^4-1}\)</span> 在 <span class="math inline">\(\i\)</span> 处的留数为 <span class="math display">\[{1\over \left.4z^3\right|_{z=\i}}={1\over-4\i}=\frac\i4.\]</span></p>
-</blockquote>
-<ol start="2" type="1">
-<li>假设 <span class="math inline">\(z_0\)</span> 是 <span class="math inline">\(n\)</span> 阶极点, 那么该点处的留数为 <span class="math display">\[
- \frac{1}{(n-1)!}\left(\left(\frac{\d}{\d z}\right)^{n-1}(z-z_0)^n f(z)\right)_{z=z_0}
-\]</span></li>
-</ol>
+    <title>数值积分</title>
+    <url>/posts/24343/</url>
+    <content><![CDATA[<p><strong>Quadrature Rule</strong> 指的是形式 <span class="math display">\[Q(f)=\sum_{k=0}^nw_kf(x_k)\]</span></p>
+<p>有时把 <span class="math inline">\(f(x_k)\)</span> 简写作 <span class="math inline">\(f_k\)</span>.</p>
+<span id="more"></span>
+<h2 id="interpolation-rule">Interpolation Rule</h2>
+<p>在插值多项式上求积分, 即 <span class="math display">\[w_k=\int_a^b l_k(x)\d x\]</span></p>
+<h3 id="midpoint-rule">Midpoint Rule</h3>
+<p>在中点处取 <span class="math inline">\(0\)</span> 次多项式. <span class="math display">\[Q(f)=(b-a)f(x_0),\]</span> 其中 <span class="math inline">\(x_0\)</span> 是区间中点. 精度为 <span class="math inline">\(1\)</span>.</p>
+<h3 id="newton-cotes-rules">Newton-Cotes Rules</h3>
+<p>区间上的等距节点. <span class="math inline">\(n\)</span> 为奇数时精度为 <span class="math inline">\(n\)</span>, 偶数时精度为 <span class="math inline">\(n+1\)</span>.</p>
+<ul>
+<li><span class="math inline">\(n=1\)</span>: trapezium rule 精度为 <span class="math inline">\(1\)</span> <span class="math display">\[\frac h2(f_0+f_1)\]</span> 误差 <span class="math display">\[I-Q=-\frac{1}{12}h^3 f''(\xi),\ \xi\in(a,b)\]</span></li>
+<li><span class="math inline">\(n=2\)</span>: Simpson's rule 精度为 <span class="math inline">\(3\)</span> <span class="math display">\[\frac h3\left(f(x_0)+4f(x_1)+f(x_2)\right)\]</span> 误差 <span class="math display">\[I-Q=-\frac{h^5}{90}f^{(4)}(\xi)=-\frac{(b-a)^5}{2880}f^{(4)}(\xi),\ \xi\in(a,b)\]</span></li>
+</ul>
+<h2 id="gauss-rule">Gauss Rule</h2>
+<p>寻找关于权重 <span class="math inline">\(w(x)\)</span> 精度最高的节点, 实际上是关于 <span class="math inline">\(w(x)\)</span> 的正交多项式的零点. 精度是 <span class="math inline">\(2n+1\)</span>.</p>
+<h3 id="gauss-legendre-quadrature-wx1">Gauss-Legendre Quadrature <span class="math inline">\(w(x)=1\)</span></h3>
+<ul>
+<li><span class="math inline">\(n=0\)</span>: <span class="math display">\[\int_{-1}^1f(x)\d x\approx 2f(0)\]</span> 是中点法.</li>
+<li><span class="math inline">\(n=1\)</span>: <span class="math display">\[\int_{-1}^1f(x)\d x\approx f\left(-\frac{1}{\sqrt 3}\right)+f\left(\frac{1}{\sqrt 3}\right)\]</span></li>
+</ul>
+<h3 id="gauss-chebyshev-quadrature-wx1-x2-12">Gauss-Chebyshev Quadrature <span class="math inline">\(w(x)=(1-x^2)^{-1/2}\)</span></h3>
+<p><span class="math inline">\(x_0,\ldots,x_n\)</span> 取 <span class="math inline">\(T_{n+1}(x)\)</span> 的零点, 即 Chebyshev 分点 <span class="math display">\[x_k=\cos\left(\frac\pi2\frac{2k+1}{n+1}\right)\]</span></p>
+<p>此时权重都是 <span class="math inline">\(\displaystyle w_k=\frac{\pi}{n+1}\)</span></p>
+<h2 id="composite-quadrature-rules">Composite Quadrature Rules</h2>
+<p>把区间等分后做积分.</p>
+<h3 id="composite-midpoint-rule">Composite Midpoint Rule</h3>
+<p><span class="math display">\[
+M(h)=\sum_{k=0}^{n-1}hf\left(a+h\left(k+\frac12\right)\right)
+\]</span> 误差 <span class="math display">\[I-M=\frac{h^2}{24}(b-a)f''(\xi)\]</span></p>
+<h3 id="composite-trapezium-rule">Composite Trapezium Rule</h3>
+<p><span class="math display">\[T(h)=\frac h2\left(f(t_0)+2f(t_1)+2f(t_2)+\cdots+2f(t_{n-1})+f(t_n)\right)\]</span> 误差 <span class="math display">\[I-T=-\frac{h^2}{12}(b-a)f''(\xi)\]</span></p>
+<h3 id="composite-simpsons-rule">Composite Simpson's Rule</h3>
+<p><span class="math display">\[S(h)=\frac{h}{3}\left(f(t_0)+4f(t_1)+2f(t_2)+4f(t_3)+\cdots+2f(t_{2m-2})+4f(t_{2m-1})+f(t_{2m})\right)\]</span> 误差 <span class="math display">\[I-S=-\frac{h^4}{180}(b-a)f^{(4)}(\xi)\]</span></p>
+<h2 id="extrapolation">Extrapolation</h2>
+<p>做组合消除误差. 令 <span class="math inline">\(T_{k,1}=T(h/2^{k-1})\)</span> 并构造表 <span class="math display">\[T_{i,j}={4^{j-1}T_{i,j-1}-T_{i-1,j-1}\over 4^{j-1}-1}\]</span> 每向右一列误差 <span class="math inline">\(\times h^2\)</span>.</p>
 ]]></content>
       <categories>
         <category>数学</category>
-        <category>复变函数</category>
+        <category>数值分析</category>
       </categories>
   </entry>
   <entry>
@@ -962,18 +940,26 @@ y_{n+1}=\sum_{k=1}^l a_ky_{n+1-k}+h\sum_{k=0}^l b_k f_{n+1-k}
       </tags>
   </entry>
   <entry>
-    <title>利用积分下求导计算无穷积分</title>
-    <url>/posts/30510/</url>
-    <content><![CDATA[<p>计算 <span class="math display">\[
-\int_{-\infty}^{+\infty}{x\sin x\over (x^2+a^2)(x^2+b^2)}\,\mathrm dx.
-\]</span> 其实是测试一下内嵌pdf.</p>
-<span id="more"></span>
-<div class="pdfobject-container" data-target="/file/integrate.pdf" data-height="500px"></div>
+    <title>留数的计算方法</title>
+    <url>/posts/51485/</url>
+    <content><![CDATA[<ol type="1">
+<li>在分式 <span class="math inline">\(f=g/h\)</span> 中, 若分母有简单零点 <span class="math inline">\(z_0\)</span> 而分子没有, 那么 <span class="math inline">\(f\)</span> 在 <span class="math inline">\(z_0\)</span> 处的留数为 <span class="math display">\[
+\frac{g(z_0)}{h'(z_0)}
+\]</span></li>
+</ol>
+<blockquote>
+<p><span class="math inline">\(\dfrac{1}{z^4-1}\)</span> 在 <span class="math inline">\(\i\)</span> 处的留数为 <span class="math display">\[{1\over \left.4z^3\right|_{z=\i}}={1\over-4\i}=\frac\i4.\]</span></p>
+</blockquote>
+<ol start="2" type="1">
+<li>假设 <span class="math inline">\(z_0\)</span> 是 <span class="math inline">\(n\)</span> 阶极点, 那么该点处的留数为 <span class="math display">\[
+ \frac{1}{(n-1)!}\left(\left(\frac{\d}{\d z}\right)^{n-1}(z-z_0)^n f(z)\right)_{z=z_0}
+\]</span></li>
+</ol>
 ]]></content>
-      <tags>
-        <tag>数学</tag>
-        <tag>微积分</tag>
-      </tags>
+      <categories>
+        <category>数学</category>
+        <category>复变函数</category>
+      </categories>
   </entry>
   <entry>
     <title>实对称阵的合同对角化</title>
@@ -1062,6 +1048,20 @@ Q=\begin{bmatrix}1&amp;\\&amp;\frac12\end{bmatrix}\begin{bmatrix}0&amp;1\\1&amp;
         <tag>数学</tag>
         <tag>微积分</tag>
         <tag>多元微积分</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>利用积分下求导计算无穷积分</title>
+    <url>/posts/30510/</url>
+    <content><![CDATA[<p>计算 <span class="math display">\[
+\int_{-\infty}^{+\infty}{x\sin x\over (x^2+a^2)(x^2+b^2)}\,\mathrm dx.
+\]</span> 其实是测试一下内嵌pdf.</p>
+<span id="more"></span>
+<div class="pdfobject-container" data-target="/file/integrate.pdf" data-height="500px"></div>
+]]></content>
+      <tags>
+        <tag>数学</tag>
+        <tag>微积分</tag>
       </tags>
   </entry>
   <entry>
@@ -1155,11 +1155,10 @@ M=\frac{1}{\omega} D+L, \quad N=\frac{1-\omega}{\omega} D-U
 </table>
 <p>可以证明对正定矩阵 SOR 对所有 <span class="math inline">\(0&lt;\omega&lt;2\)</span> 收敛.</p>
 ]]></content>
-      <tags>
-        <tag>数学</tag>
-        <tag>线性代数</tag>
-        <tag>数值分析</tag>
-      </tags>
+      <categories>
+        <category>数学</category>
+        <category>数值分析</category>
+      </categories>
   </entry>
   <entry>
     <title>计算定积分</title>
