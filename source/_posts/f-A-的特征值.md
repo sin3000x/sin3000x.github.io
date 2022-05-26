@@ -3,7 +3,7 @@ title: $f(A)$的特征值
 mathjax: true
 abbrlink: 3877
 date: 2021-09-09 10:31:27
-tags: 
+categories: 
 - 数学
 - 线性代数
 ---

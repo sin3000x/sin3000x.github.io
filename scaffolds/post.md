@@ -1,5 +1,7 @@
 ---
 title: {{ title }}
 date: {{ date }}
-tags:
+categories:
+    - 数学
+mathjax: true
 ---

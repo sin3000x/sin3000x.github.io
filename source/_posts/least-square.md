@@ -1,7 +1,7 @@
 ---
 title: 最小二乘法
 mathjax: true
-tags:
+categories:
   - 数学
   - 线性代数
 abbrlink: 36991
@@ -95,3 +95,7 @@ $A=U\Sigma V^T$ 也给出了 $P$ 的基: $P=UU^T$, 根据 $U\Sigma V^Tx=UU^Tb$ �
 同样可以利用正规方程: $$A^TAx=A^Tb\implies V\Sigma^TU^TU\Sigma V^Tx=V\Sigma^T U^Tb\implies \Sigma V^Tx=U^Tb$$
 
 计算量主要在于 SVD, 当 $m\gg n$ 时和 QR 差不多, 当 $m\approx n$ 时计算量更大. 典型估计是 $2mn^2+11n^3$ 次运算.
+
+## 伪逆
+- $A$ 列满秩: $A^\dagger=(A^TA)^{-1}A^T$
+- $A$ 行满秩: $A^\dagger=A^T(AA^T)^{-1}$

@@ -1,9 +1,10 @@
 ---
 title: '定积分性质例题'
 mathjax: true
-tags:
+categories:
   - 数学
   - 微积分
+  - 单变量微积分
 abbrlink: 5066
 date: 2021-09-10 18:09:49
 ---

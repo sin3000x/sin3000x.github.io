@@ -3,7 +3,7 @@ title: 拉格朗日插值
 abbrlink: 17585
 date: 2022-01-23 13:19:31
 mathjax: true
-tags:
+categories:
     - 数学
     - 数值分析
 ---

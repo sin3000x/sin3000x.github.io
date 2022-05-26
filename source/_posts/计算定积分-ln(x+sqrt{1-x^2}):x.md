@@ -2,9 +2,10 @@
 title: '计算定积分'
 abbrlink: 45803
 date: 2021-09-10 10:54:58
-tags:
+categories:
 - 数学
 - 微积分
+- 单变量微积分
 mathjax: true
 ---
 

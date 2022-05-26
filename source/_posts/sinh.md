@@ -1,9 +1,9 @@
 ---
 title: 三角函数和双曲函数
 mathjax: true
-tags:
+categories:
   - 数学
-  - 分析
+  - 初等数学
 abbrlink: 12845
 date: 2022-03-06 15:17:12
 ---

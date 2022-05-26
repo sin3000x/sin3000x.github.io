@@ -1,7 +1,7 @@
 ---
 title: 数值积分
 mathjax: true
-tags:
+categories:
   - 数学
   - 数值分析
 abbrlink: 24343
