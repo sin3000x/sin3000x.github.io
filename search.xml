@@ -1,6 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>控制收敛定理 (DCT)</title>
+    <url>/posts/34980/</url>
+    <content><![CDATA[<p><span class="math display">\[\lim_{n\to\infty}\int_S f_n \,d\mu=\int_S f\,d\mu\]</span></p>
+<span id="more"></span>
+<p>条件:</p>
+<ul>
+<li><span class="math inline">\(f_n\)</span> 可测, 逐点收敛到 <span class="math inline">\(f\)</span>.</li>
+<li><span class="math inline">\(f_n\)</span> 被可积函数 <span class="math inline">\(g\)</span> 控制: <span class="math inline">\(|f_n(x)|\leq g(x)\)</span>, 且 <span class="math inline">\(\int_S|g|\,d\mu&lt;\infty.\)</span></li>
+</ul>
+<p>结论:</p>
+<ul>
+<li><span class="math inline">\(f\)</span> 可积</li>
+<li><span class="math inline">\(\lim_{n\to\infty}\int_S|f_n-f|\,d\mu=0\)</span></li>
+<li><span class="math inline">\(\lim_{n\to\infty}\int_S f_n \,d\mu=\int_S f\,d\mu\)</span></li>
+</ul>
+]]></content>
+      <tags>
+        <tag>数学</tag>
+        <tag>实变函数</tag>
+        <tag>分析</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Fourier 级数</title>
+    <url>/posts/22351/</url>
+    <content><![CDATA[<p><span class="math display">\[
+f\colon[-L,L]\to\mathbb{R}
+\]</span> <span class="math display">\[F(x)=a_0+\sum_{n=1}^\infty \left(a_n\cos\left(\frac{n\pi x}{L}\right)+b_n\sin\left(\frac{n\pi x}{L}\right)\right)\]</span> 其中 <span class="math display">\[a_0=\frac{1}{2L}\int_{-L}^Lf(x)\,\mathrm{d}x\]</span> <span class="math display">\[a_n=\frac{1}{L}\int_{-L}^Lf(x)\cos\left(\frac{n\pi x}{L}\right)\,\mathrm{d}x\]</span> <span class="math display">\[b_n=\frac{1}{L}\int_{-L}^Lf(x)\sin\left(\frac{n\pi x}{L}\right)\,\mathrm{d}x\]</span></p>
+]]></content>
+      <categories>
+        <category>数学</category>
+        <category>级数</category>
+      </categories>
+  </entry>
+  <entry>
     <title>常见的ODE解法</title>
     <url>/posts/65228/</url>
     <content><![CDATA[<h3 id="可分离变量-ypyqx">1. 可分离变量 <span class="math inline">\(y'=p(y)q(x)\)</span></h3>
@@ -27,29 +62,6 @@ y=Ce^{-\int p(x)dx}
       <tags>
         <tag>数学</tag>
         <tag>分析</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>控制收敛定理 (DCT)</title>
-    <url>/posts/34980/</url>
-    <content><![CDATA[<p><span class="math display">\[\lim_{n\to\infty}\int_S f_n \,d\mu=\int_S f\,d\mu\]</span></p>
-<span id="more"></span>
-<p>条件:</p>
-<ul>
-<li><span class="math inline">\(f_n\)</span> 可测, 逐点收敛到 <span class="math inline">\(f\)</span>.</li>
-<li><span class="math inline">\(f_n\)</span> 被可积函数 <span class="math inline">\(g\)</span> 控制: <span class="math inline">\(|f_n(x)|\leq g(x)\)</span>, 且 <span class="math inline">\(\int_S|g|\,d\mu&lt;\infty.\)</span></li>
-</ul>
-<p>结论:</p>
-<ul>
-<li><span class="math inline">\(f\)</span> 可积</li>
-<li><span class="math inline">\(\lim_{n\to\infty}\int_S|f_n-f|\,d\mu=0\)</span></li>
-<li><span class="math inline">\(\lim_{n\to\infty}\int_S f_n \,d\mu=\int_S f\,d\mu\)</span></li>
-</ul>
-]]></content>
-      <tags>
-        <tag>数学</tag>
-        <tag>分析</tag>
-        <tag>实变函数</tag>
       </tags>
   </entry>
   <entry>
@@ -557,6 +569,23 @@ p(x)={\sum_{k=0}^n{\lambda_k y_k\over x-x_k}\over\sum_{k=0}^n{\lambda_k\over x-x
       </categories>
   </entry>
   <entry>
+    <title>常用积分</title>
+    <url>/posts/23548/</url>
+    <content><![CDATA[<h2 id="不定积分">不定积分</h2>
+<p><span class="math display">\[\int\frac{1}{x^2+a^2} \,\mathrm{d}x=\frac 1a\arctan\frac xa+C\]</span> <span class="math display">\[\int\frac{1}{x^2-a^2} \,\mathrm{d}x=\frac {1}{2a}\ln\left|\frac{x-a}{x+a}\right|+C\]</span> <span class="math display">\[\int\frac{1}{\sqrt{x^2\pm a^2}} \,\mathrm{d}x=\ln\left|x+\sqrt{x^2\pm a^2}\right|+C\]</span> <span class="math display">\[\int\frac{1}{\sqrt{a^2-x^2}} \,\mathrm{d}x=\arcsin \frac xa+C\]</span> <span class="math display">\[\int\frac{1}{\sqrt{1+x^2}} \,\mathrm{d}x=\sinh^{-1}x+C\]</span></p>
+<span id="more"></span>
+<h2 id="定积分">定积分</h2>
+<p><span class="math display">\[\int_0^{\frac \pi2}\ln(\sin x)=\int_0^{\frac \pi2}\ln(\cos x)=-\frac\pi2\ln2\]</span></p>
+<p><span class="math display">\[\int_{-a}^af(x)\,\mathrm{d}x=\int_{0}^a\left(f(x)+f(-x)\right)\,\mathrm{d}x\]</span></p>
+<p><span class="math display">\[\int_{0}^{\pi}xf(\sin x)\,\mathrm{d}x=\frac\pi2\int_{0}^\pi f(\sin x)\,\mathrm{d}x\]</span></p>
+]]></content>
+      <categories>
+        <category>数学</category>
+        <category>微积分</category>
+        <category>单变量微积分</category>
+      </categories>
+  </entry>
+  <entry>
     <title>最小二乘法</title>
     <url>/posts/36991/</url>
     <content><![CDATA[<p><span class="math display">\[\min\|Ax-b\|_2\]</span> 其中 <span class="math inline">\(A\in\R^{m\times n}\)</span>, <span class="math inline">\(x\in\R^n\)</span>, <span class="math inline">\(b\in\R^m.\)</span> 这个的问题的情境是 <span class="math inline">\(m\geq n\)</span>, 也就是一个过度约束的问题 (<span class="math inline">\(b\)</span> 不在 <span class="math inline">\(A\)</span> 的值域中).</p>
@@ -807,7 +836,47 @@ y_{n+1}=\sum_{k=1}^l a_ky_{n+1-k}+h\sum_{k=0}^l b_k f_{n+1-k}
       </categories>
   </entry>
   <entry>
-    <title>三角函数和双曲函数</title>
+    <title>常见级数</title>
+    <url>/posts/56038/</url>
+    <content><![CDATA[<p><span class="math display">\[\sum_{n=1}^\infty\frac{1}{n^2}=\frac{\pi^2}{6}\]</span> <span id="more"></span> <span class="math display">\[\sum_{n=1}^\infty\frac{(-1)^{n-1}}{n^2}=\frac{\pi^2}{12}\]</span> <span class="math display">\[\sum_{n=1}^\infty\frac{1}{(2n-1)^2}=\frac{\pi^2}{8}\]</span> <span class="math display">\[\sum_{n=1}^\infty\frac{1}{n^4}=\frac{\pi^4}{90}\]</span> <span class="math display">\[\sum_{n=1}^\infty\frac{(-1)^{n-1}}{n^4}=\frac{7\pi^4}{720}\]</span> <span class="math display">\[1-\frac13+\frac15-\frac17+\cdots=\frac\pi4\]</span> <span class="math display">\[1-\frac12+\frac13-\frac14+\cdots=\ln2\]</span></p>
+]]></content>
+      <categories>
+        <category>数学</category>
+        <category>级数</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>三角函数</title>
+    <url>/posts/26462/</url>
+    <content><![CDATA[<h2 id="和差化积">和差化积</h2>
+<p><span class="math display">\[\sin\alpha+\sin\beta=2\sin\left(\frac{\alpha+\beta}{2}\right)\cos\left(\frac{\alpha-\beta}{2}\right)\]</span></p>
+<p><span class="math display">\[\sin\alpha-\sin\beta=2\cos\left(\frac{\alpha+\beta}{2}\right)\sin\left(\frac{\alpha-\beta}{2}\right)\]</span></p>
+<p><span class="math display">\[\cos\alpha+\cos\beta=2\cos\left(\frac{\alpha+\beta}{2}\right)\cos\left(\frac{\alpha-\beta}{2}\right)\]</span></p>
+<p><span class="math display">\[\cos\alpha-\cos\beta=-2\sin\left(\frac{\alpha+\beta}{2}\right)\sin\left(\frac{\alpha-\beta}{2}\right)\]</span></p>
+<span id="more"></span>
+<h2 id="积化和差">积化和差</h2>
+<p><span class="math display">\[\sin\alpha\cos\beta=\frac12\left(\sin(\alpha+\beta)+\sin(\alpha-\beta)\right)\]</span></p>
+<p><span class="math display">\[\cos\alpha\sin\beta=\frac12\left(\sin(\alpha+\beta)-\sin(\alpha-\beta)\right)\]</span></p>
+<p><span class="math display">\[\cos\alpha\cos\beta=\frac12\left(\cos(\alpha+\beta)+\cos(\alpha-\beta)\right)\]</span></p>
+<p><span class="math display">\[\sin\alpha\sin\beta=-\frac12\left(\cos(\alpha+\beta)-\cos(\alpha-\beta)\right)\]</span></p>
+<h2 id="倍角公式">倍角公式</h2>
+<p><span class="math display">\[\sin3x=3\sin x-4\sin^3x\]</span> <span class="math display">\[\cos 3x=-3\cos x+4\cos^3x\]</span></p>
+<h2 id="万能公式">万能公式</h2>
+<p>令 <span class="math inline">\(t=\tan\dfrac x2\)</span>, 那么 <span class="math display">\[
+\begin{gather*}
+\sin x=\frac{2t}{1+t^2},\quad
+\cos x=\frac{1-t^2}{1+t^2},\quad
+\tan x=\frac{2t}{1-t^2}
+\end{gather*}
+\]</span></p>
+]]></content>
+      <categories>
+        <category>数学</category>
+        <category>初等数学</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>双曲函数</title>
     <url>/posts/12845/</url>
     <content><![CDATA[<h2 id="定义">定义</h2>
 <p><span class="math display">\[\sinh(x)=\frac{\e^x-\e^{-x}}{2}\]</span></p>
@@ -819,8 +888,18 @@ y_{n+1}=\sum_{k=1}^l a_ky_{n+1-k}+h\sum_{k=0}^l b_k f_{n+1-k}
 <p><span class="math display">\[\sin(\i x)=\i\sinh(x),\ \sinh(\i x)=\i\sin(x)\]</span></p>
 <p><span class="math display">\[\cos(\i x)=\cosh(x),\ \cosh(\i x)=\cos(x)\]</span></p>
 <h2 id="和角公式">和角公式</h2>
-<p><span class="math display">\[\sinh(x+y)=\sinh(x)\cosh(y)+\cosh(x)\sinh(y)\]</span></p>
-<p><span class="math display">\[\cosh(x+y)=\cosh(x)\cosh(y)+\sinh(x)\sinh(y)\]</span></p>
+<p><span class="math display">\[\sinh(x\pm y)=\sinh(x)\cosh(y)\pm\cosh(x)\sinh(y)\]</span></p>
+<p><span class="math display">\[\cosh(x\pm y)=\cosh(x)\cosh(y)\pm\sinh(x)\sinh(y)\]</span></p>
+<p><span class="math display">\[
+\tanh(x+y)={\tanh x+\tanh y\over 1+\tanh x\tanh y}
+\]</span></p>
+<p><span class="math display">\[
+\tanh(x-y)={\tanh x-\tanh y\over 1-\tanh x\tanh y}
+\]</span></p>
+<h2 id="倍角公式">倍角公式</h2>
+<p><span class="math display">\[\cosh 2x=\sinh^2x+\cosh^2x=2\sinh^2x+1=2\cosh^2x-1\]</span></p>
+<p><span class="math display">\[\sinh 2x=\sinh^2x+\cosh^2x=2\sinh x\cosh x\]</span></p>
+<p><span class="math display">\[\tanh 2x={2\tanh x\over 1+\tanh^2x}\]</span></p>
 <h2 id="逆函数">逆函数</h2>
 <p><span class="math display">\[\sinh^{-1}(x)=\ln\left(x+\sqrt{x^2+1}\right)\]</span></p>
 <p><span class="math display">\[\cosh^{-1}(x)=\ln\left(x+\sqrt{x^2-1}\right)\]</span></p>
@@ -944,6 +1023,21 @@ y_{n+1}=\sum_{k=1}^l a_ky_{n+1-k}+h\sum_{k=0}^l b_k f_{n+1-k}
       </categories>
   </entry>
   <entry>
+    <title>利用积分下求导计算无穷积分</title>
+    <url>/posts/30510/</url>
+    <content><![CDATA[<p>计算 <span class="math display">\[
+\int_{-\infty}^{+\infty}{x\sin x\over (x^2+a^2)(x^2+b^2)}\,\mathrm dx.
+\]</span> 其实是测试一下内嵌pdf.</p>
+<span id="more"></span>
+<div class="pdfobject-container" data-target="/file/integrate.pdf" data-height="500px"></div>
+]]></content>
+      <categories>
+        <category>数学</category>
+        <category>微积分</category>
+        <category>单变量微积分</category>
+      </categories>
+  </entry>
+  <entry>
     <title>为什么用开覆盖定义紧集</title>
     <url>/posts/47720/</url>
     <content><![CDATA[<p>【定义】一个集合是紧集的意思是，它的任何一个开覆盖都有有限子覆盖。</p>
@@ -971,21 +1065,6 @@ y_{n+1}=\sum_{k=1}^l a_ky_{n+1-k}+h\sum_{k=0}^l b_k f_{n+1-k}
         <tag>数学</tag>
         <tag>拓扑</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>利用积分下求导计算无穷积分</title>
-    <url>/posts/30510/</url>
-    <content><![CDATA[<p>计算 <span class="math display">\[
-\int_{-\infty}^{+\infty}{x\sin x\over (x^2+a^2)(x^2+b^2)}\,\mathrm dx.
-\]</span> 其实是测试一下内嵌pdf.</p>
-<span id="more"></span>
-<div class="pdfobject-container" data-target="/file/integrate.pdf" data-height="500px"></div>
-]]></content>
-      <categories>
-        <category>数学</category>
-        <category>微积分</category>
-        <category>单变量微积分</category>
-      </categories>
   </entry>
   <entry>
     <title>实对称阵的合同对角化</title>
@@ -1077,20 +1156,6 @@ Q=\begin{bmatrix}1&amp;\\&amp;\frac12\end{bmatrix}\begin{bmatrix}0&amp;1\\1&amp;
       </categories>
   </entry>
   <entry>
-    <title>科普是一项非常难的工作</title>
-    <url>/posts/20918/</url>
-    <content><![CDATA[<p>要想当一个好学生，只需要把知识学懂。</p>
-<p>要想当一个好老师，需要一些基础知识，还需要良好的性格和表达能力、心理学和教育学经验。</p>
-<p>要想当一个好教授，需要有专业知识、科研水平，只需要一般般的表达能力。</p>
-<p><strong>而要当一个好的科普工作者，需要有远超学生的理解能力，教授一样的专业水平，老师一样的教学功力，艺术家一样的审美，作家一样的文笔，诗人一样的清高，科学家一样对知识的热爱，艺人一样对大众心理的把控能力，运动员一样的毅力，还要有自身的人格魅力、抗压抗打击能力。</strong></p>
-<p>科普是一项非常难的工作，比讲课教书难得多。因为它面对的不是专业人士，而是乌合之众。这导致科普工作者必须用通俗语言来解释专业知识，却又不至于过于通俗而产生误导。稍微有一点漏洞就会被抓住攻击——有问题的科普比谣言更可怕，比迷信更害人。</p>
-<p>所以，科普工作者是一个神圣的标签，这个名号比想象中要严苛得多。</p>
-]]></content>
-      <categories>
-        <category>随笔</category>
-      </categories>
-  </entry>
-  <entry>
     <title>线性方程组的迭代法</title>
     <url>/posts/57010/</url>
     <content><![CDATA[<p>思路: 在线性方程组 <span class="math display">\[Ax=b\]</span> 中把 <span class="math inline">\(A\)</span> 写成 <span class="math inline">\(M-N\)</span>, 就启发我们得到了迭代形式 <span class="math display">\[\begin{equation}\label{iter}Mx^{(k+1)}=Nx^{(k)}+b\end{equation}\]</span> 易见迭代收敛时极限就是解.</p>
@@ -1170,6 +1235,20 @@ M=\frac{1}{\omega} D+L, \quad N=\frac{1-\omega}{\omega} D-U
       <categories>
         <category>数学</category>
         <category>数值分析</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>科普是一项非常难的工作</title>
+    <url>/posts/20918/</url>
+    <content><![CDATA[<p>要想当一个好学生，只需要把知识学懂。</p>
+<p>要想当一个好老师，需要一些基础知识，还需要良好的性格和表达能力、心理学和教育学经验。</p>
+<p>要想当一个好教授，需要有专业知识、科研水平，只需要一般般的表达能力。</p>
+<p><strong>而要当一个好的科普工作者，需要有远超学生的理解能力，教授一样的专业水平，老师一样的教学功力，艺术家一样的审美，作家一样的文笔，诗人一样的清高，科学家一样对知识的热爱，艺人一样对大众心理的把控能力，运动员一样的毅力，还要有自身的人格魅力、抗压抗打击能力。</strong></p>
+<p>科普是一项非常难的工作，比讲课教书难得多。因为它面对的不是专业人士，而是乌合之众。这导致科普工作者必须用通俗语言来解释专业知识，却又不至于过于通俗而产生误导。稍微有一点漏洞就会被抓住攻击——有问题的科普比谣言更可怕，比迷信更害人。</p>
+<p>所以，科普工作者是一个神圣的标签，这个名号比想象中要严苛得多。</p>
+]]></content>
+      <categories>
+        <category>随笔</category>
       </categories>
   </entry>
   <entry>
