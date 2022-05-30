@@ -289,32 +289,6 @@ f(A)=f(Q^{-1}TQ)=Q^{-1}f(T)Q.
       </categories>
   </entry>
   <entry>
-    <title>定积分性质例题</title>
-    <url>/posts/5066/</url>
-    <content><![CDATA[<p><strong>问题：在<span class="math inline">\([0,\pi]\)</span>上的连续函数<span class="math inline">\(f\)</span>满足</strong> <span class="math display">\[
-\int_0^\pi f(x)\sin x\,\mathrm dx=\int_0^\pi f(x)\cos x\,\mathrm dx=0,
-\]</span> <strong>证明<span class="math inline">\(f\)</span>在<span class="math inline">\((0,\pi)\)</span>内至少有两个零点.</strong></p>
-<span id="more"></span>
-<p><strong>证明:</strong></p>
-<p>不妨设<span class="math inline">\(f\)</span>不恒为0.</p>
-<p>若<span class="math inline">\(f(x)\)</span>在<span class="math inline">\((0,\pi)\)</span>内无零点, 则不变号, 不妨设<span class="math inline">\(f(x)&gt;0\)</span>. 此时<span class="math display">\[f(x)\sin x&gt;0,\forall x\in(0,\pi)\implies\int_0^1f(x)\sin x\,\mathrm dx&gt;0,\]</span> 与条件矛盾. 于是<span class="math inline">\(f(x)\)</span>在<span class="math inline">\((0,\pi)\)</span>上变号, 至少有一个零点.</p>
-<p>若只有一个变号零点<span class="math inline">\(x_0\in(0,\pi)\)</span>, 不妨设在<span class="math inline">\((0,x_0)\)</span>上<span class="math inline">\(f(x)&gt;0\)</span>, <span class="math inline">\((x_0,\pi)\)</span>上<span class="math inline">\(f(x)&lt;0\)</span>. 那么 <span class="math display">\[
-F(x)=f(x)\sin(x-x_0)\leq0,~\forall x\in(0,\pi).
-\]</span> 又因为 <span class="math display">\[
-\begin{align*}\int_0^\pi F(x)\,\mathrm dx&amp;=\cos x_0\int_0^\pi f(x)\sin x\,\mathrm dx-\sin x_0\int_0^\pi f(x)\cos x\,\mathrm dx\\
-&amp;=\cos x_0\cdot0-\sin x_0\cdot 0\\
-&amp;=0,
-\end{align*}
-\]</span> 故<span class="math inline">\(F(x)\equiv0\)</span>, 于是<span class="math inline">\(f(x)\equiv0,~\forall x\in(0,\pi)\)</span>, 矛盾.</p>
-<p>于是<span class="math inline">\(f(x)\)</span>在<span class="math inline">\((0,\pi)\)</span>上至少有两个零点.</p>
-]]></content>
-      <categories>
-        <category>数学</category>
-        <category>微积分</category>
-        <category>单变量微积分</category>
-      </categories>
-  </entry>
-  <entry>
     <title>泛函基础</title>
     <url>/posts/64221/</url>
     <content><![CDATA[<h2 id="banach-空间">Banach 空间</h2>
@@ -426,6 +400,32 @@ H^2\subset C
       </categories>
   </entry>
   <entry>
+    <title>定积分性质例题</title>
+    <url>/posts/5066/</url>
+    <content><![CDATA[<p><strong>问题：在<span class="math inline">\([0,\pi]\)</span>上的连续函数<span class="math inline">\(f\)</span>满足</strong> <span class="math display">\[
+\int_0^\pi f(x)\sin x\,\mathrm dx=\int_0^\pi f(x)\cos x\,\mathrm dx=0,
+\]</span> <strong>证明<span class="math inline">\(f\)</span>在<span class="math inline">\((0,\pi)\)</span>内至少有两个零点.</strong></p>
+<span id="more"></span>
+<p><strong>证明:</strong></p>
+<p>不妨设<span class="math inline">\(f\)</span>不恒为0.</p>
+<p>若<span class="math inline">\(f(x)\)</span>在<span class="math inline">\((0,\pi)\)</span>内无零点, 则不变号, 不妨设<span class="math inline">\(f(x)&gt;0\)</span>. 此时<span class="math display">\[f(x)\sin x&gt;0,\forall x\in(0,\pi)\implies\int_0^1f(x)\sin x\,\mathrm dx&gt;0,\]</span> 与条件矛盾. 于是<span class="math inline">\(f(x)\)</span>在<span class="math inline">\((0,\pi)\)</span>上变号, 至少有一个零点.</p>
+<p>若只有一个变号零点<span class="math inline">\(x_0\in(0,\pi)\)</span>, 不妨设在<span class="math inline">\((0,x_0)\)</span>上<span class="math inline">\(f(x)&gt;0\)</span>, <span class="math inline">\((x_0,\pi)\)</span>上<span class="math inline">\(f(x)&lt;0\)</span>. 那么 <span class="math display">\[
+F(x)=f(x)\sin(x-x_0)\leq0,~\forall x\in(0,\pi).
+\]</span> 又因为 <span class="math display">\[
+\begin{align*}\int_0^\pi F(x)\,\mathrm dx&amp;=\cos x_0\int_0^\pi f(x)\sin x\,\mathrm dx-\sin x_0\int_0^\pi f(x)\cos x\,\mathrm dx\\
+&amp;=\cos x_0\cdot0-\sin x_0\cdot 0\\
+&amp;=0,
+\end{align*}
+\]</span> 故<span class="math inline">\(F(x)\equiv0\)</span>, 于是<span class="math inline">\(f(x)\equiv0,~\forall x\in(0,\pi)\)</span>, 矛盾.</p>
+<p>于是<span class="math inline">\(f(x)\)</span>在<span class="math inline">\((0,\pi)\)</span>上至少有两个零点.</p>
+]]></content>
+      <categories>
+        <category>数学</category>
+        <category>微积分</category>
+        <category>单变量微积分</category>
+      </categories>
+  </entry>
+  <entry>
     <title>Hexo 用法记录</title>
     <url>/posts/16107/</url>
     <content><![CDATA[<p>插入图片: </p><figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">&lt;img src="/file/*" width="250" height="250"/&gt;</span><br></pre></td></tr></tbody></table></figure><p></p>
@@ -521,6 +521,38 @@ H^2\subset C
       </categories>
   </entry>
   <entry>
+    <title>分部积分的表格法</title>
+    <url>/posts/42394/</url>
+    <content><![CDATA[<p><span class="math display">\[\int (x^2+x)\e^{2x}\d x\]</span> 第一行求导, 第二行积分, 直到求导结果为 0: <img src="/file/xex.png" width="400"> 正负交替相加: <span class="math display">\[
+\text{原式}=\left({x^2+x\over2}-{2x+1\over4}+\frac14\right)\e^{2x}=\frac12 x^2\e^{2x}+C.
+\]</span> <span id="more"></span></p>
+<hr>
+<p>若多次求导不能为 0, 需要在最后加一个积分项, 其符号与上一个相反. 比如出现循环:</p>
+<p><span class="math display">\[
+\int \e^{x}\sin 2x\d x
+\]</span></p>
+<p><img src="/file/sine.png" width="350"></p>
+<p><span class="math display">\[
+\int \e^x\sin 2x\d x=(\sin 2x-2\cos 2x)\e^x-4\int\e^{x}\sin 2x\d x,
+\]</span></p>
+<p>那么 <span class="math display">\[
+\text{原式}=\frac15(\sin 2x-2\cos2x)\e^x+C.
+\]</span></p>
+<hr>
+<p>或者积分被简化: <span class="math display">\[
+\int 2x\arctan x\d x
+\]</span> <img src="/file/xarctanx.png" width="250"></p>
+<p><span class="math display">\[
+\text{原式}=(x^2+1)\arctan x-\int 1\d x=(x^2+1)\arctan x-x+C.
+\]</span></p>
+]]></content>
+      <categories>
+        <category>数学</category>
+        <category>微积分</category>
+        <category>单变量微积分</category>
+      </categories>
+  </entry>
+  <entry>
     <title>拉格朗日插值</title>
     <url>/posts/17585/</url>
     <content><![CDATA[<p><span class="math display">\[p(x)=\sum_{k=0}^n y_kl_k(x)\]</span></p>
@@ -552,38 +584,6 @@ p(x)={\sum_{k=0}^n{\lambda_k y_k\over x-x_k}\over\sum_{k=0}^n{\lambda_k\over x-x
       <categories>
         <category>数学</category>
         <category>数值分析</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>分部积分的表格法</title>
-    <url>/posts/42394/</url>
-    <content><![CDATA[<p><span class="math display">\[\int (x^2+x)\e^{2x}\d x\]</span> 第一行求导, 第二行积分, 直到求导结果为 0: <img src="/file/xex.png" width="400"> 正负交替相加: <span class="math display">\[
-\text{原式}=\left({x^2+x\over2}-{2x+1\over4}+\frac14\right)\e^{2x}=\frac12 x^2\e^{2x}+C.
-\]</span> <span id="more"></span></p>
-<hr>
-<p>若多次求导不能为 0, 需要在最后加一个积分项, 其符号与上一个相反. 比如出现循环:</p>
-<p><span class="math display">\[
-\int \e^{x}\sin 2x\d x
-\]</span></p>
-<p><img src="/file/sine.png" width="350"></p>
-<p><span class="math display">\[
-\int \e^x\sin 2x\d x=(\sin 2x-2\cos 2x)\e^x-4\int\e^{x}\sin 2x\d x,
-\]</span></p>
-<p>那么 <span class="math display">\[
-\text{原式}=\frac15(\sin 2x-2\cos2x)\e^x+C.
-\]</span></p>
-<hr>
-<p>或者积分被简化: <span class="math display">\[
-\int 2x\arctan x\d x
-\]</span> <img src="/file/xarctanx.png" width="250"></p>
-<p><span class="math display">\[
-\text{原式}=(x^2+1)\arctan x-\int 1\d x=(x^2+1)\arctan x-x+C.
-\]</span></p>
-]]></content>
-      <categories>
-        <category>数学</category>
-        <category>微积分</category>
-        <category>单变量微积分</category>
       </categories>
   </entry>
   <entry>
@@ -698,62 +698,6 @@ P&amp;Q&amp;R
       </tags>
   </entry>
   <entry>
-    <title>数值积分</title>
-    <url>/posts/24343/</url>
-    <content><![CDATA[<p>Quadrature Rule 指的是形式 <span class="math display">\[Q(f)=\sum_{k=0}^nw_kf(x_k)\]</span></p>
-<p>有时把 <span class="math inline">\(f(x_k)\)</span> 简写作 <span class="math inline">\(f_k\)</span>.</p>
-<span id="more"></span>
-<h2 id="interpolation-rule">Interpolation Rule</h2>
-<p>在插值多项式上求积分, 即 <span class="math display">\[w_k=\int_a^b l_k(x)\d x\]</span></p>
-<h3 id="midpoint-rule">Midpoint Rule</h3>
-<p>在中点处取 <span class="math inline">\(0\)</span> 次多项式. <span class="math display">\[Q(f)=(b-a)f(x_0),\]</span> 其中 <span class="math inline">\(x_0\)</span> 是区间中点. 精度为 <span class="math inline">\(1\)</span>.</p>
-<h3 id="newton-cotes-rules">Newton-Cotes Rules</h3>
-<p>区间上的等距节点. <span class="math inline">\(n\)</span> 为奇数时精度为 <span class="math inline">\(n\)</span>, 偶数时精度为 <span class="math inline">\(n+1\)</span>.</p>
-<ul>
-<li><span class="math inline">\(n=1\)</span>: trapezium rule 精度为 <span class="math inline">\(1\)</span> <span class="math display">\[\frac h2(f_0+f_1)\]</span> 误差 <span class="math display">\[I-Q=-\frac{1}{12}h^3 f''(\xi),\ \xi\in(a,b)\]</span></li>
-<li><span class="math inline">\(n=2\)</span>: Simpson's rule 精度为 <span class="math inline">\(3\)</span> <span class="math display">\[\frac h3\left(f(x_0)+4f(x_1)+f(x_2)\right)\]</span> 误差 <span class="math display">\[I-Q=-\frac{h^5}{90}f^{(4)}(\xi)=-\frac{(b-a)^5}{2880}f^{(4)}(\xi),\ \xi\in(a,b)\]</span></li>
-</ul>
-<h2 id="gauss-rule">Gauss Rule</h2>
-<p>寻找关于权重 <span class="math inline">\(w(x)\)</span> 精度最高的节点, 实际上是关于 <span class="math inline">\(w(x)\)</span> 的正交多项式的零点. 精度是 <span class="math inline">\(2n+1\)</span>.</p>
-<h3 id="gauss-legendre-quadrature-wx1">Gauss-Legendre Quadrature <span class="math inline">\(w(x)=1\)</span></h3>
-<ul>
-<li><span class="math inline">\(n=0\)</span>: <span class="math display">\[\int_{-1}^1f(x)\d x\approx 2f(0)\]</span> 是中点法.</li>
-<li><span class="math inline">\(n=1\)</span>: <span class="math display">\[\int_{-1}^1f(x)\d x\approx f\left(-\frac{1}{\sqrt 3}\right)+f\left(\frac{1}{\sqrt 3}\right)\]</span></li>
-</ul>
-<h3 id="gauss-chebyshev-quadrature-wx1-x2-12">Gauss-Chebyshev Quadrature <span class="math inline">\(w(x)=(1-x^2)^{-1/2}\)</span></h3>
-<p><span class="math inline">\(x_0,\ldots,x_n\)</span> 取 <span class="math inline">\(T_{n+1}(x)\)</span> 的零点, 即 Chebyshev 分点 <span class="math display">\[x_k=\cos\left(\frac\pi2\frac{2k+1}{n+1}\right)\]</span></p>
-<p>此时权重都是 <span class="math inline">\(\displaystyle w_k=\frac{\pi}{n+1}\)</span></p>
-<h2 id="composite-quadrature-rules">Composite Quadrature Rules</h2>
-<p>把区间等分后做积分.</p>
-<h3 id="composite-midpoint-rule">Composite Midpoint Rule</h3>
-<p><span class="math display">\[
-M(h)=\sum_{k=0}^{n-1}hf\left(a+h\left(k+\frac12\right)\right)
-\]</span> 误差 <span class="math display">\[I-M=\frac{h^2}{24}(b-a)f''(\xi)\]</span></p>
-<h3 id="composite-trapezium-rule">Composite Trapezium Rule</h3>
-<p><span class="math display">\[T(h)=\frac h2\left(f(t_0)+2f(t_1)+2f(t_2)+\cdots+2f(t_{n-1})+f(t_n)\right)\]</span> 误差 <span class="math display">\[I-T=-\frac{h^2}{12}(b-a)f''(\xi)\]</span></p>
-<h3 id="composite-simpsons-rule">Composite Simpson's Rule</h3>
-<p><span class="math display">\[S(h)=\frac{h}{3}\left(f(t_0)+4f(t_1)+2f(t_2)+4f(t_3)+\cdots+2f(t_{2m-2})+4f(t_{2m-1})+f(t_{2m})\right)\]</span> 误差 <span class="math display">\[I-S=-\frac{h^4}{180}(b-a)f^{(4)}(\xi)\]</span></p>
-<h2 id="extrapolation">Extrapolation</h2>
-<p>做组合消除误差. 令 <span class="math inline">\(T_{k,1}=T(h/2^{k-1})\)</span> 并构造表 <span class="math display">\[T_{i,j}={4^{j-1}T_{i,j-1}-T_{i-1,j-1}\over 4^{j-1}-1}\]</span> 每向右一列误差 <span class="math inline">\(\times h^2\)</span>.</p>
-]]></content>
-      <categories>
-        <category>数学</category>
-        <category>数值分析</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>极坐标和球坐标换元</title>
-    <url>/posts/26639/</url>
-    <content><![CDATA[<p><span class="math display">\[\iint_D F(x,y)\d x\d y=\iint_\Delta F(r\cos\theta,r\sin\theta)r\d r\d\theta\]</span></p>
-<p><span class="math display">\[\iiint_D F(x,y,z)\d x\d y\d z=\iiint_\Delta F(r\sin\theta\cos\phi,r\sin\theta\sin\phi,r\cos\theta)r^2\sin\theta\d r\d \theta\d \phi\]</span></p>
-<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Kugelkoord-lokale-Basis-s.svg/480px-Kugelkoord-lokale-Basis-s.svg.png" width="250" height="250"></p>
-]]></content>
-      <tags>
-        <tag>数学</tag>
-        <tag>微积分</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>数值 ODE</title>
     <url>/posts/23214/</url>
     <content><![CDATA[<p><span class="math inline">\(f_n\)</span> 是 <span class="math inline">\(f(x_n,y_n)\)</span> 的简记, <span class="math inline">\(y_n\)</span> 是 <span class="math inline">\(y(x_n)\)</span> 的估计.</p>
@@ -815,6 +759,62 @@ y_{n+1}=\sum_{k=1}^l a_ky_{n+1-k}+h\sum_{k=0}^l b_k f_{n+1-k}
       </categories>
   </entry>
   <entry>
+    <title>数值积分</title>
+    <url>/posts/24343/</url>
+    <content><![CDATA[<p>Quadrature Rule 指的是形式 <span class="math display">\[Q(f)=\sum_{k=0}^nw_kf(x_k)\]</span></p>
+<p>有时把 <span class="math inline">\(f(x_k)\)</span> 简写作 <span class="math inline">\(f_k\)</span>.</p>
+<span id="more"></span>
+<h2 id="interpolation-rule">Interpolation Rule</h2>
+<p>在插值多项式上求积分, 即 <span class="math display">\[w_k=\int_a^b l_k(x)\d x\]</span></p>
+<h3 id="midpoint-rule">Midpoint Rule</h3>
+<p>在中点处取 <span class="math inline">\(0\)</span> 次多项式. <span class="math display">\[Q(f)=(b-a)f(x_0),\]</span> 其中 <span class="math inline">\(x_0\)</span> 是区间中点. 精度为 <span class="math inline">\(1\)</span>.</p>
+<h3 id="newton-cotes-rules">Newton-Cotes Rules</h3>
+<p>区间上的等距节点. <span class="math inline">\(n\)</span> 为奇数时精度为 <span class="math inline">\(n\)</span>, 偶数时精度为 <span class="math inline">\(n+1\)</span>.</p>
+<ul>
+<li><span class="math inline">\(n=1\)</span>: trapezium rule 精度为 <span class="math inline">\(1\)</span> <span class="math display">\[\frac h2(f_0+f_1)\]</span> 误差 <span class="math display">\[I-Q=-\frac{1}{12}h^3 f''(\xi),\ \xi\in(a,b)\]</span></li>
+<li><span class="math inline">\(n=2\)</span>: Simpson's rule 精度为 <span class="math inline">\(3\)</span> <span class="math display">\[\frac h3\left(f(x_0)+4f(x_1)+f(x_2)\right)\]</span> 误差 <span class="math display">\[I-Q=-\frac{h^5}{90}f^{(4)}(\xi)=-\frac{(b-a)^5}{2880}f^{(4)}(\xi),\ \xi\in(a,b)\]</span></li>
+</ul>
+<h2 id="gauss-rule">Gauss Rule</h2>
+<p>寻找关于权重 <span class="math inline">\(w(x)\)</span> 精度最高的节点, 实际上是关于 <span class="math inline">\(w(x)\)</span> 的正交多项式的零点. 精度是 <span class="math inline">\(2n+1\)</span>.</p>
+<h3 id="gauss-legendre-quadrature-wx1">Gauss-Legendre Quadrature <span class="math inline">\(w(x)=1\)</span></h3>
+<ul>
+<li><span class="math inline">\(n=0\)</span>: <span class="math display">\[\int_{-1}^1f(x)\d x\approx 2f(0)\]</span> 是中点法.</li>
+<li><span class="math inline">\(n=1\)</span>: <span class="math display">\[\int_{-1}^1f(x)\d x\approx f\left(-\frac{1}{\sqrt 3}\right)+f\left(\frac{1}{\sqrt 3}\right)\]</span></li>
+</ul>
+<h3 id="gauss-chebyshev-quadrature-wx1-x2-12">Gauss-Chebyshev Quadrature <span class="math inline">\(w(x)=(1-x^2)^{-1/2}\)</span></h3>
+<p><span class="math inline">\(x_0,\ldots,x_n\)</span> 取 <span class="math inline">\(T_{n+1}(x)\)</span> 的零点, 即 Chebyshev 分点 <span class="math display">\[x_k=\cos\left(\frac\pi2\frac{2k+1}{n+1}\right)\]</span></p>
+<p>此时权重都是 <span class="math inline">\(\displaystyle w_k=\frac{\pi}{n+1}\)</span></p>
+<h2 id="composite-quadrature-rules">Composite Quadrature Rules</h2>
+<p>把区间等分后做积分.</p>
+<h3 id="composite-midpoint-rule">Composite Midpoint Rule</h3>
+<p><span class="math display">\[
+M(h)=\sum_{k=0}^{n-1}hf\left(a+h\left(k+\frac12\right)\right)
+\]</span> 误差 <span class="math display">\[I-M=\frac{h^2}{24}(b-a)f''(\xi)\]</span></p>
+<h3 id="composite-trapezium-rule">Composite Trapezium Rule</h3>
+<p><span class="math display">\[T(h)=\frac h2\left(f(t_0)+2f(t_1)+2f(t_2)+\cdots+2f(t_{n-1})+f(t_n)\right)\]</span> 误差 <span class="math display">\[I-T=-\frac{h^2}{12}(b-a)f''(\xi)\]</span></p>
+<h3 id="composite-simpsons-rule">Composite Simpson's Rule</h3>
+<p><span class="math display">\[S(h)=\frac{h}{3}\left(f(t_0)+4f(t_1)+2f(t_2)+4f(t_3)+\cdots+2f(t_{2m-2})+4f(t_{2m-1})+f(t_{2m})\right)\]</span> 误差 <span class="math display">\[I-S=-\frac{h^4}{180}(b-a)f^{(4)}(\xi)\]</span></p>
+<h2 id="extrapolation">Extrapolation</h2>
+<p>做组合消除误差. 令 <span class="math inline">\(T_{k,1}=T(h/2^{k-1})\)</span> 并构造表 <span class="math display">\[T_{i,j}={4^{j-1}T_{i,j-1}-T_{i-1,j-1}\over 4^{j-1}-1}\]</span> 每向右一列误差 <span class="math inline">\(\times h^2\)</span>.</p>
+]]></content>
+      <categories>
+        <category>数学</category>
+        <category>数值分析</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>极坐标和球坐标换元</title>
+    <url>/posts/26639/</url>
+    <content><![CDATA[<p><span class="math display">\[\iint_D F(x,y)\d x\d y=\iint_\Delta F(r\cos\theta,r\sin\theta)r\d r\d\theta\]</span></p>
+<p><span class="math display">\[\iiint_D F(x,y,z)\d x\d y\d z=\iiint_\Delta F(r\sin\theta\cos\phi,r\sin\theta\sin\phi,r\cos\theta)r^2\sin\theta\d r\d \theta\d \phi\]</span></p>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Kugelkoord-lokale-Basis-s.svg/480px-Kugelkoord-lokale-Basis-s.svg.png" width="250" height="250"></p>
+]]></content>
+      <tags>
+        <tag>数学</tag>
+        <tag>微积分</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>留数的计算方法</title>
     <url>/posts/51485/</url>
     <content><![CDATA[<ol type="1">
@@ -844,92 +844,6 @@ y_{n+1}=\sum_{k=1}^l a_ky_{n+1-k}+h\sum_{k=0}^l b_k f_{n+1-k}
       <categories>
         <category>数学</category>
         <category>级数</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>三角函数</title>
-    <url>/posts/26462/</url>
-    <content><![CDATA[<h2 id="和差化积">和差化积</h2>
-<p><span class="math display">\[\sin\alpha+\sin\beta=2\sin\left(\frac{\alpha+\beta}{2}\right)\cos\left(\frac{\alpha-\beta}{2}\right)\]</span></p>
-<p><span class="math display">\[\sin\alpha-\sin\beta=2\cos\left(\frac{\alpha+\beta}{2}\right)\sin\left(\frac{\alpha-\beta}{2}\right)\]</span></p>
-<p><span class="math display">\[\cos\alpha+\cos\beta=2\cos\left(\frac{\alpha+\beta}{2}\right)\cos\left(\frac{\alpha-\beta}{2}\right)\]</span></p>
-<p><span class="math display">\[\cos\alpha-\cos\beta=-2\sin\left(\frac{\alpha+\beta}{2}\right)\sin\left(\frac{\alpha-\beta}{2}\right)\]</span></p>
-<span id="more"></span>
-<h2 id="积化和差">积化和差</h2>
-<p><span class="math display">\[\sin\alpha\cos\beta=\frac12\left(\sin(\alpha+\beta)+\sin(\alpha-\beta)\right)\]</span></p>
-<p><span class="math display">\[\cos\alpha\sin\beta=\frac12\left(\sin(\alpha+\beta)-\sin(\alpha-\beta)\right)\]</span></p>
-<p><span class="math display">\[\cos\alpha\cos\beta=\frac12\left(\cos(\alpha+\beta)+\cos(\alpha-\beta)\right)\]</span></p>
-<p><span class="math display">\[\sin\alpha\sin\beta=-\frac12\left(\cos(\alpha+\beta)-\cos(\alpha-\beta)\right)\]</span></p>
-<h2 id="倍角公式">倍角公式</h2>
-<p><span class="math display">\[\sin3x=3\sin x-4\sin^3x\]</span> <span class="math display">\[\cos 3x=-3\cos x+4\cos^3x\]</span></p>
-<h2 id="万能公式">万能公式</h2>
-<p>令 <span class="math inline">\(t=\tan\dfrac x2\)</span>, 那么 <span class="math display">\[
-\begin{gather*}
-\sin x=\frac{2t}{1+t^2},\quad
-\cos x=\frac{1-t^2}{1+t^2},\quad
-\tan x=\frac{2t}{1-t^2}
-\end{gather*}
-\]</span></p>
-]]></content>
-      <categories>
-        <category>数学</category>
-        <category>初等数学</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>双曲函数</title>
-    <url>/posts/12845/</url>
-    <content><![CDATA[<h2 id="定义">定义</h2>
-<p><span class="math display">\[\sinh(x)=\frac{\e^x-\e^{-x}}{2}\]</span></p>
-<p><span class="math display">\[\cosh(x)=\frac{\e^x+\e^{-x}}{2}\]</span></p>
-<p><span class="math display">\[\tanh(x)=\frac{\e^x-\e^{-x}}{\e^x+\e^{-x}},\ \coth(x)=\frac{1}{\tanh(x)}\]</span></p>
-<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Sinh_cosh_tanh.svg/440px-Sinh_cosh_tanh.svg.png" width="300" height="300"></p>
-<span id="more"></span>
-<h2 id="复变量">复变量</h2>
-<p><span class="math display">\[\sin(\i x)=\i\sinh(x),\ \sinh(\i x)=\i\sin(x)\]</span></p>
-<p><span class="math display">\[\cos(\i x)=\cosh(x),\ \cosh(\i x)=\cos(x)\]</span></p>
-<h2 id="和角公式">和角公式</h2>
-<p><span class="math display">\[\sinh(x\pm y)=\sinh(x)\cosh(y)\pm\cosh(x)\sinh(y)\]</span></p>
-<p><span class="math display">\[\cosh(x\pm y)=\cosh(x)\cosh(y)\pm\sinh(x)\sinh(y)\]</span></p>
-<p><span class="math display">\[
-\tanh(x+y)={\tanh x+\tanh y\over 1+\tanh x\tanh y}
-\]</span></p>
-<p><span class="math display">\[
-\tanh(x-y)={\tanh x-\tanh y\over 1-\tanh x\tanh y}
-\]</span></p>
-<h2 id="倍角公式">倍角公式</h2>
-<p><span class="math display">\[\cosh 2x=\sinh^2x+\cosh^2x=2\sinh^2x+1=2\cosh^2x-1\]</span></p>
-<p><span class="math display">\[\sinh 2x=\sinh^2x+\cosh^2x=2\sinh x\cosh x\]</span></p>
-<p><span class="math display">\[\tanh 2x={2\tanh x\over 1+\tanh^2x}\]</span></p>
-<h2 id="逆函数">逆函数</h2>
-<p><span class="math display">\[\sinh^{-1}(x)=\ln\left(x+\sqrt{x^2+1}\right)\]</span></p>
-<p><span class="math display">\[\cosh^{-1}(x)=\ln\left(x+\sqrt{x^2-1}\right)\]</span></p>
-<p><span class="math display">\[\tanh^{-1}(x)=\frac12\ln\left(\frac{1+x}{1-x}\right)\]</span></p>
-<h2 id="导数">导数</h2>
-<p><span class="math display">\[\begin{gathered}
-(\sinh x)'=\cosh x\\
-(\cosh x)'=\sinh x\\
-(\tanh x)'=\frac{1}{\cosh^2 x}\\
-\left(\sinh^{-1}x\right)'=\frac{1}{\sqrt{x^2+1}}\\
-\left(\cosh^{-1}x\right)'=\frac{1}{\sqrt{x^2-1}}\\
-\left(\tanh^{-1}x\right)'=\frac{1}{1-x^2}\\
-\end{gathered}\]</span></p>
-<h2 id="积分">积分</h2>
-<p><span class="math display">\[
-\begin{gathered}
-\int\sinh(ax)\d x=\frac1a\cosh(ax)+C\\
-\int\cosh(ax)\d x=\frac1a\sinh(ax)+C\\
-\int\tanh(ax)\d x=\frac{1}{a}\ln(\cosh(ax))+C\\
-\int\tan(ax)\d x=-\frac1a\ln|\cos(ax)|+C
-\end{gathered}
-\]</span></p>
-<h2 id="泰勒展开">泰勒展开</h2>
-<p><span class="math display">\[\sinh(x)=x+\frac{x^3}{3!}+\frac{x^5}{5!}+\frac{x^7}{7!}+\cdots\]</span></p>
-<p><span class="math display">\[\cosh(x)=1+\frac{x^2}{2!}+\frac{x^4}{4!}+\frac{x^6}{6!}+\cdots\]</span></p>
-]]></content>
-      <categories>
-        <category>数学</category>
-        <category>初等数学</category>
       </categories>
   </entry>
   <entry>
@@ -1052,6 +966,62 @@ y_{n+1}=\sum_{k=1}^l a_ky_{n+1-k}+h\sum_{k=0}^l b_k f_{n+1-k}
       </tags>
   </entry>
   <entry>
+    <title>双曲函数</title>
+    <url>/posts/12845/</url>
+    <content><![CDATA[<h2 id="定义">定义</h2>
+<p><span class="math display">\[\sinh(x)=\frac{\e^x-\e^{-x}}{2}\]</span></p>
+<p><span class="math display">\[\cosh(x)=\frac{\e^x+\e^{-x}}{2}\]</span></p>
+<p><span class="math display">\[\tanh(x)=\frac{\e^x-\e^{-x}}{\e^x+\e^{-x}},\ \coth(x)=\frac{1}{\tanh(x)}\]</span></p>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Sinh_cosh_tanh.svg/440px-Sinh_cosh_tanh.svg.png" width="300" height="300"></p>
+<span id="more"></span>
+<h2 id="复变量">复变量</h2>
+<p><span class="math display">\[\sin(\i x)=\i\sinh(x),\ \sinh(\i x)=\i\sin(x)\]</span></p>
+<p><span class="math display">\[\cos(\i x)=\cosh(x),\ \cosh(\i x)=\cos(x)\]</span></p>
+<h2 id="和角公式">和角公式</h2>
+<p><span class="math display">\[\sinh(x\pm y)=\sinh(x)\cosh(y)\pm\cosh(x)\sinh(y)\]</span></p>
+<p><span class="math display">\[\cosh(x\pm y)=\cosh(x)\cosh(y)\pm\sinh(x)\sinh(y)\]</span></p>
+<p><span class="math display">\[
+\tanh(x+y)={\tanh x+\tanh y\over 1+\tanh x\tanh y}
+\]</span></p>
+<p><span class="math display">\[
+\tanh(x-y)={\tanh x-\tanh y\over 1-\tanh x\tanh y}
+\]</span></p>
+<h2 id="倍角公式">倍角公式</h2>
+<p><span class="math display">\[\cosh 2x=\sinh^2x+\cosh^2x=2\sinh^2x+1=2\cosh^2x-1\]</span></p>
+<p><span class="math display">\[\sinh 2x=\sinh^2x+\cosh^2x=2\sinh x\cosh x\]</span></p>
+<p><span class="math display">\[\tanh 2x={2\tanh x\over 1+\tanh^2x}\]</span></p>
+<h2 id="逆函数">逆函数</h2>
+<p><span class="math display">\[\sinh^{-1}(x)=\ln\left(x+\sqrt{x^2+1}\right)\]</span></p>
+<p><span class="math display">\[\cosh^{-1}(x)=\ln\left(x+\sqrt{x^2-1}\right)\]</span></p>
+<p><span class="math display">\[\tanh^{-1}(x)=\frac12\ln\left(\frac{1+x}{1-x}\right)\]</span></p>
+<h2 id="导数">导数</h2>
+<p><span class="math display">\[\begin{gathered}
+(\sinh x)'=\cosh x\\
+(\cosh x)'=\sinh x\\
+(\tanh x)'=\frac{1}{\cosh^2 x}\\
+\left(\sinh^{-1}x\right)'=\frac{1}{\sqrt{x^2+1}}\\
+\left(\cosh^{-1}x\right)'=\frac{1}{\sqrt{x^2-1}}\\
+\left(\tanh^{-1}x\right)'=\frac{1}{1-x^2}\\
+\end{gathered}\]</span></p>
+<h2 id="积分">积分</h2>
+<p><span class="math display">\[
+\begin{gathered}
+\int\sinh(ax)\d x=\frac1a\cosh(ax)+C\\
+\int\cosh(ax)\d x=\frac1a\sinh(ax)+C\\
+\int\tanh(ax)\d x=\frac{1}{a}\ln(\cosh(ax))+C\\
+\int\tan(ax)\d x=-\frac1a\ln|\cos(ax)|+C
+\end{gathered}
+\]</span></p>
+<h2 id="泰勒展开">泰勒展开</h2>
+<p><span class="math display">\[\sinh(x)=x+\frac{x^3}{3!}+\frac{x^5}{5!}+\frac{x^7}{7!}+\cdots\]</span></p>
+<p><span class="math display">\[\cosh(x)=1+\frac{x^2}{2!}+\frac{x^4}{4!}+\frac{x^6}{6!}+\cdots\]</span></p>
+]]></content>
+      <categories>
+        <category>数学</category>
+        <category>初等数学</category>
+      </categories>
+  </entry>
+  <entry>
     <title>利用积分下求导计算无穷积分</title>
     <url>/posts/30510/</url>
     <content><![CDATA[<p>计算 <span class="math display">\[
@@ -1096,6 +1066,36 @@ Q=\begin{bmatrix}1&amp;\\&amp;\frac12\end{bmatrix}\begin{bmatrix}0&amp;1\\1&amp;
         <tag>数学</tag>
         <tag>线性代数</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>三角函数</title>
+    <url>/posts/26462/</url>
+    <content><![CDATA[<h2 id="和差化积">和差化积</h2>
+<p><span class="math display">\[\sin\alpha+\sin\beta=2\sin\left(\frac{\alpha+\beta}{2}\right)\cos\left(\frac{\alpha-\beta}{2}\right)\]</span></p>
+<p><span class="math display">\[\sin\alpha-\sin\beta=2\cos\left(\frac{\alpha+\beta}{2}\right)\sin\left(\frac{\alpha-\beta}{2}\right)\]</span></p>
+<p><span class="math display">\[\cos\alpha+\cos\beta=2\cos\left(\frac{\alpha+\beta}{2}\right)\cos\left(\frac{\alpha-\beta}{2}\right)\]</span></p>
+<p><span class="math display">\[\cos\alpha-\cos\beta=-2\sin\left(\frac{\alpha+\beta}{2}\right)\sin\left(\frac{\alpha-\beta}{2}\right)\]</span></p>
+<span id="more"></span>
+<h2 id="积化和差">积化和差</h2>
+<p><span class="math display">\[\sin\alpha\cos\beta=\frac12\left(\sin(\alpha+\beta)+\sin(\alpha-\beta)\right)\]</span></p>
+<p><span class="math display">\[\cos\alpha\sin\beta=\frac12\left(\sin(\alpha+\beta)-\sin(\alpha-\beta)\right)\]</span></p>
+<p><span class="math display">\[\cos\alpha\cos\beta=\frac12\left(\cos(\alpha+\beta)+\cos(\alpha-\beta)\right)\]</span></p>
+<p><span class="math display">\[\sin\alpha\sin\beta=-\frac12\left(\cos(\alpha+\beta)-\cos(\alpha-\beta)\right)\]</span></p>
+<h2 id="倍角公式">倍角公式</h2>
+<p><span class="math display">\[\sin3x=3\sin x-4\sin^3x\]</span> <span class="math display">\[\cos 3x=-3\cos x+4\cos^3x\]</span></p>
+<h2 id="万能公式">万能公式</h2>
+<p>令 <span class="math inline">\(t=\tan\dfrac x2\)</span>, 那么 <span class="math display">\[
+\begin{gather*}
+\sin x=\frac{2t}{1+t^2},\quad
+\cos x=\frac{1-t^2}{1+t^2},\quad
+\tan x=\frac{2t}{1-t^2}
+\end{gather*}
+\]</span></p>
+]]></content>
+      <categories>
+        <category>数学</category>
+        <category>初等数学</category>
+      </categories>
   </entry>
   <entry>
     <title>曲线积分和曲面积分</title>
