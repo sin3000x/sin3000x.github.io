@@ -7,7 +7,7 @@ categories:
 abbrlink: 24343
 date: 2022-01-26 12:35:25
 ---
-**Quadrature Rule** 指的是形式
+Quadrature Rule 指的是形式
 $$Q(f)=\sum_{k=0}^nw_kf(x_k)$$
 
 有时把 $f(x_k)$ 简写作 $f_k$.

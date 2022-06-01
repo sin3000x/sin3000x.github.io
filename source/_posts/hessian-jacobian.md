@@ -1,9 +1,11 @@
 ---
 title: Hesse 矩阵与Jacobi 矩阵
-tags:
+categories:
   - 数学
-  - 分析
+  - 微积分
+  - 多元微积分
 abbrlink: 44547
+mathjax: true
 date: 2022-01-21 17:10:59
 ---
 Hessian 是**数量场**的二阶导: $$H_{i,j}={\partial f\over\partial x_i\partial x_j}$$

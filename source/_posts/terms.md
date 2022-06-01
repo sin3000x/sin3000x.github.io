@@ -2,7 +2,7 @@
 title: 一些英文术语
 mathjax: true
 categories:
-  - [数学, 英语]
+  - 英语
 abbrlink: 18686
 date: 2022-04-03 20:21:46
 description: 一些数学单词.

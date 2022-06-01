@@ -13,7 +13,7 @@ timezone: ''
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: http://sin3000x.github.io
+url: https://sin3000x.github.io
 # permalink: :year/:month/:day/:title/
 permalink: posts/:abbrlink/
 permalink_defaults:
@@ -126,3 +126,8 @@ search:
   field: post
   format: html
   limit: 10000
+
+sitemap:
+  path: sitemap.xml
+baidusitemap:
+  path: baidusitemap.xml

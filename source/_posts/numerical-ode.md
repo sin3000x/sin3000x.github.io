@@ -3,7 +3,7 @@ title: 数值 ODE
 abbrlink: 23214
 date: 2022-01-26 16:19:10
 mathjax: true
-tags:
+categories:
 - 数学
 - 数值分析
 ---
@@ -15,10 +15,10 @@ $f_n$ 是 $f(x_n,y_n)$ 的简记, $y_n$ 是 $y(x_n)$ 的估计.
 形式是
 $$y_{n+1}=y_n+h\Phi(x_n,y_n,h)$$
 
-**local truncation error** 指的是 $$\tau(h)=y(x_{n+1})-y(x_n)-h\Phi(x_n,y(x_n),h)$$
+local truncation error 指的是 $$\tau(h)=y(x_{n+1})-y(x_n)-h\Phi(x_n,y(x_n),h)$$
 称方法的阶数为 $p$ 如果 $\tau(h)=O(h^{p+1})$.
 
-**global error** 指的是 $$e_n=y(x_n)-y_n$$
+global error 指的是 $$e_n=y(x_n)-y_n$$
 
 - Euler's method 阶数为 $1$ $$y_{n+1}=y_n+hf_n$$
 - backward Euler method 阶数为 $1$ $$y_{n+1}=y_n+hf(x_{n+1},y_{n+1})$$

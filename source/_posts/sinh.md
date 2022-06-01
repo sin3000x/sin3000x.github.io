@@ -1,5 +1,5 @@
 ---
-title: 三角函数和双曲函数
+title: 双曲函数
 mathjax: true
 categories:
   - 数学
@@ -27,9 +27,24 @@ $$\cos(\i x)=\cosh(x),\ \cosh(\i x)=\cos(x)$$
 
 ## 和角公式
 
-$$\sinh(x+y)=\sinh(x)\cosh(y)+\cosh(x)\sinh(y)$$
+$$\sinh(x\pm y)=\sinh(x)\cosh(y)\pm\cosh(x)\sinh(y)$$
 
-$$\cosh(x+y)=\cosh(x)\cosh(y)+\sinh(x)\sinh(y)$$
+$$\cosh(x\pm y)=\cosh(x)\cosh(y)\pm\sinh(x)\sinh(y)$$
+
+$$
+\tanh(x+y)={\tanh x+\tanh y\over 1+\tanh x\tanh y}
+$$
+
+$$
+\tanh(x-y)={\tanh x-\tanh y\over 1-\tanh x\tanh y}
+$$
+
+## 倍角公式
+$$\cosh 2x=\sinh^2x+\cosh^2x=2\sinh^2x+1=2\cosh^2x-1$$
+
+$$\sinh 2x=\sinh^2x+\cosh^2x=2\sinh x\cosh x$$
+
+$$\tanh 2x={2\tanh x\over 1+\tanh^2x}$$
 
 ## 逆函数
 
