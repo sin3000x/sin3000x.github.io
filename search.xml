@@ -17,11 +17,11 @@
 <li><span class="math inline">\(\lim_{n\to\infty}\int_S f_n \,d\mu=\int_S f\,d\mu\)</span></li>
 </ul>
 ]]></content>
-      <tags>
-        <tag>数学</tag>
-        <tag>实变函数</tag>
-        <tag>分析</tag>
-      </tags>
+      <categories>
+        <category>数学</category>
+        <category>分析</category>
+        <category>实变函数</category>
+      </categories>
   </entry>
   <entry>
     <title>Fourier 级数</title>
@@ -32,6 +32,7 @@ f\colon[-L,L]\to\mathbb{R}
 ]]></content>
       <categories>
         <category>数学</category>
+        <category>分析</category>
         <category>级数</category>
       </categories>
   </entry>
@@ -59,10 +60,11 @@ y=Ce^{-\int p(x)dx}
 \]</span></p>
 </blockquote>
 ]]></content>
-      <tags>
-        <tag>数学</tag>
-        <tag>分析</tag>
-      </tags>
+      <categories>
+        <category>数学</category>
+        <category>分析</category>
+        <category>微分方程</category>
+      </categories>
   </entry>
   <entry>
     <title>为什么&quot;假推真/假&quot;都为真</title>
@@ -192,10 +194,11 @@ I_n={(2n)!!\over(2n+1)!!}.
 \end{align*}
 \]</span></p>
 ]]></content>
-      <tags>
-        <tag>数学</tag>
-        <tag>级数</tag>
-      </tags>
+      <categories>
+        <category>数学</category>
+        <category>分析</category>
+        <category>级数</category>
+      </categories>
   </entry>
   <entry>
     <title>分块矩阵的行列式</title>
@@ -255,10 +258,11 @@ I_n={(2n)!!\over(2n+1)!!}.
     A+B&amp;B\\0&amp;A-B
 \end{pmatrix}\]</span>两边取行列式.</p>
 ]]></content>
-      <tags>
-        <tag>数学</tag>
-        <tag>线性代数</tag>
-      </tags>
+      <categories>
+        <category>数学</category>
+        <category>代数</category>
+        <category>线性代数</category>
+      </categories>
   </entry>
   <entry>
     <title>$f(A)$的特征值</title>
@@ -285,6 +289,7 @@ f(A)=f(Q^{-1}TQ)=Q^{-1}f(T)Q.
 ]]></content>
       <categories>
         <category>数学</category>
+        <category>代数</category>
         <category>线性代数</category>
       </categories>
   </entry>
@@ -396,6 +401,7 @@ H^2\subset C
 ]]></content>
       <categories>
         <category>数学</category>
+        <category>分析</category>
         <category>泛函分析</category>
       </categories>
   </entry>
@@ -421,6 +427,7 @@ F(x)=f(x)\sin(x-x_0)\leq0,~\forall x\in(0,\pi).
 ]]></content>
       <categories>
         <category>数学</category>
+        <category>分析</category>
         <category>微积分</category>
         <category>单变量微积分</category>
       </categories>
@@ -452,6 +459,7 @@ F(x)=f(x)\sin(x-x_0)\leq0,~\forall x\in(0,\pi).
 ]]></content>
       <categories>
         <category>数学</category>
+        <category>分析</category>
         <category>微积分</category>
         <category>多元微积分</category>
       </categories>
@@ -499,6 +507,7 @@ F(x)=f(x)\sin(x-x_0)\leq0,~\forall x\in(0,\pi).
 ]]></content>
       <categories>
         <category>数学</category>
+        <category>分析</category>
         <category>微积分</category>
         <category>多元微积分</category>
       </categories>
@@ -516,6 +525,7 @@ F(x)=f(x)\sin(x-x_0)\leq0,~\forall x\in(0,\pi).
 ]]></content>
       <categories>
         <category>数学</category>
+        <category>分析</category>
         <category>微积分</category>
         <category>单变量微积分</category>
       </categories>
@@ -548,6 +558,7 @@ F(x)=f(x)\sin(x-x_0)\leq0,~\forall x\in(0,\pi).
 ]]></content>
       <categories>
         <category>数学</category>
+        <category>分析</category>
         <category>微积分</category>
         <category>单变量微积分</category>
       </categories>
@@ -664,38 +675,41 @@ p(x)={\sum_{k=0}^n{\lambda_k y_k\over x-x_k}\over\sum_{k=0}^n{\lambda_k\over x-x
 ]]></content>
       <categories>
         <category>数学</category>
+        <category>代数</category>
+        <category>数值分析</category>
         <category>线性代数</category>
       </categories>
   </entry>
   <entry>
     <title>微分形式</title>
     <url>/posts/12522/</url>
-    <content><![CDATA[<p>0次形式: <span class="math inline">\(f\)</span></p>
-<p>1次形式: <span class="math inline">\(P\,dx+Q\,dy+R\,dz\)</span></p>
-<p>2次形式: <span class="math inline">\(P\,dy\land dz+Q\,dz\land dx+R\,dx\land dy\)</span></p>
-<p>3次形式: <span class="math inline">\(R\,dx\land dy\land dz\)</span></p>
+    <content><![CDATA[<p>0 次形式: <span class="math inline">\(f\)</span></p>
+<p>1 次形式: <span class="math inline">\(P\d x+Q\d y+R\d z\)</span></p>
+<p>2 次形式: <span class="math inline">\(P\d y\land \d z+Q\d z\land \d x+R\d x\land \d y\)</span></p>
+<p>3 次形式: <span class="math inline">\(R\d x\land \d y\land \d z\)</span></p>
 <span id="more"></span>
 <h2 id="运算律">运算律</h2>
-<p><span class="math inline">\(dx\land dx=0\)</span> 等, <span class="math inline">\(dx\land dy=-dy\land dx\)</span> 等.</p>
+<p><span class="math inline">\(\d x\land \d x=0\)</span> 等, <span class="math inline">\(\d x\land \d y=-\d y\land \d x\)</span> 等.</p>
 <h2 id="外微分运算">外微分运算</h2>
-<p><span class="math display">\[df={\partial f\over\partial x}dx+{\partial f\over\partial y}dy+{\partial f\over\partial z}dz\]</span> <span class="math inline">\(w=P\,dx+Q\,dy+R\,dz\)</span> 时</p>
+<p><span class="math display">\[\d f={\partial f\over\partial x}\d x+{\partial f\over\partial y}\d y+{\partial f\over\partial z}\d z\]</span> <span class="math inline">\(w=P\d x+Q\d y+R\d z\)</span> 时</p>
 <p><span class="math display">\[\begin{aligned}
-dw&amp;=(R_y'-Q_z')dy\land dz+(P_z'-R_x')dz\land dx+(Q_x'-P_y')dx\land dy\\
+\d w&amp;=(R_y'-Q_z')\d y\land \d z+(P_z'-R_x')\d z\land \d x+(Q_x'-P_y')\d x\land \d y\\
 &amp;=
 \begin{vmatrix}
-dy\land dz&amp;dz\land dx&amp;dx\land dy\\
+\d y\land \d z&amp;\d z\land \d x&amp;\d x\land \d y\\
 {\partial\over\partial x} &amp; {\partial\over\partial y} &amp; {\partial\over\partial z}\\
 P&amp;Q&amp;R
 \end{vmatrix}
 \end{aligned}\]</span></p>
-<p><span class="math inline">\(w=P\,dy\land dz+Q\,dz\land dx+R\,dx\land dy\)</span> 时</p>
-<p><span class="math display">\[dw=(P_x'+Q_y'+R_z')dx\land dy\land dz\]</span></p>
+<p><span class="math inline">\(w=P\d y\land \d z+Q\d z\land \d x+R\d x\land \d y\)</span> 时</p>
+<p><span class="math display">\[\d w=(P_x'+Q_y'+R_z')\d x\land \d y\land \d z\]</span></p>
 ]]></content>
-      <tags>
-        <tag>数学</tag>
-        <tag>分析</tag>
-        <tag>微积分</tag>
-      </tags>
+      <categories>
+        <category>数学</category>
+        <category>分析</category>
+        <category>微积分</category>
+        <category>多元微积分</category>
+      </categories>
   </entry>
   <entry>
     <title>数值积分</title>
@@ -809,10 +823,12 @@ y_{n+1}=\sum_{k=1}^l a_ky_{n+1-k}+h\sum_{k=0}^l b_k f_{n+1-k}
 <p><span class="math display">\[\iiint_D F(x,y,z)\d x\d y\d z=\iiint_\Delta F(r\sin\theta\cos\phi,r\sin\theta\sin\phi,r\cos\theta)r^2\sin\theta\d r\d \theta\d \phi\]</span></p>
 <p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Kugelkoord-lokale-Basis-s.svg/480px-Kugelkoord-lokale-Basis-s.svg.png" width="250" height="250"></p>
 ]]></content>
-      <tags>
-        <tag>数学</tag>
-        <tag>微积分</tag>
-      </tags>
+      <categories>
+        <category>数学</category>
+        <category>分析</category>
+        <category>微积分</category>
+        <category>多变量微积分</category>
+      </categories>
   </entry>
   <entry>
     <title>留数的计算方法</title>
@@ -833,6 +849,7 @@ y_{n+1}=\sum_{k=1}^l a_ky_{n+1-k}+h\sum_{k=0}^l b_k f_{n+1-k}
 ]]></content>
       <categories>
         <category>数学</category>
+        <category>分析</category>
         <category>复变函数</category>
       </categories>
   </entry>
@@ -843,6 +860,7 @@ y_{n+1}=\sum_{k=1}^l a_ky_{n+1-k}+h\sum_{k=0}^l b_k f_{n+1-k}
 ]]></content>
       <categories>
         <category>数学</category>
+        <category>分析</category>
         <category>级数</category>
       </categories>
   </entry>
@@ -1046,10 +1064,10 @@ y_{n+1}=\sum_{k=1}^l a_ky_{n+1-k}+h\sum_{k=0}^l b_k f_{n+1-k}
 <p>数学家花了一番功夫才发现，这种“良好的”集合其实就是紧集。紧集的定义也有很多等价刻画，比如在欧式空间中就可以简单地定义为有界闭集，在更一般的度量空间中可以定义为序列紧集等等。但是，这些好理解的定义也有局限性，它们只在某些结构良好的空间中成立。</p>
 <p>而在用开覆盖来定义的紧集，虽然抽象，但可以推广到一般的拓扑空间，成了现在使用最广的定义。</p>
 ]]></content>
-      <tags>
-        <tag>数学</tag>
-        <tag>拓扑</tag>
-      </tags>
+      <categories>
+        <category>数学</category>
+        <category>几何</category>
+      </categories>
   </entry>
   <entry>
     <title>利用积分下求导计算无穷积分</title>
@@ -1062,6 +1080,7 @@ y_{n+1}=\sum_{k=1}^l a_ky_{n+1-k}+h\sum_{k=0}^l b_k f_{n+1-k}
 ]]></content>
       <categories>
         <category>数学</category>
+        <category>分析</category>
         <category>微积分</category>
         <category>单变量微积分</category>
       </categories>
@@ -1094,6 +1113,7 @@ Q=\begin{bmatrix}1&amp;\\&amp;\frac12\end{bmatrix}\begin{bmatrix}0&amp;1\\1&amp;
 ]]></content>
       <categories>
         <category>数学</category>
+        <category>代数</category>
         <category>线性代数</category>
       </categories>
   </entry>
@@ -1151,6 +1171,7 @@ Q=\begin{bmatrix}1&amp;\\&amp;\frac12\end{bmatrix}\begin{bmatrix}0&amp;1\\1&amp;
 ]]></content>
       <categories>
         <category>数学</category>
+        <category>分析</category>
         <category>微积分</category>
         <category>多元微积分</category>
       </categories>
@@ -1336,6 +1357,7 @@ I(a)=\frac12\int_0^\infty{t\ln\left(1+{2at\over 1+t^2}\right)\over 1+t^2}\,\math
 ]]></content>
       <categories>
         <category>数学</category>
+        <category>分析</category>
         <category>微积分</category>
         <category>单变量微积分</category>
       </categories>
@@ -1432,6 +1454,7 @@ a_n={n!\over(2n+1)!!}\cdot{1\over n+1}，
 ]]></content>
       <categories>
         <category>数学</category>
+        <category>分析</category>
         <category>级数</category>
       </categories>
   </entry>
