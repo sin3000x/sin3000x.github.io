@@ -3,6 +3,7 @@ title: 高维分部积分
 mathjax: true
 categories:
   - 数学
+  - 分析
   - 微积分
   - 多元微积分
 abbrlink: 22001

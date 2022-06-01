@@ -1,10 +1,10 @@
 ---
 title: 控制收敛定理 (DCT)
 mathjax: true
-tags:
+categories:
   - 数学
-  - 实变函数
   - 分析
+  - 实变函数
 abbrlink: 34980
 date: 2022-01-18 17:07:42
 ---

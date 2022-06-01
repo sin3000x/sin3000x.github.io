@@ -2,6 +2,7 @@
 title: 常用积分
 categories:
   - 数学
+  - 分析
   - 微积分
   - 单变量微积分
 mathjax: true

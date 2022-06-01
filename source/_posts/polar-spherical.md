@@ -1,8 +1,10 @@
 ---
 title: 极坐标和球坐标换元
-tags:
+categories:
   - 数学
+  - 分析
   - 微积分
+  - 多变量微积分
 abbrlink: 26639
 date: 2022-01-19 20:37:34
 mathjax: true

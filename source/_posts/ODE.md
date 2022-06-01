@@ -1,8 +1,9 @@
 ---
 title: 常见的ODE解法
-tags:
+categories:
   - 数学
   - 分析
+  - 微分方程
 mathjax: true
 abbrlink: 65228
 date: 2022-01-08 14:20:11

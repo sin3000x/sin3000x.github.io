@@ -2,6 +2,7 @@
 title: 分部积分的表格法
 categories:
   - 数学
+  - 分析
   - 微积分
   - 单变量微积分
 mathjax: true

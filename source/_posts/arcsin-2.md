@@ -3,8 +3,9 @@ title: $\arcsin^2x$的展开式
 abbrlink: 20316
 date: 2021-09-28 21:58:15
 mathjax: true
-tags:
+categories:
 - 数学
+- 分析
 - 级数
 ---
 

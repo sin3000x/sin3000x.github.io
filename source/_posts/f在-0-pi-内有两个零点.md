@@ -3,6 +3,7 @@ title: '定积分性质例题'
 mathjax: true
 categories:
   - 数学
+  - 分析
   - 微积分
   - 单变量微积分
 abbrlink: 5066

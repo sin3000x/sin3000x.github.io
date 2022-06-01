@@ -2,8 +2,8 @@
 title: 最小二乘法
 mathjax: true
 categories:
-  - 数学
-  - 线性代数
+  - [数学, 代数, 线性代数]
+  - [数学, 数值分析]
 abbrlink: 36991
 date: 2022-01-22 20:13:28
 ---

@@ -3,6 +3,7 @@ title: 留数的计算方法
 mathjax: true
 categories:
   - 数学
+  - 分析
   - 复变函数
 abbrlink: 51485
 date: 2022-04-20 20:09:01

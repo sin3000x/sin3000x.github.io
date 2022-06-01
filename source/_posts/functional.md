@@ -2,6 +2,7 @@
 title: 泛函基础
 categories:
   - 数学
+  - 分析
   - 泛函分析
 mathjax: true
 abbrlink: 64221;

@@ -2,6 +2,7 @@
 title: Hesse 矩阵与Jacobi 矩阵
 categories:
   - 数学
+  - 分析
   - 微积分
   - 多元微积分
 abbrlink: 44547

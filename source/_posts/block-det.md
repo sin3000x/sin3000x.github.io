@@ -1,7 +1,8 @@
 ---
 title: 分块矩阵的行列式
-tags:
+categories:
   - 数学
+  - 代数
   - 线性代数
 mathjax: true
 abbrlink: 42453
