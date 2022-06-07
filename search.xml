@@ -37,36 +37,6 @@ f\colon[-L,L]\to\mathbb{R}
       </categories>
   </entry>
   <entry>
-    <title>常见的ODE解法</title>
-    <url>/posts/65228/</url>
-    <content><![CDATA[<h3 id="可分离变量-ypyqx">1. 可分离变量 <span class="math inline">\(y'=p(y)q(x)\)</span></h3>
-<p>分离变量后两边积分.</p>
-<h3 id="一阶齐次线性-ypxy0">2. 一阶齐次线性 <span class="math inline">\(y'+p(x)y=0\)</span></h3>
-<p><span class="math display">\[
-y=Ce^{-\int p(x)dx}
-\]</span></p>
-<h3 id="一阶非齐次线性-ypxyqx">3. 一阶非齐次线性 <span class="math inline">\(y'+p(x)y=q(x)\)</span></h3>
-<ul>
-<li><p><span class="math inline">\(y=e^{-\int p(x)dx}\left(C+\int q(x)e^{\int p(x)}dx\right)\)</span></p></li>
-<li><p>取积分因子 <span class="math inline">\(\mu(x)=e^{\int p(x)dx}\)</span>.</p></li>
-</ul>
-<blockquote>
-<p>🌰 <span class="math inline">\(y'-2y/x=0\)</span>. <span class="math display">\[\begin{aligned}
-&amp;\mu(x)=e^{\int-\frac2x dx}=e^{-2\ln x}=\frac{1}{x^2}\\
-&amp;\implies{1\over x^2}y'-{2\over x^3}y=0\\
-&amp;\implies\left({y\over x^2}\right)'=0\\
-&amp;\implies y=Cx^2
-\end{aligned}
-\]</span></p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>数学</category>
-        <category>分析</category>
-        <category>微分方程</category>
-      </categories>
-  </entry>
-  <entry>
     <title>为什么&quot;假推真/假&quot;都为真</title>
     <url>/posts/31827/</url>
     <content><![CDATA[<p><span class="math inline">\(P\Rightarrow Q\)</span> 的<strong>定义</strong>是真值表. "如果 <span class="math inline">\(P\)</span>, 那么 <span class="math inline">\(Q\)</span>" 只是一种解释, 不是定义. 也就是说, <span class="math inline">\(P\)</span> 和 <span class="math inline">\(Q\)</span> 本身不需要有联系. 这里解释一下为什么定义是这样的: <span class="math inline">\(P\)</span> 为假, <span class="math inline">\(P\Rightarrow Q\)</span> 总为真. <span id="more"></span></p>
@@ -137,6 +107,36 @@ y=Ce^{-\int p(x)dx}
       </categories>
   </entry>
   <entry>
+    <title>常见的ODE解法</title>
+    <url>/posts/65228/</url>
+    <content><![CDATA[<h3 id="可分离变量-ypyqx">1. 可分离变量 <span class="math inline">\(y'=p(y)q(x)\)</span></h3>
+<p>分离变量后两边积分.</p>
+<h3 id="一阶齐次线性-ypxy0">2. 一阶齐次线性 <span class="math inline">\(y'+p(x)y=0\)</span></h3>
+<p><span class="math display">\[
+y=Ce^{-\int p(x)\d x}
+\]</span></p>
+<h3 id="一阶非齐次线性-ypxyqx">3. 一阶非齐次线性 <span class="math inline">\(y'+p(x)y=q(x)\)</span></h3>
+<ul>
+<li><p><span class="math inline">\(y=e^{-\int p(x)\d x}\left(C+\int q(x)e^{\int p(x)\d x}\d x\right)\)</span></p></li>
+<li><p>取积分因子 <span class="math inline">\(\mu(x)=e^{\int p(x)\d x}\)</span>.</p></li>
+</ul>
+<blockquote>
+<p>🌰 <span class="math inline">\(y'-2y/x=0\)</span>. <span class="math display">\[\begin{aligned}
+&amp;\mu(x)=e^{\int-\frac2x \d x}=e^{-2\ln x}=\frac{1}{x^2}\\
+&amp;\implies{1\over x^2}y'-{2\over x^3}y=0\\
+&amp;\implies\left({y\over x^2}\right)'=0\\
+&amp;\implies y=Cx^2
+\end{aligned}
+\]</span></p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>数学</category>
+        <category>分析</category>
+        <category>微分方程</category>
+      </categories>
+  </entry>
+  <entry>
     <title>$\arcsin^2x$的展开式</title>
     <url>/posts/20316/</url>
     <content><![CDATA[<p>证明 <span class="math display">\[
@@ -201,6 +201,35 @@ I_n={(2n)!!\over(2n+1)!!}.
       </categories>
   </entry>
   <entry>
+    <title>$f(A)$的特征值</title>
+    <url>/posts/3877/</url>
+    <content><![CDATA[<p><strong>引理 (Schur's Lemma): 若<span class="math inline">\(A\)</span>是数域<span class="math inline">\(F\)</span>上的<span class="math inline">\(n\)</span>阶方阵, 且<span class="math inline">\(A\)</span>的特征值都在<span class="math inline">\(F\)</span>中, 那么<span class="math inline">\(A\)</span>与一个上三角阵相似.</strong></p>
+<p><strong>证明: </strong></p>
+<p>归纳法. 当<span class="math inline">\(n=1\)</span>时显然成立: 此时<span class="math inline">\(A\)</span>本身是上三角阵.</p>
+<p>假设结论对<span class="math inline">\(n-1\)</span>阶方阵成立, 且<span class="math inline">\(A\in F^{n\times n}\)</span>的特征值都在<span class="math inline">\(F\)</span>中. 记特征向量<span class="math inline">\(v_1\)</span>对应的特征值是<span class="math inline">\(\lambda_1\in F\)</span>, 并把<span class="math inline">\(v_1\)</span>扩展为<span class="math inline">\(F^n\)</span>的一组基<span class="math inline">\(\mathcal B=(v_1,\ldots,v_n)\)</span>. 在这组基下, <span class="math inline">\(A\)</span>被相似变换为矩阵<span class="math display">\[[A]_\mathcal{B}=\begin{bmatrix}\lambda_1 &amp; *\\ 0 &amp; A_1\end{bmatrix},\]</span> 其中<span class="math inline">\(A_1\in F^{(n-1)\times (n-1)}\)</span>.</p>
+<span id="more"></span>
+<p>由于相似矩阵有相同的特征多项式, 于是<span class="math display">\[\det(xI-A)=\det(xI-[A]_\mathcal B)=(x-\lambda_1)\det(xI-A_1).\]</span> 又因为<span class="math inline">\(\det(xI-A)\)</span>的根都在<span class="math inline">\(F\)</span>中, 所以<span class="math inline">\(\det(xI-A_1)\)</span>的根也都在<span class="math inline">\(F\)</span>中, 这说明<span class="math inline">\(A_1\)</span>是特征值都在<span class="math inline">\(F\)</span>中的<span class="math inline">\(n-1\)</span>阶方阵.</p>
+<p>于是根据归纳假设, 存在可逆阵<span class="math inline">\(P\in F^{(n-1)\times(n-1)}\)</span>使得<span class="math display">\[U=PA_1P^{-1}\]</span>是上三角阵. 那么只需构造可逆阵<span class="math display">\[Q=\begin{bmatrix}1&amp;0\\0&amp;P\end{bmatrix},\]</span>便有<span class="math display">\[Q[A]_\mathcal B Q^{-1}=\begin{bmatrix}1&amp;0\\0&amp;P\end{bmatrix}\begin{bmatrix}\lambda_1&amp;*\\0&amp;A_1\end{bmatrix}\begin{bmatrix}1&amp;0\\0&amp;P^{-1}\end{bmatrix}=\begin{bmatrix}\lambda_1&amp;*\\0&amp;U\end{bmatrix}\]</span>是上三角阵.</p>
+<p>这说明<span class="math inline">\(A\)</span>与一个上三角阵相似, 归纳法完成.</p>
+<p><em>注: 一个更强的结论是Jordan标准型.</em></p>
+<hr>
+<p><strong>定理: 若<span class="math inline">\(A\)</span>是数域<span class="math inline">\(F\)</span>上的<span class="math inline">\(n\)</span>阶方阵, 且<span class="math inline">\(A\)</span>的特征值都在<span class="math inline">\(F\)</span>中. <span class="math inline">\(f\)</span>是<span class="math inline">\(F\)</span>上的多项式, 那么<span class="math inline">\(a\)</span>是<span class="math inline">\(f(A)\)</span>的特征值<span class="math inline">\(\iff\)</span><span class="math inline">\(a=f(\lambda)\)</span>, 其中<span class="math inline">\(\lambda\)</span>是<span class="math inline">\(A\)</span>的特征值.</strong></p>
+<p><strong>证明:</strong></p>
+<p><span class="math inline">\((\Longleftarrow)\)</span>容易, 略.</p>
+<p><span class="math inline">\((\Longrightarrow)\)</span>根据引理, <span class="math inline">\(A\)</span>与一个上三角阵<span class="math inline">\(T\)</span>相似: <span class="math display">\[
+A=Q^{-1}TQ.
+\]</span> 由于<span class="math inline">\(f\)</span>是多项式, 那么 <span class="math display">\[
+f(A)=f(Q^{-1}TQ)=Q^{-1}f(T)Q.
+\]</span> 根据上三角阵的性质, <span class="math inline">\(f(T)\)</span>也是上三角阵, 且<span class="math inline">\(f(T)\)</span>的对角元恰好是<span class="math inline">\(f(\lambda)\)</span>, 其中<span class="math inline">\(\lambda\)</span>是<span class="math inline">\(T\)</span>的对角元.</p>
+<p>因为相似矩阵有相同的特征值, 且上三角阵的对角元与其特征值对应, 于是<span class="math inline">\(f(A)\)</span>的特征值都是<span class="math inline">\(f(\lambda)\)</span>的形式, 其中<span class="math inline">\(\lambda\)</span>是<span class="math inline">\(A\)</span>的特征值.</p>
+]]></content>
+      <categories>
+        <category>数学</category>
+        <category>代数</category>
+        <category>线性代数</category>
+      </categories>
+  </entry>
+  <entry>
     <title>分块矩阵的行列式</title>
     <url>/posts/42453/</url>
     <content><![CDATA[<h2 id="结论">结论</h2>
@@ -257,35 +286,6 @@ I_n={(2n)!!\over(2n+1)!!}.
 \end{pmatrix}=\begin{pmatrix}
     A+B&amp;B\\0&amp;A-B
 \end{pmatrix}\]</span>两边取行列式.</p>
-]]></content>
-      <categories>
-        <category>数学</category>
-        <category>代数</category>
-        <category>线性代数</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>$f(A)$的特征值</title>
-    <url>/posts/3877/</url>
-    <content><![CDATA[<p><strong>引理 (Schur's Lemma): 若<span class="math inline">\(A\)</span>是数域<span class="math inline">\(F\)</span>上的<span class="math inline">\(n\)</span>阶方阵, 且<span class="math inline">\(A\)</span>的特征值都在<span class="math inline">\(F\)</span>中, 那么<span class="math inline">\(A\)</span>与一个上三角阵相似.</strong></p>
-<p><strong>证明: </strong></p>
-<p>归纳法. 当<span class="math inline">\(n=1\)</span>时显然成立: 此时<span class="math inline">\(A\)</span>本身是上三角阵.</p>
-<p>假设结论对<span class="math inline">\(n-1\)</span>阶方阵成立, 且<span class="math inline">\(A\in F^{n\times n}\)</span>的特征值都在<span class="math inline">\(F\)</span>中. 记特征向量<span class="math inline">\(v_1\)</span>对应的特征值是<span class="math inline">\(\lambda_1\in F\)</span>, 并把<span class="math inline">\(v_1\)</span>扩展为<span class="math inline">\(F^n\)</span>的一组基<span class="math inline">\(\mathcal B=(v_1,\ldots,v_n)\)</span>. 在这组基下, <span class="math inline">\(A\)</span>被相似变换为矩阵<span class="math display">\[[A]_\mathcal{B}=\begin{bmatrix}\lambda_1 &amp; *\\ 0 &amp; A_1\end{bmatrix},\]</span> 其中<span class="math inline">\(A_1\in F^{(n-1)\times (n-1)}\)</span>.</p>
-<span id="more"></span>
-<p>由于相似矩阵有相同的特征多项式, 于是<span class="math display">\[\det(xI-A)=\det(xI-[A]_\mathcal B)=(x-\lambda_1)\det(xI-A_1).\]</span> 又因为<span class="math inline">\(\det(xI-A)\)</span>的根都在<span class="math inline">\(F\)</span>中, 所以<span class="math inline">\(\det(xI-A_1)\)</span>的根也都在<span class="math inline">\(F\)</span>中, 这说明<span class="math inline">\(A_1\)</span>是特征值都在<span class="math inline">\(F\)</span>中的<span class="math inline">\(n-1\)</span>阶方阵.</p>
-<p>于是根据归纳假设, 存在可逆阵<span class="math inline">\(P\in F^{(n-1)\times(n-1)}\)</span>使得<span class="math display">\[U=PA_1P^{-1}\]</span>是上三角阵. 那么只需构造可逆阵<span class="math display">\[Q=\begin{bmatrix}1&amp;0\\0&amp;P\end{bmatrix},\]</span>便有<span class="math display">\[Q[A]_\mathcal B Q^{-1}=\begin{bmatrix}1&amp;0\\0&amp;P\end{bmatrix}\begin{bmatrix}\lambda_1&amp;*\\0&amp;A_1\end{bmatrix}\begin{bmatrix}1&amp;0\\0&amp;P^{-1}\end{bmatrix}=\begin{bmatrix}\lambda_1&amp;*\\0&amp;U\end{bmatrix}\]</span>是上三角阵.</p>
-<p>这说明<span class="math inline">\(A\)</span>与一个上三角阵相似, 归纳法完成.</p>
-<p><em>注: 一个更强的结论是Jordan标准型.</em></p>
-<hr>
-<p><strong>定理: 若<span class="math inline">\(A\)</span>是数域<span class="math inline">\(F\)</span>上的<span class="math inline">\(n\)</span>阶方阵, 且<span class="math inline">\(A\)</span>的特征值都在<span class="math inline">\(F\)</span>中. <span class="math inline">\(f\)</span>是<span class="math inline">\(F\)</span>上的多项式, 那么<span class="math inline">\(a\)</span>是<span class="math inline">\(f(A)\)</span>的特征值<span class="math inline">\(\iff\)</span><span class="math inline">\(a=f(\lambda)\)</span>, 其中<span class="math inline">\(\lambda\)</span>是<span class="math inline">\(A\)</span>的特征值.</strong></p>
-<p><strong>证明:</strong></p>
-<p><span class="math inline">\((\Longleftarrow)\)</span>容易, 略.</p>
-<p><span class="math inline">\((\Longrightarrow)\)</span>根据引理, <span class="math inline">\(A\)</span>与一个上三角阵<span class="math inline">\(T\)</span>相似: <span class="math display">\[
-A=Q^{-1}TQ.
-\]</span> 由于<span class="math inline">\(f\)</span>是多项式, 那么 <span class="math display">\[
-f(A)=f(Q^{-1}TQ)=Q^{-1}f(T)Q.
-\]</span> 根据上三角阵的性质, <span class="math inline">\(f(T)\)</span>也是上三角阵, 且<span class="math inline">\(f(T)\)</span>的对角元恰好是<span class="math inline">\(f(\lambda)\)</span>, 其中<span class="math inline">\(\lambda\)</span>是<span class="math inline">\(T\)</span>的对角元.</p>
-<p>因为相似矩阵有相同的特征值, 且上三角阵的对角元与其特征值对应, 于是<span class="math inline">\(f(A)\)</span>的特征值都是<span class="math inline">\(f(\lambda)\)</span>的形式, 其中<span class="math inline">\(\lambda\)</span>是<span class="math inline">\(A\)</span>的特征值.</p>
 ]]></content>
       <categories>
         <category>数学</category>
@@ -731,6 +731,37 @@ M(h)=\sum_{k=0}^{n-1}hf\left(a+h\left(k+\frac12\right)\right)
       </categories>
   </entry>
   <entry>
+    <title>微分形式</title>
+    <url>/posts/12522/</url>
+    <content><![CDATA[<p>0 次形式: <span class="math inline">\(f\)</span></p>
+<p>1 次形式: <span class="math inline">\(P\d x+Q\d y+R\d z\)</span></p>
+<p>2 次形式: <span class="math inline">\(P\d y\land \d z+Q\d z\land \d x+R\d x\land \d y\)</span></p>
+<p>3 次形式: <span class="math inline">\(R\d x\land \d y\land \d z\)</span></p>
+<span id="more"></span>
+<h2 id="运算律">运算律</h2>
+<p><span class="math inline">\(\d x\land \d x=0\)</span> 等, <span class="math inline">\(\d x\land \d y=-\d y\land \d x\)</span> 等.</p>
+<h2 id="外微分运算">外微分运算</h2>
+<p><span class="math display">\[\d f={\partial f\over\partial x}\d x+{\partial f\over\partial y}\d y+{\partial f\over\partial z}\d z\]</span> <span class="math inline">\(w=P\d x+Q\d y+R\d z\)</span> 时</p>
+<p><span class="math display">\[\begin{aligned}
+\d w&amp;=(R_y'-Q_z')\d y\land \d z+(P_z'-R_x')\d z\land \d x+(Q_x'-P_y')\d x\land \d y\\
+&amp;=
+\begin{vmatrix}
+\d y\land \d z&amp;\d z\land \d x&amp;\d x\land \d y\\
+{\partial\over\partial x} &amp; {\partial\over\partial y} &amp; {\partial\over\partial z}\\
+P&amp;Q&amp;R
+\end{vmatrix}
+\end{aligned}\]</span></p>
+<p><span class="math inline">\(w=P\d y\land \d z+Q\d z\land \d x+R\d x\land \d y\)</span> 时</p>
+<p><span class="math display">\[\d w=(P_x'+Q_y'+R_z')\d x\land \d y\land \d z\]</span></p>
+]]></content>
+      <categories>
+        <category>数学</category>
+        <category>分析</category>
+        <category>微积分</category>
+        <category>多元微积分</category>
+      </categories>
+  </entry>
+  <entry>
     <title>数值 ODE</title>
     <url>/posts/23214/</url>
     <content><![CDATA[<p><span class="math inline">\(f_n\)</span> 是 <span class="math inline">\(f(x_n,y_n)\)</span> 的简记, <span class="math inline">\(y_n\)</span> 是 <span class="math inline">\(y(x_n)\)</span> 的估计.</p>
@@ -792,37 +823,6 @@ y_{n+1}=\sum_{k=1}^l a_ky_{n+1-k}+h\sum_{k=0}^l b_k f_{n+1-k}
       </categories>
   </entry>
   <entry>
-    <title>微分形式</title>
-    <url>/posts/12522/</url>
-    <content><![CDATA[<p>0 次形式: <span class="math inline">\(f\)</span></p>
-<p>1 次形式: <span class="math inline">\(P\d x+Q\d y+R\d z\)</span></p>
-<p>2 次形式: <span class="math inline">\(P\d y\land \d z+Q\d z\land \d x+R\d x\land \d y\)</span></p>
-<p>3 次形式: <span class="math inline">\(R\d x\land \d y\land \d z\)</span></p>
-<span id="more"></span>
-<h2 id="运算律">运算律</h2>
-<p><span class="math inline">\(\d x\land \d x=0\)</span> 等, <span class="math inline">\(\d x\land \d y=-\d y\land \d x\)</span> 等.</p>
-<h2 id="外微分运算">外微分运算</h2>
-<p><span class="math display">\[\d f={\partial f\over\partial x}\d x+{\partial f\over\partial y}\d y+{\partial f\over\partial z}\d z\]</span> <span class="math inline">\(w=P\d x+Q\d y+R\d z\)</span> 时</p>
-<p><span class="math display">\[\begin{aligned}
-\d w&amp;=(R_y'-Q_z')\d y\land \d z+(P_z'-R_x')\d z\land \d x+(Q_x'-P_y')\d x\land \d y\\
-&amp;=
-\begin{vmatrix}
-\d y\land \d z&amp;\d z\land \d x&amp;\d x\land \d y\\
-{\partial\over\partial x} &amp; {\partial\over\partial y} &amp; {\partial\over\partial z}\\
-P&amp;Q&amp;R
-\end{vmatrix}
-\end{aligned}\]</span></p>
-<p><span class="math inline">\(w=P\d y\land \d z+Q\d z\land \d x+R\d x\land \d y\)</span> 时</p>
-<p><span class="math display">\[\d w=(P_x'+Q_y'+R_z')\d x\land \d y\land \d z\]</span></p>
-]]></content>
-      <categories>
-        <category>数学</category>
-        <category>分析</category>
-        <category>微积分</category>
-        <category>多元微积分</category>
-      </categories>
-  </entry>
-  <entry>
     <title>极坐标和球坐标换元</title>
     <url>/posts/26639/</url>
     <content><![CDATA[<p><span class="math display">\[\iint_D F(x,y)\d x\d y=\iint_\Delta F(r\cos\theta,r\sin\theta)r\d r\d\theta\]</span></p>
@@ -834,6 +834,17 @@ P&amp;Q&amp;R
         <category>分析</category>
         <category>微积分</category>
         <category>多变量微积分</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>常见级数</title>
+    <url>/posts/56038/</url>
+    <content><![CDATA[<p><span class="math display">\[\sum_{n=1}^\infty\frac{1}{n^2}=\frac{\pi^2}{6}\]</span> <span id="more"></span> <span class="math display">\[\sum_{n=1}^\infty\frac{(-1)^{n-1}}{n^2}=\frac{\pi^2}{12}\]</span> <span class="math display">\[\sum_{n=1}^\infty\frac{1}{(2n-1)^2}=\frac{\pi^2}{8}\]</span> <span class="math display">\[\sum_{n=1}^\infty\frac{1}{n^4}=\frac{\pi^4}{90}\]</span> <span class="math display">\[\sum_{n=1}^\infty\frac{(-1)^{n-1}}{n^4}=\frac{7\pi^4}{720}\]</span> <span class="math display">\[1-\frac13+\frac15-\frac17+\cdots=\frac\pi4\]</span> <span class="math display">\[1-\frac12+\frac13-\frac14+\cdots=\ln2\]</span></p>
+]]></content>
+      <categories>
+        <category>数学</category>
+        <category>分析</category>
+        <category>级数</category>
       </categories>
   </entry>
   <entry>
@@ -857,17 +868,6 @@ P&amp;Q&amp;R
         <category>数学</category>
         <category>分析</category>
         <category>复变函数</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>常见级数</title>
-    <url>/posts/56038/</url>
-    <content><![CDATA[<p><span class="math display">\[\sum_{n=1}^\infty\frac{1}{n^2}=\frac{\pi^2}{6}\]</span> <span id="more"></span> <span class="math display">\[\sum_{n=1}^\infty\frac{(-1)^{n-1}}{n^2}=\frac{\pi^2}{12}\]</span> <span class="math display">\[\sum_{n=1}^\infty\frac{1}{(2n-1)^2}=\frac{\pi^2}{8}\]</span> <span class="math display">\[\sum_{n=1}^\infty\frac{1}{n^4}=\frac{\pi^4}{90}\]</span> <span class="math display">\[\sum_{n=1}^\infty\frac{(-1)^{n-1}}{n^4}=\frac{7\pi^4}{720}\]</span> <span class="math display">\[1-\frac13+\frac15-\frac17+\cdots=\frac\pi4\]</span> <span class="math display">\[1-\frac12+\frac13-\frac14+\cdots=\ln2\]</span></p>
-]]></content>
-      <categories>
-        <category>数学</category>
-        <category>分析</category>
-        <category>级数</category>
       </categories>
   </entry>
   <entry>
@@ -898,6 +898,35 @@ P&amp;Q&amp;R
       <categories>
         <category>数学</category>
         <category>初等数学</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>为什么用开覆盖定义紧集</title>
+    <url>/posts/47720/</url>
+    <content><![CDATA[<p>【定义】一个集合是紧集的意思是，它的任何一个开覆盖都有有限子覆盖。</p>
+<p>【有限覆盖定理】这是说欧式空间中的有界闭集（一维情况下是<span class="math inline">\([a,b]\)</span>）都是紧集。</p>
+<p>【Heine-Borel定理】上面的逆命题，欧式空间中的紧集都是有界闭集。于是就说明了欧式空间中的紧集<span class="math inline">\(\iff\)</span>有界闭集。</p>
+<span id="more"></span>
+<h2 id="为什么用开覆盖而不是闭覆盖呢">为什么用开覆盖而不是闭覆盖呢？</h2>
+<p>简单地思考一下容易发现，如果用闭覆盖定义紧集一点也不好玩：</p>
+<p>我们知道单点集<span class="math inline">\(\{a\}\)</span>是闭集（更严谨地，在<span class="math inline">\(T_1\)</span>空间中），那么把集合<span class="math inline">\(A\)</span>中所有元素拿出来，这些单点集的总体构成一个闭覆盖。比如说对于区间<span class="math inline">\([0,1]\)</span>，这种闭覆盖就是 <span class="math display">\[
+\bigcup_{x\in[0,1]}\{x\}
+\]</span> 它有有限子覆盖吗？</p>
+<p>这个闭覆盖的有限成员都是有限个单点集<span class="math inline">\(\{x_1\},\ldots,\{x_n\}\)</span>，明显当<span class="math inline">\(A\)</span>是无限集的时候无法覆盖<span class="math inline">\(A\)</span>。所以按这种方式定义的紧集就是有限集，本质上没有提出新概念。</p>
+<h2 id="用开覆盖定义的紧集有什么用">用开覆盖定义的紧集有什么用？</h2>
+<p>在某种“良好的”集合上：</p>
+<ul>
+<li>连续函数总是一致连续的</li>
+<li>连续函数总是有界的</li>
+<li>连续函数总能取到最值</li>
+<li>任何数列都有收敛子列</li>
+</ul>
+<p>数学家花了一番功夫才发现，这种“良好的”集合其实就是紧集。紧集的定义也有很多等价刻画，比如在欧式空间中就可以简单地定义为有界闭集，在更一般的度量空间中可以定义为序列紧集等等。但是，这些好理解的定义也有局限性，它们只在某些结构良好的空间中成立。</p>
+<p>而在用开覆盖来定义的紧集，虽然抽象，但可以推广到一般的拓扑空间，成了现在使用最广的定义。</p>
+]]></content>
+      <categories>
+        <category>数学</category>
+        <category>几何</category>
       </categories>
   </entry>
   <entry>
@@ -991,6 +1020,22 @@ P&amp;Q&amp;R
       </categories>
   </entry>
   <entry>
+    <title>利用积分下求导计算无穷积分</title>
+    <url>/posts/30510/</url>
+    <content><![CDATA[<p>计算 <span class="math display">\[
+\int_{-\infty}^{+\infty}{x\sin x\over (x^2+a^2)(x^2+b^2)}\,\mathrm dx.
+\]</span> 其实是测试一下内嵌pdf.</p>
+<span id="more"></span>
+<div class="pdfobject-container" data-target="/file/integrate.pdf" data-height="500px"></div>
+]]></content>
+      <categories>
+        <category>数学</category>
+        <category>分析</category>
+        <category>微积分</category>
+        <category>单变量微积分</category>
+      </categories>
+  </entry>
+  <entry>
     <title>双曲函数</title>
     <url>/posts/12845/</url>
     <content><![CDATA[<h2 id="定义">定义</h2>
@@ -1047,51 +1092,6 @@ P&amp;Q&amp;R
       </categories>
   </entry>
   <entry>
-    <title>为什么用开覆盖定义紧集</title>
-    <url>/posts/47720/</url>
-    <content><![CDATA[<p>【定义】一个集合是紧集的意思是，它的任何一个开覆盖都有有限子覆盖。</p>
-<p>【有限覆盖定理】这是说欧式空间中的有界闭集（一维情况下是<span class="math inline">\([a,b]\)</span>）都是紧集。</p>
-<p>【Heine-Borel定理】上面的逆命题，欧式空间中的紧集都是有界闭集。于是就说明了欧式空间中的紧集<span class="math inline">\(\iff\)</span>有界闭集。</p>
-<span id="more"></span>
-<h2 id="为什么用开覆盖而不是闭覆盖呢">为什么用开覆盖而不是闭覆盖呢？</h2>
-<p>简单地思考一下容易发现，如果用闭覆盖定义紧集一点也不好玩：</p>
-<p>我们知道单点集<span class="math inline">\(\{a\}\)</span>是闭集（更严谨地，在<span class="math inline">\(T_1\)</span>空间中），那么把集合<span class="math inline">\(A\)</span>中所有元素拿出来，这些单点集的总体构成一个闭覆盖。比如说对于区间<span class="math inline">\([0,1]\)</span>，这种闭覆盖就是 <span class="math display">\[
-\bigcup_{x\in[0,1]}\{x\}
-\]</span> 它有有限子覆盖吗？</p>
-<p>这个闭覆盖的有限成员都是有限个单点集<span class="math inline">\(\{x_1\},\ldots,\{x_n\}\)</span>，明显当<span class="math inline">\(A\)</span>是无限集的时候无法覆盖<span class="math inline">\(A\)</span>。所以按这种方式定义的紧集就是有限集，本质上没有提出新概念。</p>
-<h2 id="用开覆盖定义的紧集有什么用">用开覆盖定义的紧集有什么用？</h2>
-<p>在某种“良好的”集合上：</p>
-<ul>
-<li>连续函数总是一致连续的</li>
-<li>连续函数总是有界的</li>
-<li>连续函数总能取到最值</li>
-<li>任何数列都有收敛子列</li>
-</ul>
-<p>数学家花了一番功夫才发现，这种“良好的”集合其实就是紧集。紧集的定义也有很多等价刻画，比如在欧式空间中就可以简单地定义为有界闭集，在更一般的度量空间中可以定义为序列紧集等等。但是，这些好理解的定义也有局限性，它们只在某些结构良好的空间中成立。</p>
-<p>而在用开覆盖来定义的紧集，虽然抽象，但可以推广到一般的拓扑空间，成了现在使用最广的定义。</p>
-]]></content>
-      <categories>
-        <category>数学</category>
-        <category>几何</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>利用积分下求导计算无穷积分</title>
-    <url>/posts/30510/</url>
-    <content><![CDATA[<p>计算 <span class="math display">\[
-\int_{-\infty}^{+\infty}{x\sin x\over (x^2+a^2)(x^2+b^2)}\,\mathrm dx.
-\]</span> 其实是测试一下内嵌pdf.</p>
-<span id="more"></span>
-<div class="pdfobject-container" data-target="/file/integrate.pdf" data-height="500px"></div>
-]]></content>
-      <categories>
-        <category>数学</category>
-        <category>分析</category>
-        <category>微积分</category>
-        <category>单变量微积分</category>
-      </categories>
-  </entry>
-  <entry>
     <title>实对称阵的合同对角化</title>
     <url>/posts/5692/</url>
     <content><![CDATA[<p>设对实对称阵 <span class="math inline">\(A\)</span> 满足 <span class="math inline">\(Q^TAQ=\Lambda\)</span>，其中 <span class="math inline">\(\Lambda\)</span> 是 <span class="math inline">\(A\)</span> 的特征值组成的对角阵，问 <span class="math inline">\(Q\)</span> 是否正交。</p>
@@ -1121,20 +1121,6 @@ Q=\begin{bmatrix}1&amp;\\&amp;\frac12\end{bmatrix}\begin{bmatrix}0&amp;1\\1&amp;
         <category>数学</category>
         <category>代数</category>
         <category>线性代数</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>科普是一项非常难的工作</title>
-    <url>/posts/20918/</url>
-    <content><![CDATA[<p>要想当一个好学生，只需要把知识学懂。</p>
-<p>要想当一个好老师，需要一些基础知识，还需要良好的性格和表达能力、心理学和教育学经验。</p>
-<p>要想当一个好教授，需要有专业知识、科研水平，只需要一般般的表达能力。</p>
-<p><strong>而要当一个好的科普工作者，需要有远超学生的理解能力，教授一样的专业水平，老师一样的教学功力，艺术家一样的审美，作家一样的文笔，诗人一样的清高，科学家一样对知识的热爱，艺人一样对大众心理的把控能力，运动员一样的毅力，还要有自身的人格魅力、抗压抗打击能力。</strong></p>
-<p>科普是一项非常难的工作，比讲课教书难得多。因为它面对的不是专业人士，而是乌合之众。这导致科普工作者必须用通俗语言来解释专业知识，却又不至于过于通俗而产生误导。稍微有一点漏洞就会被抓住攻击——有问题的科普比谣言更可怕，比迷信更害人。</p>
-<p>所以，科普工作者是一个神圣的标签，这个名号比想象中要严苛得多。</p>
-]]></content>
-      <categories>
-        <category>随笔</category>
       </categories>
   </entry>
   <entry>
@@ -1194,6 +1180,20 @@ Q=\begin{bmatrix}1&amp;\\&amp;\frac12\end{bmatrix}\begin{bmatrix}0&amp;1\\1&amp;
         <category>分析</category>
         <category>微积分</category>
         <category>多元微积分</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>科普是一项非常难的工作</title>
+    <url>/posts/20918/</url>
+    <content><![CDATA[<p>要想当一个好学生，只需要把知识学懂。</p>
+<p>要想当一个好老师，需要一些基础知识，还需要良好的性格和表达能力、心理学和教育学经验。</p>
+<p>要想当一个好教授，需要有专业知识、科研水平，只需要一般般的表达能力。</p>
+<p><strong>而要当一个好的科普工作者，需要有远超学生的理解能力，教授一样的专业水平，老师一样的教学功力，艺术家一样的审美，作家一样的文笔，诗人一样的清高，科学家一样对知识的热爱，艺人一样对大众心理的把控能力，运动员一样的毅力，还要有自身的人格魅力、抗压抗打击能力。</strong></p>
+<p>科普是一项非常难的工作，比讲课教书难得多。因为它面对的不是专业人士，而是乌合之众。这导致科普工作者必须用通俗语言来解释专业知识，却又不至于过于通俗而产生误导。稍微有一点漏洞就会被抓住攻击——有问题的科普比谣言更可怕，比迷信更害人。</p>
+<p>所以，科普工作者是一个神圣的标签，这个名号比想象中要严苛得多。</p>
+]]></content>
+      <categories>
+        <category>随笔</category>
       </categories>
   </entry>
   <entry>

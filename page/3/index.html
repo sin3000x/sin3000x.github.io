@@ -396,7 +396,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-06-01 20:53:58" itemprop="dateModified" datetime="2022-06-01T20:53:58+01:00">2022-06-01</time>
+                <time title="修改时间：2022-06-07 20:07:12" itemprop="dateModified" datetime="2022-06-07T20:07:12+01:00">2022-06-07</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -431,16 +431,16 @@
 <p>分离变量后两边积分.</p>
 <h3 id="一阶齐次线性-ypxy0">2. 一阶齐次线性 <span class="math inline">\(y'+p(x)y=0\)</span></h3>
 <p><span class="math display">\[
-y=Ce^{-\int p(x)dx}
+y=Ce^{-\int p(x)\d x}
 \]</span></p>
 <h3 id="一阶非齐次线性-ypxyqx">3. 一阶非齐次线性 <span class="math inline">\(y'+p(x)y=q(x)\)</span></h3>
 <ul>
-<li><p><span class="math inline">\(y=e^{-\int p(x)dx}\left(C+\int q(x)e^{\int p(x)}dx\right)\)</span></p></li>
-<li><p>取积分因子 <span class="math inline">\(\mu(x)=e^{\int p(x)dx}\)</span>.</p></li>
+<li><p><span class="math inline">\(y=e^{-\int p(x)\d x}\left(C+\int q(x)e^{\int p(x)\d x}\d x\right)\)</span></p></li>
+<li><p>取积分因子 <span class="math inline">\(\mu(x)=e^{\int p(x)\d x}\)</span>.</p></li>
 </ul>
 <blockquote>
 <p>🌰 <span class="math inline">\(y'-2y/x=0\)</span>. <span class="math display">\[\begin{aligned}
-&amp;\mu(x)=e^{\int-\frac2x dx}=e^{-2\ln x}=\frac{1}{x^2}\\
+&amp;\mu(x)=e^{\int-\frac2x \d x}=e^{-2\ln x}=\frac{1}{x^2}\\
 &amp;\implies{1\over x^2}y'-{2\over x^3}y=0\\
 &amp;\implies\left({y\over x^2}\right)'=0\\
 &amp;\implies y=Cx^2
