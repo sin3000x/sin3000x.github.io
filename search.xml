@@ -309,6 +309,7 @@ f(A)=f(Q^{-1}TQ)=Q^{-1}f(T)Q.
 <p>🌰 平方可积的函数空间装备了<span class="math display">\[(u,v)_{L^2(\Omega)}=\int_\Omega uv\d x\]</span></p>
 </blockquote>
 <ul>
+<li><span class="math inline">\(H^1(\Omega)\)</span>: 平方可积, 导数平方可积的函数空间, 装备了 <span class="math display">\[(u,v)_{H^1(\Omega)}=\int_\Omega uv+\nabla u\cdot \nabla v\d x\]</span></li>
 <li><span class="math inline">\(H_0^1(\Omega)\)</span>: 平方可积, 边界为0, 导数平方可积的函数空间, 装备了 <span class="math display">\[(u,v)_{H_0^1(\Omega)}=\int_\Omega \nabla u\cdot \nabla v\d x\]</span></li>
 <li><span class="math inline">\(H(\mathrm{div}, \Omega)\)</span>: 平方可积, 散度平方可积的(向量值)函数空间, 装备了 <span class="math display">\[(u,v)_{H(\mathrm{div,\Omega})}=\int_\Omega u\cdot v+\nabla\cdot u\nabla\cdot v\d x\]</span></li>
 <li><span class="math inline">\(H(\mathrm{curl}, \Omega)\)</span>: 平方可积, 旋度平方可积的(向量值)函数空间, 装备了 <span class="math display">\[(u,v)_{H(\mathrm{curl,\Omega})}=\int_\Omega u\cdot v+\nabla\times u\cdot\nabla\times v\d x\]</span></li>
@@ -329,7 +330,7 @@ f(A)=f(Q^{-1}TQ)=Q^{-1}f(T)Q.
 </blockquote>
 <p><strong>引理: <span class="math inline">\(V\subset W\implies W^*\subset V^*\)</span>.</strong></p>
 <h3 id="riesz-表示定理">Riesz 表示定理</h3>
-<p><span class="math inline">\(X^*\)</span> 上的有界线性泛函 <span class="math inline">\(j\)</span> 可以被原空间 <span class="math inline">\(X\)</span> 上的元素 <span class="math inline">\(g\)</span> 表示: <span class="math display">\[\langle j,u\rangle=(g,u).\]</span> 且范数相同:<span class="math display">\[\|j\|_{X^*}=\|g\|_X.\]</span> 这是说, 任何有界线性泛函的作用都是某个内积.</p>
+<p><span class="math inline">\(X^*\)</span> 上的有界线性泛函 <span class="math inline">\(j\)</span> 可以被原空间 <span class="math inline">\(X\)</span> 上的元素 <span class="math inline">\(g\)</span> <strong>唯一</strong>表示: <span class="math display">\[\langle j,u\rangle=(g,u).\]</span> 且范数相同:<span class="math display">\[\|j\|_{X^*}=\|g\|_X.\]</span> 这是说, 任何有界线性泛函的作用都是某个内积.</p>
 <blockquote>
 <p>🌰 <span class="math inline">\(L^2(\Omega)\)</span> 上的有界线性泛函 <span class="math inline">\(j(v)=\int_\Omega v\d x\)</span>, 实际上就是 <span class="math inline">\(v\)</span> 和常函数 <span class="math inline">\(1\)</span> 的内积.</p>
 </blockquote>
@@ -372,7 +373,7 @@ f(A)=f(Q^{-1}TQ)=Q^{-1}f(T)Q.
 <blockquote>
 <p><span class="math inline">\(W_p^0(\Omega)=L^p(\Omega)\)</span> 不要求导数.</p>
 </blockquote>
-<h2 id="sobolev-不等式">Sobolev 不等式</h2>
+<h3 id="sobolev-不等式">Sobolev 不等式</h3>
 <p>如果有足够的弱导数, 那么函数连续有界:</p>
 <p><span class="math inline">\(\Omega\in\R^n\)</span> 是 Lipschitz 区域, <span class="math inline">\(k\)</span> 是正整数, <span class="math inline">\(p\geq1\)</span>. 若有 <span class="math display">\[
 \begin{gathered}
@@ -382,21 +383,25 @@ k&gt;n/p,\quad p&gt;1
 \]</span> 那么存在常数 <span class="math inline">\(C\)</span> 使得 <span class="math inline">\(\forall u\in W_p^k(\Omega)\)</span>, <span class="math display">\[
 \|u\|_{L^\infty(\Omega)}\leq C\|u\|_{W_p^k(\Omega)}.
 \]</span> <span class="math inline">\(u\)</span> 的等价类中有一个连续函数.</p>
-<h3 id="n1"><span class="math inline">\(n=1\)</span></h3>
+<h4 id="boxedn1"><span class="math inline">\(\boxed{n=1}\)</span></h4>
 <p>只要 <span class="math inline">\(k\geq1\)</span>, 换言之只要有一阶弱导数, 就连续.</p>
 <p><strong>定理: 有界区域上的分段光滑函数在 <span class="math inline">\(H^1\)</span> 中 <span class="math inline">\(\iff\)</span> 连续.</strong></p>
 <p><span class="math display">\[H^1\subset C\]</span></p>
-<h3 id="n2"><span class="math inline">\(n=2\)</span></h3>
+<h4 id="boxedn2"><span class="math inline">\(\boxed{n=2}\)</span></h4>
 <p><span class="math display">\[
 W_1^1(\Omega)\not\subset C(\Omega),\quad W_1^2(\Omega)\subset C(\Omega)
 \]</span> <span class="math display">\[
 H^1\not\subset C,\quad H^2\subset C
 \]</span></p>
-<h3 id="n3"><span class="math inline">\(n=3\)</span></h3>
+<h4 id="boxedn3"><span class="math inline">\(\boxed{n=3}\)</span></h4>
 <p><span class="math display">\[
 W_1^2\not\subset C,\quad W_1^3\subset C
 \]</span> <span class="math display">\[
-H^2\subset C
+H^1\not\subset C,\quad H^2\subset C
+\]</span></p>
+<h3 id="sobolev-嵌入">Sobolev 嵌入</h3>
+<p><span class="math display">\[
+W_p^1\subseteq L^{p^*},\quad\text{其中 }{1\over p^*}=\frac1p-\frac1n.
 \]</span></p>
 ]]></content>
       <categories>
@@ -435,8 +440,9 @@ F(x)=f(x)\sin(x-x_0)\leq0,~\forall x\in(0,\pi).
   <entry>
     <title>Hexo 用法记录</title>
     <url>/posts/16107/</url>
-    <content><![CDATA[<p>插入图片: </p><figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">&lt;img src="/file/*" width="250" height="250"/&gt;</span><br></pre></td></tr></tbody></table></figure><p></p>
+    <content><![CDATA[<p>插入图片: </p><figure class="highlight html"><table><tbody><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"/file/*"</span> <span class="attr">width</span>=<span class="string">"250"</span> <span class="attr">height</span>=<span class="string">"250"</span>/&gt;</span></span><br></pre></td></tr></tbody></table></figure><p></p>
 <p>嵌入 pdf: </p><figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">{% pdf /file/*.pdf %}</span><br></pre></td></tr></tbody></table></figure><p></p>
+<p>链接文章: </p><figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">{% post_link * 说明 %}</span><br></pre></td></tr></tbody></table></figure><p></p>
 ]]></content>
       <categories>
         <category>计算机</category>
@@ -681,37 +687,6 @@ p(x)={\sum_{k=0}^n{\lambda_k y_k\over x-x_k}\over\sum_{k=0}^n{\lambda_k\over x-x
       </categories>
   </entry>
   <entry>
-    <title>微分形式</title>
-    <url>/posts/12522/</url>
-    <content><![CDATA[<p>0 次形式: <span class="math inline">\(f\)</span></p>
-<p>1 次形式: <span class="math inline">\(P\d x+Q\d y+R\d z\)</span></p>
-<p>2 次形式: <span class="math inline">\(P\d y\land \d z+Q\d z\land \d x+R\d x\land \d y\)</span></p>
-<p>3 次形式: <span class="math inline">\(R\d x\land \d y\land \d z\)</span></p>
-<span id="more"></span>
-<h2 id="运算律">运算律</h2>
-<p><span class="math inline">\(\d x\land \d x=0\)</span> 等, <span class="math inline">\(\d x\land \d y=-\d y\land \d x\)</span> 等.</p>
-<h2 id="外微分运算">外微分运算</h2>
-<p><span class="math display">\[\d f={\partial f\over\partial x}\d x+{\partial f\over\partial y}\d y+{\partial f\over\partial z}\d z\]</span> <span class="math inline">\(w=P\d x+Q\d y+R\d z\)</span> 时</p>
-<p><span class="math display">\[\begin{aligned}
-\d w&amp;=(R_y'-Q_z')\d y\land \d z+(P_z'-R_x')\d z\land \d x+(Q_x'-P_y')\d x\land \d y\\
-&amp;=
-\begin{vmatrix}
-\d y\land \d z&amp;\d z\land \d x&amp;\d x\land \d y\\
-{\partial\over\partial x} &amp; {\partial\over\partial y} &amp; {\partial\over\partial z}\\
-P&amp;Q&amp;R
-\end{vmatrix}
-\end{aligned}\]</span></p>
-<p><span class="math inline">\(w=P\d y\land \d z+Q\d z\land \d x+R\d x\land \d y\)</span> 时</p>
-<p><span class="math display">\[\d w=(P_x'+Q_y'+R_z')\d x\land \d y\land \d z\]</span></p>
-]]></content>
-      <categories>
-        <category>数学</category>
-        <category>分析</category>
-        <category>微积分</category>
-        <category>多元微积分</category>
-      </categories>
-  </entry>
-  <entry>
     <title>数值积分</title>
     <url>/posts/24343/</url>
     <content><![CDATA[<p>Quadrature Rule 指的是形式 <span class="math display">\[Q(f)=\sum_{k=0}^nw_kf(x_k)\]</span></p>
@@ -817,6 +792,37 @@ y_{n+1}=\sum_{k=1}^l a_ky_{n+1-k}+h\sum_{k=0}^l b_k f_{n+1-k}
       </categories>
   </entry>
   <entry>
+    <title>微分形式</title>
+    <url>/posts/12522/</url>
+    <content><![CDATA[<p>0 次形式: <span class="math inline">\(f\)</span></p>
+<p>1 次形式: <span class="math inline">\(P\d x+Q\d y+R\d z\)</span></p>
+<p>2 次形式: <span class="math inline">\(P\d y\land \d z+Q\d z\land \d x+R\d x\land \d y\)</span></p>
+<p>3 次形式: <span class="math inline">\(R\d x\land \d y\land \d z\)</span></p>
+<span id="more"></span>
+<h2 id="运算律">运算律</h2>
+<p><span class="math inline">\(\d x\land \d x=0\)</span> 等, <span class="math inline">\(\d x\land \d y=-\d y\land \d x\)</span> 等.</p>
+<h2 id="外微分运算">外微分运算</h2>
+<p><span class="math display">\[\d f={\partial f\over\partial x}\d x+{\partial f\over\partial y}\d y+{\partial f\over\partial z}\d z\]</span> <span class="math inline">\(w=P\d x+Q\d y+R\d z\)</span> 时</p>
+<p><span class="math display">\[\begin{aligned}
+\d w&amp;=(R_y'-Q_z')\d y\land \d z+(P_z'-R_x')\d z\land \d x+(Q_x'-P_y')\d x\land \d y\\
+&amp;=
+\begin{vmatrix}
+\d y\land \d z&amp;\d z\land \d x&amp;\d x\land \d y\\
+{\partial\over\partial x} &amp; {\partial\over\partial y} &amp; {\partial\over\partial z}\\
+P&amp;Q&amp;R
+\end{vmatrix}
+\end{aligned}\]</span></p>
+<p><span class="math inline">\(w=P\d y\land \d z+Q\d z\land \d x+R\d x\land \d y\)</span> 时</p>
+<p><span class="math display">\[\d w=(P_x'+Q_y'+R_z')\d x\land \d y\land \d z\]</span></p>
+]]></content>
+      <categories>
+        <category>数学</category>
+        <category>分析</category>
+        <category>微积分</category>
+        <category>多元微积分</category>
+      </categories>
+  </entry>
+  <entry>
     <title>极坐标和球坐标换元</title>
     <url>/posts/26639/</url>
     <content><![CDATA[<p><span class="math display">\[\iint_D F(x,y)\d x\d y=\iint_\Delta F(r\cos\theta,r\sin\theta)r\d r\d\theta\]</span></p>
@@ -888,62 +894,6 @@ y_{n+1}=\sum_{k=1}^l a_ky_{n+1-k}+h\sum_{k=0}^l b_k f_{n+1-k}
 \tan x=\frac{2t}{1-t^2}
 \end{gather*}
 \]</span></p>
-]]></content>
-      <categories>
-        <category>数学</category>
-        <category>初等数学</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>双曲函数</title>
-    <url>/posts/12845/</url>
-    <content><![CDATA[<h2 id="定义">定义</h2>
-<p><span class="math display">\[\sinh(x)=\frac{\e^x-\e^{-x}}{2}\]</span></p>
-<p><span class="math display">\[\cosh(x)=\frac{\e^x+\e^{-x}}{2}\]</span></p>
-<p><span class="math display">\[\tanh(x)=\frac{\e^x-\e^{-x}}{\e^x+\e^{-x}},\ \coth(x)=\frac{1}{\tanh(x)}\]</span></p>
-<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Sinh_cosh_tanh.svg/440px-Sinh_cosh_tanh.svg.png" width="300" height="300"></p>
-<span id="more"></span>
-<h2 id="复变量">复变量</h2>
-<p><span class="math display">\[\sin(\i x)=\i\sinh(x),\ \sinh(\i x)=\i\sin(x)\]</span></p>
-<p><span class="math display">\[\cos(\i x)=\cosh(x),\ \cosh(\i x)=\cos(x)\]</span></p>
-<h2 id="和角公式">和角公式</h2>
-<p><span class="math display">\[\sinh(x\pm y)=\sinh(x)\cosh(y)\pm\cosh(x)\sinh(y)\]</span></p>
-<p><span class="math display">\[\cosh(x\pm y)=\cosh(x)\cosh(y)\pm\sinh(x)\sinh(y)\]</span></p>
-<p><span class="math display">\[
-\tanh(x+y)={\tanh x+\tanh y\over 1+\tanh x\tanh y}
-\]</span></p>
-<p><span class="math display">\[
-\tanh(x-y)={\tanh x-\tanh y\over 1-\tanh x\tanh y}
-\]</span></p>
-<h2 id="倍角公式">倍角公式</h2>
-<p><span class="math display">\[\cosh 2x=\sinh^2x+\cosh^2x=2\sinh^2x+1=2\cosh^2x-1\]</span></p>
-<p><span class="math display">\[\sinh 2x=\sinh^2x+\cosh^2x=2\sinh x\cosh x\]</span></p>
-<p><span class="math display">\[\tanh 2x={2\tanh x\over 1+\tanh^2x}\]</span></p>
-<h2 id="逆函数">逆函数</h2>
-<p><span class="math display">\[\sinh^{-1}(x)=\ln\left(x+\sqrt{x^2+1}\right)\]</span></p>
-<p><span class="math display">\[\cosh^{-1}(x)=\ln\left(x+\sqrt{x^2-1}\right)\]</span></p>
-<p><span class="math display">\[\tanh^{-1}(x)=\frac12\ln\left(\frac{1+x}{1-x}\right)\]</span></p>
-<h2 id="导数">导数</h2>
-<p><span class="math display">\[\begin{gathered}
-(\sinh x)'=\cosh x\\
-(\cosh x)'=\sinh x\\
-(\tanh x)'=\frac{1}{\cosh^2 x}\\
-\left(\sinh^{-1}x\right)'=\frac{1}{\sqrt{x^2+1}}\\
-\left(\cosh^{-1}x\right)'=\frac{1}{\sqrt{x^2-1}}\\
-\left(\tanh^{-1}x\right)'=\frac{1}{1-x^2}\\
-\end{gathered}\]</span></p>
-<h2 id="积分">积分</h2>
-<p><span class="math display">\[
-\begin{gathered}
-\int\sinh(ax)\d x=\frac1a\cosh(ax)+C\\
-\int\cosh(ax)\d x=\frac1a\sinh(ax)+C\\
-\int\tanh(ax)\d x=\frac{1}{a}\ln(\cosh(ax))+C\\
-\int\tan(ax)\d x=-\frac1a\ln|\cos(ax)|+C
-\end{gathered}
-\]</span></p>
-<h2 id="泰勒展开">泰勒展开</h2>
-<p><span class="math display">\[\sinh(x)=x+\frac{x^3}{3!}+\frac{x^5}{5!}+\frac{x^7}{7!}+\cdots\]</span></p>
-<p><span class="math display">\[\cosh(x)=1+\frac{x^2}{2!}+\frac{x^4}{4!}+\frac{x^6}{6!}+\cdots\]</span></p>
 ]]></content>
       <categories>
         <category>数学</category>
@@ -1041,6 +991,62 @@ y_{n+1}=\sum_{k=1}^l a_ky_{n+1-k}+h\sum_{k=0}^l b_k f_{n+1-k}
       </categories>
   </entry>
   <entry>
+    <title>双曲函数</title>
+    <url>/posts/12845/</url>
+    <content><![CDATA[<h2 id="定义">定义</h2>
+<p><span class="math display">\[\sinh(x)=\frac{\e^x-\e^{-x}}{2}\]</span></p>
+<p><span class="math display">\[\cosh(x)=\frac{\e^x+\e^{-x}}{2}\]</span></p>
+<p><span class="math display">\[\tanh(x)=\frac{\e^x-\e^{-x}}{\e^x+\e^{-x}},\ \coth(x)=\frac{1}{\tanh(x)}\]</span></p>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Sinh_cosh_tanh.svg/440px-Sinh_cosh_tanh.svg.png" width="300" height="300"></p>
+<span id="more"></span>
+<h2 id="复变量">复变量</h2>
+<p><span class="math display">\[\sin(\i x)=\i\sinh(x),\ \sinh(\i x)=\i\sin(x)\]</span></p>
+<p><span class="math display">\[\cos(\i x)=\cosh(x),\ \cosh(\i x)=\cos(x)\]</span></p>
+<h2 id="和角公式">和角公式</h2>
+<p><span class="math display">\[\sinh(x\pm y)=\sinh(x)\cosh(y)\pm\cosh(x)\sinh(y)\]</span></p>
+<p><span class="math display">\[\cosh(x\pm y)=\cosh(x)\cosh(y)\pm\sinh(x)\sinh(y)\]</span></p>
+<p><span class="math display">\[
+\tanh(x+y)={\tanh x+\tanh y\over 1+\tanh x\tanh y}
+\]</span></p>
+<p><span class="math display">\[
+\tanh(x-y)={\tanh x-\tanh y\over 1-\tanh x\tanh y}
+\]</span></p>
+<h2 id="倍角公式">倍角公式</h2>
+<p><span class="math display">\[\cosh 2x=\sinh^2x+\cosh^2x=2\sinh^2x+1=2\cosh^2x-1\]</span></p>
+<p><span class="math display">\[\sinh 2x=2\sinh x\cosh x\]</span></p>
+<p><span class="math display">\[\tanh 2x={2\tanh x\over 1+\tanh^2x}\]</span></p>
+<h2 id="逆函数">逆函数</h2>
+<p><span class="math display">\[\sinh^{-1}(x)=\ln\left(x+\sqrt{x^2+1}\right)\]</span></p>
+<p><span class="math display">\[\cosh^{-1}(x)=\ln\left(x+\sqrt{x^2-1}\right)\]</span></p>
+<p><span class="math display">\[\tanh^{-1}(x)=\frac12\ln\left(\frac{1+x}{1-x}\right)\]</span></p>
+<h2 id="导数">导数</h2>
+<p><span class="math display">\[\begin{gathered}
+(\sinh x)'=\cosh x\\
+(\cosh x)'=\sinh x\\
+(\tanh x)'=\frac{1}{\cosh^2 x}\\
+\left(\sinh^{-1}x\right)'=\frac{1}{\sqrt{x^2+1}}\\
+\left(\cosh^{-1}x\right)'=\frac{1}{\sqrt{x^2-1}}\\
+\left(\tanh^{-1}x\right)'=\frac{1}{1-x^2}\\
+\end{gathered}\]</span></p>
+<h2 id="积分">积分</h2>
+<p><span class="math display">\[
+\begin{gathered}
+\int\sinh(ax)\d x=\frac1a\cosh(ax)+C\\
+\int\cosh(ax)\d x=\frac1a\sinh(ax)+C\\
+\int\tanh(ax)\d x=\frac{1}{a}\ln(\cosh(ax))+C\\
+\int\tan(ax)\d x=-\frac1a\ln|\cos(ax)|+C
+\end{gathered}
+\]</span></p>
+<h2 id="泰勒展开">泰勒展开</h2>
+<p><span class="math display">\[\sinh(x)=x+\frac{x^3}{3!}+\frac{x^5}{5!}+\frac{x^7}{7!}+\cdots\]</span></p>
+<p><span class="math display">\[\cosh(x)=1+\frac{x^2}{2!}+\frac{x^4}{4!}+\frac{x^6}{6!}+\cdots\]</span></p>
+]]></content>
+      <categories>
+        <category>数学</category>
+        <category>初等数学</category>
+      </categories>
+  </entry>
+  <entry>
     <title>为什么用开覆盖定义紧集</title>
     <url>/posts/47720/</url>
     <content><![CDATA[<p>【定义】一个集合是紧集的意思是，它的任何一个开覆盖都有有限子覆盖。</p>
@@ -1118,6 +1124,20 @@ Q=\begin{bmatrix}1&amp;\\&amp;\frac12\end{bmatrix}\begin{bmatrix}0&amp;1\\1&amp;
       </categories>
   </entry>
   <entry>
+    <title>科普是一项非常难的工作</title>
+    <url>/posts/20918/</url>
+    <content><![CDATA[<p>要想当一个好学生，只需要把知识学懂。</p>
+<p>要想当一个好老师，需要一些基础知识，还需要良好的性格和表达能力、心理学和教育学经验。</p>
+<p>要想当一个好教授，需要有专业知识、科研水平，只需要一般般的表达能力。</p>
+<p><strong>而要当一个好的科普工作者，需要有远超学生的理解能力，教授一样的专业水平，老师一样的教学功力，艺术家一样的审美，作家一样的文笔，诗人一样的清高，科学家一样对知识的热爱，艺人一样对大众心理的把控能力，运动员一样的毅力，还要有自身的人格魅力、抗压抗打击能力。</strong></p>
+<p>科普是一项非常难的工作，比讲课教书难得多。因为它面对的不是专业人士，而是乌合之众。这导致科普工作者必须用通俗语言来解释专业知识，却又不至于过于通俗而产生误导。稍微有一点漏洞就会被抓住攻击——有问题的科普比谣言更可怕，比迷信更害人。</p>
+<p>所以，科普工作者是一个神圣的标签，这个名号比想象中要严苛得多。</p>
+]]></content>
+      <categories>
+        <category>随笔</category>
+      </categories>
+  </entry>
+  <entry>
     <title>曲线积分和曲面积分</title>
     <url>/posts/21677/</url>
     <content><![CDATA[<h2 id="曲线积分">曲线积分</h2>
@@ -1174,20 +1194,6 @@ Q=\begin{bmatrix}1&amp;\\&amp;\frac12\end{bmatrix}\begin{bmatrix}0&amp;1\\1&amp;
         <category>分析</category>
         <category>微积分</category>
         <category>多元微积分</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>科普是一项非常难的工作</title>
-    <url>/posts/20918/</url>
-    <content><![CDATA[<p>要想当一个好学生，只需要把知识学懂。</p>
-<p>要想当一个好老师，需要一些基础知识，还需要良好的性格和表达能力、心理学和教育学经验。</p>
-<p>要想当一个好教授，需要有专业知识、科研水平，只需要一般般的表达能力。</p>
-<p><strong>而要当一个好的科普工作者，需要有远超学生的理解能力，教授一样的专业水平，老师一样的教学功力，艺术家一样的审美，作家一样的文笔，诗人一样的清高，科学家一样对知识的热爱，艺人一样对大众心理的把控能力，运动员一样的毅力，还要有自身的人格魅力、抗压抗打击能力。</strong></p>
-<p>科普是一项非常难的工作，比讲课教书难得多。因为它面对的不是专业人士，而是乌合之众。这导致科普工作者必须用通俗语言来解释专业知识，却又不至于过于通俗而产生误导。稍微有一点漏洞就会被抓住攻击——有问题的科普比谣言更可怕，比迷信更害人。</p>
-<p>所以，科普工作者是一个神圣的标签，这个名号比想象中要严苛得多。</p>
-]]></content>
-      <categories>
-        <category>随笔</category>
       </categories>
   </entry>
   <entry>
