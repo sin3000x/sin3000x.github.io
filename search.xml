@@ -570,40 +570,6 @@ F(x)=f(x)\sin(x-x_0)\leq0,~\forall x\in(0,\pi).
       </categories>
   </entry>
   <entry>
-    <title>拉格朗日插值</title>
-    <url>/posts/17585/</url>
-    <content><![CDATA[<p><span class="math display">\[p(x)=\sum_{k=0}^n y_kl_k(x)\]</span></p>
-<h2 id="基函数">基函数</h2>
-<p>给定点 <span class="math inline">\(x_0,\ldots,x_n\)</span>. 问题归结于寻找<strong>基函数</strong> <span class="math display">\[l_k(x_j)=\begin{cases}
-    1\quad j=k\\
-    0\quad j\ne k
-\end{cases},\]</span> 因为插值多项式可以写成它们的线性组合.</p>
-<span id="more"></span>
-<p>根据零点分布可以设 <span class="math display">\[l_k(x)=c\prod_{j\ne k}(x-x_j),\]</span> 代入 <span class="math inline">\(x_k\)</span> 得到</p>
-<p><span class="math display">\[
-1=l_k(x_k)=c\prod_{j\ne k}(x_k-x_j),
-\]</span></p>
-<p>于是 <span class="math inline">\(c=\dfrac{1}{\prod_{j\ne k}(x_k-x_j)}\)</span>. 这就得到了 <span class="math display">\[l_k(x)=\frac{\prod_{j\ne k}(x-x_j)}{\prod_{j\ne k}(x_k-x_j)}.\]</span></p>
-<p><em>注: 这个 <span class="math inline">\(c\)</span> 实际上是 Barycentric 权重, 即后面定义的 <span class="math inline">\(\lambda_k\)</span>.</em></p>
-<p>它实际上就是一个特殊的多项式. 比如这是给定 <span class="math inline">\(x_{0}:x_4=-2:2\)</span>, 在 <span class="math inline">\(x_3\)</span> 处取 <span class="math inline">\(1\)</span> 的基函数 <span class="math display">\[l_3(x)=\frac{(x+2)(x+1)x(x-2)}{(1+2)(1+1)\cdot1\cdot(1-2)}\]</span></p>
-<p><img src="/file/l_basis.svg"></p>
-<p>定义节点函数 <span class="math display">\[l(x)=\prod_{k=0}^n(x-x_k),\]</span> 可以得到基函数 <span class="math display">\[l_j(x)={l(x)\over l'(x_j)(x-x_j)}\]</span></p>
-<h2 id="barycentric-插值公式">Barycentric 插值公式</h2>
-<p><span class="math display">\[
-p(x)={\sum_{k=0}^n{\lambda_k y_k\over x-x_k}\over\sum_{k=0}^n{\lambda_k\over x-x_k}},
-\]</span> 其中 <span class="math display">\[\lambda_k={1\over\prod_{j\ne k}(x_k-x_j)}\]</span></p>
-<h2 id="误差">误差</h2>
-<p><span class="math inline">\(f\in C^{n+1}([a,b])\)</span>时 <span class="math display">\[f(x)-p(x)={f^{(n+1)}(\xi)\over (n+1)!}l(x),\]</span> 其中 <span class="math inline">\(\xi\in(a,b)\)</span> 与 <span class="math inline">\(x\)</span> 有关.</p>
-<hr>
-<p><span class="math inline">\(f\)</span> 在包含节点的区域 <span class="math inline">\(\Omega\)</span> 上解析时</p>
-<p><span class="math display">\[p(x)={1\over 2\pi i}\int_\Gamma{f(t)(l(t)-l(x))\over l(t)(t-x)}\d x\]</span> <span class="math display">\[f(x)-p(x)={1\over 2\pi i}\int_\Gamma {l(x)\over l(t)}{f(t)\over t-x}\d t\]</span></p>
-]]></content>
-      <categories>
-        <category>数学</category>
-        <category>数值分析</category>
-      </categories>
-  </entry>
-  <entry>
     <title>最小二乘法</title>
     <url>/posts/36991/</url>
     <content><![CDATA[<p><span class="math display">\[\min\|Ax-b\|_2\]</span> 其中 <span class="math inline">\(A\in\R^{m\times n}\)</span>, <span class="math inline">\(x\in\R^n\)</span>, <span class="math inline">\(b\in\R^m.\)</span> 这个的问题的情境是 <span class="math inline">\(m\geq n\)</span>, 也就是一个过度约束的问题 (<span class="math inline">\(b\)</span> 不在 <span class="math inline">\(A\)</span> 的值域中).</p>
@@ -687,6 +653,40 @@ p(x)={\sum_{k=0}^n{\lambda_k y_k\over x-x_k}\over\sum_{k=0}^n{\lambda_k\over x-x
       </categories>
   </entry>
   <entry>
+    <title>拉格朗日插值</title>
+    <url>/posts/17585/</url>
+    <content><![CDATA[<p><span class="math display">\[p(x)=\sum_{k=0}^n y_kl_k(x)\]</span></p>
+<h2 id="基函数">基函数</h2>
+<p>给定点 <span class="math inline">\(x_0,\ldots,x_n\)</span>. 问题归结于寻找<strong>基函数</strong> <span class="math display">\[l_k(x_j)=\begin{cases}
+    1\quad j=k\\
+    0\quad j\ne k
+\end{cases},\]</span> 因为插值多项式可以写成它们的线性组合.</p>
+<span id="more"></span>
+<p>根据零点分布可以设 <span class="math display">\[l_k(x)=c\prod_{j\ne k}(x-x_j),\]</span> 代入 <span class="math inline">\(x_k\)</span> 得到</p>
+<p><span class="math display">\[
+1=l_k(x_k)=c\prod_{j\ne k}(x_k-x_j),
+\]</span></p>
+<p>于是 <span class="math inline">\(c=\dfrac{1}{\prod_{j\ne k}(x_k-x_j)}\)</span>. 这就得到了 <span class="math display">\[l_k(x)=\frac{\prod_{j\ne k}(x-x_j)}{\prod_{j\ne k}(x_k-x_j)}.\]</span></p>
+<p><em>注: 这个 <span class="math inline">\(c\)</span> 实际上是 Barycentric 权重, 即后面定义的 <span class="math inline">\(\lambda_k\)</span>.</em></p>
+<p>它实际上就是一个特殊的多项式. 比如这是给定 <span class="math inline">\(x_{0}:x_4=-2:2\)</span>, 在 <span class="math inline">\(x_3\)</span> 处取 <span class="math inline">\(1\)</span> 的基函数 <span class="math display">\[l_3(x)=\frac{(x+2)(x+1)x(x-2)}{(1+2)(1+1)\cdot1\cdot(1-2)}\]</span></p>
+<p><img src="/file/l_basis.svg"></p>
+<p>定义节点函数 <span class="math display">\[l(x)=\prod_{k=0}^n(x-x_k),\]</span> 可以得到基函数 <span class="math display">\[l_j(x)={l(x)\over l'(x_j)(x-x_j)}\]</span></p>
+<h2 id="barycentric-插值公式">Barycentric 插值公式</h2>
+<p><span class="math display">\[
+p(x)={\sum_{k=0}^n{\lambda_k y_k\over x-x_k}\over\sum_{k=0}^n{\lambda_k\over x-x_k}},
+\]</span> 其中 <span class="math display">\[\lambda_k={1\over\prod_{j\ne k}(x_k-x_j)}\]</span></p>
+<h2 id="误差">误差</h2>
+<p><span class="math inline">\(f\in C^{n+1}([a,b])\)</span>时 <span class="math display">\[f(x)-p(x)={f^{(n+1)}(\xi)\over (n+1)!}l(x),\]</span> 其中 <span class="math inline">\(\xi\in(a,b)\)</span> 与 <span class="math inline">\(x\)</span> 有关.</p>
+<hr>
+<p><span class="math inline">\(f\)</span> 在包含节点的区域 <span class="math inline">\(\Omega\)</span> 上解析时</p>
+<p><span class="math display">\[p(x)={1\over 2\pi i}\int_\Gamma{f(t)(l(t)-l(x))\over l(t)(t-x)}\d x\]</span> <span class="math display">\[f(x)-p(x)={1\over 2\pi i}\int_\Gamma {l(x)\over l(t)}{f(t)\over t-x}\d t\]</span></p>
+]]></content>
+      <categories>
+        <category>数学</category>
+        <category>数值分析</category>
+      </categories>
+  </entry>
+  <entry>
     <title>微分形式</title>
     <url>/posts/12522/</url>
     <content><![CDATA[<p>0 次形式: <span class="math inline">\(f\)</span></p>
@@ -762,6 +762,43 @@ M(h)=\sum_{k=0}^{n-1}hf\left(a+h\left(k+\frac12\right)\right)
       </categories>
   </entry>
   <entry>
+    <title>极坐标和球坐标换元</title>
+    <url>/posts/26639/</url>
+    <content><![CDATA[<p><span class="math display">\[\iint_D F(x,y)\d x\d y=\iint_\Delta F(r\cos\theta,r\sin\theta)r\d r\d\theta\]</span></p>
+<p><span class="math display">\[\iiint_D F(x,y,z)\d x\d y\d z=\iiint_\Delta F(r\sin\theta\cos\phi,r\sin\theta\sin\phi,r\cos\theta)r^2\sin\theta\d r\d \theta\d \phi\]</span></p>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Kugelkoord-lokale-Basis-s.svg/480px-Kugelkoord-lokale-Basis-s.svg.png" width="250" height="250"></p>
+]]></content>
+      <categories>
+        <category>数学</category>
+        <category>分析</category>
+        <category>微积分</category>
+        <category>多元微积分</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>留数的计算方法</title>
+    <url>/posts/51485/</url>
+    <content><![CDATA[<ol type="1">
+<li>在分式 <span class="math inline">\(f=g/h\)</span> 中, 若分母有简单零点 <span class="math inline">\(z_0\)</span> 而分子没有, 那么 <span class="math inline">\(f\)</span> 在 <span class="math inline">\(z_0\)</span> 处的留数为 <span class="math display">\[
+\frac{g(z_0)}{h'(z_0)}
+\]</span></li>
+</ol>
+<blockquote>
+<p><span class="math inline">\(\dfrac{1}{z^4-1}\)</span> 在 <span class="math inline">\(\i\)</span> 处的留数为 <span class="math display">\[{1\over \left.4z^3\right|_{z=\i}}={1\over-4\i}=\frac\i4.\]</span></p>
+</blockquote>
+<ol start="2" type="1">
+<li>假设 <span class="math inline">\(z_0\)</span> 是 <span class="math inline">\(n\)</span> 阶极点, 那么该点处的留数为 <span class="math display">\[
+ \frac{1}{(n-1)!}\left(\left(\frac{\d}{\d z}\right)^{n-1}(z-z_0)^n f(z)\right)_{z=z_0}
+\]</span></li>
+</ol>
+]]></content>
+      <categories>
+        <category>数学</category>
+        <category>分析</category>
+        <category>复变函数</category>
+      </categories>
+  </entry>
+  <entry>
     <title>数值 ODE</title>
     <url>/posts/23214/</url>
     <content><![CDATA[<p><span class="math inline">\(f_n\)</span> 是 <span class="math inline">\(f(x_n,y_n)\)</span> 的简记, <span class="math inline">\(y_n\)</span> 是 <span class="math inline">\(y(x_n)\)</span> 的估计.</p>
@@ -820,43 +857,6 @@ y_{n+1}=\sum_{k=1}^l a_ky_{n+1-k}+h\sum_{k=0}^l b_k f_{n+1-k}
       <categories>
         <category>数学</category>
         <category>数值分析</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>极坐标和球坐标换元</title>
-    <url>/posts/26639/</url>
-    <content><![CDATA[<p><span class="math display">\[\iint_D F(x,y)\d x\d y=\iint_\Delta F(r\cos\theta,r\sin\theta)r\d r\d\theta\]</span></p>
-<p><span class="math display">\[\iiint_D F(x,y,z)\d x\d y\d z=\iiint_\Delta F(r\sin\theta\cos\phi,r\sin\theta\sin\phi,r\cos\theta)r^2\sin\theta\d r\d \theta\d \phi\]</span></p>
-<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Kugelkoord-lokale-Basis-s.svg/480px-Kugelkoord-lokale-Basis-s.svg.png" width="250" height="250"></p>
-]]></content>
-      <categories>
-        <category>数学</category>
-        <category>分析</category>
-        <category>微积分</category>
-        <category>多变量微积分</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>留数的计算方法</title>
-    <url>/posts/51485/</url>
-    <content><![CDATA[<ol type="1">
-<li>在分式 <span class="math inline">\(f=g/h\)</span> 中, 若分母有简单零点 <span class="math inline">\(z_0\)</span> 而分子没有, 那么 <span class="math inline">\(f\)</span> 在 <span class="math inline">\(z_0\)</span> 处的留数为 <span class="math display">\[
-\frac{g(z_0)}{h'(z_0)}
-\]</span></li>
-</ol>
-<blockquote>
-<p><span class="math inline">\(\dfrac{1}{z^4-1}\)</span> 在 <span class="math inline">\(\i\)</span> 处的留数为 <span class="math display">\[{1\over \left.4z^3\right|_{z=\i}}={1\over-4\i}=\frac\i4.\]</span></p>
-</blockquote>
-<ol start="2" type="1">
-<li>假设 <span class="math inline">\(z_0\)</span> 是 <span class="math inline">\(n\)</span> 阶极点, 那么该点处的留数为 <span class="math display">\[
- \frac{1}{(n-1)!}\left(\left(\frac{\d}{\d z}\right)^{n-1}(z-z_0)^n f(z)\right)_{z=z_0}
-\]</span></li>
-</ol>
-]]></content>
-      <categories>
-        <category>数学</category>
-        <category>分析</category>
-        <category>复变函数</category>
       </categories>
   </entry>
   <entry>
@@ -1104,35 +1104,17 @@ y_{n+1}=\sum_{k=1}^l a_ky_{n+1-k}+h\sum_{k=0}^l b_k f_{n+1-k}
       </categories>
   </entry>
   <entry>
-    <title>实对称阵的合同对角化</title>
-    <url>/posts/5692/</url>
-    <content><![CDATA[<p>设对实对称阵 <span class="math inline">\(A\)</span> 满足 <span class="math inline">\(Q^TAQ=\Lambda\)</span>，其中 <span class="math inline">\(\Lambda\)</span> 是 <span class="math inline">\(A\)</span> 的特征值组成的对角阵，问 <span class="math inline">\(Q\)</span> 是否正交。</p>
-<p>答案是否定的。</p>
-<span id="more"></span>
-<h2 id="分析">分析</h2>
-<p>构造反例时为了方便，可以直接取 <span class="math inline">\(A\)</span> 为对角阵 <span class="math inline">\(\Lambda\)</span>，因为对角阵的对角元就是特征值。</p>
-<p>问题化为：找非正交阵 <span class="math inline">\(Q\)</span>，满足 <span class="math inline">\(Q^T\Lambda Q=\Lambda\)</span>。下面尝试把 <span class="math inline">\(\Lambda\)</span> 写成 <span class="math inline">\(Q^T\Lambda Q\)</span> 的形式： <span class="math display">\[
-\begin{align*}
-\Lambda&amp;=(\Lambda^{\frac12}\Lambda^{-\frac12})\Lambda(\Lambda^{-\frac12}\Lambda^{\frac12})\\
-&amp;=(\Lambda^{\frac12}V^T\Lambda^{-\frac12})\Lambda(\Lambda^{-\frac12}V\Lambda^{\frac12})\\
-&amp;=Q^T\Lambda Q,
-\end{align*}
-\]</span> 其中引入了正交阵 <span class="math inline">\(V\)</span>，可见 <span class="math inline">\(Q=\Lambda^{-\frac12}V\Lambda^{\frac12}\)</span> 是一种选择。什么时候 <span class="math inline">\(Q\)</span> 不正交呢？</p>
-<p>正交矩阵的一个性质是元素的绝对值都不超过1，所以我们选择合适的 <span class="math inline">\(\Lambda\)</span> 和 <span class="math inline">\(V\)</span>，使 <span class="math inline">\(Q\)</span> 中有元素绝对值大于1即可。实际上 <span class="math display">\[
-q_{ij}=v_{ij}\sqrt{\frac{\lambda_j}{\lambda_i}}，
-\]</span> <span class="math inline">\(i\)</span> 和 <span class="math inline">\(j\)</span> 不能相等，因为 <span class="math inline">\(|q_{ii}|=|v_{ii}|\leq1\)</span>。</p>
-<p>所以构造步骤为：取正交阵 <span class="math inline">\(V\)</span>，需要其中某个非对角元 <span class="math inline">\(v_{ij}\ne0\)</span>。然后取对角阵<span class="math inline">\(\Lambda\)</span>，其中 <span class="math inline">\(\lambda_j/\lambda_i\)</span> 足够大，使得 <span class="math inline">\(\left|v_{ij}\sqrt{\frac{\lambda_j}{\lambda_i}}\right|&gt;1\)</span>。再构造 <span class="math inline">\(Q=\Lambda^{-\frac12}V\Lambda^{\frac12}\)</span>，那么 <span class="math inline">\(Q\)</span> 不是正交阵，而 <span class="math inline">\(Q^T\Lambda Q=\Lambda\)</span>。</p>
-<h2 id="一个具体的例子">一个具体的例子</h2>
-<p>取 <span class="math display">\[
-V=\begin{bmatrix}0&amp;1\\1&amp;0\end{bmatrix},\ \Lambda=\begin{bmatrix}1 &amp;\\&amp; 4\end{bmatrix},
-\]</span> 那么 <span class="math display">\[
-Q=\begin{bmatrix}1&amp;\\&amp;\frac12\end{bmatrix}\begin{bmatrix}0&amp;1\\1&amp;0\end{bmatrix}\begin{bmatrix}1&amp;\\&amp;2\end{bmatrix}=\begin{bmatrix}0&amp;2\\\frac12&amp;0\end{bmatrix}\ \text{不是正交阵},
-\]</span> 而<span class="math inline">\(Q^T\Lambda Q=\Lambda\)</span>。</p>
+    <title>科普是一项非常难的工作</title>
+    <url>/posts/20918/</url>
+    <content><![CDATA[<p>要想当一个好学生，只需要把知识学懂。</p>
+<p>要想当一个好老师，需要一些基础知识，还需要良好的性格和表达能力、心理学和教育学经验。</p>
+<p>要想当一个好教授，需要有专业知识、科研水平，只需要一般般的表达能力。</p>
+<p><strong>而要当一个好的科普工作者，需要有远超学生的理解能力，教授一样的专业水平，老师一样的教学功力，艺术家一样的审美，作家一样的文笔，诗人一样的清高，科学家一样对知识的热爱，艺人一样对大众心理的把控能力，运动员一样的毅力，还要有自身的人格魅力、抗压抗打击能力。</strong></p>
+<p>科普是一项非常难的工作，比讲课教书难得多。因为它面对的不是专业人士，而是乌合之众。这导致科普工作者必须用通俗语言来解释专业知识，却又不至于过于通俗而产生误导。稍微有一点漏洞就会被抓住攻击——有问题的科普比谣言更可怕，比迷信更害人。</p>
+<p>所以，科普工作者是一个神圣的标签，这个名号比想象中要严苛得多。</p>
 ]]></content>
       <categories>
-        <category>数学</category>
-        <category>代数</category>
-        <category>线性代数</category>
+        <category>随笔</category>
       </categories>
   </entry>
   <entry>
@@ -1192,20 +1174,6 @@ Q=\begin{bmatrix}1&amp;\\&amp;\frac12\end{bmatrix}\begin{bmatrix}0&amp;1\\1&amp;
         <category>分析</category>
         <category>微积分</category>
         <category>多元微积分</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>科普是一项非常难的工作</title>
-    <url>/posts/20918/</url>
-    <content><![CDATA[<p>要想当一个好学生，只需要把知识学懂。</p>
-<p>要想当一个好老师，需要一些基础知识，还需要良好的性格和表达能力、心理学和教育学经验。</p>
-<p>要想当一个好教授，需要有专业知识、科研水平，只需要一般般的表达能力。</p>
-<p><strong>而要当一个好的科普工作者，需要有远超学生的理解能力，教授一样的专业水平，老师一样的教学功力，艺术家一样的审美，作家一样的文笔，诗人一样的清高，科学家一样对知识的热爱，艺人一样对大众心理的把控能力，运动员一样的毅力，还要有自身的人格魅力、抗压抗打击能力。</strong></p>
-<p>科普是一项非常难的工作，比讲课教书难得多。因为它面对的不是专业人士，而是乌合之众。这导致科普工作者必须用通俗语言来解释专业知识，却又不至于过于通俗而产生误导。稍微有一点漏洞就会被抓住攻击——有问题的科普比谣言更可怕，比迷信更害人。</p>
-<p>所以，科普工作者是一个神圣的标签，这个名号比想象中要严苛得多。</p>
-]]></content>
-      <categories>
-        <category>随笔</category>
       </categories>
   </entry>
   <entry>
@@ -1288,6 +1256,38 @@ M=\frac{1}{\omega} D+L, \quad N=\frac{1-\omega}{\omega} D-U
       <categories>
         <category>数学</category>
         <category>数值分析</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>实对称阵的合同对角化</title>
+    <url>/posts/5692/</url>
+    <content><![CDATA[<p>设对实对称阵 <span class="math inline">\(A\)</span> 满足 <span class="math inline">\(Q^TAQ=\Lambda\)</span>，其中 <span class="math inline">\(\Lambda\)</span> 是 <span class="math inline">\(A\)</span> 的特征值组成的对角阵，问 <span class="math inline">\(Q\)</span> 是否正交。</p>
+<p>答案是否定的。</p>
+<span id="more"></span>
+<h2 id="分析">分析</h2>
+<p>构造反例时为了方便，可以直接取 <span class="math inline">\(A\)</span> 为对角阵 <span class="math inline">\(\Lambda\)</span>，因为对角阵的对角元就是特征值。</p>
+<p>问题化为：找非正交阵 <span class="math inline">\(Q\)</span>，满足 <span class="math inline">\(Q^T\Lambda Q=\Lambda\)</span>。下面尝试把 <span class="math inline">\(\Lambda\)</span> 写成 <span class="math inline">\(Q^T\Lambda Q\)</span> 的形式： <span class="math display">\[
+\begin{align*}
+\Lambda&amp;=(\Lambda^{\frac12}\Lambda^{-\frac12})\Lambda(\Lambda^{-\frac12}\Lambda^{\frac12})\\
+&amp;=(\Lambda^{\frac12}V^T\Lambda^{-\frac12})\Lambda(\Lambda^{-\frac12}V\Lambda^{\frac12})\\
+&amp;=Q^T\Lambda Q,
+\end{align*}
+\]</span> 其中引入了正交阵 <span class="math inline">\(V\)</span>，可见 <span class="math inline">\(Q=\Lambda^{-\frac12}V\Lambda^{\frac12}\)</span> 是一种选择。什么时候 <span class="math inline">\(Q\)</span> 不正交呢？</p>
+<p>正交矩阵的一个性质是元素的绝对值都不超过1，所以我们选择合适的 <span class="math inline">\(\Lambda\)</span> 和 <span class="math inline">\(V\)</span>，使 <span class="math inline">\(Q\)</span> 中有元素绝对值大于1即可。实际上 <span class="math display">\[
+q_{ij}=v_{ij}\sqrt{\frac{\lambda_j}{\lambda_i}}，
+\]</span> <span class="math inline">\(i\)</span> 和 <span class="math inline">\(j\)</span> 不能相等，因为 <span class="math inline">\(|q_{ii}|=|v_{ii}|\leq1\)</span>。</p>
+<p>所以构造步骤为：取正交阵 <span class="math inline">\(V\)</span>，需要其中某个非对角元 <span class="math inline">\(v_{ij}\ne0\)</span>。然后取对角阵<span class="math inline">\(\Lambda\)</span>，其中 <span class="math inline">\(\lambda_j/\lambda_i\)</span> 足够大，使得 <span class="math inline">\(\left|v_{ij}\sqrt{\frac{\lambda_j}{\lambda_i}}\right|&gt;1\)</span>。再构造 <span class="math inline">\(Q=\Lambda^{-\frac12}V\Lambda^{\frac12}\)</span>，那么 <span class="math inline">\(Q\)</span> 不是正交阵，而 <span class="math inline">\(Q^T\Lambda Q=\Lambda\)</span>。</p>
+<h2 id="一个具体的例子">一个具体的例子</h2>
+<p>取 <span class="math display">\[
+V=\begin{bmatrix}0&amp;1\\1&amp;0\end{bmatrix},\ \Lambda=\begin{bmatrix}1 &amp;\\&amp; 4\end{bmatrix},
+\]</span> 那么 <span class="math display">\[
+Q=\begin{bmatrix}1&amp;\\&amp;\frac12\end{bmatrix}\begin{bmatrix}0&amp;1\\1&amp;0\end{bmatrix}\begin{bmatrix}1&amp;\\&amp;2\end{bmatrix}=\begin{bmatrix}0&amp;2\\\frac12&amp;0\end{bmatrix}\ \text{不是正交阵},
+\]</span> 而<span class="math inline">\(Q^T\Lambda Q=\Lambda\)</span>。</p>
+]]></content>
+      <categories>
+        <category>数学</category>
+        <category>代数</category>
+        <category>线性代数</category>
       </categories>
   </entry>
   <entry>
