@@ -201,35 +201,6 @@ I_n={(2n)!!\over(2n+1)!!}.
       </categories>
   </entry>
   <entry>
-    <title>$f(A)$的特征值</title>
-    <url>/posts/3877/</url>
-    <content><![CDATA[<p><strong>引理 (Schur's Lemma): 若<span class="math inline">\(A\)</span>是数域<span class="math inline">\(F\)</span>上的<span class="math inline">\(n\)</span>阶方阵, 且<span class="math inline">\(A\)</span>的特征值都在<span class="math inline">\(F\)</span>中, 那么<span class="math inline">\(A\)</span>与一个上三角阵相似.</strong></p>
-<p><strong>证明: </strong></p>
-<p>归纳法. 当<span class="math inline">\(n=1\)</span>时显然成立: 此时<span class="math inline">\(A\)</span>本身是上三角阵.</p>
-<p>假设结论对<span class="math inline">\(n-1\)</span>阶方阵成立, 且<span class="math inline">\(A\in F^{n\times n}\)</span>的特征值都在<span class="math inline">\(F\)</span>中. 记特征向量<span class="math inline">\(v_1\)</span>对应的特征值是<span class="math inline">\(\lambda_1\in F\)</span>, 并把<span class="math inline">\(v_1\)</span>扩展为<span class="math inline">\(F^n\)</span>的一组基<span class="math inline">\(\mathcal B=(v_1,\ldots,v_n)\)</span>. 在这组基下, <span class="math inline">\(A\)</span>被相似变换为矩阵<span class="math display">\[[A]_\mathcal{B}=\begin{bmatrix}\lambda_1 &amp; *\\ 0 &amp; A_1\end{bmatrix},\]</span> 其中<span class="math inline">\(A_1\in F^{(n-1)\times (n-1)}\)</span>.</p>
-<span id="more"></span>
-<p>由于相似矩阵有相同的特征多项式, 于是<span class="math display">\[\det(xI-A)=\det(xI-[A]_\mathcal B)=(x-\lambda_1)\det(xI-A_1).\]</span> 又因为<span class="math inline">\(\det(xI-A)\)</span>的根都在<span class="math inline">\(F\)</span>中, 所以<span class="math inline">\(\det(xI-A_1)\)</span>的根也都在<span class="math inline">\(F\)</span>中, 这说明<span class="math inline">\(A_1\)</span>是特征值都在<span class="math inline">\(F\)</span>中的<span class="math inline">\(n-1\)</span>阶方阵.</p>
-<p>于是根据归纳假设, 存在可逆阵<span class="math inline">\(P\in F^{(n-1)\times(n-1)}\)</span>使得<span class="math display">\[U=PA_1P^{-1}\]</span>是上三角阵. 那么只需构造可逆阵<span class="math display">\[Q=\begin{bmatrix}1&amp;0\\0&amp;P\end{bmatrix},\]</span>便有<span class="math display">\[Q[A]_\mathcal B Q^{-1}=\begin{bmatrix}1&amp;0\\0&amp;P\end{bmatrix}\begin{bmatrix}\lambda_1&amp;*\\0&amp;A_1\end{bmatrix}\begin{bmatrix}1&amp;0\\0&amp;P^{-1}\end{bmatrix}=\begin{bmatrix}\lambda_1&amp;*\\0&amp;U\end{bmatrix}\]</span>是上三角阵.</p>
-<p>这说明<span class="math inline">\(A\)</span>与一个上三角阵相似, 归纳法完成.</p>
-<p><em>注: 一个更强的结论是Jordan标准型.</em></p>
-<hr>
-<p><strong>定理: 若<span class="math inline">\(A\)</span>是数域<span class="math inline">\(F\)</span>上的<span class="math inline">\(n\)</span>阶方阵, 且<span class="math inline">\(A\)</span>的特征值都在<span class="math inline">\(F\)</span>中. <span class="math inline">\(f\)</span>是<span class="math inline">\(F\)</span>上的多项式, 那么<span class="math inline">\(a\)</span>是<span class="math inline">\(f(A)\)</span>的特征值<span class="math inline">\(\iff\)</span><span class="math inline">\(a=f(\lambda)\)</span>, 其中<span class="math inline">\(\lambda\)</span>是<span class="math inline">\(A\)</span>的特征值.</strong></p>
-<p><strong>证明:</strong></p>
-<p><span class="math inline">\((\Longleftarrow)\)</span>容易, 略.</p>
-<p><span class="math inline">\((\Longrightarrow)\)</span>根据引理, <span class="math inline">\(A\)</span>与一个上三角阵<span class="math inline">\(T\)</span>相似: <span class="math display">\[
-A=Q^{-1}TQ.
-\]</span> 由于<span class="math inline">\(f\)</span>是多项式, 那么 <span class="math display">\[
-f(A)=f(Q^{-1}TQ)=Q^{-1}f(T)Q.
-\]</span> 根据上三角阵的性质, <span class="math inline">\(f(T)\)</span>也是上三角阵, 且<span class="math inline">\(f(T)\)</span>的对角元恰好是<span class="math inline">\(f(\lambda)\)</span>, 其中<span class="math inline">\(\lambda\)</span>是<span class="math inline">\(T\)</span>的对角元.</p>
-<p>因为相似矩阵有相同的特征值, 且上三角阵的对角元与其特征值对应, 于是<span class="math inline">\(f(A)\)</span>的特征值都是<span class="math inline">\(f(\lambda)\)</span>的形式, 其中<span class="math inline">\(\lambda\)</span>是<span class="math inline">\(A\)</span>的特征值.</p>
-]]></content>
-      <categories>
-        <category>数学</category>
-        <category>代数</category>
-        <category>线性代数</category>
-      </categories>
-  </entry>
-  <entry>
     <title>分块矩阵的行列式</title>
     <url>/posts/42453/</url>
     <content><![CDATA[<h2 id="结论">结论</h2>
@@ -438,6 +409,35 @@ F(x)=f(x)\sin(x-x_0)\leq0,~\forall x\in(0,\pi).
       </categories>
   </entry>
   <entry>
+    <title>$f(A)$的特征值</title>
+    <url>/posts/3877/</url>
+    <content><![CDATA[<p><strong>引理 (Schur's Lemma): 若<span class="math inline">\(A\)</span>是数域<span class="math inline">\(F\)</span>上的<span class="math inline">\(n\)</span>阶方阵, 且<span class="math inline">\(A\)</span>的特征值都在<span class="math inline">\(F\)</span>中, 那么<span class="math inline">\(A\)</span>与一个上三角阵相似.</strong></p>
+<p><strong>证明: </strong></p>
+<p>归纳法. 当<span class="math inline">\(n=1\)</span>时显然成立: 此时<span class="math inline">\(A\)</span>本身是上三角阵.</p>
+<p>假设结论对<span class="math inline">\(n-1\)</span>阶方阵成立, 且<span class="math inline">\(A\in F^{n\times n}\)</span>的特征值都在<span class="math inline">\(F\)</span>中. 记特征向量<span class="math inline">\(v_1\)</span>对应的特征值是<span class="math inline">\(\lambda_1\in F\)</span>, 并把<span class="math inline">\(v_1\)</span>扩展为<span class="math inline">\(F^n\)</span>的一组基<span class="math inline">\(\mathcal B=(v_1,\ldots,v_n)\)</span>. 在这组基下, <span class="math inline">\(A\)</span>被相似变换为矩阵<span class="math display">\[[A]_\mathcal{B}=\begin{bmatrix}\lambda_1 &amp; *\\ 0 &amp; A_1\end{bmatrix},\]</span> 其中<span class="math inline">\(A_1\in F^{(n-1)\times (n-1)}\)</span>.</p>
+<span id="more"></span>
+<p>由于相似矩阵有相同的特征多项式, 于是<span class="math display">\[\det(xI-A)=\det(xI-[A]_\mathcal B)=(x-\lambda_1)\det(xI-A_1).\]</span> 又因为<span class="math inline">\(\det(xI-A)\)</span>的根都在<span class="math inline">\(F\)</span>中, 所以<span class="math inline">\(\det(xI-A_1)\)</span>的根也都在<span class="math inline">\(F\)</span>中, 这说明<span class="math inline">\(A_1\)</span>是特征值都在<span class="math inline">\(F\)</span>中的<span class="math inline">\(n-1\)</span>阶方阵.</p>
+<p>于是根据归纳假设, 存在可逆阵<span class="math inline">\(P\in F^{(n-1)\times(n-1)}\)</span>使得<span class="math display">\[U=PA_1P^{-1}\]</span>是上三角阵. 那么只需构造可逆阵<span class="math display">\[Q=\begin{bmatrix}1&amp;0\\0&amp;P\end{bmatrix},\]</span>便有<span class="math display">\[Q[A]_\mathcal B Q^{-1}=\begin{bmatrix}1&amp;0\\0&amp;P\end{bmatrix}\begin{bmatrix}\lambda_1&amp;*\\0&amp;A_1\end{bmatrix}\begin{bmatrix}1&amp;0\\0&amp;P^{-1}\end{bmatrix}=\begin{bmatrix}\lambda_1&amp;*\\0&amp;U\end{bmatrix}\]</span>是上三角阵.</p>
+<p>这说明<span class="math inline">\(A\)</span>与一个上三角阵相似, 归纳法完成.</p>
+<p><em>注: 一个更强的结论是Jordan标准型.</em></p>
+<hr>
+<p><strong>定理: 若<span class="math inline">\(A\)</span>是数域<span class="math inline">\(F\)</span>上的<span class="math inline">\(n\)</span>阶方阵, 且<span class="math inline">\(A\)</span>的特征值都在<span class="math inline">\(F\)</span>中. <span class="math inline">\(f\)</span>是<span class="math inline">\(F\)</span>上的多项式, 那么<span class="math inline">\(a\)</span>是<span class="math inline">\(f(A)\)</span>的特征值<span class="math inline">\(\iff\)</span><span class="math inline">\(a=f(\lambda)\)</span>, 其中<span class="math inline">\(\lambda\)</span>是<span class="math inline">\(A\)</span>的特征值.</strong></p>
+<p><strong>证明:</strong></p>
+<p><span class="math inline">\((\Longleftarrow)\)</span>容易, 略.</p>
+<p><span class="math inline">\((\Longrightarrow)\)</span>根据引理, <span class="math inline">\(A\)</span>与一个上三角阵<span class="math inline">\(T\)</span>相似: <span class="math display">\[
+A=Q^{-1}TQ.
+\]</span> 由于<span class="math inline">\(f\)</span>是多项式, 那么 <span class="math display">\[
+f(A)=f(Q^{-1}TQ)=Q^{-1}f(T)Q.
+\]</span> 根据上三角阵的性质, <span class="math inline">\(f(T)\)</span>也是上三角阵, 且<span class="math inline">\(f(T)\)</span>的对角元恰好是<span class="math inline">\(f(\lambda)\)</span>, 其中<span class="math inline">\(\lambda\)</span>是<span class="math inline">\(T\)</span>的对角元.</p>
+<p>因为相似矩阵有相同的特征值, 且上三角阵的对角元与其特征值对应, 于是<span class="math inline">\(f(A)\)</span>的特征值都是<span class="math inline">\(f(\lambda)\)</span>的形式, 其中<span class="math inline">\(\lambda\)</span>是<span class="math inline">\(A\)</span>的特征值.</p>
+]]></content>
+      <categories>
+        <category>数学</category>
+        <category>代数</category>
+        <category>线性代数</category>
+      </categories>
+  </entry>
+  <entry>
     <title>Hexo 用法记录</title>
     <url>/posts/16107/</url>
     <content><![CDATA[<p>插入图片: </p><figure class="highlight html"><table><tbody><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"/file/*"</span> <span class="attr">width</span>=<span class="string">"250"</span> <span class="attr">height</span>=<span class="string">"250"</span>/&gt;</span></span><br></pre></td></tr></tbody></table></figure><p></p>
@@ -604,6 +604,37 @@ p(x)={\sum_{k=0}^n{\lambda_k y_k\over x-x_k}\over\sum_{k=0}^n{\lambda_k\over x-x
       </categories>
   </entry>
   <entry>
+    <title>微分形式</title>
+    <url>/posts/12522/</url>
+    <content><![CDATA[<p>0 次形式: <span class="math inline">\(f\)</span></p>
+<p>1 次形式: <span class="math inline">\(P\d x+Q\d y+R\d z\)</span></p>
+<p>2 次形式: <span class="math inline">\(P\d y\land \d z+Q\d z\land \d x+R\d x\land \d y\)</span></p>
+<p>3 次形式: <span class="math inline">\(R\d x\land \d y\land \d z\)</span></p>
+<span id="more"></span>
+<h2 id="运算律">运算律</h2>
+<p><span class="math inline">\(\d x\land \d x=0\)</span> 等, <span class="math inline">\(\d x\land \d y=-\d y\land \d x\)</span> 等.</p>
+<h2 id="外微分运算">外微分运算</h2>
+<p><span class="math display">\[\d f={\partial f\over\partial x}\d x+{\partial f\over\partial y}\d y+{\partial f\over\partial z}\d z\]</span> <span class="math inline">\(w=P\d x+Q\d y+R\d z\)</span> 时</p>
+<p><span class="math display">\[\begin{aligned}
+\d w&amp;=(R_y'-Q_z')\d y\land \d z+(P_z'-R_x')\d z\land \d x+(Q_x'-P_y')\d x\land \d y\\
+&amp;=
+\begin{vmatrix}
+\d y\land \d z&amp;\d z\land \d x&amp;\d x\land \d y\\
+{\partial\over\partial x} &amp; {\partial\over\partial y} &amp; {\partial\over\partial z}\\
+P&amp;Q&amp;R
+\end{vmatrix}
+\end{aligned}\]</span></p>
+<p><span class="math inline">\(w=P\d y\land \d z+Q\d z\land \d x+R\d x\land \d y\)</span> 时</p>
+<p><span class="math display">\[\d w=(P_x'+Q_y'+R_z')\d x\land \d y\land \d z\]</span></p>
+]]></content>
+      <categories>
+        <category>数学</category>
+        <category>分析</category>
+        <category>微积分</category>
+        <category>多元微积分</category>
+      </categories>
+  </entry>
+  <entry>
     <title>最小二乘法</title>
     <url>/posts/36991/</url>
     <content><![CDATA[<p><span class="math display">\[\min\|Ax-b\|_2\]</span> 其中 <span class="math inline">\(A\in\R^{m\times n}\)</span>, <span class="math inline">\(x\in\R^n\)</span>, <span class="math inline">\(b\in\R^m.\)</span> 这个的问题的情境是 <span class="math inline">\(m\geq n\)</span>, 也就是一个过度约束的问题 (<span class="math inline">\(b\)</span> 不在 <span class="math inline">\(A\)</span> 的值域中).</p>
@@ -731,34 +762,137 @@ M(h)=\sum_{k=0}^{n-1}hf\left(a+h\left(k+\frac12\right)\right)
       </categories>
   </entry>
   <entry>
-    <title>微分形式</title>
-    <url>/posts/12522/</url>
-    <content><![CDATA[<p>0 次形式: <span class="math inline">\(f\)</span></p>
-<p>1 次形式: <span class="math inline">\(P\d x+Q\d y+R\d z\)</span></p>
-<p>2 次形式: <span class="math inline">\(P\d y\land \d z+Q\d z\land \d x+R\d x\land \d y\)</span></p>
-<p>3 次形式: <span class="math inline">\(R\d x\land \d y\land \d z\)</span></p>
-<span id="more"></span>
-<h2 id="运算律">运算律</h2>
-<p><span class="math inline">\(\d x\land \d x=0\)</span> 等, <span class="math inline">\(\d x\land \d y=-\d y\land \d x\)</span> 等.</p>
-<h2 id="外微分运算">外微分运算</h2>
-<p><span class="math display">\[\d f={\partial f\over\partial x}\d x+{\partial f\over\partial y}\d y+{\partial f\over\partial z}\d z\]</span> <span class="math inline">\(w=P\d x+Q\d y+R\d z\)</span> 时</p>
-<p><span class="math display">\[\begin{aligned}
-\d w&amp;=(R_y'-Q_z')\d y\land \d z+(P_z'-R_x')\d z\land \d x+(Q_x'-P_y')\d x\land \d y\\
-&amp;=
-\begin{vmatrix}
-\d y\land \d z&amp;\d z\land \d x&amp;\d x\land \d y\\
-{\partial\over\partial x} &amp; {\partial\over\partial y} &amp; {\partial\over\partial z}\\
-P&amp;Q&amp;R
-\end{vmatrix}
-\end{aligned}\]</span></p>
-<p><span class="math inline">\(w=P\d y\land \d z+Q\d z\land \d x+R\d x\land \d y\)</span> 时</p>
-<p><span class="math display">\[\d w=(P_x'+Q_y'+R_z')\d x\land \d y\land \d z\]</span></p>
+    <title>极坐标和球坐标换元</title>
+    <url>/posts/26639/</url>
+    <content><![CDATA[<p><span class="math display">\[\iint_D F(x,y)\d x\d y=\iint_\Delta F(r\cos\theta,r\sin\theta)r\d r\d\theta\]</span></p>
+<p><span class="math display">\[\iiint_D F(x,y,z)\d x\d y\d z=\iiint_\Delta F(r\sin\theta\cos\phi,r\sin\theta\sin\phi,r\cos\theta)r^2\sin\theta\d r\d \theta\d \phi\]</span></p>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Kugelkoord-lokale-Basis-s.svg/480px-Kugelkoord-lokale-Basis-s.svg.png" width="250" height="250"></p>
 ]]></content>
       <categories>
         <category>数学</category>
         <category>分析</category>
         <category>微积分</category>
-        <category>多元微积分</category>
+        <category>多变量微积分</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>留数的计算方法</title>
+    <url>/posts/51485/</url>
+    <content><![CDATA[<ol type="1">
+<li>在分式 <span class="math inline">\(f=g/h\)</span> 中, 若分母有简单零点 <span class="math inline">\(z_0\)</span> 而分子没有, 那么 <span class="math inline">\(f\)</span> 在 <span class="math inline">\(z_0\)</span> 处的留数为 <span class="math display">\[
+\frac{g(z_0)}{h'(z_0)}
+\]</span></li>
+</ol>
+<blockquote>
+<p><span class="math inline">\(\dfrac{1}{z^4-1}\)</span> 在 <span class="math inline">\(\i\)</span> 处的留数为 <span class="math display">\[{1\over \left.4z^3\right|_{z=\i}}={1\over-4\i}=\frac\i4.\]</span></p>
+</blockquote>
+<ol start="2" type="1">
+<li>假设 <span class="math inline">\(z_0\)</span> 是 <span class="math inline">\(n\)</span> 阶极点, 那么该点处的留数为 <span class="math display">\[
+ \frac{1}{(n-1)!}\left(\left(\frac{\d}{\d z}\right)^{n-1}(z-z_0)^n f(z)\right)_{z=z_0}
+\]</span></li>
+</ol>
+]]></content>
+      <categories>
+        <category>数学</category>
+        <category>分析</category>
+        <category>复变函数</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>三角函数</title>
+    <url>/posts/26462/</url>
+    <content><![CDATA[<h2 id="和差化积">和差化积</h2>
+<p><span class="math display">\[\sin\alpha+\sin\beta=2\sin\left(\frac{\alpha+\beta}{2}\right)\cos\left(\frac{\alpha-\beta}{2}\right)\]</span></p>
+<p><span class="math display">\[\sin\alpha-\sin\beta=2\cos\left(\frac{\alpha+\beta}{2}\right)\sin\left(\frac{\alpha-\beta}{2}\right)\]</span></p>
+<p><span class="math display">\[\cos\alpha+\cos\beta=2\cos\left(\frac{\alpha+\beta}{2}\right)\cos\left(\frac{\alpha-\beta}{2}\right)\]</span></p>
+<p><span class="math display">\[\cos\alpha-\cos\beta=-2\sin\left(\frac{\alpha+\beta}{2}\right)\sin\left(\frac{\alpha-\beta}{2}\right)\]</span></p>
+<span id="more"></span>
+<h2 id="积化和差">积化和差</h2>
+<p><span class="math display">\[\sin\alpha\cos\beta=\frac12\left(\sin(\alpha+\beta)+\sin(\alpha-\beta)\right)\]</span></p>
+<p><span class="math display">\[\cos\alpha\sin\beta=\frac12\left(\sin(\alpha+\beta)-\sin(\alpha-\beta)\right)\]</span></p>
+<p><span class="math display">\[\cos\alpha\cos\beta=\frac12\left(\cos(\alpha+\beta)+\cos(\alpha-\beta)\right)\]</span></p>
+<p><span class="math display">\[\sin\alpha\sin\beta=-\frac12\left(\cos(\alpha+\beta)-\cos(\alpha-\beta)\right)\]</span></p>
+<h2 id="倍角公式">倍角公式</h2>
+<p><span class="math display">\[\sin3x=3\sin x-4\sin^3x\]</span> <span class="math display">\[\cos 3x=-3\cos x+4\cos^3x\]</span></p>
+<h2 id="万能公式">万能公式</h2>
+<p>令 <span class="math inline">\(t=\tan\dfrac x2\)</span>, 那么 <span class="math display">\[
+\begin{gather*}
+\sin x=\frac{2t}{1+t^2},\quad
+\cos x=\frac{1-t^2}{1+t^2},\quad
+\tan x=\frac{2t}{1-t^2}
+\end{gather*}
+\]</span></p>
+]]></content>
+      <categories>
+        <category>数学</category>
+        <category>初等数学</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>常见级数</title>
+    <url>/posts/56038/</url>
+    <content><![CDATA[<p><span class="math display">\[\sum_{n=1}^\infty\frac{1}{n^2}=\frac{\pi^2}{6}\]</span> <span id="more"></span> <span class="math display">\[\sum_{n=1}^\infty\frac{(-1)^{n-1}}{n^2}=\frac{\pi^2}{12}\]</span> <span class="math display">\[\sum_{n=1}^\infty\frac{1}{(2n-1)^2}=\frac{\pi^2}{8}\]</span> <span class="math display">\[\sum_{n=1}^\infty\frac{1}{n^4}=\frac{\pi^4}{90}\]</span> <span class="math display">\[\sum_{n=1}^\infty\frac{(-1)^{n-1}}{n^4}=\frac{7\pi^4}{720}\]</span> <span class="math display">\[1-\frac13+\frac15-\frac17+\cdots=\frac\pi4\]</span> <span class="math display">\[1-\frac12+\frac13-\frac14+\cdots=\ln2\]</span></p>
+]]></content>
+      <categories>
+        <category>数学</category>
+        <category>分析</category>
+        <category>级数</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>双曲函数</title>
+    <url>/posts/12845/</url>
+    <content><![CDATA[<h2 id="定义">定义</h2>
+<p><span class="math display">\[\sinh(x)=\frac{\e^x-\e^{-x}}{2}\]</span></p>
+<p><span class="math display">\[\cosh(x)=\frac{\e^x+\e^{-x}}{2}\]</span></p>
+<p><span class="math display">\[\tanh(x)=\frac{\e^x-\e^{-x}}{\e^x+\e^{-x}},\ \coth(x)=\frac{1}{\tanh(x)}\]</span></p>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Sinh_cosh_tanh.svg/440px-Sinh_cosh_tanh.svg.png" width="300" height="300"></p>
+<span id="more"></span>
+<h2 id="复变量">复变量</h2>
+<p><span class="math display">\[\sin(\i x)=\i\sinh(x),\ \sinh(\i x)=\i\sin(x)\]</span></p>
+<p><span class="math display">\[\cos(\i x)=\cosh(x),\ \cosh(\i x)=\cos(x)\]</span></p>
+<h2 id="和角公式">和角公式</h2>
+<p><span class="math display">\[\sinh(x\pm y)=\sinh(x)\cosh(y)\pm\cosh(x)\sinh(y)\]</span></p>
+<p><span class="math display">\[\cosh(x\pm y)=\cosh(x)\cosh(y)\pm\sinh(x)\sinh(y)\]</span></p>
+<p><span class="math display">\[
+\tanh(x+y)={\tanh x+\tanh y\over 1+\tanh x\tanh y}
+\]</span></p>
+<p><span class="math display">\[
+\tanh(x-y)={\tanh x-\tanh y\over 1-\tanh x\tanh y}
+\]</span></p>
+<h2 id="倍角公式">倍角公式</h2>
+<p><span class="math display">\[\cosh 2x=\sinh^2x+\cosh^2x=2\sinh^2x+1=2\cosh^2x-1\]</span></p>
+<p><span class="math display">\[\sinh 2x=2\sinh x\cosh x\]</span></p>
+<p><span class="math display">\[\tanh 2x={2\tanh x\over 1+\tanh^2x}\]</span></p>
+<h2 id="逆函数">逆函数</h2>
+<p><span class="math display">\[\sinh^{-1}(x)=\ln\left(x+\sqrt{x^2+1}\right)\]</span></p>
+<p><span class="math display">\[\cosh^{-1}(x)=\ln\left(x+\sqrt{x^2-1}\right)\]</span></p>
+<p><span class="math display">\[\tanh^{-1}(x)=\frac12\ln\left(\frac{1+x}{1-x}\right)\]</span></p>
+<h2 id="导数">导数</h2>
+<p><span class="math display">\[\begin{gathered}
+(\sinh x)'=\cosh x\\
+(\cosh x)'=\sinh x\\
+(\tanh x)'=\frac{1}{\cosh^2 x}\\
+\left(\sinh^{-1}x\right)'=\frac{1}{\sqrt{x^2+1}}\\
+\left(\cosh^{-1}x\right)'=\frac{1}{\sqrt{x^2-1}}\\
+\left(\tanh^{-1}x\right)'=\frac{1}{1-x^2}\\
+\end{gathered}\]</span></p>
+<h2 id="积分">积分</h2>
+<p><span class="math display">\[
+\begin{gathered}
+\int\sinh(ax)\d x=\frac1a\cosh(ax)+C\\
+\int\cosh(ax)\d x=\frac1a\sinh(ax)+C\\
+\int\tanh(ax)\d x=\frac{1}{a}\ln(\cosh(ax))+C\\
+\int\tan(ax)\d x=-\frac1a\ln|\cos(ax)|+C
+\end{gathered}
+\]</span></p>
+<h2 id="泰勒展开">泰勒展开</h2>
+<p><span class="math display">\[\sinh(x)=x+\frac{x^3}{3!}+\frac{x^5}{5!}+\frac{x^7}{7!}+\cdots\]</span></p>
+<p><span class="math display">\[\cosh(x)=1+\frac{x^2}{2!}+\frac{x^4}{4!}+\frac{x^6}{6!}+\cdots\]</span></p>
+]]></content>
+      <categories>
+        <category>数学</category>
+        <category>初等数学</category>
       </categories>
   </entry>
   <entry>
@@ -820,113 +954,6 @@ y_{n+1}=\sum_{k=1}^l a_ky_{n+1-k}+h\sum_{k=0}^l b_k f_{n+1-k}
       <categories>
         <category>数学</category>
         <category>数值分析</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>极坐标和球坐标换元</title>
-    <url>/posts/26639/</url>
-    <content><![CDATA[<p><span class="math display">\[\iint_D F(x,y)\d x\d y=\iint_\Delta F(r\cos\theta,r\sin\theta)r\d r\d\theta\]</span></p>
-<p><span class="math display">\[\iiint_D F(x,y,z)\d x\d y\d z=\iiint_\Delta F(r\sin\theta\cos\phi,r\sin\theta\sin\phi,r\cos\theta)r^2\sin\theta\d r\d \theta\d \phi\]</span></p>
-<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Kugelkoord-lokale-Basis-s.svg/480px-Kugelkoord-lokale-Basis-s.svg.png" width="250" height="250"></p>
-]]></content>
-      <categories>
-        <category>数学</category>
-        <category>分析</category>
-        <category>微积分</category>
-        <category>多变量微积分</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>常见级数</title>
-    <url>/posts/56038/</url>
-    <content><![CDATA[<p><span class="math display">\[\sum_{n=1}^\infty\frac{1}{n^2}=\frac{\pi^2}{6}\]</span> <span id="more"></span> <span class="math display">\[\sum_{n=1}^\infty\frac{(-1)^{n-1}}{n^2}=\frac{\pi^2}{12}\]</span> <span class="math display">\[\sum_{n=1}^\infty\frac{1}{(2n-1)^2}=\frac{\pi^2}{8}\]</span> <span class="math display">\[\sum_{n=1}^\infty\frac{1}{n^4}=\frac{\pi^4}{90}\]</span> <span class="math display">\[\sum_{n=1}^\infty\frac{(-1)^{n-1}}{n^4}=\frac{7\pi^4}{720}\]</span> <span class="math display">\[1-\frac13+\frac15-\frac17+\cdots=\frac\pi4\]</span> <span class="math display">\[1-\frac12+\frac13-\frac14+\cdots=\ln2\]</span></p>
-]]></content>
-      <categories>
-        <category>数学</category>
-        <category>分析</category>
-        <category>级数</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>留数的计算方法</title>
-    <url>/posts/51485/</url>
-    <content><![CDATA[<ol type="1">
-<li>在分式 <span class="math inline">\(f=g/h\)</span> 中, 若分母有简单零点 <span class="math inline">\(z_0\)</span> 而分子没有, 那么 <span class="math inline">\(f\)</span> 在 <span class="math inline">\(z_0\)</span> 处的留数为 <span class="math display">\[
-\frac{g(z_0)}{h'(z_0)}
-\]</span></li>
-</ol>
-<blockquote>
-<p><span class="math inline">\(\dfrac{1}{z^4-1}\)</span> 在 <span class="math inline">\(\i\)</span> 处的留数为 <span class="math display">\[{1\over \left.4z^3\right|_{z=\i}}={1\over-4\i}=\frac\i4.\]</span></p>
-</blockquote>
-<ol start="2" type="1">
-<li>假设 <span class="math inline">\(z_0\)</span> 是 <span class="math inline">\(n\)</span> 阶极点, 那么该点处的留数为 <span class="math display">\[
- \frac{1}{(n-1)!}\left(\left(\frac{\d}{\d z}\right)^{n-1}(z-z_0)^n f(z)\right)_{z=z_0}
-\]</span></li>
-</ol>
-]]></content>
-      <categories>
-        <category>数学</category>
-        <category>分析</category>
-        <category>复变函数</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>三角函数</title>
-    <url>/posts/26462/</url>
-    <content><![CDATA[<h2 id="和差化积">和差化积</h2>
-<p><span class="math display">\[\sin\alpha+\sin\beta=2\sin\left(\frac{\alpha+\beta}{2}\right)\cos\left(\frac{\alpha-\beta}{2}\right)\]</span></p>
-<p><span class="math display">\[\sin\alpha-\sin\beta=2\cos\left(\frac{\alpha+\beta}{2}\right)\sin\left(\frac{\alpha-\beta}{2}\right)\]</span></p>
-<p><span class="math display">\[\cos\alpha+\cos\beta=2\cos\left(\frac{\alpha+\beta}{2}\right)\cos\left(\frac{\alpha-\beta}{2}\right)\]</span></p>
-<p><span class="math display">\[\cos\alpha-\cos\beta=-2\sin\left(\frac{\alpha+\beta}{2}\right)\sin\left(\frac{\alpha-\beta}{2}\right)\]</span></p>
-<span id="more"></span>
-<h2 id="积化和差">积化和差</h2>
-<p><span class="math display">\[\sin\alpha\cos\beta=\frac12\left(\sin(\alpha+\beta)+\sin(\alpha-\beta)\right)\]</span></p>
-<p><span class="math display">\[\cos\alpha\sin\beta=\frac12\left(\sin(\alpha+\beta)-\sin(\alpha-\beta)\right)\]</span></p>
-<p><span class="math display">\[\cos\alpha\cos\beta=\frac12\left(\cos(\alpha+\beta)+\cos(\alpha-\beta)\right)\]</span></p>
-<p><span class="math display">\[\sin\alpha\sin\beta=-\frac12\left(\cos(\alpha+\beta)-\cos(\alpha-\beta)\right)\]</span></p>
-<h2 id="倍角公式">倍角公式</h2>
-<p><span class="math display">\[\sin3x=3\sin x-4\sin^3x\]</span> <span class="math display">\[\cos 3x=-3\cos x+4\cos^3x\]</span></p>
-<h2 id="万能公式">万能公式</h2>
-<p>令 <span class="math inline">\(t=\tan\dfrac x2\)</span>, 那么 <span class="math display">\[
-\begin{gather*}
-\sin x=\frac{2t}{1+t^2},\quad
-\cos x=\frac{1-t^2}{1+t^2},\quad
-\tan x=\frac{2t}{1-t^2}
-\end{gather*}
-\]</span></p>
-]]></content>
-      <categories>
-        <category>数学</category>
-        <category>初等数学</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>为什么用开覆盖定义紧集</title>
-    <url>/posts/47720/</url>
-    <content><![CDATA[<p>【定义】一个集合是紧集的意思是，它的任何一个开覆盖都有有限子覆盖。</p>
-<p>【有限覆盖定理】这是说欧式空间中的有界闭集（一维情况下是<span class="math inline">\([a,b]\)</span>）都是紧集。</p>
-<p>【Heine-Borel定理】上面的逆命题，欧式空间中的紧集都是有界闭集。于是就说明了欧式空间中的紧集<span class="math inline">\(\iff\)</span>有界闭集。</p>
-<span id="more"></span>
-<h2 id="为什么用开覆盖而不是闭覆盖呢">为什么用开覆盖而不是闭覆盖呢？</h2>
-<p>简单地思考一下容易发现，如果用闭覆盖定义紧集一点也不好玩：</p>
-<p>我们知道单点集<span class="math inline">\(\{a\}\)</span>是闭集（更严谨地，在<span class="math inline">\(T_1\)</span>空间中），那么把集合<span class="math inline">\(A\)</span>中所有元素拿出来，这些单点集的总体构成一个闭覆盖。比如说对于区间<span class="math inline">\([0,1]\)</span>，这种闭覆盖就是 <span class="math display">\[
-\bigcup_{x\in[0,1]}\{x\}
-\]</span> 它有有限子覆盖吗？</p>
-<p>这个闭覆盖的有限成员都是有限个单点集<span class="math inline">\(\{x_1\},\ldots,\{x_n\}\)</span>，明显当<span class="math inline">\(A\)</span>是无限集的时候无法覆盖<span class="math inline">\(A\)</span>。所以按这种方式定义的紧集就是有限集，本质上没有提出新概念。</p>
-<h2 id="用开覆盖定义的紧集有什么用">用开覆盖定义的紧集有什么用？</h2>
-<p>在某种“良好的”集合上：</p>
-<ul>
-<li>连续函数总是一致连续的</li>
-<li>连续函数总是有界的</li>
-<li>连续函数总能取到最值</li>
-<li>任何数列都有收敛子列</li>
-</ul>
-<p>数学家花了一番功夫才发现，这种“良好的”集合其实就是紧集。紧集的定义也有很多等价刻画，比如在欧式空间中就可以简单地定义为有界闭集，在更一般的度量空间中可以定义为序列紧集等等。但是，这些好理解的定义也有局限性，它们只在某些结构良好的空间中成立。</p>
-<p>而在用开覆盖来定义的紧集，虽然抽象，但可以推广到一般的拓扑空间，成了现在使用最广的定义。</p>
-]]></content>
-      <categories>
-        <category>数学</category>
-        <category>几何</category>
       </categories>
   </entry>
   <entry>
@@ -1020,6 +1047,35 @@ y_{n+1}=\sum_{k=1}^l a_ky_{n+1-k}+h\sum_{k=0}^l b_k f_{n+1-k}
       </categories>
   </entry>
   <entry>
+    <title>为什么用开覆盖定义紧集</title>
+    <url>/posts/47720/</url>
+    <content><![CDATA[<p>【定义】一个集合是紧集的意思是，它的任何一个开覆盖都有有限子覆盖。</p>
+<p>【有限覆盖定理】这是说欧式空间中的有界闭集（一维情况下是<span class="math inline">\([a,b]\)</span>）都是紧集。</p>
+<p>【Heine-Borel定理】上面的逆命题，欧式空间中的紧集都是有界闭集。于是就说明了欧式空间中的紧集<span class="math inline">\(\iff\)</span>有界闭集。</p>
+<span id="more"></span>
+<h2 id="为什么用开覆盖而不是闭覆盖呢">为什么用开覆盖而不是闭覆盖呢？</h2>
+<p>简单地思考一下容易发现，如果用闭覆盖定义紧集一点也不好玩：</p>
+<p>我们知道单点集<span class="math inline">\(\{a\}\)</span>是闭集（更严谨地，在<span class="math inline">\(T_1\)</span>空间中），那么把集合<span class="math inline">\(A\)</span>中所有元素拿出来，这些单点集的总体构成一个闭覆盖。比如说对于区间<span class="math inline">\([0,1]\)</span>，这种闭覆盖就是 <span class="math display">\[
+\bigcup_{x\in[0,1]}\{x\}
+\]</span> 它有有限子覆盖吗？</p>
+<p>这个闭覆盖的有限成员都是有限个单点集<span class="math inline">\(\{x_1\},\ldots,\{x_n\}\)</span>，明显当<span class="math inline">\(A\)</span>是无限集的时候无法覆盖<span class="math inline">\(A\)</span>。所以按这种方式定义的紧集就是有限集，本质上没有提出新概念。</p>
+<h2 id="用开覆盖定义的紧集有什么用">用开覆盖定义的紧集有什么用？</h2>
+<p>在某种“良好的”集合上：</p>
+<ul>
+<li>连续函数总是一致连续的</li>
+<li>连续函数总是有界的</li>
+<li>连续函数总能取到最值</li>
+<li>任何数列都有收敛子列</li>
+</ul>
+<p>数学家花了一番功夫才发现，这种“良好的”集合其实就是紧集。紧集的定义也有很多等价刻画，比如在欧式空间中就可以简单地定义为有界闭集，在更一般的度量空间中可以定义为序列紧集等等。但是，这些好理解的定义也有局限性，它们只在某些结构良好的空间中成立。</p>
+<p>而在用开覆盖来定义的紧集，虽然抽象，但可以推广到一般的拓扑空间，成了现在使用最广的定义。</p>
+]]></content>
+      <categories>
+        <category>数学</category>
+        <category>几何</category>
+      </categories>
+  </entry>
+  <entry>
     <title>利用积分下求导计算无穷积分</title>
     <url>/posts/30510/</url>
     <content><![CDATA[<p>计算 <span class="math display">\[
@@ -1033,62 +1089,6 @@ y_{n+1}=\sum_{k=1}^l a_ky_{n+1-k}+h\sum_{k=0}^l b_k f_{n+1-k}
         <category>分析</category>
         <category>微积分</category>
         <category>单变量微积分</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>双曲函数</title>
-    <url>/posts/12845/</url>
-    <content><![CDATA[<h2 id="定义">定义</h2>
-<p><span class="math display">\[\sinh(x)=\frac{\e^x-\e^{-x}}{2}\]</span></p>
-<p><span class="math display">\[\cosh(x)=\frac{\e^x+\e^{-x}}{2}\]</span></p>
-<p><span class="math display">\[\tanh(x)=\frac{\e^x-\e^{-x}}{\e^x+\e^{-x}},\ \coth(x)=\frac{1}{\tanh(x)}\]</span></p>
-<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Sinh_cosh_tanh.svg/440px-Sinh_cosh_tanh.svg.png" width="300" height="300"></p>
-<span id="more"></span>
-<h2 id="复变量">复变量</h2>
-<p><span class="math display">\[\sin(\i x)=\i\sinh(x),\ \sinh(\i x)=\i\sin(x)\]</span></p>
-<p><span class="math display">\[\cos(\i x)=\cosh(x),\ \cosh(\i x)=\cos(x)\]</span></p>
-<h2 id="和角公式">和角公式</h2>
-<p><span class="math display">\[\sinh(x\pm y)=\sinh(x)\cosh(y)\pm\cosh(x)\sinh(y)\]</span></p>
-<p><span class="math display">\[\cosh(x\pm y)=\cosh(x)\cosh(y)\pm\sinh(x)\sinh(y)\]</span></p>
-<p><span class="math display">\[
-\tanh(x+y)={\tanh x+\tanh y\over 1+\tanh x\tanh y}
-\]</span></p>
-<p><span class="math display">\[
-\tanh(x-y)={\tanh x-\tanh y\over 1-\tanh x\tanh y}
-\]</span></p>
-<h2 id="倍角公式">倍角公式</h2>
-<p><span class="math display">\[\cosh 2x=\sinh^2x+\cosh^2x=2\sinh^2x+1=2\cosh^2x-1\]</span></p>
-<p><span class="math display">\[\sinh 2x=2\sinh x\cosh x\]</span></p>
-<p><span class="math display">\[\tanh 2x={2\tanh x\over 1+\tanh^2x}\]</span></p>
-<h2 id="逆函数">逆函数</h2>
-<p><span class="math display">\[\sinh^{-1}(x)=\ln\left(x+\sqrt{x^2+1}\right)\]</span></p>
-<p><span class="math display">\[\cosh^{-1}(x)=\ln\left(x+\sqrt{x^2-1}\right)\]</span></p>
-<p><span class="math display">\[\tanh^{-1}(x)=\frac12\ln\left(\frac{1+x}{1-x}\right)\]</span></p>
-<h2 id="导数">导数</h2>
-<p><span class="math display">\[\begin{gathered}
-(\sinh x)'=\cosh x\\
-(\cosh x)'=\sinh x\\
-(\tanh x)'=\frac{1}{\cosh^2 x}\\
-\left(\sinh^{-1}x\right)'=\frac{1}{\sqrt{x^2+1}}\\
-\left(\cosh^{-1}x\right)'=\frac{1}{\sqrt{x^2-1}}\\
-\left(\tanh^{-1}x\right)'=\frac{1}{1-x^2}\\
-\end{gathered}\]</span></p>
-<h2 id="积分">积分</h2>
-<p><span class="math display">\[
-\begin{gathered}
-\int\sinh(ax)\d x=\frac1a\cosh(ax)+C\\
-\int\cosh(ax)\d x=\frac1a\sinh(ax)+C\\
-\int\tanh(ax)\d x=\frac{1}{a}\ln(\cosh(ax))+C\\
-\int\tan(ax)\d x=-\frac1a\ln|\cos(ax)|+C
-\end{gathered}
-\]</span></p>
-<h2 id="泰勒展开">泰勒展开</h2>
-<p><span class="math display">\[\sinh(x)=x+\frac{x^3}{3!}+\frac{x^5}{5!}+\frac{x^7}{7!}+\cdots\]</span></p>
-<p><span class="math display">\[\cosh(x)=1+\frac{x^2}{2!}+\frac{x^4}{4!}+\frac{x^6}{6!}+\cdots\]</span></p>
-]]></content>
-      <categories>
-        <category>数学</category>
-        <category>初等数学</category>
       </categories>
   </entry>
   <entry>
@@ -1121,6 +1121,18 @@ Q=\begin{bmatrix}1&amp;\\&amp;\frac12\end{bmatrix}\begin{bmatrix}0&amp;1\\1&amp;
         <category>数学</category>
         <category>代数</category>
         <category>线性代数</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>回不去的夏天</title>
+    <url>/posts/59205/</url>
+    <content><![CDATA[<p>又是一年高考季. 清早起来, 大把的金光倾泻到身上, 让时间一下子变慢了.</p>
+<p>让我又想起了那个夏天, 那个完美的夏天, 那个打开教室后窗, 就有带着清香的槐花瓣飘落满地的五月. 窗边总有少年在惬意的清风中望着外面的世界, 而他身边总有熟悉的体温.</p>
+<p>我嗅到了阳光的味道, 那样浓烈而又炽热. 它带着莽撞, 带着悸动, 带着热血, 也带着青涩与迷茫.</p>
+<p>那是天空永远清朗的夏天, 有着池鱼, 鸣鸟, 蝉噪, 音乐, 冷饮的夏天; 有着汗水, 欢笑, 泪眼, 羁绊, 思念的夏天.</p>
+]]></content>
+      <categories>
+        <category>随笔</category>
       </categories>
   </entry>
   <entry>
