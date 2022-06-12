@@ -15,17 +15,17 @@ date: 2022-01-08 14:20:11
 ### 2. 一阶齐次线性 $y'+p(x)y=0$
 
 $$
-y=Ce^{-\int p(x)dx}
+y=Ce^{-\int p(x)\d x}
 $$
 
 ### 3. 一阶非齐次线性 $y'+p(x)y=q(x)$
-- $y=e^{-\int p(x)dx}\left(C+\int q(x)e^{\int p(x)}dx\right)$
+- $y=e^{-\int p(x)\d x}\left(C+\int q(x)e^{\int p(x)\d x}\d x\right)$
 
-- 取积分因子 $\mu(x)=e^{\int p(x)dx}$.
+- 取积分因子 $\mu(x)=e^{\int p(x)\d x}$.
 
 > 🌰    $y'-2y/x=0$.
 > $$\begin{aligned}
-    &\mu(x)=e^{\int-\frac2x dx}=e^{-2\ln x}=\frac{1}{x^2}\\
+    &\mu(x)=e^{\int-\frac2x \d x}=e^{-2\ln x}=\frac{1}{x^2}\\
     &\implies{1\over x^2}y'-{2\over x^3}y=0\\
     &\implies\left({y\over x^2}\right)'=0\\
     &\implies y=Cx^2

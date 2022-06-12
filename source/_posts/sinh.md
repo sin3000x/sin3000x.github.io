@@ -42,7 +42,7 @@ $$
 ## 倍角公式
 $$\cosh 2x=\sinh^2x+\cosh^2x=2\sinh^2x+1=2\cosh^2x-1$$
 
-$$\sinh 2x=\sinh^2x+\cosh^2x=2\sinh x\cosh x$$
+$$\sinh 2x=2\sinh x\cosh x$$
 
 $$\tanh 2x={2\tanh x\over 1+\tanh^2x}$$
 

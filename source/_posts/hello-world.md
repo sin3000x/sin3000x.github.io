@@ -6,11 +6,16 @@ categories:
 - hexo
 ---
 插入图片:
-```
+```html
 <img src="/file/*" width="250" height="250"/>
 ```
 
 嵌入 pdf:
 ```
 {% pdf /file/*.pdf %}
+```
+
+链接文章:
+```
+{% post_link * 说明 %}
 ```
