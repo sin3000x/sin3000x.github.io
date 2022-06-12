@@ -1,6 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>2017总结</title>
+    <url>/posts/47552/</url>
+    <content><![CDATA[<ul>
+<li>情绪调整。</li>
+<li>经历病痛与死亡的威胁，才知道身体健康的重要性。</li>
+<li>努力过，才有资格说这方面没天赋。</li>
+<li>上天不一定是公平的。别人考前看一会书，比你准备一个礼拜成绩还要高。</li>
+<li>学习方法很重要。</li>
+<li>该表现的时候不要胆怯。该领导的时候不要退避。</li>
+<li>知道了什么样的人惹人讨厌，什么样的人讨人喜欢。</li>
+</ul>
+]]></content>
+      <categories>
+        <category>随笔</category>
+      </categories>
+  </entry>
+  <entry>
     <title>控制收敛定理 (DCT)</title>
     <url>/posts/34980/</url>
     <content><![CDATA[<p><span class="math display">\[\lim_{n\to\infty}\int_S f_n \,d\mu=\int_S f\,d\mu\]</span></p>
@@ -34,36 +51,6 @@ f\colon[-L,L]\to\mathbb{R}
         <category>数学</category>
         <category>分析</category>
         <category>级数</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>常见的ODE解法</title>
-    <url>/posts/65228/</url>
-    <content><![CDATA[<h3 id="可分离变量-ypyqx">1. 可分离变量 <span class="math inline">\(y'=p(y)q(x)\)</span></h3>
-<p>分离变量后两边积分.</p>
-<h3 id="一阶齐次线性-ypxy0">2. 一阶齐次线性 <span class="math inline">\(y'+p(x)y=0\)</span></h3>
-<p><span class="math display">\[
-y=Ce^{-\int p(x)\d x}
-\]</span></p>
-<h3 id="一阶非齐次线性-ypxyqx">3. 一阶非齐次线性 <span class="math inline">\(y'+p(x)y=q(x)\)</span></h3>
-<ul>
-<li><p><span class="math inline">\(y=e^{-\int p(x)\d x}\left(C+\int q(x)e^{\int p(x)\d x}\d x\right)\)</span></p></li>
-<li><p>取积分因子 <span class="math inline">\(\mu(x)=e^{\int p(x)\d x}\)</span>.</p></li>
-</ul>
-<blockquote>
-<p>🌰 <span class="math inline">\(y'-2y/x=0\)</span>. <span class="math display">\[\begin{aligned}
-&amp;\mu(x)=e^{\int-\frac2x \d x}=e^{-2\ln x}=\frac{1}{x^2}\\
-&amp;\implies{1\over x^2}y'-{2\over x^3}y=0\\
-&amp;\implies\left({y\over x^2}\right)'=0\\
-&amp;\implies y=Cx^2
-\end{aligned}
-\]</span></p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>数学</category>
-        <category>分析</category>
-        <category>微分方程</category>
       </categories>
   </entry>
   <entry>
@@ -134,6 +121,36 @@ y=Ce^{-\int p(x)\d x}
       <categories>
         <category>数学</category>
         <category>逻辑</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>常见的ODE解法</title>
+    <url>/posts/65228/</url>
+    <content><![CDATA[<h3 id="可分离变量-ypyqx">1. 可分离变量 <span class="math inline">\(y'=p(y)q(x)\)</span></h3>
+<p>分离变量后两边积分.</p>
+<h3 id="一阶齐次线性-ypxy0">2. 一阶齐次线性 <span class="math inline">\(y'+p(x)y=0\)</span></h3>
+<p><span class="math display">\[
+y=Ce^{-\int p(x)\d x}
+\]</span></p>
+<h3 id="一阶非齐次线性-ypxyqx">3. 一阶非齐次线性 <span class="math inline">\(y'+p(x)y=q(x)\)</span></h3>
+<ul>
+<li><p><span class="math inline">\(y=e^{-\int p(x)\d x}\left(C+\int q(x)e^{\int p(x)\d x}\d x\right)\)</span></p></li>
+<li><p>取积分因子 <span class="math inline">\(\mu(x)=e^{\int p(x)\d x}\)</span>.</p></li>
+</ul>
+<blockquote>
+<p>🌰 <span class="math inline">\(y'-2y/x=0\)</span>. <span class="math display">\[\begin{aligned}
+&amp;\mu(x)=e^{\int-\frac2x \d x}=e^{-2\ln x}=\frac{1}{x^2}\\
+&amp;\implies{1\over x^2}y'-{2\over x^3}y=0\\
+&amp;\implies\left({y\over x^2}\right)'=0\\
+&amp;\implies y=Cx^2
+\end{aligned}
+\]</span></p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>数学</category>
+        <category>分析</category>
+        <category>微分方程</category>
       </categories>
   </entry>
   <entry>
@@ -570,6 +587,71 @@ F(x)=f(x)\sin(x-x_0)\leq0,~\forall x\in(0,\pi).
       </categories>
   </entry>
   <entry>
+    <title>拉格朗日插值</title>
+    <url>/posts/17585/</url>
+    <content><![CDATA[<p><span class="math display">\[p(x)=\sum_{k=0}^n y_kl_k(x)\]</span></p>
+<h2 id="基函数">基函数</h2>
+<p>给定点 <span class="math inline">\(x_0,\ldots,x_n\)</span>. 问题归结于寻找<strong>基函数</strong> <span class="math display">\[l_k(x_j)=\begin{cases}
+    1\quad j=k\\
+    0\quad j\ne k
+\end{cases},\]</span> 因为插值多项式可以写成它们的线性组合.</p>
+<span id="more"></span>
+<p>根据零点分布可以设 <span class="math display">\[l_k(x)=c\prod_{j\ne k}(x-x_j),\]</span> 代入 <span class="math inline">\(x_k\)</span> 得到</p>
+<p><span class="math display">\[
+1=l_k(x_k)=c\prod_{j\ne k}(x_k-x_j),
+\]</span></p>
+<p>于是 <span class="math inline">\(c=\dfrac{1}{\prod_{j\ne k}(x_k-x_j)}\)</span>. 这就得到了 <span class="math display">\[l_k(x)=\frac{\prod_{j\ne k}(x-x_j)}{\prod_{j\ne k}(x_k-x_j)}.\]</span></p>
+<p><em>注: 这个 <span class="math inline">\(c\)</span> 实际上是 Barycentric 权重, 即后面定义的 <span class="math inline">\(\lambda_k\)</span>.</em></p>
+<p>它实际上就是一个特殊的多项式. 比如这是给定 <span class="math inline">\(x_{0}:x_4=-2:2\)</span>, 在 <span class="math inline">\(x_3\)</span> 处取 <span class="math inline">\(1\)</span> 的基函数 <span class="math display">\[l_3(x)=\frac{(x+2)(x+1)x(x-2)}{(1+2)(1+1)\cdot1\cdot(1-2)}\]</span></p>
+<p><img src="/file/l_basis.svg"></p>
+<p>定义节点函数 <span class="math display">\[l(x)=\prod_{k=0}^n(x-x_k),\]</span> 可以得到基函数 <span class="math display">\[l_j(x)={l(x)\over l'(x_j)(x-x_j)}\]</span></p>
+<h2 id="barycentric-插值公式">Barycentric 插值公式</h2>
+<p><span class="math display">\[
+p(x)={\sum_{k=0}^n{\lambda_k y_k\over x-x_k}\over\sum_{k=0}^n{\lambda_k\over x-x_k}},
+\]</span> 其中 <span class="math display">\[\lambda_k={1\over\prod_{j\ne k}(x_k-x_j)}\]</span></p>
+<h2 id="误差">误差</h2>
+<p><span class="math inline">\(f\in C^{n+1}([a,b])\)</span>时 <span class="math display">\[f(x)-p(x)={f^{(n+1)}(\xi)\over (n+1)!}l(x),\]</span> 其中 <span class="math inline">\(\xi\in(a,b)\)</span> 与 <span class="math inline">\(x\)</span> 有关.</p>
+<hr>
+<p><span class="math inline">\(f\)</span> 在包含节点的区域 <span class="math inline">\(\Omega\)</span> 上解析时</p>
+<p><span class="math display">\[p(x)={1\over 2\pi i}\int_\Gamma{f(t)(l(t)-l(x))\over l(t)(t-x)}\d x\]</span> <span class="math display">\[f(x)-p(x)={1\over 2\pi i}\int_\Gamma {l(x)\over l(t)}{f(t)\over t-x}\d t\]</span></p>
+]]></content>
+      <categories>
+        <category>数学</category>
+        <category>数值分析</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>微分形式</title>
+    <url>/posts/12522/</url>
+    <content><![CDATA[<p>0 次形式: <span class="math inline">\(f\)</span></p>
+<p>1 次形式: <span class="math inline">\(P\d x+Q\d y+R\d z\)</span></p>
+<p>2 次形式: <span class="math inline">\(P\d y\land \d z+Q\d z\land \d x+R\d x\land \d y\)</span></p>
+<p>3 次形式: <span class="math inline">\(R\d x\land \d y\land \d z\)</span></p>
+<span id="more"></span>
+<h2 id="运算律">运算律</h2>
+<p><span class="math inline">\(\d x\land \d x=0\)</span> 等, <span class="math inline">\(\d x\land \d y=-\d y\land \d x\)</span> 等.</p>
+<h2 id="外微分运算">外微分运算</h2>
+<p><span class="math display">\[\d f={\partial f\over\partial x}\d x+{\partial f\over\partial y}\d y+{\partial f\over\partial z}\d z\]</span> <span class="math inline">\(w=P\d x+Q\d y+R\d z\)</span> 时</p>
+<p><span class="math display">\[\begin{aligned}
+\d w&amp;=(R_y'-Q_z')\d y\land \d z+(P_z'-R_x')\d z\land \d x+(Q_x'-P_y')\d x\land \d y\\
+&amp;=
+\begin{vmatrix}
+\d y\land \d z&amp;\d z\land \d x&amp;\d x\land \d y\\
+{\partial\over\partial x} &amp; {\partial\over\partial y} &amp; {\partial\over\partial z}\\
+P&amp;Q&amp;R
+\end{vmatrix}
+\end{aligned}\]</span></p>
+<p><span class="math inline">\(w=P\d y\land \d z+Q\d z\land \d x+R\d x\land \d y\)</span> 时</p>
+<p><span class="math display">\[\d w=(P_x'+Q_y'+R_z')\d x\land \d y\land \d z\]</span></p>
+]]></content>
+      <categories>
+        <category>数学</category>
+        <category>分析</category>
+        <category>微积分</category>
+        <category>多元微积分</category>
+      </categories>
+  </entry>
+  <entry>
     <title>最小二乘法</title>
     <url>/posts/36991/</url>
     <content><![CDATA[<p><span class="math display">\[\min\|Ax-b\|_2\]</span> 其中 <span class="math inline">\(A\in\R^{m\times n}\)</span>, <span class="math inline">\(x\in\R^n\)</span>, <span class="math inline">\(b\in\R^m.\)</span> 这个的问题的情境是 <span class="math inline">\(m\geq n\)</span>, 也就是一个过度约束的问题 (<span class="math inline">\(b\)</span> 不在 <span class="math inline">\(A\)</span> 的值域中).</p>
@@ -653,71 +735,6 @@ F(x)=f(x)\sin(x-x_0)\leq0,~\forall x\in(0,\pi).
       </categories>
   </entry>
   <entry>
-    <title>拉格朗日插值</title>
-    <url>/posts/17585/</url>
-    <content><![CDATA[<p><span class="math display">\[p(x)=\sum_{k=0}^n y_kl_k(x)\]</span></p>
-<h2 id="基函数">基函数</h2>
-<p>给定点 <span class="math inline">\(x_0,\ldots,x_n\)</span>. 问题归结于寻找<strong>基函数</strong> <span class="math display">\[l_k(x_j)=\begin{cases}
-    1\quad j=k\\
-    0\quad j\ne k
-\end{cases},\]</span> 因为插值多项式可以写成它们的线性组合.</p>
-<span id="more"></span>
-<p>根据零点分布可以设 <span class="math display">\[l_k(x)=c\prod_{j\ne k}(x-x_j),\]</span> 代入 <span class="math inline">\(x_k\)</span> 得到</p>
-<p><span class="math display">\[
-1=l_k(x_k)=c\prod_{j\ne k}(x_k-x_j),
-\]</span></p>
-<p>于是 <span class="math inline">\(c=\dfrac{1}{\prod_{j\ne k}(x_k-x_j)}\)</span>. 这就得到了 <span class="math display">\[l_k(x)=\frac{\prod_{j\ne k}(x-x_j)}{\prod_{j\ne k}(x_k-x_j)}.\]</span></p>
-<p><em>注: 这个 <span class="math inline">\(c\)</span> 实际上是 Barycentric 权重, 即后面定义的 <span class="math inline">\(\lambda_k\)</span>.</em></p>
-<p>它实际上就是一个特殊的多项式. 比如这是给定 <span class="math inline">\(x_{0}:x_4=-2:2\)</span>, 在 <span class="math inline">\(x_3\)</span> 处取 <span class="math inline">\(1\)</span> 的基函数 <span class="math display">\[l_3(x)=\frac{(x+2)(x+1)x(x-2)}{(1+2)(1+1)\cdot1\cdot(1-2)}\]</span></p>
-<p><img src="/file/l_basis.svg"></p>
-<p>定义节点函数 <span class="math display">\[l(x)=\prod_{k=0}^n(x-x_k),\]</span> 可以得到基函数 <span class="math display">\[l_j(x)={l(x)\over l'(x_j)(x-x_j)}\]</span></p>
-<h2 id="barycentric-插值公式">Barycentric 插值公式</h2>
-<p><span class="math display">\[
-p(x)={\sum_{k=0}^n{\lambda_k y_k\over x-x_k}\over\sum_{k=0}^n{\lambda_k\over x-x_k}},
-\]</span> 其中 <span class="math display">\[\lambda_k={1\over\prod_{j\ne k}(x_k-x_j)}\]</span></p>
-<h2 id="误差">误差</h2>
-<p><span class="math inline">\(f\in C^{n+1}([a,b])\)</span>时 <span class="math display">\[f(x)-p(x)={f^{(n+1)}(\xi)\over (n+1)!}l(x),\]</span> 其中 <span class="math inline">\(\xi\in(a,b)\)</span> 与 <span class="math inline">\(x\)</span> 有关.</p>
-<hr>
-<p><span class="math inline">\(f\)</span> 在包含节点的区域 <span class="math inline">\(\Omega\)</span> 上解析时</p>
-<p><span class="math display">\[p(x)={1\over 2\pi i}\int_\Gamma{f(t)(l(t)-l(x))\over l(t)(t-x)}\d x\]</span> <span class="math display">\[f(x)-p(x)={1\over 2\pi i}\int_\Gamma {l(x)\over l(t)}{f(t)\over t-x}\d t\]</span></p>
-]]></content>
-      <categories>
-        <category>数学</category>
-        <category>数值分析</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>微分形式</title>
-    <url>/posts/12522/</url>
-    <content><![CDATA[<p>0 次形式: <span class="math inline">\(f\)</span></p>
-<p>1 次形式: <span class="math inline">\(P\d x+Q\d y+R\d z\)</span></p>
-<p>2 次形式: <span class="math inline">\(P\d y\land \d z+Q\d z\land \d x+R\d x\land \d y\)</span></p>
-<p>3 次形式: <span class="math inline">\(R\d x\land \d y\land \d z\)</span></p>
-<span id="more"></span>
-<h2 id="运算律">运算律</h2>
-<p><span class="math inline">\(\d x\land \d x=0\)</span> 等, <span class="math inline">\(\d x\land \d y=-\d y\land \d x\)</span> 等.</p>
-<h2 id="外微分运算">外微分运算</h2>
-<p><span class="math display">\[\d f={\partial f\over\partial x}\d x+{\partial f\over\partial y}\d y+{\partial f\over\partial z}\d z\]</span> <span class="math inline">\(w=P\d x+Q\d y+R\d z\)</span> 时</p>
-<p><span class="math display">\[\begin{aligned}
-\d w&amp;=(R_y'-Q_z')\d y\land \d z+(P_z'-R_x')\d z\land \d x+(Q_x'-P_y')\d x\land \d y\\
-&amp;=
-\begin{vmatrix}
-\d y\land \d z&amp;\d z\land \d x&amp;\d x\land \d y\\
-{\partial\over\partial x} &amp; {\partial\over\partial y} &amp; {\partial\over\partial z}\\
-P&amp;Q&amp;R
-\end{vmatrix}
-\end{aligned}\]</span></p>
-<p><span class="math inline">\(w=P\d y\land \d z+Q\d z\land \d x+R\d x\land \d y\)</span> 时</p>
-<p><span class="math display">\[\d w=(P_x'+Q_y'+R_z')\d x\land \d y\land \d z\]</span></p>
-]]></content>
-      <categories>
-        <category>数学</category>
-        <category>分析</category>
-        <category>微积分</category>
-        <category>多元微积分</category>
-      </categories>
-  </entry>
-  <entry>
     <title>数值积分</title>
     <url>/posts/24343/</url>
     <content><![CDATA[<p>Quadrature Rule 指的是形式 <span class="math display">\[Q(f)=\sum_{k=0}^nw_kf(x_k)\]</span></p>
@@ -759,43 +776,6 @@ M(h)=\sum_{k=0}^{n-1}hf\left(a+h\left(k+\frac12\right)\right)
       <categories>
         <category>数学</category>
         <category>数值分析</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>极坐标和球坐标换元</title>
-    <url>/posts/26639/</url>
-    <content><![CDATA[<p><span class="math display">\[\iint_D F(x,y)\d x\d y=\iint_\Delta F(r\cos\theta,r\sin\theta)r\d r\d\theta\]</span></p>
-<p><span class="math display">\[\iiint_D F(x,y,z)\d x\d y\d z=\iiint_\Delta F(r\sin\theta\cos\phi,r\sin\theta\sin\phi,r\cos\theta)r^2\sin\theta\d r\d \theta\d \phi\]</span></p>
-<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Kugelkoord-lokale-Basis-s.svg/480px-Kugelkoord-lokale-Basis-s.svg.png" width="250" height="250"></p>
-]]></content>
-      <categories>
-        <category>数学</category>
-        <category>分析</category>
-        <category>微积分</category>
-        <category>多元微积分</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>留数的计算方法</title>
-    <url>/posts/51485/</url>
-    <content><![CDATA[<ol type="1">
-<li>在分式 <span class="math inline">\(f=g/h\)</span> 中, 若分母有简单零点 <span class="math inline">\(z_0\)</span> 而分子没有, 那么 <span class="math inline">\(f\)</span> 在 <span class="math inline">\(z_0\)</span> 处的留数为 <span class="math display">\[
-\frac{g(z_0)}{h'(z_0)}
-\]</span></li>
-</ol>
-<blockquote>
-<p><span class="math inline">\(\dfrac{1}{z^4-1}\)</span> 在 <span class="math inline">\(\i\)</span> 处的留数为 <span class="math display">\[{1\over \left.4z^3\right|_{z=\i}}={1\over-4\i}=\frac\i4.\]</span></p>
-</blockquote>
-<ol start="2" type="1">
-<li>假设 <span class="math inline">\(z_0\)</span> 是 <span class="math inline">\(n\)</span> 阶极点, 那么该点处的留数为 <span class="math display">\[
- \frac{1}{(n-1)!}\left(\left(\frac{\d}{\d z}\right)^{n-1}(z-z_0)^n f(z)\right)_{z=z_0}
-\]</span></li>
-</ol>
-]]></content>
-      <categories>
-        <category>数学</category>
-        <category>分析</category>
-        <category>复变函数</category>
       </categories>
   </entry>
   <entry>
@@ -860,6 +840,43 @@ y_{n+1}=\sum_{k=1}^l a_ky_{n+1-k}+h\sum_{k=0}^l b_k f_{n+1-k}
       </categories>
   </entry>
   <entry>
+    <title>极坐标和球坐标换元</title>
+    <url>/posts/26639/</url>
+    <content><![CDATA[<p><span class="math display">\[\iint_D F(x,y)\d x\d y=\iint_\Delta F(r\cos\theta,r\sin\theta)r\d r\d\theta\]</span></p>
+<p><span class="math display">\[\iiint_D F(x,y,z)\d x\d y\d z=\iiint_\Delta F(r\sin\theta\cos\phi,r\sin\theta\sin\phi,r\cos\theta)r^2\sin\theta\d r\d \theta\d \phi\]</span></p>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Kugelkoord-lokale-Basis-s.svg/480px-Kugelkoord-lokale-Basis-s.svg.png" width="250" height="250"></p>
+]]></content>
+      <categories>
+        <category>数学</category>
+        <category>分析</category>
+        <category>微积分</category>
+        <category>多元微积分</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>留数的计算方法</title>
+    <url>/posts/51485/</url>
+    <content><![CDATA[<ol type="1">
+<li>在分式 <span class="math inline">\(f=g/h\)</span> 中, 若分母有简单零点 <span class="math inline">\(z_0\)</span> 而分子没有, 那么 <span class="math inline">\(f\)</span> 在 <span class="math inline">\(z_0\)</span> 处的留数为 <span class="math display">\[
+\frac{g(z_0)}{h'(z_0)}
+\]</span></li>
+</ol>
+<blockquote>
+<p><span class="math inline">\(\dfrac{1}{z^4-1}\)</span> 在 <span class="math inline">\(\i\)</span> 处的留数为 <span class="math display">\[{1\over \left.4z^3\right|_{z=\i}}={1\over-4\i}=\frac\i4.\]</span></p>
+</blockquote>
+<ol start="2" type="1">
+<li>假设 <span class="math inline">\(z_0\)</span> 是 <span class="math inline">\(n\)</span> 阶极点, 那么该点处的留数为 <span class="math display">\[
+ \frac{1}{(n-1)!}\left(\left(\frac{\d}{\d z}\right)^{n-1}(z-z_0)^n f(z)\right)_{z=z_0}
+\]</span></li>
+</ol>
+]]></content>
+      <categories>
+        <category>数学</category>
+        <category>分析</category>
+        <category>复变函数</category>
+      </categories>
+  </entry>
+  <entry>
     <title>常见级数</title>
     <url>/posts/56038/</url>
     <content><![CDATA[<p><span class="math display">\[\sum_{n=1}^\infty\frac{1}{n^2}=\frac{\pi^2}{6}\]</span> <span id="more"></span> <span class="math display">\[\sum_{n=1}^\infty\frac{(-1)^{n-1}}{n^2}=\frac{\pi^2}{12}\]</span> <span class="math display">\[\sum_{n=1}^\infty\frac{1}{(2n-1)^2}=\frac{\pi^2}{8}\]</span> <span class="math display">\[\sum_{n=1}^\infty\frac{1}{n^4}=\frac{\pi^4}{90}\]</span> <span class="math display">\[\sum_{n=1}^\infty\frac{(-1)^{n-1}}{n^4}=\frac{7\pi^4}{720}\]</span> <span class="math display">\[1-\frac13+\frac15-\frac17+\cdots=\frac\pi4\]</span> <span class="math display">\[1-\frac12+\frac13-\frac14+\cdots=\ln2\]</span></p>
@@ -868,36 +885,6 @@ y_{n+1}=\sum_{k=1}^l a_ky_{n+1-k}+h\sum_{k=0}^l b_k f_{n+1-k}
         <category>数学</category>
         <category>分析</category>
         <category>级数</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>三角函数</title>
-    <url>/posts/26462/</url>
-    <content><![CDATA[<h2 id="和差化积">和差化积</h2>
-<p><span class="math display">\[\sin\alpha+\sin\beta=2\sin\left(\frac{\alpha+\beta}{2}\right)\cos\left(\frac{\alpha-\beta}{2}\right)\]</span></p>
-<p><span class="math display">\[\sin\alpha-\sin\beta=2\cos\left(\frac{\alpha+\beta}{2}\right)\sin\left(\frac{\alpha-\beta}{2}\right)\]</span></p>
-<p><span class="math display">\[\cos\alpha+\cos\beta=2\cos\left(\frac{\alpha+\beta}{2}\right)\cos\left(\frac{\alpha-\beta}{2}\right)\]</span></p>
-<p><span class="math display">\[\cos\alpha-\cos\beta=-2\sin\left(\frac{\alpha+\beta}{2}\right)\sin\left(\frac{\alpha-\beta}{2}\right)\]</span></p>
-<span id="more"></span>
-<h2 id="积化和差">积化和差</h2>
-<p><span class="math display">\[\sin\alpha\cos\beta=\frac12\left(\sin(\alpha+\beta)+\sin(\alpha-\beta)\right)\]</span></p>
-<p><span class="math display">\[\cos\alpha\sin\beta=\frac12\left(\sin(\alpha+\beta)-\sin(\alpha-\beta)\right)\]</span></p>
-<p><span class="math display">\[\cos\alpha\cos\beta=\frac12\left(\cos(\alpha+\beta)+\cos(\alpha-\beta)\right)\]</span></p>
-<p><span class="math display">\[\sin\alpha\sin\beta=-\frac12\left(\cos(\alpha+\beta)-\cos(\alpha-\beta)\right)\]</span></p>
-<h2 id="倍角公式">倍角公式</h2>
-<p><span class="math display">\[\sin3x=3\sin x-4\sin^3x\]</span> <span class="math display">\[\cos 3x=-3\cos x+4\cos^3x\]</span></p>
-<h2 id="万能公式">万能公式</h2>
-<p>令 <span class="math inline">\(t=\tan\dfrac x2\)</span>, 那么 <span class="math display">\[
-\begin{gather*}
-\sin x=\frac{2t}{1+t^2},\quad
-\cos x=\frac{1-t^2}{1+t^2},\quad
-\tan x=\frac{2t}{1-t^2}
-\end{gather*}
-\]</span></p>
-]]></content>
-      <categories>
-        <category>数学</category>
-        <category>初等数学</category>
       </categories>
   </entry>
   <entry>
@@ -950,6 +937,36 @@ y_{n+1}=\sum_{k=1}^l a_ky_{n+1-k}+h\sum_{k=0}^l b_k f_{n+1-k}
 <h2 id="泰勒展开">泰勒展开</h2>
 <p><span class="math display">\[\sinh(x)=x+\frac{x^3}{3!}+\frac{x^5}{5!}+\frac{x^7}{7!}+\cdots\]</span></p>
 <p><span class="math display">\[\cosh(x)=1+\frac{x^2}{2!}+\frac{x^4}{4!}+\frac{x^6}{6!}+\cdots\]</span></p>
+]]></content>
+      <categories>
+        <category>数学</category>
+        <category>初等数学</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>三角函数</title>
+    <url>/posts/26462/</url>
+    <content><![CDATA[<h2 id="和差化积">和差化积</h2>
+<p><span class="math display">\[\sin\alpha+\sin\beta=2\sin\left(\frac{\alpha+\beta}{2}\right)\cos\left(\frac{\alpha-\beta}{2}\right)\]</span></p>
+<p><span class="math display">\[\sin\alpha-\sin\beta=2\cos\left(\frac{\alpha+\beta}{2}\right)\sin\left(\frac{\alpha-\beta}{2}\right)\]</span></p>
+<p><span class="math display">\[\cos\alpha+\cos\beta=2\cos\left(\frac{\alpha+\beta}{2}\right)\cos\left(\frac{\alpha-\beta}{2}\right)\]</span></p>
+<p><span class="math display">\[\cos\alpha-\cos\beta=-2\sin\left(\frac{\alpha+\beta}{2}\right)\sin\left(\frac{\alpha-\beta}{2}\right)\]</span></p>
+<span id="more"></span>
+<h2 id="积化和差">积化和差</h2>
+<p><span class="math display">\[\sin\alpha\cos\beta=\frac12\left(\sin(\alpha+\beta)+\sin(\alpha-\beta)\right)\]</span></p>
+<p><span class="math display">\[\cos\alpha\sin\beta=\frac12\left(\sin(\alpha+\beta)-\sin(\alpha-\beta)\right)\]</span></p>
+<p><span class="math display">\[\cos\alpha\cos\beta=\frac12\left(\cos(\alpha+\beta)+\cos(\alpha-\beta)\right)\]</span></p>
+<p><span class="math display">\[\sin\alpha\sin\beta=-\frac12\left(\cos(\alpha+\beta)-\cos(\alpha-\beta)\right)\]</span></p>
+<h2 id="倍角公式">倍角公式</h2>
+<p><span class="math display">\[\sin3x=3\sin x-4\sin^3x\]</span> <span class="math display">\[\cos 3x=-3\cos x+4\cos^3x\]</span></p>
+<h2 id="万能公式">万能公式</h2>
+<p>令 <span class="math inline">\(t=\tan\dfrac x2\)</span>, 那么 <span class="math display">\[
+\begin{gather*}
+\sin x=\frac{2t}{1+t^2},\quad
+\cos x=\frac{1-t^2}{1+t^2},\quad
+\tan x=\frac{2t}{1-t^2}
+\end{gather*}
+\]</span></p>
 ]]></content>
       <categories>
         <category>数学</category>
@@ -1076,6 +1093,17 @@ y_{n+1}=\sum_{k=1}^l a_ky_{n+1-k}+h\sum_{k=0}^l b_k f_{n+1-k}
       </categories>
   </entry>
   <entry>
+    <title>丽江</title>
+    <url>/posts/23622/</url>
+    <content><![CDATA[<p>清晨，冬风偏有着独特的和煦，暖暖的阳光洒下，轻吻着这个慵懒的小城。青石板的两侧，一簇红一簇粉的丛生，芬芳馥郁。清澄的流水，不急不缓地从家家户户门前流过，雀跃着一片两片的花瓣，抚动着缠绵的青荇，挑弄着披拂的藤蔓。</p>
+<p>踱入深巷，古色古香的建筑和装饰，质朴而不失深邃的画作文字，神秘地述说着一个古老的民族对自然的敬畏与对文化根源的认同。仿佛等待须臾，小巷的尽头就会传来一阵悠远、空旷的卖杏花的吆喝似的。</p>
+<p>午后，携几枚沁爽的青枣，品几块玫瑰饼，惹得唇齿间尽是花香。百鸟嘤鸣，鸡犬相闻，长桥卧波，复道行空，小桥流水飞红。远眺，巍峨的雪山正熠熠闪着金辉。 傍晚，华灯初上。人群熙攘起来，叫卖声，丝竹声不绝于耳，花草香，珍馐香扑面而来。渐渐深凝的夜，又将古镇拉回沉寂，一同那远山的轮廓。</p>
+]]></content>
+      <categories>
+        <category>随笔</category>
+      </categories>
+  </entry>
+  <entry>
     <title>利用积分下求导计算无穷积分</title>
     <url>/posts/30510/</url>
     <content><![CDATA[<p>计算 <span class="math display">\[
@@ -1092,6 +1120,15 @@ y_{n+1}=\sum_{k=1}^l a_ky_{n+1-k}+h\sum_{k=0}^l b_k f_{n+1-k}
       </categories>
   </entry>
   <entry>
+    <title>午后</title>
+    <url>/posts/6636/</url>
+    <content><![CDATA[<p>阳光从不吝啬，海风亦从未疲倦。歌声随时慵懒，每个下午，均可惬意。</p>
+]]></content>
+      <categories>
+        <category>随笔</category>
+      </categories>
+  </entry>
+  <entry>
     <title>回不去的夏天</title>
     <url>/posts/59205/</url>
     <content><![CDATA[<p>又是一年高考季. 清早起来, 大把的金光倾泻到身上, 让时间一下子变慢了.</p>
@@ -1104,14 +1141,126 @@ y_{n+1}=\sum_{k=1}^l a_ky_{n+1-k}+h\sum_{k=0}^l b_k f_{n+1-k}
       </categories>
   </entry>
   <entry>
-    <title>科普是一项非常难的工作</title>
-    <url>/posts/20918/</url>
-    <content><![CDATA[<p>要想当一个好学生，只需要把知识学懂。</p>
-<p>要想当一个好老师，需要一些基础知识，还需要良好的性格和表达能力、心理学和教育学经验。</p>
-<p>要想当一个好教授，需要有专业知识、科研水平，只需要一般般的表达能力。</p>
-<p><strong>而要当一个好的科普工作者，需要有远超学生的理解能力，教授一样的专业水平，老师一样的教学功力，艺术家一样的审美，作家一样的文笔，诗人一样的清高，科学家一样对知识的热爱，艺人一样对大众心理的把控能力，运动员一样的毅力，还要有自身的人格魅力、抗压抗打击能力。</strong></p>
-<p>科普是一项非常难的工作，比讲课教书难得多。因为它面对的不是专业人士，而是乌合之众。这导致科普工作者必须用通俗语言来解释专业知识，却又不至于过于通俗而产生误导。稍微有一点漏洞就会被抓住攻击——有问题的科普比谣言更可怕，比迷信更害人。</p>
-<p>所以，科普工作者是一个神圣的标签，这个名号比想象中要严苛得多。</p>
+    <title>回家</title>
+    <url>/posts/8368/</url>
+    <content><![CDATA[<p>沁人的凉风和湛蓝中的云卷云舒，熟悉的楼房和那条街道，一簇簇与一丛丛，忽然让少年有了一丝归属，潮湿了眼眶。他颤抖着四肢，任每一个毛孔大肆呼吸着。 依稀在记忆中的水库，被荒草占据。大把的野草，湮没了少年心中，那未曾发出的约定。</p>
+]]></content>
+      <categories>
+        <category>随笔</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>圣诞节</title>
+    <url>/posts/19175/</url>
+    <content><![CDATA[<p>圣诞树上挂满了忽闪忽闪的小彩灯，在富丽堂皇的商店里，在暖黄的水晶吊灯下，温柔地伫立。</p>
+<p>空气中弥漫着姜汁饼的甜美气息，耳畔回荡着童声喜乐、纯净的颂歌，以及驯鹿的铃儿叮当。黑漆漆的夜空中洒下鹅毛白的雪花，沁爽洁净的雪毯上，花白胡子的圣诞老人留下一道雪橇的印记。与可人儿相挽，踱步在礼品商城，柔情地看他趴着橱窗，瞪大了好奇的双眼。</p>
+]]></content>
+      <categories>
+        <category>随笔</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>实对称阵的合同对角化</title>
+    <url>/posts/5692/</url>
+    <content><![CDATA[<p>设对实对称阵 <span class="math inline">\(A\)</span> 满足 <span class="math inline">\(Q^TAQ=\Lambda\)</span>，其中 <span class="math inline">\(\Lambda\)</span> 是 <span class="math inline">\(A\)</span> 的特征值组成的对角阵，问 <span class="math inline">\(Q\)</span> 是否正交。</p>
+<p>答案是否定的。</p>
+<span id="more"></span>
+<h2 id="分析">分析</h2>
+<p>构造反例时为了方便，可以直接取 <span class="math inline">\(A\)</span> 为对角阵 <span class="math inline">\(\Lambda\)</span>，因为对角阵的对角元就是特征值。</p>
+<p>问题化为：找非正交阵 <span class="math inline">\(Q\)</span>，满足 <span class="math inline">\(Q^T\Lambda Q=\Lambda\)</span>。下面尝试把 <span class="math inline">\(\Lambda\)</span> 写成 <span class="math inline">\(Q^T\Lambda Q\)</span> 的形式： <span class="math display">\[
+\begin{align*}
+\Lambda&amp;=(\Lambda^{\frac12}\Lambda^{-\frac12})\Lambda(\Lambda^{-\frac12}\Lambda^{\frac12})\\
+&amp;=(\Lambda^{\frac12}V^T\Lambda^{-\frac12})\Lambda(\Lambda^{-\frac12}V\Lambda^{\frac12})\\
+&amp;=Q^T\Lambda Q,
+\end{align*}
+\]</span> 其中引入了正交阵 <span class="math inline">\(V\)</span>，可见 <span class="math inline">\(Q=\Lambda^{-\frac12}V\Lambda^{\frac12}\)</span> 是一种选择。什么时候 <span class="math inline">\(Q\)</span> 不正交呢？</p>
+<p>正交矩阵的一个性质是元素的绝对值都不超过1，所以我们选择合适的 <span class="math inline">\(\Lambda\)</span> 和 <span class="math inline">\(V\)</span>，使 <span class="math inline">\(Q\)</span> 中有元素绝对值大于1即可。实际上 <span class="math display">\[
+q_{ij}=v_{ij}\sqrt{\frac{\lambda_j}{\lambda_i}}，
+\]</span> <span class="math inline">\(i\)</span> 和 <span class="math inline">\(j\)</span> 不能相等，因为 <span class="math inline">\(|q_{ii}|=|v_{ii}|\leq1\)</span>。</p>
+<p>所以构造步骤为：取正交阵 <span class="math inline">\(V\)</span>，需要其中某个非对角元 <span class="math inline">\(v_{ij}\ne0\)</span>。然后取对角阵<span class="math inline">\(\Lambda\)</span>，其中 <span class="math inline">\(\lambda_j/\lambda_i\)</span> 足够大，使得 <span class="math inline">\(\left|v_{ij}\sqrt{\frac{\lambda_j}{\lambda_i}}\right|&gt;1\)</span>。再构造 <span class="math inline">\(Q=\Lambda^{-\frac12}V\Lambda^{\frac12}\)</span>，那么 <span class="math inline">\(Q\)</span> 不是正交阵，而 <span class="math inline">\(Q^T\Lambda Q=\Lambda\)</span>。</p>
+<h2 id="一个具体的例子">一个具体的例子</h2>
+<p>取 <span class="math display">\[
+V=\begin{bmatrix}0&amp;1\\1&amp;0\end{bmatrix},\ \Lambda=\begin{bmatrix}1 &amp;\\&amp; 4\end{bmatrix},
+\]</span> 那么 <span class="math display">\[
+Q=\begin{bmatrix}1&amp;\\&amp;\frac12\end{bmatrix}\begin{bmatrix}0&amp;1\\1&amp;0\end{bmatrix}\begin{bmatrix}1&amp;\\&amp;2\end{bmatrix}=\begin{bmatrix}0&amp;2\\\frac12&amp;0\end{bmatrix}\ \text{不是正交阵},
+\]</span> 而<span class="math inline">\(Q^T\Lambda Q=\Lambda\)</span>。</p>
+]]></content>
+      <categories>
+        <category>数学</category>
+        <category>代数</category>
+        <category>线性代数</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>秋心</title>
+    <url>/posts/38252/</url>
+    <content><![CDATA[<p>风起时，一片一片，金黄的，鹅黄的，浅绿的，接连着，打着卷地，在我噙着泪的眼前飘落，在地上挤成一团。 风住时，一棵一棵，笔挺的，有着优美线条和外形的，银杏，梧桐，在被悲伤吞噬了的我眼前伫立，宛若画中那么美，那么静。 风声，孩子们的说笑，木棍扫过落叶的沙沙声，喜鹊，麻雀，还有一个人，缓慢而轻轻的，脚步。</p>
+]]></content>
+      <categories>
+        <category>随笔</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>廿四</title>
+    <url>/posts/38636/</url>
+    <content><![CDATA[<p>优秀的高中很多，但能如她这般，令学子们痴恋深情到每每想起她时，心中的温暖都会澎湃良久，恐怕少之又少。</p>
+<p>交付给廿四的青春，是完美的，是不容置辩的无悔无憾。对她的回眸，是噙着泪的仰望。真正在这里拼搏过的人，才会懂得何为傲、霸、狂，在这里受过挫的人，才会明白何为忍、毅、刚。什么是创造与梦想，什么是起伏和跌宕，什么令我们热泪盈眶，什么又是我们所说的，一生的荣光。</p>
+<p>不论结果，只凭你在这里留下的青春，就够你荣耀一生，就是你最优秀的铁证。遗憾不属于廿四人，挺起胸来，面对你要的梦想和创造，失败和成功。</p>
+]]></content>
+      <categories>
+        <category>随笔</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>放学路上</title>
+    <url>/posts/61326/</url>
+    <content><![CDATA[<p>无法抑制去想，记不得那最后一次黄昏的放学路上。耳畔的空灵悠扬，橙红的落日夕阳，沁人的微风飘荡。脚下波光粼粼，眺望远方鹅黄的垂柳，爬上石阶的嫩草。如梦似幻。</p>
+<p>晚风，斜阳，音乐，白鹅，湖面，屋檐的金辉，静夜的虫鸣与群星。</p>
+]]></content>
+      <categories>
+        <category>随笔</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>春天来了</title>
+    <url>/posts/61668/</url>
+    <content><![CDATA[<p>没有了过往的凛冽，风变得和煦轻柔起来，枝条上冒出了毛茸茸的骨朵。</p>
+]]></content>
+      <categories>
+        <category>随笔</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>春雨</title>
+    <url>/posts/27822/</url>
+    <content><![CDATA[<p>春雨吵醒了一簇簇的红艳，沾湿了一树树的花香。</p>
+]]></content>
+      <categories>
+        <category>随笔</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>小憩</title>
+    <url>/posts/53822/</url>
+    <content><![CDATA[<p>代码敲累了。仰在椅子上。看午后的阳光，悠闲地洒下。窗纱外的一片明亮。冬日空气里的沁凉。街上的嘈杂。</p>
+]]></content>
+      <categories>
+        <category>随笔</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>普达措</title>
+    <url>/posts/39803/</url>
+    <content><![CDATA[<p>彳彳亍亍，林雪风花，幽幽皑皑飒飒。 探探寻寻，湖鸟山虫，澹澹呖呖葱葱。</p>
+]]></content>
+      <categories>
+        <category>随笔</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>晴朗的校园</title>
+    <url>/posts/4892/</url>
+    <content><![CDATA[<p>今天的世界格外明朗。徐徐的清风，轻柔的阳光，点点嫩芽，热闹的人群。一切都还是那样平常，但仿佛和那些日漫中的理想校园，只差着几片飞舞的樱花瓣。</p>
 ]]></content>
       <categories>
         <category>随笔</category>
@@ -1174,6 +1323,48 @@ y_{n+1}=\sum_{k=1}^l a_ky_{n+1-k}+h\sum_{k=0}^l b_k f_{n+1-k}
         <category>分析</category>
         <category>微积分</category>
         <category>多元微积分</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>林中漫步</title>
+    <url>/posts/16963/</url>
+    <content><![CDATA[<p>林风拂幽径，鸟鸣惊落花</p>
+]]></content>
+      <categories>
+        <category>随笔</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>没什么远大理想</title>
+    <url>/posts/48210/</url>
+    <content><![CDATA[<p>我只希望在一个天气不那么晴的日子里，在一个不那么吵的地方，读一本没那么有用的书，听一点不那么流行的歌。</p>
+]]></content>
+      <categories>
+        <category>随笔</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>泸沽湖</title>
+    <url>/posts/30601/</url>
+    <content><![CDATA[<p>淡霭缭绕，彩彻区朗。澄波荡漾，野凫满塘。泛舟湖上，蒹葭苍苍。薄暮冥冥，跃金浮光。</p>
+<p>每次下车，定有一群道德绑架犯伪装成兜售小贩的样子，为了一丁点蝇头小利各种卑鄙手段无所不用其极。吵嚷纠缠，丢尽了彝族人的脸，无论怎样的美景都在刹那间黯淡无光。试问我泱泱华夏，如今是否还有一片真正的净土？最后一丝少数民族的质朴，亦被利益磨到尸骨无存！</p>
+]]></content>
+      <categories>
+        <category>随笔</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>科普是一项非常难的工作</title>
+    <url>/posts/20918/</url>
+    <content><![CDATA[<p>要想当一个好学生，只需要把知识学懂。</p>
+<p>要想当一个好老师，需要一些基础知识，还需要良好的性格和表达能力、心理学和教育学经验。</p>
+<p>要想当一个好教授，需要有专业知识、科研水平，只需要一般般的表达能力。</p>
+<p><strong>而要当一个好的科普工作者，需要有远超学生的理解能力，教授一样的专业水平，老师一样的教学功力，艺术家一样的审美，作家一样的文笔，诗人一样的清高，科学家一样对知识的热爱，艺人一样对大众心理的把控能力，运动员一样的毅力，还要有自身的人格魅力、抗压抗打击能力。</strong></p>
+<p>科普是一项非常难的工作，比讲课教书难得多。因为它面对的不是专业人士，而是乌合之众。这导致科普工作者必须用通俗语言来解释专业知识，却又不至于过于通俗而产生误导。稍微有一点漏洞就会被抓住攻击——有问题的科普比谣言更可怕，比迷信更害人。</p>
+<p>所以，科普工作者是一个神圣的标签，这个名号比想象中要严苛得多。</p>
+]]></content>
+      <categories>
+        <category>随笔</category>
       </categories>
   </entry>
   <entry>
@@ -1259,125 +1450,41 @@ M=\frac{1}{\omega} D+L, \quad N=\frac{1-\omega}{\omega} D-U
       </categories>
   </entry>
   <entry>
-    <title>实对称阵的合同对角化</title>
-    <url>/posts/5692/</url>
-    <content><![CDATA[<p>设对实对称阵 <span class="math inline">\(A\)</span> 满足 <span class="math inline">\(Q^TAQ=\Lambda\)</span>，其中 <span class="math inline">\(\Lambda\)</span> 是 <span class="math inline">\(A\)</span> 的特征值组成的对角阵，问 <span class="math inline">\(Q\)</span> 是否正交。</p>
-<p>答案是否定的。</p>
-<span id="more"></span>
-<h2 id="分析">分析</h2>
-<p>构造反例时为了方便，可以直接取 <span class="math inline">\(A\)</span> 为对角阵 <span class="math inline">\(\Lambda\)</span>，因为对角阵的对角元就是特征值。</p>
-<p>问题化为：找非正交阵 <span class="math inline">\(Q\)</span>，满足 <span class="math inline">\(Q^T\Lambda Q=\Lambda\)</span>。下面尝试把 <span class="math inline">\(\Lambda\)</span> 写成 <span class="math inline">\(Q^T\Lambda Q\)</span> 的形式： <span class="math display">\[
-\begin{align*}
-\Lambda&amp;=(\Lambda^{\frac12}\Lambda^{-\frac12})\Lambda(\Lambda^{-\frac12}\Lambda^{\frac12})\\
-&amp;=(\Lambda^{\frac12}V^T\Lambda^{-\frac12})\Lambda(\Lambda^{-\frac12}V\Lambda^{\frac12})\\
-&amp;=Q^T\Lambda Q,
-\end{align*}
-\]</span> 其中引入了正交阵 <span class="math inline">\(V\)</span>，可见 <span class="math inline">\(Q=\Lambda^{-\frac12}V\Lambda^{\frac12}\)</span> 是一种选择。什么时候 <span class="math inline">\(Q\)</span> 不正交呢？</p>
-<p>正交矩阵的一个性质是元素的绝对值都不超过1，所以我们选择合适的 <span class="math inline">\(\Lambda\)</span> 和 <span class="math inline">\(V\)</span>，使 <span class="math inline">\(Q\)</span> 中有元素绝对值大于1即可。实际上 <span class="math display">\[
-q_{ij}=v_{ij}\sqrt{\frac{\lambda_j}{\lambda_i}}，
-\]</span> <span class="math inline">\(i\)</span> 和 <span class="math inline">\(j\)</span> 不能相等，因为 <span class="math inline">\(|q_{ii}|=|v_{ii}|\leq1\)</span>。</p>
-<p>所以构造步骤为：取正交阵 <span class="math inline">\(V\)</span>，需要其中某个非对角元 <span class="math inline">\(v_{ij}\ne0\)</span>。然后取对角阵<span class="math inline">\(\Lambda\)</span>，其中 <span class="math inline">\(\lambda_j/\lambda_i\)</span> 足够大，使得 <span class="math inline">\(\left|v_{ij}\sqrt{\frac{\lambda_j}{\lambda_i}}\right|&gt;1\)</span>。再构造 <span class="math inline">\(Q=\Lambda^{-\frac12}V\Lambda^{\frac12}\)</span>，那么 <span class="math inline">\(Q\)</span> 不是正交阵，而 <span class="math inline">\(Q^T\Lambda Q=\Lambda\)</span>。</p>
-<h2 id="一个具体的例子">一个具体的例子</h2>
-<p>取 <span class="math display">\[
-V=\begin{bmatrix}0&amp;1\\1&amp;0\end{bmatrix},\ \Lambda=\begin{bmatrix}1 &amp;\\&amp; 4\end{bmatrix},
-\]</span> 那么 <span class="math display">\[
-Q=\begin{bmatrix}1&amp;\\&amp;\frac12\end{bmatrix}\begin{bmatrix}0&amp;1\\1&amp;0\end{bmatrix}\begin{bmatrix}1&amp;\\&amp;2\end{bmatrix}=\begin{bmatrix}0&amp;2\\\frac12&amp;0\end{bmatrix}\ \text{不是正交阵},
-\]</span> 而<span class="math inline">\(Q^T\Lambda Q=\Lambda\)</span>。</p>
+    <title>自习</title>
+    <url>/posts/12721/</url>
+    <content><![CDATA[<p>屋外的松树轻柔地律动，都贴到窗上来了。白茫茫的远空，不缓不急的阳光，飘香的槐花，清凉的音乐。</p>
 ]]></content>
       <categories>
-        <category>数学</category>
-        <category>代数</category>
-        <category>线性代数</category>
+        <category>随笔</category>
       </categories>
   </entry>
   <entry>
-    <title>计算定积分</title>
-    <url>/posts/45803/</url>
-    <content><![CDATA[<p>计算 <span class="math display">\[
-\int_0^1{\ln\left(x+\sqrt{1-x^2}\right)\over x}\,\mathrm dx.
-\]</span> <span id="more"></span></p>
-<hr>
-<h2 id="方法一-feynmans-trick">方法一 （Feynman's Trick）</h2>
-<p>定义 <span class="math display">\[
-I(a)=\int_{0}^{1} \frac{\ln \left(a x+\sqrt{1-x^{2}}\right)}{x}\,\mathrm d x,
-\]</span> 那么 <span class="math display">\[
-\begin{align*}I^{\prime}(a)&amp;=\int_0^1{x\over ax+\sqrt{1-x^2}}\frac1x\,\mathrm dx\\
-&amp;=\int_{0}^{1} \frac{\mathrm d x}{a x+\sqrt{1-x^{2}}}\\
-&amp;=\int_0^{\frac\pi2}{\cos t\over a\sin t+\cos t}\,\mathrm dt
-\\&amp;=: I\end{align*}
-\]</span> 定义 <span class="math display">\[
-J=\int_0^{\frac\pi2}{\sin t\over a\sin t +\cos t}\,\mathrm dt,
-\]</span> 组合积分法： <span class="math display">\[
-I+aJ=\int_0^\frac\pi2{a\sin t+\cos t\over a\sin t +\cos t}\,\mathrm dt=\frac\pi2
-\]</span></p>
-<p><span class="math display">\[
-\begin{align*}
-aI-J&amp;=\int_0^\frac\pi2{a\cos t-\sin t\over a\sin t+\cos t}\,\mathrm dx\\
-&amp;=\int_0^\frac\pi2{\mathrm d(a\sin t+\cos t)\over a\sin t+\cos t}\\
-&amp;=\left.\ln(a\sin t+\cos t)\right|_0^\frac\pi2\\
-&amp;=\ln a
-\end{align*}
-\]</span></p>
-<p>解得 (Cramer法则) <span class="math display">\[
-\begin{align*}
-I&amp;={\begin{vmatrix}\frac\pi2&amp;a\\\ln a&amp;-1\end{vmatrix}\over\begin{vmatrix}1&amp;a\\a&amp;-1\end{vmatrix}}\\&amp;=\frac{1}{1+a^{2}}\left(\frac{\pi}{2}+a \ln a\right).
-\end{align*}
-\]</span> 此外， <span class="math display">\[
-\begin{align*}I(0)&amp;=\int_0^1{\ln\sqrt{1-x^2}\over x}\,\mathrm dx\\&amp;=\int_0^1{\ln\sqrt{1-t}\over\sqrt{t}}{\mathrm dt\over 2
-\sqrt t}&amp;&amp;\text{by $x^2=t$}\\&amp;=\frac14\int_0^1{\ln(1-t)\over t}\,\mathrm dx\\&amp;=-\frac14\int_0^1\sum_{n=1}^\infty{x^{n-1}\over n}\,\mathrm dx&amp;&amp;\text{by Taylor Series}\\
-&amp;=-\frac14\sum_{n=1}^\infty\frac1n\int_0^1x^{n-1}\,\mathrm dx\\&amp;=-\frac14\sum_{n=1}^\infty\frac{1}{n^2}\\&amp;=-\frac{\pi^2}{24},\end{align*}
-\]</span> 于是 <span class="math display">\[
-\begin{align*}\text{原积分}&amp;=I(1)\\&amp;=I(0)+\int_0^1I'(a)\,\mathrm da\\
-&amp;=-\frac{\pi^2}{24}+\int_0^1\frac{1}{1+a^{2}}\left(\frac{\pi}{2}+a \ln a\right)\,\mathrm da\\
-&amp;=-\frac{\pi^2}{24}+\frac{\pi}{2}\int_0^1\frac{1}{1+a^{2}}\,\mathrm dx+\int_0^1\frac{a}{1+a^{2}}\ln a\,\mathrm da\\
-&amp;=-\frac{\pi^2}{24}+\frac\pi2\cdot\frac\pi4+
-\int_0^1\sum_{n=0}^\infty(-1)^na^{2n+1}\ln a\,\mathrm da\\
-&amp;=\frac{\pi^2}{12}+\sum_{n=0}^\infty{(-1)^{n+1}\over(2n+2)^2}\\
-&amp;=\frac{\pi^2}{12}-\frac14\sum_{n=1}^\infty{(-1)^{n}\over n^2}\\
-&amp;=\frac{\pi^2}{12}-\frac14\cdot\frac{\pi^2}{12}\\
-&amp;=\frac{\pi^2}{16}.\end{align*}
-\]</span> <em>注：积分号下求导、积分与求和换序需要有定理保障.</em></p>
-<hr>
-<h2 id="方法二feynmans-trick">方法二（Feynman's Trick）</h2>
-<p><span class="math display">\[
-I=\int_0^1{\ln(x+\sqrt{1-x^2})\over x}\,\mathrm dx
-=\int_0^1{\ln \left[x\left(1+{\sqrt{1-x^2\over x^2}}\right)\right]\over x}\,\mathrm dx
-\]</span></p>
-<p>故作代换<span class="math inline">\(t=\sqrt{1-x^2\over x^2}\)</span>, 那么<span class="math inline">\(x=\frac{1}{\sqrt{1+t^2}}\)</span>, <span class="math inline">\(\mathrm dx=-t(1+t^2)^{-\frac32}\,\mathrm dt:\)</span> <span class="math display">\[
-\begin{align*}
-I&amp;=\int_0^\infty{\ln\left[(1+t^2)^{-\frac12}(1+t)\right]\over(1+t^2)^{-\frac12}}\cdot t(1+t^2)^{-\frac32}\,\mathrm dt\\
-&amp;=\int_0^\infty{t\ln\left({1+t\over\sqrt{1+t^2}}\right)\over 1+t^2}\,\mathrm dt\\
-&amp;=\frac12\int_0^\infty{t\ln\left({(1+t)^2\over{1+t^2}}\right)\over 1+t^2}\,\mathrm dt\\
-&amp;=\frac12\int_0^\infty{t\ln\left(1+{2t\over 1+t^2}\right)\over 1+t^2}\,\mathrm dt\\
-\end{align*}
-\]</span> 定义 <span class="math display">\[
-I(a)=\frac12\int_0^\infty{t\ln\left(1+{2at\over 1+t^2}\right)\over 1+t^2}\,\mathrm dt,
-\]</span> 那么 <span class="math display">\[
-\begin{align*}I'(a)&amp;=\frac12\int_0^\infty {t\over 1+t^2}\cdot{1\over 1+{2at\over 1+t^2}}\cdot{2t\over 1+t^2}\,\mathrm dt\\
-&amp;=\int_0^\infty{t^2\over(t^2+1)(t^2+2at+1)}\,\mathrm d t\\
-&amp;=\frac{1}{2a}\int_0^\infty\left({t\over t^2+1}-{t\over t^2+2at+1}\right)\,\mathrm dt\\
-&amp;=\frac{1}{2a}\int_0^\infty\left(\frac12\cdot{\mathrm d(t^2+1)\over t^2+1}-\frac12\cdot{\mathrm d(t^2+2at+1)\over t^2+2at+1}+{a\over t^2+2at+1}\,\mathrm dt\right)\\
-&amp;=\frac{1}{4a}\left.\ln({t^2+1\over t^2+2at+1})\right|_{t=0}^\infty+\frac12\int_0^\infty{1\over(t+a)^2+1-a^2}\,\mathrm dt\\
-&amp;=0+\frac12\cdot{1\over1-a^2}\int_0^\infty{1\over1+\left({t+a\over\sqrt{1-a^2}}\right)^2}\,\mathrm dt\\
-&amp;=0+\frac12\cdot{1\over\sqrt{1-a^2}}\int_0^\infty{1\over1+\left({t+a\over\sqrt{1-a^2}}\right)^2}\,\mathrm d\left(t+a\over\sqrt{1-a^2}\right)\\
-&amp;={1\over 2\sqrt{1-a^2}}\left.\arctan\left(t+a\over\sqrt{1-a^2}\right)\right|_{t=0}^\infty\\
-&amp;={\frac\pi2-\arctan\left(a\over\sqrt{1-a^2}\right)\over2\sqrt{1-a^2}}\\
-&amp;={\arctan\left(\sqrt{1-a^2}\over a\right)\over 2\sqrt{1-a^2}}
-\end{align*}
-\]</span> 且<span class="math inline">\(I(0)=0\)</span>, 于是 <span class="math display">\[
-\begin{align*}\text{原积分}&amp;=I(1)\\&amp;=I(0)+\int_0^1 I'(a)\,\mathrm da\\
-&amp;=\int_0^1{\arctan\left(\sqrt{1-a^2}\over a\right)\over 2\sqrt{1-a^2}}\,\mathrm da\\
-&amp;=\int_0^\frac\pi2{\arctan({\sin x\over\cos x})\over 2\sin x}\sin x\,\mathrm dx\\
-&amp;=\int_0^\frac\pi2\frac x2\,\mathrm dx\\
-&amp;={\pi^2\over16}.
-\end{align*}
-\]</span></p>
+    <title>英国的上午</title>
+    <url>/posts/34132/</url>
+    <content><![CDATA[<p>我看见透蓝的天空，茵绿的草地，金黄的落叶。我闻到湿润的泥土，幽香的野花，沁凉的空气。我看见喜鹊圆滚的肚子和松鼠蓬松的尾巴。</p>
+<p>我看见倾洒下来的阳光和摇曳的树影。</p>
 ]]></content>
       <categories>
-        <category>数学</category>
-        <category>分析</category>
-        <category>微积分</category>
-        <category>单变量微积分</category>
+        <category>随笔</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>自然</title>
+    <url>/posts/28624/</url>
+    <content><![CDATA[<p>傍晚的热闹休闲沙滩，午夜的萤火魔幻森林，与异域篝火、冬不拉。</p>
+<p>人从自然中来，回不到自然中去。那对山幽鸟虫鸣的向往，会因为几声平凡不过的响动，转为惶恐。</p>
+]]></content>
+      <categories>
+        <category>随笔</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>过年</title>
+    <url>/posts/22344/</url>
+    <content><![CDATA[<p>写完春联，躺在窗边的床上，阳光晒着肚皮，窗外是湛蓝的天空，屋外是油锅的噼啪声</p>
+]]></content>
+      <categories>
+        <category>随笔</category>
       </categories>
   </entry>
   <entry>
@@ -1474,6 +1581,128 @@ a_n={n!\over(2n+1)!!}\cdot{1\over n+1}，
         <category>数学</category>
         <category>分析</category>
         <category>级数</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>这种教育的意义就是磨灭所有人的学习热情</title>
+    <url>/posts/51371/</url>
+    <content><![CDATA[<p>今天我们学习检索，首先，文献分为以下几类，这几类有这样的联系，检索有以下几种方法，它们有这样那样的优缺点，这个检索是在这个时间由这家公司创办的。 下面我们做检索的练习，检索分为以下几个步骤，首先就是检索准备。要明确学科属性，弄清信息类型，明确信息要求。</p>
+]]></content>
+      <categories>
+        <category>随笔</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>计算定积分</title>
+    <url>/posts/45803/</url>
+    <content><![CDATA[<p>计算 <span class="math display">\[
+\int_0^1{\ln\left(x+\sqrt{1-x^2}\right)\over x}\,\mathrm dx.
+\]</span> <span id="more"></span></p>
+<hr>
+<h2 id="方法一-feynmans-trick">方法一 （Feynman's Trick）</h2>
+<p>定义 <span class="math display">\[
+I(a)=\int_{0}^{1} \frac{\ln \left(a x+\sqrt{1-x^{2}}\right)}{x}\,\mathrm d x,
+\]</span> 那么 <span class="math display">\[
+\begin{align*}I^{\prime}(a)&amp;=\int_0^1{x\over ax+\sqrt{1-x^2}}\frac1x\,\mathrm dx\\
+&amp;=\int_{0}^{1} \frac{\mathrm d x}{a x+\sqrt{1-x^{2}}}\\
+&amp;=\int_0^{\frac\pi2}{\cos t\over a\sin t+\cos t}\,\mathrm dt
+\\&amp;=: I\end{align*}
+\]</span> 定义 <span class="math display">\[
+J=\int_0^{\frac\pi2}{\sin t\over a\sin t +\cos t}\,\mathrm dt,
+\]</span> 组合积分法： <span class="math display">\[
+I+aJ=\int_0^\frac\pi2{a\sin t+\cos t\over a\sin t +\cos t}\,\mathrm dt=\frac\pi2
+\]</span></p>
+<p><span class="math display">\[
+\begin{align*}
+aI-J&amp;=\int_0^\frac\pi2{a\cos t-\sin t\over a\sin t+\cos t}\,\mathrm dx\\
+&amp;=\int_0^\frac\pi2{\mathrm d(a\sin t+\cos t)\over a\sin t+\cos t}\\
+&amp;=\left.\ln(a\sin t+\cos t)\right|_0^\frac\pi2\\
+&amp;=\ln a
+\end{align*}
+\]</span></p>
+<p>解得 (Cramer法则) <span class="math display">\[
+\begin{align*}
+I&amp;={\begin{vmatrix}\frac\pi2&amp;a\\\ln a&amp;-1\end{vmatrix}\over\begin{vmatrix}1&amp;a\\a&amp;-1\end{vmatrix}}\\&amp;=\frac{1}{1+a^{2}}\left(\frac{\pi}{2}+a \ln a\right).
+\end{align*}
+\]</span> 此外， <span class="math display">\[
+\begin{align*}I(0)&amp;=\int_0^1{\ln\sqrt{1-x^2}\over x}\,\mathrm dx\\&amp;=\int_0^1{\ln\sqrt{1-t}\over\sqrt{t}}{\mathrm dt\over 2
+\sqrt t}&amp;&amp;\text{by $x^2=t$}\\&amp;=\frac14\int_0^1{\ln(1-t)\over t}\,\mathrm dx\\&amp;=-\frac14\int_0^1\sum_{n=1}^\infty{x^{n-1}\over n}\,\mathrm dx&amp;&amp;\text{by Taylor Series}\\
+&amp;=-\frac14\sum_{n=1}^\infty\frac1n\int_0^1x^{n-1}\,\mathrm dx\\&amp;=-\frac14\sum_{n=1}^\infty\frac{1}{n^2}\\&amp;=-\frac{\pi^2}{24},\end{align*}
+\]</span> 于是 <span class="math display">\[
+\begin{align*}\text{原积分}&amp;=I(1)\\&amp;=I(0)+\int_0^1I'(a)\,\mathrm da\\
+&amp;=-\frac{\pi^2}{24}+\int_0^1\frac{1}{1+a^{2}}\left(\frac{\pi}{2}+a \ln a\right)\,\mathrm da\\
+&amp;=-\frac{\pi^2}{24}+\frac{\pi}{2}\int_0^1\frac{1}{1+a^{2}}\,\mathrm dx+\int_0^1\frac{a}{1+a^{2}}\ln a\,\mathrm da\\
+&amp;=-\frac{\pi^2}{24}+\frac\pi2\cdot\frac\pi4+
+\int_0^1\sum_{n=0}^\infty(-1)^na^{2n+1}\ln a\,\mathrm da\\
+&amp;=\frac{\pi^2}{12}+\sum_{n=0}^\infty{(-1)^{n+1}\over(2n+2)^2}\\
+&amp;=\frac{\pi^2}{12}-\frac14\sum_{n=1}^\infty{(-1)^{n}\over n^2}\\
+&amp;=\frac{\pi^2}{12}-\frac14\cdot\frac{\pi^2}{12}\\
+&amp;=\frac{\pi^2}{16}.\end{align*}
+\]</span> <em>注：积分号下求导、积分与求和换序需要有定理保障.</em></p>
+<hr>
+<h2 id="方法二feynmans-trick">方法二（Feynman's Trick）</h2>
+<p><span class="math display">\[
+I=\int_0^1{\ln(x+\sqrt{1-x^2})\over x}\,\mathrm dx
+=\int_0^1{\ln \left[x\left(1+{\sqrt{1-x^2\over x^2}}\right)\right]\over x}\,\mathrm dx
+\]</span></p>
+<p>故作代换<span class="math inline">\(t=\sqrt{1-x^2\over x^2}\)</span>, 那么<span class="math inline">\(x=\frac{1}{\sqrt{1+t^2}}\)</span>, <span class="math inline">\(\mathrm dx=-t(1+t^2)^{-\frac32}\,\mathrm dt:\)</span> <span class="math display">\[
+\begin{align*}
+I&amp;=\int_0^\infty{\ln\left[(1+t^2)^{-\frac12}(1+t)\right]\over(1+t^2)^{-\frac12}}\cdot t(1+t^2)^{-\frac32}\,\mathrm dt\\
+&amp;=\int_0^\infty{t\ln\left({1+t\over\sqrt{1+t^2}}\right)\over 1+t^2}\,\mathrm dt\\
+&amp;=\frac12\int_0^\infty{t\ln\left({(1+t)^2\over{1+t^2}}\right)\over 1+t^2}\,\mathrm dt\\
+&amp;=\frac12\int_0^\infty{t\ln\left(1+{2t\over 1+t^2}\right)\over 1+t^2}\,\mathrm dt\\
+\end{align*}
+\]</span> 定义 <span class="math display">\[
+I(a)=\frac12\int_0^\infty{t\ln\left(1+{2at\over 1+t^2}\right)\over 1+t^2}\,\mathrm dt,
+\]</span> 那么 <span class="math display">\[
+\begin{align*}I'(a)&amp;=\frac12\int_0^\infty {t\over 1+t^2}\cdot{1\over 1+{2at\over 1+t^2}}\cdot{2t\over 1+t^2}\,\mathrm dt\\
+&amp;=\int_0^\infty{t^2\over(t^2+1)(t^2+2at+1)}\,\mathrm d t\\
+&amp;=\frac{1}{2a}\int_0^\infty\left({t\over t^2+1}-{t\over t^2+2at+1}\right)\,\mathrm dt\\
+&amp;=\frac{1}{2a}\int_0^\infty\left(\frac12\cdot{\mathrm d(t^2+1)\over t^2+1}-\frac12\cdot{\mathrm d(t^2+2at+1)\over t^2+2at+1}+{a\over t^2+2at+1}\,\mathrm dt\right)\\
+&amp;=\frac{1}{4a}\left.\ln({t^2+1\over t^2+2at+1})\right|_{t=0}^\infty+\frac12\int_0^\infty{1\over(t+a)^2+1-a^2}\,\mathrm dt\\
+&amp;=0+\frac12\cdot{1\over1-a^2}\int_0^\infty{1\over1+\left({t+a\over\sqrt{1-a^2}}\right)^2}\,\mathrm dt\\
+&amp;=0+\frac12\cdot{1\over\sqrt{1-a^2}}\int_0^\infty{1\over1+\left({t+a\over\sqrt{1-a^2}}\right)^2}\,\mathrm d\left(t+a\over\sqrt{1-a^2}\right)\\
+&amp;={1\over 2\sqrt{1-a^2}}\left.\arctan\left(t+a\over\sqrt{1-a^2}\right)\right|_{t=0}^\infty\\
+&amp;={\frac\pi2-\arctan\left(a\over\sqrt{1-a^2}\right)\over2\sqrt{1-a^2}}\\
+&amp;={\arctan\left(\sqrt{1-a^2}\over a\right)\over 2\sqrt{1-a^2}}
+\end{align*}
+\]</span> 且<span class="math inline">\(I(0)=0\)</span>, 于是 <span class="math display">\[
+\begin{align*}\text{原积分}&amp;=I(1)\\&amp;=I(0)+\int_0^1 I'(a)\,\mathrm da\\
+&amp;=\int_0^1{\arctan\left(\sqrt{1-a^2}\over a\right)\over 2\sqrt{1-a^2}}\,\mathrm da\\
+&amp;=\int_0^\frac\pi2{\arctan({\sin x\over\cos x})\over 2\sin x}\sin x\,\mathrm dx\\
+&amp;=\int_0^\frac\pi2\frac x2\,\mathrm dx\\
+&amp;={\pi^2\over16}.
+\end{align*}
+\]</span></p>
+]]></content>
+      <categories>
+        <category>数学</category>
+        <category>分析</category>
+        <category>微积分</category>
+        <category>单变量微积分</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>雪</title>
+    <url>/posts/47930/</url>
+    <content><![CDATA[<p>满世界白茫茫的一片。 静谧而优雅。 惬意而自在。 踏着碎琼乱玉，咯吱咯吱的声音和触感。 沁凉的空气，明亮的阳光，反射着熠熠生辉。</p>
+]]></content>
+      <categories>
+        <category>随笔</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>青春万岁</title>
+    <url>/posts/9178/</url>
+    <content><![CDATA[<p>所有的日子，所有的日子都来吧</p>
+<p>让我编织你们，用青春的金线，和幸福的璎珞，编织你们</p>
+<p>有那小船上的微笑，月下校园的欢舞，细雨蒙蒙里踏青，初雪的早晨行军</p>
+<p>还有热烈的争论，跃动的，温暖的心</p>
+<p>是转眼过去的日子，也是充满遐想的日子</p>
+<p>纷纷的心愿迷离，像春天的雨</p>
+]]></content>
+      <categories>
+        <category>随笔</category>
       </categories>
   </entry>
 </search>
