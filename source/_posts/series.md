@@ -3,6 +3,7 @@ title: 常见级数
 categories:
   - 数学
   - 分析
+  - 微积分
   - 级数
 mathjax: true
 abbrlink: 56038

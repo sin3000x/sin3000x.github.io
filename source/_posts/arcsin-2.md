@@ -6,6 +6,7 @@ mathjax: true
 categories:
 - 数学
 - 分析
+- 微积分
 - 级数
 ---
 

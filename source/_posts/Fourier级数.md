@@ -3,6 +3,7 @@ title: Fourier 级数
 categories:
   - 数学
   - 分析
+  - 微积分
   - 级数
 mathjax: true
 abbrlink: 22351
