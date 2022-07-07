@@ -1,6 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>2017总结</title>
+    <url>/posts/47552/</url>
+    <content><![CDATA[<ul>
+<li>情绪调整。</li>
+<li>经历病痛与死亡的威胁，才知道身体健康的重要性。</li>
+<li>努力过，才有资格说这方面没天赋。</li>
+<li>上天不一定是公平的。别人考前看一会书，比你准备一个礼拜成绩还要高。</li>
+<li>学习方法很重要。</li>
+<li>该表现的时候不要胆怯。该领导的时候不要退避。</li>
+<li>知道了什么样的人惹人讨厌，什么样的人讨人喜欢。</li>
+</ul>
+]]></content>
+      <categories>
+        <category>随笔</category>
+      </categories>
+  </entry>
+  <entry>
     <title>控制收敛定理 (DCT)</title>
     <url>/posts/34980/</url>
     <content><![CDATA[<p><span class="math display">\[\lim_{n\to\infty}\int_S f_n \,d\mu=\int_S f\,d\mu\]</span></p>
@@ -21,23 +38,6 @@
         <category>数学</category>
         <category>分析</category>
         <category>实变函数</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>2017总结</title>
-    <url>/posts/47552/</url>
-    <content><![CDATA[<ul>
-<li>情绪调整。</li>
-<li>经历病痛与死亡的威胁，才知道身体健康的重要性。</li>
-<li>努力过，才有资格说这方面没天赋。</li>
-<li>上天不一定是公平的。别人考前看一会书，比你准备一个礼拜成绩还要高。</li>
-<li>学习方法很重要。</li>
-<li>该表现的时候不要胆怯。该领导的时候不要退避。</li>
-<li>知道了什么样的人惹人讨厌，什么样的人讨人喜欢。</li>
-</ul>
-]]></content>
-      <categories>
-        <category>随笔</category>
       </categories>
   </entry>
   <entry>
@@ -85,23 +85,6 @@ y=Ce^{-\int p(x)\d x}
       </categories>
   </entry>
   <entry>
-    <title>OR-Tools 入门</title>
-    <url>/posts/59457/</url>
-    <content><![CDATA[<p><span class="math display">\[
-\max~ 3x+y,\quad
-\text{subject to}\ \begin{cases}
-0\le x\le 1\\
-0\le y\le 2\\
-x+y\le 2
-\end{cases}
-\]</span> <span id="more"></span> </p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> ortools.linear_solver <span class="keyword">import</span> pywraplp</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span>():</span></span><br><span class="line">    <span class="comment"># Create the linear solver with the GLOP backend.</span></span><br><span class="line">    solver = pywraplp.Solver.CreateSolver(<span class="string">'GLOP'</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Create the variables x and y.</span></span><br><span class="line">    x = solver.NumVar(<span class="number">0</span>, <span class="number">1</span>, <span class="string">'x'</span>)</span><br><span class="line">    y = solver.NumVar(<span class="number">0</span>, <span class="number">2</span>, <span class="string">'y'</span>)</span><br><span class="line"></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'Number of variables ='</span>, solver.NumVariables())</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Create a linear constraint, 0 &lt;= x + y &lt;= 2.</span></span><br><span class="line">    ct = solver.Constraint(<span class="number">0</span>, <span class="number">2</span>, <span class="string">'ct'</span>)</span><br><span class="line">    ct.SetCoefficient(x, <span class="number">1</span>)</span><br><span class="line">    ct.SetCoefficient(y, <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'Number of constraints ='</span>, solver.NumConstraints())</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Create the objective function, 3 * x + y.</span></span><br><span class="line">    objective = solver.Objective()</span><br><span class="line">    objective.SetCoefficient(x, <span class="number">3</span>)</span><br><span class="line">    objective.SetCoefficient(y, <span class="number">1</span>)</span><br><span class="line">    objective.SetMaximization()</span><br><span class="line"></span><br><span class="line">    solver.Solve()</span><br><span class="line"></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'='</span>*<span class="number">25</span>+<span class="string">' Solution '</span>+<span class="string">'='</span>*<span class="number">25</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'Objective value ='</span>, objective.Value())</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'x ='</span>, x.solution_value())</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'y ='</span>, y.solution_value())</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    main()</span><br></pre></td></tr></tbody></table></figure> 输出 <figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">Number of variables = 2</span><br><span class="line">Number of constraints = 1</span><br><span class="line">========================= Solution =========================</span><br><span class="line">Objective value = 4.0</span><br><span class="line">x = 1.0</span><br><span class="line">y = 1.0</span><br></pre></td></tr></tbody></table></figure><p></p>
-]]></content>
-      <categories>
-        <category>计算机</category>
-        <category>OR-Tools</category>
-      </categories>
-  </entry>
-  <entry>
     <title>OR-Tools 之 scheduling</title>
     <url>/posts/52763/</url>
     <content><![CDATA[<h2 id="倒班问题">倒班问题</h2>
@@ -114,7 +97,31 @@ x+y\le 2
 <p>上面的问题有很多组解, 这一节中引入一个 <code>request</code>, 也就是每一个护士的志愿.</p>
 <p>在下面的例子中, <code>shift_requests</code> 记录了 5 个护士的 7 天志愿, 比如 <code>[0, 0, 1]</code> 就表示希望这一天轮到第 3 班.</p>
 <figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">num_nurses = <span class="number">5</span></span><br><span class="line">num_shifts = <span class="number">3</span></span><br><span class="line">num_days = <span class="number">7</span></span><br><span class="line">all_nurses = <span class="built_in">range</span>(num_nurses)</span><br><span class="line">all_shifts = <span class="built_in">range</span>(num_shifts)</span><br><span class="line">all_days = <span class="built_in">range</span>(num_days)</span><br><span class="line">shift_requests = [[[<span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>], [<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>], [<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>], [<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>], [<span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>],</span><br><span class="line">                   [<span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>], [<span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>]],</span><br><span class="line">                  [[<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>], [<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>], [<span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>], [<span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>], [<span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>],</span><br><span class="line">                   [<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>], [<span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>]],</span><br><span class="line">                  [[<span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>], [<span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>], [<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>], [<span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>], [<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>],</span><br><span class="line">                   [<span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>], [<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>]],</span><br><span class="line">                  [[<span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>], [<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>], [<span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>], [<span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>], [<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>],</span><br><span class="line">                   [<span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>], [<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>]],</span><br><span class="line">                  [[<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>], [<span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>], [<span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>], [<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>], [<span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>],</span><br><span class="line">                   [<span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>], [<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>]]]</span><br></pre></td></tr></tbody></table></figure>
-<p>建模和约束是一样的... </p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># create model and variables</span></span><br><span class="line">model = cp_model.CpModel()</span><br><span class="line"></span><br><span class="line">shifts = {}</span><br><span class="line"><span class="keyword">for</span> n <span class="keyword">in</span> all_nurses:</span><br><span class="line">    <span class="keyword">for</span> d <span class="keyword">in</span> all_days:</span><br><span class="line">        <span class="keyword">for</span> s <span class="keyword">in</span> all_shifts:</span><br><span class="line">            shifts[(n, d, s)] = model.NewBoolVar(<span class="string">'shift_n%id%is%i'</span> % (n, d, s))</span><br><span class="line"></span><br><span class="line"><span class="comment"># constraints</span></span><br><span class="line"><span class="keyword">for</span> d <span class="keyword">in</span> all_days:</span><br><span class="line">    <span class="keyword">for</span> s <span class="keyword">in</span> all_shifts:</span><br><span class="line">        model.AddExactlyOne(shifts[(n, d, s)] <span class="keyword">for</span> n <span class="keyword">in</span> all_nurses)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> n <span class="keyword">in</span> all_nurses:</span><br><span class="line">    <span class="keyword">for</span> d <span class="keyword">in</span> all_days:</span><br><span class="line">        model.AddAtMostOne(shifts[(n, d, s)] <span class="keyword">for</span> s <span class="keyword">in</span> all_shifts)</span><br><span class="line"></span><br><span class="line"><span class="comment"># distribute the shifts evenly</span></span><br><span class="line">min_shifts_per_nurse = (num_shifts * num_days) // num_nurses</span><br><span class="line"><span class="keyword">if</span> num_shifts * num_days % num_nurses == <span class="number">0</span>:</span><br><span class="line">    max_shifts_per_nurse = min_shifts_per_nurse</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    max_shifts_per_nurse = min_shifts_per_nurse + <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> n <span class="keyword">in</span> all_nurses:</span><br><span class="line">    num_shifts_worked = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> d <span class="keyword">in</span> all_days:</span><br><span class="line">        <span class="keyword">for</span> s <span class="keyword">in</span> all_shifts:</span><br><span class="line">            num_shifts_worked += shifts[(n, d, s)]</span><br><span class="line">    model.Add(min_shifts_per_nurse &lt;= num_shifts_worked)</span><br><span class="line">    model.Add(num_shifts_worked &lt;= max_shifts_per_nurse)</span><br></pre></td></tr></tbody></table></figure> 不过现在有一个目标函数, 希望被满足的志愿最大化: <figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># objective</span></span><br><span class="line">model.Maximize(</span><br><span class="line">    <span class="built_in">sum</span>(</span><br><span class="line">        shift_requests[n][d][s] * shifts[(n, d, s)] <span class="keyword">for</span> n <span class="keyword">in</span> all_nurses <span class="keyword">for</span> d <span class="keyword">in</span> all_days <span class="keyword">for</span> s <span class="keyword">in</span> all_shifts</span><br><span class="line">    )</span><br><span class="line">)</span><br></pre></td></tr></tbody></table></figure> 求解与输出... <figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">solver = cp_model.CpSolver()</span><br><span class="line">status = solver.Solve(model)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> status == cp_model.OPTIMAL:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'Solution:'</span>)</span><br><span class="line">    <span class="keyword">for</span> d <span class="keyword">in</span> all_days:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">'Day'</span>, d)</span><br><span class="line">        <span class="keyword">for</span> n <span class="keyword">in</span> all_nurses:</span><br><span class="line">            <span class="keyword">for</span> s <span class="keyword">in</span> all_shifts:</span><br><span class="line">                <span class="keyword">if</span> solver.Value(shifts[(n, d, s)]) == <span class="number">1</span>:</span><br><span class="line">                    <span class="keyword">if</span> shift_requests[n][d][s] == <span class="number">1</span>:</span><br><span class="line">                        <span class="built_in">print</span>(<span class="string">'Nurse'</span>, n, <span class="string">'works shift'</span>, s, <span class="string">'(requested).'</span>)</span><br><span class="line">                    <span class="keyword">else</span>:</span><br><span class="line">                        <span class="built_in">print</span>(<span class="string">'Nurse'</span>, n, <span class="string">'works shift'</span>, s, <span class="string">'(not requested).'</span>)</span><br><span class="line">        <span class="built_in">print</span>()</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f'Number of shift requests met = <span class="subst">{solver.ObjectiveValue()}</span>'</span>, <span class="string">f'(out of <span class="subst">{num_nurses*min_shifts_per_nurse}</span>)'</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'No optimal solution found.'</span>)</span><br></pre></td></tr></tbody></table></figure> 输出 <figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">Solution:</span><br><span class="line">Day 0</span><br><span class="line">Nurse 1 works shift 0 (not requested).</span><br><span class="line">Nurse 2 works shift 1 (requested).</span><br><span class="line">Nurse 3 works shift 2 (requested).</span><br><span class="line"></span><br><span class="line">Day 1</span><br><span class="line">Nurse 1 works shift 0 (not requested).</span><br><span class="line">Nurse 2 works shift 1 (requested).</span><br><span class="line">Nurse 4 works shift 2 (requested).</span><br><span class="line"></span><br><span class="line">Day 2</span><br><span class="line">Nurse 0 works shift 2 (not requested).</span><br><span class="line">Nurse 3 works shift 0 (requested).</span><br><span class="line">Nurse 4 works shift 1 (requested).</span><br><span class="line"></span><br><span class="line">Day 3</span><br><span class="line">Nurse 0 works shift 2 (not requested).</span><br><span class="line">Nurse 2 works shift 0 (requested).</span><br><span class="line">Nurse 3 works shift 1 (requested).</span><br><span class="line"></span><br><span class="line">Day 4</span><br><span class="line">Nurse 0 works shift 2 (requested).</span><br><span class="line">Nurse 1 works shift 1 (not requested).</span><br><span class="line">Nurse 4 works shift 0 (requested).</span><br><span class="line"></span><br><span class="line">Day 5</span><br><span class="line">Nurse 0 works shift 2 (not requested).</span><br><span class="line">Nurse 3 works shift 0 (requested).</span><br><span class="line">Nurse 4 works shift 1 (requested).</span><br><span class="line"></span><br><span class="line">Day 6</span><br><span class="line">Nurse 0 works shift 2 (requested).</span><br><span class="line">Nurse 1 works shift 1 (not requested).</span><br><span class="line">Nurse 2 works shift 0 (not requested).</span><br><span class="line"></span><br><span class="line">Number of shift requests met = 13.0 (out of 20)</span><br></pre></td></tr></tbody></table></figure><p></p>
+<p>建模和约束是一样的... </p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># create model and variables</span></span><br><span class="line">model = cp_model.CpModel()</span><br><span class="line"></span><br><span class="line">shifts = {}</span><br><span class="line"><span class="keyword">for</span> n <span class="keyword">in</span> all_nurses:</span><br><span class="line">    <span class="keyword">for</span> d <span class="keyword">in</span> all_days:</span><br><span class="line">        <span class="keyword">for</span> s <span class="keyword">in</span> all_shifts:</span><br><span class="line">            shifts[(n, d, s)] = model.NewBoolVar(<span class="string">'shift_n%id%is%i'</span> % (n, d, s))</span><br><span class="line"></span><br><span class="line"><span class="comment"># constraints</span></span><br><span class="line"><span class="keyword">for</span> d <span class="keyword">in</span> all_days:</span><br><span class="line">    <span class="keyword">for</span> s <span class="keyword">in</span> all_shifts:</span><br><span class="line">        model.AddExactlyOne(shifts[(n, d, s)] <span class="keyword">for</span> n <span class="keyword">in</span> all_nurses)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> n <span class="keyword">in</span> all_nurses:</span><br><span class="line">    <span class="keyword">for</span> d <span class="keyword">in</span> all_days:</span><br><span class="line">        model.AddAtMostOne(shifts[(n, d, s)] <span class="keyword">for</span> s <span class="keyword">in</span> all_shifts)</span><br><span class="line"></span><br><span class="line"><span class="comment"># distribute the shifts evenly</span></span><br><span class="line">min_shifts_per_nurse = (num_shifts * num_days) // num_nurses</span><br><span class="line"><span class="keyword">if</span> num_shifts * num_days % num_nurses == <span class="number">0</span>:</span><br><span class="line">    max_shifts_per_nurse = min_shifts_per_nurse</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    max_shifts_per_nurse = min_shifts_per_nurse + <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> n <span class="keyword">in</span> all_nurses:</span><br><span class="line">    num_shifts_worked = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> d <span class="keyword">in</span> all_days:</span><br><span class="line">        <span class="keyword">for</span> s <span class="keyword">in</span> all_shifts:</span><br><span class="line">            num_shifts_worked += shifts[(n, d, s)]</span><br><span class="line">    model.Add(min_shifts_per_nurse &lt;= num_shifts_worked)</span><br><span class="line">    model.Add(num_shifts_worked &lt;= max_shifts_per_nurse)</span><br></pre></td></tr></tbody></table></figure> 不过现在有一个目标函数, 希望被满足的志愿最大化: <figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># objective</span></span><br><span class="line">model.Maximize(</span><br><span class="line">    <span class="built_in">sum</span>(</span><br><span class="line">        shift_requests[n][d][s] * shifts[(n, d, s)] </span><br><span class="line">        <span class="keyword">for</span> n <span class="keyword">in</span> all_nurses </span><br><span class="line">        <span class="keyword">for</span> d <span class="keyword">in</span> all_days </span><br><span class="line">        <span class="keyword">for</span> s <span class="keyword">in</span> all_shifts</span><br><span class="line">    )</span><br><span class="line">)</span><br></pre></td></tr></tbody></table></figure> 求解与输出... <figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">solver = cp_model.CpSolver()</span><br><span class="line">status = solver.Solve(model)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> status == cp_model.OPTIMAL:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'Solution:'</span>)</span><br><span class="line">    <span class="keyword">for</span> d <span class="keyword">in</span> all_days:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">'Day'</span>, d)</span><br><span class="line">        <span class="keyword">for</span> n <span class="keyword">in</span> all_nurses:</span><br><span class="line">            <span class="keyword">for</span> s <span class="keyword">in</span> all_shifts:</span><br><span class="line">                <span class="keyword">if</span> solver.Value(shifts[(n, d, s)]) == <span class="number">1</span>:</span><br><span class="line">                    <span class="keyword">if</span> shift_requests[n][d][s] == <span class="number">1</span>:</span><br><span class="line">                        <span class="built_in">print</span>(<span class="string">'Nurse'</span>, n, <span class="string">'works shift'</span>, s, <span class="string">'(requested).'</span>)</span><br><span class="line">                    <span class="keyword">else</span>:</span><br><span class="line">                        <span class="built_in">print</span>(<span class="string">'Nurse'</span>, n, <span class="string">'works shift'</span>, s, <span class="string">'(not requested).'</span>)</span><br><span class="line">        <span class="built_in">print</span>()</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f'Number of shift requests met = <span class="subst">{solver.ObjectiveValue()}</span>'</span>, <span class="string">f'(out of <span class="subst">{num_nurses*min_shifts_per_nurse}</span>)'</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'No optimal solution found.'</span>)</span><br></pre></td></tr></tbody></table></figure> 输出 <figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">Solution:</span><br><span class="line">Day 0</span><br><span class="line">Nurse 1 works shift 0 (not requested).</span><br><span class="line">Nurse 2 works shift 1 (requested).</span><br><span class="line">Nurse 3 works shift 2 (requested).</span><br><span class="line"></span><br><span class="line">Day 1</span><br><span class="line">Nurse 1 works shift 0 (not requested).</span><br><span class="line">Nurse 2 works shift 1 (requested).</span><br><span class="line">Nurse 4 works shift 2 (requested).</span><br><span class="line"></span><br><span class="line">Day 2</span><br><span class="line">Nurse 0 works shift 2 (not requested).</span><br><span class="line">Nurse 3 works shift 0 (requested).</span><br><span class="line">Nurse 4 works shift 1 (requested).</span><br><span class="line"></span><br><span class="line">Day 3</span><br><span class="line">Nurse 0 works shift 2 (not requested).</span><br><span class="line">Nurse 2 works shift 0 (requested).</span><br><span class="line">Nurse 3 works shift 1 (requested).</span><br><span class="line"></span><br><span class="line">Day 4</span><br><span class="line">Nurse 0 works shift 2 (requested).</span><br><span class="line">Nurse 1 works shift 1 (not requested).</span><br><span class="line">Nurse 4 works shift 0 (requested).</span><br><span class="line"></span><br><span class="line">Day 5</span><br><span class="line">Nurse 0 works shift 2 (not requested).</span><br><span class="line">Nurse 3 works shift 0 (requested).</span><br><span class="line">Nurse 4 works shift 1 (requested).</span><br><span class="line"></span><br><span class="line">Day 6</span><br><span class="line">Nurse 0 works shift 2 (requested).</span><br><span class="line">Nurse 1 works shift 1 (not requested).</span><br><span class="line">Nurse 2 works shift 0 (not requested).</span><br><span class="line"></span><br><span class="line">Number of shift requests met = 13.0 (out of 20)</span><br></pre></td></tr></tbody></table></figure><p></p>
+<h2 id="工程分配问题">工程分配问题</h2>
+<h3 id="背景">背景</h3>
+<p>一个 job 由几个 task 组成, 它们之间有先后次序的要求. 每个 task 有对应的机器, 其中一个机器只能一次完成一个 task.</p>
+<p>每个 task 有自己的完成时间, 而这个 task 一旦在机器上开始就必须做完.</p>
+<p>比如下面这个例子: </p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">job0 = [(<span class="number">0</span>, <span class="number">3</span>), (<span class="number">1</span>, <span class="number">2</span>), (<span class="number">2</span>, <span class="number">2</span>)]</span><br><span class="line">job1 = [(<span class="number">0</span>, <span class="number">2</span>), (<span class="number">2</span>, <span class="number">1</span>), (<span class="number">1</span>, <span class="number">4</span>)]</span><br><span class="line">job2 = [(<span class="number">1</span>, <span class="number">4</span>), (<span class="number">2</span>, <span class="number">3</span>)]</span><br></pre></td></tr></tbody></table></figure> 意思是 <code>job0</code> 由三个 task 组成, 第一个在机器 0 上完成, 需要 3 个时间单位; 第二个在机器 1 上完成, 需要 2 个时间单位; 第三个在机器 2 上完成, 需要 2 个时间单位. 同理对 <code>job1</code> 和 <code>job2</code>.<p></p>
+<p>一个可能的方案如图: <img src="schedule1.png"></p>
+<p>这个并不是最优解, 我们希望最小化总时间.</p>
+<h3 id="建模">建模</h3>
+<p>我们记 <span class="math inline">\(t_{i,j}\)</span> 为 task (i, j) 的开始时间, 其中 task (i, j) 指的是 job i 的第 j 个 task. 比如上面的例子中, task (0, 2) 对应的是 <code>(1, 2)</code>, task (0, 3) 对应的是 <code>(2, 2)</code>.</p>
+<p><strong>优先级约束</strong></p>
+<p>必须先完成 task (0, 2), 再开始 task (0, 3). 而 task (0, 2) 需要 2 个时间单位来完成, 所以有 <span class="math display">\[
+t_{0,2} + 2 \le t_{0,3}
+\]</span></p>
+<p><strong>不重叠约束</strong></p>
+<p>task (0, 2) 和 task (2, 1) 都在机器 1 上完成, 而工作时间分别为 2 和 4. 所以, 以下两个约束中的一个成立:</p>
+<p><span class="math display">\[
+t_{0,2} + 2 \le t_{2,1}
+\]</span> 或 <span class="math display">\[
+t_{2,1} + 4 \le t_{0,2}.
+\]</span></p>
+<p><strong>目标函数</strong></p>
+<p>最小化时间跨度, 也就是从最早的开始时间到最晚的结束时间.</p>
+<h3 id="求解">求解</h3>
+<p>导包与数据... </p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> collections</span><br><span class="line"><span class="keyword">from</span> ortools.sat.python <span class="keyword">import</span> cp_model</span><br><span class="line"></span><br><span class="line"><span class="comment"># data...</span></span><br><span class="line">jobs_data = [</span><br><span class="line">    [(<span class="number">0</span>, <span class="number">3</span>), (<span class="number">1</span>, <span class="number">2</span>), (<span class="number">2</span>, <span class="number">2</span>)],</span><br><span class="line">    [(<span class="number">0</span>, <span class="number">2</span>), (<span class="number">2</span>, <span class="number">1</span>), (<span class="number">1</span>, <span class="number">4</span>)],</span><br><span class="line">    [(<span class="number">1</span>, <span class="number">4</span>), (<span class="number">2</span>, <span class="number">3</span>)]</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line">machines_count = <span class="number">1</span> + <span class="built_in">max</span>(task[<span class="number">0</span>] <span class="keyword">for</span> job <span class="keyword">in</span> jobs_data <span class="keyword">for</span> task <span class="keyword">in</span> job)</span><br><span class="line">all_machines = <span class="built_in">range</span>(machines_count)</span><br><span class="line"><span class="comment"># the sum of all durations</span></span><br><span class="line">horizon = <span class="built_in">sum</span>(task[<span class="number">1</span>] <span class="keyword">for</span> job <span class="keyword">in</span> jobs_data <span class="keyword">for</span> task <span class="keyword">in</span> job)</span><br></pre></td></tr></tbody></table></figure> 建模与变量... <figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">model = cp_model.CpModel()</span><br><span class="line"></span><br><span class="line"><span class="comment"># variables...</span></span><br><span class="line">task_type = collections.namedtuple(<span class="string">'task_type'</span>, <span class="string">'start end interval'</span>)</span><br><span class="line">assigned_task_type = collections.namedtuple(<span class="string">'assigned_task_type'</span>, <span class="string">'start job index duration'</span>)</span><br><span class="line"></span><br><span class="line">all_tasks = {}</span><br><span class="line">machine_to_intervals = collections.defaultdict(<span class="built_in">list</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> job_id, job <span class="keyword">in</span> <span class="built_in">enumerate</span>(jobs_data):</span><br><span class="line">    <span class="keyword">for</span> task_id, task <span class="keyword">in</span> <span class="built_in">enumerate</span>(job):</span><br><span class="line">        machine = task[<span class="number">0</span>]</span><br><span class="line">        duration = task[<span class="number">1</span>]</span><br><span class="line">        suffix = <span class="string">'_%i_%i'</span> % (job_id, task_id)</span><br><span class="line">        start_var = model.NewIntVar(<span class="number">0</span>, horizon, <span class="string">'start'</span> + suffix)</span><br><span class="line">        end_var = model.NewIntVar(<span class="number">0</span>, horizon, <span class="string">'end'</span> + suffix)</span><br><span class="line">        interval_var = model.NewIntervalVar(start_var, duration, end_var, <span class="string">'interval'</span> + suffix)</span><br><span class="line">        all_tasks[job_id, task_id] = task_type(start=start_var, end=end_var, interval=interval_var)</span><br><span class="line">        machine_to_intervals[machine].append(interval_var)</span><br></pre></td></tr></tbody></table></figure> 约束... <figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># disjunctive constraints</span></span><br><span class="line"><span class="keyword">for</span> machine <span class="keyword">in</span> all_machines:</span><br><span class="line">    model.AddNoOverlap(machine_to_intervals[machine])</span><br><span class="line"></span><br><span class="line"><span class="comment"># precidences inside a job</span></span><br><span class="line"><span class="keyword">for</span> job_id, job <span class="keyword">in</span> <span class="built_in">enumerate</span>(jobs_data):</span><br><span class="line">    <span class="keyword">for</span> task_id <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(job)-<span class="number">1</span>):</span><br><span class="line">        model.Add(all_tasks[job_id, task_id+<span class="number">1</span>].start &gt;= all_tasks[job_id, task_id].end)</span><br></pre></td></tr></tbody></table></figure> 目标函数... <figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># objective...</span></span><br><span class="line">obj_var = model.NewIntVar(<span class="number">0</span>, horizon, <span class="string">'makespan'</span>)</span><br><span class="line">model.AddMaxEquality(obj_var, [</span><br><span class="line">    all_tasks[job_id, <span class="built_in">len</span>(job)-<span class="number">1</span>].end <span class="keyword">for</span> job_id, job <span class="keyword">in</span> <span class="built_in">enumerate</span>(jobs_data)</span><br><span class="line">])</span><br><span class="line"></span><br><span class="line">model.Minimize(obj_var)</span><br></pre></td></tr></tbody></table></figure> 求解与输出... <figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># solve...</span></span><br><span class="line">solver = cp_model.CpSolver()</span><br><span class="line">status = solver.Solve(model)</span><br><span class="line"></span><br><span class="line"><span class="comment"># results...</span></span><br><span class="line"><span class="keyword">if</span> status == cp_model.OPTIMAL <span class="keyword">or</span> status == cp_model.FEASIBLE:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'Solution:'</span>)</span><br><span class="line">    <span class="comment"># create one list of assigned tasks per machine</span></span><br><span class="line">    assigned_jobs = collections.defaultdict(<span class="built_in">list</span>)</span><br><span class="line">    <span class="keyword">for</span> job_id, job <span class="keyword">in</span> <span class="built_in">enumerate</span>(jobs_data):</span><br><span class="line">        <span class="keyword">for</span> task_id, task <span class="keyword">in</span> <span class="built_in">enumerate</span>(job):</span><br><span class="line">            machine = task[<span class="number">0</span>]</span><br><span class="line">            assigned_jobs[machine].append(</span><br><span class="line">                assigned_task_type(start=solver.Value(all_tasks[job_id, task_id].start),</span><br><span class="line">                job=job_id,</span><br><span class="line">                index=task_id,</span><br><span class="line">                duration=task[<span class="number">1</span>])</span><br><span class="line">            )</span><br><span class="line">    <span class="comment"># create per machine output lines</span></span><br><span class="line">    output = <span class="string">''</span></span><br><span class="line">    <span class="keyword">for</span> machine <span class="keyword">in</span> all_machines:</span><br><span class="line">        <span class="comment"># sort by starting time</span></span><br><span class="line">        assigned_jobs[machine].sort()</span><br><span class="line">        sol_line_tasks = <span class="string">'Machine '</span> + <span class="built_in">str</span>(machine) + <span class="string">': '</span></span><br><span class="line">        sol_line = <span class="string">'\t'</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> assigned_task <span class="keyword">in</span> assigned_jobs[machine]:</span><br><span class="line">            name = <span class="string">'job_%i_task_%i'</span> % (assigned_task.job, assigned_task.index)</span><br><span class="line">            <span class="comment"># align columns</span></span><br><span class="line">            sol_line_tasks += <span class="string">'%-15s'</span> % name</span><br><span class="line"></span><br><span class="line">            start = assigned_task.start</span><br><span class="line">            duration = assigned_task.duration</span><br><span class="line">            sol_tmp = <span class="string">'[%i, %i]'</span> % (start, start + duration)</span><br><span class="line">            <span class="comment"># align columns</span></span><br><span class="line">            sol_line += <span class="string">'%-15s'</span> % sol_tmp</span><br><span class="line"></span><br><span class="line">        sol_line += <span class="string">'\n'</span></span><br><span class="line">        sol_line_tasks += <span class="string">'\n'</span></span><br><span class="line">        output += sol_line_tasks</span><br><span class="line">        output += sol_line</span><br><span class="line"></span><br><span class="line">    <span class="comment"># print the solution</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f'Optimal Schedule Length: <span class="subst">{solver.ObjectiveValue()}</span>'</span>)</span><br><span class="line">    <span class="built_in">print</span>(output)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'No solution found.'</span>)</span><br></pre></td></tr></tbody></table></figure> 输出: <figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">Solution:</span><br><span class="line">Optimal Schedule Length: 11.0</span><br><span class="line">Machine 0: job_1_task_0   job_0_task_0   </span><br><span class="line">        [0, 2]         [2, 5]         </span><br><span class="line">Machine 1: job_2_task_0   job_0_task_1   job_1_task_2   </span><br><span class="line">        [0, 4]         [5, 7]         [7, 11]        </span><br><span class="line">Machine 2: job_1_task_1   job_2_task_1   job_0_task_2   </span><br><span class="line">        [2, 3]         [4, 7]         [7, 9]    </span><br></pre></td></tr></tbody></table></figure> <img src="schedule2.png"><p></p>
 ]]></content>
       <categories>
         <category>计算机</category>
@@ -318,20 +325,6 @@ I_n={(2n)!!\over(2n+1)!!}.
         <category>数学</category>
         <category>代数</category>
         <category>线性代数</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>dereference 与 shallow copy</title>
-    <url>/posts/6370/</url>
-    <content><![CDATA[<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">x = [<span class="number">0</span>]</span><br><span class="line">y = x</span><br></pre></td></tr></tbody></table></figure>
-<p>此时修改 <code>x</code> 或 <code>y</code> 不影响另一个变量: </p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">x = [<span class="number">1</span>]</span><br><span class="line"><span class="built_in">print</span>(y)  <span class="comment"># [0]</span></span><br></pre></td></tr></tbody></table></figure><p></p>
-<p>如果有 dereference, 被修改: </p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">x = [<span class="number">0</span>]</span><br><span class="line">y = x</span><br><span class="line"></span><br><span class="line">y[<span class="number">0</span>] = [<span class="number">1</span>]</span><br><span class="line"><span class="built_in">print</span>(x)  <span class="comment"># [1]</span></span><br></pre></td></tr></tbody></table></figure> <span id="more"></span><p></p>
-<hr>
-<p>下面的例子中, <code>foo</code> 中的 <code>x</code> 是一个浅拷贝, 在第一次 <code>append</code> 的时候同时修改了原来的 <code>x</code>, 但在赋值为 2 时浅拷贝指向了新的地址, 之后的操作都是对浅拷贝进行的. </p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">foo</span>(<span class="params">x</span>):</span></span><br><span class="line">    x.append(<span class="number">1</span>)</span><br><span class="line">    x = [<span class="number">2</span>]</span><br><span class="line">    x.append(<span class="number">1</span>)</span><br><span class="line">    <span class="keyword">return</span> x</span><br><span class="line"></span><br><span class="line">x = [<span class="number">0</span>]</span><br><span class="line">foo(x)</span><br><span class="line"><span class="built_in">print</span>(x)  <span class="comment"># [0, 1]</span></span><br></pre></td></tr></tbody></table></figure><p></p>
-]]></content>
-      <categories>
-        <category>计算机</category>
-        <category>Python</category>
       </categories>
   </entry>
   <entry>
@@ -788,6 +781,37 @@ P&amp;Q&amp;R
       </categories>
   </entry>
   <entry>
+    <title>OR-Tools 入门</title>
+    <url>/posts/59457/</url>
+    <content><![CDATA[<p><span class="math display">\[
+\max~ 3x+y,\quad
+\text{subject to}\ \begin{cases}
+0\le x\le 1\\
+0\le y\le 2\\
+x+y\le 2
+\end{cases}
+\]</span> <span id="more"></span> </p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> ortools.linear_solver <span class="keyword">import</span> pywraplp</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span>():</span></span><br><span class="line">    <span class="comment"># Create the linear solver with the GLOP backend.</span></span><br><span class="line">    solver = pywraplp.Solver.CreateSolver(<span class="string">'GLOP'</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Create the variables x and y.</span></span><br><span class="line">    x = solver.NumVar(<span class="number">0</span>, <span class="number">1</span>, <span class="string">'x'</span>)</span><br><span class="line">    y = solver.NumVar(<span class="number">0</span>, <span class="number">2</span>, <span class="string">'y'</span>)</span><br><span class="line"></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'Number of variables ='</span>, solver.NumVariables())</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Create a linear constraint, 0 &lt;= x + y &lt;= 2.</span></span><br><span class="line">    ct = solver.Constraint(<span class="number">0</span>, <span class="number">2</span>, <span class="string">'ct'</span>)</span><br><span class="line">    ct.SetCoefficient(x, <span class="number">1</span>)</span><br><span class="line">    ct.SetCoefficient(y, <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'Number of constraints ='</span>, solver.NumConstraints())</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Create the objective function, 3 * x + y.</span></span><br><span class="line">    objective = solver.Objective()</span><br><span class="line">    objective.SetCoefficient(x, <span class="number">3</span>)</span><br><span class="line">    objective.SetCoefficient(y, <span class="number">1</span>)</span><br><span class="line">    objective.SetMaximization()</span><br><span class="line"></span><br><span class="line">    solver.Solve()</span><br><span class="line"></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'='</span>*<span class="number">25</span>+<span class="string">' Solution '</span>+<span class="string">'='</span>*<span class="number">25</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'Objective value ='</span>, objective.Value())</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'x ='</span>, x.solution_value())</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'y ='</span>, y.solution_value())</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    main()</span><br></pre></td></tr></tbody></table></figure> 输出 <figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">Number of variables = 2</span><br><span class="line">Number of constraints = 1</span><br><span class="line">========================= Solution =========================</span><br><span class="line">Objective value = 4.0</span><br><span class="line">x = 1.0</span><br><span class="line">y = 1.0</span><br></pre></td></tr></tbody></table></figure><p></p>
+]]></content>
+      <categories>
+        <category>计算机</category>
+        <category>OR-Tools</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>dereference 与 shallow copy</title>
+    <url>/posts/6370/</url>
+    <content><![CDATA[<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">x = [<span class="number">0</span>]</span><br><span class="line">y = x</span><br></pre></td></tr></tbody></table></figure>
+<p>此时修改 <code>x</code> 或 <code>y</code> 不影响另一个变量: </p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">x = [<span class="number">1</span>]</span><br><span class="line"><span class="built_in">print</span>(y)  <span class="comment"># [0]</span></span><br></pre></td></tr></tbody></table></figure><p></p>
+<p>如果有 dereference, 被修改: </p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">x = [<span class="number">0</span>]</span><br><span class="line">y = x</span><br><span class="line"></span><br><span class="line">y[<span class="number">0</span>] = [<span class="number">1</span>]</span><br><span class="line"><span class="built_in">print</span>(x)  <span class="comment"># [1]</span></span><br></pre></td></tr></tbody></table></figure> <span id="more"></span><p></p>
+<hr>
+<p>下面的例子中, <code>foo</code> 中的 <code>x</code> 是一个浅拷贝, 在第一次 <code>append</code> 的时候同时修改了原来的 <code>x</code>, 但在赋值为 2 时浅拷贝指向了新的地址, 之后的操作都是对浅拷贝进行的. </p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">foo</span>(<span class="params">x</span>):</span></span><br><span class="line">    x.append(<span class="number">1</span>)</span><br><span class="line">    x = [<span class="number">2</span>]</span><br><span class="line">    x.append(<span class="number">1</span>)</span><br><span class="line">    <span class="keyword">return</span> x</span><br><span class="line"></span><br><span class="line">x = [<span class="number">0</span>]</span><br><span class="line">foo(x)</span><br><span class="line"><span class="built_in">print</span>(x)  <span class="comment"># [0, 1]</span></span><br></pre></td></tr></tbody></table></figure><p></p>
+]]></content>
+      <categories>
+        <category>计算机</category>
+        <category>Python</category>
+      </categories>
+  </entry>
+  <entry>
     <title>数值积分</title>
     <url>/posts/24343/</url>
     <content><![CDATA[<p>Quadrature Rule 指的是形式 <span class="math display">\[Q(f)=\sum_{k=0}^nw_kf(x_k)\]</span></p>
@@ -972,6 +996,62 @@ y_{n+1}=\sum_{k=1}^l a_ky_{n+1-k}+h\sum_{k=0}^l b_k f_{n+1-k}
       </categories>
   </entry>
   <entry>
+    <title>双曲函数</title>
+    <url>/posts/12845/</url>
+    <content><![CDATA[<h2 id="定义">定义</h2>
+<p><span class="math display">\[\sinh(x)=\frac{\e^x-\e^{-x}}{2}\]</span></p>
+<p><span class="math display">\[\cosh(x)=\frac{\e^x+\e^{-x}}{2}\]</span></p>
+<p><span class="math display">\[\tanh(x)=\frac{\e^x-\e^{-x}}{\e^x+\e^{-x}},\ \coth(x)=\frac{1}{\tanh(x)}\]</span></p>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Sinh_cosh_tanh.svg/440px-Sinh_cosh_tanh.svg.png" width="300" height="300"></p>
+<span id="more"></span>
+<h2 id="复变量">复变量</h2>
+<p><span class="math display">\[\sin(\i x)=\i\sinh(x),\ \sinh(\i x)=\i\sin(x)\]</span></p>
+<p><span class="math display">\[\cos(\i x)=\cosh(x),\ \cosh(\i x)=\cos(x)\]</span></p>
+<h2 id="和角公式">和角公式</h2>
+<p><span class="math display">\[\sinh(x\pm y)=\sinh(x)\cosh(y)\pm\cosh(x)\sinh(y)\]</span></p>
+<p><span class="math display">\[\cosh(x\pm y)=\cosh(x)\cosh(y)\pm\sinh(x)\sinh(y)\]</span></p>
+<p><span class="math display">\[
+\tanh(x+y)={\tanh x+\tanh y\over 1+\tanh x\tanh y}
+\]</span></p>
+<p><span class="math display">\[
+\tanh(x-y)={\tanh x-\tanh y\over 1-\tanh x\tanh y}
+\]</span></p>
+<h2 id="倍角公式">倍角公式</h2>
+<p><span class="math display">\[\cosh 2x=\sinh^2x+\cosh^2x=2\sinh^2x+1=2\cosh^2x-1\]</span></p>
+<p><span class="math display">\[\sinh 2x=2\sinh x\cosh x\]</span></p>
+<p><span class="math display">\[\tanh 2x={2\tanh x\over 1+\tanh^2x}\]</span></p>
+<h2 id="逆函数">逆函数</h2>
+<p><span class="math display">\[\sinh^{-1}(x)=\ln\left(x+\sqrt{x^2+1}\right)\]</span></p>
+<p><span class="math display">\[\cosh^{-1}(x)=\ln\left(x+\sqrt{x^2-1}\right)\]</span></p>
+<p><span class="math display">\[\tanh^{-1}(x)=\frac12\ln\left(\frac{1+x}{1-x}\right)\]</span></p>
+<h2 id="导数">导数</h2>
+<p><span class="math display">\[\begin{gathered}
+(\sinh x)'=\cosh x\\
+(\cosh x)'=\sinh x\\
+(\tanh x)'=\frac{1}{\cosh^2 x}\\
+\left(\sinh^{-1}x\right)'=\frac{1}{\sqrt{x^2+1}}\\
+\left(\cosh^{-1}x\right)'=\frac{1}{\sqrt{x^2-1}}\\
+\left(\tanh^{-1}x\right)'=\frac{1}{1-x^2}\\
+\end{gathered}\]</span></p>
+<h2 id="积分">积分</h2>
+<p><span class="math display">\[
+\begin{gathered}
+\int\sinh(ax)\d x=\frac1a\cosh(ax)+C\\
+\int\cosh(ax)\d x=\frac1a\sinh(ax)+C\\
+\int\tanh(ax)\d x=\frac{1}{a}\ln(\cosh(ax))+C\\
+\int\tan(ax)\d x=-\frac1a\ln|\cos(ax)|+C
+\end{gathered}
+\]</span></p>
+<h2 id="泰勒展开">泰勒展开</h2>
+<p><span class="math display">\[\sinh(x)=x+\frac{x^3}{3!}+\frac{x^5}{5!}+\frac{x^7}{7!}+\cdots\]</span></p>
+<p><span class="math display">\[\cosh(x)=1+\frac{x^2}{2!}+\frac{x^4}{4!}+\frac{x^6}{6!}+\cdots\]</span></p>
+]]></content>
+      <categories>
+        <category>数学</category>
+        <category>初等数学</category>
+      </categories>
+  </entry>
+  <entry>
     <title>一些英文术语</title>
     <url>/posts/18686/</url>
     <content><![CDATA[<h2 id="分析与代数">分析与代数</h2>
@@ -1062,62 +1142,6 @@ y_{n+1}=\sum_{k=1}^l a_ky_{n+1-k}+h\sum_{k=0}^l b_k f_{n+1-k}
       </categories>
   </entry>
   <entry>
-    <title>双曲函数</title>
-    <url>/posts/12845/</url>
-    <content><![CDATA[<h2 id="定义">定义</h2>
-<p><span class="math display">\[\sinh(x)=\frac{\e^x-\e^{-x}}{2}\]</span></p>
-<p><span class="math display">\[\cosh(x)=\frac{\e^x+\e^{-x}}{2}\]</span></p>
-<p><span class="math display">\[\tanh(x)=\frac{\e^x-\e^{-x}}{\e^x+\e^{-x}},\ \coth(x)=\frac{1}{\tanh(x)}\]</span></p>
-<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Sinh_cosh_tanh.svg/440px-Sinh_cosh_tanh.svg.png" width="300" height="300"></p>
-<span id="more"></span>
-<h2 id="复变量">复变量</h2>
-<p><span class="math display">\[\sin(\i x)=\i\sinh(x),\ \sinh(\i x)=\i\sin(x)\]</span></p>
-<p><span class="math display">\[\cos(\i x)=\cosh(x),\ \cosh(\i x)=\cos(x)\]</span></p>
-<h2 id="和角公式">和角公式</h2>
-<p><span class="math display">\[\sinh(x\pm y)=\sinh(x)\cosh(y)\pm\cosh(x)\sinh(y)\]</span></p>
-<p><span class="math display">\[\cosh(x\pm y)=\cosh(x)\cosh(y)\pm\sinh(x)\sinh(y)\]</span></p>
-<p><span class="math display">\[
-\tanh(x+y)={\tanh x+\tanh y\over 1+\tanh x\tanh y}
-\]</span></p>
-<p><span class="math display">\[
-\tanh(x-y)={\tanh x-\tanh y\over 1-\tanh x\tanh y}
-\]</span></p>
-<h2 id="倍角公式">倍角公式</h2>
-<p><span class="math display">\[\cosh 2x=\sinh^2x+\cosh^2x=2\sinh^2x+1=2\cosh^2x-1\]</span></p>
-<p><span class="math display">\[\sinh 2x=2\sinh x\cosh x\]</span></p>
-<p><span class="math display">\[\tanh 2x={2\tanh x\over 1+\tanh^2x}\]</span></p>
-<h2 id="逆函数">逆函数</h2>
-<p><span class="math display">\[\sinh^{-1}(x)=\ln\left(x+\sqrt{x^2+1}\right)\]</span></p>
-<p><span class="math display">\[\cosh^{-1}(x)=\ln\left(x+\sqrt{x^2-1}\right)\]</span></p>
-<p><span class="math display">\[\tanh^{-1}(x)=\frac12\ln\left(\frac{1+x}{1-x}\right)\]</span></p>
-<h2 id="导数">导数</h2>
-<p><span class="math display">\[\begin{gathered}
-(\sinh x)'=\cosh x\\
-(\cosh x)'=\sinh x\\
-(\tanh x)'=\frac{1}{\cosh^2 x}\\
-\left(\sinh^{-1}x\right)'=\frac{1}{\sqrt{x^2+1}}\\
-\left(\cosh^{-1}x\right)'=\frac{1}{\sqrt{x^2-1}}\\
-\left(\tanh^{-1}x\right)'=\frac{1}{1-x^2}\\
-\end{gathered}\]</span></p>
-<h2 id="积分">积分</h2>
-<p><span class="math display">\[
-\begin{gathered}
-\int\sinh(ax)\d x=\frac1a\cosh(ax)+C\\
-\int\cosh(ax)\d x=\frac1a\sinh(ax)+C\\
-\int\tanh(ax)\d x=\frac{1}{a}\ln(\cosh(ax))+C\\
-\int\tan(ax)\d x=-\frac1a\ln|\cos(ax)|+C
-\end{gathered}
-\]</span></p>
-<h2 id="泰勒展开">泰勒展开</h2>
-<p><span class="math display">\[\sinh(x)=x+\frac{x^3}{3!}+\frac{x^5}{5!}+\frac{x^7}{7!}+\cdots\]</span></p>
-<p><span class="math display">\[\cosh(x)=1+\frac{x^2}{2!}+\frac{x^4}{4!}+\frac{x^6}{6!}+\cdots\]</span></p>
-]]></content>
-      <categories>
-        <category>数学</category>
-        <category>初等数学</category>
-      </categories>
-  </entry>
-  <entry>
     <title>为什么用开覆盖定义紧集</title>
     <url>/posts/47720/</url>
     <content><![CDATA[<p>【定义】一个集合是紧集的意思是，它的任何一个开覆盖都有有限子覆盖。</p>
@@ -1183,6 +1207,18 @@ y_{n+1}=\sum_{k=1}^l a_ky_{n+1-k}+h\sum_{k=0}^l b_k f_{n+1-k}
       </categories>
   </entry>
   <entry>
+    <title>回不去的夏天</title>
+    <url>/posts/59205/</url>
+    <content><![CDATA[<p>又是一年高考季. 清早起来, 大把的金光倾泻到身上, 让时间一下子变慢了.</p>
+<p>让我又想起了那个夏天, 那个完美的夏天, 那个打开教室后窗, 就有带着清香的槐花瓣飘落满地的五月. 窗边总有少年在惬意的清风中望着外面的世界, 而他身边总有熟悉的体温.</p>
+<p>我嗅到了阳光的味道, 那样浓烈而又炽热. 它带着莽撞, 带着悸动, 带着热血, 也带着青涩与迷茫.</p>
+<p>那是天空永远清朗的夏天, 有着池鱼, 鸣鸟, 蝉噪, 音乐, 冷饮的夏天; 有着汗水, 欢笑, 泪眼, 羁绊, 思念的夏天.</p>
+]]></content>
+      <categories>
+        <category>随笔</category>
+      </categories>
+  </entry>
+  <entry>
     <title>回家</title>
     <url>/posts/8368/</url>
     <content><![CDATA[<p>沁人的凉风和湛蓝中的云卷云舒，熟悉的楼房和那条街道，一簇簇与一丛丛，忽然让少年有了一丝归属，潮湿了眼眶。他颤抖着四肢，任每一个毛孔大肆呼吸着。 依稀在记忆中的水库，被荒草占据。大把的野草，湮没了少年心中，那未曾发出的约定。</p>
@@ -1192,9 +1228,39 @@ y_{n+1}=\sum_{k=1}^l a_ky_{n+1-k}+h\sum_{k=0}^l b_k f_{n+1-k}
       </categories>
   </entry>
   <entry>
+    <title>圣诞节</title>
+    <url>/posts/19175/</url>
+    <content><![CDATA[<p>圣诞树上挂满了忽闪忽闪的小彩灯，在富丽堂皇的商店里，在暖黄的水晶吊灯下，温柔地伫立。</p>
+<p>空气中弥漫着姜汁饼的甜美气息，耳畔回荡着童声喜乐、纯净的颂歌，以及驯鹿的铃儿叮当。黑漆漆的夜空中洒下鹅毛白的雪花，沁爽洁净的雪毯上，花白胡子的圣诞老人留下一道雪橇的印记。与可人儿相挽，踱步在礼品商城，柔情地看他趴着橱窗，瞪大了好奇的双眼。</p>
+]]></content>
+      <categories>
+        <category>随笔</category>
+      </categories>
+  </entry>
+  <entry>
     <title>秋心</title>
     <url>/posts/38252/</url>
     <content><![CDATA[<p>风起时，一片一片，金黄的，鹅黄的，浅绿的，接连着，打着卷地，在我噙着泪的眼前飘落，在地上挤成一团。 风住时，一棵一棵，笔挺的，有着优美线条和外形的，银杏，梧桐，在被悲伤吞噬了的我眼前伫立，宛若画中那么美，那么静。 风声，孩子们的说笑，木棍扫过落叶的沙沙声，喜鹊，麻雀，还有一个人，缓慢而轻轻的，脚步。</p>
+]]></content>
+      <categories>
+        <category>随笔</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>小憩</title>
+    <url>/posts/53822/</url>
+    <content><![CDATA[<p>代码敲累了。仰在椅子上。看午后的阳光，悠闲地洒下。窗纱外的一片明亮。冬日空气里的沁凉。街上的嘈杂。</p>
+]]></content>
+      <categories>
+        <category>随笔</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>廿四</title>
+    <url>/posts/38636/</url>
+    <content><![CDATA[<p>优秀的高中很多，但能如她这般，令学子们痴恋深情到每每想起她时，心中的温暖都会澎湃良久，恐怕少之又少。</p>
+<p>交付给廿四的青春，是完美的，是不容置辩的无悔无憾。对她的回眸，是噙着泪的仰望。真正在这里拼搏过的人，才会懂得何为傲、霸、狂，在这里受过挫的人，才会明白何为忍、毅、刚。什么是创造与梦想，什么是起伏和跌宕，什么令我们热泪盈眶，什么又是我们所说的，一生的荣光。</p>
+<p>不论结果，只凭你在这里留下的青春，就够你荣耀一生，就是你最优秀的铁证。遗憾不属于廿四人，挺起胸来，面对你要的梦想和创造，失败和成功。</p>
 ]]></content>
       <categories>
         <category>随笔</category>
@@ -1233,26 +1299,6 @@ Q=\begin{bmatrix}1&amp;\\&amp;\frac12\end{bmatrix}\begin{bmatrix}0&amp;1\\1&amp;
       </categories>
   </entry>
   <entry>
-    <title>小憩</title>
-    <url>/posts/53822/</url>
-    <content><![CDATA[<p>代码敲累了。仰在椅子上。看午后的阳光，悠闲地洒下。窗纱外的一片明亮。冬日空气里的沁凉。街上的嘈杂。</p>
-]]></content>
-      <categories>
-        <category>随笔</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>廿四</title>
-    <url>/posts/38636/</url>
-    <content><![CDATA[<p>优秀的高中很多，但能如她这般，令学子们痴恋深情到每每想起她时，心中的温暖都会澎湃良久，恐怕少之又少。</p>
-<p>交付给廿四的青春，是完美的，是不容置辩的无悔无憾。对她的回眸，是噙着泪的仰望。真正在这里拼搏过的人，才会懂得何为傲、霸、狂，在这里受过挫的人，才会明白何为忍、毅、刚。什么是创造与梦想，什么是起伏和跌宕，什么令我们热泪盈眶，什么又是我们所说的，一生的荣光。</p>
-<p>不论结果，只凭你在这里留下的青春，就够你荣耀一生，就是你最优秀的铁证。遗憾不属于廿四人，挺起胸来，面对你要的梦想和创造，失败和成功。</p>
-]]></content>
-      <categories>
-        <category>随笔</category>
-      </categories>
-  </entry>
-  <entry>
     <title>放学路上</title>
     <url>/posts/61326/</url>
     <content><![CDATA[<p>无法抑制去想，记不得那最后一次黄昏的放学路上。耳畔的空灵悠扬，橙红的落日夕阳，沁人的微风飘荡。脚下波光粼粼，眺望远方鹅黄的垂柳，爬上石阶的嫩草。如梦似幻。</p>
@@ -1272,18 +1318,27 @@ Q=\begin{bmatrix}1&amp;\\&amp;\frac12\end{bmatrix}\begin{bmatrix}0&amp;1\\1&amp;
       </categories>
   </entry>
   <entry>
-    <title>普达措</title>
-    <url>/posts/39803/</url>
-    <content><![CDATA[<p>彳彳亍亍，林雪风花，幽幽皑皑飒飒。 探探寻寻，湖鸟山虫，澹澹呖呖葱葱。</p>
+    <title>春雨</title>
+    <url>/posts/27822/</url>
+    <content><![CDATA[<p>春雨吵醒了一簇簇的红艳，沾湿了一树树的花香。</p>
 ]]></content>
       <categories>
         <category>随笔</category>
       </categories>
   </entry>
   <entry>
-    <title>春雨</title>
-    <url>/posts/27822/</url>
-    <content><![CDATA[<p>春雨吵醒了一簇簇的红艳，沾湿了一树树的花香。</p>
+    <title>晴朗的校园</title>
+    <url>/posts/4892/</url>
+    <content><![CDATA[<p>今天的世界格外明朗。徐徐的清风，轻柔的阳光，点点嫩芽，热闹的人群。一切都还是那样平常，但仿佛和那些日漫中的理想校园，只差着几片飞舞的樱花瓣。</p>
+]]></content>
+      <categories>
+        <category>随笔</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>普达措</title>
+    <url>/posts/39803/</url>
+    <content><![CDATA[<p>彳彳亍亍，林雪风花，幽幽皑皑飒飒。 探探寻寻，湖鸟山虫，澹澹呖呖葱葱。</p>
 ]]></content>
       <categories>
         <category>随笔</category>
@@ -1358,15 +1413,6 @@ Q=\begin{bmatrix}1&amp;\\&amp;\frac12\end{bmatrix}\begin{bmatrix}0&amp;1\\1&amp;
       </categories>
   </entry>
   <entry>
-    <title>晴朗的校园</title>
-    <url>/posts/4892/</url>
-    <content><![CDATA[<p>今天的世界格外明朗。徐徐的清风，轻柔的阳光，点点嫩芽，热闹的人群。一切都还是那样平常，但仿佛和那些日漫中的理想校园，只差着几片飞舞的樱花瓣。</p>
-]]></content>
-      <categories>
-        <category>随笔</category>
-      </categories>
-  </entry>
-  <entry>
     <title>没什么远大理想</title>
     <url>/posts/48210/</url>
     <content><![CDATA[<p>我只希望在一个天气不那么晴的日子里，在一个不那么吵的地方，读一本没那么有用的书，听一点不那么流行的歌。</p>
@@ -1394,6 +1440,15 @@ Q=\begin{bmatrix}1&amp;\\&amp;\frac12\end{bmatrix}\begin{bmatrix}0&amp;1\\1&amp;
 <p><strong>而要当一个好的科普工作者，需要有远超学生的理解能力，教授一样的专业水平，老师一样的教学功力，艺术家一样的审美，作家一样的文笔，诗人一样的清高，科学家一样对知识的热爱，艺人一样对大众心理的把控能力，运动员一样的毅力，还要有自身的人格魅力、抗压抗打击能力。</strong></p>
 <p>科普是一项非常难的工作，比讲课教书难得多。因为它面对的不是专业人士，而是乌合之众。这导致科普工作者必须用通俗语言来解释专业知识，却又不至于过于通俗而产生误导。稍微有一点漏洞就会被抓住攻击——有问题的科普比谣言更可怕，比迷信更害人。</p>
 <p>所以，科普工作者是一个神圣的标签，这个名号比想象中要严苛得多。</p>
+]]></content>
+      <categories>
+        <category>随笔</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>自习</title>
+    <url>/posts/12721/</url>
+    <content><![CDATA[<p>屋外的松树轻柔地律动，都贴到窗上来了。白茫茫的远空，不缓不急的阳光，飘香的槐花，清凉的音乐。</p>
 ]]></content>
       <categories>
         <category>随笔</category>
@@ -1482,21 +1537,20 @@ M=\frac{1}{\omega} D+L, \quad N=\frac{1-\omega}{\omega} D-U
       </categories>
   </entry>
   <entry>
-    <title>回不去的夏天</title>
-    <url>/posts/59205/</url>
-    <content><![CDATA[<p>又是一年高考季. 清早起来, 大把的金光倾泻到身上, 让时间一下子变慢了.</p>
-<p>让我又想起了那个夏天, 那个完美的夏天, 那个打开教室后窗, 就有带着清香的槐花瓣飘落满地的五月. 窗边总有少年在惬意的清风中望着外面的世界, 而他身边总有熟悉的体温.</p>
-<p>我嗅到了阳光的味道, 那样浓烈而又炽热. 它带着莽撞, 带着悸动, 带着热血, 也带着青涩与迷茫.</p>
-<p>那是天空永远清朗的夏天, 有着池鱼, 鸣鸟, 蝉噪, 音乐, 冷饮的夏天; 有着汗水, 欢笑, 泪眼, 羁绊, 思念的夏天.</p>
+    <title>自然</title>
+    <url>/posts/28624/</url>
+    <content><![CDATA[<p>傍晚的热闹休闲沙滩，午夜的萤火魔幻森林，与异域篝火、冬不拉。</p>
+<p>人从自然中来，回不到自然中去。那对山幽鸟虫鸣的向往，会因为几声平凡不过的响动，转为惶恐。</p>
 ]]></content>
       <categories>
         <category>随笔</category>
       </categories>
   </entry>
   <entry>
-    <title>自习</title>
-    <url>/posts/12721/</url>
-    <content><![CDATA[<p>屋外的松树轻柔地律动，都贴到窗上来了。白茫茫的远空，不缓不急的阳光，飘香的槐花，清凉的音乐。</p>
+    <title>英国的上午</title>
+    <url>/posts/34132/</url>
+    <content><![CDATA[<p>我看见透蓝的天空，茵绿的草地，金黄的落叶。我闻到湿润的泥土，幽香的野花，沁凉的空气。我看见喜鹊圆滚的肚子和松鼠蓬松的尾巴。</p>
+<p>我看见倾洒下来的阳光和摇曳的树影。</p>
 ]]></content>
       <categories>
         <category>随笔</category>
@@ -1590,26 +1644,6 @@ I(a)=\frac12\int_0^\infty{t\ln\left(1+{2at\over 1+t^2}\right)\over 1+t^2}\,\math
         <category>分析</category>
         <category>微积分</category>
         <category>单变量微积分</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>自然</title>
-    <url>/posts/28624/</url>
-    <content><![CDATA[<p>傍晚的热闹休闲沙滩，午夜的萤火魔幻森林，与异域篝火、冬不拉。</p>
-<p>人从自然中来，回不到自然中去。那对山幽鸟虫鸣的向往，会因为几声平凡不过的响动，转为惶恐。</p>
-]]></content>
-      <categories>
-        <category>随笔</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>英国的上午</title>
-    <url>/posts/34132/</url>
-    <content><![CDATA[<p>我看见透蓝的天空，茵绿的草地，金黄的落叶。我闻到湿润的泥土，幽香的野花，沁凉的空气。我看见喜鹊圆滚的肚子和松鼠蓬松的尾巴。</p>
-<p>我看见倾洒下来的阳光和摇曳的树影。</p>
-]]></content>
-      <categories>
-        <category>随笔</category>
       </categories>
   </entry>
   <entry>
@@ -1710,16 +1744,6 @@ a_n={n!\over(2n+1)!!}\cdot{1\over n+1}，
       </categories>
   </entry>
   <entry>
-    <title>圣诞节</title>
-    <url>/posts/19175/</url>
-    <content><![CDATA[<p>圣诞树上挂满了忽闪忽闪的小彩灯，在富丽堂皇的商店里，在暖黄的水晶吊灯下，温柔地伫立。</p>
-<p>空气中弥漫着姜汁饼的甜美气息，耳畔回荡着童声喜乐、纯净的颂歌，以及驯鹿的铃儿叮当。黑漆漆的夜空中洒下鹅毛白的雪花，沁爽洁净的雪毯上，花白胡子的圣诞老人留下一道雪橇的印记。与可人儿相挽，踱步在礼品商城，柔情地看他趴着橱窗，瞪大了好奇的双眼。</p>
-]]></content>
-      <categories>
-        <category>随笔</category>
-      </categories>
-  </entry>
-  <entry>
     <title>过年</title>
     <url>/posts/22344/</url>
     <content><![CDATA[<p>写完春联，躺在窗边的床上，阳光晒着肚皮，窗外是湛蓝的天空，屋外是油锅的噼啪声</p>
@@ -1729,14 +1753,9 @@ a_n={n!\over(2n+1)!!}\cdot{1\over n+1}，
       </categories>
   </entry>
   <entry>
-    <title>青春万岁</title>
-    <url>/posts/9178/</url>
-    <content><![CDATA[<p>所有的日子，所有的日子都来吧</p>
-<p>让我编织你们，用青春的金线，和幸福的璎珞，编织你们</p>
-<p>有那小船上的微笑，月下校园的欢舞，细雨蒙蒙里踏青，初雪的早晨行军</p>
-<p>还有热烈的争论，跃动的，温暖的心</p>
-<p>是转眼过去的日子，也是充满遐想的日子</p>
-<p>纷纷的心愿迷离，像春天的雨</p>
+    <title>这种教育的意义就是磨灭所有人的学习热情</title>
+    <url>/posts/51371/</url>
+    <content><![CDATA[<p>今天我们学习检索，首先，文献分为以下几类，这几类有这样的联系，检索有以下几种方法，它们有这样那样的优缺点，这个检索是在这个时间由这家公司创办的。 下面我们做检索的练习，检索分为以下几个步骤，首先就是检索准备。要明确学科属性，弄清信息类型，明确信息要求。</p>
 ]]></content>
       <categories>
         <category>随笔</category>
@@ -1752,9 +1771,14 @@ a_n={n!\over(2n+1)!!}\cdot{1\over n+1}，
       </categories>
   </entry>
   <entry>
-    <title>这种教育的意义就是磨灭所有人的学习热情</title>
-    <url>/posts/51371/</url>
-    <content><![CDATA[<p>今天我们学习检索，首先，文献分为以下几类，这几类有这样的联系，检索有以下几种方法，它们有这样那样的优缺点，这个检索是在这个时间由这家公司创办的。 下面我们做检索的练习，检索分为以下几个步骤，首先就是检索准备。要明确学科属性，弄清信息类型，明确信息要求。</p>
+    <title>青春万岁</title>
+    <url>/posts/9178/</url>
+    <content><![CDATA[<p>所有的日子，所有的日子都来吧</p>
+<p>让我编织你们，用青春的金线，和幸福的璎珞，编织你们</p>
+<p>有那小船上的微笑，月下校园的欢舞，细雨蒙蒙里踏青，初雪的早晨行军</p>
+<p>还有热烈的争论，跃动的，温暖的心</p>
+<p>是转眼过去的日子，也是充满遐想的日子</p>
+<p>纷纷的心愿迷离，像春天的雨</p>
 ]]></content>
       <categories>
         <category>随笔</category>
