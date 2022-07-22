@@ -55,36 +55,6 @@ f\colon[-L,L]\to\mathbb{R}
       </categories>
   </entry>
   <entry>
-    <title>常见的ODE解法</title>
-    <url>/posts/65228/</url>
-    <content><![CDATA[<h3 id="可分离变量-ypyqx">1. 可分离变量 <span class="math inline">\(y'=p(y)q(x)\)</span></h3>
-<p>分离变量后两边积分.</p>
-<h3 id="一阶齐次线性-ypxy0">2. 一阶齐次线性 <span class="math inline">\(y'+p(x)y=0\)</span></h3>
-<p><span class="math display">\[
-y=Ce^{-\int p(x)\d x}
-\]</span></p>
-<h3 id="一阶非齐次线性-ypxyqx">3. 一阶非齐次线性 <span class="math inline">\(y'+p(x)y=q(x)\)</span></h3>
-<ul>
-<li><p><span class="math inline">\(y=e^{-\int p(x)\d x}\left(C+\int q(x)e^{\int p(x)\d x}\d x\right)\)</span></p></li>
-<li><p>取积分因子 <span class="math inline">\(\mu(x)=e^{\int p(x)\d x}\)</span>.</p></li>
-</ul>
-<blockquote>
-<p>🌰 <span class="math inline">\(y'-2y/x=0\)</span>. <span class="math display">\[\begin{aligned}
-&amp;\mu(x)=e^{\int-\frac2x \d x}=e^{-2\ln x}=\frac{1}{x^2}\\
-&amp;\implies{1\over x^2}y'-{2\over x^3}y=0\\
-&amp;\implies\left({y\over x^2}\right)'=0\\
-&amp;\implies y=Cx^2
-\end{aligned}
-\]</span></p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>数学</category>
-        <category>分析</category>
-        <category>微分方程</category>
-      </categories>
-  </entry>
-  <entry>
     <title>OR-Tools 之 scheduling</title>
     <url>/posts/52763/</url>
     <content><![CDATA[<h2 id="倒班问题">倒班问题</h2>
@@ -122,6 +92,53 @@ t_{2,1} + 4 \le t_{0,2}.
 <p>最小化时间跨度, 也就是从最早的开始时间到最晚的结束时间.</p>
 <h3 id="求解">求解</h3>
 <p>导包与数据... </p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> collections</span><br><span class="line"><span class="keyword">from</span> ortools.sat.python <span class="keyword">import</span> cp_model</span><br><span class="line"></span><br><span class="line"><span class="comment"># data...</span></span><br><span class="line">jobs_data = [</span><br><span class="line">    [(<span class="number">0</span>, <span class="number">3</span>), (<span class="number">1</span>, <span class="number">2</span>), (<span class="number">2</span>, <span class="number">2</span>)],</span><br><span class="line">    [(<span class="number">0</span>, <span class="number">2</span>), (<span class="number">2</span>, <span class="number">1</span>), (<span class="number">1</span>, <span class="number">4</span>)],</span><br><span class="line">    [(<span class="number">1</span>, <span class="number">4</span>), (<span class="number">2</span>, <span class="number">3</span>)]</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line">machines_count = <span class="number">1</span> + <span class="built_in">max</span>(task[<span class="number">0</span>] <span class="keyword">for</span> job <span class="keyword">in</span> jobs_data <span class="keyword">for</span> task <span class="keyword">in</span> job)</span><br><span class="line">all_machines = <span class="built_in">range</span>(machines_count)</span><br><span class="line"><span class="comment"># the sum of all durations</span></span><br><span class="line">horizon = <span class="built_in">sum</span>(task[<span class="number">1</span>] <span class="keyword">for</span> job <span class="keyword">in</span> jobs_data <span class="keyword">for</span> task <span class="keyword">in</span> job)</span><br></pre></td></tr></tbody></table></figure> 建模与变量... <figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">model = cp_model.CpModel()</span><br><span class="line"></span><br><span class="line"><span class="comment"># variables...</span></span><br><span class="line">task_type = collections.namedtuple(<span class="string">'task_type'</span>, <span class="string">'start end interval'</span>)</span><br><span class="line">assigned_task_type = collections.namedtuple(<span class="string">'assigned_task_type'</span>, <span class="string">'start job index duration'</span>)</span><br><span class="line"></span><br><span class="line">all_tasks = {}</span><br><span class="line">machine_to_intervals = collections.defaultdict(<span class="built_in">list</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> job_id, job <span class="keyword">in</span> <span class="built_in">enumerate</span>(jobs_data):</span><br><span class="line">    <span class="keyword">for</span> task_id, task <span class="keyword">in</span> <span class="built_in">enumerate</span>(job):</span><br><span class="line">        machine = task[<span class="number">0</span>]</span><br><span class="line">        duration = task[<span class="number">1</span>]</span><br><span class="line">        suffix = <span class="string">'_%i_%i'</span> % (job_id, task_id)</span><br><span class="line">        start_var = model.NewIntVar(<span class="number">0</span>, horizon, <span class="string">'start'</span> + suffix)</span><br><span class="line">        end_var = model.NewIntVar(<span class="number">0</span>, horizon, <span class="string">'end'</span> + suffix)</span><br><span class="line">        interval_var = model.NewIntervalVar(start_var, duration, end_var, <span class="string">'interval'</span> + suffix)</span><br><span class="line">        all_tasks[job_id, task_id] = task_type(start=start_var, end=end_var, interval=interval_var)</span><br><span class="line">        machine_to_intervals[machine].append(interval_var)</span><br></pre></td></tr></tbody></table></figure> 约束... <figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># disjunctive constraints</span></span><br><span class="line"><span class="keyword">for</span> machine <span class="keyword">in</span> all_machines:</span><br><span class="line">    model.AddNoOverlap(machine_to_intervals[machine])</span><br><span class="line"></span><br><span class="line"><span class="comment"># precidences inside a job</span></span><br><span class="line"><span class="keyword">for</span> job_id, job <span class="keyword">in</span> <span class="built_in">enumerate</span>(jobs_data):</span><br><span class="line">    <span class="keyword">for</span> task_id <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(job)-<span class="number">1</span>):</span><br><span class="line">        model.Add(all_tasks[job_id, task_id+<span class="number">1</span>].start &gt;= all_tasks[job_id, task_id].end)</span><br></pre></td></tr></tbody></table></figure> 目标函数... <figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># objective...</span></span><br><span class="line">obj_var = model.NewIntVar(<span class="number">0</span>, horizon, <span class="string">'makespan'</span>)</span><br><span class="line">model.AddMaxEquality(obj_var, [</span><br><span class="line">    all_tasks[job_id, <span class="built_in">len</span>(job)-<span class="number">1</span>].end <span class="keyword">for</span> job_id, job <span class="keyword">in</span> <span class="built_in">enumerate</span>(jobs_data)</span><br><span class="line">])</span><br><span class="line"></span><br><span class="line">model.Minimize(obj_var)</span><br></pre></td></tr></tbody></table></figure> 求解与输出... <figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># solve...</span></span><br><span class="line">solver = cp_model.CpSolver()</span><br><span class="line">status = solver.Solve(model)</span><br><span class="line"></span><br><span class="line"><span class="comment"># results...</span></span><br><span class="line"><span class="keyword">if</span> status == cp_model.OPTIMAL <span class="keyword">or</span> status == cp_model.FEASIBLE:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'Solution:'</span>)</span><br><span class="line">    <span class="comment"># create one list of assigned tasks per machine</span></span><br><span class="line">    assigned_jobs = collections.defaultdict(<span class="built_in">list</span>)</span><br><span class="line">    <span class="keyword">for</span> job_id, job <span class="keyword">in</span> <span class="built_in">enumerate</span>(jobs_data):</span><br><span class="line">        <span class="keyword">for</span> task_id, task <span class="keyword">in</span> <span class="built_in">enumerate</span>(job):</span><br><span class="line">            machine = task[<span class="number">0</span>]</span><br><span class="line">            assigned_jobs[machine].append(</span><br><span class="line">                assigned_task_type(start=solver.Value(all_tasks[job_id, task_id].start),</span><br><span class="line">                job=job_id,</span><br><span class="line">                index=task_id,</span><br><span class="line">                duration=task[<span class="number">1</span>])</span><br><span class="line">            )</span><br><span class="line">    <span class="comment"># create per machine output lines</span></span><br><span class="line">    output = <span class="string">''</span></span><br><span class="line">    <span class="keyword">for</span> machine <span class="keyword">in</span> all_machines:</span><br><span class="line">        <span class="comment"># sort by starting time</span></span><br><span class="line">        assigned_jobs[machine].sort()</span><br><span class="line">        sol_line_tasks = <span class="string">'Machine '</span> + <span class="built_in">str</span>(machine) + <span class="string">': '</span></span><br><span class="line">        sol_line = <span class="string">'\t'</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> assigned_task <span class="keyword">in</span> assigned_jobs[machine]:</span><br><span class="line">            name = <span class="string">'job_%i_task_%i'</span> % (assigned_task.job, assigned_task.index)</span><br><span class="line">            <span class="comment"># align columns</span></span><br><span class="line">            sol_line_tasks += <span class="string">'%-15s'</span> % name</span><br><span class="line"></span><br><span class="line">            start = assigned_task.start</span><br><span class="line">            duration = assigned_task.duration</span><br><span class="line">            sol_tmp = <span class="string">'[%i, %i]'</span> % (start, start + duration)</span><br><span class="line">            <span class="comment"># align columns</span></span><br><span class="line">            sol_line += <span class="string">'%-15s'</span> % sol_tmp</span><br><span class="line"></span><br><span class="line">        sol_line += <span class="string">'\n'</span></span><br><span class="line">        sol_line_tasks += <span class="string">'\n'</span></span><br><span class="line">        output += sol_line_tasks</span><br><span class="line">        output += sol_line</span><br><span class="line"></span><br><span class="line">    <span class="comment"># print the solution</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f'Optimal Schedule Length: <span class="subst">{solver.ObjectiveValue()}</span>'</span>)</span><br><span class="line">    <span class="built_in">print</span>(output)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'No solution found.'</span>)</span><br></pre></td></tr></tbody></table></figure> 输出: <figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">Solution:</span><br><span class="line">Optimal Schedule Length: 11.0</span><br><span class="line">Machine 0: job_1_task_0   job_0_task_0   </span><br><span class="line">        [0, 2]         [2, 5]         </span><br><span class="line">Machine 1: job_2_task_0   job_0_task_1   job_1_task_2   </span><br><span class="line">        [0, 4]         [5, 7]         [7, 11]        </span><br><span class="line">Machine 2: job_1_task_1   job_2_task_1   job_0_task_2   </span><br><span class="line">        [2, 3]         [4, 7]         [7, 9]    </span><br></pre></td></tr></tbody></table></figure> <img src="schedule2.png"><p></p>
+]]></content>
+      <categories>
+        <category>计算机</category>
+        <category>OR-Tools</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>常见的ODE解法</title>
+    <url>/posts/65228/</url>
+    <content><![CDATA[<h3 id="可分离变量-ypyqx">1. 可分离变量 <span class="math inline">\(y'=p(y)q(x)\)</span></h3>
+<p>分离变量后两边积分.</p>
+<h3 id="一阶齐次线性-ypxy0">2. 一阶齐次线性 <span class="math inline">\(y'+p(x)y=0\)</span></h3>
+<p><span class="math display">\[
+y=Ce^{-\int p(x)\d x}
+\]</span></p>
+<h3 id="一阶非齐次线性-ypxyqx">3. 一阶非齐次线性 <span class="math inline">\(y'+p(x)y=q(x)\)</span></h3>
+<ul>
+<li><p><span class="math inline">\(y=e^{-\int p(x)\d x}\left(C+\int q(x)e^{\int p(x)\d x}\d x\right)\)</span></p></li>
+<li><p>取积分因子 <span class="math inline">\(\mu(x)=e^{\int p(x)\d x}\)</span>.</p></li>
+</ul>
+<blockquote>
+<p>🌰 <span class="math inline">\(y'-2y/x=0\)</span>. <span class="math display">\[\begin{aligned}
+&amp;\mu(x)=e^{\int-\frac2x \d x}=e^{-2\ln x}=\frac{1}{x^2}\\
+&amp;\implies{1\over x^2}y'-{2\over x^3}y=0\\
+&amp;\implies\left({y\over x^2}\right)'=0\\
+&amp;\implies y=Cx^2
+\end{aligned}
+\]</span></p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>数学</category>
+        <category>分析</category>
+        <category>微分方程</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>OR-Tools 入门</title>
+    <url>/posts/59457/</url>
+    <content><![CDATA[<p><span class="math display">\[
+\max~ 3x+y,\quad
+\text{subject to}\ \begin{cases}
+0\le x\le 1\\
+0\le y\le 2\\
+x+y\le 2
+\end{cases}
+\]</span> <span id="more"></span> </p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> ortools.linear_solver <span class="keyword">import</span> pywraplp</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span>():</span></span><br><span class="line">    <span class="comment"># Create the linear solver with the GLOP backend.</span></span><br><span class="line">    solver = pywraplp.Solver.CreateSolver(<span class="string">'GLOP'</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Create the variables x and y.</span></span><br><span class="line">    x = solver.NumVar(<span class="number">0</span>, <span class="number">1</span>, <span class="string">'x'</span>)</span><br><span class="line">    y = solver.NumVar(<span class="number">0</span>, <span class="number">2</span>, <span class="string">'y'</span>)</span><br><span class="line"></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'Number of variables ='</span>, solver.NumVariables())</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Create a linear constraint, 0 &lt;= x + y &lt;= 2.</span></span><br><span class="line">    ct = solver.Constraint(<span class="number">0</span>, <span class="number">2</span>, <span class="string">'ct'</span>)</span><br><span class="line">    ct.SetCoefficient(x, <span class="number">1</span>)</span><br><span class="line">    ct.SetCoefficient(y, <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'Number of constraints ='</span>, solver.NumConstraints())</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Create the objective function, 3 * x + y.</span></span><br><span class="line">    objective = solver.Objective()</span><br><span class="line">    objective.SetCoefficient(x, <span class="number">3</span>)</span><br><span class="line">    objective.SetCoefficient(y, <span class="number">1</span>)</span><br><span class="line">    objective.SetMaximization()</span><br><span class="line"></span><br><span class="line">    solver.Solve()</span><br><span class="line"></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'='</span>*<span class="number">25</span>+<span class="string">' Solution '</span>+<span class="string">'='</span>*<span class="number">25</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'Objective value ='</span>, objective.Value())</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'x ='</span>, x.solution_value())</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'y ='</span>, y.solution_value())</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    main()</span><br></pre></td></tr></tbody></table></figure> 输出 <figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">Number of variables = 2</span><br><span class="line">Number of constraints = 1</span><br><span class="line">========================= Solution =========================</span><br><span class="line">Objective value = 4.0</span><br><span class="line">x = 1.0</span><br><span class="line">y = 1.0</span><br></pre></td></tr></tbody></table></figure><p></p>
 ]]></content>
       <categories>
         <category>计算机</category>
@@ -328,32 +345,17 @@ I_n={(2n)!!\over(2n+1)!!}.
       </categories>
   </entry>
   <entry>
-    <title>$f(A)$的特征值</title>
-    <url>/posts/3877/</url>
-    <content><![CDATA[<p><strong>引理 (Schur's Lemma): 若<span class="math inline">\(A\)</span>是数域<span class="math inline">\(F\)</span>上的<span class="math inline">\(n\)</span>阶方阵, 且<span class="math inline">\(A\)</span>的特征值都在<span class="math inline">\(F\)</span>中, 那么<span class="math inline">\(A\)</span>与一个上三角阵相似.</strong></p>
-<p><strong>证明: </strong></p>
-<p>归纳法. 当<span class="math inline">\(n=1\)</span>时显然成立: 此时<span class="math inline">\(A\)</span>本身是上三角阵.</p>
-<p>假设结论对<span class="math inline">\(n-1\)</span>阶方阵成立, 且<span class="math inline">\(A\in F^{n\times n}\)</span>的特征值都在<span class="math inline">\(F\)</span>中. 记特征向量<span class="math inline">\(v_1\)</span>对应的特征值是<span class="math inline">\(\lambda_1\in F\)</span>, 并把<span class="math inline">\(v_1\)</span>扩展为<span class="math inline">\(F^n\)</span>的一组基<span class="math inline">\(\mathcal B=(v_1,\ldots,v_n)\)</span>. 在这组基下, <span class="math inline">\(A\)</span>被相似变换为矩阵<span class="math display">\[[A]_\mathcal{B}=\begin{bmatrix}\lambda_1 &amp; *\\ 0 &amp; A_1\end{bmatrix},\]</span> 其中<span class="math inline">\(A_1\in F^{(n-1)\times (n-1)}\)</span>.</p>
-<span id="more"></span>
-<p>由于相似矩阵有相同的特征多项式, 于是<span class="math display">\[\det(xI-A)=\det(xI-[A]_\mathcal B)=(x-\lambda_1)\det(xI-A_1).\]</span> 又因为<span class="math inline">\(\det(xI-A)\)</span>的根都在<span class="math inline">\(F\)</span>中, 所以<span class="math inline">\(\det(xI-A_1)\)</span>的根也都在<span class="math inline">\(F\)</span>中, 这说明<span class="math inline">\(A_1\)</span>是特征值都在<span class="math inline">\(F\)</span>中的<span class="math inline">\(n-1\)</span>阶方阵.</p>
-<p>于是根据归纳假设, 存在可逆阵<span class="math inline">\(P\in F^{(n-1)\times(n-1)}\)</span>使得<span class="math display">\[U=PA_1P^{-1}\]</span>是上三角阵. 那么只需构造可逆阵<span class="math display">\[Q=\begin{bmatrix}1&amp;0\\0&amp;P\end{bmatrix},\]</span>便有<span class="math display">\[Q[A]_\mathcal B Q^{-1}=\begin{bmatrix}1&amp;0\\0&amp;P\end{bmatrix}\begin{bmatrix}\lambda_1&amp;*\\0&amp;A_1\end{bmatrix}\begin{bmatrix}1&amp;0\\0&amp;P^{-1}\end{bmatrix}=\begin{bmatrix}\lambda_1&amp;*\\0&amp;U\end{bmatrix}\]</span>是上三角阵.</p>
-<p>这说明<span class="math inline">\(A\)</span>与一个上三角阵相似, 归纳法完成.</p>
-<p><em>注: 一个更强的结论是Jordan标准型.</em></p>
+    <title>dereference 与 shallow copy</title>
+    <url>/posts/6370/</url>
+    <content><![CDATA[<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">x = [<span class="number">0</span>]</span><br><span class="line">y = x</span><br></pre></td></tr></tbody></table></figure>
+<p>此时修改 <code>x</code> 或 <code>y</code> 不影响另一个变量: </p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">x = [<span class="number">1</span>]</span><br><span class="line"><span class="built_in">print</span>(y)  <span class="comment"># [0]</span></span><br></pre></td></tr></tbody></table></figure><p></p>
+<p>如果有 dereference, 被修改: </p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">x = [<span class="number">0</span>]</span><br><span class="line">y = x</span><br><span class="line"></span><br><span class="line">y[<span class="number">0</span>] = [<span class="number">1</span>]</span><br><span class="line"><span class="built_in">print</span>(x)  <span class="comment"># [1]</span></span><br></pre></td></tr></tbody></table></figure> <span id="more"></span><p></p>
 <hr>
-<p><strong>定理: 若<span class="math inline">\(A\)</span>是数域<span class="math inline">\(F\)</span>上的<span class="math inline">\(n\)</span>阶方阵, 且<span class="math inline">\(A\)</span>的特征值都在<span class="math inline">\(F\)</span>中. <span class="math inline">\(f\)</span>是<span class="math inline">\(F\)</span>上的多项式, 那么<span class="math inline">\(a\)</span>是<span class="math inline">\(f(A)\)</span>的特征值<span class="math inline">\(\iff\)</span><span class="math inline">\(a=f(\lambda)\)</span>, 其中<span class="math inline">\(\lambda\)</span>是<span class="math inline">\(A\)</span>的特征值.</strong></p>
-<p><strong>证明:</strong></p>
-<p><span class="math inline">\((\Longleftarrow)\)</span>容易, 略.</p>
-<p><span class="math inline">\((\Longrightarrow)\)</span>根据引理, <span class="math inline">\(A\)</span>与一个上三角阵<span class="math inline">\(T\)</span>相似: <span class="math display">\[
-A=Q^{-1}TQ.
-\]</span> 由于<span class="math inline">\(f\)</span>是多项式, 那么 <span class="math display">\[
-f(A)=f(Q^{-1}TQ)=Q^{-1}f(T)Q.
-\]</span> 根据上三角阵的性质, <span class="math inline">\(f(T)\)</span>也是上三角阵, 且<span class="math inline">\(f(T)\)</span>的对角元恰好是<span class="math inline">\(f(\lambda)\)</span>, 其中<span class="math inline">\(\lambda\)</span>是<span class="math inline">\(T\)</span>的对角元.</p>
-<p>因为相似矩阵有相同的特征值, 且上三角阵的对角元与其特征值对应, 于是<span class="math inline">\(f(A)\)</span>的特征值都是<span class="math inline">\(f(\lambda)\)</span>的形式, 其中<span class="math inline">\(\lambda\)</span>是<span class="math inline">\(A\)</span>的特征值.</p>
+<p>下面的例子中, <code>foo</code> 中的 <code>x</code> 是一个浅拷贝, 在第一次 <code>append</code> 的时候同时修改了原来的 <code>x</code>, 但在赋值为 2 时浅拷贝指向了新的地址, 之后的操作都是对浅拷贝进行的. </p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">foo</span>(<span class="params">x</span>):</span></span><br><span class="line">    x.append(<span class="number">1</span>)</span><br><span class="line">    x = [<span class="number">2</span>]</span><br><span class="line">    x.append(<span class="number">1</span>)</span><br><span class="line">    <span class="keyword">return</span> x</span><br><span class="line"></span><br><span class="line">x = [<span class="number">0</span>]</span><br><span class="line">foo(x)</span><br><span class="line"><span class="built_in">print</span>(x)  <span class="comment"># [0, 1]</span></span><br></pre></td></tr></tbody></table></figure><p></p>
 ]]></content>
       <categories>
-        <category>数学</category>
-        <category>代数</category>
-        <category>线性代数</category>
+        <category>计算机</category>
+        <category>Python</category>
       </categories>
   </entry>
   <entry>
@@ -501,6 +503,35 @@ F(x)=f(x)\sin(x-x_0)\leq0,~\forall x\in(0,\pi).
       </categories>
   </entry>
   <entry>
+    <title>$f(A)$的特征值</title>
+    <url>/posts/3877/</url>
+    <content><![CDATA[<p><strong>引理 (Schur's Lemma): 若<span class="math inline">\(A\)</span>是数域<span class="math inline">\(F\)</span>上的<span class="math inline">\(n\)</span>阶方阵, 且<span class="math inline">\(A\)</span>的特征值都在<span class="math inline">\(F\)</span>中, 那么<span class="math inline">\(A\)</span>与一个上三角阵相似.</strong></p>
+<p><strong>证明: </strong></p>
+<p>归纳法. 当<span class="math inline">\(n=1\)</span>时显然成立: 此时<span class="math inline">\(A\)</span>本身是上三角阵.</p>
+<p>假设结论对<span class="math inline">\(n-1\)</span>阶方阵成立, 且<span class="math inline">\(A\in F^{n\times n}\)</span>的特征值都在<span class="math inline">\(F\)</span>中. 记特征向量<span class="math inline">\(v_1\)</span>对应的特征值是<span class="math inline">\(\lambda_1\in F\)</span>, 并把<span class="math inline">\(v_1\)</span>扩展为<span class="math inline">\(F^n\)</span>的一组基<span class="math inline">\(\mathcal B=(v_1,\ldots,v_n)\)</span>. 在这组基下, <span class="math inline">\(A\)</span>被相似变换为矩阵<span class="math display">\[[A]_\mathcal{B}=\begin{bmatrix}\lambda_1 &amp; *\\ 0 &amp; A_1\end{bmatrix},\]</span> 其中<span class="math inline">\(A_1\in F^{(n-1)\times (n-1)}\)</span>.</p>
+<span id="more"></span>
+<p>由于相似矩阵有相同的特征多项式, 于是<span class="math display">\[\det(xI-A)=\det(xI-[A]_\mathcal B)=(x-\lambda_1)\det(xI-A_1).\]</span> 又因为<span class="math inline">\(\det(xI-A)\)</span>的根都在<span class="math inline">\(F\)</span>中, 所以<span class="math inline">\(\det(xI-A_1)\)</span>的根也都在<span class="math inline">\(F\)</span>中, 这说明<span class="math inline">\(A_1\)</span>是特征值都在<span class="math inline">\(F\)</span>中的<span class="math inline">\(n-1\)</span>阶方阵.</p>
+<p>于是根据归纳假设, 存在可逆阵<span class="math inline">\(P\in F^{(n-1)\times(n-1)}\)</span>使得<span class="math display">\[U=PA_1P^{-1}\]</span>是上三角阵. 那么只需构造可逆阵<span class="math display">\[Q=\begin{bmatrix}1&amp;0\\0&amp;P\end{bmatrix},\]</span>便有<span class="math display">\[Q[A]_\mathcal B Q^{-1}=\begin{bmatrix}1&amp;0\\0&amp;P\end{bmatrix}\begin{bmatrix}\lambda_1&amp;*\\0&amp;A_1\end{bmatrix}\begin{bmatrix}1&amp;0\\0&amp;P^{-1}\end{bmatrix}=\begin{bmatrix}\lambda_1&amp;*\\0&amp;U\end{bmatrix}\]</span>是上三角阵.</p>
+<p>这说明<span class="math inline">\(A\)</span>与一个上三角阵相似, 归纳法完成.</p>
+<p><em>注: 一个更强的结论是Jordan标准型.</em></p>
+<hr>
+<p><strong>定理: 若<span class="math inline">\(A\)</span>是数域<span class="math inline">\(F\)</span>上的<span class="math inline">\(n\)</span>阶方阵, 且<span class="math inline">\(A\)</span>的特征值都在<span class="math inline">\(F\)</span>中. <span class="math inline">\(f\)</span>是<span class="math inline">\(F\)</span>上的多项式, 那么<span class="math inline">\(a\)</span>是<span class="math inline">\(f(A)\)</span>的特征值<span class="math inline">\(\iff\)</span><span class="math inline">\(a=f(\lambda)\)</span>, 其中<span class="math inline">\(\lambda\)</span>是<span class="math inline">\(A\)</span>的特征值.</strong></p>
+<p><strong>证明:</strong></p>
+<p><span class="math inline">\((\Longleftarrow)\)</span>容易, 略.</p>
+<p><span class="math inline">\((\Longrightarrow)\)</span>根据引理, <span class="math inline">\(A\)</span>与一个上三角阵<span class="math inline">\(T\)</span>相似: <span class="math display">\[
+A=Q^{-1}TQ.
+\]</span> 由于<span class="math inline">\(f\)</span>是多项式, 那么 <span class="math display">\[
+f(A)=f(Q^{-1}TQ)=Q^{-1}f(T)Q.
+\]</span> 根据上三角阵的性质, <span class="math inline">\(f(T)\)</span>也是上三角阵, 且<span class="math inline">\(f(T)\)</span>的对角元恰好是<span class="math inline">\(f(\lambda)\)</span>, 其中<span class="math inline">\(\lambda\)</span>是<span class="math inline">\(T\)</span>的对角元.</p>
+<p>因为相似矩阵有相同的特征值, 且上三角阵的对角元与其特征值对应, 于是<span class="math inline">\(f(A)\)</span>的特征值都是<span class="math inline">\(f(\lambda)\)</span>的形式, 其中<span class="math inline">\(\lambda\)</span>是<span class="math inline">\(A\)</span>的特征值.</p>
+]]></content>
+      <categories>
+        <category>数学</category>
+        <category>代数</category>
+        <category>线性代数</category>
+      </categories>
+  </entry>
+  <entry>
     <title>Hexo 用法记录</title>
     <url>/posts/16107/</url>
     <content><![CDATA[<p>插入图片: </p><figure class="highlight html"><table><tbody><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"/file/*"</span> <span class="attr">width</span>=<span class="string">"250"</span> <span class="attr">height</span>=<span class="string">"250"</span>/&gt;</span></span><br></pre></td></tr></tbody></table></figure><p></p>
@@ -531,6 +562,164 @@ F(x)=f(x)\sin(x-x_0)\leq0,~\forall x\in(0,\pi).
         <category>分析</category>
         <category>微积分</category>
         <category>多元微积分</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>决策树的 ID3 算法</title>
+    <url>/posts/56956/</url>
+    <content><![CDATA[<p>基于熵减, 或者说信息增益, 来决定决策树的 feature 选择. ID3 算法优先 split 可以带来最大熵减的那个 feature, 也就是一种贪心算法.</p>
+<p>如果一件事情的发生概率为 <span class="math inline">\(p\)</span>, 它带来的 entropy 被定义为 <span class="math inline">\(-\log_2 p\)</span>. 可以按不同的事件划分做加权平均. 在下面的例子中, A, B, C 为 feature, U 为 label.</p>
+<table>
+<thead>
+<tr class="header">
+<th>Real Avatar(A)</th>
+<th>Friends(B)</th>
+<th>Blog(C)</th>
+<th>Real User Account (U)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>N</td>
+<td>S</td>
+<td>S</td>
+<td>N</td>
+</tr>
+<tr class="even">
+<td>Y</td>
+<td>L</td>
+<td>S</td>
+<td>Y</td>
+</tr>
+<tr class="odd">
+<td>Y</td>
+<td>M</td>
+<td>L</td>
+<td>Y</td>
+</tr>
+<tr class="even">
+<td>Y</td>
+<td>M</td>
+<td>M</td>
+<td>Y</td>
+</tr>
+<tr class="odd">
+<td>Y</td>
+<td>M</td>
+<td>L</td>
+<td>Y</td>
+</tr>
+<tr class="even">
+<td>N</td>
+<td>L</td>
+<td>M</td>
+<td>Y</td>
+</tr>
+<tr class="odd">
+<td>N</td>
+<td>S</td>
+<td>M</td>
+<td>N</td>
+</tr>
+<tr class="even">
+<td>N</td>
+<td>M</td>
+<td>L</td>
+<td>Y</td>
+</tr>
+<tr class="odd">
+<td>N</td>
+<td>S</td>
+<td>M</td>
+<td>Y</td>
+</tr>
+<tr class="even">
+<td>Y</td>
+<td>S</td>
+<td>S</td>
+<td>N</td>
+</tr>
+</tbody>
+</table>
+<p>一共有 10 条数据, Y 占 7 条, N 占 3 条. 那么本身的熵为 <span class="math display">\[
+H=-0.7\times\log_20.7-0.3\times\log_20.3=0.8813
+\]</span></p>
+<p><strong>以计算 A 为例...</strong></p>
+<p>A 把数据分成了两类. 对 Y 类:</p>
+<table>
+<thead>
+<tr class="header">
+<th>Real Avatar(A)</th>
+<th>Real User Account (U)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Y</td>
+<td>Y</td>
+</tr>
+<tr class="even">
+<td>Y</td>
+<td>Y</td>
+</tr>
+<tr class="odd">
+<td>Y</td>
+<td>Y</td>
+</tr>
+<tr class="even">
+<td>Y</td>
+<td>Y</td>
+</tr>
+<tr class="odd">
+<td>Y</td>
+<td>N</td>
+</tr>
+</tbody>
+</table>
+<p>熵为 <span class="math display">\[
+-0.8\times\log_20.8-0.2\times\log_20.2=0.7219
+\]</span> 对 N 类:</p>
+<table>
+<thead>
+<tr class="header">
+<th>Real Avatar(A)</th>
+<th>Real User Account (U)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>N</td>
+<td>N</td>
+</tr>
+<tr class="even">
+<td>N</td>
+<td>Y</td>
+</tr>
+<tr class="odd">
+<td>N</td>
+<td>N</td>
+</tr>
+<tr class="even">
+<td>N</td>
+<td>Y</td>
+</tr>
+<tr class="odd">
+<td>N</td>
+<td>Y</td>
+</tr>
+</tbody>
+</table>
+<p>熵为 <span class="math display">\[
+-0.6\times\log_20.6-0.4\times\log_20.4=0.9710
+\]</span></p>
+<p>对整体进行加权平均, 就是按 A 分类带来的熵: <span class="math display">\[
+H_A=0.5\times0.7219+0.5\times0.9710=0.8465
+\]</span></p>
+<p>按 A 分类带来的熵减就是 <span class="math inline">\(0.8813-0.8465=0.0348\)</span>.</p>
+]]></content>
+      <categories>
+        <category>计算机</category>
+        <category>机器学习</category>
       </categories>
   </entry>
   <entry>
@@ -781,37 +970,6 @@ P&amp;Q&amp;R
       </categories>
   </entry>
   <entry>
-    <title>OR-Tools 入门</title>
-    <url>/posts/59457/</url>
-    <content><![CDATA[<p><span class="math display">\[
-\max~ 3x+y,\quad
-\text{subject to}\ \begin{cases}
-0\le x\le 1\\
-0\le y\le 2\\
-x+y\le 2
-\end{cases}
-\]</span> <span id="more"></span> </p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> ortools.linear_solver <span class="keyword">import</span> pywraplp</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span>():</span></span><br><span class="line">    <span class="comment"># Create the linear solver with the GLOP backend.</span></span><br><span class="line">    solver = pywraplp.Solver.CreateSolver(<span class="string">'GLOP'</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Create the variables x and y.</span></span><br><span class="line">    x = solver.NumVar(<span class="number">0</span>, <span class="number">1</span>, <span class="string">'x'</span>)</span><br><span class="line">    y = solver.NumVar(<span class="number">0</span>, <span class="number">2</span>, <span class="string">'y'</span>)</span><br><span class="line"></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'Number of variables ='</span>, solver.NumVariables())</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Create a linear constraint, 0 &lt;= x + y &lt;= 2.</span></span><br><span class="line">    ct = solver.Constraint(<span class="number">0</span>, <span class="number">2</span>, <span class="string">'ct'</span>)</span><br><span class="line">    ct.SetCoefficient(x, <span class="number">1</span>)</span><br><span class="line">    ct.SetCoefficient(y, <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'Number of constraints ='</span>, solver.NumConstraints())</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Create the objective function, 3 * x + y.</span></span><br><span class="line">    objective = solver.Objective()</span><br><span class="line">    objective.SetCoefficient(x, <span class="number">3</span>)</span><br><span class="line">    objective.SetCoefficient(y, <span class="number">1</span>)</span><br><span class="line">    objective.SetMaximization()</span><br><span class="line"></span><br><span class="line">    solver.Solve()</span><br><span class="line"></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'='</span>*<span class="number">25</span>+<span class="string">' Solution '</span>+<span class="string">'='</span>*<span class="number">25</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'Objective value ='</span>, objective.Value())</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'x ='</span>, x.solution_value())</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'y ='</span>, y.solution_value())</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    main()</span><br></pre></td></tr></tbody></table></figure> 输出 <figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">Number of variables = 2</span><br><span class="line">Number of constraints = 1</span><br><span class="line">========================= Solution =========================</span><br><span class="line">Objective value = 4.0</span><br><span class="line">x = 1.0</span><br><span class="line">y = 1.0</span><br></pre></td></tr></tbody></table></figure><p></p>
-]]></content>
-      <categories>
-        <category>计算机</category>
-        <category>OR-Tools</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>dereference 与 shallow copy</title>
-    <url>/posts/6370/</url>
-    <content><![CDATA[<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">x = [<span class="number">0</span>]</span><br><span class="line">y = x</span><br></pre></td></tr></tbody></table></figure>
-<p>此时修改 <code>x</code> 或 <code>y</code> 不影响另一个变量: </p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">x = [<span class="number">1</span>]</span><br><span class="line"><span class="built_in">print</span>(y)  <span class="comment"># [0]</span></span><br></pre></td></tr></tbody></table></figure><p></p>
-<p>如果有 dereference, 被修改: </p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">x = [<span class="number">0</span>]</span><br><span class="line">y = x</span><br><span class="line"></span><br><span class="line">y[<span class="number">0</span>] = [<span class="number">1</span>]</span><br><span class="line"><span class="built_in">print</span>(x)  <span class="comment"># [1]</span></span><br></pre></td></tr></tbody></table></figure> <span id="more"></span><p></p>
-<hr>
-<p>下面的例子中, <code>foo</code> 中的 <code>x</code> 是一个浅拷贝, 在第一次 <code>append</code> 的时候同时修改了原来的 <code>x</code>, 但在赋值为 2 时浅拷贝指向了新的地址, 之后的操作都是对浅拷贝进行的. </p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">foo</span>(<span class="params">x</span>):</span></span><br><span class="line">    x.append(<span class="number">1</span>)</span><br><span class="line">    x = [<span class="number">2</span>]</span><br><span class="line">    x.append(<span class="number">1</span>)</span><br><span class="line">    <span class="keyword">return</span> x</span><br><span class="line"></span><br><span class="line">x = [<span class="number">0</span>]</span><br><span class="line">foo(x)</span><br><span class="line"><span class="built_in">print</span>(x)  <span class="comment"># [0, 1]</span></span><br></pre></td></tr></tbody></table></figure><p></p>
-]]></content>
-      <categories>
-        <category>计算机</category>
-        <category>Python</category>
-      </categories>
-  </entry>
-  <entry>
     <title>数值积分</title>
     <url>/posts/24343/</url>
     <content><![CDATA[<p>Quadrature Rule 指的是形式 <span class="math display">\[Q(f)=\sum_{k=0}^nw_kf(x_k)\]</span></p>
@@ -853,6 +1011,43 @@ M(h)=\sum_{k=0}^{n-1}hf\left(a+h\left(k+\frac12\right)\right)
       <categories>
         <category>数学</category>
         <category>数值分析</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>极坐标和球坐标换元</title>
+    <url>/posts/26639/</url>
+    <content><![CDATA[<p><span class="math display">\[\iint_D F(x,y)\d x\d y=\iint_\Delta F(r\cos\theta,r\sin\theta)r\d r\d\theta\]</span></p>
+<p><span class="math display">\[\iiint_D F(x,y,z)\d x\d y\d z=\iiint_\Delta F(r\sin\theta\cos\phi,r\sin\theta\sin\phi,r\cos\theta)r^2\sin\theta\d r\d \theta\d \phi\]</span></p>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Kugelkoord-lokale-Basis-s.svg/480px-Kugelkoord-lokale-Basis-s.svg.png" width="250" height="250"></p>
+]]></content>
+      <categories>
+        <category>数学</category>
+        <category>分析</category>
+        <category>微积分</category>
+        <category>多元微积分</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>留数的计算方法</title>
+    <url>/posts/51485/</url>
+    <content><![CDATA[<ol type="1">
+<li>在分式 <span class="math inline">\(f=g/h\)</span> 中, 若分母有简单零点 <span class="math inline">\(z_0\)</span> 而分子没有, 那么 <span class="math inline">\(f\)</span> 在 <span class="math inline">\(z_0\)</span> 处的留数为 <span class="math display">\[
+\frac{g(z_0)}{h'(z_0)}
+\]</span></li>
+</ol>
+<blockquote>
+<p><span class="math inline">\(\dfrac{1}{z^4-1}\)</span> 在 <span class="math inline">\(\i\)</span> 处的留数为 <span class="math display">\[{1\over \left.4z^3\right|_{z=\i}}={1\over-4\i}=\frac\i4.\]</span></p>
+</blockquote>
+<ol start="2" type="1">
+<li>假设 <span class="math inline">\(z_0\)</span> 是 <span class="math inline">\(n\)</span> 阶极点, 那么该点处的留数为 <span class="math display">\[
+ \frac{1}{(n-1)!}\left(\left(\frac{\d}{\d z}\right)^{n-1}(z-z_0)^n f(z)\right)_{z=z_0}
+\]</span></li>
+</ol>
+]]></content>
+      <categories>
+        <category>数学</category>
+        <category>分析</category>
+        <category>复变函数</category>
       </categories>
   </entry>
   <entry>
@@ -914,43 +1109,6 @@ y_{n+1}=\sum_{k=1}^l a_ky_{n+1-k}+h\sum_{k=0}^l b_k f_{n+1-k}
       <categories>
         <category>数学</category>
         <category>数值分析</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>极坐标和球坐标换元</title>
-    <url>/posts/26639/</url>
-    <content><![CDATA[<p><span class="math display">\[\iint_D F(x,y)\d x\d y=\iint_\Delta F(r\cos\theta,r\sin\theta)r\d r\d\theta\]</span></p>
-<p><span class="math display">\[\iiint_D F(x,y,z)\d x\d y\d z=\iiint_\Delta F(r\sin\theta\cos\phi,r\sin\theta\sin\phi,r\cos\theta)r^2\sin\theta\d r\d \theta\d \phi\]</span></p>
-<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Kugelkoord-lokale-Basis-s.svg/480px-Kugelkoord-lokale-Basis-s.svg.png" width="250" height="250"></p>
-]]></content>
-      <categories>
-        <category>数学</category>
-        <category>分析</category>
-        <category>微积分</category>
-        <category>多元微积分</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>留数的计算方法</title>
-    <url>/posts/51485/</url>
-    <content><![CDATA[<ol type="1">
-<li>在分式 <span class="math inline">\(f=g/h\)</span> 中, 若分母有简单零点 <span class="math inline">\(z_0\)</span> 而分子没有, 那么 <span class="math inline">\(f\)</span> 在 <span class="math inline">\(z_0\)</span> 处的留数为 <span class="math display">\[
-\frac{g(z_0)}{h'(z_0)}
-\]</span></li>
-</ol>
-<blockquote>
-<p><span class="math inline">\(\dfrac{1}{z^4-1}\)</span> 在 <span class="math inline">\(\i\)</span> 处的留数为 <span class="math display">\[{1\over \left.4z^3\right|_{z=\i}}={1\over-4\i}=\frac\i4.\]</span></p>
-</blockquote>
-<ol start="2" type="1">
-<li>假设 <span class="math inline">\(z_0\)</span> 是 <span class="math inline">\(n\)</span> 阶极点, 那么该点处的留数为 <span class="math display">\[
- \frac{1}{(n-1)!}\left(\left(\frac{\d}{\d z}\right)^{n-1}(z-z_0)^n f(z)\right)_{z=z_0}
-\]</span></li>
-</ol>
-]]></content>
-      <categories>
-        <category>数学</category>
-        <category>分析</category>
-        <category>复变函数</category>
       </categories>
   </entry>
   <entry>
@@ -1247,6 +1405,17 @@ y_{n+1}=\sum_{k=1}^l a_ky_{n+1-k}+h\sum_{k=0}^l b_k f_{n+1-k}
       </categories>
   </entry>
   <entry>
+    <title>廿四</title>
+    <url>/posts/38636/</url>
+    <content><![CDATA[<p>优秀的高中很多，但能如她这般，令学子们痴恋深情到每每想起她时，心中的温暖都会澎湃良久，恐怕少之又少。</p>
+<p>交付给廿四的青春，是完美的，是不容置辩的无悔无憾。对她的回眸，是噙着泪的仰望。真正在这里拼搏过的人，才会懂得何为傲、霸、狂，在这里受过挫的人，才会明白何为忍、毅、刚。什么是创造与梦想，什么是起伏和跌宕，什么令我们热泪盈眶，什么又是我们所说的，一生的荣光。</p>
+<p>不论结果，只凭你在这里留下的青春，就够你荣耀一生，就是你最优秀的铁证。遗憾不属于廿四人，挺起胸来，面对你要的梦想和创造，失败和成功。</p>
+]]></content>
+      <categories>
+        <category>随笔</category>
+      </categories>
+  </entry>
+  <entry>
     <title>小憩</title>
     <url>/posts/53822/</url>
     <content><![CDATA[<p>代码敲累了。仰在椅子上。看午后的阳光，悠闲地洒下。窗纱外的一片明亮。冬日空气里的沁凉。街上的嘈杂。</p>
@@ -1256,11 +1425,28 @@ y_{n+1}=\sum_{k=1}^l a_ky_{n+1-k}+h\sum_{k=0}^l b_k f_{n+1-k}
       </categories>
   </entry>
   <entry>
-    <title>廿四</title>
-    <url>/posts/38636/</url>
-    <content><![CDATA[<p>优秀的高中很多，但能如她这般，令学子们痴恋深情到每每想起她时，心中的温暖都会澎湃良久，恐怕少之又少。</p>
-<p>交付给廿四的青春，是完美的，是不容置辩的无悔无憾。对她的回眸，是噙着泪的仰望。真正在这里拼搏过的人，才会懂得何为傲、霸、狂，在这里受过挫的人，才会明白何为忍、毅、刚。什么是创造与梦想，什么是起伏和跌宕，什么令我们热泪盈眶，什么又是我们所说的，一生的荣光。</p>
-<p>不论结果，只凭你在这里留下的青春，就够你荣耀一生，就是你最优秀的铁证。遗憾不属于廿四人，挺起胸来，面对你要的梦想和创造，失败和成功。</p>
+    <title>放学路上</title>
+    <url>/posts/61326/</url>
+    <content><![CDATA[<p>无法抑制去想，记不得那最后一次黄昏的放学路上。耳畔的空灵悠扬，橙红的落日夕阳，沁人的微风飘荡。脚下波光粼粼，眺望远方鹅黄的垂柳，爬上石阶的嫩草。如梦似幻。</p>
+<p>晚风，斜阳，音乐，白鹅，湖面，屋檐的金辉，静夜的虫鸣与群星。</p>
+]]></content>
+      <categories>
+        <category>随笔</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>春天来了</title>
+    <url>/posts/61668/</url>
+    <content><![CDATA[<p>没有了过往的凛冽，风变得和煦轻柔起来，枝条上冒出了毛茸茸的骨朵。</p>
+]]></content>
+      <categories>
+        <category>随笔</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>春雨</title>
+    <url>/posts/27822/</url>
+    <content><![CDATA[<p>春雨吵醒了一簇簇的红艳，沾湿了一树树的花香。</p>
 ]]></content>
       <categories>
         <category>随笔</category>
@@ -1299,28 +1485,9 @@ Q=\begin{bmatrix}1&amp;\\&amp;\frac12\end{bmatrix}\begin{bmatrix}0&amp;1\\1&amp;
       </categories>
   </entry>
   <entry>
-    <title>放学路上</title>
-    <url>/posts/61326/</url>
-    <content><![CDATA[<p>无法抑制去想，记不得那最后一次黄昏的放学路上。耳畔的空灵悠扬，橙红的落日夕阳，沁人的微风飘荡。脚下波光粼粼，眺望远方鹅黄的垂柳，爬上石阶的嫩草。如梦似幻。</p>
-<p>晚风，斜阳，音乐，白鹅，湖面，屋檐的金辉，静夜的虫鸣与群星。</p>
-]]></content>
-      <categories>
-        <category>随笔</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>春天来了</title>
-    <url>/posts/61668/</url>
-    <content><![CDATA[<p>没有了过往的凛冽，风变得和煦轻柔起来，枝条上冒出了毛茸茸的骨朵。</p>
-]]></content>
-      <categories>
-        <category>随笔</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>春雨</title>
-    <url>/posts/27822/</url>
-    <content><![CDATA[<p>春雨吵醒了一簇簇的红艳，沾湿了一树树的花香。</p>
+    <title>普达措</title>
+    <url>/posts/39803/</url>
+    <content><![CDATA[<p>彳彳亍亍，林雪风花，幽幽皑皑飒飒。 探探寻寻，湖鸟山虫，澹澹呖呖葱葱。</p>
 ]]></content>
       <categories>
         <category>随笔</category>
@@ -1330,15 +1497,6 @@ Q=\begin{bmatrix}1&amp;\\&amp;\frac12\end{bmatrix}\begin{bmatrix}0&amp;1\\1&amp;
     <title>晴朗的校园</title>
     <url>/posts/4892/</url>
     <content><![CDATA[<p>今天的世界格外明朗。徐徐的清风，轻柔的阳光，点点嫩芽，热闹的人群。一切都还是那样平常，但仿佛和那些日漫中的理想校园，只差着几片飞舞的樱花瓣。</p>
-]]></content>
-      <categories>
-        <category>随笔</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>普达措</title>
-    <url>/posts/39803/</url>
-    <content><![CDATA[<p>彳彳亍亍，林雪风花，幽幽皑皑飒飒。 探探寻寻，湖鸟山虫，澹澹呖呖葱葱。</p>
 ]]></content>
       <categories>
         <category>随笔</category>
@@ -1446,15 +1604,6 @@ Q=\begin{bmatrix}1&amp;\\&amp;\frac12\end{bmatrix}\begin{bmatrix}0&amp;1\\1&amp;
       </categories>
   </entry>
   <entry>
-    <title>自习</title>
-    <url>/posts/12721/</url>
-    <content><![CDATA[<p>屋外的松树轻柔地律动，都贴到窗上来了。白茫茫的远空，不缓不急的阳光，飘香的槐花，清凉的音乐。</p>
-]]></content>
-      <categories>
-        <category>随笔</category>
-      </categories>
-  </entry>
-  <entry>
     <title>线性方程组的迭代法</title>
     <url>/posts/57010/</url>
     <content><![CDATA[<p>思路: 在线性方程组 <span class="math display">\[Ax=b\]</span> 中把 <span class="math inline">\(A\)</span> 写成 <span class="math inline">\(M-N\)</span>, 就启发我们得到了迭代形式 <span class="math display">\[\begin{equation}\label{iter}Mx^{(k+1)}=Nx^{(k)}+b\end{equation}\]</span> 易见迭代收敛时极限就是解.</p>
@@ -1534,6 +1683,15 @@ M=\frac{1}{\omega} D+L, \quad N=\frac{1-\omega}{\omega} D-U
       <categories>
         <category>数学</category>
         <category>数值分析</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>自习</title>
+    <url>/posts/12721/</url>
+    <content><![CDATA[<p>屋外的松树轻柔地律动，都贴到窗上来了。白茫茫的远空，不缓不急的阳光，飘香的槐花，清凉的音乐。</p>
+]]></content>
+      <categories>
+        <category>随笔</category>
       </categories>
   </entry>
   <entry>
@@ -1744,15 +1902,6 @@ a_n={n!\over(2n+1)!!}\cdot{1\over n+1}，
       </categories>
   </entry>
   <entry>
-    <title>过年</title>
-    <url>/posts/22344/</url>
-    <content><![CDATA[<p>写完春联，躺在窗边的床上，阳光晒着肚皮，窗外是湛蓝的天空，屋外是油锅的噼啪声</p>
-]]></content>
-      <categories>
-        <category>随笔</category>
-      </categories>
-  </entry>
-  <entry>
     <title>这种教育的意义就是磨灭所有人的学习热情</title>
     <url>/posts/51371/</url>
     <content><![CDATA[<p>今天我们学习检索，首先，文献分为以下几类，这几类有这样的联系，检索有以下几种方法，它们有这样那样的优缺点，这个检索是在这个时间由这家公司创办的。 下面我们做检索的练习，检索分为以下几个步骤，首先就是检索准备。要明确学科属性，弄清信息类型，明确信息要求。</p>
@@ -1765,6 +1914,15 @@ a_n={n!\over(2n+1)!!}\cdot{1\over n+1}，
     <title>雪</title>
     <url>/posts/47930/</url>
     <content><![CDATA[<p>满世界白茫茫的一片。 静谧而优雅。 惬意而自在。 踏着碎琼乱玉，咯吱咯吱的声音和触感。 沁凉的空气，明亮的阳光，反射着熠熠生辉。</p>
+]]></content>
+      <categories>
+        <category>随笔</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>过年</title>
+    <url>/posts/22344/</url>
+    <content><![CDATA[<p>写完春联，躺在窗边的床上，阳光晒着肚皮，窗外是湛蓝的天空，屋外是油锅的噼啪声</p>
 ]]></content>
       <categories>
         <category>随笔</category>
