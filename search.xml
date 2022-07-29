@@ -1,6 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Fourier 级数</title>
+    <url>/posts/22351/</url>
+    <content><![CDATA[<p><span class="math display">\[
+f\colon[-L,L]\to\mathbb{R}
+\]</span> <span class="math display">\[F(x)=a_0+\sum_{n=1}^\infty \left(a_n\cos\left(\frac{n\pi x}{L}\right)+b_n\sin\left(\frac{n\pi x}{L}\right)\right)\]</span> 其中 <span class="math display">\[a_0=\frac{1}{2L}\int_{-L}^Lf(x)\,\mathrm{d}x\]</span> <span class="math display">\[a_n=\frac{1}{L}\int_{-L}^Lf(x)\cos\left(\frac{n\pi x}{L}\right)\,\mathrm{d}x\]</span> <span class="math display">\[b_n=\frac{1}{L}\int_{-L}^Lf(x)\sin\left(\frac{n\pi x}{L}\right)\,\mathrm{d}x\]</span></p>
+]]></content>
+      <categories>
+        <category>数学</category>
+        <category>分析</category>
+        <category>微积分</category>
+        <category>级数</category>
+      </categories>
+  </entry>
+  <entry>
     <title>控制收敛定理 (DCT)</title>
     <url>/posts/34980/</url>
     <content><![CDATA[<p><span class="math display">\[\lim_{n\to\infty}\int_S f_n \,d\mu=\int_S f\,d\mu\]</span></p>
@@ -21,20 +35,6 @@
         <category>数学</category>
         <category>分析</category>
         <category>实变函数</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Fourier 级数</title>
-    <url>/posts/22351/</url>
-    <content><![CDATA[<p><span class="math display">\[
-f\colon[-L,L]\to\mathbb{R}
-\]</span> <span class="math display">\[F(x)=a_0+\sum_{n=1}^\infty \left(a_n\cos\left(\frac{n\pi x}{L}\right)+b_n\sin\left(\frac{n\pi x}{L}\right)\right)\]</span> 其中 <span class="math display">\[a_0=\frac{1}{2L}\int_{-L}^Lf(x)\,\mathrm{d}x\]</span> <span class="math display">\[a_n=\frac{1}{L}\int_{-L}^Lf(x)\cos\left(\frac{n\pi x}{L}\right)\,\mathrm{d}x\]</span> <span class="math display">\[b_n=\frac{1}{L}\int_{-L}^Lf(x)\sin\left(\frac{n\pi x}{L}\right)\,\mathrm{d}x\]</span></p>
-]]></content>
-      <categories>
-        <category>数学</category>
-        <category>分析</category>
-        <category>微积分</category>
-        <category>级数</category>
       </categories>
   </entry>
   <entry>
@@ -923,6 +923,37 @@ p(x)={\sum_{k=0}^n{\lambda_k y_k\over x-x_k}\over\sum_{k=0}^n{\lambda_k\over x-x
       </categories>
   </entry>
   <entry>
+    <title>微分形式</title>
+    <url>/posts/12522/</url>
+    <content><![CDATA[<p>0 次形式: <span class="math inline">\(f\)</span></p>
+<p>1 次形式: <span class="math inline">\(P\d x+Q\d y+R\d z\)</span></p>
+<p>2 次形式: <span class="math inline">\(P\d y\land \d z+Q\d z\land \d x+R\d x\land \d y\)</span></p>
+<p>3 次形式: <span class="math inline">\(R\d x\land \d y\land \d z\)</span></p>
+<span id="more"></span>
+<h2 id="运算律">运算律</h2>
+<p><span class="math inline">\(\d x\land \d x=0\)</span> 等, <span class="math inline">\(\d x\land \d y=-\d y\land \d x\)</span> 等.</p>
+<h2 id="外微分运算">外微分运算</h2>
+<p><span class="math display">\[\d f={\partial f\over\partial x}\d x+{\partial f\over\partial y}\d y+{\partial f\over\partial z}\d z\]</span> <span class="math inline">\(w=P\d x+Q\d y+R\d z\)</span> 时</p>
+<p><span class="math display">\[\begin{aligned}
+\d w&amp;=(R_y'-Q_z')\d y\land \d z+(P_z'-R_x')\d z\land \d x+(Q_x'-P_y')\d x\land \d y\\
+&amp;=
+\begin{vmatrix}
+\d y\land \d z&amp;\d z\land \d x&amp;\d x\land \d y\\
+{\partial\over\partial x} &amp; {\partial\over\partial y} &amp; {\partial\over\partial z}\\
+P&amp;Q&amp;R
+\end{vmatrix}
+\end{aligned}\]</span></p>
+<p><span class="math inline">\(w=P\d y\land \d z+Q\d z\land \d x+R\d x\land \d y\)</span> 时</p>
+<p><span class="math display">\[\d w=(P_x'+Q_y'+R_z')\d x\land \d y\land \d z\]</span></p>
+]]></content>
+      <categories>
+        <category>数学</category>
+        <category>分析</category>
+        <category>微积分</category>
+        <category>多元微积分</category>
+      </categories>
+  </entry>
+  <entry>
     <title>数值积分</title>
     <url>/posts/24343/</url>
     <content><![CDATA[<p>Quadrature Rule 指的是形式 <span class="math display">\[Q(f)=\sum_{k=0}^nw_kf(x_k)\]</span></p>
@@ -1104,37 +1135,6 @@ y_{n+1}=\sum_{k=1}^l a_ky_{n+1-k}+h\sum_{k=0}^l b_k f_{n+1-k}
       <categories>
         <category>数学</category>
         <category>初等数学</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>微分形式</title>
-    <url>/posts/12522/</url>
-    <content><![CDATA[<p>0 次形式: <span class="math inline">\(f\)</span></p>
-<p>1 次形式: <span class="math inline">\(P\d x+Q\d y+R\d z\)</span></p>
-<p>2 次形式: <span class="math inline">\(P\d y\land \d z+Q\d z\land \d x+R\d x\land \d y\)</span></p>
-<p>3 次形式: <span class="math inline">\(R\d x\land \d y\land \d z\)</span></p>
-<span id="more"></span>
-<h2 id="运算律">运算律</h2>
-<p><span class="math inline">\(\d x\land \d x=0\)</span> 等, <span class="math inline">\(\d x\land \d y=-\d y\land \d x\)</span> 等.</p>
-<h2 id="外微分运算">外微分运算</h2>
-<p><span class="math display">\[\d f={\partial f\over\partial x}\d x+{\partial f\over\partial y}\d y+{\partial f\over\partial z}\d z\]</span> <span class="math inline">\(w=P\d x+Q\d y+R\d z\)</span> 时</p>
-<p><span class="math display">\[\begin{aligned}
-\d w&amp;=(R_y'-Q_z')\d y\land \d z+(P_z'-R_x')\d z\land \d x+(Q_x'-P_y')\d x\land \d y\\
-&amp;=
-\begin{vmatrix}
-\d y\land \d z&amp;\d z\land \d x&amp;\d x\land \d y\\
-{\partial\over\partial x} &amp; {\partial\over\partial y} &amp; {\partial\over\partial z}\\
-P&amp;Q&amp;R
-\end{vmatrix}
-\end{aligned}\]</span></p>
-<p><span class="math inline">\(w=P\d y\land \d z+Q\d z\land \d x+R\d x\land \d y\)</span> 时</p>
-<p><span class="math display">\[\d w=(P_x'+Q_y'+R_z')\d x\land \d y\land \d z\]</span></p>
-]]></content>
-      <categories>
-        <category>数学</category>
-        <category>分析</category>
-        <category>微积分</category>
-        <category>多元微积分</category>
       </categories>
   </entry>
   <entry>
@@ -1332,7 +1332,8 @@ P&amp;Q&amp;R
 <figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">find_mid</span>(<span class="params">head</span>):</span></span><br><span class="line">    <span class="keyword">if</span> head <span class="keyword">is</span> <span class="literal">None</span> <span class="keyword">or</span> head.<span class="built_in">next</span> <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">        <span class="keyword">return</span> head</span><br><span class="line">    <span class="comment"># 快慢指针</span></span><br><span class="line">    fast, slow = head, head</span><br><span class="line">    <span class="keyword">while</span> fast <span class="keyword">and</span> fast.<span class="built_in">next</span> <span class="keyword">and</span> fast.<span class="built_in">next</span>.<span class="built_in">next</span>:</span><br><span class="line">        fast = fast.<span class="built_in">next</span>.<span class="built_in">next</span></span><br><span class="line">        slow = slow.<span class="built_in">next</span></span><br><span class="line">    <span class="keyword">return</span> slow</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">is_palindrome</span>(<span class="params">head</span>):</span></span><br><span class="line">    <span class="keyword">if</span> head <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">    <span class="comment"># 分成前后两段</span></span><br><span class="line">    head1 = head</span><br><span class="line">    head2 = reverse(find_mid(head).<span class="built_in">next</span>)</span><br><span class="line">    <span class="comment"># 比较两段</span></span><br><span class="line">    <span class="keyword">while</span> head1 <span class="keyword">and</span> head2:</span><br><span class="line">        <span class="keyword">if</span> head1.val != head2.val:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        head1 = head1.<span class="built_in">next</span></span><br><span class="line">        head2 = head2.<span class="built_in">next</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">True</span></span><br></pre></td></tr></tbody></table></figure>
 ]]></content>
       <categories>
-        <category>数学</category>
+        <category>计算机</category>
+        <category>算法</category>
       </categories>
   </entry>
   <entry>
@@ -1393,19 +1394,19 @@ P&amp;Q&amp;R
       </categories>
   </entry>
   <entry>
-    <title>圣诞节</title>
-    <url>/posts/19175/</url>
-    <content><![CDATA[<p>圣诞树上挂满了忽闪忽闪的小彩灯，在富丽堂皇的商店里，在暖黄的水晶吊灯下，温柔地伫立。</p>
-<p>空气中弥漫着姜汁饼的甜美气息，耳畔回荡着童声喜乐、纯净的颂歌，以及驯鹿的铃儿叮当。黑漆漆的夜空中洒下鹅毛白的雪花，沁爽洁净的雪毯上，花白胡子的圣诞老人留下一道雪橇的印记。与可人儿相挽，踱步在礼品商城，柔情地看他趴着橱窗，瞪大了好奇的双眼。</p>
+    <title>回家</title>
+    <url>/posts/8368/</url>
+    <content><![CDATA[<p>沁人的凉风和湛蓝中的云卷云舒，熟悉的楼房和那条街道，一簇簇与一丛丛，忽然让少年有了一丝归属，潮湿了眼眶。他颤抖着四肢，任每一个毛孔大肆呼吸着。 依稀在记忆中的水库，被荒草占据。大把的野草，湮没了少年心中，那未曾发出的约定。</p>
 ]]></content>
       <categories>
         <category>随笔</category>
       </categories>
   </entry>
   <entry>
-    <title>回家</title>
-    <url>/posts/8368/</url>
-    <content><![CDATA[<p>沁人的凉风和湛蓝中的云卷云舒，熟悉的楼房和那条街道，一簇簇与一丛丛，忽然让少年有了一丝归属，潮湿了眼眶。他颤抖着四肢，任每一个毛孔大肆呼吸着。 依稀在记忆中的水库，被荒草占据。大把的野草，湮没了少年心中，那未曾发出的约定。</p>
+    <title>圣诞节</title>
+    <url>/posts/19175/</url>
+    <content><![CDATA[<p>圣诞树上挂满了忽闪忽闪的小彩灯，在富丽堂皇的商店里，在暖黄的水晶吊灯下，温柔地伫立。</p>
+<p>空气中弥漫着姜汁饼的甜美气息，耳畔回荡着童声喜乐、纯净的颂歌，以及驯鹿的铃儿叮当。黑漆漆的夜空中洒下鹅毛白的雪花，沁爽洁净的雪毯上，花白胡子的圣诞老人留下一道雪橇的印记。与可人儿相挽，踱步在礼品商城，柔情地看他趴着橱窗，瞪大了好奇的双眼。</p>
 ]]></content>
       <categories>
         <category>随笔</category>
@@ -1587,6 +1588,37 @@ Q=\begin{bmatrix}1&amp;\\&amp;\frac12\end{bmatrix}\begin{bmatrix}0&amp;1\\1&amp;
       </categories>
   </entry>
   <entry>
+    <title>模型误差与过拟合</title>
+    <url>/posts/12469/</url>
+    <content><![CDATA[<p>误差分解 <span class="math display">\[
+E(\text{error})=\text{bias}^2+\text{Var}+\varepsilon.
+\]</span></p>
+<span id="more"></span>
+<hr>
+<p>先定义:</p>
+<p>均方误差 <span class="math display">\[
+\text{MSE}(\hat\theta)=E[(\hat\theta-\theta)^2]
+\]</span> 偏差 <span class="math display">\[
+\text{bias}(\hat\theta,\theta)=E[\hat\theta]-\theta
+\]</span></p>
+<p>那么 <span class="math display">\[
+\begin{align*}
+\text{MSE}(\hat\theta)&amp;=E[(\hat\theta-\theta)^2]\\
+&amp;=E\left[\left(\hat\theta-E[\hat\theta]+E[\hat\theta]-\theta\right)^2\right]\\
+&amp;=E\left[\left(\hat\theta-E[\hat\theta]\right)^2+2\left(\hat\theta-E[\hat\theta]\right)\left(E[\hat\theta]-\theta\right)+\left(E[\hat\theta]-\theta\right)^2\right]\\
+&amp;=E\left[\left(\hat\theta-E[\hat\theta]\right)^2\right]+2E\left[\left(\hat\theta-E[\hat\theta]\right)\left(E[\hat\theta]-\theta\right)\right]+E\left[\left(E[\hat\theta]-\theta\right)^2\right]\\
+&amp;=\text{Var}(\hat\theta)+2\left(E[\hat\theta]-\theta\right)E\left[\left(\hat\theta-E[\hat\theta]\right)\right]+\left(E[\hat\theta]-\theta\right)^2\\
+&amp;=\text{Var}+\text{bias}^2
+\end{align*}
+\]</span></p>
+<p>随着模型复杂度的增加, bias 减少, variance 增加. 也就是说, 能力变强, 不稳定性变大. 那么总误差呈现一个先减后增的趋势: <img src="error.png"> 这就是 bias-variance dilemma.</p>
+]]></content>
+      <categories>
+        <category>计算机</category>
+        <category>机器学习</category>
+      </categories>
+  </entry>
+  <entry>
     <title>没什么远大理想</title>
     <url>/posts/48210/</url>
     <content><![CDATA[<p>我只希望在一个天气不那么晴的日子里，在一个不那么吵的地方，读一本没那么有用的书，听一点不那么流行的歌。</p>
@@ -1600,20 +1632,6 @@ Q=\begin{bmatrix}1&amp;\\&amp;\frac12\end{bmatrix}\begin{bmatrix}0&amp;1\\1&amp;
     <url>/posts/30601/</url>
     <content><![CDATA[<p>淡霭缭绕，彩彻区朗。澄波荡漾，野凫满塘。泛舟湖上，蒹葭苍苍。薄暮冥冥，跃金浮光。</p>
 <p>每次下车，定有一群道德绑架犯伪装成兜售小贩的样子，为了一丁点蝇头小利各种卑鄙手段无所不用其极。吵嚷纠缠，丢尽了彝族人的脸，无论怎样的美景都在刹那间黯淡无光。试问我泱泱华夏，如今是否还有一片真正的净土？最后一丝少数民族的质朴，亦被利益磨到尸骨无存！</p>
-]]></content>
-      <categories>
-        <category>随笔</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>科普是一项非常难的工作</title>
-    <url>/posts/20918/</url>
-    <content><![CDATA[<p>要想当一个好学生，只需要把知识学懂。</p>
-<p>要想当一个好老师，需要一些基础知识，还需要良好的性格和表达能力、心理学和教育学经验。</p>
-<p>要想当一个好教授，需要有专业知识、科研水平，只需要一般般的表达能力。</p>
-<p><strong>而要当一个好的科普工作者，需要有远超学生的理解能力，教授一样的专业水平，老师一样的教学功力，艺术家一样的审美，作家一样的文笔，诗人一样的清高，科学家一样对知识的热爱，艺人一样对大众心理的把控能力，运动员一样的毅力，还要有自身的人格魅力、抗压抗打击能力。</strong></p>
-<p>科普是一项非常难的工作，比讲课教书难得多。因为它面对的不是专业人士，而是乌合之众。这导致科普工作者必须用通俗语言来解释专业知识，却又不至于过于通俗而产生误导。稍微有一点漏洞就会被抓住攻击——有问题的科普比谣言更可怕，比迷信更害人。</p>
-<p>所以，科普工作者是一个神圣的标签，这个名号比想象中要严苛得多。</p>
 ]]></content>
       <categories>
         <category>随笔</category>
@@ -1702,6 +1720,20 @@ M=\frac{1}{\omega} D+L, \quad N=\frac{1-\omega}{\omega} D-U
       </categories>
   </entry>
   <entry>
+    <title>科普是一项非常难的工作</title>
+    <url>/posts/20918/</url>
+    <content><![CDATA[<p>要想当一个好学生，只需要把知识学懂。</p>
+<p>要想当一个好老师，需要一些基础知识，还需要良好的性格和表达能力、心理学和教育学经验。</p>
+<p>要想当一个好教授，需要有专业知识、科研水平，只需要一般般的表达能力。</p>
+<p><strong>而要当一个好的科普工作者，需要有远超学生的理解能力，教授一样的专业水平，老师一样的教学功力，艺术家一样的审美，作家一样的文笔，诗人一样的清高，科学家一样对知识的热爱，艺人一样对大众心理的把控能力，运动员一样的毅力，还要有自身的人格魅力、抗压抗打击能力。</strong></p>
+<p>科普是一项非常难的工作，比讲课教书难得多。因为它面对的不是专业人士，而是乌合之众。这导致科普工作者必须用通俗语言来解释专业知识，却又不至于过于通俗而产生误导。稍微有一点漏洞就会被抓住攻击——有问题的科普比谣言更可怕，比迷信更害人。</p>
+<p>所以，科普工作者是一个神圣的标签，这个名号比想象中要严苛得多。</p>
+]]></content>
+      <categories>
+        <category>随笔</category>
+      </categories>
+  </entry>
+  <entry>
     <title>自习</title>
     <url>/posts/12721/</url>
     <content><![CDATA[<p>屋外的松树轻柔地律动，都贴到窗上来了。白茫茫的远空，不缓不急的阳光，飘香的槐花，清凉的音乐。</p>
@@ -1715,16 +1747,6 @@ M=\frac{1}{\omega} D+L, \quad N=\frac{1-\omega}{\omega} D-U
     <url>/posts/28624/</url>
     <content><![CDATA[<p>傍晚的热闹休闲沙滩，午夜的萤火魔幻森林，与异域篝火、冬不拉。</p>
 <p>人从自然中来，回不到自然中去。那对山幽鸟虫鸣的向往，会因为几声平凡不过的响动，转为惶恐。</p>
-]]></content>
-      <categories>
-        <category>随笔</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>英国的上午</title>
-    <url>/posts/34132/</url>
-    <content><![CDATA[<p>我看见透蓝的天空，茵绿的草地，金黄的落叶。我闻到湿润的泥土，幽香的野花，沁凉的空气。我看见喜鹊圆滚的肚子和松鼠蓬松的尾巴。</p>
-<p>我看见倾洒下来的阳光和摇曳的树影。</p>
 ]]></content>
       <categories>
         <category>随笔</category>
@@ -1768,6 +1790,16 @@ M=\frac{1}{\omega} D+L, \quad N=\frac{1-\omega}{\omega} D-U
 ]]></content>
       <categories>
         <category>英语</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>英国的上午</title>
+    <url>/posts/34132/</url>
+    <content><![CDATA[<p>我看见透蓝的天空，茵绿的草地，金黄的落叶。我闻到湿润的泥土，幽香的野花，沁凉的空气。我看见喜鹊圆滚的肚子和松鼠蓬松的尾巴。</p>
+<p>我看见倾洒下来的阳光和摇曳的树影。</p>
+]]></content>
+      <categories>
+        <category>随笔</category>
       </categories>
   </entry>
   <entry>
