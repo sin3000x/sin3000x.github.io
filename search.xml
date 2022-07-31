@@ -1,17 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Fourier 级数</title>
-    <url>/posts/22351/</url>
-    <content><![CDATA[<p><span class="math display">\[
-f\colon[-L,L]\to\mathbb{R}
-\]</span> <span class="math display">\[F(x)=a_0+\sum_{n=1}^\infty \left(a_n\cos\left(\frac{n\pi x}{L}\right)+b_n\sin\left(\frac{n\pi x}{L}\right)\right)\]</span> 其中 <span class="math display">\[a_0=\frac{1}{2L}\int_{-L}^Lf(x)\,\mathrm{d}x\]</span> <span class="math display">\[a_n=\frac{1}{L}\int_{-L}^Lf(x)\cos\left(\frac{n\pi x}{L}\right)\,\mathrm{d}x\]</span> <span class="math display">\[b_n=\frac{1}{L}\int_{-L}^Lf(x)\sin\left(\frac{n\pi x}{L}\right)\,\mathrm{d}x\]</span></p>
+    <title>Confusion Matrix</title>
+    <url>/posts/39658/</url>
+    <content><![CDATA[<p>对于二分类问题, 结果被分为真阳, 假阳, 真阴, 假阴四种情况.</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;"></th>
+<th style="text-align: center;">P</th>
+<th style="text-align: center;">N</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Y</td>
+<td style="text-align: center;">TP</td>
+<td style="text-align: center;">FP</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">N</td>
+<td style="text-align: center;">FN</td>
+<td style="text-align: center;">TN</td>
+</tr>
+</tbody>
+</table>
+<span id="more"></span>
+<p><strong>accuracy</strong>: 有多少预测是正确的? <span class="math display">\[
+\text{accuracy}={TP+TN\over TP+FP+TN+FN}={T\over\text{all}}
+\]</span></p>
+<p><strong>precision</strong>: 所有的预测阳性中多少是真的? <span class="math display">\[
+\text{precision}={TP\over TP+FP}={TP\over Y}
+\]</span></p>
+<p><strong>recall</strong>: 所有的阳性中有多少被预测出来? <span class="math display">\[
+\text{recall}={TP\over TP+FN}={TP\over P}
+\]</span></p>
+<p><strong>F1 score</strong>: recall 和 precision 的调和平均. <span class="math display">\[
+\text{F}_1={2\over{1\over\text{recall}}+{1\over\text{precision}}}
+\]</span></p>
+<p><strong>FPR (False Positive Rate)</strong>: 假阳率, 假阳占阴性的比率. <span class="math display">\[
+\text{FPR}={FP\over N}
+\]</span></p>
+<p><strong>TPR (True Positive Rate)</strong>: 真阳率, 真阳占阳性的比率. <span class="math display">\[
+\text{TPR}={TP\over P}=\text{recall}
+\]</span></p>
+<p><strong>ROC 曲线</strong>: TPR-FPR 图, 两者都随 threshold 变化.</p>
+<p><img src="ROC_curve.png" width="50%"></p>
+<p><strong>AUC</strong>: ROC 曲线下的面积, 取值范围 <span class="math inline">\([0,1]\)</span>.</p>
 ]]></content>
       <categories>
-        <category>数学</category>
-        <category>分析</category>
-        <category>微积分</category>
-        <category>级数</category>
+        <category>计算机</category>
+        <category>机器学习</category>
       </categories>
   </entry>
   <entry>
@@ -35,6 +74,20 @@ f\colon[-L,L]\to\mathbb{R}
         <category>数学</category>
         <category>分析</category>
         <category>实变函数</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Fourier 级数</title>
+    <url>/posts/22351/</url>
+    <content><![CDATA[<p><span class="math display">\[
+f\colon[-L,L]\to\mathbb{R}
+\]</span> <span class="math display">\[F(x)=a_0+\sum_{n=1}^\infty \left(a_n\cos\left(\frac{n\pi x}{L}\right)+b_n\sin\left(\frac{n\pi x}{L}\right)\right)\]</span> 其中 <span class="math display">\[a_0=\frac{1}{2L}\int_{-L}^Lf(x)\,\mathrm{d}x\]</span> <span class="math display">\[a_n=\frac{1}{L}\int_{-L}^Lf(x)\cos\left(\frac{n\pi x}{L}\right)\,\mathrm{d}x\]</span> <span class="math display">\[b_n=\frac{1}{L}\int_{-L}^Lf(x)\sin\left(\frac{n\pi x}{L}\right)\,\mathrm{d}x\]</span></p>
+]]></content>
+      <categories>
+        <category>数学</category>
+        <category>分析</category>
+        <category>微积分</category>
+        <category>级数</category>
       </categories>
   </entry>
   <entry>
@@ -806,40 +859,6 @@ H_A=0.5\times0.7219+0.5\times0.9710=0.8465
       </categories>
   </entry>
   <entry>
-    <title>拉格朗日插值</title>
-    <url>/posts/17585/</url>
-    <content><![CDATA[<p><span class="math display">\[p(x)=\sum_{k=0}^n y_kl_k(x)\]</span></p>
-<h2 id="基函数">基函数</h2>
-<p>给定点 <span class="math inline">\(x_0,\ldots,x_n\)</span>. 问题归结于寻找<strong>基函数</strong> <span class="math display">\[l_k(x_j)=\begin{cases}
-    1\quad j=k\\
-    0\quad j\ne k
-\end{cases},\]</span> 因为插值多项式可以写成它们的线性组合.</p>
-<span id="more"></span>
-<p>根据零点分布可以设 <span class="math display">\[l_k(x)=c\prod_{j\ne k}(x-x_j),\]</span> 代入 <span class="math inline">\(x_k\)</span> 得到</p>
-<p><span class="math display">\[
-1=l_k(x_k)=c\prod_{j\ne k}(x_k-x_j),
-\]</span></p>
-<p>于是 <span class="math inline">\(c=\dfrac{1}{\prod_{j\ne k}(x_k-x_j)}\)</span>. 这就得到了 <span class="math display">\[l_k(x)=\frac{\prod_{j\ne k}(x-x_j)}{\prod_{j\ne k}(x_k-x_j)}.\]</span></p>
-<p><em>注: 这个 <span class="math inline">\(c\)</span> 实际上是 Barycentric 权重, 即后面定义的 <span class="math inline">\(\lambda_k\)</span>.</em></p>
-<p>它实际上就是一个特殊的多项式. 比如这是给定 <span class="math inline">\(x_{0}:x_4=-2:2\)</span>, 在 <span class="math inline">\(x_3\)</span> 处取 <span class="math inline">\(1\)</span> 的基函数 <span class="math display">\[l_3(x)=\frac{(x+2)(x+1)x(x-2)}{(1+2)(1+1)\cdot1\cdot(1-2)}\]</span></p>
-<p><img src="/file/l_basis.svg"></p>
-<p>定义节点函数 <span class="math display">\[l(x)=\prod_{k=0}^n(x-x_k),\]</span> 可以得到基函数 <span class="math display">\[l_j(x)={l(x)\over l'(x_j)(x-x_j)}\]</span></p>
-<h2 id="barycentric-插值公式">Barycentric 插值公式</h2>
-<p><span class="math display">\[
-p(x)={\sum_{k=0}^n{\lambda_k y_k\over x-x_k}\over\sum_{k=0}^n{\lambda_k\over x-x_k}},
-\]</span> 其中 <span class="math display">\[\lambda_k={1\over\prod_{j\ne k}(x_k-x_j)}\]</span></p>
-<h2 id="误差">误差</h2>
-<p><span class="math inline">\(f\in C^{n+1}([a,b])\)</span>时 <span class="math display">\[f(x)-p(x)={f^{(n+1)}(\xi)\over (n+1)!}l(x),\]</span> 其中 <span class="math inline">\(\xi\in(a,b)\)</span> 与 <span class="math inline">\(x\)</span> 有关.</p>
-<hr>
-<p><span class="math inline">\(f\)</span> 在包含节点的区域 <span class="math inline">\(\Omega\)</span> 上解析时</p>
-<p><span class="math display">\[p(x)={1\over 2\pi i}\int_\Gamma{f(t)(l(t)-l(x))\over l(t)(t-x)}\d x\]</span> <span class="math display">\[f(x)-p(x)={1\over 2\pi i}\int_\Gamma {l(x)\over l(t)}{f(t)\over t-x}\d t\]</span></p>
-]]></content>
-      <categories>
-        <category>数学</category>
-        <category>数值分析</category>
-      </categories>
-  </entry>
-  <entry>
     <title>最小二乘法</title>
     <url>/posts/36991/</url>
     <content><![CDATA[<p><span class="math display">\[\min\|Ax-b\|_2\]</span> 其中 <span class="math inline">\(A\in\R^{m\times n}\)</span>, <span class="math inline">\(x\in\R^n\)</span>, <span class="math inline">\(b\in\R^m.\)</span> 这个的问题的情境是 <span class="math inline">\(m\geq n\)</span>, 也就是一个过度约束的问题 (<span class="math inline">\(b\)</span> 不在 <span class="math inline">\(A\)</span> 的值域中).</p>
@@ -920,6 +939,40 @@ p(x)={\sum_{k=0}^n{\lambda_k y_k\over x-x_k}\over\sum_{k=0}^n{\lambda_k\over x-x
         <category>代数</category>
         <category>数值分析</category>
         <category>线性代数</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>拉格朗日插值</title>
+    <url>/posts/17585/</url>
+    <content><![CDATA[<p><span class="math display">\[p(x)=\sum_{k=0}^n y_kl_k(x)\]</span></p>
+<h2 id="基函数">基函数</h2>
+<p>给定点 <span class="math inline">\(x_0,\ldots,x_n\)</span>. 问题归结于寻找<strong>基函数</strong> <span class="math display">\[l_k(x_j)=\begin{cases}
+    1\quad j=k\\
+    0\quad j\ne k
+\end{cases},\]</span> 因为插值多项式可以写成它们的线性组合.</p>
+<span id="more"></span>
+<p>根据零点分布可以设 <span class="math display">\[l_k(x)=c\prod_{j\ne k}(x-x_j),\]</span> 代入 <span class="math inline">\(x_k\)</span> 得到</p>
+<p><span class="math display">\[
+1=l_k(x_k)=c\prod_{j\ne k}(x_k-x_j),
+\]</span></p>
+<p>于是 <span class="math inline">\(c=\dfrac{1}{\prod_{j\ne k}(x_k-x_j)}\)</span>. 这就得到了 <span class="math display">\[l_k(x)=\frac{\prod_{j\ne k}(x-x_j)}{\prod_{j\ne k}(x_k-x_j)}.\]</span></p>
+<p><em>注: 这个 <span class="math inline">\(c\)</span> 实际上是 Barycentric 权重, 即后面定义的 <span class="math inline">\(\lambda_k\)</span>.</em></p>
+<p>它实际上就是一个特殊的多项式. 比如这是给定 <span class="math inline">\(x_{0}:x_4=-2:2\)</span>, 在 <span class="math inline">\(x_3\)</span> 处取 <span class="math inline">\(1\)</span> 的基函数 <span class="math display">\[l_3(x)=\frac{(x+2)(x+1)x(x-2)}{(1+2)(1+1)\cdot1\cdot(1-2)}\]</span></p>
+<p><img src="/file/l_basis.svg"></p>
+<p>定义节点函数 <span class="math display">\[l(x)=\prod_{k=0}^n(x-x_k),\]</span> 可以得到基函数 <span class="math display">\[l_j(x)={l(x)\over l'(x_j)(x-x_j)}\]</span></p>
+<h2 id="barycentric-插值公式">Barycentric 插值公式</h2>
+<p><span class="math display">\[
+p(x)={\sum_{k=0}^n{\lambda_k y_k\over x-x_k}\over\sum_{k=0}^n{\lambda_k\over x-x_k}},
+\]</span> 其中 <span class="math display">\[\lambda_k={1\over\prod_{j\ne k}(x_k-x_j)}\]</span></p>
+<h2 id="误差">误差</h2>
+<p><span class="math inline">\(f\in C^{n+1}([a,b])\)</span>时 <span class="math display">\[f(x)-p(x)={f^{(n+1)}(\xi)\over (n+1)!}l(x),\]</span> 其中 <span class="math inline">\(\xi\in(a,b)\)</span> 与 <span class="math inline">\(x\)</span> 有关.</p>
+<hr>
+<p><span class="math inline">\(f\)</span> 在包含节点的区域 <span class="math inline">\(\Omega\)</span> 上解析时</p>
+<p><span class="math display">\[p(x)={1\over 2\pi i}\int_\Gamma{f(t)(l(t)-l(x))\over l(t)(t-x)}\d x\]</span> <span class="math display">\[f(x)-p(x)={1\over 2\pi i}\int_\Gamma {l(x)\over l(t)}{f(t)\over t-x}\d t\]</span></p>
+]]></content>
+      <categories>
+        <category>数学</category>
+        <category>数值分析</category>
       </categories>
   </entry>
   <entry>
@@ -1603,7 +1656,7 @@ E(\text{error})=\text{bias}^2+\text{Var}+\varepsilon.
 \]</span></p>
 <p>那么 <span class="math display">\[
 \begin{align*}
-\text{MSE}(\hat\theta)&amp;=E[(\hat\theta-\theta)^2]\\
+\text{MSE}(\hat\theta)&amp;=E\left[\left(\hat\theta-\theta\right)^2\right]\\
 &amp;=E\left[\left(\hat\theta-E[\hat\theta]+E[\hat\theta]-\theta\right)^2\right]\\
 &amp;=E\left[\left(\hat\theta-E[\hat\theta]\right)^2+2\left(\hat\theta-E[\hat\theta]\right)\left(E[\hat\theta]-\theta\right)+\left(E[\hat\theta]-\theta\right)^2\right]\\
 &amp;=E\left[\left(\hat\theta-E[\hat\theta]\right)^2\right]+2E\left[\left(\hat\theta-E[\hat\theta]\right)\left(E[\hat\theta]-\theta\right)\right]+E\left[\left(E[\hat\theta]-\theta\right)^2\right]\\
@@ -1632,6 +1685,20 @@ E(\text{error})=\text{bias}^2+\text{Var}+\varepsilon.
     <url>/posts/30601/</url>
     <content><![CDATA[<p>淡霭缭绕，彩彻区朗。澄波荡漾，野凫满塘。泛舟湖上，蒹葭苍苍。薄暮冥冥，跃金浮光。</p>
 <p>每次下车，定有一群道德绑架犯伪装成兜售小贩的样子，为了一丁点蝇头小利各种卑鄙手段无所不用其极。吵嚷纠缠，丢尽了彝族人的脸，无论怎样的美景都在刹那间黯淡无光。试问我泱泱华夏，如今是否还有一片真正的净土？最后一丝少数民族的质朴，亦被利益磨到尸骨无存！</p>
+]]></content>
+      <categories>
+        <category>随笔</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>科普是一项非常难的工作</title>
+    <url>/posts/20918/</url>
+    <content><![CDATA[<p>要想当一个好学生，只需要把知识学懂。</p>
+<p>要想当一个好老师，需要一些基础知识，还需要良好的性格和表达能力、心理学和教育学经验。</p>
+<p>要想当一个好教授，需要有专业知识、科研水平，只需要一般般的表达能力。</p>
+<p><strong>而要当一个好的科普工作者，需要有远超学生的理解能力，教授一样的专业水平，老师一样的教学功力，艺术家一样的审美，作家一样的文笔，诗人一样的清高，科学家一样对知识的热爱，艺人一样对大众心理的把控能力，运动员一样的毅力，还要有自身的人格魅力、抗压抗打击能力。</strong></p>
+<p>科普是一项非常难的工作，比讲课教书难得多。因为它面对的不是专业人士，而是乌合之众。这导致科普工作者必须用通俗语言来解释专业知识，却又不至于过于通俗而产生误导。稍微有一点漏洞就会被抓住攻击——有问题的科普比谣言更可怕，比迷信更害人。</p>
+<p>所以，科普工作者是一个神圣的标签，这个名号比想象中要严苛得多。</p>
 ]]></content>
       <categories>
         <category>随笔</category>
@@ -1720,20 +1787,6 @@ M=\frac{1}{\omega} D+L, \quad N=\frac{1-\omega}{\omega} D-U
       </categories>
   </entry>
   <entry>
-    <title>科普是一项非常难的工作</title>
-    <url>/posts/20918/</url>
-    <content><![CDATA[<p>要想当一个好学生，只需要把知识学懂。</p>
-<p>要想当一个好老师，需要一些基础知识，还需要良好的性格和表达能力、心理学和教育学经验。</p>
-<p>要想当一个好教授，需要有专业知识、科研水平，只需要一般般的表达能力。</p>
-<p><strong>而要当一个好的科普工作者，需要有远超学生的理解能力，教授一样的专业水平，老师一样的教学功力，艺术家一样的审美，作家一样的文笔，诗人一样的清高，科学家一样对知识的热爱，艺人一样对大众心理的把控能力，运动员一样的毅力，还要有自身的人格魅力、抗压抗打击能力。</strong></p>
-<p>科普是一项非常难的工作，比讲课教书难得多。因为它面对的不是专业人士，而是乌合之众。这导致科普工作者必须用通俗语言来解释专业知识，却又不至于过于通俗而产生误导。稍微有一点漏洞就会被抓住攻击——有问题的科普比谣言更可怕，比迷信更害人。</p>
-<p>所以，科普工作者是一个神圣的标签，这个名号比想象中要严苛得多。</p>
-]]></content>
-      <categories>
-        <category>随笔</category>
-      </categories>
-  </entry>
-  <entry>
     <title>自习</title>
     <url>/posts/12721/</url>
     <content><![CDATA[<p>屋外的松树轻柔地律动，都贴到窗上来了。白茫茫的远空，不缓不急的阳光，飘香的槐花，清凉的音乐。</p>
@@ -1747,6 +1800,16 @@ M=\frac{1}{\omega} D+L, \quad N=\frac{1-\omega}{\omega} D-U
     <url>/posts/28624/</url>
     <content><![CDATA[<p>傍晚的热闹休闲沙滩，午夜的萤火魔幻森林，与异域篝火、冬不拉。</p>
 <p>人从自然中来，回不到自然中去。那对山幽鸟虫鸣的向往，会因为几声平凡不过的响动，转为惶恐。</p>
+]]></content>
+      <categories>
+        <category>随笔</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>英国的上午</title>
+    <url>/posts/34132/</url>
+    <content><![CDATA[<p>我看见透蓝的天空，茵绿的草地，金黄的落叶。我闻到湿润的泥土，幽香的野花，沁凉的空气。我看见喜鹊圆滚的肚子和松鼠蓬松的尾巴。</p>
+<p>我看见倾洒下来的阳光和摇曳的树影。</p>
 ]]></content>
       <categories>
         <category>随笔</category>
@@ -1790,16 +1853,6 @@ M=\frac{1}{\omega} D+L, \quad N=\frac{1-\omega}{\omega} D-U
 ]]></content>
       <categories>
         <category>英语</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>英国的上午</title>
-    <url>/posts/34132/</url>
-    <content><![CDATA[<p>我看见透蓝的天空，茵绿的草地，金黄的落叶。我闻到湿润的泥土，幽香的野花，沁凉的空气。我看见喜鹊圆滚的肚子和松鼠蓬松的尾巴。</p>
-<p>我看见倾洒下来的阳光和摇曳的树影。</p>
-]]></content>
-      <categories>
-        <category>随笔</category>
       </categories>
   </entry>
   <entry>
@@ -2039,15 +2092,6 @@ a_n={n!\over(2n+1)!!}\cdot{1\over n+1}，
       </categories>
   </entry>
   <entry>
-    <title>雪</title>
-    <url>/posts/47930/</url>
-    <content><![CDATA[<p>满世界白茫茫的一片。 静谧而优雅。 惬意而自在。 踏着碎琼乱玉，咯吱咯吱的声音和触感。 沁凉的空气，明亮的阳光，反射着熠熠生辉。</p>
-]]></content>
-      <categories>
-        <category>随笔</category>
-      </categories>
-  </entry>
-  <entry>
     <title>青春万岁</title>
     <url>/posts/9178/</url>
     <content><![CDATA[<p>所有的日子，所有的日子都来吧</p>
@@ -2056,6 +2100,15 @@ a_n={n!\over(2n+1)!!}\cdot{1\over n+1}，
 <p>还有热烈的争论，跃动的，温暖的心</p>
 <p>是转眼过去的日子，也是充满遐想的日子</p>
 <p>纷纷的心愿迷离，像春天的雨</p>
+]]></content>
+      <categories>
+        <category>随笔</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>雪</title>
+    <url>/posts/47930/</url>
+    <content><![CDATA[<p>满世界白茫茫的一片。 静谧而优雅。 惬意而自在。 踏着碎琼乱玉，咯吱咯吱的声音和触感。 沁凉的空气，明亮的阳光，反射着熠熠生辉。</p>
 ]]></content>
       <categories>
         <category>随笔</category>
