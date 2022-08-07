@@ -54,6 +54,20 @@
       </categories>
   </entry>
   <entry>
+    <title>Fourier 级数</title>
+    <url>/posts/22351/</url>
+    <content><![CDATA[<p><span class="math display">\[
+f\colon[-L,L]\to\mathbb{R}
+\]</span> <span class="math display">\[F(x)=a_0+\sum_{n=1}^\infty \left(a_n\cos\left(\frac{n\pi x}{L}\right)+b_n\sin\left(\frac{n\pi x}{L}\right)\right)\]</span> 其中 <span class="math display">\[a_0=\frac{1}{2L}\int_{-L}^Lf(x)\,\mathrm{d}x\]</span> <span class="math display">\[a_n=\frac{1}{L}\int_{-L}^Lf(x)\cos\left(\frac{n\pi x}{L}\right)\,\mathrm{d}x\]</span> <span class="math display">\[b_n=\frac{1}{L}\int_{-L}^Lf(x)\sin\left(\frac{n\pi x}{L}\right)\,\mathrm{d}x\]</span></p>
+]]></content>
+      <categories>
+        <category>数学</category>
+        <category>分析</category>
+        <category>微积分</category>
+        <category>级数</category>
+      </categories>
+  </entry>
+  <entry>
     <title>控制收敛定理 (DCT)</title>
     <url>/posts/34980/</url>
     <content><![CDATA[<p><span class="math display">\[\lim_{n\to\infty}\int_S f_n \,d\mu=\int_S f\,d\mu\]</span></p>
@@ -74,20 +88,6 @@
         <category>数学</category>
         <category>分析</category>
         <category>实变函数</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Fourier 级数</title>
-    <url>/posts/22351/</url>
-    <content><![CDATA[<p><span class="math display">\[
-f\colon[-L,L]\to\mathbb{R}
-\]</span> <span class="math display">\[F(x)=a_0+\sum_{n=1}^\infty \left(a_n\cos\left(\frac{n\pi x}{L}\right)+b_n\sin\left(\frac{n\pi x}{L}\right)\right)\]</span> 其中 <span class="math display">\[a_0=\frac{1}{2L}\int_{-L}^Lf(x)\,\mathrm{d}x\]</span> <span class="math display">\[a_n=\frac{1}{L}\int_{-L}^Lf(x)\cos\left(\frac{n\pi x}{L}\right)\,\mathrm{d}x\]</span> <span class="math display">\[b_n=\frac{1}{L}\int_{-L}^Lf(x)\sin\left(\frac{n\pi x}{L}\right)\,\mathrm{d}x\]</span></p>
-]]></content>
-      <categories>
-        <category>数学</category>
-        <category>分析</category>
-        <category>微积分</category>
-        <category>级数</category>
       </categories>
   </entry>
   <entry>
@@ -165,23 +165,6 @@ t_{2,1} + 4 \le t_{0,2}.
       </categories>
   </entry>
   <entry>
-    <title>OR-Tools 入门</title>
-    <url>/posts/59457/</url>
-    <content><![CDATA[<p><span class="math display">\[
-\max~ 3x+y,\quad
-\text{subject to}\ \begin{cases}
-0\le x\le 1\\
-0\le y\le 2\\
-x+y\le 2
-\end{cases}
-\]</span> <span id="more"></span> </p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> ortools.linear_solver <span class="keyword">import</span> pywraplp</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span>():</span></span><br><span class="line">    <span class="comment"># Create the linear solver with the GLOP backend.</span></span><br><span class="line">    solver = pywraplp.Solver.CreateSolver(<span class="string">'GLOP'</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Create the variables x and y.</span></span><br><span class="line">    x = solver.NumVar(<span class="number">0</span>, <span class="number">1</span>, <span class="string">'x'</span>)</span><br><span class="line">    y = solver.NumVar(<span class="number">0</span>, <span class="number">2</span>, <span class="string">'y'</span>)</span><br><span class="line"></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'Number of variables ='</span>, solver.NumVariables())</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Create a linear constraint, 0 &lt;= x + y &lt;= 2.</span></span><br><span class="line">    ct = solver.Constraint(<span class="number">0</span>, <span class="number">2</span>, <span class="string">'ct'</span>)</span><br><span class="line">    ct.SetCoefficient(x, <span class="number">1</span>)</span><br><span class="line">    ct.SetCoefficient(y, <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'Number of constraints ='</span>, solver.NumConstraints())</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Create the objective function, 3 * x + y.</span></span><br><span class="line">    objective = solver.Objective()</span><br><span class="line">    objective.SetCoefficient(x, <span class="number">3</span>)</span><br><span class="line">    objective.SetCoefficient(y, <span class="number">1</span>)</span><br><span class="line">    objective.SetMaximization()</span><br><span class="line"></span><br><span class="line">    solver.Solve()</span><br><span class="line"></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'='</span>*<span class="number">25</span>+<span class="string">' Solution '</span>+<span class="string">'='</span>*<span class="number">25</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'Objective value ='</span>, objective.Value())</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'x ='</span>, x.solution_value())</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'y ='</span>, y.solution_value())</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    main()</span><br></pre></td></tr></tbody></table></figure> 输出 <figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">Number of variables = 2</span><br><span class="line">Number of constraints = 1</span><br><span class="line">========================= Solution =========================</span><br><span class="line">Objective value = 4.0</span><br><span class="line">x = 1.0</span><br><span class="line">y = 1.0</span><br></pre></td></tr></tbody></table></figure><p></p>
-]]></content>
-      <categories>
-        <category>计算机</category>
-        <category>OR-Tools</category>
-      </categories>
-  </entry>
-  <entry>
     <title>为什么&quot;假推真/假&quot;都为真</title>
     <url>/posts/31827/</url>
     <content><![CDATA[<p><span class="math inline">\(P\Rightarrow Q\)</span> 的<strong>定义</strong>是真值表. "如果 <span class="math inline">\(P\)</span>, 那么 <span class="math inline">\(Q\)</span>" 只是一种解释, 不是定义. 也就是说, <span class="math inline">\(P\)</span> 和 <span class="math inline">\(Q\)</span> 本身不需要有联系. 这里解释一下为什么定义是这样的: <span class="math inline">\(P\)</span> 为假, <span class="math inline">\(P\Rightarrow Q\)</span> 总为真. <span id="more"></span></p>
@@ -249,6 +232,23 @@ x+y\le 2
       <categories>
         <category>数学</category>
         <category>逻辑</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>OR-Tools 入门</title>
+    <url>/posts/59457/</url>
+    <content><![CDATA[<p><span class="math display">\[
+\max~ 3x+y,\quad
+\text{subject to}\ \begin{cases}
+0\le x\le 1\\
+0\le y\le 2\\
+x+y\le 2
+\end{cases}
+\]</span> <span id="more"></span> </p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> ortools.linear_solver <span class="keyword">import</span> pywraplp</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span>():</span></span><br><span class="line">    <span class="comment"># Create the linear solver with the GLOP backend.</span></span><br><span class="line">    solver = pywraplp.Solver.CreateSolver(<span class="string">'GLOP'</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Create the variables x and y.</span></span><br><span class="line">    x = solver.NumVar(<span class="number">0</span>, <span class="number">1</span>, <span class="string">'x'</span>)</span><br><span class="line">    y = solver.NumVar(<span class="number">0</span>, <span class="number">2</span>, <span class="string">'y'</span>)</span><br><span class="line"></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'Number of variables ='</span>, solver.NumVariables())</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Create a linear constraint, 0 &lt;= x + y &lt;= 2.</span></span><br><span class="line">    ct = solver.Constraint(<span class="number">0</span>, <span class="number">2</span>, <span class="string">'ct'</span>)</span><br><span class="line">    ct.SetCoefficient(x, <span class="number">1</span>)</span><br><span class="line">    ct.SetCoefficient(y, <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'Number of constraints ='</span>, solver.NumConstraints())</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Create the objective function, 3 * x + y.</span></span><br><span class="line">    objective = solver.Objective()</span><br><span class="line">    objective.SetCoefficient(x, <span class="number">3</span>)</span><br><span class="line">    objective.SetCoefficient(y, <span class="number">1</span>)</span><br><span class="line">    objective.SetMaximization()</span><br><span class="line"></span><br><span class="line">    solver.Solve()</span><br><span class="line"></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'='</span>*<span class="number">25</span>+<span class="string">' Solution '</span>+<span class="string">'='</span>*<span class="number">25</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'Objective value ='</span>, objective.Value())</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'x ='</span>, x.solution_value())</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'y ='</span>, y.solution_value())</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    main()</span><br></pre></td></tr></tbody></table></figure> 输出 <figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">Number of variables = 2</span><br><span class="line">Number of constraints = 1</span><br><span class="line">========================= Solution =========================</span><br><span class="line">Objective value = 4.0</span><br><span class="line">x = 1.0</span><br><span class="line">y = 1.0</span><br></pre></td></tr></tbody></table></figure><p></p>
+]]></content>
+      <categories>
+        <category>计算机</category>
+        <category>OR-Tools</category>
       </categories>
   </entry>
   <entry>
@@ -623,18 +623,6 @@ F(x)=f(x)\sin(x-x_0)\leq0,~\forall x\in(0,\pi).
       </categories>
   </entry>
   <entry>
-    <title>Hexo 用法记录</title>
-    <url>/posts/16107/</url>
-    <content><![CDATA[<p>插入图片: </p><figure class="highlight html"><table><tbody><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"/file/*"</span> <span class="attr">width</span>=<span class="string">"250"</span> <span class="attr">height</span>=<span class="string">"250"</span>/&gt;</span></span><br></pre></td></tr></tbody></table></figure><p></p>
-<p>嵌入 pdf: </p><figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">{% pdf /file/*.pdf %}</span><br></pre></td></tr></tbody></table></figure><p></p>
-<p>链接文章: </p><figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">{% post_link * 说明 %}</span><br></pre></td></tr></tbody></table></figure><p></p>
-]]></content>
-      <categories>
-        <category>计算机</category>
-        <category>hexo</category>
-      </categories>
-  </entry>
-  <entry>
     <title>Hesse 矩阵与Jacobi 矩阵</title>
     <url>/posts/44547/</url>
     <content><![CDATA[<p>Hessian 是<strong>数量场</strong>的二阶导: <span class="math display">\[H_{i,j}={\partial f\over\partial x_i\partial x_j}\]</span></p>
@@ -653,6 +641,18 @@ F(x)=f(x)\sin(x-x_0)\leq0,~\forall x\in(0,\pi).
         <category>分析</category>
         <category>微积分</category>
         <category>多元微积分</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Hexo 用法记录</title>
+    <url>/posts/16107/</url>
+    <content><![CDATA[<p>插入图片: </p><figure class="highlight html"><table><tbody><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"/file/*"</span> <span class="attr">width</span>=<span class="string">"250"</span> <span class="attr">height</span>=<span class="string">"250"</span>/&gt;</span></span><br></pre></td></tr></tbody></table></figure><p></p>
+<p>嵌入 pdf: </p><figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">{% pdf /file/*.pdf %}</span><br></pre></td></tr></tbody></table></figure><p></p>
+<p>链接文章: </p><figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">{% post_link * 说明 %}</span><br></pre></td></tr></tbody></table></figure><p></p>
+]]></content>
+      <categories>
+        <category>计算机</category>
+        <category>hexo</category>
       </categories>
   </entry>
   <entry>
@@ -914,40 +914,6 @@ H_A=0.5\times0.7219+0.5\times0.9710=0.8465
       </categories>
   </entry>
   <entry>
-    <title>拉格朗日插值</title>
-    <url>/posts/17585/</url>
-    <content><![CDATA[<p><span class="math display">\[p(x)=\sum_{k=0}^n y_kl_k(x)\]</span></p>
-<h2 id="基函数">基函数</h2>
-<p>给定点 <span class="math inline">\(x_0,\ldots,x_n\)</span>. 问题归结于寻找<strong>基函数</strong> <span class="math display">\[l_k(x_j)=\begin{cases}
-    1\quad j=k\\
-    0\quad j\ne k
-\end{cases},\]</span> 因为插值多项式可以写成它们的线性组合.</p>
-<span id="more"></span>
-<p>根据零点分布可以设 <span class="math display">\[l_k(x)=c\prod_{j\ne k}(x-x_j),\]</span> 代入 <span class="math inline">\(x_k\)</span> 得到</p>
-<p><span class="math display">\[
-1=l_k(x_k)=c\prod_{j\ne k}(x_k-x_j),
-\]</span></p>
-<p>于是 <span class="math inline">\(c=\dfrac{1}{\prod_{j\ne k}(x_k-x_j)}\)</span>. 这就得到了 <span class="math display">\[l_k(x)=\frac{\prod_{j\ne k}(x-x_j)}{\prod_{j\ne k}(x_k-x_j)}.\]</span></p>
-<p><em>注: 这个 <span class="math inline">\(c\)</span> 实际上是 Barycentric 权重, 即后面定义的 <span class="math inline">\(\lambda_k\)</span>.</em></p>
-<p>它实际上就是一个特殊的多项式. 比如这是给定 <span class="math inline">\(x_{0}:x_4=-2:2\)</span>, 在 <span class="math inline">\(x_3\)</span> 处取 <span class="math inline">\(1\)</span> 的基函数 <span class="math display">\[l_3(x)=\frac{(x+2)(x+1)x(x-2)}{(1+2)(1+1)\cdot1\cdot(1-2)}\]</span></p>
-<p><img src="/file/l_basis.svg"></p>
-<p>定义节点函数 <span class="math display">\[l(x)=\prod_{k=0}^n(x-x_k),\]</span> 可以得到基函数 <span class="math display">\[l_j(x)={l(x)\over l'(x_j)(x-x_j)}\]</span></p>
-<h2 id="barycentric-插值公式">Barycentric 插值公式</h2>
-<p><span class="math display">\[
-p(x)={\sum_{k=0}^n{\lambda_k y_k\over x-x_k}\over\sum_{k=0}^n{\lambda_k\over x-x_k}},
-\]</span> 其中 <span class="math display">\[\lambda_k={1\over\prod_{j\ne k}(x_k-x_j)}\]</span></p>
-<h2 id="误差">误差</h2>
-<p><span class="math inline">\(f\in C^{n+1}([a,b])\)</span>时 <span class="math display">\[f(x)-p(x)={f^{(n+1)}(\xi)\over (n+1)!}l(x),\]</span> 其中 <span class="math inline">\(\xi\in(a,b)\)</span> 与 <span class="math inline">\(x\)</span> 有关.</p>
-<hr>
-<p><span class="math inline">\(f\)</span> 在包含节点的区域 <span class="math inline">\(\Omega\)</span> 上解析时</p>
-<p><span class="math display">\[p(x)={1\over 2\pi i}\int_\Gamma{f(t)(l(t)-l(x))\over l(t)(t-x)}\d x\]</span> <span class="math display">\[f(x)-p(x)={1\over 2\pi i}\int_\Gamma {l(x)\over l(t)}{f(t)\over t-x}\d t\]</span></p>
-]]></content>
-      <categories>
-        <category>数学</category>
-        <category>数值分析</category>
-      </categories>
-  </entry>
-  <entry>
     <title>最小二乘法</title>
     <url>/posts/36991/</url>
     <content><![CDATA[<p><span class="math display">\[\min\|Ax-b\|_2\]</span> 其中 <span class="math inline">\(A\in\R^{m\times n}\)</span>, <span class="math inline">\(x\in\R^n\)</span>, <span class="math inline">\(b\in\R^m.\)</span> 这个的问题的情境是 <span class="math inline">\(m\geq n\)</span>, 也就是一个过度约束的问题 (<span class="math inline">\(b\)</span> 不在 <span class="math inline">\(A\)</span> 的值域中).</p>
@@ -1028,6 +994,40 @@ p(x)={\sum_{k=0}^n{\lambda_k y_k\over x-x_k}\over\sum_{k=0}^n{\lambda_k\over x-x
         <category>代数</category>
         <category>数值分析</category>
         <category>线性代数</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>拉格朗日插值</title>
+    <url>/posts/17585/</url>
+    <content><![CDATA[<p><span class="math display">\[p(x)=\sum_{k=0}^n y_kl_k(x)\]</span></p>
+<h2 id="基函数">基函数</h2>
+<p>给定点 <span class="math inline">\(x_0,\ldots,x_n\)</span>. 问题归结于寻找<strong>基函数</strong> <span class="math display">\[l_k(x_j)=\begin{cases}
+    1\quad j=k\\
+    0\quad j\ne k
+\end{cases},\]</span> 因为插值多项式可以写成它们的线性组合.</p>
+<span id="more"></span>
+<p>根据零点分布可以设 <span class="math display">\[l_k(x)=c\prod_{j\ne k}(x-x_j),\]</span> 代入 <span class="math inline">\(x_k\)</span> 得到</p>
+<p><span class="math display">\[
+1=l_k(x_k)=c\prod_{j\ne k}(x_k-x_j),
+\]</span></p>
+<p>于是 <span class="math inline">\(c=\dfrac{1}{\prod_{j\ne k}(x_k-x_j)}\)</span>. 这就得到了 <span class="math display">\[l_k(x)=\frac{\prod_{j\ne k}(x-x_j)}{\prod_{j\ne k}(x_k-x_j)}.\]</span></p>
+<p><em>注: 这个 <span class="math inline">\(c\)</span> 实际上是 Barycentric 权重, 即后面定义的 <span class="math inline">\(\lambda_k\)</span>.</em></p>
+<p>它实际上就是一个特殊的多项式. 比如这是给定 <span class="math inline">\(x_{0}:x_4=-2:2\)</span>, 在 <span class="math inline">\(x_3\)</span> 处取 <span class="math inline">\(1\)</span> 的基函数 <span class="math display">\[l_3(x)=\frac{(x+2)(x+1)x(x-2)}{(1+2)(1+1)\cdot1\cdot(1-2)}\]</span></p>
+<p><img src="/file/l_basis.svg"></p>
+<p>定义节点函数 <span class="math display">\[l(x)=\prod_{k=0}^n(x-x_k),\]</span> 可以得到基函数 <span class="math display">\[l_j(x)={l(x)\over l'(x_j)(x-x_j)}\]</span></p>
+<h2 id="barycentric-插值公式">Barycentric 插值公式</h2>
+<p><span class="math display">\[
+p(x)={\sum_{k=0}^n{\lambda_k y_k\over x-x_k}\over\sum_{k=0}^n{\lambda_k\over x-x_k}},
+\]</span> 其中 <span class="math display">\[\lambda_k={1\over\prod_{j\ne k}(x_k-x_j)}\]</span></p>
+<h2 id="误差">误差</h2>
+<p><span class="math inline">\(f\in C^{n+1}([a,b])\)</span>时 <span class="math display">\[f(x)-p(x)={f^{(n+1)}(\xi)\over (n+1)!}l(x),\]</span> 其中 <span class="math inline">\(\xi\in(a,b)\)</span> 与 <span class="math inline">\(x\)</span> 有关.</p>
+<hr>
+<p><span class="math inline">\(f\)</span> 在包含节点的区域 <span class="math inline">\(\Omega\)</span> 上解析时</p>
+<p><span class="math display">\[p(x)={1\over 2\pi i}\int_\Gamma{f(t)(l(t)-l(x))\over l(t)(t-x)}\d x\]</span> <span class="math display">\[f(x)-p(x)={1\over 2\pi i}\int_\Gamma {l(x)\over l(t)}{f(t)\over t-x}\d t\]</span></p>
+]]></content>
+      <categories>
+        <category>数学</category>
+        <category>数值分析</category>
       </categories>
   </entry>
   <entry>
@@ -1216,36 +1216,6 @@ y_{n+1}=\sum_{k=1}^l a_ky_{n+1-k}+h\sum_{k=0}^l b_k f_{n+1-k}
       </categories>
   </entry>
   <entry>
-    <title>三角函数</title>
-    <url>/posts/26462/</url>
-    <content><![CDATA[<h2 id="和差化积">和差化积</h2>
-<p><span class="math display">\[\sin\alpha+\sin\beta=2\sin\left(\frac{\alpha+\beta}{2}\right)\cos\left(\frac{\alpha-\beta}{2}\right)\]</span></p>
-<p><span class="math display">\[\sin\alpha-\sin\beta=2\cos\left(\frac{\alpha+\beta}{2}\right)\sin\left(\frac{\alpha-\beta}{2}\right)\]</span></p>
-<p><span class="math display">\[\cos\alpha+\cos\beta=2\cos\left(\frac{\alpha+\beta}{2}\right)\cos\left(\frac{\alpha-\beta}{2}\right)\]</span></p>
-<p><span class="math display">\[\cos\alpha-\cos\beta=-2\sin\left(\frac{\alpha+\beta}{2}\right)\sin\left(\frac{\alpha-\beta}{2}\right)\]</span></p>
-<span id="more"></span>
-<h2 id="积化和差">积化和差</h2>
-<p><span class="math display">\[\sin\alpha\cos\beta=\frac12\left(\sin(\alpha+\beta)+\sin(\alpha-\beta)\right)\]</span></p>
-<p><span class="math display">\[\cos\alpha\sin\beta=\frac12\left(\sin(\alpha+\beta)-\sin(\alpha-\beta)\right)\]</span></p>
-<p><span class="math display">\[\cos\alpha\cos\beta=\frac12\left(\cos(\alpha+\beta)+\cos(\alpha-\beta)\right)\]</span></p>
-<p><span class="math display">\[\sin\alpha\sin\beta=-\frac12\left(\cos(\alpha+\beta)-\cos(\alpha-\beta)\right)\]</span></p>
-<h2 id="倍角公式">倍角公式</h2>
-<p><span class="math display">\[\sin3x=3\sin x-4\sin^3x\]</span> <span class="math display">\[\cos 3x=-3\cos x+4\cos^3x\]</span></p>
-<h2 id="万能公式">万能公式</h2>
-<p>令 <span class="math inline">\(t=\tan\dfrac x2\)</span>, 那么 <span class="math display">\[
-\begin{gather*}
-\sin x=\frac{2t}{1+t^2},\quad
-\cos x=\frac{1-t^2}{1+t^2},\quad
-\tan x=\frac{2t}{1-t^2}
-\end{gather*}
-\]</span></p>
-]]></content>
-      <categories>
-        <category>数学</category>
-        <category>初等数学</category>
-      </categories>
-  </entry>
-  <entry>
     <title>双曲函数</title>
     <url>/posts/12845/</url>
     <content><![CDATA[<h2 id="定义">定义</h2>
@@ -1389,6 +1359,36 @@ y_{n+1}=\sum_{k=1}^l a_ky_{n+1-k}+h\sum_{k=0}^l b_k f_{n+1-k}
 ]]></content>
       <categories>
         <category>英语</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>三角函数</title>
+    <url>/posts/26462/</url>
+    <content><![CDATA[<h2 id="和差化积">和差化积</h2>
+<p><span class="math display">\[\sin\alpha+\sin\beta=2\sin\left(\frac{\alpha+\beta}{2}\right)\cos\left(\frac{\alpha-\beta}{2}\right)\]</span></p>
+<p><span class="math display">\[\sin\alpha-\sin\beta=2\cos\left(\frac{\alpha+\beta}{2}\right)\sin\left(\frac{\alpha-\beta}{2}\right)\]</span></p>
+<p><span class="math display">\[\cos\alpha+\cos\beta=2\cos\left(\frac{\alpha+\beta}{2}\right)\cos\left(\frac{\alpha-\beta}{2}\right)\]</span></p>
+<p><span class="math display">\[\cos\alpha-\cos\beta=-2\sin\left(\frac{\alpha+\beta}{2}\right)\sin\left(\frac{\alpha-\beta}{2}\right)\]</span></p>
+<span id="more"></span>
+<h2 id="积化和差">积化和差</h2>
+<p><span class="math display">\[\sin\alpha\cos\beta=\frac12\left(\sin(\alpha+\beta)+\sin(\alpha-\beta)\right)\]</span></p>
+<p><span class="math display">\[\cos\alpha\sin\beta=\frac12\left(\sin(\alpha+\beta)-\sin(\alpha-\beta)\right)\]</span></p>
+<p><span class="math display">\[\cos\alpha\cos\beta=\frac12\left(\cos(\alpha+\beta)+\cos(\alpha-\beta)\right)\]</span></p>
+<p><span class="math display">\[\sin\alpha\sin\beta=-\frac12\left(\cos(\alpha+\beta)-\cos(\alpha-\beta)\right)\]</span></p>
+<h2 id="倍角公式">倍角公式</h2>
+<p><span class="math display">\[\sin3x=3\sin x-4\sin^3x\]</span> <span class="math display">\[\cos 3x=-3\cos x+4\cos^3x\]</span></p>
+<h2 id="万能公式">万能公式</h2>
+<p>令 <span class="math inline">\(t=\tan\dfrac x2\)</span>, 那么 <span class="math display">\[
+\begin{gather*}
+\sin x=\frac{2t}{1+t^2},\quad
+\cos x=\frac{1-t^2}{1+t^2},\quad
+\tan x=\frac{2t}{1-t^2}
+\end{gather*}
+\]</span></p>
+]]></content>
+      <categories>
+        <category>数学</category>
+        <category>初等数学</category>
       </categories>
   </entry>
   <entry>
@@ -1600,17 +1600,6 @@ Q=\begin{bmatrix}1&amp;\\&amp;\frac12\end{bmatrix}\begin{bmatrix}0&amp;1\\1&amp;
       </categories>
   </entry>
   <entry>
-    <title>廿四</title>
-    <url>/posts/38636/</url>
-    <content><![CDATA[<p>优秀的高中很多，但能如她这般，令学子们痴恋深情到每每想起她时，心中的温暖都会澎湃良久，恐怕少之又少。</p>
-<p>交付给廿四的青春，是完美的，是不容置辩的无悔无憾。对她的回眸，是噙着泪的仰望。真正在这里拼搏过的人，才会懂得何为傲、霸、狂，在这里受过挫的人，才会明白何为忍、毅、刚。什么是创造与梦想，什么是起伏和跌宕，什么令我们热泪盈眶，什么又是我们所说的，一生的荣光。</p>
-<p>不论结果，只凭你在这里留下的青春，就够你荣耀一生，就是你最优秀的铁证。遗憾不属于廿四人，挺起胸来，面对你要的梦想和创造，失败和成功。</p>
-]]></content>
-      <categories>
-        <category>随笔</category>
-      </categories>
-  </entry>
-  <entry>
     <title>排序</title>
     <url>/posts/37489/</url>
     <content><![CDATA[<h2 id="冒泡排序-bubble-sort">冒泡排序 (bubble sort)</h2>
@@ -1665,6 +1654,26 @@ Q=\begin{bmatrix}1&amp;\\&amp;\frac12\end{bmatrix}\begin{bmatrix}0&amp;1\\1&amp;
       </categories>
   </entry>
   <entry>
+    <title>廿四</title>
+    <url>/posts/38636/</url>
+    <content><![CDATA[<p>优秀的高中很多，但能如她这般，令学子们痴恋深情到每每想起她时，心中的温暖都会澎湃良久，恐怕少之又少。</p>
+<p>交付给廿四的青春，是完美的，是不容置辩的无悔无憾。对她的回眸，是噙着泪的仰望。真正在这里拼搏过的人，才会懂得何为傲、霸、狂，在这里受过挫的人，才会明白何为忍、毅、刚。什么是创造与梦想，什么是起伏和跌宕，什么令我们热泪盈眶，什么又是我们所说的，一生的荣光。</p>
+<p>不论结果，只凭你在这里留下的青春，就够你荣耀一生，就是你最优秀的铁证。遗憾不属于廿四人，挺起胸来，面对你要的梦想和创造，失败和成功。</p>
+]]></content>
+      <categories>
+        <category>随笔</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>春雨</title>
+    <url>/posts/27822/</url>
+    <content><![CDATA[<p>春雨吵醒了一簇簇的红艳，沾湿了一树树的花香。</p>
+]]></content>
+      <categories>
+        <category>随笔</category>
+      </categories>
+  </entry>
+  <entry>
     <title>放学路上</title>
     <url>/posts/61326/</url>
     <content><![CDATA[<p>无法抑制去想，记不得那最后一次黄昏的放学路上。耳畔的空灵悠扬，橙红的落日夕阳，沁人的微风飘荡。脚下波光粼粼，眺望远方鹅黄的垂柳，爬上石阶的嫩草。如梦似幻。</p>
@@ -1678,15 +1687,6 @@ Q=\begin{bmatrix}1&amp;\\&amp;\frac12\end{bmatrix}\begin{bmatrix}0&amp;1\\1&amp;
     <title>春天来了</title>
     <url>/posts/61668/</url>
     <content><![CDATA[<p>没有了过往的凛冽，风变得和煦轻柔起来，枝条上冒出了毛茸茸的骨朵。</p>
-]]></content>
-      <categories>
-        <category>随笔</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>春雨</title>
-    <url>/posts/27822/</url>
-    <content><![CDATA[<p>春雨吵醒了一簇簇的红艳，沾湿了一树树的花香。</p>
 ]]></content>
       <categories>
         <category>随笔</category>
@@ -1810,15 +1810,6 @@ E(\text{error})=\text{bias}^2+\text{Var}+\varepsilon.
       </categories>
   </entry>
   <entry>
-    <title>没什么远大理想</title>
-    <url>/posts/48210/</url>
-    <content><![CDATA[<p>我只希望在一个天气不那么晴的日子里，在一个不那么吵的地方，读一本没那么有用的书，听一点不那么流行的歌。</p>
-]]></content>
-      <categories>
-        <category>随笔</category>
-      </categories>
-  </entry>
-  <entry>
     <title>泸沽湖</title>
     <url>/posts/30601/</url>
     <content><![CDATA[<p>淡霭缭绕，彩彻区朗。澄波荡漾，野凫满塘。泛舟湖上，蒹葭苍苍。薄暮冥冥，跃金浮光。</p>
@@ -1829,14 +1820,9 @@ E(\text{error})=\text{bias}^2+\text{Var}+\varepsilon.
       </categories>
   </entry>
   <entry>
-    <title>科普是一项非常难的工作</title>
-    <url>/posts/20918/</url>
-    <content><![CDATA[<p>要想当一个好学生，只需要把知识学懂。</p>
-<p>要想当一个好老师，需要一些基础知识，还需要良好的性格和表达能力、心理学和教育学经验。</p>
-<p>要想当一个好教授，需要有专业知识、科研水平，只需要一般般的表达能力。</p>
-<p><strong>而要当一个好的科普工作者，需要有远超学生的理解能力，教授一样的专业水平，老师一样的教学功力，艺术家一样的审美，作家一样的文笔，诗人一样的清高，科学家一样对知识的热爱，艺人一样对大众心理的把控能力，运动员一样的毅力，还要有自身的人格魅力、抗压抗打击能力。</strong></p>
-<p>科普是一项非常难的工作，比讲课教书难得多。因为它面对的不是专业人士，而是乌合之众。这导致科普工作者必须用通俗语言来解释专业知识，却又不至于过于通俗而产生误导。稍微有一点漏洞就会被抓住攻击——有问题的科普比谣言更可怕，比迷信更害人。</p>
-<p>所以，科普工作者是一个神圣的标签，这个名号比想象中要严苛得多。</p>
+    <title>没什么远大理想</title>
+    <url>/posts/48210/</url>
+    <content><![CDATA[<p>我只希望在一个天气不那么晴的日子里，在一个不那么吵的地方，读一本没那么有用的书，听一点不那么流行的歌。</p>
 ]]></content>
       <categories>
         <category>随笔</category>
@@ -2190,9 +2176,14 @@ a_n={n!\over(2n+1)!!}\cdot{1\over n+1}，
       </categories>
   </entry>
   <entry>
-    <title>这种教育的意义就是磨灭所有人的学习热情</title>
-    <url>/posts/51371/</url>
-    <content><![CDATA[<p>今天我们学习检索，首先，文献分为以下几类，这几类有这样的联系，检索有以下几种方法，它们有这样那样的优缺点，这个检索是在这个时间由这家公司创办的。 下面我们做检索的练习，检索分为以下几个步骤，首先就是检索准备。要明确学科属性，弄清信息类型，明确信息要求。</p>
+    <title>科普是一项非常难的工作</title>
+    <url>/posts/20918/</url>
+    <content><![CDATA[<p>要想当一个好学生，只需要把知识学懂。</p>
+<p>要想当一个好老师，需要一些基础知识，还需要良好的性格和表达能力、心理学和教育学经验。</p>
+<p>要想当一个好教授，需要有专业知识、科研水平，只需要一般般的表达能力。</p>
+<p><strong>而要当一个好的科普工作者，需要有远超学生的理解能力，教授一样的专业水平，老师一样的教学功力，艺术家一样的审美，作家一样的文笔，诗人一样的清高，科学家一样对知识的热爱，艺人一样对大众心理的把控能力，运动员一样的毅力，还要有自身的人格魅力、抗压抗打击能力。</strong></p>
+<p>科普是一项非常难的工作，比讲课教书难得多。因为它面对的不是专业人士，而是乌合之众。这导致科普工作者必须用通俗语言来解释专业知识，却又不至于过于通俗而产生误导。稍微有一点漏洞就会被抓住攻击——有问题的科普比谣言更可怕，比迷信更害人。</p>
+<p>所以，科普工作者是一个神圣的标签，这个名号比想象中要严苛得多。</p>
 ]]></content>
       <categories>
         <category>随笔</category>
@@ -2216,6 +2207,24 @@ a_n={n!\over(2n+1)!!}\cdot{1\over n+1}，
       </categories>
   </entry>
   <entry>
+    <title>这种教育的意义就是磨灭所有人的学习热情</title>
+    <url>/posts/51371/</url>
+    <content><![CDATA[<p>今天我们学习检索，首先，文献分为以下几类，这几类有这样的联系，检索有以下几种方法，它们有这样那样的优缺点，这个检索是在这个时间由这家公司创办的。 下面我们做检索的练习，检索分为以下几个步骤，首先就是检索准备。要明确学科属性，弄清信息类型，明确信息要求。</p>
+]]></content>
+      <categories>
+        <category>随笔</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>雪</title>
+    <url>/posts/47930/</url>
+    <content><![CDATA[<p>满世界白茫茫的一片。 静谧而优雅。 惬意而自在。 踏着碎琼乱玉，咯吱咯吱的声音和触感。 沁凉的空气，明亮的阳光，反射着熠熠生辉。</p>
+]]></content>
+      <categories>
+        <category>随笔</category>
+      </categories>
+  </entry>
+  <entry>
     <title>链表相加</title>
     <url>/posts/30822/</url>
     <content><![CDATA[<p>比如一个链表是 <code>1 -&gt; 2 -&gt; 3</code>, 一个是 <code>2 -&gt; 7</code>, 结果应该返回 <code>1 -&gt; 5 -&gt; 0</code>.</p>
@@ -2227,15 +2236,6 @@ a_n={n!\over(2n+1)!!}\cdot{1\over n+1}，
       <categories>
         <category>计算机</category>
         <category>算法</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>雪</title>
-    <url>/posts/47930/</url>
-    <content><![CDATA[<p>满世界白茫茫的一片。 静谧而优雅。 惬意而自在。 踏着碎琼乱玉，咯吱咯吱的声音和触感。 沁凉的空气，明亮的阳光，反射着熠熠生辉。</p>
-]]></content>
-      <categories>
-        <category>随笔</category>
       </categories>
   </entry>
   <entry>
