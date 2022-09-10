@@ -26,6 +26,18 @@
       </categories>
   </entry>
   <entry>
+    <title>BST中的第二大元素</title>
+    <url>/posts/32090/</url>
+    <content><![CDATA[<h2 id="解法一">解法一</h2>
+<p>反向的中序遍历, 第二个节点就是第二大的. </p><figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">second_largest</span>(<span class="params">self</span>):</span></span><br><span class="line">        self.count = <span class="number">0</span></span><br><span class="line">        self.result = <span class="literal">None</span></span><br><span class="line">        self.traverse(root)</span><br><span class="line">        <span class="keyword">return</span> self.result</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">traverse</span>(<span class="params">self, root</span>):</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> root:</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        self.traverse(root.right)</span><br><span class="line">        self.count += <span class="number">1</span></span><br><span class="line">        <span class="keyword">if</span> self.count == <span class="number">2</span>:</span><br><span class="line">            self.result = root.val</span><br><span class="line">            <span class="keyword">return</span>       </span><br><span class="line">        <span class="keyword">if</span> self.count &gt; <span class="number">1</span>:</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        self.traverse(root.left)</span><br></pre></td></tr></tbody></table></figure> 时间: <span class="math inline">\(O(h)\)</span> 空间: <span class="math inline">\(O(h)\)</span><p></p>
+<h2 id="解法二">解法二</h2>
+<p>分类讨论. </p><figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">find_largest</span>(<span class="params">root</span>):</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> root:</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> root.right:  <span class="comment"># 没有右子树时, 根是最大的</span></span><br><span class="line">        <span class="keyword">return</span> root</span><br><span class="line">    <span class="keyword">return</span> find_largest(root.right)  <span class="comment"># 有右子树时, 找其中最大的</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">find_2nd_largest</span>(<span class="params">root</span>):</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> root:</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> root.right:  <span class="comment"># 没有右子树, 根最大; 左子树的最大就是第二大</span></span><br><span class="line">        <span class="keyword">return</span> find_largest(root.left)</span><br><span class="line">    <span class="comment"># 有右子树, 此时最大元素在右子树中</span></span><br><span class="line">    right = root.right</span><br><span class="line">    <span class="comment"># 右子树只有一个节点, 它是最大的, 根第二大</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> right.left <span class="keyword">and</span> <span class="keyword">not</span> right.right:  </span><br><span class="line">        <span class="keyword">return</span> root</span><br><span class="line">    <span class="comment"># 右子树还有子树, 在这里面找第二大的</span></span><br><span class="line">    <span class="keyword">return</span> find_2nd_largest(right)</span><br></pre></td></tr></tbody></table></figure><p></p>
+]]></content>
+      <categories>
+        <category>数学</category>
+      </categories>
+  </entry>
+  <entry>
     <title>Confusion Matrix</title>
     <url>/posts/39658/</url>
     <content><![CDATA[<p>对于二分类问题, 结果被分为真阳, 假阳, 真阴, 假阴四种情况.</p>
@@ -204,6 +216,39 @@ x+y\le 2
       <categories>
         <category>计算机</category>
         <category>OR-Tools</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>SQL 基础</title>
+    <url>/posts/19528/</url>
+    <content><![CDATA[<h2 id="select">SELECT</h2>
+<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="built_in">COUNT</span>(<span class="keyword">DISTINCT</span> Country) <span class="keyword">FROM</span> Customers;</span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> Customers <span class="keyword">WHERE</span> <span class="keyword">not</span> (Country<span class="operator">=</span><span class="string">'Germany'</span> <span class="keyword">and</span> city<span class="operator">=</span><span class="string">'Berlin'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> Customers <span class="keyword">WHERE</span> Country <span class="keyword">IN</span> (<span class="keyword">SELECT</span> Country <span class="keyword">FROM</span> Suppliers);</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="like">LIKE</h2>
+<p><code>%</code>: zero, one or multiple char</p>
+<p><code>_</code>: a single char </p><figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> Customers <span class="keyword">WHERE</span> <span class="built_in">lower</span>(CustomerName) <span class="keyword">LIKE</span> <span class="string">'a%'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> Customers <span class="keyword">WHERE</span> city <span class="keyword">LIKE</span> <span class="string">'____'</span>;</span><br></pre></td></tr></tbody></table></figure><p></p>
+<h2 id="group-by">GROUP BY</h2>
+<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> ...</span><br><span class="line"><span class="keyword">FROM</span> ...</span><br><span class="line"><span class="keyword">WHERE</span> ...</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> ...</span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> ... <span class="keyword">ASC</span> <span class="operator">/</span> <span class="keyword">DESC</span>;</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="aggregate-functions">Aggregate functions</h2>
+<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="built_in">Min</span>(), <span class="built_in">Max</span>(), <span class="built_in">Count</span>(), <span class="built_in">Sum</span>(), <span class="built_in">Avg</span>()</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="built_in">avg</span>(sum_id) <span class="keyword">as</span> avg_spend_per_orderid</span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">(<span class="keyword">SELECT</span> order_id, <span class="built_in">sum</span>(spend) <span class="keyword">as</span> sum_id</span><br><span class="line"><span class="keyword">FROM</span> example</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> <span class="number">1</span>)</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="having">HAVING</h2>
+<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> ...</span><br><span class="line"><span class="keyword">FROM</span> ...</span><br><span class="line"><span class="keyword">WHERE</span> ...</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> ...</span><br><span class="line"><span class="keyword">HAVING</span> ...</span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> ...</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> Country, <span class="built_in">count</span>(CustomerID)</span><br><span class="line"><span class="keyword">FROM</span> Customers</span><br><span class="line"><span class="keyword">WHERE</span> Country <span class="keyword">in</span> (<span class="string">'Brazil'</span>, <span class="string">'France'</span>, <span class="string">'USA'</span>)</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> Country</span><br><span class="line"><span class="keyword">HAVING</span> <span class="built_in">count</span>(CustomerID) <span class="operator">&gt;</span> <span class="number">5</span>;</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="union">UNION</h2>
+<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> Country <span class="keyword">FROM</span> Customers</span><br><span class="line"><span class="keyword">UNION</span> (<span class="keyword">ALL</span>)</span><br><span class="line"><span class="keyword">SELECT</span> Country <span class="keyword">FROM</span> Suppliers</span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> <span class="number">1</span>;</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="with">WITH</h2>
+<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">WITH</span> cate15 <span class="keyword">as</span> (</span><br><span class="line">  <span class="keyword">SELECT</span> categoryid, productid</span><br><span class="line">  <span class="keyword">FROM</span> products</span><br><span class="line">  <span class="keyword">WHERE</span> categoryid <span class="keyword">BETWEEN</span> <span class="number">1</span> <span class="keyword">and</span> <span class="number">5</span></span><br><span class="line">),</span><br><span class="line">od15 <span class="keyword">as</span> (</span><br><span class="line">  <span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> orderdetails</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> od15 </span><br><span class="line"><span class="keyword">WHERE</span> productid <span class="keyword">in</span> (<span class="keyword">SELECT</span> productid <span class="keyword">from</span> cate15)</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="windows-function">Windows function</h2>
+<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="built_in">row_number</span>() <span class="keyword">over</span>(<span class="keyword">partition</span> <span class="keyword">by</span> ... <span class="keyword">order</span> <span class="keyword">by</span> ...)</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> category, product, sales, row_num</span><br><span class="line"><span class="keyword">FROM</span> (</span><br><span class="line">  <span class="keyword">SELECT</span> category, product, sales, </span><br><span class="line">  <span class="built_in">row_number</span>() <span class="keyword">over</span>(<span class="keyword">partition</span> <span class="keyword">by</span> category <span class="keyword">order</span> <span class="keyword">by</span> sales <span class="keyword">desc</span>) <span class="keyword">as</span> row_num</span><br><span class="line">  <span class="keyword">FROM</span> tab</span><br><span class="line">)</span><br><span class="line"><span class="keyword">WHERE</span> row_num <span class="operator">&lt;=</span> <span class="number">2</span></span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> </span><br><span class="line">categoryid, productid, price, </span><br><span class="line"><span class="built_in">sum</span>(price) <span class="keyword">over</span>(<span class="keyword">partition</span> <span class="keyword">by</span> categoryid <span class="keyword">order</span> <span class="keyword">by</span> productid) <span class="keyword">as</span> cum_sum</span><br><span class="line"><span class="keyword">FROM</span> products</span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span> <span class="number">1</span>,<span class="number">2</span>;</span><br></pre></td></tr></tbody></table></figure>
+<p><code>lag()</code>: above, <code>lead()</code>: below </p><figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span>,</span><br><span class="line"><span class="built_in">lag</span>(birthdate, <span class="number">1</span>) <span class="keyword">over</span>(<span class="keyword">order</span> <span class="keyword">by</span> birthdate),</span><br><span class="line"><span class="built_in">lead</span>(birthdate, <span class="number">2</span>) <span class="keyword">over</span>(<span class="keyword">order</span> <span class="keyword">by</span> birthdate)</span><br><span class="line"><span class="keyword">FROM</span> employees;</span><br></pre></td></tr></tbody></table></figure><p></p>
+<h2 id="case-when">CASE WHEN</h2>
+<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> Country,</span><br><span class="line">       <span class="keyword">case</span> <span class="keyword">when</span> country <span class="keyword">in</span> (<span class="string">'USA'</span>) <span class="keyword">then</span> <span class="string">'America'</span></span><br><span class="line">            <span class="keyword">when</span> country <span class="keyword">in</span> (<span class="string">'Mexico'</span>) <span class="keyword">then</span> <span class="string">'emerging markets'</span></span><br><span class="line">            <span class="keyword">else</span> <span class="string">'other markets'</span> <span class="keyword">end</span> <span class="keyword">as</span> country_flag</span><br><span class="line"><span class="keyword">FROM</span> customers;</span><br></pre></td></tr></tbody></table></figure>
+]]></content>
+      <categories>
+        <category>计算机</category>
+        <category>SQL</category>
       </categories>
   </entry>
   <entry>
@@ -458,39 +503,6 @@ I_n={(2n)!!\over(2n+1)!!}.
         <category>数学</category>
         <category>代数</category>
         <category>线性代数</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>SQL 基础</title>
-    <url>/posts/19528/</url>
-    <content><![CDATA[<h2 id="select">SELECT</h2>
-<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="built_in">COUNT</span>(<span class="keyword">DISTINCT</span> Country) <span class="keyword">FROM</span> Customers;</span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> Customers <span class="keyword">WHERE</span> <span class="keyword">not</span> (Country<span class="operator">=</span><span class="string">'Germany'</span> <span class="keyword">and</span> city<span class="operator">=</span><span class="string">'Berlin'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> Customers <span class="keyword">WHERE</span> Country <span class="keyword">IN</span> (<span class="keyword">SELECT</span> Country <span class="keyword">FROM</span> Suppliers);</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="like">LIKE</h2>
-<p><code>%</code>: zero, one or multiple char</p>
-<p><code>_</code>: a single char </p><figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> Customers <span class="keyword">WHERE</span> <span class="built_in">lower</span>(CustomerName) <span class="keyword">LIKE</span> <span class="string">'a%'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> Customers <span class="keyword">WHERE</span> city <span class="keyword">LIKE</span> <span class="string">'____'</span>;</span><br></pre></td></tr></tbody></table></figure><p></p>
-<h2 id="group-by">GROUP BY</h2>
-<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> ...</span><br><span class="line"><span class="keyword">FROM</span> ...</span><br><span class="line"><span class="keyword">WHERE</span> ...</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> ...</span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> ... <span class="keyword">ASC</span> <span class="operator">/</span> <span class="keyword">DESC</span>;</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="aggregate-functions">Aggregate functions</h2>
-<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="built_in">Min</span>(), <span class="built_in">Max</span>(), <span class="built_in">Count</span>(), <span class="built_in">Sum</span>(), <span class="built_in">Avg</span>()</span><br></pre></td></tr></tbody></table></figure>
-<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="built_in">avg</span>(sum_id) <span class="keyword">as</span> avg_spend_per_orderid</span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">(<span class="keyword">SELECT</span> order_id, <span class="built_in">sum</span>(spend) <span class="keyword">as</span> sum_id</span><br><span class="line"><span class="keyword">FROM</span> example</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> <span class="number">1</span>)</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="having">HAVING</h2>
-<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> ...</span><br><span class="line"><span class="keyword">FROM</span> ...</span><br><span class="line"><span class="keyword">WHERE</span> ...</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> ...</span><br><span class="line"><span class="keyword">HAVING</span> ...</span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> ...</span><br></pre></td></tr></tbody></table></figure>
-<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> Country, <span class="built_in">count</span>(CustomerID)</span><br><span class="line"><span class="keyword">FROM</span> Customers</span><br><span class="line"><span class="keyword">WHERE</span> Country <span class="keyword">in</span> (<span class="string">'Brazil'</span>, <span class="string">'France'</span>, <span class="string">'USA'</span>)</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> Country</span><br><span class="line"><span class="keyword">HAVING</span> <span class="built_in">count</span>(CustomerID) <span class="operator">&gt;</span> <span class="number">5</span>;</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="union">UNION</h2>
-<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> Country <span class="keyword">FROM</span> Customers</span><br><span class="line"><span class="keyword">UNION</span> (<span class="keyword">ALL</span>)</span><br><span class="line"><span class="keyword">SELECT</span> Country <span class="keyword">FROM</span> Suppliers</span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> <span class="number">1</span>;</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="with">WITH</h2>
-<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">WITH</span> cate15 <span class="keyword">as</span> (</span><br><span class="line">  <span class="keyword">SELECT</span> categoryid, productid</span><br><span class="line">  <span class="keyword">FROM</span> products</span><br><span class="line">  <span class="keyword">WHERE</span> categoryid <span class="keyword">BETWEEN</span> <span class="number">1</span> <span class="keyword">and</span> <span class="number">5</span></span><br><span class="line">),</span><br><span class="line">od15 <span class="keyword">as</span> (</span><br><span class="line">  <span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> orderdetails</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> od15 </span><br><span class="line"><span class="keyword">WHERE</span> productid <span class="keyword">in</span> (<span class="keyword">SELECT</span> productid <span class="keyword">from</span> cate15)</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="windows-function">Windows function</h2>
-<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="built_in">row_number</span>() <span class="keyword">over</span>(<span class="keyword">partition</span> <span class="keyword">by</span> ... <span class="keyword">order</span> <span class="keyword">by</span> ...)</span><br></pre></td></tr></tbody></table></figure>
-<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> category, product, sales, row_num</span><br><span class="line"><span class="keyword">FROM</span> (</span><br><span class="line">  <span class="keyword">SELECT</span> category, product, sales, </span><br><span class="line">  <span class="built_in">row_number</span>() <span class="keyword">over</span>(<span class="keyword">partition</span> <span class="keyword">by</span> category <span class="keyword">order</span> <span class="keyword">by</span> sales <span class="keyword">desc</span>) <span class="keyword">as</span> row_num</span><br><span class="line">  <span class="keyword">FROM</span> tab</span><br><span class="line">)</span><br><span class="line"><span class="keyword">WHERE</span> row_num <span class="operator">&lt;=</span> <span class="number">2</span></span><br></pre></td></tr></tbody></table></figure>
-<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> </span><br><span class="line">categoryid, productid, price, </span><br><span class="line"><span class="built_in">sum</span>(price) <span class="keyword">over</span>(<span class="keyword">partition</span> <span class="keyword">by</span> categoryid <span class="keyword">order</span> <span class="keyword">by</span> productid) <span class="keyword">as</span> cum_sum</span><br><span class="line"><span class="keyword">FROM</span> products</span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span> <span class="number">1</span>,<span class="number">2</span>;</span><br></pre></td></tr></tbody></table></figure>
-<p><code>lag()</code>: above, <code>lead()</code>: below </p><figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span>,</span><br><span class="line"><span class="built_in">lag</span>(birthdate, <span class="number">1</span>) <span class="keyword">over</span>(<span class="keyword">order</span> <span class="keyword">by</span> birthdate),</span><br><span class="line"><span class="built_in">lead</span>(birthdate, <span class="number">2</span>) <span class="keyword">over</span>(<span class="keyword">order</span> <span class="keyword">by</span> birthdate)</span><br><span class="line"><span class="keyword">FROM</span> employees;</span><br></pre></td></tr></tbody></table></figure><p></p>
-<h2 id="case-when">CASE WHEN</h2>
-<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> Country,</span><br><span class="line">       <span class="keyword">case</span> <span class="keyword">when</span> country <span class="keyword">in</span> (<span class="string">'USA'</span>) <span class="keyword">then</span> <span class="string">'America'</span></span><br><span class="line">            <span class="keyword">when</span> country <span class="keyword">in</span> (<span class="string">'Mexico'</span>) <span class="keyword">then</span> <span class="string">'emerging markets'</span></span><br><span class="line">            <span class="keyword">else</span> <span class="string">'other markets'</span> <span class="keyword">end</span> <span class="keyword">as</span> country_flag</span><br><span class="line"><span class="keyword">FROM</span> customers;</span><br></pre></td></tr></tbody></table></figure>
-]]></content>
-      <categories>
-        <category>计算机</category>
-        <category>SQL</category>
       </categories>
   </entry>
   <entry>
@@ -1089,6 +1101,37 @@ p(x)={\sum_{k=0}^n{\lambda_k y_k\over x-x_k}\over\sum_{k=0}^n{\lambda_k\over x-x
       </categories>
   </entry>
   <entry>
+    <title>微分形式</title>
+    <url>/posts/12522/</url>
+    <content><![CDATA[<p>0 次形式: <span class="math inline">\(f\)</span></p>
+<p>1 次形式: <span class="math inline">\(P\d x+Q\d y+R\d z\)</span></p>
+<p>2 次形式: <span class="math inline">\(P\d y\land \d z+Q\d z\land \d x+R\d x\land \d y\)</span></p>
+<p>3 次形式: <span class="math inline">\(R\d x\land \d y\land \d z\)</span></p>
+<span id="more"></span>
+<h2 id="运算律">运算律</h2>
+<p><span class="math inline">\(\d x\land \d x=0\)</span> 等, <span class="math inline">\(\d x\land \d y=-\d y\land \d x\)</span> 等.</p>
+<h2 id="外微分运算">外微分运算</h2>
+<p><span class="math display">\[\d f={\partial f\over\partial x}\d x+{\partial f\over\partial y}\d y+{\partial f\over\partial z}\d z\]</span> <span class="math inline">\(w=P\d x+Q\d y+R\d z\)</span> 时</p>
+<p><span class="math display">\[\begin{aligned}
+\d w&amp;=(R_y'-Q_z')\d y\land \d z+(P_z'-R_x')\d z\land \d x+(Q_x'-P_y')\d x\land \d y\\
+&amp;=
+\begin{vmatrix}
+\d y\land \d z&amp;\d z\land \d x&amp;\d x\land \d y\\
+{\partial\over\partial x} &amp; {\partial\over\partial y} &amp; {\partial\over\partial z}\\
+P&amp;Q&amp;R
+\end{vmatrix}
+\end{aligned}\]</span></p>
+<p><span class="math inline">\(w=P\d y\land \d z+Q\d z\land \d x+R\d x\land \d y\)</span> 时</p>
+<p><span class="math display">\[\d w=(P_x'+Q_y'+R_z')\d x\land \d y\land \d z\]</span></p>
+]]></content>
+      <categories>
+        <category>数学</category>
+        <category>分析</category>
+        <category>微积分</category>
+        <category>多元微积分</category>
+      </categories>
+  </entry>
+  <entry>
     <title>数值积分</title>
     <url>/posts/24343/</url>
     <content><![CDATA[<p>Quadrature Rule 指的是形式 <span class="math display">\[Q(f)=\sum_{k=0}^nw_kf(x_k)\]</span></p>
@@ -1130,37 +1173,6 @@ M(h)=\sum_{k=0}^{n-1}hf\left(a+h\left(k+\frac12\right)\right)
       <categories>
         <category>数学</category>
         <category>数值分析</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>微分形式</title>
-    <url>/posts/12522/</url>
-    <content><![CDATA[<p>0 次形式: <span class="math inline">\(f\)</span></p>
-<p>1 次形式: <span class="math inline">\(P\d x+Q\d y+R\d z\)</span></p>
-<p>2 次形式: <span class="math inline">\(P\d y\land \d z+Q\d z\land \d x+R\d x\land \d y\)</span></p>
-<p>3 次形式: <span class="math inline">\(R\d x\land \d y\land \d z\)</span></p>
-<span id="more"></span>
-<h2 id="运算律">运算律</h2>
-<p><span class="math inline">\(\d x\land \d x=0\)</span> 等, <span class="math inline">\(\d x\land \d y=-\d y\land \d x\)</span> 等.</p>
-<h2 id="外微分运算">外微分运算</h2>
-<p><span class="math display">\[\d f={\partial f\over\partial x}\d x+{\partial f\over\partial y}\d y+{\partial f\over\partial z}\d z\]</span> <span class="math inline">\(w=P\d x+Q\d y+R\d z\)</span> 时</p>
-<p><span class="math display">\[\begin{aligned}
-\d w&amp;=(R_y'-Q_z')\d y\land \d z+(P_z'-R_x')\d z\land \d x+(Q_x'-P_y')\d x\land \d y\\
-&amp;=
-\begin{vmatrix}
-\d y\land \d z&amp;\d z\land \d x&amp;\d x\land \d y\\
-{\partial\over\partial x} &amp; {\partial\over\partial y} &amp; {\partial\over\partial z}\\
-P&amp;Q&amp;R
-\end{vmatrix}
-\end{aligned}\]</span></p>
-<p><span class="math inline">\(w=P\d y\land \d z+Q\d z\land \d x+R\d x\land \d y\)</span> 时</p>
-<p><span class="math display">\[\d w=(P_x'+Q_y'+R_z')\d x\land \d y\land \d z\]</span></p>
-]]></content>
-      <categories>
-        <category>数学</category>
-        <category>分析</category>
-        <category>微积分</category>
-        <category>多元微积分</category>
       </categories>
   </entry>
   <entry>
@@ -1450,6 +1462,17 @@ y_{n+1}=\sum_{k=1}^l a_ky_{n+1-k}+h\sum_{k=0}^l b_k f_{n+1-k}
       </categories>
   </entry>
   <entry>
+    <title>丽江</title>
+    <url>/posts/23622/</url>
+    <content><![CDATA[<p>清晨，冬风偏有着独特的和煦，暖暖的阳光洒下，轻吻着这个慵懒的小城。青石板的两侧，一簇红一簇粉的丛生，芬芳馥郁。清澄的流水，不急不缓地从家家户户门前流过，雀跃着一片两片的花瓣，抚动着缠绵的青荇，挑弄着披拂的藤蔓。</p>
+<p>踱入深巷，古色古香的建筑和装饰，质朴而不失深邃的画作文字，神秘地述说着一个古老的民族对自然的敬畏与对文化根源的认同。仿佛等待须臾，小巷的尽头就会传来一阵悠远、空旷的卖杏花的吆喝似的。</p>
+<p>午后，携几枚沁爽的青枣，品几块玫瑰饼，惹得唇齿间尽是花香。百鸟嘤鸣，鸡犬相闻，长桥卧波，复道行空，小桥流水飞红。远眺，巍峨的雪山正熠熠闪着金辉。 傍晚，华灯初上。人群熙攘起来，叫卖声，丝竹声不绝于耳，花草香，珍馐香扑面而来。渐渐深凝的夜，又将古镇拉回沉寂，一同那远山的轮廓。</p>
+]]></content>
+      <categories>
+        <category>随笔</category>
+      </categories>
+  </entry>
+  <entry>
     <title>为什么用开覆盖定义紧集</title>
     <url>/posts/47720/</url>
     <content><![CDATA[<p>【定义】一个集合是紧集的意思是，它的任何一个开覆盖都有有限子覆盖。</p>
@@ -1479,14 +1502,32 @@ y_{n+1}=\sum_{k=1}^l a_ky_{n+1-k}+h\sum_{k=0}^l b_k f_{n+1-k}
       </categories>
   </entry>
   <entry>
-    <title>丽江</title>
-    <url>/posts/23622/</url>
-    <content><![CDATA[<p>清晨，冬风偏有着独特的和煦，暖暖的阳光洒下，轻吻着这个慵懒的小城。青石板的两侧，一簇红一簇粉的丛生，芬芳馥郁。清澄的流水，不急不缓地从家家户户门前流过，雀跃着一片两片的花瓣，抚动着缠绵的青荇，挑弄着披拂的藤蔓。</p>
-<p>踱入深巷，古色古香的建筑和装饰，质朴而不失深邃的画作文字，神秘地述说着一个古老的民族对自然的敬畏与对文化根源的认同。仿佛等待须臾，小巷的尽头就会传来一阵悠远、空旷的卖杏花的吆喝似的。</p>
-<p>午后，携几枚沁爽的青枣，品几块玫瑰饼，惹得唇齿间尽是花香。百鸟嘤鸣，鸡犬相闻，长桥卧波，复道行空，小桥流水飞红。远眺，巍峨的雪山正熠熠闪着金辉。 傍晚，华灯初上。人群熙攘起来，叫卖声，丝竹声不绝于耳，花草香，珍馐香扑面而来。渐渐深凝的夜，又将古镇拉回沉寂，一同那远山的轮廓。</p>
+    <title>二分查找</title>
+    <url>/posts/42877/</url>
+    <content><![CDATA[<h2 id="原始问题-找到返回下标-找不到返回空">原始问题: 找到返回下标, 找不到返回空</h2>
+<figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">binary_search</span>(<span class="params">array, target</span>):</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> array:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line">        </span><br><span class="line">    left, right = <span class="number">0</span>, <span class="built_in">len</span>(array)-<span class="number">1</span></span><br><span class="line">    <span class="keyword">while</span> left &lt;= right:</span><br><span class="line">        mid = (left + right) // <span class="number">2</span></span><br><span class="line">        <span class="keyword">if</span> array[mid] &gt; target:</span><br><span class="line">            right = mid - <span class="number">1</span></span><br><span class="line">        <span class="keyword">elif</span> array[mid] &lt; target:</span><br><span class="line">            left = mid + <span class="number">1</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span> mid</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">None</span></span><br></pre></td></tr></tbody></table></figure>
+<p>时间: <span class="math inline">\(O(\log N)\)</span></p>
+<p>空间: <span class="math inline">\(O(1)\)</span></p>
+<h2 id="变种-有序矩阵">变种: 有序矩阵</h2>
+<p>比如在下面的矩阵中找 10 </p><figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">1  2  3  4</span><br><span class="line">5  6  7  8</span><br><span class="line">9  10 11 12</span><br></pre></td></tr></tbody></table></figure> 应该返回 <code>(2, 1)</code>. 设矩阵是 <code>M*N</code> 的.<p></p>
+<p>关键就在于压平后的下标和行标, 列标之间的关系.</p>
+<ul>
+<li><code>idx = row_idx * N + col_idx</code></li>
+<li><code>row_idx = idx // N</code></li>
+<li><code>col_idx = idx % N</code></li>
+</ul>
+<figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">binary_search_2d</span>(<span class="params">matrix, target</span>):</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> matrix:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line">    M, N = <span class="built_in">len</span>(matrix), <span class="built_in">len</span>(matrix[<span class="number">0</span>])</span><br><span class="line">    left, right = <span class="number">0</span>, M*N-<span class="number">1</span></span><br><span class="line">    <span class="keyword">while</span> left &lt;= right:</span><br><span class="line">        mid = (left + right) // <span class="number">2</span></span><br><span class="line">        row = mid // N</span><br><span class="line">        col = mid % N</span><br><span class="line">        <span class="keyword">if</span> matrix[row][col] &gt; target:</span><br><span class="line">            right = mid - <span class="number">1</span></span><br><span class="line">        <span class="keyword">elif</span> matrix[row][col] &lt; target:</span><br><span class="line">            left = mid + <span class="number">1</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span> (row, col)</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">None</span></span><br></pre></td></tr></tbody></table></figure>
+<p>时间: <span class="math inline">\(\log(MN)\)</span></p>
+<h2 id="变种-找最近的数">变种: 找最近的数</h2>
+<p>比如在 <code>[1, 2, 5, 9]</code> 中找 <code>3</code>, 应该返回下标 <code>1</code>. </p><figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">find_closest</span>(<span class="params">array, target</span>):</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> array:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line">    left, right = <span class="number">0</span>, <span class="built_in">len</span>(array)-<span class="number">1</span></span><br><span class="line">    <span class="keyword">while</span> left &lt; right - <span class="number">1</span>:</span><br><span class="line">        mid = (left + right) // <span class="number">2</span></span><br><span class="line">        <span class="keyword">if</span> array[mid] &gt; target:</span><br><span class="line">            right = mid</span><br><span class="line">        <span class="keyword">elif</span> array[mid] &lt; target:</span><br><span class="line">            left = mid</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span> mid</span><br><span class="line">    <span class="keyword">return</span> left <span class="keyword">if</span> <span class="built_in">abs</span>(target - array[left]) &lt; <span class="built_in">abs</span>(target - array[right]) <span class="keyword">else</span> right</span><br></pre></td></tr></tbody></table></figure><p></p>
+<h2 id="变种-找第一次出现的下标">变种: 找第一次出现的下标</h2>
+<figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">find_first</span>(<span class="params">array, target</span>):</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> array:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line">    left, right = <span class="number">0</span>, <span class="built_in">len</span>(array)-<span class="number">1</span></span><br><span class="line">    <span class="keyword">while</span> left &lt; right - <span class="number">1</span>:</span><br><span class="line">        mid = (left + right) // <span class="number">2</span></span><br><span class="line">        <span class="keyword">if</span> array[mid] &gt; target:</span><br><span class="line">            right = mid - <span class="number">1</span></span><br><span class="line">        <span class="keyword">elif</span> array[mid] &lt; target:</span><br><span class="line">            left = mid + <span class="number">1</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            right = mid</span><br><span class="line">    <span class="keyword">if</span> array[left] == target:</span><br><span class="line">        <span class="keyword">return</span> left</span><br><span class="line">    <span class="keyword">if</span> array[right] == target:</span><br><span class="line">        <span class="keyword">return</span> right</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">None</span></span><br></pre></td></tr></tbody></table></figure>
+<h2 id="变种-找最后一次出现的下标">变种: 找最后一次出现的下标</h2>
+<figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">find_last</span>(<span class="params">array, target</span>):</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> array:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line">    left, right = <span class="number">0</span>, <span class="built_in">len</span>(array)-<span class="number">1</span></span><br><span class="line">    <span class="keyword">while</span> left &lt; right - <span class="number">1</span>:</span><br><span class="line">        mid = (left + right) // <span class="number">2</span></span><br><span class="line">        <span class="keyword">if</span> array[mid] &gt; target:</span><br><span class="line">            right = mid - <span class="number">1</span></span><br><span class="line">        <span class="keyword">elif</span> array[mid] &lt; target:</span><br><span class="line">            left = mid + <span class="number">1</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            left = mid</span><br><span class="line">    <span class="keyword">if</span> array[right] == target:</span><br><span class="line">        <span class="keyword">return</span> right</span><br><span class="line">    <span class="keyword">if</span> array[left] == target:</span><br><span class="line">        <span class="keyword">return</span> left</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">None</span></span><br></pre></td></tr></tbody></table></figure>
 ]]></content>
       <categories>
-        <category>随笔</category>
+        <category>计算机</category>
+        <category>算法</category>
       </categories>
   </entry>
   <entry>
@@ -1514,35 +1555,6 @@ y_{n+1}=\sum_{k=1}^l a_ky_{n+1-k}+h\sum_{k=0}^l b_k f_{n+1-k}
 <figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">print_by_row2</span>(<span class="params">root</span>):</span></span><br><span class="line">    cur = deque([root])</span><br><span class="line">    <span class="built_in">next</span> = deque()</span><br><span class="line">    <span class="keyword">while</span> cur:</span><br><span class="line">        head = cur.popleft()</span><br><span class="line">        <span class="built_in">print</span>(head.val, end=<span class="string">' '</span>)</span><br><span class="line">        <span class="keyword">if</span> head.left:</span><br><span class="line">            <span class="built_in">next</span>.append(head.left)</span><br><span class="line">        <span class="keyword">if</span> head.right:</span><br><span class="line">            <span class="built_in">next</span>.append(head.right)</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> cur:</span><br><span class="line">            <span class="built_in">print</span>()</span><br><span class="line">            <span class="keyword">if</span> <span class="built_in">next</span>:</span><br><span class="line">                cur, <span class="built_in">next</span> = <span class="built_in">next</span>, deque()</span><br></pre></td></tr></tbody></table></figure>
 <h2 id="非递归遍历">非递归遍历</h2>
 <figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line">stack = [(root, <span class="number">1</span>)]</span><br><span class="line"><span class="keyword">while</span> stack:</span><br><span class="line">    node, count = stack.pop()</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> count == <span class="number">1</span>:</span><br><span class="line">        <span class="built_in">print</span>(node.val)  <span class="comment"># 更改这一句以实现三种顺序</span></span><br><span class="line">        stack.append((node, count + <span class="number">1</span>))</span><br><span class="line">        <span class="keyword">if</span> node.left:</span><br><span class="line">            stack.append((node.left, <span class="number">1</span>))</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> count == <span class="number">2</span>:</span><br><span class="line">        stack.append((node, count + <span class="number">1</span>))</span><br><span class="line">        <span class="keyword">if</span> node.right:</span><br><span class="line">            stack.append((node.right, <span class="number">1</span>))</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> count == <span class="number">3</span>:</span><br><span class="line">        <span class="keyword">continue</span></span><br></pre></td></tr></tbody></table></figure>
-]]></content>
-      <categories>
-        <category>计算机</category>
-        <category>算法</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>二分查找</title>
-    <url>/posts/42877/</url>
-    <content><![CDATA[<h2 id="原始问题-找到返回下标-找不到返回空">原始问题: 找到返回下标, 找不到返回空</h2>
-<figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">binary_search</span>(<span class="params">array, target</span>):</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> array:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line">        </span><br><span class="line">    left, right = <span class="number">0</span>, <span class="built_in">len</span>(array)-<span class="number">1</span></span><br><span class="line">    <span class="keyword">while</span> left &lt;= right:</span><br><span class="line">        mid = (left + right) // <span class="number">2</span></span><br><span class="line">        <span class="keyword">if</span> array[mid] &gt; target:</span><br><span class="line">            right = mid - <span class="number">1</span></span><br><span class="line">        <span class="keyword">elif</span> array[mid] &lt; target:</span><br><span class="line">            left = mid + <span class="number">1</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span> mid</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">None</span></span><br></pre></td></tr></tbody></table></figure>
-<p>时间: <span class="math inline">\(O(\log N)\)</span></p>
-<p>空间: <span class="math inline">\(O(1)\)</span></p>
-<h2 id="变种-有序矩阵">变种: 有序矩阵</h2>
-<p>比如在下面的矩阵中找 10 </p><figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">1  2  3  4</span><br><span class="line">5  6  7  8</span><br><span class="line">9  10 11 12</span><br></pre></td></tr></tbody></table></figure> 应该返回 <code>(2, 1)</code>. 设矩阵是 <code>M*N</code> 的.<p></p>
-<p>关键就在于压平后的下标和行标, 列标之间的关系.</p>
-<ul>
-<li><code>idx = row_idx * N + col_idx</code></li>
-<li><code>row_idx = idx // N</code></li>
-<li><code>col_idx = idx % N</code></li>
-</ul>
-<figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">binary_search_2d</span>(<span class="params">matrix, target</span>):</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> matrix:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line">    M, N = <span class="built_in">len</span>(matrix), <span class="built_in">len</span>(matrix[<span class="number">0</span>])</span><br><span class="line">    left, right = <span class="number">0</span>, M*N-<span class="number">1</span></span><br><span class="line">    <span class="keyword">while</span> left &lt;= right:</span><br><span class="line">        mid = (left + right) // <span class="number">2</span></span><br><span class="line">        row = mid // N</span><br><span class="line">        col = mid % N</span><br><span class="line">        <span class="keyword">if</span> matrix[row][col] &gt; target:</span><br><span class="line">            right = mid - <span class="number">1</span></span><br><span class="line">        <span class="keyword">elif</span> matrix[row][col] &lt; target:</span><br><span class="line">            left = mid + <span class="number">1</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span> (row, col)</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">None</span></span><br></pre></td></tr></tbody></table></figure>
-<p>时间: <span class="math inline">\(\log(MN)\)</span></p>
-<h2 id="变种-找最近的数">变种: 找最近的数</h2>
-<p>比如在 <code>[1, 2, 5, 9]</code> 中找 <code>3</code>, 应该返回下标 <code>1</code>. </p><figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">find_closest</span>(<span class="params">array, target</span>):</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> array:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line">    left, right = <span class="number">0</span>, <span class="built_in">len</span>(array)-<span class="number">1</span></span><br><span class="line">    <span class="keyword">while</span> left &lt; right - <span class="number">1</span>:</span><br><span class="line">        mid = (left + right) // <span class="number">2</span></span><br><span class="line">        <span class="keyword">if</span> array[mid] &gt; target:</span><br><span class="line">            right = mid</span><br><span class="line">        <span class="keyword">elif</span> array[mid] &lt; target:</span><br><span class="line">            left = mid</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span> mid</span><br><span class="line">    <span class="keyword">return</span> left <span class="keyword">if</span> <span class="built_in">abs</span>(target - array[left]) &lt; <span class="built_in">abs</span>(target - array[right]) <span class="keyword">else</span> right</span><br></pre></td></tr></tbody></table></figure><p></p>
-<h2 id="变种-找第一次出现的下标">变种: 找第一次出现的下标</h2>
-<figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">find_first</span>(<span class="params">array, target</span>):</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> array:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line">    left, right = <span class="number">0</span>, <span class="built_in">len</span>(array)-<span class="number">1</span></span><br><span class="line">    <span class="keyword">while</span> left &lt; right - <span class="number">1</span>:</span><br><span class="line">        mid = (left + right) // <span class="number">2</span></span><br><span class="line">        <span class="keyword">if</span> array[mid] &gt; target:</span><br><span class="line">            right = mid - <span class="number">1</span></span><br><span class="line">        <span class="keyword">elif</span> array[mid] &lt; target:</span><br><span class="line">            left = mid + <span class="number">1</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            right = mid</span><br><span class="line">    <span class="keyword">if</span> array[left] == target:</span><br><span class="line">        <span class="keyword">return</span> left</span><br><span class="line">    <span class="keyword">if</span> array[right] == target:</span><br><span class="line">        <span class="keyword">return</span> right</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">None</span></span><br></pre></td></tr></tbody></table></figure>
-<h2 id="变种-找最后一次出现的下标">变种: 找最后一次出现的下标</h2>
-<figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">find_last</span>(<span class="params">array, target</span>):</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> array:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line">    left, right = <span class="number">0</span>, <span class="built_in">len</span>(array)-<span class="number">1</span></span><br><span class="line">    <span class="keyword">while</span> left &lt; right - <span class="number">1</span>:</span><br><span class="line">        mid = (left + right) // <span class="number">2</span></span><br><span class="line">        <span class="keyword">if</span> array[mid] &gt; target:</span><br><span class="line">            right = mid - <span class="number">1</span></span><br><span class="line">        <span class="keyword">elif</span> array[mid] &lt; target:</span><br><span class="line">            left = mid + <span class="number">1</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            left = mid</span><br><span class="line">    <span class="keyword">if</span> array[right] == target:</span><br><span class="line">        <span class="keyword">return</span> right</span><br><span class="line">    <span class="keyword">if</span> array[left] == target:</span><br><span class="line">        <span class="keyword">return</span> left</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">None</span></span><br></pre></td></tr></tbody></table></figure>
 ]]></content>
       <categories>
         <category>计算机</category>
@@ -1585,6 +1597,54 @@ y_{n+1}=\sum_{k=1}^l a_ky_{n+1-k}+h\sum_{k=0}^l b_k f_{n+1-k}
 ]]></content>
       <categories>
         <category>随笔</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>卡方检验</title>
+    <url>/posts/7261/</url>
+    <content><![CDATA[<p>原假设: 两个 (binary) 变量独立.</p>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th><span class="math inline">\(Y=0\)</span></th>
+<th><span class="math inline">\(Y=1\)</span></th>
+<th>total</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(Z=0\)</span></td>
+<td><span class="math inline">\(X_{00}\)</span></td>
+<td><span class="math inline">\(X_{01}\)</span></td>
+<td><span class="math inline">\(X_{0\cdot}\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(Z=1\)</span></td>
+<td><span class="math inline">\(X_{10}\)</span></td>
+<td><span class="math inline">\(X_{11}\)</span></td>
+<td><span class="math inline">\(X_{1\cdot}\)</span></td>
+</tr>
+<tr class="odd">
+<td>total</td>
+<td><span class="math inline">\(X_{\cdot0}\)</span></td>
+<td><span class="math inline">\(X_{\cdot1}\)</span></td>
+<td><span class="math inline">\(X_{\cdot\cdot}=n\)</span></td>
+</tr>
+</tbody>
+</table>
+<p><span class="math display">\[
+U = \sum_{i=0}^1\sum_{j=0}^1\frac{(X_{ij}-E_{ij})^2}{E_{ij}},
+\]</span> 其中 <span class="math display">\[
+E_{ij}=\frac{X_{i\cdot}X_{\cdot j}}{n}
+\]</span> 含义是原假设下该单元格的期望值.</p>
+<p>在原假设下, <span class="math inline">\(U\sim \chi_1^2\)</span>. 其中自由度为 <span class="math inline">\((I-1)(J-1)\)</span>.</p>
+<figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> scipy.stats <span class="keyword">import</span> chi2_contingency</span><br><span class="line"></span><br><span class="line">table = [[<span class="number">90</span>, <span class="number">165</span>], [<span class="number">84</span>, <span class="number">307</span>]]</span><br><span class="line">U, p, dof, expected = chi2_contingency(table, correction=<span class="literal">False</span>)</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">U = 14.95864355957614</span><br><span class="line">p = 0.00010989348314654599</span><br><span class="line">dof = 1</span><br><span class="line">expected = [[ 68.68421053 186.31578947]</span><br><span class="line">            [105.31578947 285.68421053]]</span><br></pre></td></tr></tbody></table></figure>
+]]></content>
+      <categories>
+        <category>数学</category>
+        <category>统计</category>
       </categories>
   </entry>
   <entry>
@@ -1687,6 +1747,17 @@ y_{n+1}=\sum_{k=1}^l a_ky_{n+1-k}+h\sum_{k=0}^l b_k f_{n+1-k}
       </categories>
   </entry>
   <entry>
+    <title>字符串去重</title>
+    <url>/posts/47268/</url>
+    <content><![CDATA[<p><code>"aabbbccd"</code> 返回 <code>"abcd"</code>.</p>
+<p>利用快慢指针, <code>fast</code> 负责遍历, <code>slow</code> 左边的是要保留的, 没有重复的字符. 可以做到原地修改. </p><figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">remove_duplicate</span>(<span class="params">string</span>):</span></span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">len</span>(string) <span class="keyword">in</span> (<span class="number">0</span>, <span class="number">1</span>):</span><br><span class="line">        <span class="keyword">return</span> string</span><br><span class="line"></span><br><span class="line">    string = <span class="built_in">list</span>(string)</span><br><span class="line">    slow, fast = <span class="number">1</span>, <span class="number">1</span></span><br><span class="line">    <span class="keyword">while</span> fast &lt; <span class="built_in">len</span>(string):</span><br><span class="line">        <span class="keyword">if</span> string[fast] != string[slow-<span class="number">1</span>]:</span><br><span class="line">            string[slow] = string[fast]</span><br><span class="line">            slow += <span class="number">1</span></span><br><span class="line">        fast += <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">''</span>.join(string[:slow])</span><br></pre></td></tr></tbody></table></figure><p></p>
+]]></content>
+      <categories>
+        <category>计算机</category>
+        <category>算法</category>
+      </categories>
+  </entry>
+  <entry>
     <title>实对称阵的合同对角化</title>
     <url>/posts/5692/</url>
     <content><![CDATA[<p>设对实对称阵 <span class="math inline">\(A\)</span> 满足 <span class="math inline">\(Q^TAQ=\Lambda\)</span>，其中 <span class="math inline">\(\Lambda\)</span> 是 <span class="math inline">\(A\)</span> 的特征值组成的对角阵，问 <span class="math inline">\(Q\)</span> 是否正交。</p>
@@ -1719,6 +1790,15 @@ Q=\begin{bmatrix}1&amp;\\&amp;\frac12\end{bmatrix}\begin{bmatrix}0&amp;1\\1&amp;
       </categories>
   </entry>
   <entry>
+    <title>实现 circular queue</title>
+    <url>/posts/4952/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>计算机</category>
+        <category>算法</category>
+      </categories>
+  </entry>
+  <entry>
     <title>小憩</title>
     <url>/posts/53822/</url>
     <content><![CDATA[<p>代码敲累了。仰在椅子上。看午后的阳光，悠闲地洒下。窗纱外的一片明亮。冬日空气里的沁凉。街上的嘈杂。</p>
@@ -1736,6 +1816,16 @@ Q=\begin{bmatrix}1&amp;\\&amp;\frac12\end{bmatrix}\begin{bmatrix}0&amp;1\\1&amp;
 ]]></content>
       <categories>
         <category>随笔</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>找到离原点第k近的点</title>
+    <url>/posts/38610/</url>
+    <content><![CDATA[<p>利用大根堆: </p><figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> heapq</span><br><span class="line"><span class="keyword">from</span> numpy.linalg <span class="keyword">import</span> norm</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">k_closest</span>(<span class="params">points, k</span>):</span></span><br><span class="line">    h = []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(points)):</span><br><span class="line">        dist = - norm(points[i])</span><br><span class="line">        heapq.heappush(h, (dist, i))</span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">len</span>(h) &gt; k:</span><br><span class="line">            heapq.heappop(h)  <span class="comment"># 把最远的 pop 出去了</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> [points[item[<span class="number">1</span>]] <span class="keyword">for</span> item <span class="keyword">in</span> h]</span><br></pre></td></tr></tbody></table></figure><p></p>
+]]></content>
+      <categories>
+        <category>计算机</category>
+        <category>算法</category>
       </categories>
   </entry>
   <entry>
@@ -1830,6 +1920,15 @@ Q=\begin{bmatrix}1&amp;\\&amp;\frac12\end{bmatrix}\begin{bmatrix}0&amp;1\\1&amp;
       </categories>
   </entry>
   <entry>
+    <title>晴朗的校园</title>
+    <url>/posts/4892/</url>
+    <content><![CDATA[<p>今天的世界格外明朗。徐徐的清风，轻柔的阳光，点点嫩芽，热闹的人群。一切都还是那样平常，但仿佛和那些日漫中的理想校园，只差着几片飞舞的樱花瓣。</p>
+]]></content>
+      <categories>
+        <category>随笔</category>
+      </categories>
+  </entry>
+  <entry>
     <title>曲线积分和曲面积分</title>
     <url>/posts/21677/</url>
     <content><![CDATA[<h2 id="曲线积分">曲线积分</h2>
@@ -1889,18 +1988,38 @@ Q=\begin{bmatrix}1&amp;\\&amp;\frac12\end{bmatrix}\begin{bmatrix}0&amp;1\\1&amp;
       </categories>
   </entry>
   <entry>
-    <title>林中漫步</title>
-    <url>/posts/16963/</url>
-    <content><![CDATA[<p>林风拂幽径，鸟鸣惊落花</p>
+    <title>最长无重复子串的长度</title>
+    <url>/posts/1239/</url>
+    <content><![CDATA[<p><code>abcabcbb</code> 返回 3, 因为任意长度为 4 的子串都有重复字符. </p><figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> defaultdict</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">longest_substring</span>(<span class="params">s</span>):</span></span><br><span class="line">    result = <span class="number">0</span></span><br><span class="line">    occurred = defaultdict(<span class="built_in">int</span>)</span><br><span class="line">    left = <span class="number">0</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> right <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(s)):</span><br><span class="line">        occurred[s[right]] += <span class="number">1</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span> occurred[s[right]] &gt; <span class="number">1</span>:</span><br><span class="line">            occurred[s[left]] -= <span class="number">1</span></span><br><span class="line">            left += <span class="number">1</span></span><br><span class="line"></span><br><span class="line">        result = <span class="built_in">max</span>(result, right - left + <span class="number">1</span>)</span><br><span class="line">    <span class="keyword">return</span> result</span><br></pre></td></tr></tbody></table></figure><p></p>
 ]]></content>
       <categories>
-        <category>随笔</category>
+        <category>计算机</category>
+        <category>算法</category>
       </categories>
   </entry>
   <entry>
-    <title>晴朗的校园</title>
-    <url>/posts/4892/</url>
-    <content><![CDATA[<p>今天的世界格外明朗。徐徐的清风，轻柔的阳光，点点嫩芽，热闹的人群。一切都还是那样平常，但仿佛和那些日漫中的理想校园，只差着几片飞舞的樱花瓣。</p>
+    <title>树的按层遍历 (BFS)</title>
+    <url>/posts/8322/</url>
+    <content><![CDATA[<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">    3</span><br><span class="line">   / \</span><br><span class="line">  9  20</span><br><span class="line"> /  /  \</span><br><span class="line">3  15   7</span><br></pre></td></tr></tbody></table></figure>
+<p>输出 <code>[3, 9, 20, 3, 15, 7]</code>.</p>
+<span id="more"></span>
+<figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> deque</span><br><span class="line"></span><br><span class="line">queue = deque([root])</span><br><span class="line">result = []</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> queue:</span><br><span class="line">    node = queue.popleft()</span><br><span class="line">    result.append(node.val)</span><br><span class="line">    <span class="keyword">if</span> node.left:</span><br><span class="line">        queue.append(node.left)</span><br><span class="line">    <span class="keyword">if</span> node.right:</span><br><span class="line">        queue.append(node.right)</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="要求保存每一层">要求保存每一层</h2>
+<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">    3</span><br><span class="line">   / \</span><br><span class="line">  9  20</span><br><span class="line"> /  /  \</span><br><span class="line">3  15   7</span><br><span class="line">  /  \</span><br><span class="line"> 21  22 </span><br></pre></td></tr></tbody></table></figure>
+<p>输出 <code>[[3], [9, 20], [3, 15, 7], [21, 22]]</code>.</p>
+<figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line">queue = deque([root])</span><br><span class="line">result = []</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> queue:</span><br><span class="line">    count = <span class="built_in">len</span>(queue)  <span class="comment"># 当前层有几个值?</span></span><br><span class="line">    current_level = []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(count):</span><br><span class="line">        node = queue.popleft()</span><br><span class="line">        current_level.append(node.val)</span><br><span class="line">        <span class="keyword">if</span> node.left:</span><br><span class="line">            queue.append(node.left)</span><br><span class="line">        <span class="keyword">if</span> node.right:</span><br><span class="line">            queue.append(node.right)</span><br><span class="line">    result.append(current_level)</span><br></pre></td></tr></tbody></table></figure>
+<p>时间: <span class="math inline">\(O(n)\)</span></p>
+<p>空间: <span class="math inline">\(O(n)\)</span> (最宽的那一层)</p>
+]]></content>
+      <categories>
+        <category>计算机</category>
+        <category>算法</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>林中漫步</title>
+    <url>/posts/16963/</url>
+    <content><![CDATA[<p>林风拂幽径，鸟鸣惊落花</p>
 ]]></content>
       <categories>
         <category>随笔</category>
@@ -2026,6 +2145,8 @@ E(\text{error})=\text{bias}^2+\text{Var}+\varepsilon.
 <figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> deque</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">remove_duplicate_repeatedly</span>(<span class="params">string</span>):</span></span><br><span class="line">    <span class="comment"># corner case</span></span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">len</span>(string) &lt; <span class="number">2</span>:</span><br><span class="line">        <span class="keyword">return</span> string</span><br><span class="line">    <span class="comment"># init</span></span><br><span class="line">    stack = deque()</span><br><span class="line">    i = <span class="number">0</span></span><br><span class="line">    <span class="comment"># loop</span></span><br><span class="line">    <span class="keyword">while</span> i &lt; <span class="built_in">len</span>(string):</span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">len</span>(stack) &gt; <span class="number">0</span> <span class="keyword">and</span> string[i] == stack[-<span class="number">1</span>]:</span><br><span class="line">            <span class="comment"># find duplicate: skip</span></span><br><span class="line">            <span class="keyword">while</span> i &lt; <span class="built_in">len</span>(string) <span class="keyword">and</span> string[i] == stack[-<span class="number">1</span>]:</span><br><span class="line">                i += <span class="number">1</span></span><br><span class="line">            stack.pop()</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            stack.append(string[i])</span><br><span class="line">            i += <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">''</span>.join(stack)</span><br></pre></td></tr></tbody></table></figure>
 <p>时间: <span class="math inline">\(O(n)\)</span></p>
 <p>时间: <span class="math inline">\(O(n)\)</span></p>
+<p>改进: 用慢指针存储栈顶.</p>
+<figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">remove_duplicate</span>(<span class="params">string</span>):</span></span><br><span class="line">    string = <span class="built_in">list</span>(string)</span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">len</span>(string) &lt;= <span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> string</span><br><span class="line">    s, f = <span class="number">0</span>, <span class="number">1</span></span><br><span class="line">    <span class="keyword">while</span> f &lt; <span class="built_in">len</span>(string):</span><br><span class="line">        <span class="keyword">if</span> s &gt; <span class="number">0</span> <span class="keyword">and</span> <span class="built_in">input</span>[f] == <span class="built_in">input</span>[s]:  <span class="comment"># 栈非空</span></span><br><span class="line">            <span class="keyword">while</span> f &lt; <span class="built_in">len</span>(string) <span class="keyword">and</span> <span class="built_in">input</span>[f] == <span class="built_in">input</span>[s]:</span><br><span class="line">                f += <span class="number">1</span></span><br><span class="line">            s -= <span class="number">1</span>  <span class="comment"># 出栈</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            string[s + <span class="number">1</span>] = string[f]  <span class="comment"># 入栈</span></span><br><span class="line">            f += <span class="number">1</span></span><br><span class="line">            s += <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">""</span>.join(string[:s+<span class="number">1</span>])</span><br></pre></td></tr></tbody></table></figure>
 ]]></content>
       <categories>
         <category>计算机</category>
@@ -2471,6 +2592,26 @@ a_n={n!\over(2n+1)!!}\cdot{1\over n+1}，
       </categories>
   </entry>
   <entry>
+    <title>这种教育的意义就是磨灭所有人的学习热情</title>
+    <url>/posts/51371/</url>
+    <content><![CDATA[<p>今天我们学习检索，首先，文献分为以下几类，这几类有这样的联系，检索有以下几种方法，它们有这样那样的优缺点，这个检索是在这个时间由这家公司创办的。 下面我们做检索的练习，检索分为以下几个步骤，首先就是检索准备。要明确学科属性，弄清信息类型，明确信息要求。</p>
+]]></content>
+      <categories>
+        <category>随笔</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>逆波兰表达式</title>
+    <url>/posts/16754/</url>
+    <content><![CDATA[<p><code>1 2 + 3 * 4 /</code> 代表 <code>(1 + 2) * 3 / 4</code>.</p>
+<figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">evalRPN</span>(<span class="params">tokens</span>):</span></span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">len</span>(tokens) == <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">    stack = []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(tokens)):</span><br><span class="line">        <span class="keyword">if</span> tokens[i] == <span class="string">'+'</span>:</span><br><span class="line">            r = stack.pop()</span><br><span class="line">            l = stack.pop()</span><br><span class="line">            stack.append(l + r)</span><br><span class="line">        <span class="keyword">elif</span> tokens[i] == <span class="string">'-'</span>:</span><br><span class="line">            r = stack.pop()</span><br><span class="line">            l = stack.pop()</span><br><span class="line">            stack.append(l - r)</span><br><span class="line">        <span class="keyword">elif</span> tokens[i] == <span class="string">'*'</span>:</span><br><span class="line">            r = stack.pop()</span><br><span class="line">            l = stack.pop()</span><br><span class="line">            stack.append(l * r)</span><br><span class="line">        <span class="keyword">elif</span> tokens[i] == <span class="string">'/'</span>:</span><br><span class="line">            r = stack.pop()</span><br><span class="line">            l = stack.pop()</span><br><span class="line">            stack.append(l // r)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            stack.append(<span class="built_in">int</span>(tokens[i]))</span><br><span class="line">    <span class="keyword">return</span> stack.pop()</span><br></pre></td></tr></tbody></table></figure>
+]]></content>
+      <categories>
+        <category>计算机</category>
+        <category>算法</category>
+      </categories>
+  </entry>
+  <entry>
     <title>链表中点</title>
     <url>/posts/19136/</url>
     <content><![CDATA[<p>用快慢指针的方法找链表的中点.</p>
@@ -2499,15 +2640,6 @@ a_n={n!\over(2n+1)!!}\cdot{1\over n+1}，
       </categories>
   </entry>
   <entry>
-    <title>雪</title>
-    <url>/posts/47930/</url>
-    <content><![CDATA[<p>满世界白茫茫的一片。 静谧而优雅。 惬意而自在。 踏着碎琼乱玉，咯吱咯吱的声音和触感。 沁凉的空气，明亮的阳光，反射着熠熠生辉。</p>
-]]></content>
-      <categories>
-        <category>随笔</category>
-      </categories>
-  </entry>
-  <entry>
     <title>链表相加</title>
     <url>/posts/30822/</url>
     <content><![CDATA[<p>比如一个链表是 <code>1 -&gt; 2 -&gt; 3</code>, 一个是 <code>2 -&gt; 7</code>, 结果应该返回 <code>1 -&gt; 5 -&gt; 0</code>.</p>
@@ -2522,6 +2654,15 @@ a_n={n!\over(2n+1)!!}\cdot{1\over n+1}，
       </categories>
   </entry>
   <entry>
+    <title>雪</title>
+    <url>/posts/47930/</url>
+    <content><![CDATA[<p>满世界白茫茫的一片。 静谧而优雅。 惬意而自在。 踏着碎琼乱玉，咯吱咯吱的声音和触感。 沁凉的空气，明亮的阳光，反射着熠熠生辉。</p>
+]]></content>
+      <categories>
+        <category>随笔</category>
+      </categories>
+  </entry>
+  <entry>
     <title>青春万岁</title>
     <url>/posts/9178/</url>
     <content><![CDATA[<p>所有的日子，所有的日子都来吧</p>
@@ -2530,15 +2671,6 @@ a_n={n!\over(2n+1)!!}\cdot{1\over n+1}，
 <p>还有热烈的争论，跃动的，温暖的心</p>
 <p>是转眼过去的日子，也是充满遐想的日子</p>
 <p>纷纷的心愿迷离，像春天的雨</p>
-]]></content>
-      <categories>
-        <category>随笔</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>这种教育的意义就是磨灭所有人的学习热情</title>
-    <url>/posts/51371/</url>
-    <content><![CDATA[<p>今天我们学习检索，首先，文献分为以下几类，这几类有这样的联系，检索有以下几种方法，它们有这样那样的优缺点，这个检索是在这个时间由这家公司创办的。 下面我们做检索的练习，检索分为以下几个步骤，首先就是检索准备。要明确学科属性，弄清信息类型，明确信息要求。</p>
 ]]></content>
       <categories>
         <category>随笔</category>
