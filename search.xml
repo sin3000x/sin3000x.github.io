@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>BST中的第二大元素</title>
+    <url>/posts/32090/</url>
+    <content><![CDATA[<h2 id="解法一">解法一</h2>
+<p>反向的中序遍历, 第二个节点就是第二大的. </p><figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">second_largest</span>(<span class="params">self</span>):</span></span><br><span class="line">        self.count = <span class="number">0</span></span><br><span class="line">        self.result = <span class="literal">None</span></span><br><span class="line">        self.traverse(root)</span><br><span class="line">        <span class="keyword">return</span> self.result</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">traverse</span>(<span class="params">self, root</span>):</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> root:</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        self.traverse(root.right)</span><br><span class="line">        self.count += <span class="number">1</span></span><br><span class="line">        <span class="keyword">if</span> self.count == <span class="number">2</span>:</span><br><span class="line">            self.result = root.val</span><br><span class="line">            <span class="keyword">return</span>       </span><br><span class="line">        <span class="keyword">if</span> self.count &gt; <span class="number">1</span>:</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        self.traverse(root.left)</span><br></pre></td></tr></tbody></table></figure> 时间: <span class="math inline">\(O(h)\)</span> 空间: <span class="math inline">\(O(h)\)</span><p></p>
+<h2 id="解法二">解法二</h2>
+<p>分类讨论. </p><figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">find_largest</span>(<span class="params">root</span>):</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> root:</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> root.right:  <span class="comment"># 没有右子树时, 根是最大的</span></span><br><span class="line">        <span class="keyword">return</span> root</span><br><span class="line">    <span class="keyword">return</span> find_largest(root.right)  <span class="comment"># 有右子树时, 找其中最大的</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">find_2nd_largest</span>(<span class="params">root</span>):</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> root:</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> root.right:  <span class="comment"># 没有右子树, 根最大; 左子树的最大就是第二大</span></span><br><span class="line">        <span class="keyword">return</span> find_largest(root.left)</span><br><span class="line">    <span class="comment"># 有右子树, 此时最大元素在右子树中</span></span><br><span class="line">    right = root.right</span><br><span class="line">    <span class="comment"># 右子树只有一个节点, 它是最大的, 根第二大</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> right.left <span class="keyword">and</span> <span class="keyword">not</span> right.right:  </span><br><span class="line">        <span class="keyword">return</span> root</span><br><span class="line">    <span class="comment"># 右子树还有子树, 在这里面找第二大的</span></span><br><span class="line">    <span class="keyword">return</span> find_2nd_largest(right)</span><br></pre></td></tr></tbody></table></figure><p></p>
+]]></content>
+      <categories>
+        <category>计算机</category>
+        <category>算法</category>
+      </categories>
+  </entry>
+  <entry>
     <title>BST</title>
     <url>/posts/7069/</url>
     <content><![CDATA[<h2 id="判断-中序遍历">判断: 中序遍历</h2>
@@ -19,19 +32,6 @@
 <figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">insert</span>(<span class="params">root, key</span>):</span></span><br><span class="line">    <span class="keyword">if</span> root <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">        <span class="keyword">return</span> Node(key)</span><br><span class="line">    <span class="keyword">if</span> key &lt; root.key:</span><br><span class="line">        root.left = insert(root.left, key)</span><br><span class="line">    <span class="keyword">elif</span> key &gt; root.key:</span><br><span class="line">        root.right = insert(root.right, key)</span><br><span class="line">    <span class="keyword">return</span> root</span><br></pre></td></tr></tbody></table></figure>
 <p>时间: <span class="math inline">\(O(h)\)</span></p>
 <p>空间: <span class="math inline">\(O(h)\)</span></p>
-]]></content>
-      <categories>
-        <category>计算机</category>
-        <category>算法</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>BST中的第二大元素</title>
-    <url>/posts/32090/</url>
-    <content><![CDATA[<h2 id="解法一">解法一</h2>
-<p>反向的中序遍历, 第二个节点就是第二大的. </p><figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">second_largest</span>(<span class="params">self</span>):</span></span><br><span class="line">        self.count = <span class="number">0</span></span><br><span class="line">        self.result = <span class="literal">None</span></span><br><span class="line">        self.traverse(root)</span><br><span class="line">        <span class="keyword">return</span> self.result</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">traverse</span>(<span class="params">self, root</span>):</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> root:</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        self.traverse(root.right)</span><br><span class="line">        self.count += <span class="number">1</span></span><br><span class="line">        <span class="keyword">if</span> self.count == <span class="number">2</span>:</span><br><span class="line">            self.result = root.val</span><br><span class="line">            <span class="keyword">return</span>       </span><br><span class="line">        <span class="keyword">if</span> self.count &gt; <span class="number">1</span>:</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        self.traverse(root.left)</span><br></pre></td></tr></tbody></table></figure> 时间: <span class="math inline">\(O(h)\)</span> 空间: <span class="math inline">\(O(h)\)</span><p></p>
-<h2 id="解法二">解法二</h2>
-<p>分类讨论. </p><figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">find_largest</span>(<span class="params">root</span>):</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> root:</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> root.right:  <span class="comment"># 没有右子树时, 根是最大的</span></span><br><span class="line">        <span class="keyword">return</span> root</span><br><span class="line">    <span class="keyword">return</span> find_largest(root.right)  <span class="comment"># 有右子树时, 找其中最大的</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">find_2nd_largest</span>(<span class="params">root</span>):</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> root:</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> root.right:  <span class="comment"># 没有右子树, 根最大; 左子树的最大就是第二大</span></span><br><span class="line">        <span class="keyword">return</span> find_largest(root.left)</span><br><span class="line">    <span class="comment"># 有右子树, 此时最大元素在右子树中</span></span><br><span class="line">    right = root.right</span><br><span class="line">    <span class="comment"># 右子树只有一个节点, 它是最大的, 根第二大</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> right.left <span class="keyword">and</span> <span class="keyword">not</span> right.right:  </span><br><span class="line">        <span class="keyword">return</span> root</span><br><span class="line">    <span class="comment"># 右子树还有子树, 在这里面找第二大的</span></span><br><span class="line">    <span class="keyword">return</span> find_2nd_largest(right)</span><br></pre></td></tr></tbody></table></figure><p></p>
 ]]></content>
       <categories>
         <category>计算机</category>
@@ -92,6 +92,36 @@
       </categories>
   </entry>
   <entry>
+    <title>常见的ODE解法</title>
+    <url>/posts/65228/</url>
+    <content><![CDATA[<h3 id="可分离变量-ypyqx">1. 可分离变量 <span class="math inline">\(y'=p(y)q(x)\)</span></h3>
+<p>分离变量后两边积分.</p>
+<h3 id="一阶齐次线性-ypxy0">2. 一阶齐次线性 <span class="math inline">\(y'+p(x)y=0\)</span></h3>
+<p><span class="math display">\[
+y=Ce^{-\int p(x)\d x}
+\]</span></p>
+<h3 id="一阶非齐次线性-ypxyqx">3. 一阶非齐次线性 <span class="math inline">\(y'+p(x)y=q(x)\)</span></h3>
+<ul>
+<li><p><span class="math inline">\(y=e^{-\int p(x)\d x}\left(C+\int q(x)e^{\int p(x)\d x}\d x\right)\)</span></p></li>
+<li><p>取积分因子 <span class="math inline">\(\mu(x)=e^{\int p(x)\d x}\)</span>.</p></li>
+</ul>
+<blockquote>
+<p>🌰 <span class="math inline">\(y'-2y/x=0\)</span>. <span class="math display">\[\begin{aligned}
+&amp;\mu(x)=e^{\int-\frac2x \d x}=e^{-2\ln x}=\frac{1}{x^2}\\
+&amp;\implies{1\over x^2}y'-{2\over x^3}y=0\\
+&amp;\implies\left({y\over x^2}\right)'=0\\
+&amp;\implies y=Cx^2
+\end{aligned}
+\]</span></p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>数学</category>
+        <category>分析</category>
+        <category>微分方程</category>
+      </categories>
+  </entry>
+  <entry>
     <title>控制收敛定理 (DCT)</title>
     <url>/posts/34980/</url>
     <content><![CDATA[<p><span class="math display">\[\lim_{n\to\infty}\int_S f_n \,d\mu=\int_S f\,d\mu\]</span></p>
@@ -129,33 +159,20 @@ f\colon[-L,L]\to\mathbb{R}
       </categories>
   </entry>
   <entry>
-    <title>常见的ODE解法</title>
-    <url>/posts/65228/</url>
-    <content><![CDATA[<h3 id="可分离变量-ypyqx">1. 可分离变量 <span class="math inline">\(y'=p(y)q(x)\)</span></h3>
-<p>分离变量后两边积分.</p>
-<h3 id="一阶齐次线性-ypxy0">2. 一阶齐次线性 <span class="math inline">\(y'+p(x)y=0\)</span></h3>
-<p><span class="math display">\[
-y=Ce^{-\int p(x)\d x}
-\]</span></p>
-<h3 id="一阶非齐次线性-ypxyqx">3. 一阶非齐次线性 <span class="math inline">\(y'+p(x)y=q(x)\)</span></h3>
-<ul>
-<li><p><span class="math inline">\(y=e^{-\int p(x)\d x}\left(C+\int q(x)e^{\int p(x)\d x}\d x\right)\)</span></p></li>
-<li><p>取积分因子 <span class="math inline">\(\mu(x)=e^{\int p(x)\d x}\)</span>.</p></li>
-</ul>
-<blockquote>
-<p>🌰 <span class="math inline">\(y'-2y/x=0\)</span>. <span class="math display">\[\begin{aligned}
-&amp;\mu(x)=e^{\int-\frac2x \d x}=e^{-2\ln x}=\frac{1}{x^2}\\
-&amp;\implies{1\over x^2}y'-{2\over x^3}y=0\\
-&amp;\implies\left({y\over x^2}\right)'=0\\
-&amp;\implies y=Cx^2
-\end{aligned}
-\]</span></p>
-</blockquote>
+    <title>OR-Tools 入门</title>
+    <url>/posts/59457/</url>
+    <content><![CDATA[<p><span class="math display">\[
+\max~ 3x+y,\quad
+\text{subject to}\ \begin{cases}
+0\le x\le 1\\
+0\le y\le 2\\
+x+y\le 2
+\end{cases}
+\]</span> <span id="more"></span> </p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> ortools.linear_solver <span class="keyword">import</span> pywraplp</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span>():</span></span><br><span class="line">    <span class="comment"># Create the linear solver with the GLOP backend.</span></span><br><span class="line">    solver = pywraplp.Solver.CreateSolver(<span class="string">'GLOP'</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Create the variables x and y.</span></span><br><span class="line">    x = solver.NumVar(<span class="number">0</span>, <span class="number">1</span>, <span class="string">'x'</span>)</span><br><span class="line">    y = solver.NumVar(<span class="number">0</span>, <span class="number">2</span>, <span class="string">'y'</span>)</span><br><span class="line"></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'Number of variables ='</span>, solver.NumVariables())</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Create a linear constraint, 0 &lt;= x + y &lt;= 2.</span></span><br><span class="line">    ct = solver.Constraint(<span class="number">0</span>, <span class="number">2</span>, <span class="string">'ct'</span>)</span><br><span class="line">    ct.SetCoefficient(x, <span class="number">1</span>)</span><br><span class="line">    ct.SetCoefficient(y, <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'Number of constraints ='</span>, solver.NumConstraints())</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Create the objective function, 3 * x + y.</span></span><br><span class="line">    objective = solver.Objective()</span><br><span class="line">    objective.SetCoefficient(x, <span class="number">3</span>)</span><br><span class="line">    objective.SetCoefficient(y, <span class="number">1</span>)</span><br><span class="line">    objective.SetMaximization()</span><br><span class="line"></span><br><span class="line">    solver.Solve()</span><br><span class="line"></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'='</span>*<span class="number">25</span>+<span class="string">' Solution '</span>+<span class="string">'='</span>*<span class="number">25</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'Objective value ='</span>, objective.Value())</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'x ='</span>, x.solution_value())</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'y ='</span>, y.solution_value())</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    main()</span><br></pre></td></tr></tbody></table></figure> 输出 <figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">Number of variables = 2</span><br><span class="line">Number of constraints = 1</span><br><span class="line">========================= Solution =========================</span><br><span class="line">Objective value = 4.0</span><br><span class="line">x = 1.0</span><br><span class="line">y = 1.0</span><br></pre></td></tr></tbody></table></figure><p></p>
 ]]></content>
       <categories>
-        <category>数学</category>
-        <category>分析</category>
-        <category>微分方程</category>
+        <category>计算机</category>
+        <category>OR-Tools</category>
       </categories>
   </entry>
   <entry>
@@ -196,23 +213,6 @@ t_{2,1} + 4 \le t_{0,2}.
 <p>最小化时间跨度, 也就是从最早的开始时间到最晚的结束时间.</p>
 <h3 id="求解">求解</h3>
 <p>导包与数据... </p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> collections</span><br><span class="line"><span class="keyword">from</span> ortools.sat.python <span class="keyword">import</span> cp_model</span><br><span class="line"></span><br><span class="line"><span class="comment"># data...</span></span><br><span class="line">jobs_data = [</span><br><span class="line">    [(<span class="number">0</span>, <span class="number">3</span>), (<span class="number">1</span>, <span class="number">2</span>), (<span class="number">2</span>, <span class="number">2</span>)],</span><br><span class="line">    [(<span class="number">0</span>, <span class="number">2</span>), (<span class="number">2</span>, <span class="number">1</span>), (<span class="number">1</span>, <span class="number">4</span>)],</span><br><span class="line">    [(<span class="number">1</span>, <span class="number">4</span>), (<span class="number">2</span>, <span class="number">3</span>)]</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line">machines_count = <span class="number">1</span> + <span class="built_in">max</span>(task[<span class="number">0</span>] <span class="keyword">for</span> job <span class="keyword">in</span> jobs_data <span class="keyword">for</span> task <span class="keyword">in</span> job)</span><br><span class="line">all_machines = <span class="built_in">range</span>(machines_count)</span><br><span class="line"><span class="comment"># the sum of all durations</span></span><br><span class="line">horizon = <span class="built_in">sum</span>(task[<span class="number">1</span>] <span class="keyword">for</span> job <span class="keyword">in</span> jobs_data <span class="keyword">for</span> task <span class="keyword">in</span> job)</span><br></pre></td></tr></tbody></table></figure> 建模与变量... <figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">model = cp_model.CpModel()</span><br><span class="line"></span><br><span class="line"><span class="comment"># variables...</span></span><br><span class="line">task_type = collections.namedtuple(<span class="string">'task_type'</span>, <span class="string">'start end interval'</span>)</span><br><span class="line">assigned_task_type = collections.namedtuple(<span class="string">'assigned_task_type'</span>, <span class="string">'start job index duration'</span>)</span><br><span class="line"></span><br><span class="line">all_tasks = {}</span><br><span class="line">machine_to_intervals = collections.defaultdict(<span class="built_in">list</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> job_id, job <span class="keyword">in</span> <span class="built_in">enumerate</span>(jobs_data):</span><br><span class="line">    <span class="keyword">for</span> task_id, task <span class="keyword">in</span> <span class="built_in">enumerate</span>(job):</span><br><span class="line">        machine = task[<span class="number">0</span>]</span><br><span class="line">        duration = task[<span class="number">1</span>]</span><br><span class="line">        suffix = <span class="string">'_%i_%i'</span> % (job_id, task_id)</span><br><span class="line">        start_var = model.NewIntVar(<span class="number">0</span>, horizon, <span class="string">'start'</span> + suffix)</span><br><span class="line">        end_var = model.NewIntVar(<span class="number">0</span>, horizon, <span class="string">'end'</span> + suffix)</span><br><span class="line">        interval_var = model.NewIntervalVar(start_var, duration, end_var, <span class="string">'interval'</span> + suffix)</span><br><span class="line">        all_tasks[job_id, task_id] = task_type(start=start_var, end=end_var, interval=interval_var)</span><br><span class="line">        machine_to_intervals[machine].append(interval_var)</span><br></pre></td></tr></tbody></table></figure> 约束... <figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># disjunctive constraints</span></span><br><span class="line"><span class="keyword">for</span> machine <span class="keyword">in</span> all_machines:</span><br><span class="line">    model.AddNoOverlap(machine_to_intervals[machine])</span><br><span class="line"></span><br><span class="line"><span class="comment"># precidences inside a job</span></span><br><span class="line"><span class="keyword">for</span> job_id, job <span class="keyword">in</span> <span class="built_in">enumerate</span>(jobs_data):</span><br><span class="line">    <span class="keyword">for</span> task_id <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(job)-<span class="number">1</span>):</span><br><span class="line">        model.Add(all_tasks[job_id, task_id+<span class="number">1</span>].start &gt;= all_tasks[job_id, task_id].end)</span><br></pre></td></tr></tbody></table></figure> 目标函数... <figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># objective...</span></span><br><span class="line">obj_var = model.NewIntVar(<span class="number">0</span>, horizon, <span class="string">'makespan'</span>)</span><br><span class="line">model.AddMaxEquality(obj_var, [</span><br><span class="line">    all_tasks[job_id, <span class="built_in">len</span>(job)-<span class="number">1</span>].end <span class="keyword">for</span> job_id, job <span class="keyword">in</span> <span class="built_in">enumerate</span>(jobs_data)</span><br><span class="line">])</span><br><span class="line"></span><br><span class="line">model.Minimize(obj_var)</span><br></pre></td></tr></tbody></table></figure> 求解与输出... <figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># solve...</span></span><br><span class="line">solver = cp_model.CpSolver()</span><br><span class="line">status = solver.Solve(model)</span><br><span class="line"></span><br><span class="line"><span class="comment"># results...</span></span><br><span class="line"><span class="keyword">if</span> status == cp_model.OPTIMAL <span class="keyword">or</span> status == cp_model.FEASIBLE:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'Solution:'</span>)</span><br><span class="line">    <span class="comment"># create one list of assigned tasks per machine</span></span><br><span class="line">    assigned_jobs = collections.defaultdict(<span class="built_in">list</span>)</span><br><span class="line">    <span class="keyword">for</span> job_id, job <span class="keyword">in</span> <span class="built_in">enumerate</span>(jobs_data):</span><br><span class="line">        <span class="keyword">for</span> task_id, task <span class="keyword">in</span> <span class="built_in">enumerate</span>(job):</span><br><span class="line">            machine = task[<span class="number">0</span>]</span><br><span class="line">            assigned_jobs[machine].append(</span><br><span class="line">                assigned_task_type(start=solver.Value(all_tasks[job_id, task_id].start),</span><br><span class="line">                job=job_id,</span><br><span class="line">                index=task_id,</span><br><span class="line">                duration=task[<span class="number">1</span>])</span><br><span class="line">            )</span><br><span class="line">    <span class="comment"># create per machine output lines</span></span><br><span class="line">    output = <span class="string">''</span></span><br><span class="line">    <span class="keyword">for</span> machine <span class="keyword">in</span> all_machines:</span><br><span class="line">        <span class="comment"># sort by starting time</span></span><br><span class="line">        assigned_jobs[machine].sort()</span><br><span class="line">        sol_line_tasks = <span class="string">'Machine '</span> + <span class="built_in">str</span>(machine) + <span class="string">': '</span></span><br><span class="line">        sol_line = <span class="string">'\t'</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> assigned_task <span class="keyword">in</span> assigned_jobs[machine]:</span><br><span class="line">            name = <span class="string">'job_%i_task_%i'</span> % (assigned_task.job, assigned_task.index)</span><br><span class="line">            <span class="comment"># align columns</span></span><br><span class="line">            sol_line_tasks += <span class="string">'%-15s'</span> % name</span><br><span class="line"></span><br><span class="line">            start = assigned_task.start</span><br><span class="line">            duration = assigned_task.duration</span><br><span class="line">            sol_tmp = <span class="string">'[%i, %i]'</span> % (start, start + duration)</span><br><span class="line">            <span class="comment"># align columns</span></span><br><span class="line">            sol_line += <span class="string">'%-15s'</span> % sol_tmp</span><br><span class="line"></span><br><span class="line">        sol_line += <span class="string">'\n'</span></span><br><span class="line">        sol_line_tasks += <span class="string">'\n'</span></span><br><span class="line">        output += sol_line_tasks</span><br><span class="line">        output += sol_line</span><br><span class="line"></span><br><span class="line">    <span class="comment"># print the solution</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f'Optimal Schedule Length: <span class="subst">{solver.ObjectiveValue()}</span>'</span>)</span><br><span class="line">    <span class="built_in">print</span>(output)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'No solution found.'</span>)</span><br></pre></td></tr></tbody></table></figure> 输出: <figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">Solution:</span><br><span class="line">Optimal Schedule Length: 11.0</span><br><span class="line">Machine 0: job_1_task_0   job_0_task_0   </span><br><span class="line">        [0, 2]         [2, 5]         </span><br><span class="line">Machine 1: job_2_task_0   job_0_task_1   job_1_task_2   </span><br><span class="line">        [0, 4]         [5, 7]         [7, 11]        </span><br><span class="line">Machine 2: job_1_task_1   job_2_task_1   job_0_task_2   </span><br><span class="line">        [2, 3]         [4, 7]         [7, 9]    </span><br></pre></td></tr></tbody></table></figure> <img src="schedule2.png"><p></p>
-]]></content>
-      <categories>
-        <category>计算机</category>
-        <category>OR-Tools</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>OR-Tools 入门</title>
-    <url>/posts/59457/</url>
-    <content><![CDATA[<p><span class="math display">\[
-\max~ 3x+y,\quad
-\text{subject to}\ \begin{cases}
-0\le x\le 1\\
-0\le y\le 2\\
-x+y\le 2
-\end{cases}
-\]</span> <span id="more"></span> </p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> ortools.linear_solver <span class="keyword">import</span> pywraplp</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span>():</span></span><br><span class="line">    <span class="comment"># Create the linear solver with the GLOP backend.</span></span><br><span class="line">    solver = pywraplp.Solver.CreateSolver(<span class="string">'GLOP'</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Create the variables x and y.</span></span><br><span class="line">    x = solver.NumVar(<span class="number">0</span>, <span class="number">1</span>, <span class="string">'x'</span>)</span><br><span class="line">    y = solver.NumVar(<span class="number">0</span>, <span class="number">2</span>, <span class="string">'y'</span>)</span><br><span class="line"></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'Number of variables ='</span>, solver.NumVariables())</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Create a linear constraint, 0 &lt;= x + y &lt;= 2.</span></span><br><span class="line">    ct = solver.Constraint(<span class="number">0</span>, <span class="number">2</span>, <span class="string">'ct'</span>)</span><br><span class="line">    ct.SetCoefficient(x, <span class="number">1</span>)</span><br><span class="line">    ct.SetCoefficient(y, <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'Number of constraints ='</span>, solver.NumConstraints())</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Create the objective function, 3 * x + y.</span></span><br><span class="line">    objective = solver.Objective()</span><br><span class="line">    objective.SetCoefficient(x, <span class="number">3</span>)</span><br><span class="line">    objective.SetCoefficient(y, <span class="number">1</span>)</span><br><span class="line">    objective.SetMaximization()</span><br><span class="line"></span><br><span class="line">    solver.Solve()</span><br><span class="line"></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'='</span>*<span class="number">25</span>+<span class="string">' Solution '</span>+<span class="string">'='</span>*<span class="number">25</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'Objective value ='</span>, objective.Value())</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'x ='</span>, x.solution_value())</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'y ='</span>, y.solution_value())</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    main()</span><br></pre></td></tr></tbody></table></figure> 输出 <figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">Number of variables = 2</span><br><span class="line">Number of constraints = 1</span><br><span class="line">========================= Solution =========================</span><br><span class="line">Objective value = 4.0</span><br><span class="line">x = 1.0</span><br><span class="line">y = 1.0</span><br></pre></td></tr></tbody></table></figure><p></p>
 ]]></content>
       <categories>
         <category>计算机</category>
@@ -300,6 +300,76 @@ a_N &amp; b_N\\
       </categories>
   </entry>
   <entry>
+    <title>为什么&quot;假推真/假&quot;都为真</title>
+    <url>/posts/31827/</url>
+    <content><![CDATA[<p><span class="math inline">\(P\Rightarrow Q\)</span> 的<strong>定义</strong>是真值表. "如果 <span class="math inline">\(P\)</span>, 那么 <span class="math inline">\(Q\)</span>" 只是一种解释, 不是定义. 也就是说, <span class="math inline">\(P\)</span> 和 <span class="math inline">\(Q\)</span> 本身不需要有联系. 这里解释一下为什么定义是这样的: <span class="math inline">\(P\)</span> 为假, <span class="math inline">\(P\Rightarrow Q\)</span> 总为真. <span id="more"></span></p>
+<p>"假推假"为真, 这看上去不符合直觉. 要弄清的是, 是这个逻辑为真, 而不是推出的命题为真.</p>
+<p><strong><span class="math inline">\(P\Rightarrow Q\)</span> 只有在真推假的时候才为假.</strong></p>
+<p>这是说, 论断 <span class="math inline">\(P\Rightarrow Q\)</span> 是正确的, 等价于, 永远不会从真命题推出假命题. 换言之, 如果你想说我的论断 <span class="math inline">\(P\Rightarrow Q\)</span> 是错的, 需要且只需要找到一个情况, 使得 <span class="math inline">\(P\)</span> 为真, <span class="math inline">\(Q\)</span> 为假, 其他情况都不管用.</p>
+<blockquote>
+<p><strong>"如果北京是中国的首都, 那么 <span class="math inline">\(1+1=2\)</span>." 这个论断正确吗? (真推真)</strong></p>
+<p>如果你想说我的论断错了, 那么只需要找到情况 "北京是中国的首都, <span class="math inline">\(1+1\ne2\)</span>". 没有这种情况 (真且假), 所以论断是对的.</p>
+<p><strong>"如果北京是中国的首都, 那么 <span class="math inline">\(1+1=3\)</span>." 这个论断正确吗? (真推假)</strong></p>
+<p>如果你想说我的论断错了, 那么只需要找到情况 "北京是中国的首都, <span class="math inline">\(1+1\ne3\)</span>". 有这种情况 (真且真), 所以论断是错的.</p>
+<p><strong>"如果猪会飞, 那么 <span class="math inline">\(1+1=2\)</span>." 这个论断正确吗? (假推真)</strong></p>
+<p>如果你想说我的论断错了, 那么只需要找到情况 "猪会飞, <span class="math inline">\(1+1\ne2\)</span>". 没有这种情况 (假且假), 所以论断是对的.</p>
+<p><strong>"如果猪会飞, 那么 <span class="math inline">\(1+1=3\)</span>." 这个论断正确吗? (假推假)</strong></p>
+<p>如果你想说我的论断错了, 那么只需要找到情况 "猪会飞, <span class="math inline">\(1+1\ne3\)</span>". 没有这种情况 (假且真), 所以论断是对的.</p>
+</blockquote>
+<p><em>注: 可以看出, 猪会飞可以推出任何结论. 因为你找不到一只会飞的猪来反驳我.</em></p>
+<p>这里可以看出这个等价逻辑, <span class="math inline">\(P\Rightarrow Q\)</span> 等价于 <span class="math inline">\(\lnot (P\land\lnot Q)\)</span>. 后者同时又是 <span class="math inline">\(\lnot P\lor Q\)</span>, 这是说, 要想 <span class="math inline">\(P\Rightarrow Q\)</span> 逻辑正确, 要么前提是错的, 要么结论是对的.</p>
+<hr>
+<p>有时 <span class="math inline">\(P\Rightarrow Q\)</span> 的正确性比 <span class="math inline">\(Q\)</span> 的正确性更容易看出来. 我们已知推理正确, 那可以得出结论正确吗? 看真值表:</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;"><span class="math inline">\(P\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(Q\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(P\Rightarrow Q\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">F</td>
+<td style="text-align: center;">T</td>
+<td style="text-align: center;">T</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">F</td>
+<td style="text-align: center;">F</td>
+<td style="text-align: center;">T</td>
+</tr>
+</tbody>
+</table>
+<p>可以看出, 如果前提 (<span class="math inline">\(P\)</span>) 是错的, 即使我们做出了正确的推理, 也无法判断推出的结果 (<span class="math inline">\(Q\)</span>) 是否正确.</p>
+<blockquote>
+<p>如果 <span class="math inline">\(1&lt;10\)</span>, 那么 <span class="math inline">\(1&lt;100\)</span>.</p>
+<p>如果 <span class="math inline">\(50&lt;10\)</span>, 那么 <span class="math inline">\(50&lt;100\)</span>.</p>
+<p>如果 <span class="math inline">\(200&lt;10\)</span>, 那么 <span class="math inline">\(200&lt;100\)</span>.</p>
+</blockquote>
+<p>这三个推理都是正确的. 第一个, 我们从正确的结论推出了正确的结论. 后两个, 我们从错误的结论分别推出了正确和错误的结论.</p>
+<hr>
+<p>逆否命题的角度:</p>
+<p><span class="math inline">\(P\Rightarrow Q\)</span> 等价于 <span class="math inline">\(\lnot Q\Rightarrow\lnot P\)</span>.</p>
+<p>于是当 <span class="math inline">\(P\)</span> 为假时, <span class="math inline">\(\lnot Q\Rightarrow\lnot P\)</span> 就是真/假推真, 总为真.</p>
+<hr>
+<p>集合论的角度:</p>
+<p>把命题 <span class="math inline">\(P\)</span> 看成是 <span class="math inline">\(x\in P\)</span>, 此时把右边的 <span class="math inline">\(P\)</span> 看成是集合.</p>
+<p><span class="math inline">\(P\Rightarrow Q\)</span> 等价于 <span class="math inline">\(P\)</span> 对应的集合是 <span class="math inline">\(Q\)</span> 对应的集合的子集.</p>
+<p>比如, "下雨 <span class="math inline">\(\Rightarrow\)</span> 地面是湿的" 就是 <span class="math display">\[
+\{\text{下雨时}\}\subseteq\{\text{地面是湿的时}\}.
+\]</span></p>
+<p>"<span class="math inline">\(n\)</span> 是自然数 <span class="math inline">\(\Rightarrow\)</span> <span class="math inline">\(n\)</span> 是整数" 就是 <span class="math display">\[
+\mathbb{N}\subseteq\mathbb{Z}.
+\]</span></p>
+<p>一个假命题对应的集合是空集 (没有元素可以满足), 而空集是任何集合的子集. 所以假命题可以推出任何命题.</p>
+]]></content>
+      <categories>
+        <category>数学</category>
+        <category>逻辑</category>
+      </categories>
+  </entry>
+  <entry>
     <title>Time Series</title>
     <url>/posts/23857/</url>
     <content><![CDATA[<h2 id="type">type</h2>
@@ -349,6 +419,78 @@ a_N &amp; b_N\\
 <p><span class="math display">\[\phi(B)X_t=\theta(B)Z_t\]</span></p>
 <h3 id="arimad-p-q">ARIMA(d, p, q)</h3>
 <p><span class="math display">\[\phi(B)(1-B)^dX_t=\theta(B)Z_t\]</span></p>
+]]></content>
+      <categories>
+        <category>数学</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Boosting</title>
+    <url>/posts/1458/</url>
+    <content><![CDATA[<h2 id="adaptive-boosting">Adaptive Boosting</h2>
+<p>先训练第一个模型，增加预测错误的样本的权重，并减小预测正确的样本的权重，喂给第二个模型。</p>
+<p>最终也会给每个弱模型自己的权重。</p>
+<h2 id="gradient-boosting">Gradient Boosting</h2>
+<p>通过梯度下降来最小化误差。在每一次迭代，通过现有集成模型的误差来训练当前的模型。</p>
+<span id="more"></span>
+<h3 id="xgboost">XGBoost</h3>
+<ul>
+<li>每个树内部的并行计算</li>
+<li>正则化</li>
+<li>处理稀疏性</li>
+<li>同层生长（横向优先）</li>
+<li>大样本比较慢</li>
+<li>只接受数值型，需要 encoding</li>
+<li>参数：
+<ul>
+<li>General：种类</li>
+<li>Tree：
+<ul>
+<li>eta（学习率）</li>
+<li>max_depth,</li>
+<li>n_estimators,</li>
+<li>subsample（每次取样本的一部分）,</li>
+<li>colsample_bytree（取样本特征的一部分）</li>
+<li>gamma（生长树的阈值）</li>
+<li>alpha（L1 正则）</li>
+<li>lambda（L2 正则）</li>
+</ul></li>
+<li>Task：</li>
+<li>objective</li>
+</ul></li>
+</ul>
+<h3 id="lightgmb">LightGMB</h3>
+<ul>
+<li>one-side sampling: 全部预测错误的和部分预测正确的，样本少，速度快</li>
+<li>exclusive feature bundling</li>
+<li>histogram-based algorithm</li>
+<li>垂直生长（纵向优先）</li>
+<li>容易过拟合</li>
+<li>自带 encoding</li>
+<li>参数
+<ul>
+<li>Core:
+<ul>
+<li>objective</li>
+<li>boosting</li>
+<li>num_iterations</li>
+<li>learning_rate</li>
+<li>num_leaves</li>
+</ul></li>
+<li>Learning:
+<ul>
+<li>max_depth</li>
+<li>min_data_in_leaf</li>
+<li>feature_fraction</li>
+<li>lambda_l1</li>
+<li>lambda_l2</li>
+</ul></li>
+<li>IO:
+<ul>
+<li>max_bin（控制 histogram）</li>
+</ul></li>
+</ul></li>
+</ul>
 ]]></content>
       <categories>
         <category>数学</category>
@@ -420,6 +562,20 @@ I_n={(2n)!!\over(2n+1)!!}.
       </categories>
   </entry>
   <entry>
+    <title>dereference 与 shallow copy</title>
+    <url>/posts/6370/</url>
+    <content><![CDATA[<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">x = [<span class="number">0</span>]</span><br><span class="line">y = x</span><br></pre></td></tr></tbody></table></figure>
+<p>此时修改 <code>x</code> 或 <code>y</code> 不影响另一个变量: </p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">x = [<span class="number">1</span>]</span><br><span class="line"><span class="built_in">print</span>(y)  <span class="comment"># [0]</span></span><br></pre></td></tr></tbody></table></figure><p></p>
+<p>如果有 dereference, 被修改: </p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">x = [<span class="number">0</span>]</span><br><span class="line">y = x</span><br><span class="line"></span><br><span class="line">y[<span class="number">0</span>] = [<span class="number">1</span>]</span><br><span class="line"><span class="built_in">print</span>(x)  <span class="comment"># [1]</span></span><br></pre></td></tr></tbody></table></figure> <span id="more"></span><p></p>
+<hr>
+<p>下面的例子中, <code>foo</code> 中的 <code>x</code> 是一个浅拷贝, 在第一次 <code>append</code> 的时候同时修改了原来的 <code>x</code>, 但在赋值为 2 时浅拷贝指向了新的地址, 之后的操作都是对浅拷贝进行的. </p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">foo</span>(<span class="params">x</span>):</span></span><br><span class="line">    x.append(<span class="number">1</span>)</span><br><span class="line">    x = [<span class="number">2</span>]</span><br><span class="line">    x.append(<span class="number">1</span>)</span><br><span class="line">    <span class="keyword">return</span> x</span><br><span class="line"></span><br><span class="line">x = [<span class="number">0</span>]</span><br><span class="line">foo(x)</span><br><span class="line"><span class="built_in">print</span>(x)  <span class="comment"># [0, 1]</span></span><br></pre></td></tr></tbody></table></figure><p></p>
+]]></content>
+      <categories>
+        <category>计算机</category>
+        <category>Python</category>
+      </categories>
+  </entry>
+  <entry>
     <title>分块矩阵的行列式</title>
     <url>/posts/42453/</url>
     <content><![CDATA[<h2 id="结论">结论</h2>
@@ -484,90 +640,6 @@ I_n={(2n)!!\over(2n+1)!!}.
       </categories>
   </entry>
   <entry>
-    <title>为什么&quot;假推真/假&quot;都为真</title>
-    <url>/posts/31827/</url>
-    <content><![CDATA[<p><span class="math inline">\(P\Rightarrow Q\)</span> 的<strong>定义</strong>是真值表. "如果 <span class="math inline">\(P\)</span>, 那么 <span class="math inline">\(Q\)</span>" 只是一种解释, 不是定义. 也就是说, <span class="math inline">\(P\)</span> 和 <span class="math inline">\(Q\)</span> 本身不需要有联系. 这里解释一下为什么定义是这样的: <span class="math inline">\(P\)</span> 为假, <span class="math inline">\(P\Rightarrow Q\)</span> 总为真. <span id="more"></span></p>
-<p>"假推假"为真, 这看上去不符合直觉. 要弄清的是, 是这个逻辑为真, 而不是推出的命题为真.</p>
-<p><strong><span class="math inline">\(P\Rightarrow Q\)</span> 只有在真推假的时候才为假.</strong></p>
-<p>这是说, 论断 <span class="math inline">\(P\Rightarrow Q\)</span> 是正确的, 等价于, 永远不会从真命题推出假命题. 换言之, 如果你想说我的论断 <span class="math inline">\(P\Rightarrow Q\)</span> 是错的, 需要且只需要找到一个情况, 使得 <span class="math inline">\(P\)</span> 为真, <span class="math inline">\(Q\)</span> 为假, 其他情况都不管用.</p>
-<blockquote>
-<p><strong>"如果北京是中国的首都, 那么 <span class="math inline">\(1+1=2\)</span>." 这个论断正确吗? (真推真)</strong></p>
-<p>如果你想说我的论断错了, 那么只需要找到情况 "北京是中国的首都, <span class="math inline">\(1+1\ne2\)</span>". 没有这种情况 (真且假), 所以论断是对的.</p>
-<p><strong>"如果北京是中国的首都, 那么 <span class="math inline">\(1+1=3\)</span>." 这个论断正确吗? (真推假)</strong></p>
-<p>如果你想说我的论断错了, 那么只需要找到情况 "北京是中国的首都, <span class="math inline">\(1+1\ne3\)</span>". 有这种情况 (真且真), 所以论断是错的.</p>
-<p><strong>"如果猪会飞, 那么 <span class="math inline">\(1+1=2\)</span>." 这个论断正确吗? (假推真)</strong></p>
-<p>如果你想说我的论断错了, 那么只需要找到情况 "猪会飞, <span class="math inline">\(1+1\ne2\)</span>". 没有这种情况 (假且假), 所以论断是对的.</p>
-<p><strong>"如果猪会飞, 那么 <span class="math inline">\(1+1=3\)</span>." 这个论断正确吗? (假推假)</strong></p>
-<p>如果你想说我的论断错了, 那么只需要找到情况 "猪会飞, <span class="math inline">\(1+1\ne3\)</span>". 没有这种情况 (假且真), 所以论断是对的.</p>
-</blockquote>
-<p><em>注: 可以看出, 猪会飞可以推出任何结论. 因为你找不到一只会飞的猪来反驳我.</em></p>
-<p>这里可以看出这个等价逻辑, <span class="math inline">\(P\Rightarrow Q\)</span> 等价于 <span class="math inline">\(\lnot (P\land\lnot Q)\)</span>. 后者同时又是 <span class="math inline">\(\lnot P\lor Q\)</span>, 这是说, 要想 <span class="math inline">\(P\Rightarrow Q\)</span> 逻辑正确, 要么前提是错的, 要么结论是对的.</p>
-<hr>
-<p>有时 <span class="math inline">\(P\Rightarrow Q\)</span> 的正确性比 <span class="math inline">\(Q\)</span> 的正确性更容易看出来. 我们已知推理正确, 那可以得出结论正确吗? 看真值表:</p>
-<table>
-<thead>
-<tr class="header">
-<th style="text-align: center;"><span class="math inline">\(P\)</span></th>
-<th style="text-align: center;"><span class="math inline">\(Q\)</span></th>
-<th style="text-align: center;"><span class="math inline">\(P\Rightarrow Q\)</span></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;">F</td>
-<td style="text-align: center;">T</td>
-<td style="text-align: center;">T</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">F</td>
-<td style="text-align: center;">F</td>
-<td style="text-align: center;">T</td>
-</tr>
-</tbody>
-</table>
-<p>可以看出, 如果前提 (<span class="math inline">\(P\)</span>) 是错的, 即使我们做出了正确的推理, 也无法判断推出的结果 (<span class="math inline">\(Q\)</span>) 是否正确.</p>
-<blockquote>
-<p>如果 <span class="math inline">\(1&lt;10\)</span>, 那么 <span class="math inline">\(1&lt;100\)</span>.</p>
-<p>如果 <span class="math inline">\(50&lt;10\)</span>, 那么 <span class="math inline">\(50&lt;100\)</span>.</p>
-<p>如果 <span class="math inline">\(200&lt;10\)</span>, 那么 <span class="math inline">\(200&lt;100\)</span>.</p>
-</blockquote>
-<p>这三个推理都是正确的. 第一个, 我们从正确的结论推出了正确的结论. 后两个, 我们从错误的结论分别推出了正确和错误的结论.</p>
-<hr>
-<p>逆否命题的角度:</p>
-<p><span class="math inline">\(P\Rightarrow Q\)</span> 等价于 <span class="math inline">\(\lnot Q\Rightarrow\lnot P\)</span>.</p>
-<p>于是当 <span class="math inline">\(P\)</span> 为假时, <span class="math inline">\(\lnot Q\Rightarrow\lnot P\)</span> 就是真/假推真, 总为真.</p>
-<hr>
-<p>集合论的角度:</p>
-<p>把命题 <span class="math inline">\(P\)</span> 看成是 <span class="math inline">\(x\in P\)</span>, 此时把右边的 <span class="math inline">\(P\)</span> 看成是集合.</p>
-<p><span class="math inline">\(P\Rightarrow Q\)</span> 等价于 <span class="math inline">\(P\)</span> 对应的集合是 <span class="math inline">\(Q\)</span> 对应的集合的子集.</p>
-<p>比如, "下雨 <span class="math inline">\(\Rightarrow\)</span> 地面是湿的" 就是 <span class="math display">\[
-\{\text{下雨时}\}\subseteq\{\text{地面是湿的时}\}.
-\]</span></p>
-<p>"<span class="math inline">\(n\)</span> 是自然数 <span class="math inline">\(\Rightarrow\)</span> <span class="math inline">\(n\)</span> 是整数" 就是 <span class="math display">\[
-\mathbb{N}\subseteq\mathbb{Z}.
-\]</span></p>
-<p>一个假命题对应的集合是空集 (没有元素可以满足), 而空集是任何集合的子集. 所以假命题可以推出任何命题.</p>
-]]></content>
-      <categories>
-        <category>数学</category>
-        <category>逻辑</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>dereference 与 shallow copy</title>
-    <url>/posts/6370/</url>
-    <content><![CDATA[<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">x = [<span class="number">0</span>]</span><br><span class="line">y = x</span><br></pre></td></tr></tbody></table></figure>
-<p>此时修改 <code>x</code> 或 <code>y</code> 不影响另一个变量: </p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">x = [<span class="number">1</span>]</span><br><span class="line"><span class="built_in">print</span>(y)  <span class="comment"># [0]</span></span><br></pre></td></tr></tbody></table></figure><p></p>
-<p>如果有 dereference, 被修改: </p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">x = [<span class="number">0</span>]</span><br><span class="line">y = x</span><br><span class="line"></span><br><span class="line">y[<span class="number">0</span>] = [<span class="number">1</span>]</span><br><span class="line"><span class="built_in">print</span>(x)  <span class="comment"># [1]</span></span><br></pre></td></tr></tbody></table></figure> <span id="more"></span><p></p>
-<hr>
-<p>下面的例子中, <code>foo</code> 中的 <code>x</code> 是一个浅拷贝, 在第一次 <code>append</code> 的时候同时修改了原来的 <code>x</code>, 但在赋值为 2 时浅拷贝指向了新的地址, 之后的操作都是对浅拷贝进行的. </p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">foo</span>(<span class="params">x</span>):</span></span><br><span class="line">    x.append(<span class="number">1</span>)</span><br><span class="line">    x = [<span class="number">2</span>]</span><br><span class="line">    x.append(<span class="number">1</span>)</span><br><span class="line">    <span class="keyword">return</span> x</span><br><span class="line"></span><br><span class="line">x = [<span class="number">0</span>]</span><br><span class="line">foo(x)</span><br><span class="line"><span class="built_in">print</span>(x)  <span class="comment"># [0, 1]</span></span><br></pre></td></tr></tbody></table></figure><p></p>
-]]></content>
-      <categories>
-        <category>计算机</category>
-        <category>Python</category>
-      </categories>
-  </entry>
-  <entry>
     <title>$f(A)$的特征值</title>
     <url>/posts/3877/</url>
     <content><![CDATA[<p><strong>引理 (Schur's Lemma): 若<span class="math inline">\(A\)</span>是数域<span class="math inline">\(F\)</span>上的<span class="math inline">\(n\)</span>阶方阵, 且<span class="math inline">\(A\)</span>的特征值都在<span class="math inline">\(F\)</span>中, 那么<span class="math inline">\(A\)</span>与一个上三角阵相似.</strong></p>
@@ -594,6 +666,66 @@ f(A)=f(Q^{-1}TQ)=Q^{-1}f(T)Q.
         <category>数学</category>
         <category>代数</category>
         <category>线性代数</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>定积分性质例题</title>
+    <url>/posts/5066/</url>
+    <content><![CDATA[<p><strong>问题：在 <span class="math inline">\([0,\pi]\)</span> 上的连续函数 <span class="math inline">\(f\)</span> 满足</strong> <span class="math display">\[
+\int_0^\pi f(x)\sin x\,\mathrm dx=\int_0^\pi f(x)\cos x\,\mathrm dx=0,
+\]</span> <strong>证明 <span class="math inline">\(f\)</span> 在 <span class="math inline">\((0,\pi)\)</span> 内至少有两个零点.</strong></p>
+<span id="more"></span>
+<p><strong>证明:</strong></p>
+<p>不妨设 <span class="math inline">\(f\)</span> 不恒为 0.</p>
+<p>若 <span class="math inline">\(f(x)\)</span> 在 <span class="math inline">\((0,\pi)\)</span> 内无零点, 则不变号, 不妨设 <span class="math inline">\(f(x)&gt;0\)</span>. 此时<span class="math display">\[f(x)\sin x&gt;0,\forall x\in(0,\pi)\implies\int_0^1f(x)\sin x\,\mathrm dx&gt;0,\]</span> 与条件矛盾. 于是 <span class="math inline">\(f(x)\)</span> 在 <span class="math inline">\((0,\pi)\)</span> 上变号, 至少有一个零点.</p>
+<p>若只有一个变号零点 <span class="math inline">\(x_0\in(0,\pi)\)</span>, 不妨设在 <span class="math inline">\((0,x_0)\)</span> 上 <span class="math inline">\(f(x)&gt;0\)</span>, <span class="math inline">\((x_0,\pi)\)</span> 上 <span class="math inline">\(f(x)&lt;0\)</span>. 那么 <span class="math display">\[
+F(x)=f(x)\sin(x-x_0)\leq0,~\forall x\in(0,\pi).
+\]</span> 又因为 <span class="math display">\[
+\begin{align*}\int_0^\pi F(x)\,\mathrm dx&amp;=\cos x_0\int_0^\pi f(x)\sin x\,\mathrm dx-\sin x_0\int_0^\pi f(x)\cos x\,\mathrm dx\\
+&amp;=\cos x_0\cdot0-\sin x_0\cdot 0\\
+&amp;=0,
+\end{align*}
+\]</span> 故 <span class="math inline">\(F(x)\equiv0\)</span>, 于是 <span class="math inline">\(f(x)\equiv0,~\forall x\in(0,\pi)\)</span>, 矛盾.</p>
+<p>于是 <span class="math inline">\(f(x)\)</span> 在 <span class="math inline">\((0,\pi)\)</span> 上至少有两个零点.</p>
+]]></content>
+      <categories>
+        <category>数学</category>
+        <category>分析</category>
+        <category>微积分</category>
+        <category>单变量微积分</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Hexo 用法记录</title>
+    <url>/posts/16107/</url>
+    <content><![CDATA[<p>插入图片: </p><figure class="highlight html"><table><tbody><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"/file/*"</span> <span class="attr">width</span>=<span class="string">"250"</span> <span class="attr">height</span>=<span class="string">"250"</span>/&gt;</span></span><br></pre></td></tr></tbody></table></figure><p></p>
+<p>嵌入 pdf: </p><figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">{% pdf /file/*.pdf %}</span><br></pre></td></tr></tbody></table></figure><p></p>
+<p>链接文章: </p><figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">{% post_link * 说明 %}</span><br></pre></td></tr></tbody></table></figure><p></p>
+]]></content>
+      <categories>
+        <category>计算机</category>
+        <category>hexo</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Hesse 矩阵与Jacobi 矩阵</title>
+    <url>/posts/44547/</url>
+    <content><![CDATA[<p>Hessian 是<strong>数量场</strong>的二阶导: <span class="math display">\[H_{i,j}={\partial f\over\partial x_i\partial x_j}\]</span></p>
+<p>Jacobian 是<strong>向量场</strong>的一阶导: <span class="math display">\[J_{i,j}={\partial\bm{f_i}\over\partial x_j}\]</span></p>
+<p>二者的关系: Hessian 是数量场梯度的 Jacobian, 即 <span class="math inline">\(H(f)=J(\nabla f)\)</span>.</p>
+<blockquote>
+<p>🌰 <span class="math inline">\(f(x,y)=x^2+y^2\)</span></p>
+<ul>
+<li><span class="math inline">\(H(f)=\begin{bmatrix}2&amp;0\\0&amp;2\end{bmatrix}\)</span></li>
+<li><span class="math inline">\(J(\nabla f)=J\left(\begin{bmatrix} 2x\\2y \end{bmatrix}\right)=\begin{bmatrix}2&amp;0\\0&amp;2\end{bmatrix}\)</span></li>
+</ul>
+</blockquote>
+]]></content>
+      <categories>
+        <category>数学</category>
+        <category>分析</category>
+        <category>微积分</category>
+        <category>多元微积分</category>
       </categories>
   </entry>
   <entry>
@@ -714,24 +846,15 @@ W_p^1\subseteq L^{p^*},\quad\text{其中 }{1\over p^*}=\frac1p-\frac1n.
       </categories>
   </entry>
   <entry>
-    <title>定积分性质例题</title>
-    <url>/posts/5066/</url>
-    <content><![CDATA[<p><strong>问题：在 <span class="math inline">\([0,\pi]\)</span> 上的连续函数 <span class="math inline">\(f\)</span> 满足</strong> <span class="math display">\[
-\int_0^\pi f(x)\sin x\,\mathrm dx=\int_0^\pi f(x)\cos x\,\mathrm dx=0,
-\]</span> <strong>证明 <span class="math inline">\(f\)</span> 在 <span class="math inline">\((0,\pi)\)</span> 内至少有两个零点.</strong></p>
+    <title>常用积分</title>
+    <url>/posts/23548/</url>
+    <content><![CDATA[<h2 id="不定积分">不定积分</h2>
+<p><span class="math display">\[\int\frac{1}{x^2+a^2} \,\mathrm{d}x=\frac 1a\arctan\frac xa+C\]</span> <span class="math display">\[\int\frac{1}{x^2-a^2} \,\mathrm{d}x=\frac {1}{2a}\ln\left|\frac{x-a}{x+a}\right|+C\]</span> <span class="math display">\[\int\frac{1}{\sqrt{x^2\pm a^2}} \,\mathrm{d}x=\ln\left|x+\sqrt{x^2\pm a^2}\right|+C\]</span> <span class="math display">\[\int\frac{1}{\sqrt{a^2-x^2}} \,\mathrm{d}x=\arcsin \frac xa+C\]</span> <span class="math display">\[\int\frac{1}{\sqrt{1+x^2}} \,\mathrm{d}x=\sinh^{-1}x+C\]</span></p>
 <span id="more"></span>
-<p><strong>证明:</strong></p>
-<p>不妨设 <span class="math inline">\(f\)</span> 不恒为 0.</p>
-<p>若 <span class="math inline">\(f(x)\)</span> 在 <span class="math inline">\((0,\pi)\)</span> 内无零点, 则不变号, 不妨设 <span class="math inline">\(f(x)&gt;0\)</span>. 此时<span class="math display">\[f(x)\sin x&gt;0,\forall x\in(0,\pi)\implies\int_0^1f(x)\sin x\,\mathrm dx&gt;0,\]</span> 与条件矛盾. 于是 <span class="math inline">\(f(x)\)</span> 在 <span class="math inline">\((0,\pi)\)</span> 上变号, 至少有一个零点.</p>
-<p>若只有一个变号零点 <span class="math inline">\(x_0\in(0,\pi)\)</span>, 不妨设在 <span class="math inline">\((0,x_0)\)</span> 上 <span class="math inline">\(f(x)&gt;0\)</span>, <span class="math inline">\((x_0,\pi)\)</span> 上 <span class="math inline">\(f(x)&lt;0\)</span>. 那么 <span class="math display">\[
-F(x)=f(x)\sin(x-x_0)\leq0,~\forall x\in(0,\pi).
-\]</span> 又因为 <span class="math display">\[
-\begin{align*}\int_0^\pi F(x)\,\mathrm dx&amp;=\cos x_0\int_0^\pi f(x)\sin x\,\mathrm dx-\sin x_0\int_0^\pi f(x)\cos x\,\mathrm dx\\
-&amp;=\cos x_0\cdot0-\sin x_0\cdot 0\\
-&amp;=0,
-\end{align*}
-\]</span> 故 <span class="math inline">\(F(x)\equiv0\)</span>, 于是 <span class="math inline">\(f(x)\equiv0,~\forall x\in(0,\pi)\)</span>, 矛盾.</p>
-<p>于是 <span class="math inline">\(f(x)\)</span> 在 <span class="math inline">\((0,\pi)\)</span> 上至少有两个零点.</p>
+<h2 id="定积分">定积分</h2>
+<p><span class="math display">\[\int_0^{\frac \pi2}\ln(\sin x)=\int_0^{\frac \pi2}\ln(\cos x)=-\frac\pi2\ln2\]</span></p>
+<p><span class="math display">\[\int_{-a}^af(x)\,\mathrm{d}x=\int_{0}^a\left(f(x)+f(-x)\right)\,\mathrm{d}x\]</span></p>
+<p><span class="math display">\[\int_{0}^{\pi}xf(\sin x)\,\mathrm{d}x=\frac\pi2\int_{0}^\pi f(\sin x)\,\mathrm{d}x\]</span></p>
 ]]></content>
       <categories>
         <category>数学</category>
@@ -741,36 +864,84 @@ F(x)=f(x)\sin(x-x_0)\leq0,~\forall x\in(0,\pi).
       </categories>
   </entry>
   <entry>
-    <title>Hexo 用法记录</title>
-    <url>/posts/16107/</url>
-    <content><![CDATA[<p>插入图片: </p><figure class="highlight html"><table><tbody><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"/file/*"</span> <span class="attr">width</span>=<span class="string">"250"</span> <span class="attr">height</span>=<span class="string">"250"</span>/&gt;</span></span><br></pre></td></tr></tbody></table></figure><p></p>
-<p>嵌入 pdf: </p><figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">{% pdf /file/*.pdf %}</span><br></pre></td></tr></tbody></table></figure><p></p>
-<p>链接文章: </p><figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">{% post_link * 说明 %}</span><br></pre></td></tr></tbody></table></figure><p></p>
-]]></content>
-      <categories>
-        <category>计算机</category>
-        <category>hexo</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Hesse 矩阵与Jacobi 矩阵</title>
-    <url>/posts/44547/</url>
-    <content><![CDATA[<p>Hessian 是<strong>数量场</strong>的二阶导: <span class="math display">\[H_{i,j}={\partial f\over\partial x_i\partial x_j}\]</span></p>
-<p>Jacobian 是<strong>向量场</strong>的一阶导: <span class="math display">\[J_{i,j}={\partial\bm{f_i}\over\partial x_j}\]</span></p>
-<p>二者的关系: Hessian 是数量场梯度的 Jacobian, 即 <span class="math inline">\(H(f)=J(\nabla f)\)</span>.</p>
-<blockquote>
-<p>🌰 <span class="math inline">\(f(x,y)=x^2+y^2\)</span></p>
-<ul>
-<li><span class="math inline">\(H(f)=\begin{bmatrix}2&amp;0\\0&amp;2\end{bmatrix}\)</span></li>
-<li><span class="math inline">\(J(\nabla f)=J\left(\begin{bmatrix} 2x\\2y \end{bmatrix}\right)=\begin{bmatrix}2&amp;0\\0&amp;2\end{bmatrix}\)</span></li>
-</ul>
-</blockquote>
+    <title>高维分部积分</title>
+    <url>/posts/22001/</url>
+    <content><![CDATA[<p><span class="math display">\[\boxed{
+\int_\Omega \nabla\cdot \bm u v\d x=\int_{\partial\Omega}v\boldsymbol{u}\cdot\boldsymbol{n}\d s-\int_\Omega\nabla v\cdot\boldsymbol{u}\d x}
+\]</span></p>
+<p><span class="math display">\[\boxed{
+\int_\Omega(\nabla\times\bm u)\cdot\bm v\d x=\int_\Omega(\nabla\times\bm v)\cdot \bm u\d x+\int_{\partial\Omega}(\bm u\times \bm v)\cdot\bm n\d s}
+\]</span></p>
+<span id="more"></span>
+<p>特殊情况 (Green's first identity):</p>
+<p><span class="math display">\[
+\int_\Omega\nabla u\cdot\nabla v\d x=\int_{\partial\Omega}v\nabla u\cdot\boldsymbol{n}\d s-\int_\Omega v\nabla^2u\d x
+\]</span></p>
+<p><span class="math display">\[
+\int_\Omega(\nabla\times\nabla\times\bm u)\cdot\bm v\d x=\int_\Omega (\nabla\times \bm u)\cdot(\nabla\times\bm v)\d x-\int_{\partial\Omega}(\bm v\times\nabla\times\bm u)\cdot n\d s
+\]</span></p>
+<hr>
+<p><span class="math inline">\(\nabla\)</span> 的性质:</p>
+<p><span class="math display">\[
+\begin{equation}\label{eq:div}
+\nabla\cdot(v\boldsymbol{u})=v\nabla\cdot \boldsymbol{u}+\nabla v\cdot \boldsymbol{u}
+\end{equation}
+\]</span></p>
+<p><span class="math display">\[
+\begin{equation}\label{eq:div-cross}
+\nabla\cdot(\bm {u}\times \bm{v})=(\nabla\times \bm u)\cdot \bm v-\bm u\cdot(\nabla\times \bm v)
+\end{equation}
+\]</span></p>
+<p>对 <span class="math inline">\((\ref{eq:div})\)</span> 和 <span class="math inline">\((\ref{eq:div-cross})\)</span> 两边积分即得前两个式子. 其中用到了散度定理.</p>
+<p>在 <span class="math inline">\((\ref{eq:div-cross})\)</span> 中取 <span class="math inline">\(\bm v\)</span> 和 <span class="math inline">\(\nabla\times\bm u\)</span> 得到 <span class="math display">\[
+\nabla\cdot(\bm v\times\nabla\times \bm u)=(\nabla\times\bm v)\cdot(\nabla\times\bm u)-\bm v\cdot(\nabla\times\nabla\times\bm u),
+\]</span> 两边积分即得 <span class="math display">\[
+\int_\Omega(\nabla\times\nabla\times\bm u)\cdot\bm v\d x=\int_\Omega (\nabla\times \bm u)\cdot(\nabla\times\bm v)\d x-\int_{\partial\Omega}(\bm v\times\nabla\times\bm u)\cdot \bm n\d s.
+\]</span></p>
+<p>其中根据混合积的性质, 后一项等于 <span class="math display">\[
+\begin{align*}
+\int_{\partial\Omega}\bm n\cdot(\bm v\times\nabla\times\bm u)\d s=\int_{\partial\Omega}\bm v\cdot(\nabla\times\bm u\times \bm n)\d s
+\end{align*}.
+\]</span></p>
 ]]></content>
       <categories>
         <category>数学</category>
         <category>分析</category>
         <category>微积分</category>
         <category>多元微积分</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>分部积分的表格法</title>
+    <url>/posts/42394/</url>
+    <content><![CDATA[<p><span class="math display">\[\int (x^2+x)\e^{2x}\d x\]</span> 第一行求导, 第二行积分, 直到求导结果为 0: <img src="/file/xex.png" width="400"> 正负交替相加: <span class="math display">\[
+\text{原式}=\left({x^2+x\over2}-{2x+1\over4}+\frac14\right)\e^{2x}=\frac12 x^2\e^{2x}+C.
+\]</span> <span id="more"></span></p>
+<hr>
+<p>若多次求导不能为 0, 需要在最后加一个积分项, 其符号与上一个相反. 比如出现循环:</p>
+<p><span class="math display">\[
+\int \e^{x}\sin 2x\d x
+\]</span></p>
+<p><img src="/file/sine.png" width="350"></p>
+<p><span class="math display">\[
+\int \e^x\sin 2x\d x=(\sin 2x-2\cos 2x)\e^x-4\int\e^{x}\sin 2x\d x,
+\]</span></p>
+<p>那么 <span class="math display">\[
+\text{原式}=\frac15(\sin 2x-2\cos2x)\e^x+C.
+\]</span></p>
+<hr>
+<p>或者积分被简化: <span class="math display">\[
+\int 2x\arctan x\d x
+\]</span> <img src="/file/xarctanx.png" width="250"></p>
+<p><span class="math display">\[
+\text{原式}=(x^2+1)\arctan x-\int 1\d x=(x^2+1)\arctan x-x+C.
+\]</span></p>
+]]></content>
+      <categories>
+        <category>数学</category>
+        <category>分析</category>
+        <category>微积分</category>
+        <category>单变量微积分</category>
       </categories>
   </entry>
   <entry>
@@ -933,72 +1104,6 @@ H_A=0.5\times0.7219+0.5\times0.9710=0.8465
       </categories>
   </entry>
   <entry>
-    <title>高维分部积分</title>
-    <url>/posts/22001/</url>
-    <content><![CDATA[<p><span class="math display">\[\boxed{
-\int_\Omega \nabla\cdot \bm u v\d x=\int_{\partial\Omega}v\boldsymbol{u}\cdot\boldsymbol{n}\d s-\int_\Omega\nabla v\cdot\boldsymbol{u}\d x}
-\]</span></p>
-<p><span class="math display">\[\boxed{
-\int_\Omega(\nabla\times\bm u)\cdot\bm v\d x=\int_\Omega(\nabla\times\bm v)\cdot \bm u\d x+\int_{\partial\Omega}(\bm u\times \bm v)\cdot\bm n\d s}
-\]</span></p>
-<span id="more"></span>
-<p>特殊情况 (Green's first identity):</p>
-<p><span class="math display">\[
-\int_\Omega\nabla u\cdot\nabla v\d x=\int_{\partial\Omega}v\nabla u\cdot\boldsymbol{n}\d s-\int_\Omega v\nabla^2u\d x
-\]</span></p>
-<p><span class="math display">\[
-\int_\Omega(\nabla\times\nabla\times\bm u)\cdot\bm v\d x=\int_\Omega (\nabla\times \bm u)\cdot(\nabla\times\bm v)\d x-\int_{\partial\Omega}(\bm v\times\nabla\times\bm u)\cdot n\d s
-\]</span></p>
-<hr>
-<p><span class="math inline">\(\nabla\)</span> 的性质:</p>
-<p><span class="math display">\[
-\begin{equation}\label{eq:div}
-\nabla\cdot(v\boldsymbol{u})=v\nabla\cdot \boldsymbol{u}+\nabla v\cdot \boldsymbol{u}
-\end{equation}
-\]</span></p>
-<p><span class="math display">\[
-\begin{equation}\label{eq:div-cross}
-\nabla\cdot(\bm {u}\times \bm{v})=(\nabla\times \bm u)\cdot \bm v-\bm u\cdot(\nabla\times \bm v)
-\end{equation}
-\]</span></p>
-<p>对 <span class="math inline">\((\ref{eq:div})\)</span> 和 <span class="math inline">\((\ref{eq:div-cross})\)</span> 两边积分即得前两个式子. 其中用到了散度定理.</p>
-<p>在 <span class="math inline">\((\ref{eq:div-cross})\)</span> 中取 <span class="math inline">\(\bm v\)</span> 和 <span class="math inline">\(\nabla\times\bm u\)</span> 得到 <span class="math display">\[
-\nabla\cdot(\bm v\times\nabla\times \bm u)=(\nabla\times\bm v)\cdot(\nabla\times\bm u)-\bm v\cdot(\nabla\times\nabla\times\bm u),
-\]</span> 两边积分即得 <span class="math display">\[
-\int_\Omega(\nabla\times\nabla\times\bm u)\cdot\bm v\d x=\int_\Omega (\nabla\times \bm u)\cdot(\nabla\times\bm v)\d x-\int_{\partial\Omega}(\bm v\times\nabla\times\bm u)\cdot \bm n\d s.
-\]</span></p>
-<p>其中根据混合积的性质, 后一项等于 <span class="math display">\[
-\begin{align*}
-\int_{\partial\Omega}\bm n\cdot(\bm v\times\nabla\times\bm u)\d s=\int_{\partial\Omega}\bm v\cdot(\nabla\times\bm u\times \bm n)\d s
-\end{align*}.
-\]</span></p>
-]]></content>
-      <categories>
-        <category>数学</category>
-        <category>分析</category>
-        <category>微积分</category>
-        <category>多元微积分</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>常用积分</title>
-    <url>/posts/23548/</url>
-    <content><![CDATA[<h2 id="不定积分">不定积分</h2>
-<p><span class="math display">\[\int\frac{1}{x^2+a^2} \,\mathrm{d}x=\frac 1a\arctan\frac xa+C\]</span> <span class="math display">\[\int\frac{1}{x^2-a^2} \,\mathrm{d}x=\frac {1}{2a}\ln\left|\frac{x-a}{x+a}\right|+C\]</span> <span class="math display">\[\int\frac{1}{\sqrt{x^2\pm a^2}} \,\mathrm{d}x=\ln\left|x+\sqrt{x^2\pm a^2}\right|+C\]</span> <span class="math display">\[\int\frac{1}{\sqrt{a^2-x^2}} \,\mathrm{d}x=\arcsin \frac xa+C\]</span> <span class="math display">\[\int\frac{1}{\sqrt{1+x^2}} \,\mathrm{d}x=\sinh^{-1}x+C\]</span></p>
-<span id="more"></span>
-<h2 id="定积分">定积分</h2>
-<p><span class="math display">\[\int_0^{\frac \pi2}\ln(\sin x)=\int_0^{\frac \pi2}\ln(\cos x)=-\frac\pi2\ln2\]</span></p>
-<p><span class="math display">\[\int_{-a}^af(x)\,\mathrm{d}x=\int_{0}^a\left(f(x)+f(-x)\right)\,\mathrm{d}x\]</span></p>
-<p><span class="math display">\[\int_{0}^{\pi}xf(\sin x)\,\mathrm{d}x=\frac\pi2\int_{0}^\pi f(\sin x)\,\mathrm{d}x\]</span></p>
-]]></content>
-      <categories>
-        <category>数学</category>
-        <category>分析</category>
-        <category>微积分</category>
-        <category>单变量微积分</category>
-      </categories>
-  </entry>
-  <entry>
     <title>拉格朗日插值</title>
     <url>/posts/17585/</url>
     <content><![CDATA[<p><span class="math display">\[p(x)=\sum_{k=0}^n y_kl_k(x)\]</span></p>
@@ -1030,39 +1135,6 @@ p(x)={\sum_{k=0}^n{\lambda_k y_k\over x-x_k}\over\sum_{k=0}^n{\lambda_k\over x-x
       <categories>
         <category>数学</category>
         <category>数值分析</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>分部积分的表格法</title>
-    <url>/posts/42394/</url>
-    <content><![CDATA[<p><span class="math display">\[\int (x^2+x)\e^{2x}\d x\]</span> 第一行求导, 第二行积分, 直到求导结果为 0: <img src="/file/xex.png" width="400"> 正负交替相加: <span class="math display">\[
-\text{原式}=\left({x^2+x\over2}-{2x+1\over4}+\frac14\right)\e^{2x}=\frac12 x^2\e^{2x}+C.
-\]</span> <span id="more"></span></p>
-<hr>
-<p>若多次求导不能为 0, 需要在最后加一个积分项, 其符号与上一个相反. 比如出现循环:</p>
-<p><span class="math display">\[
-\int \e^{x}\sin 2x\d x
-\]</span></p>
-<p><img src="/file/sine.png" width="350"></p>
-<p><span class="math display">\[
-\int \e^x\sin 2x\d x=(\sin 2x-2\cos 2x)\e^x-4\int\e^{x}\sin 2x\d x,
-\]</span></p>
-<p>那么 <span class="math display">\[
-\text{原式}=\frac15(\sin 2x-2\cos2x)\e^x+C.
-\]</span></p>
-<hr>
-<p>或者积分被简化: <span class="math display">\[
-\int 2x\arctan x\d x
-\]</span> <img src="/file/xarctanx.png" width="250"></p>
-<p><span class="math display">\[
-\text{原式}=(x^2+1)\arctan x-\int 1\d x=(x^2+1)\arctan x-x+C.
-\]</span></p>
-]]></content>
-      <categories>
-        <category>数学</category>
-        <category>分析</category>
-        <category>微积分</category>
-        <category>单变量微积分</category>
       </categories>
   </entry>
   <entry>
@@ -1224,20 +1296,6 @@ M(h)=\sum_{k=0}^{n-1}hf\left(a+h\left(k+\frac12\right)\right)
       </categories>
   </entry>
   <entry>
-    <title>极坐标和球坐标换元</title>
-    <url>/posts/26639/</url>
-    <content><![CDATA[<p><span class="math display">\[\iint_D F(x,y)\d x\d y=\iint_\Delta F(r\cos\theta,r\sin\theta)r\d r\d\theta\]</span></p>
-<p><span class="math display">\[\iiint_D F(x,y,z)\d x\d y\d z=\iiint_\Delta F(r\sin\theta\cos\phi,r\sin\theta\sin\phi,r\cos\theta)r^2\sin\theta\d r\d \theta\d \phi\]</span></p>
-<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Kugelkoord-lokale-Basis-s.svg/480px-Kugelkoord-lokale-Basis-s.svg.png" width="250" height="250"></p>
-]]></content>
-      <categories>
-        <category>数学</category>
-        <category>分析</category>
-        <category>微积分</category>
-        <category>多元微积分</category>
-      </categories>
-  </entry>
-  <entry>
     <title>数值 ODE</title>
     <url>/posts/23214/</url>
     <content><![CDATA[<p><span class="math inline">\(f_n\)</span> 是 <span class="math inline">\(f(x_n,y_n)\)</span> 的简记, <span class="math inline">\(y_n\)</span> 是 <span class="math inline">\(y(x_n)\)</span> 的估计.</p>
@@ -1299,6 +1357,32 @@ y_{n+1}=\sum_{k=1}^l a_ky_{n+1-k}+h\sum_{k=0}^l b_k f_{n+1-k}
       </categories>
   </entry>
   <entry>
+    <title>常见级数</title>
+    <url>/posts/56038/</url>
+    <content><![CDATA[<p><span class="math display">\[\sum_{n=1}^\infty\frac{1}{n^2}=\frac{\pi^2}{6}\]</span> <span id="more"></span> <span class="math display">\[\sum_{n=1}^\infty\frac{(-1)^{n-1}}{n^2}=\frac{\pi^2}{12}\]</span> <span class="math display">\[\sum_{n=1}^\infty\frac{1}{(2n-1)^2}=\frac{\pi^2}{8}\]</span> <span class="math display">\[\sum_{n=1}^\infty\frac{1}{n^4}=\frac{\pi^4}{90}\]</span> <span class="math display">\[\sum_{n=1}^\infty\frac{(-1)^{n-1}}{n^4}=\frac{7\pi^4}{720}\]</span> <span class="math display">\[1-\frac13+\frac15-\frac17+\cdots=\frac\pi4\]</span> <span class="math display">\[1-\frac12+\frac13-\frac14+\cdots=\ln2\]</span></p>
+]]></content>
+      <categories>
+        <category>数学</category>
+        <category>分析</category>
+        <category>微积分</category>
+        <category>级数</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>极坐标和球坐标换元</title>
+    <url>/posts/26639/</url>
+    <content><![CDATA[<p><span class="math display">\[\iint_D F(x,y)\d x\d y=\iint_\Delta F(r\cos\theta,r\sin\theta)r\d r\d\theta\]</span></p>
+<p><span class="math display">\[\iiint_D F(x,y,z)\d x\d y\d z=\iiint_\Delta F(r\sin\theta\cos\phi,r\sin\theta\sin\phi,r\cos\theta)r^2\sin\theta\d r\d \theta\d \phi\]</span></p>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Kugelkoord-lokale-Basis-s.svg/480px-Kugelkoord-lokale-Basis-s.svg.png" width="250" height="250"></p>
+]]></content>
+      <categories>
+        <category>数学</category>
+        <category>分析</category>
+        <category>微积分</category>
+        <category>多元微积分</category>
+      </categories>
+  </entry>
+  <entry>
     <title>留数的计算方法</title>
     <url>/posts/51485/</url>
     <content><![CDATA[<ol type="1">
@@ -1322,15 +1406,33 @@ y_{n+1}=\sum_{k=1}^l a_ky_{n+1-k}+h\sum_{k=0}^l b_k f_{n+1-k}
       </categories>
   </entry>
   <entry>
-    <title>常见级数</title>
-    <url>/posts/56038/</url>
-    <content><![CDATA[<p><span class="math display">\[\sum_{n=1}^\infty\frac{1}{n^2}=\frac{\pi^2}{6}\]</span> <span id="more"></span> <span class="math display">\[\sum_{n=1}^\infty\frac{(-1)^{n-1}}{n^2}=\frac{\pi^2}{12}\]</span> <span class="math display">\[\sum_{n=1}^\infty\frac{1}{(2n-1)^2}=\frac{\pi^2}{8}\]</span> <span class="math display">\[\sum_{n=1}^\infty\frac{1}{n^4}=\frac{\pi^4}{90}\]</span> <span class="math display">\[\sum_{n=1}^\infty\frac{(-1)^{n-1}}{n^4}=\frac{7\pi^4}{720}\]</span> <span class="math display">\[1-\frac13+\frac15-\frac17+\cdots=\frac\pi4\]</span> <span class="math display">\[1-\frac12+\frac13-\frac14+\cdots=\ln2\]</span></p>
+    <title>三角函数</title>
+    <url>/posts/26462/</url>
+    <content><![CDATA[<h2 id="和差化积">和差化积</h2>
+<p><span class="math display">\[\sin\alpha+\sin\beta=2\sin\left(\frac{\alpha+\beta}{2}\right)\cos\left(\frac{\alpha-\beta}{2}\right)\]</span></p>
+<p><span class="math display">\[\sin\alpha-\sin\beta=2\cos\left(\frac{\alpha+\beta}{2}\right)\sin\left(\frac{\alpha-\beta}{2}\right)\]</span></p>
+<p><span class="math display">\[\cos\alpha+\cos\beta=2\cos\left(\frac{\alpha+\beta}{2}\right)\cos\left(\frac{\alpha-\beta}{2}\right)\]</span></p>
+<p><span class="math display">\[\cos\alpha-\cos\beta=-2\sin\left(\frac{\alpha+\beta}{2}\right)\sin\left(\frac{\alpha-\beta}{2}\right)\]</span></p>
+<span id="more"></span>
+<h2 id="积化和差">积化和差</h2>
+<p><span class="math display">\[\sin\alpha\cos\beta=\frac12\left(\sin(\alpha+\beta)+\sin(\alpha-\beta)\right)\]</span></p>
+<p><span class="math display">\[\cos\alpha\sin\beta=\frac12\left(\sin(\alpha+\beta)-\sin(\alpha-\beta)\right)\]</span></p>
+<p><span class="math display">\[\cos\alpha\cos\beta=\frac12\left(\cos(\alpha+\beta)+\cos(\alpha-\beta)\right)\]</span></p>
+<p><span class="math display">\[\sin\alpha\sin\beta=-\frac12\left(\cos(\alpha+\beta)-\cos(\alpha-\beta)\right)\]</span></p>
+<h2 id="倍角公式">倍角公式</h2>
+<p><span class="math display">\[\sin3x=3\sin x-4\sin^3x\]</span> <span class="math display">\[\cos 3x=-3\cos x+4\cos^3x\]</span></p>
+<h2 id="万能公式">万能公式</h2>
+<p>令 <span class="math inline">\(t=\tan\dfrac x2\)</span>, 那么 <span class="math display">\[
+\begin{gather*}
+\sin x=\frac{2t}{1+t^2},\quad
+\cos x=\frac{1-t^2}{1+t^2},\quad
+\tan x=\frac{2t}{1-t^2}
+\end{gather*}
+\]</span></p>
 ]]></content>
       <categories>
         <category>数学</category>
-        <category>分析</category>
-        <category>微积分</category>
-        <category>级数</category>
+        <category>初等数学</category>
       </categories>
   </entry>
   <entry>
@@ -1390,33 +1492,43 @@ y_{n+1}=\sum_{k=1}^l a_ky_{n+1-k}+h\sum_{k=0}^l b_k f_{n+1-k}
       </categories>
   </entry>
   <entry>
-    <title>三角函数</title>
-    <url>/posts/26462/</url>
-    <content><![CDATA[<h2 id="和差化积">和差化积</h2>
-<p><span class="math display">\[\sin\alpha+\sin\beta=2\sin\left(\frac{\alpha+\beta}{2}\right)\cos\left(\frac{\alpha-\beta}{2}\right)\]</span></p>
-<p><span class="math display">\[\sin\alpha-\sin\beta=2\cos\left(\frac{\alpha+\beta}{2}\right)\sin\left(\frac{\alpha-\beta}{2}\right)\]</span></p>
-<p><span class="math display">\[\cos\alpha+\cos\beta=2\cos\left(\frac{\alpha+\beta}{2}\right)\cos\left(\frac{\alpha-\beta}{2}\right)\]</span></p>
-<p><span class="math display">\[\cos\alpha-\cos\beta=-2\sin\left(\frac{\alpha+\beta}{2}\right)\sin\left(\frac{\alpha-\beta}{2}\right)\]</span></p>
-<span id="more"></span>
-<h2 id="积化和差">积化和差</h2>
-<p><span class="math display">\[\sin\alpha\cos\beta=\frac12\left(\sin(\alpha+\beta)+\sin(\alpha-\beta)\right)\]</span></p>
-<p><span class="math display">\[\cos\alpha\sin\beta=\frac12\left(\sin(\alpha+\beta)-\sin(\alpha-\beta)\right)\]</span></p>
-<p><span class="math display">\[\cos\alpha\cos\beta=\frac12\left(\cos(\alpha+\beta)+\cos(\alpha-\beta)\right)\]</span></p>
-<p><span class="math display">\[\sin\alpha\sin\beta=-\frac12\left(\cos(\alpha+\beta)-\cos(\alpha-\beta)\right)\]</span></p>
-<h2 id="倍角公式">倍角公式</h2>
-<p><span class="math display">\[\sin3x=3\sin x-4\sin^3x\]</span> <span class="math display">\[\cos 3x=-3\cos x+4\cos^3x\]</span></p>
-<h2 id="万能公式">万能公式</h2>
-<p>令 <span class="math inline">\(t=\tan\dfrac x2\)</span>, 那么 <span class="math display">\[
-\begin{gather*}
-\sin x=\frac{2t}{1+t^2},\quad
-\cos x=\frac{1-t^2}{1+t^2},\quad
-\tan x=\frac{2t}{1-t^2}
-\end{gather*}
-\]</span></p>
+    <title>丽江</title>
+    <url>/posts/23622/</url>
+    <content><![CDATA[<p>清晨，冬风偏有着独特的和煦，暖暖的阳光洒下，轻吻着这个慵懒的小城。青石板的两侧，一簇红一簇粉的丛生，芬芳馥郁。清澄的流水，不急不缓地从家家户户门前流过，雀跃着一片两片的花瓣，抚动着缠绵的青荇，挑弄着披拂的藤蔓。</p>
+<p>踱入深巷，古色古香的建筑和装饰，质朴而不失深邃的画作文字，神秘地述说着一个古老的民族对自然的敬畏与对文化根源的认同。仿佛等待须臾，小巷的尽头就会传来一阵悠远、空旷的卖杏花的吆喝似的。</p>
+<p>午后，携几枚沁爽的青枣，品几块玫瑰饼，惹得唇齿间尽是花香。百鸟嘤鸣，鸡犬相闻，长桥卧波，复道行空，小桥流水飞红。远眺，巍峨的雪山正熠熠闪着金辉。 傍晚，华灯初上。人群熙攘起来，叫卖声，丝竹声不绝于耳，花草香，珍馐香扑面而来。渐渐深凝的夜，又将古镇拉回沉寂，一同那远山的轮廓。</p>
 ]]></content>
       <categories>
-        <category>数学</category>
-        <category>初等数学</category>
+        <category>随笔</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>二分查找</title>
+    <url>/posts/42877/</url>
+    <content><![CDATA[<h2 id="原始问题-找到返回下标-找不到返回空">原始问题: 找到返回下标, 找不到返回空</h2>
+<figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">binary_search</span>(<span class="params">array, target</span>):</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> array:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line">        </span><br><span class="line">    left, right = <span class="number">0</span>, <span class="built_in">len</span>(array)-<span class="number">1</span></span><br><span class="line">    <span class="keyword">while</span> left &lt;= right:</span><br><span class="line">        mid = (left + right) // <span class="number">2</span></span><br><span class="line">        <span class="keyword">if</span> array[mid] &gt; target:</span><br><span class="line">            right = mid - <span class="number">1</span></span><br><span class="line">        <span class="keyword">elif</span> array[mid] &lt; target:</span><br><span class="line">            left = mid + <span class="number">1</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span> mid</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">None</span></span><br></pre></td></tr></tbody></table></figure>
+<p>时间: <span class="math inline">\(O(\log N)\)</span></p>
+<p>空间: <span class="math inline">\(O(1)\)</span></p>
+<h2 id="变种-有序矩阵">变种: 有序矩阵</h2>
+<p>比如在下面的矩阵中找 10 </p><figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">1  2  3  4</span><br><span class="line">5  6  7  8</span><br><span class="line">9  10 11 12</span><br></pre></td></tr></tbody></table></figure> 应该返回 <code>(2, 1)</code>. 设矩阵是 <code>M*N</code> 的.<p></p>
+<p>关键就在于压平后的下标和行标, 列标之间的关系.</p>
+<ul>
+<li><code>idx = row_idx * N + col_idx</code></li>
+<li><code>row_idx = idx // N</code></li>
+<li><code>col_idx = idx % N</code></li>
+</ul>
+<figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">binary_search_2d</span>(<span class="params">matrix, target</span>):</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> matrix:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line">    M, N = <span class="built_in">len</span>(matrix), <span class="built_in">len</span>(matrix[<span class="number">0</span>])</span><br><span class="line">    left, right = <span class="number">0</span>, M*N-<span class="number">1</span></span><br><span class="line">    <span class="keyword">while</span> left &lt;= right:</span><br><span class="line">        mid = (left + right) // <span class="number">2</span></span><br><span class="line">        row = mid // N</span><br><span class="line">        col = mid % N</span><br><span class="line">        <span class="keyword">if</span> matrix[row][col] &gt; target:</span><br><span class="line">            right = mid - <span class="number">1</span></span><br><span class="line">        <span class="keyword">elif</span> matrix[row][col] &lt; target:</span><br><span class="line">            left = mid + <span class="number">1</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span> (row, col)</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">None</span></span><br></pre></td></tr></tbody></table></figure>
+<p>时间: <span class="math inline">\(\log(MN)\)</span></p>
+<h2 id="变种-找最近的数">变种: 找最近的数</h2>
+<p>比如在 <code>[1, 2, 5, 9]</code> 中找 <code>3</code>, 应该返回下标 <code>1</code>. </p><figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">find_closest</span>(<span class="params">array, target</span>):</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> array:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line">    left, right = <span class="number">0</span>, <span class="built_in">len</span>(array)-<span class="number">1</span></span><br><span class="line">    <span class="keyword">while</span> left &lt; right - <span class="number">1</span>:</span><br><span class="line">        mid = (left + right) // <span class="number">2</span></span><br><span class="line">        <span class="keyword">if</span> array[mid] &gt; target:</span><br><span class="line">            right = mid</span><br><span class="line">        <span class="keyword">elif</span> array[mid] &lt; target:</span><br><span class="line">            left = mid</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span> mid</span><br><span class="line">    <span class="keyword">return</span> left <span class="keyword">if</span> <span class="built_in">abs</span>(target - array[left]) &lt; <span class="built_in">abs</span>(target - array[right]) <span class="keyword">else</span> right</span><br></pre></td></tr></tbody></table></figure><p></p>
+<h2 id="变种-找第一次出现的下标">变种: 找第一次出现的下标</h2>
+<figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">find_first</span>(<span class="params">array, target</span>):</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> array:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line">    left, right = <span class="number">0</span>, <span class="built_in">len</span>(array)-<span class="number">1</span></span><br><span class="line">    <span class="keyword">while</span> left &lt; right - <span class="number">1</span>:</span><br><span class="line">        mid = (left + right) // <span class="number">2</span></span><br><span class="line">        <span class="keyword">if</span> array[mid] &gt; target:</span><br><span class="line">            right = mid - <span class="number">1</span></span><br><span class="line">        <span class="keyword">elif</span> array[mid] &lt; target:</span><br><span class="line">            left = mid + <span class="number">1</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            right = mid</span><br><span class="line">    <span class="keyword">if</span> array[left] == target:</span><br><span class="line">        <span class="keyword">return</span> left</span><br><span class="line">    <span class="keyword">if</span> array[right] == target:</span><br><span class="line">        <span class="keyword">return</span> right</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">None</span></span><br></pre></td></tr></tbody></table></figure>
+<h2 id="变种-找最后一次出现的下标">变种: 找最后一次出现的下标</h2>
+<figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">find_last</span>(<span class="params">array, target</span>):</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> array:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line">    left, right = <span class="number">0</span>, <span class="built_in">len</span>(array)-<span class="number">1</span></span><br><span class="line">    <span class="keyword">while</span> left &lt; right - <span class="number">1</span>:</span><br><span class="line">        mid = (left + right) // <span class="number">2</span></span><br><span class="line">        <span class="keyword">if</span> array[mid] &gt; target:</span><br><span class="line">            right = mid - <span class="number">1</span></span><br><span class="line">        <span class="keyword">elif</span> array[mid] &lt; target:</span><br><span class="line">            left = mid + <span class="number">1</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            left = mid</span><br><span class="line">    <span class="keyword">if</span> array[right] == target:</span><br><span class="line">        <span class="keyword">return</span> right</span><br><span class="line">    <span class="keyword">if</span> array[left] == target:</span><br><span class="line">        <span class="keyword">return</span> left</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">None</span></span><br></pre></td></tr></tbody></table></figure>
+]]></content>
+      <categories>
+        <category>计算机</category>
+        <category>算法</category>
       </categories>
   </entry>
   <entry>
@@ -1539,59 +1651,6 @@ y_{n+1}=\sum_{k=1}^l a_ky_{n+1-k}+h\sum_{k=0}^l b_k f_{n+1-k}
       </categories>
   </entry>
   <entry>
-    <title>丽江</title>
-    <url>/posts/23622/</url>
-    <content><![CDATA[<p>清晨，冬风偏有着独特的和煦，暖暖的阳光洒下，轻吻着这个慵懒的小城。青石板的两侧，一簇红一簇粉的丛生，芬芳馥郁。清澄的流水，不急不缓地从家家户户门前流过，雀跃着一片两片的花瓣，抚动着缠绵的青荇，挑弄着披拂的藤蔓。</p>
-<p>踱入深巷，古色古香的建筑和装饰，质朴而不失深邃的画作文字，神秘地述说着一个古老的民族对自然的敬畏与对文化根源的认同。仿佛等待须臾，小巷的尽头就会传来一阵悠远、空旷的卖杏花的吆喝似的。</p>
-<p>午后，携几枚沁爽的青枣，品几块玫瑰饼，惹得唇齿间尽是花香。百鸟嘤鸣，鸡犬相闻，长桥卧波，复道行空，小桥流水飞红。远眺，巍峨的雪山正熠熠闪着金辉。 傍晚，华灯初上。人群熙攘起来，叫卖声，丝竹声不绝于耳，花草香，珍馐香扑面而来。渐渐深凝的夜，又将古镇拉回沉寂，一同那远山的轮廓。</p>
-]]></content>
-      <categories>
-        <category>随笔</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>二分查找</title>
-    <url>/posts/42877/</url>
-    <content><![CDATA[<h2 id="原始问题-找到返回下标-找不到返回空">原始问题: 找到返回下标, 找不到返回空</h2>
-<figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">binary_search</span>(<span class="params">array, target</span>):</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> array:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line">        </span><br><span class="line">    left, right = <span class="number">0</span>, <span class="built_in">len</span>(array)-<span class="number">1</span></span><br><span class="line">    <span class="keyword">while</span> left &lt;= right:</span><br><span class="line">        mid = (left + right) // <span class="number">2</span></span><br><span class="line">        <span class="keyword">if</span> array[mid] &gt; target:</span><br><span class="line">            right = mid - <span class="number">1</span></span><br><span class="line">        <span class="keyword">elif</span> array[mid] &lt; target:</span><br><span class="line">            left = mid + <span class="number">1</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span> mid</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">None</span></span><br></pre></td></tr></tbody></table></figure>
-<p>时间: <span class="math inline">\(O(\log N)\)</span></p>
-<p>空间: <span class="math inline">\(O(1)\)</span></p>
-<h2 id="变种-有序矩阵">变种: 有序矩阵</h2>
-<p>比如在下面的矩阵中找 10 </p><figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">1  2  3  4</span><br><span class="line">5  6  7  8</span><br><span class="line">9  10 11 12</span><br></pre></td></tr></tbody></table></figure> 应该返回 <code>(2, 1)</code>. 设矩阵是 <code>M*N</code> 的.<p></p>
-<p>关键就在于压平后的下标和行标, 列标之间的关系.</p>
-<ul>
-<li><code>idx = row_idx * N + col_idx</code></li>
-<li><code>row_idx = idx // N</code></li>
-<li><code>col_idx = idx % N</code></li>
-</ul>
-<figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">binary_search_2d</span>(<span class="params">matrix, target</span>):</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> matrix:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line">    M, N = <span class="built_in">len</span>(matrix), <span class="built_in">len</span>(matrix[<span class="number">0</span>])</span><br><span class="line">    left, right = <span class="number">0</span>, M*N-<span class="number">1</span></span><br><span class="line">    <span class="keyword">while</span> left &lt;= right:</span><br><span class="line">        mid = (left + right) // <span class="number">2</span></span><br><span class="line">        row = mid // N</span><br><span class="line">        col = mid % N</span><br><span class="line">        <span class="keyword">if</span> matrix[row][col] &gt; target:</span><br><span class="line">            right = mid - <span class="number">1</span></span><br><span class="line">        <span class="keyword">elif</span> matrix[row][col] &lt; target:</span><br><span class="line">            left = mid + <span class="number">1</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span> (row, col)</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">None</span></span><br></pre></td></tr></tbody></table></figure>
-<p>时间: <span class="math inline">\(\log(MN)\)</span></p>
-<h2 id="变种-找最近的数">变种: 找最近的数</h2>
-<p>比如在 <code>[1, 2, 5, 9]</code> 中找 <code>3</code>, 应该返回下标 <code>1</code>. </p><figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">find_closest</span>(<span class="params">array, target</span>):</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> array:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line">    left, right = <span class="number">0</span>, <span class="built_in">len</span>(array)-<span class="number">1</span></span><br><span class="line">    <span class="keyword">while</span> left &lt; right - <span class="number">1</span>:</span><br><span class="line">        mid = (left + right) // <span class="number">2</span></span><br><span class="line">        <span class="keyword">if</span> array[mid] &gt; target:</span><br><span class="line">            right = mid</span><br><span class="line">        <span class="keyword">elif</span> array[mid] &lt; target:</span><br><span class="line">            left = mid</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span> mid</span><br><span class="line">    <span class="keyword">return</span> left <span class="keyword">if</span> <span class="built_in">abs</span>(target - array[left]) &lt; <span class="built_in">abs</span>(target - array[right]) <span class="keyword">else</span> right</span><br></pre></td></tr></tbody></table></figure><p></p>
-<h2 id="变种-找第一次出现的下标">变种: 找第一次出现的下标</h2>
-<figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">find_first</span>(<span class="params">array, target</span>):</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> array:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line">    left, right = <span class="number">0</span>, <span class="built_in">len</span>(array)-<span class="number">1</span></span><br><span class="line">    <span class="keyword">while</span> left &lt; right - <span class="number">1</span>:</span><br><span class="line">        mid = (left + right) // <span class="number">2</span></span><br><span class="line">        <span class="keyword">if</span> array[mid] &gt; target:</span><br><span class="line">            right = mid - <span class="number">1</span></span><br><span class="line">        <span class="keyword">elif</span> array[mid] &lt; target:</span><br><span class="line">            left = mid + <span class="number">1</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            right = mid</span><br><span class="line">    <span class="keyword">if</span> array[left] == target:</span><br><span class="line">        <span class="keyword">return</span> left</span><br><span class="line">    <span class="keyword">if</span> array[right] == target:</span><br><span class="line">        <span class="keyword">return</span> right</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">None</span></span><br></pre></td></tr></tbody></table></figure>
-<h2 id="变种-找最后一次出现的下标">变种: 找最后一次出现的下标</h2>
-<figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">find_last</span>(<span class="params">array, target</span>):</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> array:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line">    left, right = <span class="number">0</span>, <span class="built_in">len</span>(array)-<span class="number">1</span></span><br><span class="line">    <span class="keyword">while</span> left &lt; right - <span class="number">1</span>:</span><br><span class="line">        mid = (left + right) // <span class="number">2</span></span><br><span class="line">        <span class="keyword">if</span> array[mid] &gt; target:</span><br><span class="line">            right = mid - <span class="number">1</span></span><br><span class="line">        <span class="keyword">elif</span> array[mid] &lt; target:</span><br><span class="line">            left = mid + <span class="number">1</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            left = mid</span><br><span class="line">    <span class="keyword">if</span> array[right] == target:</span><br><span class="line">        <span class="keyword">return</span> right</span><br><span class="line">    <span class="keyword">if</span> array[left] == target:</span><br><span class="line">        <span class="keyword">return</span> left</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">None</span></span><br></pre></td></tr></tbody></table></figure>
-]]></content>
-      <categories>
-        <category>计算机</category>
-        <category>算法</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>判断回文链表</title>
-    <url>/posts/14907/</url>
-    <content><![CDATA[<p>判断一个链表是否回文, 思路是反转后半段, 和前半段比较.</p>
-<span id="more"></span>
-<p>首先需要找到<a href="/posts/19136/" title="链表中点">链表中点</a>, 其中方法一需要分奇偶长度讨论, 而用方法二可以统一返回慢指针的下一个节点. 从该节点<a href="/posts/967/" title="反转链表">反转链表</a>后与前半段比较即可.</p>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">find_mid</span>(<span class="params">head</span>):</span></span><br><span class="line">    <span class="keyword">if</span> head <span class="keyword">is</span> <span class="literal">None</span> <span class="keyword">or</span> head.<span class="built_in">next</span> <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">        <span class="keyword">return</span> head</span><br><span class="line">    <span class="comment"># 快慢指针</span></span><br><span class="line">    fast, slow = head, head</span><br><span class="line">    <span class="keyword">while</span> fast <span class="keyword">and</span> fast.<span class="built_in">next</span> <span class="keyword">and</span> fast.<span class="built_in">next</span>.<span class="built_in">next</span>:</span><br><span class="line">        fast = fast.<span class="built_in">next</span>.<span class="built_in">next</span></span><br><span class="line">        slow = slow.<span class="built_in">next</span></span><br><span class="line">    <span class="keyword">return</span> slow</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">is_palindrome</span>(<span class="params">head</span>):</span></span><br><span class="line">    <span class="keyword">if</span> head <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">    <span class="comment"># 分成前后两段</span></span><br><span class="line">    head1 = head</span><br><span class="line">    head2 = reverse(find_mid(head).<span class="built_in">next</span>)</span><br><span class="line">    <span class="comment"># 比较两段</span></span><br><span class="line">    <span class="keyword">while</span> head1 <span class="keyword">and</span> head2:</span><br><span class="line">        <span class="keyword">if</span> head1.val != head2.val:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        head1 = head1.<span class="built_in">next</span></span><br><span class="line">        head2 = head2.<span class="built_in">next</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">True</span></span><br></pre></td></tr></tbody></table></figure>
-]]></content>
-      <categories>
-        <category>计算机</category>
-        <category>算法</category>
-      </categories>
-  </entry>
-  <entry>
     <title>二叉树的一些遍历</title>
     <url>/posts/47437/</url>
     <content><![CDATA[<figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TreeNode</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, val</span>) -&gt; <span class="literal">None</span>:</span></span><br><span class="line">        self.val = val</span><br><span class="line">        self.left = <span class="literal">None</span></span><br><span class="line">        self.right = <span class="literal">None</span></span><br></pre></td></tr></tbody></table></figure>
@@ -1623,6 +1682,28 @@ y_{n+1}=\sum_{k=1}^l a_ky_{n+1-k}+h\sum_{k=0}^l b_k f_{n+1-k}
       </categories>
   </entry>
   <entry>
+    <title>判断回文链表</title>
+    <url>/posts/14907/</url>
+    <content><![CDATA[<p>判断一个链表是否回文, 思路是反转后半段, 和前半段比较.</p>
+<span id="more"></span>
+<p>首先需要找到<a href="/posts/19136/" title="链表中点">链表中点</a>, 其中方法一需要分奇偶长度讨论, 而用方法二可以统一返回慢指针的下一个节点. 从该节点<a href="/posts/967/" title="反转链表">反转链表</a>后与前半段比较即可.</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">find_mid</span>(<span class="params">head</span>):</span></span><br><span class="line">    <span class="keyword">if</span> head <span class="keyword">is</span> <span class="literal">None</span> <span class="keyword">or</span> head.<span class="built_in">next</span> <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">        <span class="keyword">return</span> head</span><br><span class="line">    <span class="comment"># 快慢指针</span></span><br><span class="line">    fast, slow = head, head</span><br><span class="line">    <span class="keyword">while</span> fast <span class="keyword">and</span> fast.<span class="built_in">next</span> <span class="keyword">and</span> fast.<span class="built_in">next</span>.<span class="built_in">next</span>:</span><br><span class="line">        fast = fast.<span class="built_in">next</span>.<span class="built_in">next</span></span><br><span class="line">        slow = slow.<span class="built_in">next</span></span><br><span class="line">    <span class="keyword">return</span> slow</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">is_palindrome</span>(<span class="params">head</span>):</span></span><br><span class="line">    <span class="keyword">if</span> head <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">    <span class="comment"># 分成前后两段</span></span><br><span class="line">    head1 = head</span><br><span class="line">    head2 = reverse(find_mid(head).<span class="built_in">next</span>)</span><br><span class="line">    <span class="comment"># 比较两段</span></span><br><span class="line">    <span class="keyword">while</span> head1 <span class="keyword">and</span> head2:</span><br><span class="line">        <span class="keyword">if</span> head1.val != head2.val:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        head1 = head1.<span class="built_in">next</span></span><br><span class="line">        head2 = head2.<span class="built_in">next</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">True</span></span><br></pre></td></tr></tbody></table></figure>
+]]></content>
+      <categories>
+        <category>计算机</category>
+        <category>算法</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>午后</title>
+    <url>/posts/6636/</url>
+    <content><![CDATA[<p>阳光从不吝啬，海风亦从未疲倦。歌声随时慵懒，每个下午，均可惬意。</p>
+]]></content>
+      <categories>
+        <category>随笔</category>
+      </categories>
+  </entry>
+  <entry>
     <title>利用积分下求导计算无穷积分</title>
     <url>/posts/30510/</url>
     <content><![CDATA[<p>计算 <span class="math display">\[
@@ -1636,35 +1717,6 @@ y_{n+1}=\sum_{k=1}^l a_ky_{n+1-k}+h\sum_{k=0}^l b_k f_{n+1-k}
         <category>分析</category>
         <category>微积分</category>
         <category>单变量微积分</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>午后</title>
-    <url>/posts/6636/</url>
-    <content><![CDATA[<p>阳光从不吝啬，海风亦从未疲倦。歌声随时慵懒，每个下午，均可惬意。</p>
-]]></content>
-      <categories>
-        <category>随笔</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>反转链表</title>
-    <url>/posts/967/</url>
-    <content><![CDATA[<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ListNode</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, val</span>):</span></span><br><span class="line">        self.val = val</span><br><span class="line">        self.<span class="built_in">next</span> = <span class="literal">None</span></span><br></pre></td></tr></tbody></table></figure>
-<p>我们传入一个 ListNode 作为 head 节点, 然后需要一个函数 reverse 来反转这个链表, 返回新的 head 节点 (实际上是原来的 tail).</p>
-<span id="more"></span>
-<h2 id="iteration">iteration</h2>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">reverse</span>(<span class="params">head</span>):</span></span><br><span class="line">    prev = <span class="literal">None</span> <span class="comment"># 保存 head 的上一个节点</span></span><br><span class="line">    <span class="keyword">while</span> head:</span><br><span class="line">        <span class="built_in">next</span> = head.<span class="built_in">next</span>  <span class="comment"># 先保存下一个, 否则反转后找不到</span></span><br><span class="line">        head.<span class="built_in">next</span> = prev  <span class="comment"># 反转</span></span><br><span class="line">        <span class="comment"># prev 和 head 往后走</span></span><br><span class="line">        prev = head</span><br><span class="line">        head = <span class="built_in">next</span></span><br><span class="line">    <span class="keyword">return</span> prev <span class="comment"># 此时 head 走到了 None</span></span><br></pre></td></tr></tbody></table></figure>
-<p>时间: <span class="math inline">\(O(n)\)</span></p>
-<p>空间: <span class="math inline">\(O(1)\)</span></p>
-<h2 id="recursion">recursion</h2>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">reverse</span>(<span class="params">head</span>):</span></span><br><span class="line">    <span class="comment"># base case: 空链表或只有一个节点, 不用反转</span></span><br><span class="line">    <span class="keyword">if</span> head <span class="keyword">is</span> <span class="literal">None</span> <span class="keyword">or</span> head.<span class="built_in">next</span> <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">        <span class="keyword">return</span> head</span><br><span class="line">    <span class="comment"># 从第二个节点开始反转, 返回新的 head 节点</span></span><br><span class="line">    new_head = reverse(head.<span class="built_in">next</span>)</span><br><span class="line">    <span class="comment"># 把 head 和新的 head 节点之间的连接反过来</span></span><br><span class="line">    head.<span class="built_in">next</span>.<span class="built_in">next</span> = head</span><br><span class="line">    head.<span class="built_in">next</span> = <span class="literal">None</span>  <span class="comment"># 否则出现环</span></span><br><span class="line">    <span class="keyword">return</span> new_head</span><br></pre></td></tr></tbody></table></figure>
-<p>给出原始问题... <img src="rev1.png"> 先完成子问题... <img src="rev2.png"> 再处理最后的连接... <img src="rev3.png"> 时间: <span class="math inline">\(O(n)\)</span></p>
-<p>空间: <span class="math inline">\(O(n)\)</span></p>
-]]></content>
-      <categories>
-        <category>计算机</category>
-        <category>算法</category>
       </categories>
   </entry>
   <entry>
@@ -1713,6 +1765,26 @@ E_{ij}=\frac{X_{i\cdot}X_{\cdot j}}{n}
       <categories>
         <category>数学</category>
         <category>统计</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>反转链表</title>
+    <url>/posts/967/</url>
+    <content><![CDATA[<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ListNode</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, val</span>):</span></span><br><span class="line">        self.val = val</span><br><span class="line">        self.<span class="built_in">next</span> = <span class="literal">None</span></span><br></pre></td></tr></tbody></table></figure>
+<p>我们传入一个 ListNode 作为 head 节点, 然后需要一个函数 reverse 来反转这个链表, 返回新的 head 节点 (实际上是原来的 tail).</p>
+<span id="more"></span>
+<h2 id="iteration">iteration</h2>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">reverse</span>(<span class="params">head</span>):</span></span><br><span class="line">    prev = <span class="literal">None</span> <span class="comment"># 保存 head 的上一个节点</span></span><br><span class="line">    <span class="keyword">while</span> head:</span><br><span class="line">        <span class="built_in">next</span> = head.<span class="built_in">next</span>  <span class="comment"># 先保存下一个, 否则反转后找不到</span></span><br><span class="line">        head.<span class="built_in">next</span> = prev  <span class="comment"># 反转</span></span><br><span class="line">        <span class="comment"># prev 和 head 往后走</span></span><br><span class="line">        prev = head</span><br><span class="line">        head = <span class="built_in">next</span></span><br><span class="line">    <span class="keyword">return</span> prev <span class="comment"># 此时 head 走到了 None</span></span><br></pre></td></tr></tbody></table></figure>
+<p>时间: <span class="math inline">\(O(n)\)</span></p>
+<p>空间: <span class="math inline">\(O(1)\)</span></p>
+<h2 id="recursion">recursion</h2>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">reverse</span>(<span class="params">head</span>):</span></span><br><span class="line">    <span class="comment"># base case: 空链表或只有一个节点, 不用反转</span></span><br><span class="line">    <span class="keyword">if</span> head <span class="keyword">is</span> <span class="literal">None</span> <span class="keyword">or</span> head.<span class="built_in">next</span> <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">        <span class="keyword">return</span> head</span><br><span class="line">    <span class="comment"># 从第二个节点开始反转, 返回新的 head 节点</span></span><br><span class="line">    new_head = reverse(head.<span class="built_in">next</span>)</span><br><span class="line">    <span class="comment"># 把 head 和新的 head 节点之间的连接反过来</span></span><br><span class="line">    head.<span class="built_in">next</span>.<span class="built_in">next</span> = head</span><br><span class="line">    head.<span class="built_in">next</span> = <span class="literal">None</span>  <span class="comment"># 否则出现环</span></span><br><span class="line">    <span class="keyword">return</span> new_head</span><br></pre></td></tr></tbody></table></figure>
+<p>给出原始问题... <img src="rev1.png"> 先完成子问题... <img src="rev2.png"> 再处理最后的连接... <img src="rev3.png"> 时间: <span class="math inline">\(O(n)\)</span></p>
+<p>空间: <span class="math inline">\(O(n)\)</span></p>
+]]></content>
+      <categories>
+        <category>计算机</category>
+        <category>算法</category>
       </categories>
   </entry>
   <entry>
@@ -1769,6 +1841,25 @@ E_{ij}=\frac{X_{i\cdot}X_{\cdot j}}{n}
       </categories>
   </entry>
   <entry>
+    <title>圣诞节</title>
+    <url>/posts/19175/</url>
+    <content><![CDATA[<p>圣诞树上挂满了忽闪忽闪的小彩灯，在富丽堂皇的商店里，在暖黄的水晶吊灯下，温柔地伫立。</p>
+<p>空气中弥漫着姜汁饼的甜美气息，耳畔回荡着童声喜乐、纯净的颂歌，以及驯鹿的铃儿叮当。黑漆漆的夜空中洒下鹅毛白的雪花，沁爽洁净的雪毯上，花白胡子的圣诞老人留下一道雪橇的印记。与可人儿相挽，踱步在礼品商城，柔情地看他趴着橱窗，瞪大了好奇的双眼。</p>
+]]></content>
+      <categories>
+        <category>随笔</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>秋心</title>
+    <url>/posts/38252/</url>
+    <content><![CDATA[<p>风起时，一片一片，金黄的，鹅黄的，浅绿的，接连着，打着卷地，在我噙着泪的眼前飘落，在地上挤成一团。 风住时，一棵一棵，笔挺的，有着优美线条和外形的，银杏，梧桐，在被悲伤吞噬了的我眼前伫立，宛若画中那么美，那么静。 风声，孩子们的说笑，木棍扫过落叶的沙沙声，喜鹊，麻雀，还有一个人，缓慢而轻轻的，脚步。</p>
+]]></content>
+      <categories>
+        <category>随笔</category>
+      </categories>
+  </entry>
+  <entry>
     <title>堆</title>
     <url>/posts/21992/</url>
     <content><![CDATA[<p>堆是一种完全二叉树. 即, 除了最后一层都是满的, 且所有节点尽量靠左. </p><figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">       11</span><br><span class="line">     /    \</span><br><span class="line">    10     7</span><br><span class="line">   / \    / \</span><br><span class="line">  9   5  6   4</span><br><span class="line"> /\  /\</span><br><span class="line">8  2 3 1</span><br></pre></td></tr></tbody></table></figure> 按列表存储更省空间: <code>[11, 10, 7, 9, 5, 6, 4, 8, 2, 3, 1]</code>.<p></p>
@@ -1808,26 +1899,6 @@ E_{ij}=\frac{X_{i\cdot}X_{\cdot j}}{n}
       </categories>
   </entry>
   <entry>
-    <title>秋心</title>
-    <url>/posts/38252/</url>
-    <content><![CDATA[<p>风起时，一片一片，金黄的，鹅黄的，浅绿的，接连着，打着卷地，在我噙着泪的眼前飘落，在地上挤成一团。 风住时，一棵一棵，笔挺的，有着优美线条和外形的，银杏，梧桐，在被悲伤吞噬了的我眼前伫立，宛若画中那么美，那么静。 风声，孩子们的说笑，木棍扫过落叶的沙沙声，喜鹊，麻雀，还有一个人，缓慢而轻轻的，脚步。</p>
-]]></content>
-      <categories>
-        <category>随笔</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>字符串去重</title>
-    <url>/posts/47268/</url>
-    <content><![CDATA[<p><code>"aabbbccd"</code> 返回 <code>"abcd"</code>.</p>
-<p>利用快慢指针, <code>fast</code> 负责遍历, <code>slow</code> 左边的是要保留的, 没有重复的字符. 可以做到原地修改. </p><figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">remove_duplicate</span>(<span class="params">string</span>):</span></span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">len</span>(string) <span class="keyword">in</span> (<span class="number">0</span>, <span class="number">1</span>):</span><br><span class="line">        <span class="keyword">return</span> string</span><br><span class="line"></span><br><span class="line">    string = <span class="built_in">list</span>(string)</span><br><span class="line">    slow, fast = <span class="number">1</span>, <span class="number">1</span></span><br><span class="line">    <span class="keyword">while</span> fast &lt; <span class="built_in">len</span>(string):</span><br><span class="line">        <span class="keyword">if</span> string[fast] != string[slow-<span class="number">1</span>]:</span><br><span class="line">            string[slow] = string[fast]</span><br><span class="line">            slow += <span class="number">1</span></span><br><span class="line">        fast += <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">''</span>.join(string[:slow])</span><br></pre></td></tr></tbody></table></figure><p></p>
-]]></content>
-      <categories>
-        <category>计算机</category>
-        <category>算法</category>
-      </categories>
-  </entry>
-  <entry>
     <title>如何避免过拟合</title>
     <url>/posts/46474/</url>
     <content><![CDATA[<p>过拟合是因为模型过于复杂, 而学习数据有限.</p>
@@ -1844,6 +1915,17 @@ E_{ij}=\frac{X_{i\cdot}X_{\cdot j}}{n}
       <categories>
         <category>计算机</category>
         <category>机器学习</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>字符串去重</title>
+    <url>/posts/47268/</url>
+    <content><![CDATA[<p><code>"aabbbccd"</code> 返回 <code>"abcd"</code>.</p>
+<p>利用快慢指针, <code>fast</code> 负责遍历, <code>slow</code> 左边的是要保留的, 没有重复的字符. 可以做到原地修改. </p><figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">remove_duplicate</span>(<span class="params">string</span>):</span></span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">len</span>(string) <span class="keyword">in</span> (<span class="number">0</span>, <span class="number">1</span>):</span><br><span class="line">        <span class="keyword">return</span> string</span><br><span class="line"></span><br><span class="line">    string = <span class="built_in">list</span>(string)</span><br><span class="line">    slow, fast = <span class="number">1</span>, <span class="number">1</span></span><br><span class="line">    <span class="keyword">while</span> fast &lt; <span class="built_in">len</span>(string):</span><br><span class="line">        <span class="keyword">if</span> string[fast] != string[slow-<span class="number">1</span>]:</span><br><span class="line">            string[slow] = string[fast]</span><br><span class="line">            slow += <span class="number">1</span></span><br><span class="line">        fast += <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">''</span>.join(string[:slow])</span><br></pre></td></tr></tbody></table></figure><p></p>
+]]></content>
+      <categories>
+        <category>计算机</category>
+        <category>算法</category>
       </categories>
   </entry>
   <entry>
@@ -1879,15 +1961,6 @@ Q=\begin{bmatrix}1&amp;\\&amp;\frac12\end{bmatrix}\begin{bmatrix}0&amp;1\\1&amp;
       </categories>
   </entry>
   <entry>
-    <title>实现 circular queue</title>
-    <url>/posts/4952/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>计算机</category>
-        <category>算法</category>
-      </categories>
-  </entry>
-  <entry>
     <title>小憩</title>
     <url>/posts/53822/</url>
     <content><![CDATA[<p>代码敲累了。仰在椅子上。看午后的阳光，悠闲地洒下。窗纱外的一片明亮。冬日空气里的沁凉。街上的嘈杂。</p>
@@ -1897,13 +1970,41 @@ Q=\begin{bmatrix}1&amp;\\&amp;\frac12\end{bmatrix}\begin{bmatrix}0&amp;1\\1&amp;
       </categories>
   </entry>
   <entry>
-    <title>圣诞节</title>
-    <url>/posts/19175/</url>
-    <content><![CDATA[<p>圣诞树上挂满了忽闪忽闪的小彩灯，在富丽堂皇的商店里，在暖黄的水晶吊灯下，温柔地伫立。</p>
-<p>空气中弥漫着姜汁饼的甜美气息，耳畔回荡着童声喜乐、纯净的颂歌，以及驯鹿的铃儿叮当。黑漆漆的夜空中洒下鹅毛白的雪花，沁爽洁净的雪毯上，花白胡子的圣诞老人留下一道雪橇的印记。与可人儿相挽，踱步在礼品商城，柔情地看他趴着橱窗，瞪大了好奇的双眼。</p>
+    <title>实现 circular queue</title>
+    <url>/posts/4952/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>计算机</category>
+        <category>算法</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>弱模型的集合 (ensemble)</title>
+    <url>/posts/36436/</url>
+    <content><![CDATA[<h2 id="bagging">Bagging</h2>
+<ul>
+<li><strong>homogeneous</strong> weak learner</li>
+<li>learn each <strong>independently</strong> in parallel</li>
+<li>combine through averaging</li>
+<li>reduce variance</li>
+</ul>
+<h2 id="boosting">Boosting</h2>
+<ul>
+<li><strong>homogeneous</strong> weak learner</li>
+<li>learn each <strong>sequentially</strong> in an adaptive way</li>
+<li>combine through deternimistic strategy</li>
+<li>reduce bias</li>
+</ul>
+<h2 id="stacking">Stacking</h2>
+<ul>
+<li><strong>heterogeneous</strong> weak learner</li>
+<li>learn each <strong>independently</strong> in parallel</li>
+<li>combine on each prediction</li>
+</ul>
 ]]></content>
       <categories>
-        <category>随笔</category>
+        <category>计算机</category>
+        <category>机器学习</category>
       </categories>
   </entry>
   <entry>
@@ -1925,6 +2026,16 @@ Q=\begin{bmatrix}1&amp;\\&amp;\frac12\end{bmatrix}\begin{bmatrix}0&amp;1\\1&amp;
       <categories>
         <category>计算机</category>
         <category>算法</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>放学路上</title>
+    <url>/posts/61326/</url>
+    <content><![CDATA[<p>无法抑制去想，记不得那最后一次黄昏的放学路上。耳畔的空灵悠扬，橙红的落日夕阳，沁人的微风飘荡。脚下波光粼粼，眺望远方鹅黄的垂柳，爬上石阶的嫩草。如梦似幻。</p>
+<p>晚风，斜阳，音乐，白鹅，湖面，屋檐的金辉，静夜的虫鸣与群星。</p>
+]]></content>
+      <categories>
+        <category>随笔</category>
       </categories>
   </entry>
   <entry>
@@ -1982,16 +2093,6 @@ Q=\begin{bmatrix}1&amp;\\&amp;\frac12\end{bmatrix}\begin{bmatrix}0&amp;1\\1&amp;
       </categories>
   </entry>
   <entry>
-    <title>放学路上</title>
-    <url>/posts/61326/</url>
-    <content><![CDATA[<p>无法抑制去想，记不得那最后一次黄昏的放学路上。耳畔的空灵悠扬，橙红的落日夕阳，沁人的微风飘荡。脚下波光粼粼，眺望远方鹅黄的垂柳，爬上石阶的嫩草。如梦似幻。</p>
-<p>晚风，斜阳，音乐，白鹅，湖面，屋檐的金辉，静夜的虫鸣与群星。</p>
-]]></content>
-      <categories>
-        <category>随笔</category>
-      </categories>
-  </entry>
-  <entry>
     <title>春天来了</title>
     <url>/posts/61668/</url>
     <content><![CDATA[<p>没有了过往的凛冽，风变得和煦轻柔起来，枝条上冒出了毛茸茸的骨朵。</p>
@@ -2025,6 +2126,16 @@ Q=\begin{bmatrix}1&amp;\\&amp;\frac12\end{bmatrix}\begin{bmatrix}0&amp;1\\1&amp;
 ]]></content>
       <categories>
         <category>随笔</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>最长无重复子串的长度</title>
+    <url>/posts/1239/</url>
+    <content><![CDATA[<p><code>abcabcbb</code> 返回 3, 因为任意长度为 4 的子串都有重复字符. </p><figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> defaultdict</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">longest_substring</span>(<span class="params">s</span>):</span></span><br><span class="line">    result = <span class="number">0</span></span><br><span class="line">    occurred = defaultdict(<span class="built_in">int</span>)</span><br><span class="line">    left = <span class="number">0</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> right <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(s)):</span><br><span class="line">        occurred[s[right]] += <span class="number">1</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span> occurred[s[right]] &gt; <span class="number">1</span>:</span><br><span class="line">            occurred[s[left]] -= <span class="number">1</span></span><br><span class="line">            left += <span class="number">1</span></span><br><span class="line"></span><br><span class="line">        result = <span class="built_in">max</span>(result, right - left + <span class="number">1</span>)</span><br><span class="line">    <span class="keyword">return</span> result</span><br></pre></td></tr></tbody></table></figure><p></p>
+]]></content>
+      <categories>
+        <category>计算机</category>
+        <category>算法</category>
       </categories>
   </entry>
   <entry>
@@ -2087,41 +2198,12 @@ Q=\begin{bmatrix}1&amp;\\&amp;\frac12\end{bmatrix}\begin{bmatrix}0&amp;1\\1&amp;
       </categories>
   </entry>
   <entry>
-    <title>最长无重复子串的长度</title>
-    <url>/posts/1239/</url>
-    <content><![CDATA[<p><code>abcabcbb</code> 返回 3, 因为任意长度为 4 的子串都有重复字符. </p><figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> defaultdict</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">longest_substring</span>(<span class="params">s</span>):</span></span><br><span class="line">    result = <span class="number">0</span></span><br><span class="line">    occurred = defaultdict(<span class="built_in">int</span>)</span><br><span class="line">    left = <span class="number">0</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> right <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(s)):</span><br><span class="line">        occurred[s[right]] += <span class="number">1</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span> occurred[s[right]] &gt; <span class="number">1</span>:</span><br><span class="line">            occurred[s[left]] -= <span class="number">1</span></span><br><span class="line">            left += <span class="number">1</span></span><br><span class="line"></span><br><span class="line">        result = <span class="built_in">max</span>(result, right - left + <span class="number">1</span>)</span><br><span class="line">    <span class="keyword">return</span> result</span><br></pre></td></tr></tbody></table></figure><p></p>
-]]></content>
-      <categories>
-        <category>计算机</category>
-        <category>算法</category>
-      </categories>
-  </entry>
-  <entry>
     <title>林中漫步</title>
     <url>/posts/16963/</url>
     <content><![CDATA[<p>林风拂幽径，鸟鸣惊落花</p>
 ]]></content>
       <categories>
         <category>随笔</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>树的按层遍历 (BFS)</title>
-    <url>/posts/8322/</url>
-    <content><![CDATA[<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">    3</span><br><span class="line">   / \</span><br><span class="line">  9  20</span><br><span class="line"> /  /  \</span><br><span class="line">3  15   7</span><br></pre></td></tr></tbody></table></figure>
-<p>输出 <code>[3, 9, 20, 3, 15, 7]</code>.</p>
-<span id="more"></span>
-<figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> deque</span><br><span class="line"></span><br><span class="line">queue = deque([root])</span><br><span class="line">result = []</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> queue:</span><br><span class="line">    node = queue.popleft()</span><br><span class="line">    result.append(node.val)</span><br><span class="line">    <span class="keyword">if</span> node.left:</span><br><span class="line">        queue.append(node.left)</span><br><span class="line">    <span class="keyword">if</span> node.right:</span><br><span class="line">        queue.append(node.right)</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="要求保存每一层">要求保存每一层</h2>
-<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">    3</span><br><span class="line">   / \</span><br><span class="line">  9  20</span><br><span class="line"> /  /  \</span><br><span class="line">3  15   7</span><br><span class="line">  /  \</span><br><span class="line"> 21  22 </span><br></pre></td></tr></tbody></table></figure>
-<p>输出 <code>[[3], [9, 20], [3, 15, 7], [21, 22]]</code>.</p>
-<figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line">queue = deque([root])</span><br><span class="line">result = []</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> queue:</span><br><span class="line">    count = <span class="built_in">len</span>(queue)  <span class="comment"># 当前层有几个值?</span></span><br><span class="line">    current_level = []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(count):</span><br><span class="line">        node = queue.popleft()</span><br><span class="line">        current_level.append(node.val)</span><br><span class="line">        <span class="keyword">if</span> node.left:</span><br><span class="line">            queue.append(node.left)</span><br><span class="line">        <span class="keyword">if</span> node.right:</span><br><span class="line">            queue.append(node.right)</span><br><span class="line">    result.append(current_level)</span><br></pre></td></tr></tbody></table></figure>
-<p>时间: <span class="math inline">\(O(n)\)</span></p>
-<p>空间: <span class="math inline">\(O(n)\)</span> (最宽的那一层)</p>
-]]></content>
-      <categories>
-        <category>计算机</category>
-        <category>算法</category>
       </categories>
   </entry>
   <entry>
@@ -2151,12 +2233,41 @@ Q=\begin{bmatrix}1&amp;\\&amp;\frac12\end{bmatrix}\begin{bmatrix}0&amp;1\\1&amp;
       </categories>
   </entry>
   <entry>
+    <title>树的按层遍历 (BFS)</title>
+    <url>/posts/8322/</url>
+    <content><![CDATA[<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">    3</span><br><span class="line">   / \</span><br><span class="line">  9  20</span><br><span class="line"> /  /  \</span><br><span class="line">3  15   7</span><br></pre></td></tr></tbody></table></figure>
+<p>输出 <code>[3, 9, 20, 3, 15, 7]</code>.</p>
+<span id="more"></span>
+<figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> deque</span><br><span class="line"></span><br><span class="line">queue = deque([root])</span><br><span class="line">result = []</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> queue:</span><br><span class="line">    node = queue.popleft()</span><br><span class="line">    result.append(node.val)</span><br><span class="line">    <span class="keyword">if</span> node.left:</span><br><span class="line">        queue.append(node.left)</span><br><span class="line">    <span class="keyword">if</span> node.right:</span><br><span class="line">        queue.append(node.right)</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="要求保存每一层">要求保存每一层</h2>
+<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">    3</span><br><span class="line">   / \</span><br><span class="line">  9  20</span><br><span class="line"> /  /  \</span><br><span class="line">3  15   7</span><br><span class="line">  /  \</span><br><span class="line"> 21  22 </span><br></pre></td></tr></tbody></table></figure>
+<p>输出 <code>[[3], [9, 20], [3, 15, 7], [21, 22]]</code>.</p>
+<figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line">queue = deque([root])</span><br><span class="line">result = []</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> queue:</span><br><span class="line">    count = <span class="built_in">len</span>(queue)  <span class="comment"># 当前层有几个值?</span></span><br><span class="line">    current_level = []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(count):</span><br><span class="line">        node = queue.popleft()</span><br><span class="line">        current_level.append(node.val)</span><br><span class="line">        <span class="keyword">if</span> node.left:</span><br><span class="line">            queue.append(node.left)</span><br><span class="line">        <span class="keyword">if</span> node.right:</span><br><span class="line">            queue.append(node.right)</span><br><span class="line">    result.append(current_level)</span><br></pre></td></tr></tbody></table></figure>
+<p>时间: <span class="math inline">\(O(n)\)</span></p>
+<p>空间: <span class="math inline">\(O(n)\)</span> (最宽的那一层)</p>
+]]></content>
+      <categories>
+        <category>计算机</category>
+        <category>算法</category>
+      </categories>
+  </entry>
+  <entry>
     <title>树的最小高度</title>
     <url>/posts/64764/</url>
     <content><![CDATA[<h2 id="bottom-up">Bottom Up</h2>
 <figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">minDepth</span>(<span class="params">root</span>):</span></span><br><span class="line">    <span class="keyword">if</span> root <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">    <span class="keyword">return</span> helper(root)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">helper</span>(<span class="params">root</span>):</span></span><br><span class="line">    <span class="keyword">if</span> root <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">float</span>(<span class="string">'inf'</span>)  <span class="comment"># 如果只有一个孩子, 返回该孩子处的高度</span></span><br><span class="line">    <span class="keyword">if</span> root.left <span class="keyword">is</span> <span class="literal">None</span> <span class="keyword">and</span> root.right <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">    l = helper(root.left)</span><br><span class="line">    r = helper(root.right)</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">min</span>(l, r) + <span class="number">1</span></span><br></pre></td></tr></tbody></table></figure>
 <h2 id="top-down">Top Down</h2>
 <figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">minDepth</span>(<span class="params">self, root</span>):</span></span><br><span class="line">        <span class="keyword">if</span> root <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        self.ret = <span class="built_in">float</span>(<span class="string">'inf'</span>)</span><br><span class="line">        self.helper(root, <span class="number">1</span>)</span><br><span class="line">        <span class="keyword">return</span> self.ret</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">helper</span>(<span class="params">self, root, depth</span>):</span></span><br><span class="line">        <span class="keyword">if</span> root <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        <span class="keyword">if</span> root.left <span class="keyword">is</span> <span class="literal">None</span> <span class="keyword">and</span> root.right <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">            self.ret = <span class="built_in">min</span>(self.ret, depth)</span><br><span class="line">        </span><br><span class="line">        self.helper(root.left, depth + <span class="number">1</span>)</span><br><span class="line">        self.helper(root.right, depth + <span class="number">1</span>)</span><br><span class="line">        <span class="keyword">return</span></span><br></pre></td></tr></tbody></table></figure>
+]]></content>
+      <categories>
+        <category>计算机</category>
+        <category>算法</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>检查 Binary search tree (BST)</title>
+    <url>/posts/32064/</url>
+    <content><![CDATA[<p>定义: 对每个节点, 左子树的值都比它小, 右子树的值都比它大. </p><figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">    10</span><br><span class="line">   /  \</span><br><span class="line">  5    15</span><br><span class="line"> / \   / \</span><br><span class="line">2   7 12 20</span><br></pre></td></tr></tbody></table></figure> <figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">BST</span>(<span class="params">root</span>):</span></span><br><span class="line">    <span class="keyword">if</span> root <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">    min_val = <span class="built_in">float</span>(<span class="string">'-inf'</span>)</span><br><span class="line">    max_val = <span class="built_in">float</span>(<span class="string">'inf'</span>)</span><br><span class="line">    <span class="keyword">return</span> isBST(root, min_val, max_val)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">isBST</span>(<span class="params">root, min_val, max_val</span>):</span></span><br><span class="line">    <span class="keyword">if</span> root <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">    <span class="keyword">if</span> root.val &lt;= min_val <span class="keyword">or</span> root.val &gt;= max_val:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">    <span class="keyword">return</span> isBST(root.left, min_val, root.val) <span class="keyword">and</span> isBST(root.right, root.val, max_val)</span><br></pre></td></tr></tbody></table></figure><p></p>
 ]]></content>
       <categories>
         <category>计算机</category>
@@ -2177,13 +2288,22 @@ Q=\begin{bmatrix}1&amp;\\&amp;\frac12\end{bmatrix}\begin{bmatrix}0&amp;1\\1&amp;
       </categories>
   </entry>
   <entry>
-    <title>检查 Binary search tree (BST)</title>
-    <url>/posts/32064/</url>
-    <content><![CDATA[<p>定义: 对每个节点, 左子树的值都比它小, 右子树的值都比它大. </p><figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">    10</span><br><span class="line">   /  \</span><br><span class="line">  5    15</span><br><span class="line"> / \   / \</span><br><span class="line">2   7 12 20</span><br></pre></td></tr></tbody></table></figure> <figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">BST</span>(<span class="params">root</span>):</span></span><br><span class="line">    <span class="keyword">if</span> root <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">    min_val = <span class="built_in">float</span>(<span class="string">'-inf'</span>)</span><br><span class="line">    max_val = <span class="built_in">float</span>(<span class="string">'inf'</span>)</span><br><span class="line">    <span class="keyword">return</span> isBST(root, min_val, max_val)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">isBST</span>(<span class="params">root, min_val, max_val</span>):</span></span><br><span class="line">    <span class="keyword">if</span> root <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">    <span class="keyword">if</span> root.val &lt;= min_val <span class="keyword">or</span> root.val &gt;= max_val:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">    <span class="keyword">return</span> isBST(root.left, min_val, root.val) <span class="keyword">and</span> isBST(root.right, root.val, max_val)</span><br></pre></td></tr></tbody></table></figure><p></p>
+    <title>没什么远大理想</title>
+    <url>/posts/48210/</url>
+    <content><![CDATA[<p>我只希望在一个天气不那么晴的日子里，在一个不那么吵的地方，读一本没那么有用的书，听一点不那么流行的歌。</p>
 ]]></content>
       <categories>
-        <category>计算机</category>
-        <category>算法</category>
+        <category>随笔</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>泸沽湖</title>
+    <url>/posts/30601/</url>
+    <content><![CDATA[<p>淡霭缭绕，彩彻区朗。澄波荡漾，野凫满塘。泛舟湖上，蒹葭苍苍。薄暮冥冥，跃金浮光。</p>
+<p>每次下车，定有一群道德绑架犯伪装成兜售小贩的样子，为了一丁点蝇头小利各种卑鄙手段无所不用其极。吵嚷纠缠，丢尽了彝族人的脸，无论怎样的美景都在刹那间黯淡无光。试问我泱泱华夏，如今是否还有一片真正的净土？最后一丝少数民族的质朴，亦被利益磨到尸骨无存！</p>
+]]></content>
+      <categories>
+        <category>随笔</category>
       </categories>
   </entry>
   <entry>
@@ -2218,22 +2338,18 @@ E(\text{error})=\text{bias}^2+\text{Var}+\varepsilon.
       </categories>
   </entry>
   <entry>
-    <title>没什么远大理想</title>
-    <url>/posts/48210/</url>
-    <content><![CDATA[<p>我只希望在一个天气不那么晴的日子里，在一个不那么吵的地方，读一本没那么有用的书，听一点不那么流行的歌。</p>
+    <title>用两个 stack 实现 queue</title>
+    <url>/posts/27896/</url>
+    <content><![CDATA[<figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Queue</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self</span>) -&gt; <span class="literal">None</span>:</span></span><br><span class="line">        self.s1 = []  <span class="comment"># entrance</span></span><br><span class="line">        self.s2 = []  <span class="comment"># exit</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">enqueue</span>(<span class="params">self, x</span>):</span></span><br><span class="line">        self.s1.append(x)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">dequeue</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> self.s2:</span><br><span class="line">            <span class="keyword">while</span> self.s1:</span><br><span class="line">                self.s2.append(self.s1.pop())</span><br><span class="line">        <span class="keyword">return</span> self.s2.pop()</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">is_empty</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">not</span> self.s1 <span class="keyword">and</span> <span class="keyword">not</span> self.s2</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">size</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">len</span>(self.s1) + <span class="built_in">len</span>(self.s2)</span><br></pre></td></tr></tbody></table></figure>
+<p>时间:</p>
+<ul>
+<li>入队 <span class="math inline">\(O(1)\)</span></li>
+<li>出队最差 <span class="math inline">\(O(n)\)</span>, amortized <span class="math inline">\(O(1)\)</span></li>
+</ul>
 ]]></content>
       <categories>
-        <category>随笔</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>泸沽湖</title>
-    <url>/posts/30601/</url>
-    <content><![CDATA[<p>淡霭缭绕，彩彻区朗。澄波荡漾，野凫满塘。泛舟湖上，蒹葭苍苍。薄暮冥冥，跃金浮光。</p>
-<p>每次下车，定有一群道德绑架犯伪装成兜售小贩的样子，为了一丁点蝇头小利各种卑鄙手段无所不用其极。吵嚷纠缠，丢尽了彝族人的脸，无论怎样的美景都在刹那间黯淡无光。试问我泱泱华夏，如今是否还有一片真正的净土？最后一丝少数民族的质朴，亦被利益磨到尸骨无存！</p>
-]]></content>
-      <categories>
-        <category>随笔</category>
+        <category>计算机</category>
+        <category>算法</category>
       </categories>
   </entry>
   <entry>
@@ -2250,35 +2366,6 @@ E(\text{error})=\text{bias}^2+\text{Var}+\varepsilon.
       <categories>
         <category>计算机</category>
         <category>算法</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>用两个 stack 实现 queue</title>
-    <url>/posts/27896/</url>
-    <content><![CDATA[<figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Queue</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self</span>) -&gt; <span class="literal">None</span>:</span></span><br><span class="line">        self.s1 = []  <span class="comment"># entrance</span></span><br><span class="line">        self.s2 = []  <span class="comment"># exit</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">enqueue</span>(<span class="params">self, x</span>):</span></span><br><span class="line">        self.s1.append(x)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">dequeue</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> self.s2:</span><br><span class="line">            <span class="keyword">while</span> self.s1:</span><br><span class="line">                self.s2.append(self.s1.pop())</span><br><span class="line">        <span class="keyword">return</span> self.s2.pop()</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">is_empty</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">not</span> self.s1 <span class="keyword">and</span> <span class="keyword">not</span> self.s2</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">size</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">len</span>(self.s1) + <span class="built_in">len</span>(self.s2)</span><br></pre></td></tr></tbody></table></figure>
-<p>时间:</p>
-<ul>
-<li>入队 <span class="math inline">\(O(1)\)</span></li>
-<li>出队最差 <span class="math inline">\(O(n)\)</span>, amortized <span class="math inline">\(O(1)\)</span></li>
-</ul>
-]]></content>
-      <categories>
-        <category>计算机</category>
-        <category>算法</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>科普是一项非常难的工作</title>
-    <url>/posts/20918/</url>
-    <content><![CDATA[<p>要想当一个好学生，只需要把知识学懂。</p>
-<p>要想当一个好老师，需要一些基础知识，还需要良好的性格和表达能力、心理学和教育学经验。</p>
-<p>要想当一个好教授，需要有专业知识、科研水平，只需要一般般的表达能力。</p>
-<p><strong>而要当一个好的科普工作者，需要有远超学生的理解能力，教授一样的专业水平，老师一样的教学功力，艺术家一样的审美，作家一样的文笔，诗人一样的清高，科学家一样对知识的热爱，艺人一样对大众心理的把控能力，运动员一样的毅力，还要有自身的人格魅力、抗压抗打击能力。</strong></p>
-<p>科普是一项非常难的工作，比讲课教书难得多。因为它面对的不是专业人士，而是乌合之众。这导致科普工作者必须用通俗语言来解释专业知识，却又不至于过于通俗而产生误导。稍微有一点漏洞就会被抓住攻击——有问题的科普比谣言更可怕，比迷信更害人。</p>
-<p>所以，科普工作者是一个神圣的标签，这个名号比想象中要严苛得多。</p>
-]]></content>
-      <categories>
-        <category>随笔</category>
       </categories>
   </entry>
   <entry>
@@ -2327,20 +2414,6 @@ z = {p_1-p_2\over\sqrt{p(1-p)(1/n_1+1/n_2)}}
       <categories>
         <category>数学</category>
         <category>统计</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>翻转二叉树</title>
-    <url>/posts/22393/</url>
-    <content><![CDATA[<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">    1            4</span><br><span class="line">   / \          / \</span><br><span class="line">  2   3   -&gt;   5   2</span><br><span class="line"> / \              / \</span><br><span class="line">4   5            3   1</span><br></pre></td></tr></tbody></table></figure>
-<p>单元: </p><figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">  A          B</span><br><span class="line"> / \   -&gt;   / \</span><br><span class="line">B   C      C   A</span><br></pre></td></tr></tbody></table></figure> <figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line">root.left.left = root.right</span><br><span class="line">root.left.right = root</span><br><span class="line">root.left = <span class="literal">None</span></span><br><span class="line">root.right = <span class="literal">None</span></span><br></pre></td></tr></tbody></table></figure><p></p>
-<figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">upside</span>(<span class="params">root</span>):</span></span><br><span class="line">    <span class="keyword">if</span> root <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">        <span class="keyword">return</span> root</span><br><span class="line">    <span class="keyword">if</span> root.left <span class="keyword">is</span> <span class="literal">None</span> <span class="keyword">and</span> root.right <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">        <span class="keyword">return</span> root</span><br><span class="line">    new_root = upside(root.left)</span><br><span class="line">    root.left.left = root.right</span><br><span class="line">    root.left.right = root</span><br><span class="line">    root.left = <span class="literal">None</span></span><br><span class="line">    root.right = <span class="literal">None</span></span><br><span class="line">    <span class="keyword">return</span> new_root</span><br></pre></td></tr></tbody></table></figure>
-<p>时间: <span class="math inline">\(O(n/3)=O(n)\)</span></p>
-<p>空间: <span class="math inline">\(O(n/3)=O(n)\)</span></p>
-]]></content>
-      <categories>
-        <category>计算机</category>
-        <category>算法</category>
       </categories>
   </entry>
   <entry>
@@ -2426,6 +2499,20 @@ M=\frac{1}{\omega} D+L, \quad N=\frac{1-\omega}{\omega} D-U
       </categories>
   </entry>
   <entry>
+    <title>科普是一项非常难的工作</title>
+    <url>/posts/20918/</url>
+    <content><![CDATA[<p>要想当一个好学生，只需要把知识学懂。</p>
+<p>要想当一个好老师，需要一些基础知识，还需要良好的性格和表达能力、心理学和教育学经验。</p>
+<p>要想当一个好教授，需要有专业知识、科研水平，只需要一般般的表达能力。</p>
+<p><strong>而要当一个好的科普工作者，需要有远超学生的理解能力，教授一样的专业水平，老师一样的教学功力，艺术家一样的审美，作家一样的文笔，诗人一样的清高，科学家一样对知识的热爱，艺人一样对大众心理的把控能力，运动员一样的毅力，还要有自身的人格魅力、抗压抗打击能力。</strong></p>
+<p>科普是一项非常难的工作，比讲课教书难得多。因为它面对的不是专业人士，而是乌合之众。这导致科普工作者必须用通俗语言来解释专业知识，却又不至于过于通俗而产生误导。稍微有一点漏洞就会被抓住攻击——有问题的科普比谣言更可怕，比迷信更害人。</p>
+<p>所以，科普工作者是一个神圣的标签，这个名号比想象中要严苛得多。</p>
+]]></content>
+      <categories>
+        <category>随笔</category>
+      </categories>
+  </entry>
+  <entry>
     <title>自习</title>
     <url>/posts/12721/</url>
     <content><![CDATA[<p>屋外的松树轻柔地律动，都贴到窗上来了。白茫茫的远空，不缓不急的阳光，飘香的槐花，清凉的音乐。</p>
@@ -2455,43 +2542,17 @@ M=\frac{1}{\omega} D+L, \quad N=\frac{1-\omega}{\omega} D-U
       </categories>
   </entry>
   <entry>
-    <title>虚拟语气</title>
-    <url>/posts/22564/</url>
-    <content><![CDATA[<h2 id="不可能假设">不可能假设</h2>
-<p>现在:</p>
-<ul>
-<li>If I saw the rabbit now, I would bite him.</li>
-</ul>
-<p>将来:</p>
-<ul>
-<li>If I should (were to) see the rabbit tomorrow, I would bite him.</li>
-</ul>
-<p>过去:</p>
-<ul>
-<li>If I had seen the rabbit yesterday, I would have bitten him.</li>
-</ul>
-<span id="more"></span>
-<h2 id="愿望">愿望</h2>
-<p>现在:</p>
-<ul>
-<li><p>I wish (that) I were a rabbit.</p></li>
-<li><p>I would rather you didn't eat the carrot.</p></li>
-<li><p>I suggest/insist/order/demand that you (should) give me a carrot.</p></li>
-<li><p>It is (high) time that you ate a carrot.</p></li>
-</ul>
-<p>过去:</p>
-<ul>
-<li><p>I wish I had eaten the carrot.</p></li>
-<li><p>I would rather you hadn't eaten the carrot.</p></li>
-<li><p>I suggested/insisted/ordered/demanded that you (should) give me a carrot.</p></li>
-</ul>
-<p>将来:</p>
-<ul>
-<li>I wish I could eat the carrot.</li>
-</ul>
+    <title>翻转二叉树</title>
+    <url>/posts/22393/</url>
+    <content><![CDATA[<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">    1            4</span><br><span class="line">   / \          / \</span><br><span class="line">  2   3   -&gt;   5   2</span><br><span class="line"> / \              / \</span><br><span class="line">4   5            3   1</span><br></pre></td></tr></tbody></table></figure>
+<p>单元: </p><figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">  A          B</span><br><span class="line"> / \   -&gt;   / \</span><br><span class="line">B   C      C   A</span><br></pre></td></tr></tbody></table></figure> <figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line">root.left.left = root.right</span><br><span class="line">root.left.right = root</span><br><span class="line">root.left = <span class="literal">None</span></span><br><span class="line">root.right = <span class="literal">None</span></span><br></pre></td></tr></tbody></table></figure><p></p>
+<figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">upside</span>(<span class="params">root</span>):</span></span><br><span class="line">    <span class="keyword">if</span> root <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">        <span class="keyword">return</span> root</span><br><span class="line">    <span class="keyword">if</span> root.left <span class="keyword">is</span> <span class="literal">None</span> <span class="keyword">and</span> root.right <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">        <span class="keyword">return</span> root</span><br><span class="line">    new_root = upside(root.left)</span><br><span class="line">    root.left.left = root.right</span><br><span class="line">    root.left.right = root</span><br><span class="line">    root.left = <span class="literal">None</span></span><br><span class="line">    root.right = <span class="literal">None</span></span><br><span class="line">    <span class="keyword">return</span> new_root</span><br></pre></td></tr></tbody></table></figure>
+<p>时间: <span class="math inline">\(O(n/3)=O(n)\)</span></p>
+<p>空间: <span class="math inline">\(O(n/3)=O(n)\)</span></p>
 ]]></content>
       <categories>
-        <category>英语</category>
+        <category>计算机</category>
+        <category>算法</category>
       </categories>
   </entry>
   <entry>
@@ -2682,6 +2743,46 @@ a_n={n!\over(2n+1)!!}\cdot{1\over n+1}，
       </categories>
   </entry>
   <entry>
+    <title>虚拟语气</title>
+    <url>/posts/22564/</url>
+    <content><![CDATA[<h2 id="不可能假设">不可能假设</h2>
+<p>现在:</p>
+<ul>
+<li>If I saw the rabbit now, I would bite him.</li>
+</ul>
+<p>将来:</p>
+<ul>
+<li>If I should (were to) see the rabbit tomorrow, I would bite him.</li>
+</ul>
+<p>过去:</p>
+<ul>
+<li>If I had seen the rabbit yesterday, I would have bitten him.</li>
+</ul>
+<span id="more"></span>
+<h2 id="愿望">愿望</h2>
+<p>现在:</p>
+<ul>
+<li><p>I wish (that) I were a rabbit.</p></li>
+<li><p>I would rather you didn't eat the carrot.</p></li>
+<li><p>I suggest/insist/order/demand that you (should) give me a carrot.</p></li>
+<li><p>It is (high) time that you ate a carrot.</p></li>
+</ul>
+<p>过去:</p>
+<ul>
+<li><p>I wish I had eaten the carrot.</p></li>
+<li><p>I would rather you hadn't eaten the carrot.</p></li>
+<li><p>I suggested/insisted/ordered/demanded that you (should) give me a carrot.</p></li>
+</ul>
+<p>将来:</p>
+<ul>
+<li>I wish I could eat the carrot.</li>
+</ul>
+]]></content>
+      <categories>
+        <category>英语</category>
+      </categories>
+  </entry>
+  <entry>
     <title>这种教育的意义就是磨灭所有人的学习热情</title>
     <url>/posts/51371/</url>
     <content><![CDATA[<p>今天我们学习检索，首先，文献分为以下几类，这几类有这样的联系，检索有以下几种方法，它们有这样那样的优缺点，这个检索是在这个时间由这家公司创办的。 下面我们做检索的练习，检索分为以下几个步骤，首先就是检索准备。要明确学科属性，弄清信息类型，明确信息要求。</p>
@@ -2699,6 +2800,15 @@ a_n={n!\over(2n+1)!!}\cdot{1\over n+1}，
       <categories>
         <category>计算机</category>
         <category>算法</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>过年</title>
+    <url>/posts/22344/</url>
+    <content><![CDATA[<p>写完春联，躺在窗边的床上，阳光晒着肚皮，窗外是湛蓝的天空，屋外是油锅的噼啪声</p>
+]]></content>
+      <categories>
+        <category>随笔</category>
       </categories>
   </entry>
   <entry>
@@ -2727,15 +2837,6 @@ a_n={n!\over(2n+1)!!}\cdot{1\over n+1}，
       <categories>
         <category>计算机</category>
         <category>算法</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>过年</title>
-    <url>/posts/22344/</url>
-    <content><![CDATA[<p>写完春联，躺在窗边的床上，阳光晒着肚皮，窗外是湛蓝的天空，屋外是油锅的噼啪声</p>
-]]></content>
-      <categories>
-        <category>随笔</category>
       </categories>
   </entry>
   <entry>
