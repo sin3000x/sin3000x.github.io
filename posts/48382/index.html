@@ -21,19 +21,21 @@
     var CONFIG = {"hostname":"sin3000x.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="Hessian 是数量场的二阶导: \[H_{i,j}&#x3D;{\partial f\over\partial x_i\partial x_j}\] Jacobian 是向量场的一阶导: \[J_{i,j}&#x3D;{\partial\bm{f_i}\over\partial x_j}\] 二者的关系: Hessian 是数量场梯度的 Jacobian, 即 \(H(f)&#x3D;J(\nabla f)\).  🌰">
+  <meta name="description" content="证明 \[ I&#x3D;\int_{-\infty}^\infty\e^{-x^2}\d x&#x3D;\sqrt{\pi}. \]">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hesse 矩阵与Jacobi 矩阵">
-<meta property="og:url" content="https://sin3000x.github.io/posts/44547/index.html">
+<meta property="og:title" content="Gauss 积分">
+<meta property="og:url" content="https://sin3000x.github.io/posts/48382/index.html">
 <meta property="og:site_name" content="记问之学，不足以为人师">
-<meta property="og:description" content="Hessian 是数量场的二阶导: \[H_{i,j}&#x3D;{\partial f\over\partial x_i\partial x_j}\] Jacobian 是向量场的一阶导: \[J_{i,j}&#x3D;{\partial\bm{f_i}\over\partial x_j}\] 二者的关系: Hessian 是数量场梯度的 Jacobian, 即 \(H(f)&#x3D;J(\nabla f)\).  🌰">
+<meta property="og:description" content="证明 \[ I&#x3D;\int_{-\infty}^\infty\e^{-x^2}\d x&#x3D;\sqrt{\pi}. \]">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-01-21T09:10:59.000Z">
-<meta property="article:modified_time" content="2022-06-01T19:52:00.969Z">
+<meta property="og:image" content="https://sin3000x.github.io/posts/48382/截屏2022-10-04%2021.12.16.png">
+<meta property="article:published_time" content="2022-10-04T10:57:32.000Z">
+<meta property="article:modified_time" content="2022-10-04T13:25:48.460Z">
 <meta property="article:author" content="Jeremy Gu">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://sin3000x.github.io/posts/48382/截屏2022-10-04%2021.12.16.png">
 
-<link rel="canonical" href="https://sin3000x.github.io/posts/44547/">
+<link rel="canonical" href="https://sin3000x.github.io/posts/48382/">
 
 
 <script id="page-configurations">
@@ -46,7 +48,7 @@
   };
 </script>
 
-  <title>Hesse 矩阵与Jacobi 矩阵 | 记问之学，不足以为人师</title>
+  <title>Gauss 积分 | 记问之学，不足以为人师</title>
   
 
 
@@ -187,7 +189,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://sin3000x.github.io/posts/44547/">
+    <link itemprop="mainEntityOfPage" href="https://sin3000x.github.io/posts/48382/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/bunny.png">
@@ -200,7 +202,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Hesse 矩阵与Jacobi 矩阵
+          Gauss 积分
         </h1>
 
         <div class="post-meta">
@@ -209,16 +211,10 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2022-01-21 17:10:59" itemprop="dateCreated datePublished" datetime="2022-01-21T17:10:59+08:00">2022-01-21</time>
+              <time title="创建时间：2022-10-04 18:57:32 / 修改时间：21:25:48" itemprop="dateCreated datePublished" datetime="2022-10-04T18:57:32+08:00">2022-10-04</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-06-02 03:52:00" itemprop="dateModified" datetime="2022-06-02T03:52:00+08:00">2022-06-02</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -237,7 +233,7 @@
                 </span>
                   ，
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E5%AD%A6/%E5%88%86%E6%9E%90/%E5%BE%AE%E7%A7%AF%E5%88%86/%E5%A4%9A%E5%85%83%E5%BE%AE%E7%A7%AF%E5%88%86/" itemprop="url" rel="index"><span itemprop="name">多元微积分</span></a>
+                  <a href="/categories/%E6%95%B0%E5%AD%A6/%E5%88%86%E6%9E%90/%E5%BE%AE%E7%A7%AF%E5%88%86/%E5%8D%95%E5%8F%98%E9%87%8F%E5%BE%AE%E7%A7%AF%E5%88%86/" itemprop="url" rel="index"><span itemprop="name">单变量微积分</span></a>
                 </span>
             </span>
 
@@ -259,16 +255,128 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>Hessian 是<strong>数量场</strong>的二阶导: <span class="math display">\[H_{i,j}={\partial f\over\partial x_i\partial x_j}\]</span></p>
-<p>Jacobian 是<strong>向量场</strong>的一阶导: <span class="math display">\[J_{i,j}={\partial\bm{f_i}\over\partial x_j}\]</span></p>
-<p>二者的关系: Hessian 是数量场梯度的 Jacobian, 即 <span class="math inline">\(H(f)=J(\nabla f)\)</span>.</p>
+        <p>证明 <span class="math display">\[
+I=\int_{-\infty}^\infty\e^{-x^2}\d x=\sqrt{\pi}.
+\]</span> <span id="more"></span></p>
+<h2 id="二重积分泊松的方法">二重积分（泊松的方法）</h2>
+<p><span class="math display">\[
+\begin{align*}
+I^2 &amp;= \left(\int_{-\infty}^\infty\e^{-x^2}\d x\right)\left(\int_{-\infty}^\infty\e^{-y^2}\d y\right) \\
+&amp;= \int_{-\infty}^{\infty}\int_{-\infty}^{\infty}\e^{-(x^2+y^2)}\d x\d y
+\end{align*}
+\]</span></p>
+<p>利用<a href="/posts/26639/" title="极坐标换元">极坐标换元</a>可以得到 <span class="math display">\[
+\begin{align*}
+I^2&amp;=\int_{0}^{2\pi}\int_0^\infty\e^{-r^2}r\d r\d\theta\\
+&amp;= 2\pi\int_0^\infty\e^{-r^2}r\d r\\
+&amp;= 2\pi\cdot\frac12\int_0^\infty\e^{-r^2}\d(r^2)\\
+&amp;= -\pi\cdot\left[\e^{-r^2}\right]_0^\infty\\
+&amp;= -\pi\cdot(0-1)\\
+&amp;= \pi.
+\end{align*}
+\]</span> 显然 <span class="math inline">\(I&gt;0\)</span>, 于是 <span class="math display">\[
+I=\sqrt{\pi}.
+\]</span></p>
 <blockquote>
-<p>🌰 <span class="math inline">\(f(x,y)=x^2+y^2\)</span></p>
-<ul>
-<li><span class="math inline">\(H(f)=\begin{bmatrix}2&amp;0\\0&amp;2\end{bmatrix}\)</span></li>
-<li><span class="math inline">\(J(\nabla f)=J\left(\begin{bmatrix} 2x\\2y \end{bmatrix}\right)=\begin{bmatrix}2&amp;0\\0&amp;2\end{bmatrix}\)</span></li>
-</ul>
+<p>注：其中需要严格证明反常重积分与累次积分是相等的。首先，利用比较判别法说明 <span class="math inline">\(I\)</span> 是绝对收敛的，就可以说明 <span class="math inline">\(I\)</span> 与其柯西主值相等。即 <span class="math display">\[
+I=\lim_{a\to+\infty}I(a)=\lim_{a\to+\infty}\int_{-a}^a\e^{-x^2}\d x.
+\]</span> 利用 Fubini 定理可以说明对于 <span class="math inline">\(I(a)\)</span>，二重积分与累次积分是相等的。此时积分区域是一个正方形，边长为 <span class="math inline">\(2a\)</span>。</p>
+<p>之后，我们利用该正方形的<strong>外接圆</strong>和<strong>内切圆</strong>来用极坐标代换算两个重积分，这两个重积分最终都收敛于 <span class="math inline">\(\sqrt{\pi}\)</span>。最后利用夹逼准则说明结果成立。</p>
 </blockquote>
+<h2 id="笛卡尔坐标系拉普拉斯的方法">笛卡尔坐标系（拉普拉斯的方法）</h2>
+<p>由于被积函数是偶函数，可以利用对称性得到 <span class="math display">\[
+I=2\int_0^\infty\e^{-x^2}\d x,
+\]</span> 那么 <span class="math display">\[
+I^2=4\int_0^\infty\left(\int_0^\infty\e^{-(x^2+y^2)}\d y\right)\d x.
+\]</span> 这里关键的代换是在 <span class="math inline">\(y\)</span> 的积分里让 <span class="math inline">\(y=xs\)</span> （此时把 <span class="math inline">\(x\)</span> 看作常数，积分关于 <span class="math inline">\(s\)</span>），如果 <span class="math inline">\(x\)</span> 和 <span class="math inline">\(y\)</span> 都可正可负，会让 <span class="math inline">\(s\)</span> 的范围难以确定，所以之前都换成了正的范围。</p>
+<p>接下来 <span class="math display">\[
+\begin{align*}
+I^2&amp;=4\int_0^\infty\left(\int_0^\infty\e^{-(x^2+x^2s^2)}x\d s\right)\d x\\
+&amp;= 4\int_0^\infty\left(\int_0^\infty\e^{-x^2(1+s^2)}x\d x\right)\d s\\
+&amp;= 4\int_0^\infty\left(\frac12\int_0^\infty\e^{-x^2(1+s^2)}\d (x^2)\right)\d s\\
+&amp;= 2\int_0^\infty\left(\left.-\frac{1}{1+s^2}\e^{-x^2(1+s^2)}\right|_{x=0}^{x=\infty}\right)\d s\\
+&amp;=2\int_0^\infty\frac{1}{1+s^2}\d s\\
+&amp;= 2\ \left.\arctan s\right|_0^\infty\\
+&amp;=2\times\frac\pi2\\
+&amp;= \pi,
+\end{align*}
+\]</span> 同样 <span class="math inline">\(I=\sqrt\pi\)</span>.</p>
+<blockquote>
+<p>注：我们同样利用 Fubini 定理保障了积分换序不影响结果。</p>
+</blockquote>
+<h2 id="gamma-函数">Gamma 函数</h2>
+<p>做变量代换 <span class="math inline">\(x=\sqrt{t}\)</span> 可以得到 <span class="math display">\[
+I=2\int_0^\infty\e^{-x^2}\d x=2\int_0^\infty\e^{-t}\cdot\frac12t^{-\frac12}\d t=\Gamma\left(\frac12\right).
+\]</span> 之后可以利用 Gamma 函数的性质比如</p>
+<ul>
+<li><p>余元公式 <span class="math display">\[
+\Gamma(1-z)\Gamma(z)={\pi\over\sin\pi z}
+\]</span> 中令 <span class="math inline">\(z=\frac12\)</span>.</p></li>
+<li><p>倍乘公式 <span class="math display">\[
+\Gamma(2z)={2^{2z-1}\over\sqrt\pi}\Gamma(z)\Gamma\left(z+\frac12\right)
+\]</span> 中令 <span class="math inline">\(z=\frac12\)</span>.</p></li>
+<li><p>Beta 函数 <span class="math display">\[
+B(x,y)={\Gamma(x)\Gamma(y)\over\Gamma(x+y)}
+\]</span> 中令 <span class="math inline">\(x=y=\frac12\)</span>，那么 <span class="math display">\[
+\Gamma\left(\frac12\right)=\sqrt {B\left(\frac12, \frac12\right)}.
+\]</span> 其中 <span class="math display">\[
+\begin{align*}
+B\left(\frac12, \frac12\right)&amp;=\int_0^1x^{-\frac12}(1-x)^{-\frac12}\d x\\
+&amp;=\int_0^{1}(t^2)^{-\frac12}(1- t^2)^{-\frac12}\cdot2t\d t\qquad (x=t^2)\\
+&amp;=2\int_0^1(1-t^2)^{-\frac12}\d t\\
+&amp;=2\left.\arcsin t\right|_0^1\\
+&amp;=\pi.
+\end{align*}
+\]</span></p></li>
+<li><p>递推公式 <span class="math display">\[
+\Gamma\left(n+\frac12\right)=\Gamma\left(\frac12\right)\times\frac12\times\frac32\times\cdots\times{2n-1\over2}=\Gamma\left(\frac12\right)\cdot{(2n)!\over2^{2n}n!}
+\]</span> 中令 <span class="math inline">\(n\to\infty\)</span> 并利用 Stirling 公式。</p></li>
+</ul>
+<blockquote>
+<p>注：其中更强的公式有很多种证法，可以设法避免循环论证。</p>
+</blockquote>
+<h2 id="积分号下求导">积分号下求导</h2>
+<h3 id="法一">法一</h3>
+<p>令 <span class="math display">\[
+A(t)=\left(\int_0^t\e^{-x^2}\d x\right)^2,\ B(t)=\int_0^1{\e^{-t^2(1+x^2)}\over1+x^2}\d x
+\]</span> 可以得到 <span class="math inline">\(A'(t)=-B'(t)\)</span>，其中 <span class="math inline">\(t&gt;0\)</span>。之后可以得到 <span class="math display">\[
+A(t)=B(t)+\frac\pi4,
+\]</span> 这个常数是通过让 <span class="math inline">\(t\to0^+\)</span> 得出的。</p>
+<p>再让 <span class="math inline">\(t\to+\infty\)</span> 便得到了 <span class="math display">\[
+\left(\int_0^\infty\e^{-x^2}\d x\right)^2=\frac\pi4.
+\]</span></p>
+<h3 id="法二">法二</h3>
+<p>令 <span class="math display">\[
+F(t)=\int_0^\infty{\e^{-t^2(1+x^2)}\over 1+x^2}\d x,
+\]</span> 可得 <span class="math display">\[
+F'(t)=-I\e^{-t^2}
+\]</span> 那么 <span class="math display">\[
+F(+\infty)-F(0)=\int_0^\infty F'(t)\d t=\int_0^\infty -I\e^{-t^2}\d t=-\frac12I^2,
+\]</span> 所以 <span class="math display">\[
+I^2=2\left(F(0)-F(+\infty)\right)=2\int_0^\infty{1\over1+x^2}\d x=\pi.
+\]</span></p>
+<h2 id="留数定理奇葩的方法">留数定理（奇葩的方法）</h2>
+<p>令 <span class="math display">\[
+f(z)={\e^{-\frac{z^2}{2}}\over 1+\e^{-\tau z}},
+\]</span> 其中 <span class="math inline">\(\tau=\sqrt{\pi}(1+\i)\)</span>.</p>
+<p>这样的取值满足 <span class="math display">\[
+\begin{equation}\label{shift}
+f(z)-f(z+\tau)=\e^{-\frac{z^2}{2}}.
+\end{equation}
+\]</span> <span class="math inline">\(f\)</span> 的奇点落在 <span class="math inline">\(y=x\)</span> 上，围道与奇点如图：</p>
+<p><img src="截屏2022-10-04%2021.12.16.png"></p>
+<p>由留数定理，可得 <span class="math display">\[
+\oint_{\gamma_R}f(z)\d z=2\pi\i\cdot\mathrm{Res}\left(f;z=\frac\tau2\right)=\sqrt{2\pi}.
+\]</span> 令 <span class="math inline">\(R\to\infty\)</span>，只剩下上下两条边对积分有贡献，于是 <span class="math display">\[
+\begin{align*}
+\sqrt{2\pi}&amp;=\int_{-\infty}^\infty f(x)\d x-\int_{-\infty}^\infty f(x+\i\sqrt\pi)\d x\\
+&amp;=\int_{-\infty}^\infty f(x)\d x-\int_{-\infty}^\infty f(x+\tau-\pi)\d x\\
+&amp;=\int_{-\infty}^\infty f(x)\d x-\int_{-\infty}^\infty f(x+\tau)\d x\\
+&amp;=\int_{-\infty}^\infty \left(f(x)-f(x+\tau)\right)\d x\\
+\end{align*}
+\]</span> 利用性质 <span class="math inline">\(\eqref{shift}\)</span>​ 可得 <span class="math display">\[
+\sqrt{2\pi}=\int_{-\infty}^\infty\e^{-\frac{x^2}{2}}\d x,
+\]</span> 再代换 <span class="math inline">\(x=\sqrt 2t\)</span> 即可得 <span class="math inline">\(I=\sqrt\pi\)</span>.</p>
 
     </div>
 
@@ -284,13 +392,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/posts/64221/" rel="prev" title="泛函基础">
-      <i class="fa fa-chevron-left"></i> 泛函基础
+    <a href="/posts/1458/" rel="prev" title="Boosting">
+      <i class="fa fa-chevron-left"></i> Boosting
     </a></div>
-      <div class="post-nav-item">
-    <a href="/posts/36991/" rel="next" title="最小二乘法">
-      最小二乘法 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -349,6 +454,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E9%87%8D%E7%A7%AF%E5%88%86%E6%B3%8A%E6%9D%BE%E7%9A%84%E6%96%B9%E6%B3%95"><span class="nav-number">1.</span> <span class="nav-text">二重积分（泊松的方法）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%9B%E5%8D%A1%E5%B0%94%E5%9D%90%E6%A0%87%E7%B3%BB%E6%8B%89%E6%99%AE%E6%8B%89%E6%96%AF%E7%9A%84%E6%96%B9%E6%B3%95"><span class="nav-number">2.</span> <span class="nav-text">笛卡尔坐标系（拉普拉斯的方法）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#gamma-%E5%87%BD%E6%95%B0"><span class="nav-number">3.</span> <span class="nav-text">Gamma 函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A7%AF%E5%88%86%E5%8F%B7%E4%B8%8B%E6%B1%82%E5%AF%BC"><span class="nav-number">4.</span> <span class="nav-text">积分号下求导</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B3%95%E4%B8%80"><span class="nav-number">4.1.</span> <span class="nav-text">法一</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B3%95%E4%BA%8C"><span class="nav-number">4.2.</span> <span class="nav-text">法二</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%95%99%E6%95%B0%E5%AE%9A%E7%90%86%E5%A5%87%E8%91%A9%E7%9A%84%E6%96%B9%E6%B3%95"><span class="nav-number">5.</span> <span class="nav-text">留数定理（奇葩的方法）</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
