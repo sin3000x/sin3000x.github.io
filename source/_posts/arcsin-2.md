@@ -30,39 +30,12 @@ $$
 &=x\int_0^1{\mathrm dt\over 1-x^2+x^2t^2}\\
 &=x\int_0^1\sum_{n=0}^\infty(x^2-x^2t^2)^n\,\mathrm dt\\
 &=\int_0^1\sum_{n=0}^\infty (1-t^2)^nx^{2n+1}\,\mathrm dt\\
-&=\sum_{n=0}^\infty\left(\int_0^1(1-t^2)^n\,\mathrm dt\right) x^{2n+1}.
-\end{align*}
-$$
-其中利用分部积分
-$$
-\begin{align*}
-I_n&=\int_0^1(1-t^2)^n\,\mathrm dt\\
-&=\int_0^1(1-t^2)(1-t^2)^{n-1}\,\mathrm dt\\
-&=\int_0^1(1-t^2)^{n-1}\,\mathrm dt-\int_0^1t^2(1-t^2)^{n-1}\,\mathrm dt\\
-&=I_{n-1}+\frac{1}{2n}\int_0^1t\,\mathrm d(1-t^2)^{n}\\
-&=I_{n-1}+\frac{1}{2n}\left.t(1-t^2)^n\right|_0^1-\frac{1}{2n}\int_0^1(1-t^2)^n\,\mathrm dt\\
-&=I_{n-1}-\frac{1}{2n}I_n\\
-&={2n\over2n+1}I_{n-1},
-%&=\left.t(1-t^2)\right|_{0}^1-n\int_0^1t(1-t^2)^{n-1}\,\mathrm dt\\
-%&=-n\left(\left.t^2(1-t^2)^{n-1}\right|_0^1-\int_0^1\left((1-t^2)^{n-1}-2(n-1)t^2(1-t^2)^{n-2}\right)\,\mathrm dt\right)\\
-%&=n\int_0^1(1-t^2)^{n-1}\,\mathrm dt+2n(n-1)\int_0^1t^2(1-t^2)^{n-2}\,\mathrm dt
-%&=\int_0^1\sum_{k=0}^n{n\choose k}(-t^2)^k\,\mathrm dt\\
-%&=\int_0^1\sum_{k=0}^n{n\choose k}(-1)^kt^{2k}\,\mathrm dt\\
-%&=\sum_{k=0}^n{n\choose k}(-1)^k\int_0^1t^{2k}\,\mathrm dt\\
-%&=\sum_{k=0}^n{(-1)^k{n\choose k}\over 2k+1}
-\end{align*}
-$$
-递推可得
-$$
-I_n={(2n)!!\over(2n+1)!!}.
-$$
-故
-$$
-\begin{align*}
-{\arcsin x\over\sqrt{1-x^2}}&=\sum_{n=0}^\infty\left(\int_0^1(1-t^2)^n\,\mathrm dt\right) x^{2n+1}\\
+&=\sum_{n=0}^\infty\left(\int_0^1(1-t^2)^n\,\mathrm dt\right) x^{2n+1}\\
 &=\sum_{n=0}^\infty{(2n)!!\over(2n+1)!!}x^{2n+1}.
 \end{align*}
 $$
+其中我们利用了{% post_link int 结论%}。
+
 于是积分：
 $$
 \begin{align*}

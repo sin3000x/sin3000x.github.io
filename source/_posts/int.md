@@ -19,8 +19,14 @@ $$\int\frac{1}{\sqrt{1+x^2}} \,\mathrm{d}x=\sinh^{-1}x+C$$
 <!--more-->
 
 ## 定积分
-$$\int_0^{\frac \pi2}\ln(\sin x)=\int_0^{\frac \pi2}\ln(\cos x)=-\frac\pi2\ln2$$
-
 $$\int_{-a}^af(x)\,\mathrm{d}x=\int_{0}^a\left(f(x)+f(-x)\right)\,\mathrm{d}x$$
 
 $$\int_{0}^{\pi}xf(\sin x)\,\mathrm{d}x=\frac\pi2\int_{0}^\pi f(\sin x)\,\mathrm{d}x$$
+
+{% post_link 积分-1-x-2-n $$\int_0^1(1-x^2)^n\d x={(2n)!!\over(2n+1)!!}$$%}
+
+## 反常积分
+
+{% post_link Gauss-积分 $$\int_{-\infty}^\infty \e^{-x^2}\d x=\sqrt\pi$$ %}
+
+$$\int_0^{\frac \pi2}\ln(\sin x)=\int_0^{\frac \pi2}\ln(\cos x)=-\frac\pi2\ln2$$
