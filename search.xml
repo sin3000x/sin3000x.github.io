@@ -26,6 +26,19 @@
       </categories>
   </entry>
   <entry>
+    <title>BST中的第二大元素</title>
+    <url>/posts/32090/</url>
+    <content><![CDATA[<h2 id="解法一">解法一</h2>
+<p>反向的中序遍历, 第二个节点就是第二大的. </p><figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">second_largest</span>(<span class="params">self</span>):</span></span><br><span class="line">        self.count = <span class="number">0</span></span><br><span class="line">        self.result = <span class="literal">None</span></span><br><span class="line">        self.traverse(root)</span><br><span class="line">        <span class="keyword">return</span> self.result</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">traverse</span>(<span class="params">self, root</span>):</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> root:</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        self.traverse(root.right)</span><br><span class="line">        self.count += <span class="number">1</span></span><br><span class="line">        <span class="keyword">if</span> self.count == <span class="number">2</span>:</span><br><span class="line">            self.result = root.val</span><br><span class="line">            <span class="keyword">return</span>       </span><br><span class="line">        <span class="keyword">if</span> self.count &gt; <span class="number">1</span>:</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        self.traverse(root.left)</span><br></pre></td></tr></tbody></table></figure> 时间: <span class="math inline">\(O(h)\)</span> 空间: <span class="math inline">\(O(h)\)</span><p></p>
+<h2 id="解法二">解法二</h2>
+<p>分类讨论. </p><figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">find_largest</span>(<span class="params">root</span>):</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> root:</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> root.right:  <span class="comment"># 没有右子树时, 根是最大的</span></span><br><span class="line">        <span class="keyword">return</span> root</span><br><span class="line">    <span class="keyword">return</span> find_largest(root.right)  <span class="comment"># 有右子树时, 找其中最大的</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">find_2nd_largest</span>(<span class="params">root</span>):</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> root:</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> root.right:  <span class="comment"># 没有右子树, 根最大; 左子树的最大就是第二大</span></span><br><span class="line">        <span class="keyword">return</span> find_largest(root.left)</span><br><span class="line">    <span class="comment"># 有右子树, 此时最大元素在右子树中</span></span><br><span class="line">    right = root.right</span><br><span class="line">    <span class="comment"># 右子树只有一个节点, 它是最大的, 根第二大</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> right.left <span class="keyword">and</span> <span class="keyword">not</span> right.right:  </span><br><span class="line">        <span class="keyword">return</span> root</span><br><span class="line">    <span class="comment"># 右子树还有子树, 在这里面找第二大的</span></span><br><span class="line">    <span class="keyword">return</span> find_2nd_largest(right)</span><br></pre></td></tr></tbody></table></figure><p></p>
+]]></content>
+      <categories>
+        <category>计算机</category>
+        <category>算法</category>
+      </categories>
+  </entry>
+  <entry>
     <title>Confusion Matrix</title>
     <url>/posts/39658/</url>
     <content><![CDATA[<p>对于二分类问题, 结果被分为真阳, 假阳, 真阴, 假阴四种情况.</p>
@@ -79,19 +92,6 @@
       </categories>
   </entry>
   <entry>
-    <title>BST中的第二大元素</title>
-    <url>/posts/32090/</url>
-    <content><![CDATA[<h2 id="解法一">解法一</h2>
-<p>反向的中序遍历, 第二个节点就是第二大的. </p><figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">second_largest</span>(<span class="params">self</span>):</span></span><br><span class="line">        self.count = <span class="number">0</span></span><br><span class="line">        self.result = <span class="literal">None</span></span><br><span class="line">        self.traverse(root)</span><br><span class="line">        <span class="keyword">return</span> self.result</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">traverse</span>(<span class="params">self, root</span>):</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> root:</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        self.traverse(root.right)</span><br><span class="line">        self.count += <span class="number">1</span></span><br><span class="line">        <span class="keyword">if</span> self.count == <span class="number">2</span>:</span><br><span class="line">            self.result = root.val</span><br><span class="line">            <span class="keyword">return</span>       </span><br><span class="line">        <span class="keyword">if</span> self.count &gt; <span class="number">1</span>:</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        self.traverse(root.left)</span><br></pre></td></tr></tbody></table></figure> 时间: <span class="math inline">\(O(h)\)</span> 空间: <span class="math inline">\(O(h)\)</span><p></p>
-<h2 id="解法二">解法二</h2>
-<p>分类讨论. </p><figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">find_largest</span>(<span class="params">root</span>):</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> root:</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> root.right:  <span class="comment"># 没有右子树时, 根是最大的</span></span><br><span class="line">        <span class="keyword">return</span> root</span><br><span class="line">    <span class="keyword">return</span> find_largest(root.right)  <span class="comment"># 有右子树时, 找其中最大的</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">find_2nd_largest</span>(<span class="params">root</span>):</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> root:</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> root.right:  <span class="comment"># 没有右子树, 根最大; 左子树的最大就是第二大</span></span><br><span class="line">        <span class="keyword">return</span> find_largest(root.left)</span><br><span class="line">    <span class="comment"># 有右子树, 此时最大元素在右子树中</span></span><br><span class="line">    right = root.right</span><br><span class="line">    <span class="comment"># 右子树只有一个节点, 它是最大的, 根第二大</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> right.left <span class="keyword">and</span> <span class="keyword">not</span> right.right:  </span><br><span class="line">        <span class="keyword">return</span> root</span><br><span class="line">    <span class="comment"># 右子树还有子树, 在这里面找第二大的</span></span><br><span class="line">    <span class="keyword">return</span> find_2nd_largest(right)</span><br></pre></td></tr></tbody></table></figure><p></p>
-]]></content>
-      <categories>
-        <category>计算机</category>
-        <category>算法</category>
-      </categories>
-  </entry>
-  <entry>
     <title>控制收敛定理 (DCT)</title>
     <url>/posts/34980/</url>
     <content><![CDATA[<p><span class="math display">\[\lim_{n\to\infty}\int_S f_n \,d\mu=\int_S f\,d\mu\]</span></p>
@@ -126,36 +126,6 @@ f\colon[-L,L]\to\mathbb{R}
         <category>分析</category>
         <category>微积分</category>
         <category>级数</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>常见的ODE解法</title>
-    <url>/posts/65228/</url>
-    <content><![CDATA[<h3 id="可分离变量-ypyqx">1. 可分离变量 <span class="math inline">\(y'=p(y)q(x)\)</span></h3>
-<p>分离变量后两边积分.</p>
-<h3 id="一阶齐次线性-ypxy0">2. 一阶齐次线性 <span class="math inline">\(y'+p(x)y=0\)</span></h3>
-<p><span class="math display">\[
-y=Ce^{-\int p(x)\d x}
-\]</span></p>
-<h3 id="一阶非齐次线性-ypxyqx">3. 一阶非齐次线性 <span class="math inline">\(y'+p(x)y=q(x)\)</span></h3>
-<ul>
-<li><p><span class="math inline">\(y=e^{-\int p(x)\d x}\left(C+\int q(x)e^{\int p(x)\d x}\d x\right)\)</span></p></li>
-<li><p>取积分因子 <span class="math inline">\(\mu(x)=e^{\int p(x)\d x}\)</span>.</p></li>
-</ul>
-<blockquote>
-<p>🌰 <span class="math inline">\(y'-2y/x=0\)</span>. <span class="math display">\[\begin{aligned}
-&amp;\mu(x)=e^{\int-\frac2x \d x}=e^{-2\ln x}=\frac{1}{x^2}\\
-&amp;\implies{1\over x^2}y'-{2\over x^3}y=0\\
-&amp;\implies\left({y\over x^2}\right)'=0\\
-&amp;\implies y=Cx^2
-\end{aligned}
-\]</span></p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>数学</category>
-        <category>分析</category>
-        <category>微分方程</category>
       </categories>
   </entry>
   <entry>
@@ -238,9 +208,6 @@ B\left(\frac12, \frac12\right)&amp;=\int_0^1x^{-\frac12}(1-x)^{-\frac12}\d x\\
 \Gamma\left(n+\frac12\right)=\Gamma\left(\frac12\right)\times\frac12\times\frac32\times\cdots\times{2n-1\over2}=\Gamma\left(\frac12\right)\cdot{(2n)!\over2^{2n}n!}
 \]</span> 中令 <span class="math inline">\(n\to\infty\)</span> 并利用 Stirling 公式。</p></li>
 </ul>
-<blockquote>
-<p>注：其中更强的公式有很多种证法，可以设法避免循环论证。</p>
-</blockquote>
 <h2 id="积分号下求导">积分号下求导</h2>
 <h3 id="法一">法一</h3>
 <p>令 <span class="math display">\[
@@ -289,6 +256,36 @@ f(z)-f(z+\tau)=\e^{-\frac{z^2}{2}}.
         <category>分析</category>
         <category>微积分</category>
         <category>单变量微积分</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>常见的ODE解法</title>
+    <url>/posts/65228/</url>
+    <content><![CDATA[<h3 id="可分离变量-ypyqx">1. 可分离变量 <span class="math inline">\(y'=p(y)q(x)\)</span></h3>
+<p>分离变量后两边积分.</p>
+<h3 id="一阶齐次线性-ypxy0">2. 一阶齐次线性 <span class="math inline">\(y'+p(x)y=0\)</span></h3>
+<p><span class="math display">\[
+y=Ce^{-\int p(x)\d x}
+\]</span></p>
+<h3 id="一阶非齐次线性-ypxyqx">3. 一阶非齐次线性 <span class="math inline">\(y'+p(x)y=q(x)\)</span></h3>
+<ul>
+<li><p><span class="math inline">\(y=e^{-\int p(x)\d x}\left(C+\int q(x)e^{\int p(x)\d x}\d x\right)\)</span></p></li>
+<li><p>取积分因子 <span class="math inline">\(\mu(x)=e^{\int p(x)\d x}\)</span>.</p></li>
+</ul>
+<blockquote>
+<p>🌰 <span class="math inline">\(y'-2y/x=0\)</span>. <span class="math display">\[\begin{aligned}
+&amp;\mu(x)=e^{\int-\frac2x \d x}=e^{-2\ln x}=\frac{1}{x^2}\\
+&amp;\implies{1\over x^2}y'-{2\over x^3}y=0\\
+&amp;\implies\left({y\over x^2}\right)'=0\\
+&amp;\implies y=Cx^2
+\end{aligned}
+\]</span></p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>数学</category>
+        <category>分析</category>
+        <category>微分方程</category>
       </categories>
   </entry>
   <entry>
@@ -353,6 +350,39 @@ x+y\le 2
       </categories>
   </entry>
   <entry>
+    <title>SQL 基础</title>
+    <url>/posts/19528/</url>
+    <content><![CDATA[<h2 id="select">SELECT</h2>
+<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="built_in">COUNT</span>(<span class="keyword">DISTINCT</span> Country) <span class="keyword">FROM</span> Customers;</span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> Customers <span class="keyword">WHERE</span> <span class="keyword">not</span> (Country<span class="operator">=</span><span class="string">'Germany'</span> <span class="keyword">and</span> city<span class="operator">=</span><span class="string">'Berlin'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> Customers <span class="keyword">WHERE</span> Country <span class="keyword">IN</span> (<span class="keyword">SELECT</span> Country <span class="keyword">FROM</span> Suppliers);</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="like">LIKE</h2>
+<p><code>%</code>: zero, one or multiple char</p>
+<p><code>_</code>: a single char </p><figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> Customers <span class="keyword">WHERE</span> <span class="built_in">lower</span>(CustomerName) <span class="keyword">LIKE</span> <span class="string">'a%'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> Customers <span class="keyword">WHERE</span> city <span class="keyword">LIKE</span> <span class="string">'____'</span>;</span><br></pre></td></tr></tbody></table></figure><p></p>
+<h2 id="group-by">GROUP BY</h2>
+<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> ...</span><br><span class="line"><span class="keyword">FROM</span> ...</span><br><span class="line"><span class="keyword">WHERE</span> ...</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> ...</span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> ... <span class="keyword">ASC</span> <span class="operator">/</span> <span class="keyword">DESC</span>;</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="aggregate-functions">Aggregate functions</h2>
+<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="built_in">Min</span>(), <span class="built_in">Max</span>(), <span class="built_in">Count</span>(), <span class="built_in">Sum</span>(), <span class="built_in">Avg</span>()</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="built_in">avg</span>(sum_id) <span class="keyword">as</span> avg_spend_per_orderid</span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">(<span class="keyword">SELECT</span> order_id, <span class="built_in">sum</span>(spend) <span class="keyword">as</span> sum_id</span><br><span class="line"><span class="keyword">FROM</span> example</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> <span class="number">1</span>)</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="having">HAVING</h2>
+<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> ...</span><br><span class="line"><span class="keyword">FROM</span> ...</span><br><span class="line"><span class="keyword">WHERE</span> ...</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> ...</span><br><span class="line"><span class="keyword">HAVING</span> ...</span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> ...</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> Country, <span class="built_in">count</span>(CustomerID)</span><br><span class="line"><span class="keyword">FROM</span> Customers</span><br><span class="line"><span class="keyword">WHERE</span> Country <span class="keyword">in</span> (<span class="string">'Brazil'</span>, <span class="string">'France'</span>, <span class="string">'USA'</span>)</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> Country</span><br><span class="line"><span class="keyword">HAVING</span> <span class="built_in">count</span>(CustomerID) <span class="operator">&gt;</span> <span class="number">5</span>;</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="union">UNION</h2>
+<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> Country <span class="keyword">FROM</span> Customers</span><br><span class="line"><span class="keyword">UNION</span> (<span class="keyword">ALL</span>)</span><br><span class="line"><span class="keyword">SELECT</span> Country <span class="keyword">FROM</span> Suppliers</span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> <span class="number">1</span>;</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="with">WITH</h2>
+<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">WITH</span> cate15 <span class="keyword">as</span> (</span><br><span class="line">  <span class="keyword">SELECT</span> categoryid, productid</span><br><span class="line">  <span class="keyword">FROM</span> products</span><br><span class="line">  <span class="keyword">WHERE</span> categoryid <span class="keyword">BETWEEN</span> <span class="number">1</span> <span class="keyword">and</span> <span class="number">5</span></span><br><span class="line">),</span><br><span class="line">od15 <span class="keyword">as</span> (</span><br><span class="line">  <span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> orderdetails</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> od15 </span><br><span class="line"><span class="keyword">WHERE</span> productid <span class="keyword">in</span> (<span class="keyword">SELECT</span> productid <span class="keyword">from</span> cate15)</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="windows-function">Windows function</h2>
+<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="built_in">row_number</span>() <span class="keyword">over</span>(<span class="keyword">partition</span> <span class="keyword">by</span> ... <span class="keyword">order</span> <span class="keyword">by</span> ...)</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> category, product, sales, row_num</span><br><span class="line"><span class="keyword">FROM</span> (</span><br><span class="line">  <span class="keyword">SELECT</span> category, product, sales, </span><br><span class="line">  <span class="built_in">row_number</span>() <span class="keyword">over</span>(<span class="keyword">partition</span> <span class="keyword">by</span> category <span class="keyword">order</span> <span class="keyword">by</span> sales <span class="keyword">desc</span>) <span class="keyword">as</span> row_num</span><br><span class="line">  <span class="keyword">FROM</span> tab</span><br><span class="line">)</span><br><span class="line"><span class="keyword">WHERE</span> row_num <span class="operator">&lt;=</span> <span class="number">2</span></span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> </span><br><span class="line">categoryid, productid, price, </span><br><span class="line"><span class="built_in">sum</span>(price) <span class="keyword">over</span>(<span class="keyword">partition</span> <span class="keyword">by</span> categoryid <span class="keyword">order</span> <span class="keyword">by</span> productid) <span class="keyword">as</span> cum_sum</span><br><span class="line"><span class="keyword">FROM</span> products</span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span> <span class="number">1</span>,<span class="number">2</span>;</span><br></pre></td></tr></tbody></table></figure>
+<p><code>lag()</code>: above, <code>lead()</code>: below </p><figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span>,</span><br><span class="line"><span class="built_in">lag</span>(birthdate, <span class="number">1</span>) <span class="keyword">over</span>(<span class="keyword">order</span> <span class="keyword">by</span> birthdate),</span><br><span class="line"><span class="built_in">lead</span>(birthdate, <span class="number">2</span>) <span class="keyword">over</span>(<span class="keyword">order</span> <span class="keyword">by</span> birthdate)</span><br><span class="line"><span class="keyword">FROM</span> employees;</span><br></pre></td></tr></tbody></table></figure><p></p>
+<h2 id="case-when">CASE WHEN</h2>
+<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> Country,</span><br><span class="line">       <span class="keyword">case</span> <span class="keyword">when</span> country <span class="keyword">in</span> (<span class="string">'USA'</span>) <span class="keyword">then</span> <span class="string">'America'</span></span><br><span class="line">            <span class="keyword">when</span> country <span class="keyword">in</span> (<span class="string">'Mexico'</span>) <span class="keyword">then</span> <span class="string">'emerging markets'</span></span><br><span class="line">            <span class="keyword">else</span> <span class="string">'other markets'</span> <span class="keyword">end</span> <span class="keyword">as</span> country_flag</span><br><span class="line"><span class="keyword">FROM</span> customers;</span><br></pre></td></tr></tbody></table></figure>
+]]></content>
+      <categories>
+        <category>计算机</category>
+        <category>SQL</category>
+      </categories>
+  </entry>
+  <entry>
     <title>PCA</title>
     <url>/posts/4593/</url>
     <content><![CDATA[<p>"降维" 是减少数据特征, 不是减少样本.</p>
@@ -397,39 +427,6 @@ a_N &amp; b_N\\
       <categories>
         <category>数学</category>
         <category>统计</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>SQL 基础</title>
-    <url>/posts/19528/</url>
-    <content><![CDATA[<h2 id="select">SELECT</h2>
-<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="built_in">COUNT</span>(<span class="keyword">DISTINCT</span> Country) <span class="keyword">FROM</span> Customers;</span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> Customers <span class="keyword">WHERE</span> <span class="keyword">not</span> (Country<span class="operator">=</span><span class="string">'Germany'</span> <span class="keyword">and</span> city<span class="operator">=</span><span class="string">'Berlin'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> Customers <span class="keyword">WHERE</span> Country <span class="keyword">IN</span> (<span class="keyword">SELECT</span> Country <span class="keyword">FROM</span> Suppliers);</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="like">LIKE</h2>
-<p><code>%</code>: zero, one or multiple char</p>
-<p><code>_</code>: a single char </p><figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> Customers <span class="keyword">WHERE</span> <span class="built_in">lower</span>(CustomerName) <span class="keyword">LIKE</span> <span class="string">'a%'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> Customers <span class="keyword">WHERE</span> city <span class="keyword">LIKE</span> <span class="string">'____'</span>;</span><br></pre></td></tr></tbody></table></figure><p></p>
-<h2 id="group-by">GROUP BY</h2>
-<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> ...</span><br><span class="line"><span class="keyword">FROM</span> ...</span><br><span class="line"><span class="keyword">WHERE</span> ...</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> ...</span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> ... <span class="keyword">ASC</span> <span class="operator">/</span> <span class="keyword">DESC</span>;</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="aggregate-functions">Aggregate functions</h2>
-<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="built_in">Min</span>(), <span class="built_in">Max</span>(), <span class="built_in">Count</span>(), <span class="built_in">Sum</span>(), <span class="built_in">Avg</span>()</span><br></pre></td></tr></tbody></table></figure>
-<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="built_in">avg</span>(sum_id) <span class="keyword">as</span> avg_spend_per_orderid</span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">(<span class="keyword">SELECT</span> order_id, <span class="built_in">sum</span>(spend) <span class="keyword">as</span> sum_id</span><br><span class="line"><span class="keyword">FROM</span> example</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> <span class="number">1</span>)</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="having">HAVING</h2>
-<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> ...</span><br><span class="line"><span class="keyword">FROM</span> ...</span><br><span class="line"><span class="keyword">WHERE</span> ...</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> ...</span><br><span class="line"><span class="keyword">HAVING</span> ...</span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> ...</span><br></pre></td></tr></tbody></table></figure>
-<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> Country, <span class="built_in">count</span>(CustomerID)</span><br><span class="line"><span class="keyword">FROM</span> Customers</span><br><span class="line"><span class="keyword">WHERE</span> Country <span class="keyword">in</span> (<span class="string">'Brazil'</span>, <span class="string">'France'</span>, <span class="string">'USA'</span>)</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> Country</span><br><span class="line"><span class="keyword">HAVING</span> <span class="built_in">count</span>(CustomerID) <span class="operator">&gt;</span> <span class="number">5</span>;</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="union">UNION</h2>
-<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> Country <span class="keyword">FROM</span> Customers</span><br><span class="line"><span class="keyword">UNION</span> (<span class="keyword">ALL</span>)</span><br><span class="line"><span class="keyword">SELECT</span> Country <span class="keyword">FROM</span> Suppliers</span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> <span class="number">1</span>;</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="with">WITH</h2>
-<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">WITH</span> cate15 <span class="keyword">as</span> (</span><br><span class="line">  <span class="keyword">SELECT</span> categoryid, productid</span><br><span class="line">  <span class="keyword">FROM</span> products</span><br><span class="line">  <span class="keyword">WHERE</span> categoryid <span class="keyword">BETWEEN</span> <span class="number">1</span> <span class="keyword">and</span> <span class="number">5</span></span><br><span class="line">),</span><br><span class="line">od15 <span class="keyword">as</span> (</span><br><span class="line">  <span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> orderdetails</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> od15 </span><br><span class="line"><span class="keyword">WHERE</span> productid <span class="keyword">in</span> (<span class="keyword">SELECT</span> productid <span class="keyword">from</span> cate15)</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="windows-function">Windows function</h2>
-<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="built_in">row_number</span>() <span class="keyword">over</span>(<span class="keyword">partition</span> <span class="keyword">by</span> ... <span class="keyword">order</span> <span class="keyword">by</span> ...)</span><br></pre></td></tr></tbody></table></figure>
-<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> category, product, sales, row_num</span><br><span class="line"><span class="keyword">FROM</span> (</span><br><span class="line">  <span class="keyword">SELECT</span> category, product, sales, </span><br><span class="line">  <span class="built_in">row_number</span>() <span class="keyword">over</span>(<span class="keyword">partition</span> <span class="keyword">by</span> category <span class="keyword">order</span> <span class="keyword">by</span> sales <span class="keyword">desc</span>) <span class="keyword">as</span> row_num</span><br><span class="line">  <span class="keyword">FROM</span> tab</span><br><span class="line">)</span><br><span class="line"><span class="keyword">WHERE</span> row_num <span class="operator">&lt;=</span> <span class="number">2</span></span><br></pre></td></tr></tbody></table></figure>
-<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> </span><br><span class="line">categoryid, productid, price, </span><br><span class="line"><span class="built_in">sum</span>(price) <span class="keyword">over</span>(<span class="keyword">partition</span> <span class="keyword">by</span> categoryid <span class="keyword">order</span> <span class="keyword">by</span> productid) <span class="keyword">as</span> cum_sum</span><br><span class="line"><span class="keyword">FROM</span> products</span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span> <span class="number">1</span>,<span class="number">2</span>;</span><br></pre></td></tr></tbody></table></figure>
-<p><code>lag()</code>: above, <code>lead()</code>: below </p><figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span>,</span><br><span class="line"><span class="built_in">lag</span>(birthdate, <span class="number">1</span>) <span class="keyword">over</span>(<span class="keyword">order</span> <span class="keyword">by</span> birthdate),</span><br><span class="line"><span class="built_in">lead</span>(birthdate, <span class="number">2</span>) <span class="keyword">over</span>(<span class="keyword">order</span> <span class="keyword">by</span> birthdate)</span><br><span class="line"><span class="keyword">FROM</span> employees;</span><br></pre></td></tr></tbody></table></figure><p></p>
-<h2 id="case-when">CASE WHEN</h2>
-<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> Country,</span><br><span class="line">       <span class="keyword">case</span> <span class="keyword">when</span> country <span class="keyword">in</span> (<span class="string">'USA'</span>) <span class="keyword">then</span> <span class="string">'America'</span></span><br><span class="line">            <span class="keyword">when</span> country <span class="keyword">in</span> (<span class="string">'Mexico'</span>) <span class="keyword">then</span> <span class="string">'emerging markets'</span></span><br><span class="line">            <span class="keyword">else</span> <span class="string">'other markets'</span> <span class="keyword">end</span> <span class="keyword">as</span> country_flag</span><br><span class="line"><span class="keyword">FROM</span> customers;</span><br></pre></td></tr></tbody></table></figure>
-]]></content>
-      <categories>
-        <category>计算机</category>
-        <category>SQL</category>
       </categories>
   </entry>
   <entry>
@@ -574,33 +571,11 @@ a_N &amp; b_N\\
 &amp;=x\int_0^1{\mathrm dt\over 1-x^2+x^2t^2}\\
 &amp;=x\int_0^1\sum_{n=0}^\infty(x^2-x^2t^2)^n\,\mathrm dt\\
 &amp;=\int_0^1\sum_{n=0}^\infty (1-t^2)^nx^{2n+1}\,\mathrm dt\\
-&amp;=\sum_{n=0}^\infty\left(\int_0^1(1-t^2)^n\,\mathrm dt\right) x^{2n+1}.
-\end{align*}
-\]</span> 其中利用分部积分 <span class="math display">\[
-\begin{align*}
-I_n&amp;=\int_0^1(1-t^2)^n\,\mathrm dt\\
-&amp;=\int_0^1(1-t^2)(1-t^2)^{n-1}\,\mathrm dt\\
-&amp;=\int_0^1(1-t^2)^{n-1}\,\mathrm dt-\int_0^1t^2(1-t^2)^{n-1}\,\mathrm dt\\
-&amp;=I_{n-1}+\frac{1}{2n}\int_0^1t\,\mathrm d(1-t^2)^{n}\\
-&amp;=I_{n-1}+\frac{1}{2n}\left.t(1-t^2)^n\right|_0^1-\frac{1}{2n}\int_0^1(1-t^2)^n\,\mathrm dt\\
-&amp;=I_{n-1}-\frac{1}{2n}I_n\\
-&amp;={2n\over2n+1}I_{n-1},
-%&amp;=\left.t(1-t^2)\right|_{0}^1-n\int_0^1t(1-t^2)^{n-1}\,\mathrm dt\\
-%&amp;=-n\left(\left.t^2(1-t^2)^{n-1}\right|_0^1-\int_0^1\left((1-t^2)^{n-1}-2(n-1)t^2(1-t^2)^{n-2}\right)\,\mathrm dt\right)\\
-%&amp;=n\int_0^1(1-t^2)^{n-1}\,\mathrm dt+2n(n-1)\int_0^1t^2(1-t^2)^{n-2}\,\mathrm dt
-%&amp;=\int_0^1\sum_{k=0}^n{n\choose k}(-t^2)^k\,\mathrm dt\\
-%&amp;=\int_0^1\sum_{k=0}^n{n\choose k}(-1)^kt^{2k}\,\mathrm dt\\
-%&amp;=\sum_{k=0}^n{n\choose k}(-1)^k\int_0^1t^{2k}\,\mathrm dt\\
-%&amp;=\sum_{k=0}^n{(-1)^k{n\choose k}\over 2k+1}
-\end{align*}
-\]</span> 递推可得 <span class="math display">\[
-I_n={(2n)!!\over(2n+1)!!}.
-\]</span> 故 <span class="math display">\[
-\begin{align*}
-{\arcsin x\over\sqrt{1-x^2}}&amp;=\sum_{n=0}^\infty\left(\int_0^1(1-t^2)^n\,\mathrm dt\right) x^{2n+1}\\
+&amp;=\sum_{n=0}^\infty\left(\int_0^1(1-t^2)^n\,\mathrm dt\right) x^{2n+1}\\
 &amp;=\sum_{n=0}^\infty{(2n)!!\over(2n+1)!!}x^{2n+1}.
 \end{align*}
-\]</span> 于是积分： <span class="math display">\[
+\]</span> 其中我们利用了<a href="/posts/23548/" title="结论">结论</a>。</p>
+<p>于是积分： <span class="math display">\[
 \begin{align*}
 \arcsin^2x&amp;=\int_0^x(\arcsin^2t)'\,\mathrm dt\\
 &amp;=2\int_0^x{\arcsin t\over\sqrt{1-t^2}}\,\mathrm dt\\
@@ -684,6 +659,78 @@ I_n={(2n)!!\over(2n+1)!!}.
         <category>数学</category>
         <category>代数</category>
         <category>线性代数</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Boosting</title>
+    <url>/posts/1458/</url>
+    <content><![CDATA[<h2 id="adaptive-boosting">Adaptive Boosting</h2>
+<p>先训练第一个模型，增加预测错误的样本的权重，并减小预测正确的样本的权重，喂给第二个模型。</p>
+<p>最终也会给每个弱模型自己的权重。</p>
+<h2 id="gradient-boosting">Gradient Boosting</h2>
+<p>通过梯度下降来最小化误差。在每一次迭代，通过现有集成模型的误差来训练当前的模型。</p>
+<span id="more"></span>
+<h3 id="xgboost">XGBoost</h3>
+<ul>
+<li>每个树内部的并行计算</li>
+<li>正则化</li>
+<li>处理稀疏性</li>
+<li>同层生长（横向优先）</li>
+<li>大样本比较慢</li>
+<li>只接受数值型，需要 encoding</li>
+<li>参数：
+<ul>
+<li>General：种类</li>
+<li>Tree：
+<ul>
+<li>eta（学习率）</li>
+<li>max_depth,</li>
+<li>n_estimators,</li>
+<li>subsample（每次取样本的一部分）,</li>
+<li>colsample_bytree（取样本特征的一部分）</li>
+<li>gamma（生长树的阈值）</li>
+<li>alpha（L1 正则）</li>
+<li>lambda（L2 正则）</li>
+</ul></li>
+<li>Task：</li>
+<li>objective</li>
+</ul></li>
+</ul>
+<h3 id="lightgmb">LightGMB</h3>
+<ul>
+<li>one-side sampling: 全部预测错误的和部分预测正确的，样本少，速度快</li>
+<li>exclusive feature bundling</li>
+<li>histogram-based algorithm</li>
+<li>垂直生长（纵向优先）</li>
+<li>容易过拟合</li>
+<li>自带 encoding</li>
+<li>参数
+<ul>
+<li>Core:
+<ul>
+<li>objective</li>
+<li>boosting</li>
+<li>num_iterations</li>
+<li>learning_rate</li>
+<li>num_leaves</li>
+</ul></li>
+<li>Learning:
+<ul>
+<li>max_depth</li>
+<li>min_data_in_leaf</li>
+<li>feature_fraction</li>
+<li>lambda_l1</li>
+<li>lambda_l2</li>
+</ul></li>
+<li>IO:
+<ul>
+<li>max_bin（控制 histogram）</li>
+</ul></li>
+</ul></li>
+</ul>
+]]></content>
+      <categories>
+        <category>数学</category>
       </categories>
   </entry>
   <entry>
@@ -1120,9 +1167,12 @@ H_A=0.5\times0.7219+0.5\times0.9710=0.8465
 <p><span class="math display">\[\int\frac{1}{x^2+a^2} \,\mathrm{d}x=\frac 1a\arctan\frac xa+C\]</span> <span class="math display">\[\int\frac{1}{x^2-a^2} \,\mathrm{d}x=\frac {1}{2a}\ln\left|\frac{x-a}{x+a}\right|+C\]</span> <span class="math display">\[\int\frac{1}{\sqrt{x^2\pm a^2}} \,\mathrm{d}x=\ln\left|x+\sqrt{x^2\pm a^2}\right|+C\]</span> <span class="math display">\[\int\frac{1}{\sqrt{a^2-x^2}} \,\mathrm{d}x=\arcsin \frac xa+C\]</span> <span class="math display">\[\int\frac{1}{\sqrt{1+x^2}} \,\mathrm{d}x=\sinh^{-1}x+C\]</span></p>
 <span id="more"></span>
 <h2 id="定积分">定积分</h2>
-<p><span class="math display">\[\int_0^{\frac \pi2}\ln(\sin x)=\int_0^{\frac \pi2}\ln(\cos x)=-\frac\pi2\ln2\]</span></p>
 <p><span class="math display">\[\int_{-a}^af(x)\,\mathrm{d}x=\int_{0}^a\left(f(x)+f(-x)\right)\,\mathrm{d}x\]</span></p>
 <p><span class="math display">\[\int_{0}^{\pi}xf(\sin x)\,\mathrm{d}x=\frac\pi2\int_{0}^\pi f(\sin x)\,\mathrm{d}x\]</span></p>
+<a href="/posts/46715/" title="$$\int_0^1(1-x^2)^n\d x={(2n)!!\over(2n+1)!!}$$">$$\int_0^1(1-x^2)^n\d x={(2n)!!\over(2n+1)!!}$$</a>
+<h2 id="反常积分">反常积分</h2>
+<a href="/posts/48382/" title="$$\int_{-\infty}^\infty \e^{-x^2}\d x=\sqrt\pi$$">$$\int_{-\infty}^\infty \e^{-x^2}\d x=\sqrt\pi$$</a>
+<p><span class="math display">\[\int_0^{\frac \pi2}\ln(\sin x)=\int_0^{\frac \pi2}\ln(\cos x)=-\frac\pi2\ln2\]</span></p>
 ]]></content>
       <categories>
         <category>数学</category>
@@ -1279,78 +1329,6 @@ p(x)={\sum_{k=0}^n{\lambda_k y_k\over x-x_k}\over\sum_{k=0}^n{\lambda_k\over x-x
         <category>代数</category>
         <category>数值分析</category>
         <category>线性代数</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Boosting</title>
-    <url>/posts/1458/</url>
-    <content><![CDATA[<h2 id="adaptive-boosting">Adaptive Boosting</h2>
-<p>先训练第一个模型，增加预测错误的样本的权重，并减小预测正确的样本的权重，喂给第二个模型。</p>
-<p>最终也会给每个弱模型自己的权重。</p>
-<h2 id="gradient-boosting">Gradient Boosting</h2>
-<p>通过梯度下降来最小化误差。在每一次迭代，通过现有集成模型的误差来训练当前的模型。</p>
-<span id="more"></span>
-<h3 id="xgboost">XGBoost</h3>
-<ul>
-<li>每个树内部的并行计算</li>
-<li>正则化</li>
-<li>处理稀疏性</li>
-<li>同层生长（横向优先）</li>
-<li>大样本比较慢</li>
-<li>只接受数值型，需要 encoding</li>
-<li>参数：
-<ul>
-<li>General：种类</li>
-<li>Tree：
-<ul>
-<li>eta（学习率）</li>
-<li>max_depth,</li>
-<li>n_estimators,</li>
-<li>subsample（每次取样本的一部分）,</li>
-<li>colsample_bytree（取样本特征的一部分）</li>
-<li>gamma（生长树的阈值）</li>
-<li>alpha（L1 正则）</li>
-<li>lambda（L2 正则）</li>
-</ul></li>
-<li>Task：</li>
-<li>objective</li>
-</ul></li>
-</ul>
-<h3 id="lightgmb">LightGMB</h3>
-<ul>
-<li>one-side sampling: 全部预测错误的和部分预测正确的，样本少，速度快</li>
-<li>exclusive feature bundling</li>
-<li>histogram-based algorithm</li>
-<li>垂直生长（纵向优先）</li>
-<li>容易过拟合</li>
-<li>自带 encoding</li>
-<li>参数
-<ul>
-<li>Core:
-<ul>
-<li>objective</li>
-<li>boosting</li>
-<li>num_iterations</li>
-<li>learning_rate</li>
-<li>num_leaves</li>
-</ul></li>
-<li>Learning:
-<ul>
-<li>max_depth</li>
-<li>min_data_in_leaf</li>
-<li>feature_fraction</li>
-<li>lambda_l1</li>
-<li>lambda_l2</li>
-</ul></li>
-<li>IO:
-<ul>
-<li>max_bin（控制 histogram）</li>
-</ul></li>
-</ul></li>
-</ul>
-]]></content>
-      <categories>
-        <category>数学</category>
       </categories>
   </entry>
   <entry>
@@ -1853,26 +1831,6 @@ y_{n+1}=\sum_{k=1}^l a_ky_{n+1-k}+h\sum_{k=0}^l b_k f_{n+1-k}
       </categories>
   </entry>
   <entry>
-    <title>反转链表</title>
-    <url>/posts/967/</url>
-    <content><![CDATA[<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ListNode</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, val</span>):</span></span><br><span class="line">        self.val = val</span><br><span class="line">        self.<span class="built_in">next</span> = <span class="literal">None</span></span><br></pre></td></tr></tbody></table></figure>
-<p>我们传入一个 ListNode 作为 head 节点, 然后需要一个函数 reverse 来反转这个链表, 返回新的 head 节点 (实际上是原来的 tail).</p>
-<span id="more"></span>
-<h2 id="iteration">iteration</h2>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">reverse</span>(<span class="params">head</span>):</span></span><br><span class="line">    prev = <span class="literal">None</span> <span class="comment"># 保存 head 的上一个节点</span></span><br><span class="line">    <span class="keyword">while</span> head:</span><br><span class="line">        <span class="built_in">next</span> = head.<span class="built_in">next</span>  <span class="comment"># 先保存下一个, 否则反转后找不到</span></span><br><span class="line">        head.<span class="built_in">next</span> = prev  <span class="comment"># 反转</span></span><br><span class="line">        <span class="comment"># prev 和 head 往后走</span></span><br><span class="line">        prev = head</span><br><span class="line">        head = <span class="built_in">next</span></span><br><span class="line">    <span class="keyword">return</span> prev <span class="comment"># 此时 head 走到了 None</span></span><br></pre></td></tr></tbody></table></figure>
-<p>时间: <span class="math inline">\(O(n)\)</span></p>
-<p>空间: <span class="math inline">\(O(1)\)</span></p>
-<h2 id="recursion">recursion</h2>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">reverse</span>(<span class="params">head</span>):</span></span><br><span class="line">    <span class="comment"># base case: 空链表或只有一个节点, 不用反转</span></span><br><span class="line">    <span class="keyword">if</span> head <span class="keyword">is</span> <span class="literal">None</span> <span class="keyword">or</span> head.<span class="built_in">next</span> <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">        <span class="keyword">return</span> head</span><br><span class="line">    <span class="comment"># 从第二个节点开始反转, 返回新的 head 节点</span></span><br><span class="line">    new_head = reverse(head.<span class="built_in">next</span>)</span><br><span class="line">    <span class="comment"># 把 head 和新的 head 节点之间的连接反过来</span></span><br><span class="line">    head.<span class="built_in">next</span>.<span class="built_in">next</span> = head</span><br><span class="line">    head.<span class="built_in">next</span> = <span class="literal">None</span>  <span class="comment"># 否则出现环</span></span><br><span class="line">    <span class="keyword">return</span> new_head</span><br></pre></td></tr></tbody></table></figure>
-<p>给出原始问题... <img src="rev1.png"> 先完成子问题... <img src="rev2.png"> 再处理最后的连接... <img src="rev3.png"> 时间: <span class="math inline">\(O(n)\)</span></p>
-<p>空间: <span class="math inline">\(O(n)\)</span></p>
-]]></content>
-      <categories>
-        <category>计算机</category>
-        <category>算法</category>
-      </categories>
-  </entry>
-  <entry>
     <title>卡方检验</title>
     <url>/posts/7261/</url>
     <content><![CDATA[<p>原假设: 两个 (binary) 变量独立.</p>
@@ -1921,12 +1879,23 @@ E_{ij}=\frac{X_{i\cdot}X_{\cdot j}}{n}
       </categories>
   </entry>
   <entry>
-    <title>回家</title>
-    <url>/posts/8368/</url>
-    <content><![CDATA[<p>沁人的凉风和湛蓝中的云卷云舒，熟悉的楼房和那条街道，一簇簇与一丛丛，忽然让少年有了一丝归属，潮湿了眼眶。他颤抖着四肢，任每一个毛孔大肆呼吸着。 依稀在记忆中的水库，被荒草占据。大把的野草，湮没了少年心中，那未曾发出的约定。</p>
+    <title>反转链表</title>
+    <url>/posts/967/</url>
+    <content><![CDATA[<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ListNode</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, val</span>):</span></span><br><span class="line">        self.val = val</span><br><span class="line">        self.<span class="built_in">next</span> = <span class="literal">None</span></span><br></pre></td></tr></tbody></table></figure>
+<p>我们传入一个 ListNode 作为 head 节点, 然后需要一个函数 reverse 来反转这个链表, 返回新的 head 节点 (实际上是原来的 tail).</p>
+<span id="more"></span>
+<h2 id="iteration">iteration</h2>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">reverse</span>(<span class="params">head</span>):</span></span><br><span class="line">    prev = <span class="literal">None</span> <span class="comment"># 保存 head 的上一个节点</span></span><br><span class="line">    <span class="keyword">while</span> head:</span><br><span class="line">        <span class="built_in">next</span> = head.<span class="built_in">next</span>  <span class="comment"># 先保存下一个, 否则反转后找不到</span></span><br><span class="line">        head.<span class="built_in">next</span> = prev  <span class="comment"># 反转</span></span><br><span class="line">        <span class="comment"># prev 和 head 往后走</span></span><br><span class="line">        prev = head</span><br><span class="line">        head = <span class="built_in">next</span></span><br><span class="line">    <span class="keyword">return</span> prev <span class="comment"># 此时 head 走到了 None</span></span><br></pre></td></tr></tbody></table></figure>
+<p>时间: <span class="math inline">\(O(n)\)</span></p>
+<p>空间: <span class="math inline">\(O(1)\)</span></p>
+<h2 id="recursion">recursion</h2>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">reverse</span>(<span class="params">head</span>):</span></span><br><span class="line">    <span class="comment"># base case: 空链表或只有一个节点, 不用反转</span></span><br><span class="line">    <span class="keyword">if</span> head <span class="keyword">is</span> <span class="literal">None</span> <span class="keyword">or</span> head.<span class="built_in">next</span> <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">        <span class="keyword">return</span> head</span><br><span class="line">    <span class="comment"># 从第二个节点开始反转, 返回新的 head 节点</span></span><br><span class="line">    new_head = reverse(head.<span class="built_in">next</span>)</span><br><span class="line">    <span class="comment"># 把 head 和新的 head 节点之间的连接反过来</span></span><br><span class="line">    head.<span class="built_in">next</span>.<span class="built_in">next</span> = head</span><br><span class="line">    head.<span class="built_in">next</span> = <span class="literal">None</span>  <span class="comment"># 否则出现环</span></span><br><span class="line">    <span class="keyword">return</span> new_head</span><br></pre></td></tr></tbody></table></figure>
+<p>给出原始问题... <img src="rev1.png"> 先完成子问题... <img src="rev2.png"> 再处理最后的连接... <img src="rev3.png"> 时间: <span class="math inline">\(O(n)\)</span></p>
+<p>空间: <span class="math inline">\(O(n)\)</span></p>
 ]]></content>
       <categories>
-        <category>随笔</category>
+        <category>计算机</category>
+        <category>算法</category>
       </categories>
   </entry>
   <entry>
@@ -1939,6 +1908,47 @@ E_{ij}=\frac{X_{i\cdot}X_{\cdot j}}{n}
 ]]></content>
       <categories>
         <category>随笔</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>回家</title>
+    <url>/posts/8368/</url>
+    <content><![CDATA[<p>沁人的凉风和湛蓝中的云卷云舒，熟悉的楼房和那条街道，一簇簇与一丛丛，忽然让少年有了一丝归属，潮湿了眼眶。他颤抖着四肢，任每一个毛孔大肆呼吸着。 依稀在记忆中的水库，被荒草占据。大把的野草，湮没了少年心中，那未曾发出的约定。</p>
+]]></content>
+      <categories>
+        <category>随笔</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>图搜索算法</title>
+    <url>/posts/29510/</url>
+    <content><![CDATA[<h1 id="bfs">BFS</h1>
+<h2 id="之字形遍历树">之字形遍历树</h2>
+<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">  3</span><br><span class="line"> / \</span><br><span class="line">9  20</span><br><span class="line">   /\</span><br><span class="line">  15 7   </span><br></pre></td></tr></tbody></table></figure>
+<p>返回 <code>[[3], [20,9], [15,7]]</code>.</p>
+<figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">zigzag</span>(<span class="params">root</span>):</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> root:</span><br><span class="line">        <span class="keyword">return</span> []</span><br><span class="line">    frontier = [root]</span><br><span class="line">    reverse = <span class="literal">False</span></span><br><span class="line">    ans = []</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> frontier:</span><br><span class="line">        <span class="built_in">next</span>, cur = [], []</span><br><span class="line">        <span class="comment"># next 存储邻域节点, cur 存储当前层的值</span></span><br><span class="line">        <span class="keyword">for</span> u <span class="keyword">in</span> frontier:</span><br><span class="line">            cur.append(u.val)</span><br><span class="line">            <span class="keyword">if</span> u.left:</span><br><span class="line">                <span class="built_in">next</span>.append(u.left)</span><br><span class="line">            <span class="keyword">if</span> u.right:</span><br><span class="line">                <span class="built_in">next</span>.append(u.right)</span><br><span class="line">        ans.append(cur[::-<span class="number">1</span>] <span class="keyword">if</span> reverse <span class="keyword">else</span> cur)</span><br><span class="line">        frontier = <span class="built_in">next</span></span><br><span class="line">        reverse = <span class="keyword">not</span> reverse</span><br><span class="line">    <span class="keyword">return</span> ans</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="岛屿数量">岛屿数量</h2>
+<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">11110</span><br><span class="line">11010</span><br><span class="line">11000</span><br><span class="line">00000</span><br></pre></td></tr></tbody></table></figure>
+<p>其中 1 代表陆地, 0 代表水. 返回岛屿数量, 即 1.</p>
+<figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">BFS</span>(<span class="params">grid, r, c, marked</span>):</span></span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">    (r, c) is the starting point</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line">    <span class="comment"># delta row and col</span></span><br><span class="line">    dr, dc = [-<span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>], [<span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>, -<span class="number">1</span>]</span><br><span class="line">    marked.add((r, c))</span><br><span class="line">    frontier = [(r, c)]</span><br><span class="line">    <span class="keyword">while</span> frontier:</span><br><span class="line">        <span class="built_in">next</span> = []</span><br><span class="line">        <span class="keyword">for</span> r, c <span class="keyword">in</span> frontier:</span><br><span class="line">            <span class="keyword">for</span> d <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">4</span>):</span><br><span class="line">                nr, nc = r + dr[d], c + dc[d]</span><br><span class="line">                <span class="keyword">if</span> <span class="number">0</span> &lt;= nr &lt; <span class="built_in">len</span>(grid) <span class="keyword">and</span> <span class="number">0</span> &lt;= nc &lt; <span class="built_in">len</span>(grid[<span class="number">0</span>]) \</span><br><span class="line">                  <span class="keyword">and</span> grid[nr][nc] == <span class="string">'1'</span> <span class="keyword">and</span> (nr, nc) <span class="keyword">not</span> <span class="keyword">in</span> marked:</span><br><span class="line">                    marked.add((nr, nc))</span><br><span class="line">                    <span class="built_in">next</span>.append((nr, nc))</span><br><span class="line">        frontier = <span class="built_in">next</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">numIslands</span>(<span class="params">grid</span>):</span></span><br><span class="line">    res = <span class="number">0</span></span><br><span class="line">    marked = <span class="built_in">set</span>()</span><br><span class="line">    <span class="keyword">for</span> r <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(grid)):</span><br><span class="line">        <span class="keyword">for</span> c <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(grid[<span class="number">0</span>])):</span><br><span class="line">            <span class="keyword">if</span> grid[r][c] == <span class="string">'1'</span> <span class="keyword">and</span> (r, c) <span class="keyword">not</span> <span class="keyword">in</span> marked:</span><br><span class="line">                BFS(grid, r, c, marked)</span><br><span class="line">                res += <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> res</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="单词变换">单词变换</h2>
+<p>从 <code>hit</code> 变成 <code>cog</code>, 每次只变一个字符, 要求过程单词在列表 <code>[hot, dot, dog, lot, log, cog]</code> 中.</p>
+<p>返回最短的变换路径长度 (5): <code>hit - hot - dot - dog - cog</code>. </p><figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> string</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">ladder_length</span>(<span class="params">begin, end, words</span>):</span></span><br><span class="line">    words = <span class="built_in">set</span>(words)</span><br><span class="line">    <span class="keyword">if</span> end <span class="keyword">not</span> <span class="keyword">in</span> words:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">    </span><br><span class="line">    ans = <span class="number">1</span></span><br><span class="line">    frontier = [begin]</span><br><span class="line">    used = <span class="built_in">set</span>(frontier)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> frontier:</span><br><span class="line">        <span class="built_in">next</span> = []</span><br><span class="line">        <span class="keyword">for</span> word <span class="keyword">in</span> frontier:</span><br><span class="line">            <span class="keyword">for</span> p <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(word)):</span><br><span class="line">                <span class="keyword">for</span> c <span class="keyword">in</span> string.ascii_lowercase:</span><br><span class="line">                    new_word = word[:p] + c + word[p+<span class="number">1</span>:]</span><br><span class="line">                    <span class="keyword">if</span> new_word == end:</span><br><span class="line">                        <span class="keyword">return</span> ans + <span class="number">1</span></span><br><span class="line">                    <span class="keyword">if</span> new_word <span class="keyword">in</span> words <span class="keyword">and</span> new_word <span class="keyword">not</span> <span class="keyword">in</span> used:</span><br><span class="line">                        used.add(new_word)</span><br><span class="line">                        <span class="built_in">next</span>.append(new_word)</span><br><span class="line">        frontier = <span class="built_in">next</span></span><br><span class="line">        ans += <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(ladder_length(<span class="string">'hit'</span>, <span class="string">'cog'</span>, [<span class="string">'hot'</span>, <span class="string">'dot'</span>, <span class="string">'dog'</span>, <span class="string">'lot'</span>, <span class="string">'log'</span>, <span class="string">'cog'</span>]))</span><br></pre></td></tr></tbody></table></figure><p></p>
+<h2 id="路径填充">路径填充</h2>
+<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">INF  -1   0   INF</span><br><span class="line">INF  INF INF  -1</span><br><span class="line">INF  -1  INF  -1</span><br><span class="line">0    -1  INF  INF</span><br></pre></td></tr></tbody></table></figure>
+<p>INF 表示空房间, -1 表示墙, 0 表示门.</p>
+<p>需要把 INF 都填充为走到最近的门的路径长度, 若没有路径还填 INF. 返回 </p><figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">3 -1  0  1</span><br><span class="line">2  2  1 -1</span><br><span class="line">1 -1  2 -1</span><br><span class="line">0 -1  3  4</span><br></pre></td></tr></tbody></table></figure><p></p>
+<figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">walls_and_gates</span>(<span class="params">rooms</span>):</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> rooms:</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    dr, dc = [-<span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>], [<span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>, -<span class="number">1</span>]</span><br><span class="line">    N, C = <span class="built_in">len</span>(rooms), <span class="built_in">len</span>(rooms[<span class="number">0</span>])</span><br><span class="line">    frontier = [(r, c) <span class="keyword">for</span> r <span class="keyword">in</span> <span class="built_in">range</span>(N) <span class="keyword">for</span> c <span class="keyword">in</span> <span class="built_in">range</span>(C) <span class="keyword">if</span> rooms[r][c] == <span class="number">0</span>]</span><br><span class="line">    INF = <span class="number">2147483647</span></span><br><span class="line">    dist = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> frontier:</span><br><span class="line">        <span class="built_in">next</span> = []</span><br><span class="line">        <span class="keyword">for</span> r, c <span class="keyword">in</span> frontier:</span><br><span class="line">            <span class="keyword">for</span> d <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">4</span>):</span><br><span class="line">                nr, nc = r + dr[d], c + dc[d]</span><br><span class="line">                <span class="keyword">if</span> <span class="number">0</span> &lt;= nr &lt; N <span class="keyword">and</span> <span class="number">0</span> &lt;= nc &lt; C \</span><br><span class="line">                    <span class="keyword">and</span> rooms[nr][nc] == INF:</span><br><span class="line">                    rooms[nr][nc] = dist + <span class="number">1</span></span><br><span class="line">                    <span class="built_in">next</span>.append((nr, nc))</span><br><span class="line">        frontier = <span class="built_in">next</span></span><br><span class="line">        dist += <span class="number">1</span></span><br></pre></td></tr></tbody></table></figure>
+<h1 id="dfs">DFS</h1>
+<h2 id="检查是否有圈">检查是否有圈</h2>
+<figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">dfs</span>(<span class="params">directed_graph, visit_status, u</span>):</span></span><br><span class="line">    <span class="comment"># 0 表示还在访问, 1 表示访问结束</span></span><br><span class="line">    visit_status[u] = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> v <span class="keyword">in</span> directed_graph[u]:</span><br><span class="line">        <span class="keyword">if</span> v <span class="keyword">not</span> <span class="keyword">in</span> visit_status:</span><br><span class="line">            <span class="keyword">if</span> dfs(directed_graph, visit_status, v):</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">        <span class="keyword">elif</span> visit_status[v] == <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">    visit_status[u] = <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">has_cycle</span>(<span class="params">directed_graph</span>):</span></span><br><span class="line">    visit_status = {}</span><br><span class="line">    <span class="keyword">for</span> v <span class="keyword">in</span> directed_graph:</span><br><span class="line">        <span class="keyword">if</span> v <span class="keyword">not</span> <span class="keyword">in</span> visit_status <span class="keyword">and</span> dfs(directed_graph, visit_status, v):</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">False</span></span><br></pre></td></tr></tbody></table></figure>
+<h2 id="拓扑排序">拓扑排序</h2>
+<p>从任意节点出发, 遍历邻居, 直到遍历结束, 把邻居放入结果. 再把自己放入结果. 最后反转结果.</p>
+<figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line">courses = []</span><br><span class="line">visited = [-<span class="number">1</span>] * num</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">dfs</span>(<span class="params">u</span>):</span></span><br><span class="line">    visited[u] = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> v <span class="keyword">in</span> graph[u]:</span><br><span class="line">        <span class="keyword">if</span> visited[v] == <span class="number">0</span> <span class="keyword">or</span> (visited[v] == -<span class="number">1</span> <span class="keyword">and</span> <span class="keyword">not</span> dfs(v)):</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">    visited[u] = <span class="number">1</span></span><br><span class="line">    courses.append(u)</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> u <span class="keyword">in</span> <span class="built_in">range</span>(num):</span><br><span class="line">    <span class="keyword">if</span> visited[u] == -<span class="number">1</span> <span class="keyword">and</span> <span class="keyword">not</span> dfs(u):</span><br><span class="line">      <span class="keyword">return</span> []</span><br><span class="line"></span><br><span class="line">courses.reverse()</span><br></pre></td></tr></tbody></table></figure>
+]]></content>
+      <categories>
+        <category>计算机</category>
+        <category>算法</category>
       </categories>
   </entry>
   <entry>
@@ -2079,6 +2089,35 @@ Q=\begin{bmatrix}1&amp;\\&amp;\frac12\end{bmatrix}\begin{bmatrix}0&amp;1\\1&amp;
 ]]></content>
       <categories>
         <category>随笔</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>弱模型的集合 (ensemble)</title>
+    <url>/posts/36436/</url>
+    <content><![CDATA[<h2 id="bagging">Bagging</h2>
+<ul>
+<li><strong>homogeneous</strong> weak learner</li>
+<li>learn each <strong>independently</strong> in parallel</li>
+<li>combine through averaging</li>
+<li>reduce variance</li>
+</ul>
+<h2 id="boosting">Boosting</h2>
+<ul>
+<li><strong>homogeneous</strong> weak learner</li>
+<li>learn each <strong>sequentially</strong> in an adaptive way</li>
+<li>combine through deternimistic strategy</li>
+<li>reduce bias</li>
+</ul>
+<h2 id="stacking">Stacking</h2>
+<ul>
+<li><strong>heterogeneous</strong> weak learner</li>
+<li>learn each <strong>independently</strong> in parallel</li>
+<li>combine on each prediction</li>
+</ul>
+]]></content>
+      <categories>
+        <category>计算机</category>
+        <category>机器学习</category>
       </categories>
   </entry>
   <entry>
@@ -2315,9 +2354,12 @@ Q=\begin{bmatrix}1&amp;\\&amp;\frac12\end{bmatrix}\begin{bmatrix}0&amp;1\\1&amp;
       </categories>
   </entry>
   <entry>
-    <title>检查 Binary search tree (BST)</title>
-    <url>/posts/32064/</url>
-    <content><![CDATA[<p>定义: 对每个节点, 左子树的值都比它小, 右子树的值都比它大. </p><figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">    10</span><br><span class="line">   /  \</span><br><span class="line">  5    15</span><br><span class="line"> / \   / \</span><br><span class="line">2   7 12 20</span><br></pre></td></tr></tbody></table></figure> <figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">BST</span>(<span class="params">root</span>):</span></span><br><span class="line">    <span class="keyword">if</span> root <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">    min_val = <span class="built_in">float</span>(<span class="string">'-inf'</span>)</span><br><span class="line">    max_val = <span class="built_in">float</span>(<span class="string">'inf'</span>)</span><br><span class="line">    <span class="keyword">return</span> isBST(root, min_val, max_val)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">isBST</span>(<span class="params">root, min_val, max_val</span>):</span></span><br><span class="line">    <span class="keyword">if</span> root <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">    <span class="keyword">if</span> root.val &lt;= min_val <span class="keyword">or</span> root.val &gt;= max_val:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">    <span class="keyword">return</span> isBST(root.left, min_val, root.val) <span class="keyword">and</span> isBST(root.right, root.val, max_val)</span><br></pre></td></tr></tbody></table></figure><p></p>
+    <title>树的最小高度</title>
+    <url>/posts/64764/</url>
+    <content><![CDATA[<h2 id="bottom-up">Bottom Up</h2>
+<figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">minDepth</span>(<span class="params">root</span>):</span></span><br><span class="line">    <span class="keyword">if</span> root <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">    <span class="keyword">return</span> helper(root)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">helper</span>(<span class="params">root</span>):</span></span><br><span class="line">    <span class="keyword">if</span> root <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">float</span>(<span class="string">'inf'</span>)  <span class="comment"># 如果只有一个孩子, 返回该孩子处的高度</span></span><br><span class="line">    <span class="keyword">if</span> root.left <span class="keyword">is</span> <span class="literal">None</span> <span class="keyword">and</span> root.right <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">    l = helper(root.left)</span><br><span class="line">    r = helper(root.right)</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">min</span>(l, r) + <span class="number">1</span></span><br></pre></td></tr></tbody></table></figure>
+<h2 id="top-down">Top Down</h2>
+<figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">minDepth</span>(<span class="params">self, root</span>):</span></span><br><span class="line">        <span class="keyword">if</span> root <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        self.ret = <span class="built_in">float</span>(<span class="string">'inf'</span>)</span><br><span class="line">        self.helper(root, <span class="number">1</span>)</span><br><span class="line">        <span class="keyword">return</span> self.ret</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">helper</span>(<span class="params">self, root, depth</span>):</span></span><br><span class="line">        <span class="keyword">if</span> root <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        <span class="keyword">if</span> root.left <span class="keyword">is</span> <span class="literal">None</span> <span class="keyword">and</span> root.right <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">            self.ret = <span class="built_in">min</span>(self.ret, depth)</span><br><span class="line">        </span><br><span class="line">        self.helper(root.left, depth + <span class="number">1</span>)</span><br><span class="line">        self.helper(root.right, depth + <span class="number">1</span>)</span><br><span class="line">        <span class="keyword">return</span></span><br></pre></td></tr></tbody></table></figure>
 ]]></content>
       <categories>
         <category>计算机</category>
@@ -2338,12 +2380,9 @@ Q=\begin{bmatrix}1&amp;\\&amp;\frac12\end{bmatrix}\begin{bmatrix}0&amp;1\\1&amp;
       </categories>
   </entry>
   <entry>
-    <title>树的最小高度</title>
-    <url>/posts/64764/</url>
-    <content><![CDATA[<h2 id="bottom-up">Bottom Up</h2>
-<figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">minDepth</span>(<span class="params">root</span>):</span></span><br><span class="line">    <span class="keyword">if</span> root <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">    <span class="keyword">return</span> helper(root)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">helper</span>(<span class="params">root</span>):</span></span><br><span class="line">    <span class="keyword">if</span> root <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">float</span>(<span class="string">'inf'</span>)  <span class="comment"># 如果只有一个孩子, 返回该孩子处的高度</span></span><br><span class="line">    <span class="keyword">if</span> root.left <span class="keyword">is</span> <span class="literal">None</span> <span class="keyword">and</span> root.right <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">    l = helper(root.left)</span><br><span class="line">    r = helper(root.right)</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">min</span>(l, r) + <span class="number">1</span></span><br></pre></td></tr></tbody></table></figure>
-<h2 id="top-down">Top Down</h2>
-<figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">minDepth</span>(<span class="params">self, root</span>):</span></span><br><span class="line">        <span class="keyword">if</span> root <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        self.ret = <span class="built_in">float</span>(<span class="string">'inf'</span>)</span><br><span class="line">        self.helper(root, <span class="number">1</span>)</span><br><span class="line">        <span class="keyword">return</span> self.ret</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">helper</span>(<span class="params">self, root, depth</span>):</span></span><br><span class="line">        <span class="keyword">if</span> root <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        <span class="keyword">if</span> root.left <span class="keyword">is</span> <span class="literal">None</span> <span class="keyword">and</span> root.right <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">            self.ret = <span class="built_in">min</span>(self.ret, depth)</span><br><span class="line">        </span><br><span class="line">        self.helper(root.left, depth + <span class="number">1</span>)</span><br><span class="line">        self.helper(root.right, depth + <span class="number">1</span>)</span><br><span class="line">        <span class="keyword">return</span></span><br></pre></td></tr></tbody></table></figure>
+    <title>检查 Binary search tree (BST)</title>
+    <url>/posts/32064/</url>
+    <content><![CDATA[<p>定义: 对每个节点, 左子树的值都比它小, 右子树的值都比它大. </p><figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">    10</span><br><span class="line">   /  \</span><br><span class="line">  5    15</span><br><span class="line"> / \   / \</span><br><span class="line">2   7 12 20</span><br></pre></td></tr></tbody></table></figure> <figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">BST</span>(<span class="params">root</span>):</span></span><br><span class="line">    <span class="keyword">if</span> root <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">    min_val = <span class="built_in">float</span>(<span class="string">'-inf'</span>)</span><br><span class="line">    max_val = <span class="built_in">float</span>(<span class="string">'inf'</span>)</span><br><span class="line">    <span class="keyword">return</span> isBST(root, min_val, max_val)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">isBST</span>(<span class="params">root, min_val, max_val</span>):</span></span><br><span class="line">    <span class="keyword">if</span> root <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">    <span class="keyword">if</span> root.val &lt;= min_val <span class="keyword">or</span> root.val &gt;= max_val:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">    <span class="keyword">return</span> isBST(root.left, min_val, root.val) <span class="keyword">and</span> isBST(root.right, root.val, max_val)</span><br></pre></td></tr></tbody></table></figure><p></p>
 ]]></content>
       <categories>
         <category>计算机</category>
@@ -2417,6 +2456,21 @@ E(\text{error})=\text{bias}^2+\text{Var}+\varepsilon.
       </categories>
   </entry>
   <entry>
+    <title>用两个 stack 实现 queue</title>
+    <url>/posts/27896/</url>
+    <content><![CDATA[<figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Queue</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self</span>) -&gt; <span class="literal">None</span>:</span></span><br><span class="line">        self.s1 = []  <span class="comment"># entrance</span></span><br><span class="line">        self.s2 = []  <span class="comment"># exit</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">enqueue</span>(<span class="params">self, x</span>):</span></span><br><span class="line">        self.s1.append(x)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">dequeue</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> self.s2:</span><br><span class="line">            <span class="keyword">while</span> self.s1:</span><br><span class="line">                self.s2.append(self.s1.pop())</span><br><span class="line">        <span class="keyword">return</span> self.s2.pop()</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">is_empty</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">not</span> self.s1 <span class="keyword">and</span> <span class="keyword">not</span> self.s2</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">size</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">len</span>(self.s1) + <span class="built_in">len</span>(self.s2)</span><br></pre></td></tr></tbody></table></figure>
+<p>时间:</p>
+<ul>
+<li>入队 <span class="math inline">\(O(1)\)</span></li>
+<li>出队最差 <span class="math inline">\(O(n)\)</span>, amortized <span class="math inline">\(O(1)\)</span></li>
+</ul>
+]]></content>
+      <categories>
+        <category>计算机</category>
+        <category>算法</category>
+      </categories>
+  </entry>
+  <entry>
     <title>科普是一项非常难的工作</title>
     <url>/posts/20918/</url>
     <content><![CDATA[<p>要想当一个好学生，只需要把知识学懂。</p>
@@ -2431,18 +2485,50 @@ E(\text{error})=\text{bias}^2+\text{Var}+\varepsilon.
       </categories>
   </entry>
   <entry>
-    <title>用两个 stack 实现 queue</title>
-    <url>/posts/27896/</url>
-    <content><![CDATA[<figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Queue</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self</span>) -&gt; <span class="literal">None</span>:</span></span><br><span class="line">        self.s1 = []  <span class="comment"># entrance</span></span><br><span class="line">        self.s2 = []  <span class="comment"># exit</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">enqueue</span>(<span class="params">self, x</span>):</span></span><br><span class="line">        self.s1.append(x)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">dequeue</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> self.s2:</span><br><span class="line">            <span class="keyword">while</span> self.s1:</span><br><span class="line">                self.s2.append(self.s1.pop())</span><br><span class="line">        <span class="keyword">return</span> self.s2.pop()</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">is_empty</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">not</span> self.s1 <span class="keyword">and</span> <span class="keyword">not</span> self.s2</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">size</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">len</span>(self.s1) + <span class="built_in">len</span>(self.s2)</span><br></pre></td></tr></tbody></table></figure>
-<p>时间:</p>
-<ul>
-<li>入队 <span class="math inline">\(O(1)\)</span></li>
-<li>出队最差 <span class="math inline">\(O(n)\)</span>, amortized <span class="math inline">\(O(1)\)</span></li>
-</ul>
+    <title>计算定积分</title>
+    <url>/posts/46715/</url>
+    <content><![CDATA[<p>计算定积分 <span class="math display">\[
+I_n=\int_0^1(1-x^2)^n\d x.
+\]</span> <span id="more"></span></p>
+<h2 id="递推">递推</h2>
+<p><span class="math display">\[
+\begin{align*}
+I_n&amp;=\int_0^1(1-x^2)^n\,\mathrm dx\\
+&amp;=\int_0^1(1-x^2)(1-x^2)^{n-1}\,\mathrm dx\\
+&amp;=\int_0^1(1-x^2)^{n-1}\,\mathrm dx-\int_0^1x^2(1-x^2)^{n-1}\,\mathrm dx\\
+&amp;=I_{n-1}+\frac{1}{2n}\int_0^1x\,\mathrm d(1-x^2)^{n}\\
+&amp;=I_{n-1}+\frac{1}{2n}\left.x(1-x^2)^n\right|_0^1-\frac{1}{2n}\int_0^1(1-x^2)^n\,\mathrm dx\\
+&amp;=I_{n-1}-\frac{1}{2n}I_n\\
+&amp;={2n\over2n+1}I_{n-1},
+%&amp;=\left.t(1-t^2)\right|_{0}^1-n\int_0^1t(1-t^2)^{n-1}\,\mathrm dt\\
+%&amp;=-n\left(\left.t^2(1-t^2)^{n-1}\right|_0^1-\int_0^1\left((1-t^2)^{n-1}-2(n-1)t^2(1-t^2)^{n-2}\right)\,\mathrm dt\right)\\
+%&amp;=n\int_0^1(1-t^2)^{n-1}\,\mathrm dt+2n(n-1)\int_0^1t^2(1-t^2)^{n-2}\,\mathrm dt
+%&amp;=\int_0^1\sum_{k=0}^n{n\choose k}(-t^2)^k\,\mathrm dt\\
+%&amp;=\int_0^1\sum_{k=0}^n{n\choose k}(-1)^kt^{2k}\,\mathrm dt\\
+%&amp;=\sum_{k=0}^n{n\choose k}(-1)^k\int_0^1t^{2k}\,\mathrm dt\\
+%&amp;=\sum_{k=0}^n{(-1)^k{n\choose k}\over 2k+1}
+\end{align*}
+\]</span></p>
+<p>利用 <span class="math inline">\(I_0=1\)</span> 递推可得 <span class="math display">\[
+I_n={(2n)!!\over(2n+1)!!}.
+\]</span></p>
+<h2 id="gamma-函数">Gamma 函数</h2>
+<p>作代换 <span class="math inline">\(x=\sqrt{t}\)</span>，可得 <span class="math display">\[
+\begin{align*}
+\int_0^1(1-x^2)^n\d x &amp;= \frac12\int_0^1 (1-t)^n t^{-\frac12}\d t\\
+&amp;= \frac12 \B\left(n+1, \frac12\right)\\
+&amp;= \frac12 {\Gamma(n+1)\Gamma\left(\frac12\right)\over\Gamma\left(n+\frac32\right)}\\
+&amp;=\frac12{n!\cdot\Gamma\left(\frac12\right)\over\frac{2n+1}{2}\times\cdots\times\frac32\times\frac12 \Gamma\left(\frac12\right)}\\
+&amp;= {2^nn!\over (2n+1)!!}\\
+&amp;={(2n)!!\over (2n+1)!!}.
+\end{align*}
+\]</span></p>
 ]]></content>
       <categories>
-        <category>计算机</category>
-        <category>算法</category>
+        <category>数学</category>
+        <category>分析</category>
+        <category>微积分</category>
+        <category>单变量微积分</category>
       </categories>
   </entry>
   <entry>
@@ -2656,67 +2742,6 @@ M=\frac{1}{\omega} D+L, \quad N=\frac{1-\omega}{\omega} D-U
 ]]></content>
       <categories>
         <category>英语</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>弱模型的集合 (ensemble)</title>
-    <url>/posts/36436/</url>
-    <content><![CDATA[<h2 id="bagging">Bagging</h2>
-<ul>
-<li><strong>homogeneous</strong> weak learner</li>
-<li>learn each <strong>independently</strong> in parallel</li>
-<li>combine through averaging</li>
-<li>reduce variance</li>
-</ul>
-<h2 id="boosting">Boosting</h2>
-<ul>
-<li><strong>homogeneous</strong> weak learner</li>
-<li>learn each <strong>sequentially</strong> in an adaptive way</li>
-<li>combine through deternimistic strategy</li>
-<li>reduce bias</li>
-</ul>
-<h2 id="stacking">Stacking</h2>
-<ul>
-<li><strong>heterogeneous</strong> weak learner</li>
-<li>learn each <strong>independently</strong> in parallel</li>
-<li>combine on each prediction</li>
-</ul>
-]]></content>
-      <categories>
-        <category>计算机</category>
-        <category>机器学习</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>图搜索算法</title>
-    <url>/posts/29510/</url>
-    <content><![CDATA[<h1 id="bfs">BFS</h1>
-<h2 id="之字形遍历树">之字形遍历树</h2>
-<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">  3</span><br><span class="line"> / \</span><br><span class="line">9  20</span><br><span class="line">   /\</span><br><span class="line">  15 7   </span><br></pre></td></tr></tbody></table></figure>
-<p>返回 <code>[[3], [20,9], [15,7]]</code>.</p>
-<figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">zigzag</span>(<span class="params">root</span>):</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> root:</span><br><span class="line">        <span class="keyword">return</span> []</span><br><span class="line">    frontier = [root]</span><br><span class="line">    reverse = <span class="literal">False</span></span><br><span class="line">    ans = []</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> frontier:</span><br><span class="line">        <span class="built_in">next</span>, cur = [], []</span><br><span class="line">        <span class="comment"># next 存储邻域节点, cur 存储当前层的值</span></span><br><span class="line">        <span class="keyword">for</span> u <span class="keyword">in</span> frontier:</span><br><span class="line">            cur.append(u.val)</span><br><span class="line">            <span class="keyword">if</span> u.left:</span><br><span class="line">                <span class="built_in">next</span>.append(u.left)</span><br><span class="line">            <span class="keyword">if</span> u.right:</span><br><span class="line">                <span class="built_in">next</span>.append(u.right)</span><br><span class="line">        ans.append(cur[::-<span class="number">1</span>] <span class="keyword">if</span> reverse <span class="keyword">else</span> cur)</span><br><span class="line">        frontier = <span class="built_in">next</span></span><br><span class="line">        reverse = <span class="keyword">not</span> reverse</span><br><span class="line">    <span class="keyword">return</span> ans</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="岛屿数量">岛屿数量</h2>
-<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">11110</span><br><span class="line">11010</span><br><span class="line">11000</span><br><span class="line">00000</span><br></pre></td></tr></tbody></table></figure>
-<p>其中 1 代表陆地, 0 代表水. 返回岛屿数量, 即 1.</p>
-<figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">BFS</span>(<span class="params">grid, r, c, marked</span>):</span></span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">    (r, c) is the starting point</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line">    <span class="comment"># delta row and col</span></span><br><span class="line">    dr, dc = [-<span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>], [<span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>, -<span class="number">1</span>]</span><br><span class="line">    marked.add((r, c))</span><br><span class="line">    frontier = [(r, c)]</span><br><span class="line">    <span class="keyword">while</span> frontier:</span><br><span class="line">        <span class="built_in">next</span> = []</span><br><span class="line">        <span class="keyword">for</span> r, c <span class="keyword">in</span> frontier:</span><br><span class="line">            <span class="keyword">for</span> d <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">4</span>):</span><br><span class="line">                nr, nc = r + dr[d], c + dc[d]</span><br><span class="line">                <span class="keyword">if</span> <span class="number">0</span> &lt;= nr &lt; <span class="built_in">len</span>(grid) <span class="keyword">and</span> <span class="number">0</span> &lt;= nc &lt; <span class="built_in">len</span>(grid[<span class="number">0</span>]) \</span><br><span class="line">                  <span class="keyword">and</span> grid[nr][nc] == <span class="string">'1'</span> <span class="keyword">and</span> (nr, nc) <span class="keyword">not</span> <span class="keyword">in</span> marked:</span><br><span class="line">                    marked.add((nr, nc))</span><br><span class="line">                    <span class="built_in">next</span>.append((nr, nc))</span><br><span class="line">        frontier = <span class="built_in">next</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">numIslands</span>(<span class="params">grid</span>):</span></span><br><span class="line">    res = <span class="number">0</span></span><br><span class="line">    marked = <span class="built_in">set</span>()</span><br><span class="line">    <span class="keyword">for</span> r <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(grid)):</span><br><span class="line">        <span class="keyword">for</span> c <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(grid[<span class="number">0</span>])):</span><br><span class="line">            <span class="keyword">if</span> grid[r][c] == <span class="string">'1'</span> <span class="keyword">and</span> (r, c) <span class="keyword">not</span> <span class="keyword">in</span> marked:</span><br><span class="line">                BFS(grid, r, c, marked)</span><br><span class="line">                res += <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> res</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="单词变换">单词变换</h2>
-<p>从 <code>hit</code> 变成 <code>cog</code>, 每次只变一个字符, 要求过程单词在列表 <code>[hot, dot, dog, lot, log, cog]</code> 中.</p>
-<p>返回最短的变换路径长度 (5): <code>hit - hot - dot - dog - cog</code>. </p><figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> string</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">ladder_length</span>(<span class="params">begin, end, words</span>):</span></span><br><span class="line">    words = <span class="built_in">set</span>(words)</span><br><span class="line">    <span class="keyword">if</span> end <span class="keyword">not</span> <span class="keyword">in</span> words:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">    </span><br><span class="line">    ans = <span class="number">1</span></span><br><span class="line">    frontier = [begin]</span><br><span class="line">    used = <span class="built_in">set</span>(frontier)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> frontier:</span><br><span class="line">        <span class="built_in">next</span> = []</span><br><span class="line">        <span class="keyword">for</span> word <span class="keyword">in</span> frontier:</span><br><span class="line">            <span class="keyword">for</span> p <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(word)):</span><br><span class="line">                <span class="keyword">for</span> c <span class="keyword">in</span> string.ascii_lowercase:</span><br><span class="line">                    new_word = word[:p] + c + word[p+<span class="number">1</span>:]</span><br><span class="line">                    <span class="keyword">if</span> new_word == end:</span><br><span class="line">                        <span class="keyword">return</span> ans + <span class="number">1</span></span><br><span class="line">                    <span class="keyword">if</span> new_word <span class="keyword">in</span> words <span class="keyword">and</span> new_word <span class="keyword">not</span> <span class="keyword">in</span> used:</span><br><span class="line">                        used.add(new_word)</span><br><span class="line">                        <span class="built_in">next</span>.append(new_word)</span><br><span class="line">        frontier = <span class="built_in">next</span></span><br><span class="line">        ans += <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(ladder_length(<span class="string">'hit'</span>, <span class="string">'cog'</span>, [<span class="string">'hot'</span>, <span class="string">'dot'</span>, <span class="string">'dog'</span>, <span class="string">'lot'</span>, <span class="string">'log'</span>, <span class="string">'cog'</span>]))</span><br></pre></td></tr></tbody></table></figure><p></p>
-<h2 id="路径填充">路径填充</h2>
-<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">INF  -1   0   INF</span><br><span class="line">INF  INF INF  -1</span><br><span class="line">INF  -1  INF  -1</span><br><span class="line">0    -1  INF  INF</span><br></pre></td></tr></tbody></table></figure>
-<p>INF 表示空房间, -1 表示墙, 0 表示门.</p>
-<p>需要把 INF 都填充为走到最近的门的路径长度, 若没有路径还填 INF. 返回 </p><figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">3 -1  0  1</span><br><span class="line">2  2  1 -1</span><br><span class="line">1 -1  2 -1</span><br><span class="line">0 -1  3  4</span><br></pre></td></tr></tbody></table></figure><p></p>
-<figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">walls_and_gates</span>(<span class="params">rooms</span>):</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> rooms:</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    dr, dc = [-<span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>], [<span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>, -<span class="number">1</span>]</span><br><span class="line">    N, C = <span class="built_in">len</span>(rooms), <span class="built_in">len</span>(rooms[<span class="number">0</span>])</span><br><span class="line">    frontier = [(r, c) <span class="keyword">for</span> r <span class="keyword">in</span> <span class="built_in">range</span>(N) <span class="keyword">for</span> c <span class="keyword">in</span> <span class="built_in">range</span>(C) <span class="keyword">if</span> rooms[r][c] == <span class="number">0</span>]</span><br><span class="line">    INF = <span class="number">2147483647</span></span><br><span class="line">    dist = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> frontier:</span><br><span class="line">        <span class="built_in">next</span> = []</span><br><span class="line">        <span class="keyword">for</span> r, c <span class="keyword">in</span> frontier:</span><br><span class="line">            <span class="keyword">for</span> d <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">4</span>):</span><br><span class="line">                nr, nc = r + dr[d], c + dc[d]</span><br><span class="line">                <span class="keyword">if</span> <span class="number">0</span> &lt;= nr &lt; N <span class="keyword">and</span> <span class="number">0</span> &lt;= nc &lt; C \</span><br><span class="line">                    <span class="keyword">and</span> rooms[nr][nc] == INF:</span><br><span class="line">                    rooms[nr][nc] = dist + <span class="number">1</span></span><br><span class="line">                    <span class="built_in">next</span>.append((nr, nc))</span><br><span class="line">        frontier = <span class="built_in">next</span></span><br><span class="line">        dist += <span class="number">1</span></span><br></pre></td></tr></tbody></table></figure>
-<h1 id="dfs">DFS</h1>
-<h2 id="检查是否有圈">检查是否有圈</h2>
-<figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">dfs</span>(<span class="params">directed_graph, visit_status, u</span>):</span></span><br><span class="line">    <span class="comment"># 0 表示还在访问, 1 表示访问结束</span></span><br><span class="line">    visit_status[u] = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> v <span class="keyword">in</span> directed_graph[u]:</span><br><span class="line">        <span class="keyword">if</span> v <span class="keyword">not</span> <span class="keyword">in</span> visit_status:</span><br><span class="line">            <span class="keyword">if</span> dfs(directed_graph, visit_status, v):</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">        <span class="keyword">elif</span> visit_status[v] == <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">    visit_status[u] = <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">has_cycle</span>(<span class="params">directed_graph</span>):</span></span><br><span class="line">    visit_status = {}</span><br><span class="line">    <span class="keyword">for</span> v <span class="keyword">in</span> directed_graph:</span><br><span class="line">        <span class="keyword">if</span> v <span class="keyword">not</span> <span class="keyword">in</span> visit_status <span class="keyword">and</span> dfs(directed_graph, visit_status, v):</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">False</span></span><br></pre></td></tr></tbody></table></figure>
-<h2 id="拓扑排序">拓扑排序</h2>
-<p>从任意节点出发, 遍历邻居, 直到遍历结束, 把邻居放入结果. 再把自己放入结果. 最后反转结果.</p>
-<figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line">courses = []</span><br><span class="line">visited = [-<span class="number">1</span>] * num</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">dfs</span>(<span class="params">u</span>):</span></span><br><span class="line">    visited[u] = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> v <span class="keyword">in</span> graph[u]:</span><br><span class="line">        <span class="keyword">if</span> visited[v] == <span class="number">0</span> <span class="keyword">or</span> (visited[v] == -<span class="number">1</span> <span class="keyword">and</span> <span class="keyword">not</span> dfs(v)):</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">    visited[u] = <span class="number">1</span></span><br><span class="line">    courses.append(u)</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> u <span class="keyword">in</span> <span class="built_in">range</span>(num):</span><br><span class="line">    <span class="keyword">if</span> visited[u] == -<span class="number">1</span> <span class="keyword">and</span> <span class="keyword">not</span> dfs(u):</span><br><span class="line">      <span class="keyword">return</span> []</span><br><span class="line"></span><br><span class="line">courses.reverse()</span><br></pre></td></tr></tbody></table></figure>
-]]></content>
-      <categories>
-        <category>计算机</category>
-        <category>算法</category>
       </categories>
   </entry>
   <entry>
@@ -2964,15 +2989,6 @@ a_n={n!\over(2n+1)!!}\cdot{1\over n+1}，
       </categories>
   </entry>
   <entry>
-    <title>雪</title>
-    <url>/posts/47930/</url>
-    <content><![CDATA[<p>满世界白茫茫的一片。 静谧而优雅。 惬意而自在。 踏着碎琼乱玉，咯吱咯吱的声音和触感。 沁凉的空气，明亮的阳光，反射着熠熠生辉。</p>
-]]></content>
-      <categories>
-        <category>随笔</category>
-      </categories>
-  </entry>
-  <entry>
     <title>链表相加</title>
     <url>/posts/30822/</url>
     <content><![CDATA[<p>比如一个链表是 <code>1 -&gt; 2 -&gt; 3</code>, 一个是 <code>2 -&gt; 7</code>, 结果应该返回 <code>1 -&gt; 5 -&gt; 0</code>.</p>
@@ -2984,6 +3000,15 @@ a_n={n!\over(2n+1)!!}\cdot{1\over n+1}，
       <categories>
         <category>计算机</category>
         <category>算法</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>雪</title>
+    <url>/posts/47930/</url>
+    <content><![CDATA[<p>满世界白茫茫的一片。 静谧而优雅。 惬意而自在。 踏着碎琼乱玉，咯吱咯吱的声音和触感。 沁凉的空气，明亮的阳光，反射着熠熠生辉。</p>
+]]></content>
+      <categories>
+        <category>随笔</category>
       </categories>
   </entry>
   <entry>
