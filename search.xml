@@ -115,6 +115,20 @@
       </categories>
   </entry>
   <entry>
+    <title>Fourier 级数</title>
+    <url>/posts/22351/</url>
+    <content><![CDATA[<p><span class="math display">\[
+f\colon[-L,L]\to\mathbb{R}
+\]</span> <span class="math display">\[F(x)=a_0+\sum_{n=1}^\infty \left(a_n\cos\left(\frac{n\pi x}{L}\right)+b_n\sin\left(\frac{n\pi x}{L}\right)\right)\]</span> 其中 <span class="math display">\[a_0=\frac{1}{2L}\int_{-L}^Lf(x)\,\mathrm{d}x\]</span> <span class="math display">\[a_n=\frac{1}{L}\int_{-L}^Lf(x)\cos\left(\frac{n\pi x}{L}\right)\,\mathrm{d}x\]</span> <span class="math display">\[b_n=\frac{1}{L}\int_{-L}^Lf(x)\sin\left(\frac{n\pi x}{L}\right)\,\mathrm{d}x\]</span></p>
+]]></content>
+      <categories>
+        <category>数学</category>
+        <category>分析</category>
+        <category>微积分</category>
+        <category>级数</category>
+      </categories>
+  </entry>
+  <entry>
     <title>Gauss 积分</title>
     <url>/posts/48382/</url>
     <content><![CDATA[<p>证明 <span class="math display">\[
@@ -245,20 +259,6 @@ f(z)-f(z+\tau)=\e^{-\frac{z^2}{2}}.
       </categories>
   </entry>
   <entry>
-    <title>Fourier 级数</title>
-    <url>/posts/22351/</url>
-    <content><![CDATA[<p><span class="math display">\[
-f\colon[-L,L]\to\mathbb{R}
-\]</span> <span class="math display">\[F(x)=a_0+\sum_{n=1}^\infty \left(a_n\cos\left(\frac{n\pi x}{L}\right)+b_n\sin\left(\frac{n\pi x}{L}\right)\right)\]</span> 其中 <span class="math display">\[a_0=\frac{1}{2L}\int_{-L}^Lf(x)\,\mathrm{d}x\]</span> <span class="math display">\[a_n=\frac{1}{L}\int_{-L}^Lf(x)\cos\left(\frac{n\pi x}{L}\right)\,\mathrm{d}x\]</span> <span class="math display">\[b_n=\frac{1}{L}\int_{-L}^Lf(x)\sin\left(\frac{n\pi x}{L}\right)\,\mathrm{d}x\]</span></p>
-]]></content>
-      <categories>
-        <category>数学</category>
-        <category>分析</category>
-        <category>微积分</category>
-        <category>级数</category>
-      </categories>
-  </entry>
-  <entry>
     <title>常见的ODE解法</title>
     <url>/posts/65228/</url>
     <content><![CDATA[<h3 id="可分离变量-ypyqx">1. 可分离变量 <span class="math inline">\(y'=p(y)q(x)\)</span></h3>
@@ -333,6 +333,23 @@ t_{2,1} + 4 \le t_{0,2}.
       </categories>
   </entry>
   <entry>
+    <title>OR-Tools 入门</title>
+    <url>/posts/59457/</url>
+    <content><![CDATA[<p><span class="math display">\[
+\max~ 3x+y,\quad
+\text{subject to}\ \begin{cases}
+0\le x\le 1\\
+0\le y\le 2\\
+x+y\le 2
+\end{cases}
+\]</span> <span id="more"></span> </p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> ortools.linear_solver <span class="keyword">import</span> pywraplp</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span>():</span></span><br><span class="line">    <span class="comment"># Create the linear solver with the GLOP backend.</span></span><br><span class="line">    solver = pywraplp.Solver.CreateSolver(<span class="string">'GLOP'</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Create the variables x and y.</span></span><br><span class="line">    x = solver.NumVar(<span class="number">0</span>, <span class="number">1</span>, <span class="string">'x'</span>)</span><br><span class="line">    y = solver.NumVar(<span class="number">0</span>, <span class="number">2</span>, <span class="string">'y'</span>)</span><br><span class="line"></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'Number of variables ='</span>, solver.NumVariables())</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Create a linear constraint, 0 &lt;= x + y &lt;= 2.</span></span><br><span class="line">    ct = solver.Constraint(<span class="number">0</span>, <span class="number">2</span>, <span class="string">'ct'</span>)</span><br><span class="line">    ct.SetCoefficient(x, <span class="number">1</span>)</span><br><span class="line">    ct.SetCoefficient(y, <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'Number of constraints ='</span>, solver.NumConstraints())</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Create the objective function, 3 * x + y.</span></span><br><span class="line">    objective = solver.Objective()</span><br><span class="line">    objective.SetCoefficient(x, <span class="number">3</span>)</span><br><span class="line">    objective.SetCoefficient(y, <span class="number">1</span>)</span><br><span class="line">    objective.SetMaximization()</span><br><span class="line"></span><br><span class="line">    solver.Solve()</span><br><span class="line"></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'='</span>*<span class="number">25</span>+<span class="string">' Solution '</span>+<span class="string">'='</span>*<span class="number">25</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'Objective value ='</span>, objective.Value())</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'x ='</span>, x.solution_value())</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'y ='</span>, y.solution_value())</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    main()</span><br></pre></td></tr></tbody></table></figure> 输出 <figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">Number of variables = 2</span><br><span class="line">Number of constraints = 1</span><br><span class="line">========================= Solution =========================</span><br><span class="line">Objective value = 4.0</span><br><span class="line">x = 1.0</span><br><span class="line">y = 1.0</span><br></pre></td></tr></tbody></table></figure><p></p>
+]]></content>
+      <categories>
+        <category>计算机</category>
+        <category>OR-Tools</category>
+      </categories>
+  </entry>
+  <entry>
     <title>PCA</title>
     <url>/posts/4593/</url>
     <content><![CDATA[<p>"降维" 是减少数据特征, 不是减少样本.</p>
@@ -377,23 +394,6 @@ a_N &amp; b_N\\
       <categories>
         <category>数学</category>
         <category>统计</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>OR-Tools 入门</title>
-    <url>/posts/59457/</url>
-    <content><![CDATA[<p><span class="math display">\[
-\max~ 3x+y,\quad
-\text{subject to}\ \begin{cases}
-0\le x\le 1\\
-0\le y\le 2\\
-x+y\le 2
-\end{cases}
-\]</span> <span id="more"></span> </p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> ortools.linear_solver <span class="keyword">import</span> pywraplp</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span>():</span></span><br><span class="line">    <span class="comment"># Create the linear solver with the GLOP backend.</span></span><br><span class="line">    solver = pywraplp.Solver.CreateSolver(<span class="string">'GLOP'</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Create the variables x and y.</span></span><br><span class="line">    x = solver.NumVar(<span class="number">0</span>, <span class="number">1</span>, <span class="string">'x'</span>)</span><br><span class="line">    y = solver.NumVar(<span class="number">0</span>, <span class="number">2</span>, <span class="string">'y'</span>)</span><br><span class="line"></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'Number of variables ='</span>, solver.NumVariables())</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Create a linear constraint, 0 &lt;= x + y &lt;= 2.</span></span><br><span class="line">    ct = solver.Constraint(<span class="number">0</span>, <span class="number">2</span>, <span class="string">'ct'</span>)</span><br><span class="line">    ct.SetCoefficient(x, <span class="number">1</span>)</span><br><span class="line">    ct.SetCoefficient(y, <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'Number of constraints ='</span>, solver.NumConstraints())</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Create the objective function, 3 * x + y.</span></span><br><span class="line">    objective = solver.Objective()</span><br><span class="line">    objective.SetCoefficient(x, <span class="number">3</span>)</span><br><span class="line">    objective.SetCoefficient(y, <span class="number">1</span>)</span><br><span class="line">    objective.SetMaximization()</span><br><span class="line"></span><br><span class="line">    solver.Solve()</span><br><span class="line"></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'='</span>*<span class="number">25</span>+<span class="string">' Solution '</span>+<span class="string">'='</span>*<span class="number">25</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'Objective value ='</span>, objective.Value())</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'x ='</span>, x.solution_value())</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'y ='</span>, y.solution_value())</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    main()</span><br></pre></td></tr></tbody></table></figure> 输出 <figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">Number of variables = 2</span><br><span class="line">Number of constraints = 1</span><br><span class="line">========================= Solution =========================</span><br><span class="line">Objective value = 4.0</span><br><span class="line">x = 1.0</span><br><span class="line">y = 1.0</span><br></pre></td></tr></tbody></table></figure><p></p>
-]]></content>
-      <categories>
-        <category>计算机</category>
-        <category>OR-Tools</category>
       </categories>
   </entry>
   <entry>
@@ -555,49 +555,6 @@ x+y\le 2
       </categories>
   </entry>
   <entry>
-    <title>$\arcsin^2x$的展开式</title>
-    <url>/posts/20316/</url>
-    <content><![CDATA[<p>证明 <span class="math display">\[
-\arcsin^2x=\frac12\sum_{n=1}^\infty{(2x)^{2n}\over n^2{2n\choose n}}.
-\]</span> <span id="more"></span></p>
-<p>先求导： <span class="math display">\[
-(\arcsin^2 x)'={2\arcsin x\over\sqrt{1-x^2}}
-\]</span> 利用恒等式<span class="math inline">\(\arcsin x=\arctan\left(x\over\sqrt{1-x^2}\right)\)</span>，有 <span class="math display">\[
-\begin{align*}
-{\arcsin x\over\sqrt{1-x^2}}&amp;={1\over\sqrt{1-x^2}}\arctan\left(x\over\sqrt{1-x^2}\right)\\
-&amp;=\frac1x\cdot{1\over\sqrt{1-x^2\over x^2}}\arctan\left({1\over\sqrt{1-x^2\over x^2}}\right)\\
-&amp;=\left.\frac1x\cdot{1\over\sqrt{1-x^2\over x^2}}\arctan\left({t\over\sqrt{1-x^2\over x^2}}\right)\right|_{t=0}^{t=1}\\
-&amp;=\frac1x\int_0^1{\mathrm dt\over t^2+{1-x^2\over x^2}}\\
-&amp;=x\int_0^1{\mathrm dt\over 1-x^2+x^2t^2}\\
-&amp;=x\int_0^1\sum_{n=0}^\infty(x^2-x^2t^2)^n\,\mathrm dt\\
-&amp;=\int_0^1\sum_{n=0}^\infty (1-t^2)^nx^{2n+1}\,\mathrm dt\\
-&amp;=\sum_{n=0}^\infty\left(\int_0^1(1-t^2)^n\,\mathrm dt\right) x^{2n+1}\\
-&amp;=\sum_{n=0}^\infty{(2n)!!\over(2n+1)!!}x^{2n+1}.
-\end{align*}
-\]</span> 其中我们利用了<a href="/posts/23548/" title="结论">结论</a>。</p>
-<p>于是积分： <span class="math display">\[
-\begin{align*}
-\arcsin^2x&amp;=\int_0^x(\arcsin^2t)'\,\mathrm dt\\
-&amp;=2\int_0^x{\arcsin t\over\sqrt{1-t^2}}\,\mathrm dt\\
-&amp;=2\int_0^x\sum_{n=0}^\infty{(2n)!!\over(2n+1)!!}t^{2n+1}\,\mathrm dt\\
-&amp;=2\sum_{n=0}^\infty{(2n)!!\over(2n+1)!!}\int_0^x t^{2n+1}\,\mathrm dt\\
-&amp;=2\sum_{n=0}^\infty{(2n)!!\over(2n+1)!!}\cdot{x^{2n+2}\over2n+2}\\
-&amp;=2\sum_{n=0}^\infty{(2^nn!)^2\over(2n+1)!}\cdot{x^{2n+2}\over2n+2}\\
-&amp;=2\sum_{n=0}^\infty{2^{2n}(n!)^2\over(2n+2)!}x^{2n+2}\\
-&amp;=2\sum_{n=0}^\infty{2^{2n+2}\left((n+1)!\right)^2\over2^2(n+1)^2(2n+2)!}x^{2n+2}\\
-&amp;=\frac12\sum_{n=0}^\infty{(2x)^{2n+2}\over(n+1)^2{2n+2\choose n+1}}\\
-&amp;=\frac12\sum_{n=1}^\infty{(2x)^{2n}\over n^2{2n\choose n}}.
-\end{align*}
-\]</span></p>
-]]></content>
-      <categories>
-        <category>数学</category>
-        <category>分析</category>
-        <category>微积分</category>
-        <category>级数</category>
-      </categories>
-  </entry>
-  <entry>
     <title>分块矩阵的行列式</title>
     <url>/posts/42453/</url>
     <content><![CDATA[<h2 id="结论">结论</h2>
@@ -659,6 +616,49 @@ x+y\le 2
         <category>数学</category>
         <category>代数</category>
         <category>线性代数</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>$\arcsin^2x$的展开式</title>
+    <url>/posts/20316/</url>
+    <content><![CDATA[<p>证明 <span class="math display">\[
+\arcsin^2x=\frac12\sum_{n=1}^\infty{(2x)^{2n}\over n^2{2n\choose n}}.
+\]</span> <span id="more"></span></p>
+<p>先求导： <span class="math display">\[
+(\arcsin^2 x)'={2\arcsin x\over\sqrt{1-x^2}}
+\]</span> 利用恒等式<span class="math inline">\(\arcsin x=\arctan\left(x\over\sqrt{1-x^2}\right)\)</span>，有 <span class="math display">\[
+\begin{align*}
+{\arcsin x\over\sqrt{1-x^2}}&amp;={1\over\sqrt{1-x^2}}\arctan\left(x\over\sqrt{1-x^2}\right)\\
+&amp;=\frac1x\cdot{1\over\sqrt{1-x^2\over x^2}}\arctan\left({1\over\sqrt{1-x^2\over x^2}}\right)\\
+&amp;=\left.\frac1x\cdot{1\over\sqrt{1-x^2\over x^2}}\arctan\left({t\over\sqrt{1-x^2\over x^2}}\right)\right|_{t=0}^{t=1}\\
+&amp;=\frac1x\int_0^1{\mathrm dt\over t^2+{1-x^2\over x^2}}\\
+&amp;=x\int_0^1{\mathrm dt\over 1-x^2+x^2t^2}\\
+&amp;=x\int_0^1\sum_{n=0}^\infty(x^2-x^2t^2)^n\,\mathrm dt\\
+&amp;=\int_0^1\sum_{n=0}^\infty (1-t^2)^nx^{2n+1}\,\mathrm dt\\
+&amp;=\sum_{n=0}^\infty\left(\int_0^1(1-t^2)^n\,\mathrm dt\right) x^{2n+1}\\
+&amp;=\sum_{n=0}^\infty{(2n)!!\over(2n+1)!!}x^{2n+1}.
+\end{align*}
+\]</span> 其中我们利用了<a href="/posts/23548/" title="结论">结论</a>。</p>
+<p>于是积分： <span class="math display">\[
+\begin{align*}
+\arcsin^2x&amp;=\int_0^x(\arcsin^2t)'\,\mathrm dt\\
+&amp;=2\int_0^x{\arcsin t\over\sqrt{1-t^2}}\,\mathrm dt\\
+&amp;=2\int_0^x\sum_{n=0}^\infty{(2n)!!\over(2n+1)!!}t^{2n+1}\,\mathrm dt\\
+&amp;=2\sum_{n=0}^\infty{(2n)!!\over(2n+1)!!}\int_0^x t^{2n+1}\,\mathrm dt\\
+&amp;=2\sum_{n=0}^\infty{(2n)!!\over(2n+1)!!}\cdot{x^{2n+2}\over2n+2}\\
+&amp;=2\sum_{n=0}^\infty{(2^nn!)^2\over(2n+1)!}\cdot{x^{2n+2}\over2n+2}\\
+&amp;=2\sum_{n=0}^\infty{2^{2n}(n!)^2\over(2n+2)!}x^{2n+2}\\
+&amp;=2\sum_{n=0}^\infty{2^{2n+2}\left((n+1)!\right)^2\over2^2(n+1)^2(2n+2)!}x^{2n+2}\\
+&amp;=\frac12\sum_{n=0}^\infty{(2x)^{2n+2}\over(n+1)^2{2n+2\choose n+1}}\\
+&amp;=\frac12\sum_{n=1}^\infty{(2x)^{2n}\over n^2{2n\choose n}}.
+\end{align*}
+\]</span></p>
+]]></content>
+      <categories>
+        <category>数学</category>
+        <category>分析</category>
+        <category>微积分</category>
+        <category>级数</category>
       </categories>
   </entry>
   <entry>
@@ -894,18 +894,6 @@ W_p^1\subseteq L^{p^*},\quad\text{其中 }{1\over p^*}=\frac1p-\frac1n.
       </categories>
   </entry>
   <entry>
-    <title>Hexo 用法记录</title>
-    <url>/posts/16107/</url>
-    <content><![CDATA[<p>插入图片: </p><figure class="highlight html"><table><tbody><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"/file/*"</span> <span class="attr">width</span>=<span class="string">"250"</span> <span class="attr">height</span>=<span class="string">"250"</span>/&gt;</span></span><br></pre></td></tr></tbody></table></figure><p></p>
-<p>嵌入 pdf: </p><figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">{% pdf /file/*.pdf %}</span><br></pre></td></tr></tbody></table></figure><p></p>
-<p>链接文章: </p><figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">{% post_link * 说明 %}</span><br></pre></td></tr></tbody></table></figure><p></p>
-]]></content>
-      <categories>
-        <category>计算机</category>
-        <category>hexo</category>
-      </categories>
-  </entry>
-  <entry>
     <title>定积分性质例题</title>
     <url>/posts/5066/</url>
     <content><![CDATA[<p><strong>问题：在 <span class="math inline">\([0,\pi]\)</span> 上的连续函数 <span class="math inline">\(f\)</span> 满足</strong> <span class="math display">\[
@@ -930,6 +918,18 @@ F(x)=f(x)\sin(x-x_0)\leq0,~\forall x\in(0,\pi).
         <category>分析</category>
         <category>微积分</category>
         <category>单变量微积分</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Hexo 用法记录</title>
+    <url>/posts/16107/</url>
+    <content><![CDATA[<p>插入图片: </p><figure class="highlight html"><table><tbody><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"/file/*"</span> <span class="attr">width</span>=<span class="string">"250"</span> <span class="attr">height</span>=<span class="string">"250"</span>/&gt;</span></span><br><span class="line">{% asset_img image.jpg This is an image %}</span><br></pre></td></tr></tbody></table></figure><p></p>
+<p>嵌入 pdf: </p><figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">{% pdf /file/*.pdf %}</span><br></pre></td></tr></tbody></table></figure><p></p>
+<p>链接文章: </p><figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">{% post_link * 说明 %}</span><br></pre></td></tr></tbody></table></figure><p></p>
+]]></content>
+      <categories>
+        <category>计算机</category>
+        <category>hexo</category>
       </categories>
   </entry>
   <entry>
@@ -1161,60 +1161,6 @@ H_A=0.5\times0.7219+0.5\times0.9710=0.8465
       </categories>
   </entry>
   <entry>
-    <title>常用积分</title>
-    <url>/posts/23548/</url>
-    <content><![CDATA[<h2 id="不定积分">不定积分</h2>
-<p><span class="math display">\[\int\frac{1}{x^2+a^2} \,\mathrm{d}x=\frac 1a\arctan\frac xa+C\]</span> <span class="math display">\[\int\frac{1}{x^2-a^2} \,\mathrm{d}x=\frac {1}{2a}\ln\left|\frac{x-a}{x+a}\right|+C\]</span> <span class="math display">\[\int\frac{1}{\sqrt{x^2\pm a^2}} \,\mathrm{d}x=\ln\left|x+\sqrt{x^2\pm a^2}\right|+C\]</span> <span class="math display">\[\int\frac{1}{\sqrt{a^2-x^2}} \,\mathrm{d}x=\arcsin \frac xa+C\]</span> <span class="math display">\[\int\frac{1}{\sqrt{1+x^2}} \,\mathrm{d}x=\sinh^{-1}x+C\]</span></p>
-<span id="more"></span>
-<h2 id="定积分">定积分</h2>
-<p><span class="math display">\[\int_{-a}^af(x)\,\mathrm{d}x=\int_{0}^a\left(f(x)+f(-x)\right)\,\mathrm{d}x\]</span></p>
-<p><span class="math display">\[\int_{0}^{\pi}xf(\sin x)\,\mathrm{d}x=\frac\pi2\int_{0}^\pi f(\sin x)\,\mathrm{d}x\]</span></p>
-<a href="/posts/46715/" title="$$\int_0^1(1-x^2)^n\d x={(2n)!!\over(2n+1)!!}$$">$$\int_0^1(1-x^2)^n\d x={(2n)!!\over(2n+1)!!}$$</a>
-<h2 id="反常积分">反常积分</h2>
-<a href="/posts/48382/" title="$$\int_{-\infty}^\infty \e^{-x^2}\d x=\sqrt\pi$$">$$\int_{-\infty}^\infty \e^{-x^2}\d x=\sqrt\pi$$</a>
-<p><span class="math display">\[\int_0^{\frac \pi2}\ln(\sin x)=\int_0^{\frac \pi2}\ln(\cos x)=-\frac\pi2\ln2\]</span></p>
-]]></content>
-      <categories>
-        <category>数学</category>
-        <category>分析</category>
-        <category>微积分</category>
-        <category>单变量微积分</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>分部积分的表格法</title>
-    <url>/posts/42394/</url>
-    <content><![CDATA[<p><span class="math display">\[\int (x^2+x)\e^{2x}\d x\]</span> 第一行求导, 第二行积分, 直到求导结果为 0: <img src="/file/xex.png" width="400"> 正负交替相加: <span class="math display">\[
-\text{原式}=\left({x^2+x\over2}-{2x+1\over4}+\frac14\right)\e^{2x}=\frac12 x^2\e^{2x}+C.
-\]</span> <span id="more"></span></p>
-<hr>
-<p>若多次求导不能为 0, 需要在最后加一个积分项, 其符号与上一个相反. 比如出现循环:</p>
-<p><span class="math display">\[
-\int \e^{x}\sin 2x\d x
-\]</span></p>
-<p><img src="/file/sine.png" width="350"></p>
-<p><span class="math display">\[
-\int \e^x\sin 2x\d x=(\sin 2x-2\cos 2x)\e^x-4\int\e^{x}\sin 2x\d x,
-\]</span></p>
-<p>那么 <span class="math display">\[
-\text{原式}=\frac15(\sin 2x-2\cos2x)\e^x+C.
-\]</span></p>
-<hr>
-<p>或者积分被简化: <span class="math display">\[
-\int 2x\arctan x\d x
-\]</span> <img src="/file/xarctanx.png" width="250"></p>
-<p><span class="math display">\[
-\text{原式}=(x^2+1)\arctan x-\int 1\d x=(x^2+1)\arctan x-x+C.
-\]</span></p>
-]]></content>
-      <categories>
-        <category>数学</category>
-        <category>分析</category>
-        <category>微积分</category>
-        <category>单变量微积分</category>
-      </categories>
-  </entry>
-  <entry>
     <title>拉格朗日插值</title>
     <url>/posts/17585/</url>
     <content><![CDATA[<p><span class="math display">\[p(x)=\sum_{k=0}^n y_kl_k(x)\]</span></p>
@@ -1249,86 +1195,36 @@ p(x)={\sum_{k=0}^n{\lambda_k y_k\over x-x_k}\over\sum_{k=0}^n{\lambda_k\over x-x
       </categories>
   </entry>
   <entry>
-    <title>最小二乘法</title>
-    <url>/posts/36991/</url>
-    <content><![CDATA[<p><span class="math display">\[\min\|Ax-b\|_2\]</span> 其中 <span class="math inline">\(A\in\R^{m\times n}\)</span>, <span class="math inline">\(x\in\R^n\)</span>, <span class="math inline">\(b\in\R^m.\)</span> 这个的问题的情境是 <span class="math inline">\(m\geq n\)</span>, 也就是一个过度约束的问题 (<span class="math inline">\(b\)</span> 不在 <span class="math inline">\(A\)</span> 的值域中).</p>
-<p>等价于解正规方程: <span class="math display">\[A^TAx=A^Tb,\]</span> 当且仅当 <span class="math inline">\(A\)</span> 满秩时有唯一解 <span class="math inline">\(x=(A^TA)^{-1}A^Tb.\)</span> 可以利用伪逆写成 <span class="math inline">\(x=A^\dagger b.\)</span></p>
-<p>从几何的角度, 又可以理解为把 <span class="math inline">\(b\)</span> 利用正交投影算子投影到 <span class="math inline">\(A\)</span> 的值域: <span class="math inline">\(Pb=Ax\)</span>.</p>
-<p>下面总结几种常用算法.</p>
-<span id="more"></span>
-<h2 id="解正规方程">解正规方程</h2>
-<p>利用 Cholesky 分解, 解方程组 <span class="math inline">\(R^TRx=A^Tb\)</span>.</p>
-<blockquote>
-<ol type="1">
-<li>计算矩阵 <span class="math inline">\(A^TA\)</span> 和向量 <span class="math inline">\(A^Tb\)</span></li>
-<li>计算 <span class="math inline">\(A^TA\)</span> 的 Cholesky 分解: <span class="math inline">\(A^TA=R^TR\)</span></li>
-<li>解方程组 <span class="math inline">\(R^Ty=A^Tb\)</span></li>
-<li>解方程组 <span class="math inline">\(Rx=y\)</span></li>
-</ol>
-</blockquote>
-<p><span class="math inline">\(A^T\in\R^{n\times m}\)</span>, <span class="math inline">\(A\in\R^{m\times n}\)</span>, <span class="math inline">\(A^TA\)</span> 正常需要 <span class="math inline">\(2mn^2\)</span> 次运算, 但可以利用对称性减少为 <span class="math inline">\(mn^2\)</span>.</p>
-<p><span class="math inline">\(n\times n\)</span> 正定阵的 Cholesky 分解需要 <span class="math inline">\(\dfrac{n^3}{3}\)</span> 次运算.</p>
-<p>共需要 <span class="math inline">\(mn^2+\dfrac13 n^3\)</span> 次运算.</p>
-<h2 id="qr-分解">QR 分解</h2>
-<ul>
-<li><p>记 <span class="math inline">\(A\)</span> 的 thin QR <span class="math display">\[A=QR\]</span> 与 full QR</p>
-<p><span class="math display">\[A=\begin{bmatrix}
-    Q\ Q_{\perp}
-\end{bmatrix}
-\begin{bmatrix}
-    R\\0
-\end{bmatrix}.\]</span> 于是 <span class="math display">\[
-\begin{aligned}
-\|Ax-b\|_2&amp;=\left\lVert\begin{bmatrix}
-  Q^T\\Q_\perp^T
-\end{bmatrix}(Ax-b)\right\rVert_2\\
-&amp;=\left\lVert\begin{bmatrix}
-  Q^T\\Q_\perp^T
-\end{bmatrix}(QRx-b)\right\rVert_2\\
-&amp;=\left\lVert\begin{bmatrix}
-  R\\0
-\end{bmatrix}x-\begin{bmatrix}
-  Q^Tb\\Q_\perp^Tb
-\end{bmatrix}\right\rVert_2\\
-\end{aligned}
-\]</span> 当 <span class="math inline">\(Rx=Q^Tb\)</span> 即 <span class="math inline">\(x=R^{-1}Q^Tb\)</span> 时取得最小值, 此时可见 <span class="math inline">\(A^\dagger=R^{-1}Q.\)</span></p></li>
-<li><p>从几何的角度, <span class="math inline">\(A=QR\)</span> 给出了投影算子 <span class="math inline">\(P\)</span> 的基: <span class="math inline">\(P=QQ^T.\)</span> 于是 <span class="math inline">\(QRx=QQ^Tb\)</span>, 也得到了 <span class="math inline">\(x=R^{-1}Q^Tb.\)</span></p></li>
-<li><p>从正规方程的角度,</p>
-<p><span class="math display">\[A^TAx=A^Tb\implies R^TQ^TQRx=R^TQ^Tb\implies Rx=Q^Tb,\]</span> 殊途同归.</p></li>
-</ul>
-<blockquote>
-<ol type="1">
-<li>计算 reduced QR 分解 <span class="math inline">\(A=QR\)</span></li>
-<li>计算 <span class="math inline">\(Q^Tb\)</span></li>
-<li>解方程组 <span class="math inline">\(Rx=Q^Tb\)</span></li>
-</ol>
-</blockquote>
-<p>主要计算量在于 QR 分解, 它需要 <span class="math inline">\(2mn^2-\dfrac{2}{3}n^3\)</span> 次运算.</p>
-<h2 id="svd">SVD</h2>
-<p><span class="math inline">\(A=U\Sigma V^T\)</span> 也给出了 <span class="math inline">\(P\)</span> 的基: <span class="math inline">\(P=UU^T\)</span>, 根据 <span class="math inline">\(U\Sigma V^Tx=UU^Tb\)</span> 可以得到 <span class="math inline">\(x=V\Sigma^{-1}U^Tb\)</span>. 此时也得到了 <span class="math inline">\(A^\dagger=V\Sigma^{-1}U^T.\)</span></p>
-<blockquote>
-<ol type="1">
-<li>计算 reduced SVD <span class="math inline">\(A=U\Sigma V^T\)</span></li>
-<li>计算 <span class="math inline">\(U^Tb\)</span></li>
-<li>解方程组 <span class="math inline">\(\Sigma y=U^Tb\)</span></li>
-<li>计算 <span class="math inline">\(x=Vy\)</span></li>
-</ol>
-</blockquote>
-<p>其中的方程组比 QR 方法的三角型更容易解, 是对角型的.</p>
+    <title>分部积分的表格法</title>
+    <url>/posts/42394/</url>
+    <content><![CDATA[<p><span class="math display">\[\int (x^2+x)\e^{2x}\d x\]</span> 第一行求导, 第二行积分, 直到求导结果为 0: <img src="/file/xex.png" width="400"> 正负交替相加: <span class="math display">\[
+\text{原式}=\left({x^2+x\over2}-{2x+1\over4}+\frac14\right)\e^{2x}=\frac12 x^2\e^{2x}+C.
+\]</span> <span id="more"></span></p>
 <hr>
-<p>同样可以利用正规方程: <span class="math display">\[A^TAx=A^Tb\implies V\Sigma^TU^TU\Sigma V^Tx=V\Sigma^T U^Tb\implies \Sigma V^Tx=U^Tb\]</span></p>
-<p>计算量主要在于 SVD, 当 <span class="math inline">\(m\gg n\)</span> 时和 QR 差不多, 当 <span class="math inline">\(m\approx n\)</span> 时计算量更大. 典型估计是 <span class="math inline">\(2mn^2+11n^3\)</span> 次运算.</p>
-<h2 id="伪逆">伪逆</h2>
-<ul>
-<li><span class="math inline">\(A\)</span> 列满秩: <span class="math inline">\(A^\dagger=(A^TA)^{-1}A^T\)</span></li>
-<li><span class="math inline">\(A\)</span> 行满秩: <span class="math inline">\(A^\dagger=A^T(AA^T)^{-1}\)</span></li>
-</ul>
+<p>若多次求导不能为 0, 需要在最后加一个积分项, 其符号与上一个相反. 比如出现循环:</p>
+<p><span class="math display">\[
+\int \e^{x}\sin 2x\d x
+\]</span></p>
+<p><img src="/file/sine.png" width="350"></p>
+<p><span class="math display">\[
+\int \e^x\sin 2x\d x=(\sin 2x-2\cos 2x)\e^x-4\int\e^{x}\sin 2x\d x,
+\]</span></p>
+<p>那么 <span class="math display">\[
+\text{原式}=\frac15(\sin 2x-2\cos2x)\e^x+C.
+\]</span></p>
+<hr>
+<p>或者积分被简化: <span class="math display">\[
+\int 2x\arctan x\d x
+\]</span> <img src="/file/xarctanx.png" width="250"></p>
+<p><span class="math display">\[
+\text{原式}=(x^2+1)\arctan x-\int 1\d x=(x^2+1)\arctan x-x+C.
+\]</span></p>
 ]]></content>
       <categories>
         <category>数学</category>
-        <category>代数</category>
-        <category>数值分析</category>
-        <category>线性代数</category>
+        <category>分析</category>
+        <category>微积分</category>
+        <category>单变量微积分</category>
       </categories>
   </entry>
   <entry>
@@ -1899,6 +1795,18 @@ E_{ij}=\frac{X_{i\cdot}X_{\cdot j}}{n}
       </categories>
   </entry>
   <entry>
+    <title>回不去的夏天</title>
+    <url>/posts/59205/</url>
+    <content><![CDATA[<p>又是一年高考季. 清早起来, 大把的金光倾泻到身上, 让时间一下子变慢了.</p>
+<p>让我又想起了那个夏天, 那个完美的夏天, 那个打开教室后窗, 就有带着清香的槐花瓣飘落满地的五月. 窗边总有少年在惬意的清风中望着外面的世界, 而他身边总有熟悉的体温.</p>
+<p>我嗅到了阳光的味道, 那样浓烈而又炽热. 它带着莽撞, 带着悸动, 带着热血, 也带着青涩与迷茫.</p>
+<p>那是天空永远清朗的夏天, 有着池鱼, 鸣鸟, 蝉噪, 音乐, 冷饮的夏天; 有着汗水, 欢笑, 泪眼, 羁绊, 思念的夏天.</p>
+]]></content>
+      <categories>
+        <category>随笔</category>
+      </categories>
+  </entry>
+  <entry>
     <title>回家</title>
     <url>/posts/8368/</url>
     <content><![CDATA[<p>沁人的凉风和湛蓝中的云卷云舒，熟悉的楼房和那条街道，一簇簇与一丛丛，忽然让少年有了一丝归属，潮湿了眼眶。他颤抖着四肢，任每一个毛孔大肆呼吸着。 依稀在记忆中的水库，被荒草占据。大把的野草，湮没了少年心中，那未曾发出的约定。</p>
@@ -1937,18 +1845,6 @@ E_{ij}=\frac{X_{i\cdot}X_{\cdot j}}{n}
       <categories>
         <category>计算机</category>
         <category>算法</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>回不去的夏天</title>
-    <url>/posts/59205/</url>
-    <content><![CDATA[<p>又是一年高考季. 清早起来, 大把的金光倾泻到身上, 让时间一下子变慢了.</p>
-<p>让我又想起了那个夏天, 那个完美的夏天, 那个打开教室后窗, 就有带着清香的槐花瓣飘落满地的五月. 窗边总有少年在惬意的清风中望着外面的世界, 而他身边总有熟悉的体温.</p>
-<p>我嗅到了阳光的味道, 那样浓烈而又炽热. 它带着莽撞, 带着悸动, 带着热血, 也带着青涩与迷茫.</p>
-<p>那是天空永远清朗的夏天, 有着池鱼, 鸣鸟, 蝉噪, 音乐, 冷饮的夏天; 有着汗水, 欢笑, 泪眼, 羁绊, 思念的夏天.</p>
-]]></content>
-      <categories>
-        <category>随笔</category>
       </categories>
   </entry>
   <entry>
@@ -2010,6 +1906,17 @@ E_{ij}=\frac{X_{i\cdot}X_{\cdot j}}{n}
       </categories>
   </entry>
   <entry>
+    <title>字符串去重</title>
+    <url>/posts/47268/</url>
+    <content><![CDATA[<p><code>"aabbbccd"</code> 返回 <code>"abcd"</code>.</p>
+<p>利用快慢指针, <code>fast</code> 负责遍历, <code>slow</code> 左边的是要保留的, 没有重复的字符. 可以做到原地修改. </p><figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">remove_duplicate</span>(<span class="params">string</span>):</span></span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">len</span>(string) <span class="keyword">in</span> (<span class="number">0</span>, <span class="number">1</span>):</span><br><span class="line">        <span class="keyword">return</span> string</span><br><span class="line"></span><br><span class="line">    string = <span class="built_in">list</span>(string)</span><br><span class="line">    slow, fast = <span class="number">1</span>, <span class="number">1</span></span><br><span class="line">    <span class="keyword">while</span> fast &lt; <span class="built_in">len</span>(string):</span><br><span class="line">        <span class="keyword">if</span> string[fast] != string[slow-<span class="number">1</span>]:</span><br><span class="line">            string[slow] = string[fast]</span><br><span class="line">            slow += <span class="number">1</span></span><br><span class="line">        fast += <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">''</span>.join(string[:slow])</span><br></pre></td></tr></tbody></table></figure><p></p>
+]]></content>
+      <categories>
+        <category>计算机</category>
+        <category>算法</category>
+      </categories>
+  </entry>
+  <entry>
     <title>如何避免过拟合</title>
     <url>/posts/46474/</url>
     <content><![CDATA[<p>过拟合是因为模型过于复杂, 而学习数据有限.</p>
@@ -2026,17 +1933,6 @@ E_{ij}=\frac{X_{i\cdot}X_{\cdot j}}{n}
       <categories>
         <category>计算机</category>
         <category>机器学习</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>字符串去重</title>
-    <url>/posts/47268/</url>
-    <content><![CDATA[<p><code>"aabbbccd"</code> 返回 <code>"abcd"</code>.</p>
-<p>利用快慢指针, <code>fast</code> 负责遍历, <code>slow</code> 左边的是要保留的, 没有重复的字符. 可以做到原地修改. </p><figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">remove_duplicate</span>(<span class="params">string</span>):</span></span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">len</span>(string) <span class="keyword">in</span> (<span class="number">0</span>, <span class="number">1</span>):</span><br><span class="line">        <span class="keyword">return</span> string</span><br><span class="line"></span><br><span class="line">    string = <span class="built_in">list</span>(string)</span><br><span class="line">    slow, fast = <span class="number">1</span>, <span class="number">1</span></span><br><span class="line">    <span class="keyword">while</span> fast &lt; <span class="built_in">len</span>(string):</span><br><span class="line">        <span class="keyword">if</span> string[fast] != string[slow-<span class="number">1</span>]:</span><br><span class="line">            string[slow] = string[fast]</span><br><span class="line">            slow += <span class="number">1</span></span><br><span class="line">        fast += <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">''</span>.join(string[:slow])</span><br></pre></td></tr></tbody></table></figure><p></p>
-]]></content>
-      <categories>
-        <category>计算机</category>
-        <category>算法</category>
       </categories>
   </entry>
   <entry>
@@ -2367,9 +2263,12 @@ Q=\begin{bmatrix}1&amp;\\&amp;\frac12\end{bmatrix}\begin{bmatrix}0&amp;1\\1&amp;
       </categories>
   </entry>
   <entry>
-    <title>检查 Binary search tree (BST)</title>
-    <url>/posts/32064/</url>
-    <content><![CDATA[<p>定义: 对每个节点, 左子树的值都比它小, 右子树的值都比它大. </p><figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">    10</span><br><span class="line">   /  \</span><br><span class="line">  5    15</span><br><span class="line"> / \   / \</span><br><span class="line">2   7 12 20</span><br></pre></td></tr></tbody></table></figure> <figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">BST</span>(<span class="params">root</span>):</span></span><br><span class="line">    <span class="keyword">if</span> root <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">    min_val = <span class="built_in">float</span>(<span class="string">'-inf'</span>)</span><br><span class="line">    max_val = <span class="built_in">float</span>(<span class="string">'inf'</span>)</span><br><span class="line">    <span class="keyword">return</span> isBST(root, min_val, max_val)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">isBST</span>(<span class="params">root, min_val, max_val</span>):</span></span><br><span class="line">    <span class="keyword">if</span> root <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">    <span class="keyword">if</span> root.val &lt;= min_val <span class="keyword">or</span> root.val &gt;= max_val:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">    <span class="keyword">return</span> isBST(root.left, min_val, root.val) <span class="keyword">and</span> isBST(root.right, root.val, max_val)</span><br></pre></td></tr></tbody></table></figure><p></p>
+    <title>树的路径和等于目标值</title>
+    <url>/posts/40717/</url>
+    <content><![CDATA[<h2 id="top-down">Top Down</h2>
+<figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">exist</span>(<span class="params">self, root, target</span>):</span></span><br><span class="line">        self.target = target</span><br><span class="line">        self.ret = <span class="literal">False</span></span><br><span class="line">        self.helper(root, <span class="number">0</span>)</span><br><span class="line">        <span class="keyword">return</span> self.ret</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">helper</span>(<span class="params">selr, root, current</span>):</span></span><br><span class="line">        <span class="keyword">if</span> root <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        <span class="keyword">if</span> root.left <span class="keyword">is</span> <span class="literal">None</span> <span class="keyword">and</span> root.right <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">            self.ret = self.ret <span class="keyword">or</span> current + root.val == self.target</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        <span class="keyword">if</span> self.ret == <span class="literal">True</span>:</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        self.helper(root.left, current + root.val)</span><br><span class="line">        self.helper(root.right, current + root.val)</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="top-down-bottom-up">Top Down + Bottom Up</h2>
+<figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">exist</span>(<span class="params">self, root, target</span>):</span></span><br><span class="line">        self.target = target</span><br><span class="line">        <span class="keyword">return</span> self.helper(root, <span class="number">0</span>)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">helper</span>(<span class="params">self, root, current</span>):</span></span><br><span class="line">        <span class="keyword">if</span> root <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        <span class="keyword">if</span> root.left <span class="keyword">is</span> <span class="literal">None</span> <span class="keyword">and</span> root.right <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">            <span class="keyword">return</span> current + root.val == self.target</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> self.helper(root.left, current + root.val) <span class="keyword">or</span> self.helper(root.right, current + root.val)</span><br></pre></td></tr></tbody></table></figure>
 ]]></content>
       <categories>
         <category>计算机</category>
@@ -2377,12 +2276,9 @@ Q=\begin{bmatrix}1&amp;\\&amp;\frac12\end{bmatrix}\begin{bmatrix}0&amp;1\\1&amp;
       </categories>
   </entry>
   <entry>
-    <title>树的路径和等于目标值</title>
-    <url>/posts/40717/</url>
-    <content><![CDATA[<h2 id="top-down">Top Down</h2>
-<figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">exist</span>(<span class="params">self, root, target</span>):</span></span><br><span class="line">        self.target = target</span><br><span class="line">        self.ret = <span class="literal">False</span></span><br><span class="line">        self.helper(root, <span class="number">0</span>)</span><br><span class="line">        <span class="keyword">return</span> self.ret</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">helper</span>(<span class="params">selr, root, current</span>):</span></span><br><span class="line">        <span class="keyword">if</span> root <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        <span class="keyword">if</span> root.left <span class="keyword">is</span> <span class="literal">None</span> <span class="keyword">and</span> root.right <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">            self.ret = self.ret <span class="keyword">or</span> current + root.val == self.target</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        <span class="keyword">if</span> self.ret == <span class="literal">True</span>:</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        self.helper(root.left, current + root.val)</span><br><span class="line">        self.helper(root.right, current + root.val)</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="top-down-bottom-up">Top Down + Bottom Up</h2>
-<figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">exist</span>(<span class="params">self, root, target</span>):</span></span><br><span class="line">        self.target = target</span><br><span class="line">        <span class="keyword">return</span> self.helper(root, <span class="number">0</span>)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">helper</span>(<span class="params">self, root, current</span>):</span></span><br><span class="line">        <span class="keyword">if</span> root <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        <span class="keyword">if</span> root.left <span class="keyword">is</span> <span class="literal">None</span> <span class="keyword">and</span> root.right <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">            <span class="keyword">return</span> current + root.val == self.target</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> self.helper(root.left, current + root.val) <span class="keyword">or</span> self.helper(root.right, current + root.val)</span><br></pre></td></tr></tbody></table></figure>
+    <title>检查 Binary search tree (BST)</title>
+    <url>/posts/32064/</url>
+    <content><![CDATA[<p>定义: 对每个节点, 左子树的值都比它小, 右子树的值都比它大. </p><figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">    10</span><br><span class="line">   /  \</span><br><span class="line">  5    15</span><br><span class="line"> / \   / \</span><br><span class="line">2   7 12 20</span><br></pre></td></tr></tbody></table></figure> <figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">BST</span>(<span class="params">root</span>):</span></span><br><span class="line">    <span class="keyword">if</span> root <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">    min_val = <span class="built_in">float</span>(<span class="string">'-inf'</span>)</span><br><span class="line">    max_val = <span class="built_in">float</span>(<span class="string">'inf'</span>)</span><br><span class="line">    <span class="keyword">return</span> isBST(root, min_val, max_val)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">isBST</span>(<span class="params">root, min_val, max_val</span>):</span></span><br><span class="line">    <span class="keyword">if</span> root <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">    <span class="keyword">if</span> root.val &lt;= min_val <span class="keyword">or</span> root.val &gt;= max_val:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">    <span class="keyword">return</span> isBST(root.left, min_val, root.val) <span class="keyword">and</span> isBST(root.right, root.val, max_val)</span><br></pre></td></tr></tbody></table></figure><p></p>
 ]]></content>
       <categories>
         <category>计算机</category>
@@ -2424,6 +2320,16 @@ E(\text{error})=\text{bias}^2+\text{Var}+\varepsilon.
     <title>没什么远大理想</title>
     <url>/posts/48210/</url>
     <content><![CDATA[<p>我只希望在一个天气不那么晴的日子里，在一个不那么吵的地方，读一本没那么有用的书，听一点不那么流行的歌。</p>
+]]></content>
+      <categories>
+        <category>随笔</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>泸沽湖</title>
+    <url>/posts/30601/</url>
+    <content><![CDATA[<p>淡霭缭绕，彩彻区朗。澄波荡漾，野凫满塘。泛舟湖上，蒹葭苍苍。薄暮冥冥，跃金浮光。</p>
+<p>每次下车，定有一群道德绑架犯伪装成兜售小贩的样子，为了一丁点蝇头小利各种卑鄙手段无所不用其极。吵嚷纠缠，丢尽了彝族人的脸，无论怎样的美景都在刹那间黯淡无光。试问我泱泱华夏，如今是否还有一片真正的净土？最后一丝少数民族的质朴，亦被利益磨到尸骨无存！</p>
 ]]></content>
       <categories>
         <category>随笔</category>
@@ -2810,15 +2716,15 @@ E(\text{error})=\text{bias}^2+\text{Var}+\varepsilon.
 </thead>
 <tbody>
 <tr class="odd">
-<td>je peux</td>
+<td>je veux</td>
 <td>nous voulons</td>
 </tr>
 <tr class="even">
-<td>tu peux</td>
+<td>tu veux</td>
 <td>vous voulez</td>
 </tr>
 <tr class="odd">
-<td>il peut</td>
+<td>il veut</td>
 <td>ils veulent</td>
 </tr>
 </tbody>
@@ -2876,16 +2782,143 @@ E(\text{error})=\text{bias}^2+\text{Var}+\varepsilon.
 </thead>
 <tbody>
 <tr class="odd">
-<td>je dis</td>
-<td>nous disons</td>
+<td>je dois</td>
+<td>nous devons</td>
 </tr>
 <tr class="even">
-<td>tu dis</td>
-<td>vous dites</td>
+<td>tu dois</td>
+<td>vous devez</td>
 </tr>
 <tr class="odd">
-<td>il dit</td>
-<td>ils disent</td>
+<td>il doit</td>
+<td>ils doivent</td>
+</tr>
+</tbody>
+</table>
+<h2 id="复合过去式">复合过去式</h2>
+<h3 id="个用-être-引导的不及物动词">17 &nbsp;个用 être 引导的不及物动词</h3>
+<table>
+<thead>
+<tr class="header">
+<th>aller/venir</th>
+<th>allé</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>entrer/sortir</td>
+<td>entré/sorti</td>
+</tr>
+<tr class="even">
+<td>arriver/partir</td>
+<td>arrivé/parti</td>
+</tr>
+<tr class="odd">
+<td>monter/descendre</td>
+<td>monté/descendu</td>
+</tr>
+<tr class="even">
+<td>naître/mourir</td>
+<td>né/mort</td>
+</tr>
+<tr class="odd">
+<td>rester/passer</td>
+<td>resté/passé</td>
+</tr>
+<tr class="even">
+<td>rentrer/revenir/retourner</td>
+<td>rentré/revenu/retourné</td>
+</tr>
+<tr class="odd">
+<td>tomber</td>
+<td>tombé</td>
+</tr>
+<tr class="even">
+<td>devenir</td>
+<td>devenu</td>
+</tr>
+</tbody>
+</table>
+<h3 id="过去分词">过去分词</h3>
+<table>
+<thead>
+<tr class="header">
+<th>不定式</th>
+<th>过去分词</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>avoir</td>
+<td>eu /y/</td>
+</tr>
+<tr class="even">
+<td>être</td>
+<td>été</td>
+</tr>
+<tr class="odd">
+<td>faire</td>
+<td>fait</td>
+</tr>
+<tr class="even">
+<td>dormir/partir</td>
+<td>dormi/parti</td>
+</tr>
+<tr class="odd">
+<td>prendre</td>
+<td>pris</td>
+</tr>
+<tr class="even">
+<td>boire</td>
+<td>bu</td>
+</tr>
+<tr class="odd">
+<td>descendre</td>
+<td>descendu</td>
+</tr>
+<tr class="even">
+<td>lire</td>
+<td>lu</td>
+</tr>
+<tr class="odd">
+<td>pouvoir</td>
+<td>pu</td>
+</tr>
+<tr class="even">
+<td>savoir</td>
+<td>su</td>
+</tr>
+<tr class="odd">
+<td>vendre</td>
+<td>vendu</td>
+</tr>
+<tr class="even">
+<td>venir</td>
+<td>venu</td>
+</tr>
+<tr class="odd">
+<td>voir</td>
+<td>vu</td>
+</tr>
+<tr class="even">
+<td>vouloir</td>
+<td>voulu</td>
+</tr>
+<tr class="odd">
+<td>vivre</td>
+<td>vécu</td>
+</tr>
+<tr class="even">
+<td>écrire</td>
+<td>écrit</td>
+</tr>
+<tr class="odd">
+<td>dire</td>
+<td>dit</td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -2922,6 +2955,49 @@ E(\text{error})=\text{bias}^2+\text{Var}+\varepsilon.
 </tr>
 </tbody>
 </table>
+<h3 id="衣服">衣服</h3>
+<table>
+<thead>
+<tr class="header">
+<th>vêtement</th>
+<th>衣服</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>des baskets</td>
+<td>运动鞋</td>
+</tr>
+<tr class="even">
+<td>une chemise</td>
+<td>衬衫</td>
+</tr>
+<tr class="odd">
+<td>des lunettes</td>
+<td>眼镜</td>
+</tr>
+<tr class="even">
+<td>un jean</td>
+<td>牛仔裤</td>
+</tr>
+<tr class="odd">
+<td>un manteau</td>
+<td>大衣</td>
+</tr>
+<tr class="even">
+<td>un pantalon</td>
+<td>长裤</td>
+</tr>
+<tr class="odd">
+<td>une robe</td>
+<td>裙子</td>
+</tr>
+<tr class="even">
+<td>un tee-shirt</td>
+<td>T恤</td>
+</tr>
+</tbody>
+</table>
 <h3 id="颜色">颜色</h3>
 <p><img src="截屏2022-11-19%2016.23.13.png"></p>
 <h3 id="时间">时间</h3>
@@ -2953,9 +3029,58 @@ E(\text{error})=\text{bias}^2+\text{Var}+\varepsilon.
 <td>cette année</td>
 <td>今年</td>
 </tr>
+<tr class="even">
+<td>l'après-midi</td>
+<td>下午</td>
+</tr>
+<tr class="odd">
+<td>hier</td>
+<td>昨天</td>
+</tr>
+<tr class="even">
+<td>aujourd'hui</td>
+<td>今天</td>
+</tr>
+<tr class="odd">
+<td>demain</td>
+<td>明天</td>
+</tr>
+<tr class="even">
+<td>l'année dernière</td>
+<td>去年</td>
+</tr>
+<tr class="odd">
+<td>l'année prochaine</td>
+<td>明年</td>
+</tr>
 </tbody>
 </table>
-<p>l'après-midi 下午</p>
+<table>
+<thead>
+<tr class="header">
+<th>tout</th>
+<th>-</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>tous les jours</td>
+<td>每一天</td>
+</tr>
+<tr class="even">
+<td>tous les samedis soirs</td>
+<td>每周六晚</td>
+</tr>
+<tr class="odd">
+<td>toute la journée</td>
+<td>一整天</td>
+</tr>
+<tr class="even">
+<td>toute l'année</td>
+<td>一整年</td>
+</tr>
+</tbody>
+</table>
 <table>
 <thead>
 <tr class="header">
@@ -3006,6 +3131,80 @@ E(\text{error})=\text{bias}^2+\text{Var}+\varepsilon.
 <p><img src="截屏2022-11-19%2016.45.26.png"></p>
 <h3 id="演奏运动">演奏，运动</h3>
 <p><img src="截屏2022-11-19%2017.05.20.png"></p>
+<h2 id="食物">食物</h2>
+<table>
+<thead>
+<tr class="header">
+<th>du beurre</th>
+<th>黄油</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>de la farine</td>
+<td>面粉</td>
+</tr>
+<tr class="even">
+<td>du sucre</td>
+<td>糖</td>
+</tr>
+<tr class="odd">
+<td>du sel</td>
+<td>盐</td>
+</tr>
+<tr class="even">
+<td>de la viande</td>
+<td>肉</td>
+</tr>
+<tr class="odd">
+<td>du vin</td>
+<td>酒</td>
+</tr>
+<tr class="even">
+<td>du riz</td>
+<td>米饭</td>
+</tr>
+<tr class="odd">
+<td>du poisson</td>
+<td>鱼肉</td>
+</tr>
+<tr class="even">
+<td>du fromage</td>
+<td>奶酪</td>
+</tr>
+<tr class="odd">
+<td>des céréales</td>
+<td>谷物</td>
+</tr>
+<tr class="even">
+<td>du lait</td>
+<td>牛奶</td>
+</tr>
+<tr class="odd">
+<td>du pain</td>
+<td>面包</td>
+</tr>
+<tr class="even">
+<td>de la confiture</td>
+<td>果酱</td>
+</tr>
+</tbody>
+</table>
+<h3 id="动词短语">动词短语</h3>
+<table>
+<thead>
+<tr class="header">
+<th>donner qch à qn</th>
+<th>给某人某物</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <h2 id="语法">语法</h2>
 <ul>
 <li><p>形容词前置，名词前的复数不定冠词 des 变为 de</p>
@@ -3025,20 +3224,49 @@ E(\text{error})=\text{bias}^2+\text{Var}+\varepsilon.
 <p>Comment Farid va-t-il au bureau?</p>
 <p>Isabelle travaille-t-elle à Londres?</p>
 </blockquote></li>
+<li><p>我知道他没有给你说</p>
+<blockquote>
+<p>Je sais qu'il ne t'a pas dit.</p>
+</blockquote></li>
+</ul>
+<h3 id="否定句">否定句</h3>
+<ul>
+<li><p>avoir</p>
+<blockquote>
+<p>j'ai regardé -&gt; je n'ai pas regardé</p>
+</blockquote></li>
+<li><p>être</p>
+<blockquote>
+<p>Oui, nous y sommes allés.</p>
+<p>Non, nous n'y sommes pas allés.</p>
+</blockquote></li>
+<li><p>COI（间接宾语人称代词）</p>
+<blockquote>
+<p>Il parle à ses parents.</p>
+<p>Il leur parle.</p>
+<p>Il ne leur parle pas.</p>
+</blockquote></li>
+<li><p>COI + 命令式</p>
+<blockquote>
+<p>Tu me racontes cette histoire.</p>
+<p>Raconte-moi cette histoire.</p>
+<p>Ne me raconte pas cette histoire.</p>
+</blockquote></li>
+<li><p>COI + aller（最近将来时）</p>
+<blockquote>
+<p>Oui, je vais lui téléphoner.</p>
+<p>Non, je ne vais pas lui téléphoner.</p>
+</blockquote></li>
+<li><p>COI + avoir</p>
+<blockquote>
+<p>Paul lui a téléphoné hier matin.</p>
+<p>Je ne leur ai pas acheté ce livre.</p>
+<p>Il ne nous a pas dit bonjour.</p>
+</blockquote></li>
 </ul>
 ]]></content>
       <categories>
         <category>法语</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>泸沽湖</title>
-    <url>/posts/30601/</url>
-    <content><![CDATA[<p>淡霭缭绕，彩彻区朗。澄波荡漾，野凫满塘。泛舟湖上，蒹葭苍苍。薄暮冥冥，跃金浮光。</p>
-<p>每次下车，定有一群道德绑架犯伪装成兜售小贩的样子，为了一丁点蝇头小利各种卑鄙手段无所不用其极。吵嚷纠缠，丢尽了彝族人的脸，无论怎样的美景都在刹那间黯淡无光。试问我泱泱华夏，如今是否还有一片真正的净土？最后一丝少数民族的质朴，亦被利益磨到尸骨无存！</p>
-]]></content>
-      <categories>
-        <category>随笔</category>
       </categories>
   </entry>
   <entry>
@@ -3058,6 +3286,20 @@ E(\text{error})=\text{bias}^2+\text{Var}+\varepsilon.
       </categories>
   </entry>
   <entry>
+    <title>科普是一项非常难的工作</title>
+    <url>/posts/20918/</url>
+    <content><![CDATA[<p>要想当一个好学生，只需要把知识学懂。</p>
+<p>要想当一个好老师，需要一些基础知识，还需要良好的性格和表达能力、心理学和教育学经验。</p>
+<p>要想当一个好教授，需要有专业知识、科研水平，只需要一般般的表达能力。</p>
+<p><strong>而要当一个好的科普工作者，需要有远超学生的理解能力，教授一样的专业水平，老师一样的教学功力，艺术家一样的审美，作家一样的文笔，诗人一样的清高，科学家一样对知识的热爱，艺人一样对大众心理的把控能力，运动员一样的毅力，还要有自身的人格魅力、抗压抗打击能力。</strong></p>
+<p>科普是一项非常难的工作，比讲课教书难得多。因为它面对的不是专业人士，而是乌合之众。这导致科普工作者必须用通俗语言来解释专业知识，却又不至于过于通俗而产生误导。稍微有一点漏洞就会被抓住攻击——有问题的科普比谣言更可怕，比迷信更害人。</p>
+<p>所以，科普工作者是一个神圣的标签，这个名号比想象中要严苛得多。</p>
+]]></content>
+      <categories>
+        <category>随笔</category>
+      </categories>
+  </entry>
+  <entry>
     <title>用两个 stack 实现 queue</title>
     <url>/posts/27896/</url>
     <content><![CDATA[<figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Queue</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self</span>) -&gt; <span class="literal">None</span>:</span></span><br><span class="line">        self.s1 = []  <span class="comment"># entrance</span></span><br><span class="line">        self.s2 = []  <span class="comment"># exit</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">enqueue</span>(<span class="params">self, x</span>):</span></span><br><span class="line">        self.s1.append(x)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">dequeue</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> self.s2:</span><br><span class="line">            <span class="keyword">while</span> self.s1:</span><br><span class="line">                self.s2.append(self.s1.pop())</span><br><span class="line">        <span class="keyword">return</span> self.s2.pop()</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">is_empty</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">not</span> self.s1 <span class="keyword">and</span> <span class="keyword">not</span> self.s2</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">size</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">len</span>(self.s1) + <span class="built_in">len</span>(self.s2)</span><br></pre></td></tr></tbody></table></figure>
@@ -3070,20 +3312,6 @@ E(\text{error})=\text{bias}^2+\text{Var}+\varepsilon.
       <categories>
         <category>计算机</category>
         <category>算法</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>科普是一项非常难的工作</title>
-    <url>/posts/20918/</url>
-    <content><![CDATA[<p>要想当一个好学生，只需要把知识学懂。</p>
-<p>要想当一个好老师，需要一些基础知识，还需要良好的性格和表达能力、心理学和教育学经验。</p>
-<p>要想当一个好教授，需要有专业知识、科研水平，只需要一般般的表达能力。</p>
-<p><strong>而要当一个好的科普工作者，需要有远超学生的理解能力，教授一样的专业水平，老师一样的教学功力，艺术家一样的审美，作家一样的文笔，诗人一样的清高，科学家一样对知识的热爱，艺人一样对大众心理的把控能力，运动员一样的毅力，还要有自身的人格魅力、抗压抗打击能力。</strong></p>
-<p>科普是一项非常难的工作，比讲课教书难得多。因为它面对的不是专业人士，而是乌合之众。这导致科普工作者必须用通俗语言来解释专业知识，却又不至于过于通俗而产生误导。稍微有一点漏洞就会被抓住攻击——有问题的科普比谣言更可怕，比迷信更害人。</p>
-<p>所以，科普工作者是一个神圣的标签，这个名号比想象中要严苛得多。</p>
-]]></content>
-      <categories>
-        <category>随笔</category>
       </categories>
   </entry>
   <entry>
@@ -3297,16 +3525,6 @@ M=\frac{1}{\omega} D+L, \quad N=\frac{1-\omega}{\omega} D-U
       </categories>
   </entry>
   <entry>
-    <title>英国的上午</title>
-    <url>/posts/34132/</url>
-    <content><![CDATA[<p>我看见透蓝的天空，茵绿的草地，金黄的落叶。我闻到湿润的泥土，幽香的野花，沁凉的空气。我看见喜鹊圆滚的肚子和松鼠蓬松的尾巴。</p>
-<p>我看见倾洒下来的阳光和摇曳的树影。</p>
-]]></content>
-      <categories>
-        <category>随笔</category>
-      </categories>
-  </entry>
-  <entry>
     <title>虚拟语气</title>
     <url>/posts/22564/</url>
     <content><![CDATA[<h2 id="不可能假设">不可能假设</h2>
@@ -3344,6 +3562,16 @@ M=\frac{1}{\omega} D+L, \quad N=\frac{1-\omega}{\omega} D-U
 ]]></content>
       <categories>
         <category>英语</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>英国的上午</title>
+    <url>/posts/34132/</url>
+    <content><![CDATA[<p>我看见透蓝的天空，茵绿的草地，金黄的落叶。我闻到湿润的泥土，幽香的野花，沁凉的空气。我看见喜鹊圆滚的肚子和松鼠蓬松的尾巴。</p>
+<p>我看见倾洒下来的阳光和摇曳的树影。</p>
+]]></content>
+      <categories>
+        <category>随笔</category>
       </categories>
   </entry>
   <entry>
@@ -3625,6 +3853,110 @@ a_n={n!\over(2n+1)!!}\cdot{1\over n+1}，
 ]]></content>
       <categories>
         <category>随笔</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>常用积分</title>
+    <url>/posts/23548/</url>
+    <content><![CDATA[<h2 id="不定积分">不定积分</h2>
+<p><span class="math display">\[\int\frac{1}{x^2+a^2} \,\mathrm{d}x=\frac 1a\arctan\frac xa+C\]</span> <span class="math display">\[\int\frac{1}{x^2-a^2} \,\mathrm{d}x=\frac {1}{2a}\ln\left|\frac{x-a}{x+a}\right|+C\]</span> <span class="math display">\[\int\frac{1}{\sqrt{x^2\pm a^2}} \,\mathrm{d}x=\ln\left|x+\sqrt{x^2\pm a^2}\right|+C\]</span> <span class="math display">\[\int\frac{1}{\sqrt{a^2-x^2}} \,\mathrm{d}x=\arcsin \frac xa+C\]</span> <span class="math display">\[\int\frac{1}{\sqrt{1+x^2}} \,\mathrm{d}x=\sinh^{-1}x+C\]</span></p>
+<span id="more"></span>
+<h2 id="定积分">定积分</h2>
+<p><span class="math display">\[\int_{-a}^af(x)\,\mathrm{d}x=\int_{0}^a\left(f(x)+f(-x)\right)\,\mathrm{d}x\]</span></p>
+<p><span class="math display">\[\int_{0}^{\pi}xf(\sin x)\,\mathrm{d}x=\frac\pi2\int_{0}^\pi f(\sin x)\,\mathrm{d}x\]</span></p>
+<a href="/posts/46715/" title="$$\int_0^1(1-x^2)^n\d x={(2n)!!\over(2n+1)!!}$$">$$\int_0^1(1-x^2)^n\d x={(2n)!!\over(2n+1)!!}$$</a>
+<h2 id="反常积分">反常积分</h2>
+<a href="/posts/48382/" title="$$\int_{-\infty}^\infty \e^{-x^2}\d x=\sqrt\pi$$">$$\int_{-\infty}^\infty \e^{-x^2}\d x=\sqrt\pi$$</a>
+<p><span class="math display">\[\int_0^{\frac \pi2}\ln(\sin x)=\int_0^{\frac \pi2}\ln(\cos x)=-\frac\pi2\ln2\]</span></p>
+]]></content>
+      <categories>
+        <category>数学</category>
+        <category>分析</category>
+        <category>微积分</category>
+        <category>单变量微积分</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>最小二乘法</title>
+    <url>/posts/36991/</url>
+    <content><![CDATA[<p><span class="math display">\[\min\|Ax-b\|_2\]</span> 其中 <span class="math inline">\(A\in\R^{m\times n}\)</span>, <span class="math inline">\(x\in\R^n\)</span>, <span class="math inline">\(b\in\R^m.\)</span> 这个的问题的情境是 <span class="math inline">\(m\geq n\)</span>, 也就是一个过度约束的问题 (<span class="math inline">\(b\)</span> 不在 <span class="math inline">\(A\)</span> 的值域中).</p>
+<p>等价于解正规方程: <span class="math display">\[A^TAx=A^Tb,\]</span> 当且仅当 <span class="math inline">\(A\)</span> 满秩时有唯一解 <span class="math inline">\(x=(A^TA)^{-1}A^Tb.\)</span> 可以利用伪逆写成 <span class="math inline">\(x=A^\dagger b.\)</span></p>
+<p>从几何的角度, 又可以理解为把 <span class="math inline">\(b\)</span> 利用正交投影算子投影到 <span class="math inline">\(A\)</span> 的值域: <span class="math inline">\(Pb=Ax\)</span>.</p>
+<p>下面总结几种常用算法.</p>
+<span id="more"></span>
+<h2 id="解正规方程">解正规方程</h2>
+<p>利用 Cholesky 分解, 解方程组 <span class="math inline">\(R^TRx=A^Tb\)</span>.</p>
+<blockquote>
+<ol type="1">
+<li>计算矩阵 <span class="math inline">\(A^TA\)</span> 和向量 <span class="math inline">\(A^Tb\)</span></li>
+<li>计算 <span class="math inline">\(A^TA\)</span> 的 Cholesky 分解: <span class="math inline">\(A^TA=R^TR\)</span></li>
+<li>解方程组 <span class="math inline">\(R^Ty=A^Tb\)</span></li>
+<li>解方程组 <span class="math inline">\(Rx=y\)</span></li>
+</ol>
+</blockquote>
+<p><span class="math inline">\(A^T\in\R^{n\times m}\)</span>, <span class="math inline">\(A\in\R^{m\times n}\)</span>, <span class="math inline">\(A^TA\)</span> 正常需要 <span class="math inline">\(2mn^2\)</span> 次运算, 但可以利用对称性减少为 <span class="math inline">\(mn^2\)</span>.</p>
+<p><span class="math inline">\(n\times n\)</span> 正定阵的 Cholesky 分解需要 <span class="math inline">\(\dfrac{n^3}{3}\)</span> 次运算.</p>
+<p>共需要 <span class="math inline">\(mn^2+\dfrac13 n^3\)</span> 次运算.</p>
+<h2 id="qr-分解">QR 分解</h2>
+<ul>
+<li><p>记 <span class="math inline">\(A\)</span> 的 thin QR <span class="math display">\[A=QR\]</span> 与 full QR</p>
+<p><span class="math display">\[A=\begin{bmatrix}
+    Q\ Q_{\perp}
+\end{bmatrix}
+\begin{bmatrix}
+    R\\0
+\end{bmatrix}.\]</span> 于是 <span class="math display">\[
+\begin{aligned}
+\|Ax-b\|_2&amp;=\left\lVert\begin{bmatrix}
+  Q^T\\Q_\perp^T
+\end{bmatrix}(Ax-b)\right\rVert_2\\
+&amp;=\left\lVert\begin{bmatrix}
+  Q^T\\Q_\perp^T
+\end{bmatrix}(QRx-b)\right\rVert_2\\
+&amp;=\left\lVert\begin{bmatrix}
+  R\\0
+\end{bmatrix}x-\begin{bmatrix}
+  Q^Tb\\Q_\perp^Tb
+\end{bmatrix}\right\rVert_2\\
+\end{aligned}
+\]</span> 当 <span class="math inline">\(Rx=Q^Tb\)</span> 即 <span class="math inline">\(x=R^{-1}Q^Tb\)</span> 时取得最小值, 此时可见 <span class="math inline">\(A^\dagger=R^{-1}Q.\)</span></p></li>
+<li><p>从几何的角度, <span class="math inline">\(A=QR\)</span> 给出了投影算子 <span class="math inline">\(P\)</span> 的基: <span class="math inline">\(P=QQ^T.\)</span> 于是 <span class="math inline">\(QRx=QQ^Tb\)</span>, 也得到了 <span class="math inline">\(x=R^{-1}Q^Tb.\)</span></p></li>
+<li><p>从正规方程的角度,</p>
+<p><span class="math display">\[A^TAx=A^Tb\implies R^TQ^TQRx=R^TQ^Tb\implies Rx=Q^Tb,\]</span> 殊途同归.</p></li>
+</ul>
+<blockquote>
+<ol type="1">
+<li>计算 reduced QR 分解 <span class="math inline">\(A=QR\)</span></li>
+<li>计算 <span class="math inline">\(Q^Tb\)</span></li>
+<li>解方程组 <span class="math inline">\(Rx=Q^Tb\)</span></li>
+</ol>
+</blockquote>
+<p>主要计算量在于 QR 分解, 它需要 <span class="math inline">\(2mn^2-\dfrac{2}{3}n^3\)</span> 次运算.</p>
+<h2 id="svd">SVD</h2>
+<p><span class="math inline">\(A=U\Sigma V^T\)</span> 也给出了 <span class="math inline">\(P\)</span> 的基: <span class="math inline">\(P=UU^T\)</span>, 根据 <span class="math inline">\(U\Sigma V^Tx=UU^Tb\)</span> 可以得到 <span class="math inline">\(x=V\Sigma^{-1}U^Tb\)</span>. 此时也得到了 <span class="math inline">\(A^\dagger=V\Sigma^{-1}U^T.\)</span></p>
+<blockquote>
+<ol type="1">
+<li>计算 reduced SVD <span class="math inline">\(A=U\Sigma V^T\)</span></li>
+<li>计算 <span class="math inline">\(U^Tb\)</span></li>
+<li>解方程组 <span class="math inline">\(\Sigma y=U^Tb\)</span></li>
+<li>计算 <span class="math inline">\(x=Vy\)</span></li>
+</ol>
+</blockquote>
+<p>其中的方程组比 QR 方法的三角型更容易解, 是对角型的.</p>
+<hr>
+<p>同样可以利用正规方程: <span class="math display">\[A^TAx=A^Tb\implies V\Sigma^TU^TU\Sigma V^Tx=V\Sigma^T U^Tb\implies \Sigma V^Tx=U^Tb\]</span></p>
+<p>计算量主要在于 SVD, 当 <span class="math inline">\(m\gg n\)</span> 时和 QR 差不多, 当 <span class="math inline">\(m\approx n\)</span> 时计算量更大. 典型估计是 <span class="math inline">\(2mn^2+11n^3\)</span> 次运算.</p>
+<h2 id="伪逆">伪逆</h2>
+<ul>
+<li><span class="math inline">\(A\)</span> 列满秩: <span class="math inline">\(A^\dagger=(A^TA)^{-1}A^T\)</span></li>
+<li><span class="math inline">\(A\)</span> 行满秩: <span class="math inline">\(A^\dagger=A^T(AA^T)^{-1}\)</span></li>
+</ul>
+]]></content>
+      <categories>
+        <category>数学</category>
+        <category>代数</category>
+        <category>数值分析</category>
+        <category>线性代数</category>
       </categories>
   </entry>
 </search>
