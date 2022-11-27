@@ -26,6 +26,19 @@
       </categories>
   </entry>
   <entry>
+    <title>BST中的第二大元素</title>
+    <url>/posts/32090/</url>
+    <content><![CDATA[<h2 id="解法一">解法一</h2>
+<p>反向的中序遍历, 第二个节点就是第二大的. </p><figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">second_largest</span>(<span class="params">self</span>):</span></span><br><span class="line">        self.count = <span class="number">0</span></span><br><span class="line">        self.result = <span class="literal">None</span></span><br><span class="line">        self.traverse(root)</span><br><span class="line">        <span class="keyword">return</span> self.result</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">traverse</span>(<span class="params">self, root</span>):</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> root:</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        self.traverse(root.right)</span><br><span class="line">        self.count += <span class="number">1</span></span><br><span class="line">        <span class="keyword">if</span> self.count == <span class="number">2</span>:</span><br><span class="line">            self.result = root.val</span><br><span class="line">            <span class="keyword">return</span>       </span><br><span class="line">        <span class="keyword">if</span> self.count &gt; <span class="number">1</span>:</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        self.traverse(root.left)</span><br></pre></td></tr></tbody></table></figure> 时间: <span class="math inline">\(O(h)\)</span> 空间: <span class="math inline">\(O(h)\)</span><p></p>
+<h2 id="解法二">解法二</h2>
+<p>分类讨论. </p><figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">find_largest</span>(<span class="params">root</span>):</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> root:</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> root.right:  <span class="comment"># 没有右子树时, 根是最大的</span></span><br><span class="line">        <span class="keyword">return</span> root</span><br><span class="line">    <span class="keyword">return</span> find_largest(root.right)  <span class="comment"># 有右子树时, 找其中最大的</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">find_2nd_largest</span>(<span class="params">root</span>):</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> root:</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> root.right:  <span class="comment"># 没有右子树, 根最大; 左子树的最大就是第二大</span></span><br><span class="line">        <span class="keyword">return</span> find_largest(root.left)</span><br><span class="line">    <span class="comment"># 有右子树, 此时最大元素在右子树中</span></span><br><span class="line">    right = root.right</span><br><span class="line">    <span class="comment"># 右子树只有一个节点, 它是最大的, 根第二大</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> right.left <span class="keyword">and</span> <span class="keyword">not</span> right.right:  </span><br><span class="line">        <span class="keyword">return</span> root</span><br><span class="line">    <span class="comment"># 右子树还有子树, 在这里面找第二大的</span></span><br><span class="line">    <span class="keyword">return</span> find_2nd_largest(right)</span><br></pre></td></tr></tbody></table></figure><p></p>
+]]></content>
+      <categories>
+        <category>计算机</category>
+        <category>算法</category>
+      </categories>
+  </entry>
+  <entry>
     <title>Confusion Matrix</title>
     <url>/posts/39658/</url>
     <content><![CDATA[<p>对于二分类问题, 结果被分为真阳, 假阳, 真阴, 假阴四种情况.</p>
@@ -99,33 +112,6 @@
         <category>数学</category>
         <category>分析</category>
         <category>实变函数</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>BST中的第二大元素</title>
-    <url>/posts/32090/</url>
-    <content><![CDATA[<h2 id="解法一">解法一</h2>
-<p>反向的中序遍历, 第二个节点就是第二大的. </p><figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">second_largest</span>(<span class="params">self</span>):</span></span><br><span class="line">        self.count = <span class="number">0</span></span><br><span class="line">        self.result = <span class="literal">None</span></span><br><span class="line">        self.traverse(root)</span><br><span class="line">        <span class="keyword">return</span> self.result</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">traverse</span>(<span class="params">self, root</span>):</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> root:</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        self.traverse(root.right)</span><br><span class="line">        self.count += <span class="number">1</span></span><br><span class="line">        <span class="keyword">if</span> self.count == <span class="number">2</span>:</span><br><span class="line">            self.result = root.val</span><br><span class="line">            <span class="keyword">return</span>       </span><br><span class="line">        <span class="keyword">if</span> self.count &gt; <span class="number">1</span>:</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        self.traverse(root.left)</span><br></pre></td></tr></tbody></table></figure> 时间: <span class="math inline">\(O(h)\)</span> 空间: <span class="math inline">\(O(h)\)</span><p></p>
-<h2 id="解法二">解法二</h2>
-<p>分类讨论. </p><figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">find_largest</span>(<span class="params">root</span>):</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> root:</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> root.right:  <span class="comment"># 没有右子树时, 根是最大的</span></span><br><span class="line">        <span class="keyword">return</span> root</span><br><span class="line">    <span class="keyword">return</span> find_largest(root.right)  <span class="comment"># 有右子树时, 找其中最大的</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">find_2nd_largest</span>(<span class="params">root</span>):</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> root:</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> root.right:  <span class="comment"># 没有右子树, 根最大; 左子树的最大就是第二大</span></span><br><span class="line">        <span class="keyword">return</span> find_largest(root.left)</span><br><span class="line">    <span class="comment"># 有右子树, 此时最大元素在右子树中</span></span><br><span class="line">    right = root.right</span><br><span class="line">    <span class="comment"># 右子树只有一个节点, 它是最大的, 根第二大</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> right.left <span class="keyword">and</span> <span class="keyword">not</span> right.right:  </span><br><span class="line">        <span class="keyword">return</span> root</span><br><span class="line">    <span class="comment"># 右子树还有子树, 在这里面找第二大的</span></span><br><span class="line">    <span class="keyword">return</span> find_2nd_largest(right)</span><br></pre></td></tr></tbody></table></figure><p></p>
-]]></content>
-      <categories>
-        <category>计算机</category>
-        <category>算法</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Fourier 级数</title>
-    <url>/posts/22351/</url>
-    <content><![CDATA[<p><span class="math display">\[
-f\colon[-L,L]\to\mathbb{R}
-\]</span> <span class="math display">\[F(x)=a_0+\sum_{n=1}^\infty \left(a_n\cos\left(\frac{n\pi x}{L}\right)+b_n\sin\left(\frac{n\pi x}{L}\right)\right)\]</span> 其中 <span class="math display">\[a_0=\frac{1}{2L}\int_{-L}^Lf(x)\,\mathrm{d}x\]</span> <span class="math display">\[a_n=\frac{1}{L}\int_{-L}^Lf(x)\cos\left(\frac{n\pi x}{L}\right)\,\mathrm{d}x\]</span> <span class="math display">\[b_n=\frac{1}{L}\int_{-L}^Lf(x)\sin\left(\frac{n\pi x}{L}\right)\,\mathrm{d}x\]</span></p>
-]]></content>
-      <categories>
-        <category>数学</category>
-        <category>分析</category>
-        <category>微积分</category>
-        <category>级数</category>
       </categories>
   </entry>
   <entry>
@@ -259,6 +245,20 @@ f(z)-f(z+\tau)=\e^{-\frac{z^2}{2}}.
       </categories>
   </entry>
   <entry>
+    <title>Fourier 级数</title>
+    <url>/posts/22351/</url>
+    <content><![CDATA[<p><span class="math display">\[
+f\colon[-L,L]\to\mathbb{R}
+\]</span> <span class="math display">\[F(x)=a_0+\sum_{n=1}^\infty \left(a_n\cos\left(\frac{n\pi x}{L}\right)+b_n\sin\left(\frac{n\pi x}{L}\right)\right)\]</span> 其中 <span class="math display">\[a_0=\frac{1}{2L}\int_{-L}^Lf(x)\,\mathrm{d}x\]</span> <span class="math display">\[a_n=\frac{1}{L}\int_{-L}^Lf(x)\cos\left(\frac{n\pi x}{L}\right)\,\mathrm{d}x\]</span> <span class="math display">\[b_n=\frac{1}{L}\int_{-L}^Lf(x)\sin\left(\frac{n\pi x}{L}\right)\,\mathrm{d}x\]</span></p>
+]]></content>
+      <categories>
+        <category>数学</category>
+        <category>分析</category>
+        <category>微积分</category>
+        <category>级数</category>
+      </categories>
+  </entry>
+  <entry>
     <title>常见的ODE解法</title>
     <url>/posts/65228/</url>
     <content><![CDATA[<h3 id="可分离变量-ypyqx">1. 可分离变量 <span class="math inline">\(y'=p(y)q(x)\)</span></h3>
@@ -333,23 +333,6 @@ t_{2,1} + 4 \le t_{0,2}.
       </categories>
   </entry>
   <entry>
-    <title>OR-Tools 入门</title>
-    <url>/posts/59457/</url>
-    <content><![CDATA[<p><span class="math display">\[
-\max~ 3x+y,\quad
-\text{subject to}\ \begin{cases}
-0\le x\le 1\\
-0\le y\le 2\\
-x+y\le 2
-\end{cases}
-\]</span> <span id="more"></span> </p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> ortools.linear_solver <span class="keyword">import</span> pywraplp</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span>():</span></span><br><span class="line">    <span class="comment"># Create the linear solver with the GLOP backend.</span></span><br><span class="line">    solver = pywraplp.Solver.CreateSolver(<span class="string">'GLOP'</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Create the variables x and y.</span></span><br><span class="line">    x = solver.NumVar(<span class="number">0</span>, <span class="number">1</span>, <span class="string">'x'</span>)</span><br><span class="line">    y = solver.NumVar(<span class="number">0</span>, <span class="number">2</span>, <span class="string">'y'</span>)</span><br><span class="line"></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'Number of variables ='</span>, solver.NumVariables())</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Create a linear constraint, 0 &lt;= x + y &lt;= 2.</span></span><br><span class="line">    ct = solver.Constraint(<span class="number">0</span>, <span class="number">2</span>, <span class="string">'ct'</span>)</span><br><span class="line">    ct.SetCoefficient(x, <span class="number">1</span>)</span><br><span class="line">    ct.SetCoefficient(y, <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'Number of constraints ='</span>, solver.NumConstraints())</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Create the objective function, 3 * x + y.</span></span><br><span class="line">    objective = solver.Objective()</span><br><span class="line">    objective.SetCoefficient(x, <span class="number">3</span>)</span><br><span class="line">    objective.SetCoefficient(y, <span class="number">1</span>)</span><br><span class="line">    objective.SetMaximization()</span><br><span class="line"></span><br><span class="line">    solver.Solve()</span><br><span class="line"></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'='</span>*<span class="number">25</span>+<span class="string">' Solution '</span>+<span class="string">'='</span>*<span class="number">25</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'Objective value ='</span>, objective.Value())</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'x ='</span>, x.solution_value())</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'y ='</span>, y.solution_value())</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    main()</span><br></pre></td></tr></tbody></table></figure> 输出 <figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">Number of variables = 2</span><br><span class="line">Number of constraints = 1</span><br><span class="line">========================= Solution =========================</span><br><span class="line">Objective value = 4.0</span><br><span class="line">x = 1.0</span><br><span class="line">y = 1.0</span><br></pre></td></tr></tbody></table></figure><p></p>
-]]></content>
-      <categories>
-        <category>计算机</category>
-        <category>OR-Tools</category>
-      </categories>
-  </entry>
-  <entry>
     <title>PCA</title>
     <url>/posts/4593/</url>
     <content><![CDATA[<p>"降维" 是减少数据特征, 不是减少样本.</p>
@@ -394,6 +377,56 @@ a_N &amp; b_N\\
       <categories>
         <category>数学</category>
         <category>统计</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>OR-Tools 入门</title>
+    <url>/posts/59457/</url>
+    <content><![CDATA[<p><span class="math display">\[
+\max~ 3x+y,\quad
+\text{subject to}\ \begin{cases}
+0\le x\le 1\\
+0\le y\le 2\\
+x+y\le 2
+\end{cases}
+\]</span> <span id="more"></span> </p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> ortools.linear_solver <span class="keyword">import</span> pywraplp</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span>():</span></span><br><span class="line">    <span class="comment"># Create the linear solver with the GLOP backend.</span></span><br><span class="line">    solver = pywraplp.Solver.CreateSolver(<span class="string">'GLOP'</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Create the variables x and y.</span></span><br><span class="line">    x = solver.NumVar(<span class="number">0</span>, <span class="number">1</span>, <span class="string">'x'</span>)</span><br><span class="line">    y = solver.NumVar(<span class="number">0</span>, <span class="number">2</span>, <span class="string">'y'</span>)</span><br><span class="line"></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'Number of variables ='</span>, solver.NumVariables())</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Create a linear constraint, 0 &lt;= x + y &lt;= 2.</span></span><br><span class="line">    ct = solver.Constraint(<span class="number">0</span>, <span class="number">2</span>, <span class="string">'ct'</span>)</span><br><span class="line">    ct.SetCoefficient(x, <span class="number">1</span>)</span><br><span class="line">    ct.SetCoefficient(y, <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'Number of constraints ='</span>, solver.NumConstraints())</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Create the objective function, 3 * x + y.</span></span><br><span class="line">    objective = solver.Objective()</span><br><span class="line">    objective.SetCoefficient(x, <span class="number">3</span>)</span><br><span class="line">    objective.SetCoefficient(y, <span class="number">1</span>)</span><br><span class="line">    objective.SetMaximization()</span><br><span class="line"></span><br><span class="line">    solver.Solve()</span><br><span class="line"></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'='</span>*<span class="number">25</span>+<span class="string">' Solution '</span>+<span class="string">'='</span>*<span class="number">25</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'Objective value ='</span>, objective.Value())</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'x ='</span>, x.solution_value())</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'y ='</span>, y.solution_value())</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    main()</span><br></pre></td></tr></tbody></table></figure> 输出 <figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">Number of variables = 2</span><br><span class="line">Number of constraints = 1</span><br><span class="line">========================= Solution =========================</span><br><span class="line">Objective value = 4.0</span><br><span class="line">x = 1.0</span><br><span class="line">y = 1.0</span><br></pre></td></tr></tbody></table></figure><p></p>
+]]></content>
+      <categories>
+        <category>计算机</category>
+        <category>OR-Tools</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>SQL 基础</title>
+    <url>/posts/19528/</url>
+    <content><![CDATA[<h2 id="select">SELECT</h2>
+<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="built_in">COUNT</span>(<span class="keyword">DISTINCT</span> Country) <span class="keyword">FROM</span> Customers;</span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> Customers <span class="keyword">WHERE</span> <span class="keyword">not</span> (Country<span class="operator">=</span><span class="string">'Germany'</span> <span class="keyword">and</span> city<span class="operator">=</span><span class="string">'Berlin'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> Customers <span class="keyword">WHERE</span> Country <span class="keyword">IN</span> (<span class="keyword">SELECT</span> Country <span class="keyword">FROM</span> Suppliers);</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="like">LIKE</h2>
+<p><code>%</code>: zero, one or multiple char</p>
+<p><code>_</code>: a single char </p><figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> Customers <span class="keyword">WHERE</span> <span class="built_in">lower</span>(CustomerName) <span class="keyword">LIKE</span> <span class="string">'a%'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> Customers <span class="keyword">WHERE</span> city <span class="keyword">LIKE</span> <span class="string">'____'</span>;</span><br></pre></td></tr></tbody></table></figure><p></p>
+<h2 id="group-by">GROUP BY</h2>
+<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> ...</span><br><span class="line"><span class="keyword">FROM</span> ...</span><br><span class="line"><span class="keyword">WHERE</span> ...</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> ...</span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> ... <span class="keyword">ASC</span> <span class="operator">/</span> <span class="keyword">DESC</span>;</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="aggregate-functions">Aggregate functions</h2>
+<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="built_in">Min</span>(), <span class="built_in">Max</span>(), <span class="built_in">Count</span>(), <span class="built_in">Sum</span>(), <span class="built_in">Avg</span>()</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="built_in">avg</span>(sum_id) <span class="keyword">as</span> avg_spend_per_orderid</span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">(<span class="keyword">SELECT</span> order_id, <span class="built_in">sum</span>(spend) <span class="keyword">as</span> sum_id</span><br><span class="line"><span class="keyword">FROM</span> example</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> <span class="number">1</span>)</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="having">HAVING</h2>
+<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> ...</span><br><span class="line"><span class="keyword">FROM</span> ...</span><br><span class="line"><span class="keyword">WHERE</span> ...</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> ...</span><br><span class="line"><span class="keyword">HAVING</span> ...</span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> ...</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> Country, <span class="built_in">count</span>(CustomerID)</span><br><span class="line"><span class="keyword">FROM</span> Customers</span><br><span class="line"><span class="keyword">WHERE</span> Country <span class="keyword">in</span> (<span class="string">'Brazil'</span>, <span class="string">'France'</span>, <span class="string">'USA'</span>)</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> Country</span><br><span class="line"><span class="keyword">HAVING</span> <span class="built_in">count</span>(CustomerID) <span class="operator">&gt;</span> <span class="number">5</span>;</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="union">UNION</h2>
+<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> Country <span class="keyword">FROM</span> Customers</span><br><span class="line"><span class="keyword">UNION</span> (<span class="keyword">ALL</span>)</span><br><span class="line"><span class="keyword">SELECT</span> Country <span class="keyword">FROM</span> Suppliers</span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> <span class="number">1</span>;</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="with">WITH</h2>
+<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">WITH</span> cate15 <span class="keyword">as</span> (</span><br><span class="line">  <span class="keyword">SELECT</span> categoryid, productid</span><br><span class="line">  <span class="keyword">FROM</span> products</span><br><span class="line">  <span class="keyword">WHERE</span> categoryid <span class="keyword">BETWEEN</span> <span class="number">1</span> <span class="keyword">and</span> <span class="number">5</span></span><br><span class="line">),</span><br><span class="line">od15 <span class="keyword">as</span> (</span><br><span class="line">  <span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> orderdetails</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> od15 </span><br><span class="line"><span class="keyword">WHERE</span> productid <span class="keyword">in</span> (<span class="keyword">SELECT</span> productid <span class="keyword">from</span> cate15)</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="windows-function">Windows function</h2>
+<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="built_in">row_number</span>() <span class="keyword">over</span>(<span class="keyword">partition</span> <span class="keyword">by</span> ... <span class="keyword">order</span> <span class="keyword">by</span> ...)</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> category, product, sales, row_num</span><br><span class="line"><span class="keyword">FROM</span> (</span><br><span class="line">  <span class="keyword">SELECT</span> category, product, sales, </span><br><span class="line">  <span class="built_in">row_number</span>() <span class="keyword">over</span>(<span class="keyword">partition</span> <span class="keyword">by</span> category <span class="keyword">order</span> <span class="keyword">by</span> sales <span class="keyword">desc</span>) <span class="keyword">as</span> row_num</span><br><span class="line">  <span class="keyword">FROM</span> tab</span><br><span class="line">)</span><br><span class="line"><span class="keyword">WHERE</span> row_num <span class="operator">&lt;=</span> <span class="number">2</span></span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> </span><br><span class="line">categoryid, productid, price, </span><br><span class="line"><span class="built_in">sum</span>(price) <span class="keyword">over</span>(<span class="keyword">partition</span> <span class="keyword">by</span> categoryid <span class="keyword">order</span> <span class="keyword">by</span> productid) <span class="keyword">as</span> cum_sum</span><br><span class="line"><span class="keyword">FROM</span> products</span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span> <span class="number">1</span>,<span class="number">2</span>;</span><br></pre></td></tr></tbody></table></figure>
+<p><code>lag()</code>: above, <code>lead()</code>: below </p><figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span>,</span><br><span class="line"><span class="built_in">lag</span>(birthdate, <span class="number">1</span>) <span class="keyword">over</span>(<span class="keyword">order</span> <span class="keyword">by</span> birthdate),</span><br><span class="line"><span class="built_in">lead</span>(birthdate, <span class="number">2</span>) <span class="keyword">over</span>(<span class="keyword">order</span> <span class="keyword">by</span> birthdate)</span><br><span class="line"><span class="keyword">FROM</span> employees;</span><br></pre></td></tr></tbody></table></figure><p></p>
+<h2 id="case-when">CASE WHEN</h2>
+<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> Country,</span><br><span class="line">       <span class="keyword">case</span> <span class="keyword">when</span> country <span class="keyword">in</span> (<span class="string">'USA'</span>) <span class="keyword">then</span> <span class="string">'America'</span></span><br><span class="line">            <span class="keyword">when</span> country <span class="keyword">in</span> (<span class="string">'Mexico'</span>) <span class="keyword">then</span> <span class="string">'emerging markets'</span></span><br><span class="line">            <span class="keyword">else</span> <span class="string">'other markets'</span> <span class="keyword">end</span> <span class="keyword">as</span> country_flag</span><br><span class="line"><span class="keyword">FROM</span> customers;</span><br></pre></td></tr></tbody></table></figure>
+]]></content>
+      <categories>
+        <category>计算机</category>
+        <category>SQL</category>
       </categories>
   </entry>
   <entry>
@@ -464,39 +497,6 @@ a_N &amp; b_N\\
       <categories>
         <category>数学</category>
         <category>逻辑</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>SQL 基础</title>
-    <url>/posts/19528/</url>
-    <content><![CDATA[<h2 id="select">SELECT</h2>
-<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="built_in">COUNT</span>(<span class="keyword">DISTINCT</span> Country) <span class="keyword">FROM</span> Customers;</span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> Customers <span class="keyword">WHERE</span> <span class="keyword">not</span> (Country<span class="operator">=</span><span class="string">'Germany'</span> <span class="keyword">and</span> city<span class="operator">=</span><span class="string">'Berlin'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> Customers <span class="keyword">WHERE</span> Country <span class="keyword">IN</span> (<span class="keyword">SELECT</span> Country <span class="keyword">FROM</span> Suppliers);</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="like">LIKE</h2>
-<p><code>%</code>: zero, one or multiple char</p>
-<p><code>_</code>: a single char </p><figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> Customers <span class="keyword">WHERE</span> <span class="built_in">lower</span>(CustomerName) <span class="keyword">LIKE</span> <span class="string">'a%'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> Customers <span class="keyword">WHERE</span> city <span class="keyword">LIKE</span> <span class="string">'____'</span>;</span><br></pre></td></tr></tbody></table></figure><p></p>
-<h2 id="group-by">GROUP BY</h2>
-<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> ...</span><br><span class="line"><span class="keyword">FROM</span> ...</span><br><span class="line"><span class="keyword">WHERE</span> ...</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> ...</span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> ... <span class="keyword">ASC</span> <span class="operator">/</span> <span class="keyword">DESC</span>;</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="aggregate-functions">Aggregate functions</h2>
-<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="built_in">Min</span>(), <span class="built_in">Max</span>(), <span class="built_in">Count</span>(), <span class="built_in">Sum</span>(), <span class="built_in">Avg</span>()</span><br></pre></td></tr></tbody></table></figure>
-<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="built_in">avg</span>(sum_id) <span class="keyword">as</span> avg_spend_per_orderid</span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">(<span class="keyword">SELECT</span> order_id, <span class="built_in">sum</span>(spend) <span class="keyword">as</span> sum_id</span><br><span class="line"><span class="keyword">FROM</span> example</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> <span class="number">1</span>)</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="having">HAVING</h2>
-<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> ...</span><br><span class="line"><span class="keyword">FROM</span> ...</span><br><span class="line"><span class="keyword">WHERE</span> ...</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> ...</span><br><span class="line"><span class="keyword">HAVING</span> ...</span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> ...</span><br></pre></td></tr></tbody></table></figure>
-<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> Country, <span class="built_in">count</span>(CustomerID)</span><br><span class="line"><span class="keyword">FROM</span> Customers</span><br><span class="line"><span class="keyword">WHERE</span> Country <span class="keyword">in</span> (<span class="string">'Brazil'</span>, <span class="string">'France'</span>, <span class="string">'USA'</span>)</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> Country</span><br><span class="line"><span class="keyword">HAVING</span> <span class="built_in">count</span>(CustomerID) <span class="operator">&gt;</span> <span class="number">5</span>;</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="union">UNION</h2>
-<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> Country <span class="keyword">FROM</span> Customers</span><br><span class="line"><span class="keyword">UNION</span> (<span class="keyword">ALL</span>)</span><br><span class="line"><span class="keyword">SELECT</span> Country <span class="keyword">FROM</span> Suppliers</span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> <span class="number">1</span>;</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="with">WITH</h2>
-<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">WITH</span> cate15 <span class="keyword">as</span> (</span><br><span class="line">  <span class="keyword">SELECT</span> categoryid, productid</span><br><span class="line">  <span class="keyword">FROM</span> products</span><br><span class="line">  <span class="keyword">WHERE</span> categoryid <span class="keyword">BETWEEN</span> <span class="number">1</span> <span class="keyword">and</span> <span class="number">5</span></span><br><span class="line">),</span><br><span class="line">od15 <span class="keyword">as</span> (</span><br><span class="line">  <span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> orderdetails</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> od15 </span><br><span class="line"><span class="keyword">WHERE</span> productid <span class="keyword">in</span> (<span class="keyword">SELECT</span> productid <span class="keyword">from</span> cate15)</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="windows-function">Windows function</h2>
-<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="built_in">row_number</span>() <span class="keyword">over</span>(<span class="keyword">partition</span> <span class="keyword">by</span> ... <span class="keyword">order</span> <span class="keyword">by</span> ...)</span><br></pre></td></tr></tbody></table></figure>
-<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> category, product, sales, row_num</span><br><span class="line"><span class="keyword">FROM</span> (</span><br><span class="line">  <span class="keyword">SELECT</span> category, product, sales, </span><br><span class="line">  <span class="built_in">row_number</span>() <span class="keyword">over</span>(<span class="keyword">partition</span> <span class="keyword">by</span> category <span class="keyword">order</span> <span class="keyword">by</span> sales <span class="keyword">desc</span>) <span class="keyword">as</span> row_num</span><br><span class="line">  <span class="keyword">FROM</span> tab</span><br><span class="line">)</span><br><span class="line"><span class="keyword">WHERE</span> row_num <span class="operator">&lt;=</span> <span class="number">2</span></span><br></pre></td></tr></tbody></table></figure>
-<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> </span><br><span class="line">categoryid, productid, price, </span><br><span class="line"><span class="built_in">sum</span>(price) <span class="keyword">over</span>(<span class="keyword">partition</span> <span class="keyword">by</span> categoryid <span class="keyword">order</span> <span class="keyword">by</span> productid) <span class="keyword">as</span> cum_sum</span><br><span class="line"><span class="keyword">FROM</span> products</span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span> <span class="number">1</span>,<span class="number">2</span>;</span><br></pre></td></tr></tbody></table></figure>
-<p><code>lag()</code>: above, <code>lead()</code>: below </p><figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span>,</span><br><span class="line"><span class="built_in">lag</span>(birthdate, <span class="number">1</span>) <span class="keyword">over</span>(<span class="keyword">order</span> <span class="keyword">by</span> birthdate),</span><br><span class="line"><span class="built_in">lead</span>(birthdate, <span class="number">2</span>) <span class="keyword">over</span>(<span class="keyword">order</span> <span class="keyword">by</span> birthdate)</span><br><span class="line"><span class="keyword">FROM</span> employees;</span><br></pre></td></tr></tbody></table></figure><p></p>
-<h2 id="case-when">CASE WHEN</h2>
-<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> Country,</span><br><span class="line">       <span class="keyword">case</span> <span class="keyword">when</span> country <span class="keyword">in</span> (<span class="string">'USA'</span>) <span class="keyword">then</span> <span class="string">'America'</span></span><br><span class="line">            <span class="keyword">when</span> country <span class="keyword">in</span> (<span class="string">'Mexico'</span>) <span class="keyword">then</span> <span class="string">'emerging markets'</span></span><br><span class="line">            <span class="keyword">else</span> <span class="string">'other markets'</span> <span class="keyword">end</span> <span class="keyword">as</span> country_flag</span><br><span class="line"><span class="keyword">FROM</span> customers;</span><br></pre></td></tr></tbody></table></figure>
-]]></content>
-      <categories>
-        <category>计算机</category>
-        <category>SQL</category>
       </categories>
   </entry>
   <entry>
@@ -894,6 +894,18 @@ W_p^1\subseteq L^{p^*},\quad\text{其中 }{1\over p^*}=\frac1p-\frac1n.
       </categories>
   </entry>
   <entry>
+    <title>Hexo 用法记录</title>
+    <url>/posts/16107/</url>
+    <content><![CDATA[<p>插入图片: </p><figure class="highlight html"><table><tbody><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"/file/*"</span> <span class="attr">width</span>=<span class="string">"250"</span> <span class="attr">height</span>=<span class="string">"250"</span>/&gt;</span></span><br></pre></td></tr></tbody></table></figure><p></p>
+<p>嵌入 pdf: </p><figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">{% pdf /file/*.pdf %}</span><br></pre></td></tr></tbody></table></figure><p></p>
+<p>链接文章: </p><figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">{% post_link * 说明 %}</span><br></pre></td></tr></tbody></table></figure><p></p>
+]]></content>
+      <categories>
+        <category>计算机</category>
+        <category>hexo</category>
+      </categories>
+  </entry>
+  <entry>
     <title>定积分性质例题</title>
     <url>/posts/5066/</url>
     <content><![CDATA[<p><strong>问题：在 <span class="math inline">\([0,\pi]\)</span> 上的连续函数 <span class="math inline">\(f\)</span> 满足</strong> <span class="math display">\[
@@ -939,18 +951,6 @@ F(x)=f(x)\sin(x-x_0)\leq0,~\forall x\in(0,\pi).
         <category>分析</category>
         <category>微积分</category>
         <category>多元微积分</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Hexo 用法记录</title>
-    <url>/posts/16107/</url>
-    <content><![CDATA[<p>插入图片: </p><figure class="highlight html"><table><tbody><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"/file/*"</span> <span class="attr">width</span>=<span class="string">"250"</span> <span class="attr">height</span>=<span class="string">"250"</span>/&gt;</span></span><br></pre></td></tr></tbody></table></figure><p></p>
-<p>嵌入 pdf: </p><figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">{% pdf /file/*.pdf %}</span><br></pre></td></tr></tbody></table></figure><p></p>
-<p>链接文章: </p><figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">{% post_link * 说明 %}</span><br></pre></td></tr></tbody></table></figure><p></p>
-]]></content>
-      <categories>
-        <category>计算机</category>
-        <category>hexo</category>
       </categories>
   </entry>
   <entry>
@@ -1182,6 +1182,39 @@ H_A=0.5\times0.7219+0.5\times0.9710=0.8465
       </categories>
   </entry>
   <entry>
+    <title>分部积分的表格法</title>
+    <url>/posts/42394/</url>
+    <content><![CDATA[<p><span class="math display">\[\int (x^2+x)\e^{2x}\d x\]</span> 第一行求导, 第二行积分, 直到求导结果为 0: <img src="/file/xex.png" width="400"> 正负交替相加: <span class="math display">\[
+\text{原式}=\left({x^2+x\over2}-{2x+1\over4}+\frac14\right)\e^{2x}=\frac12 x^2\e^{2x}+C.
+\]</span> <span id="more"></span></p>
+<hr>
+<p>若多次求导不能为 0, 需要在最后加一个积分项, 其符号与上一个相反. 比如出现循环:</p>
+<p><span class="math display">\[
+\int \e^{x}\sin 2x\d x
+\]</span></p>
+<p><img src="/file/sine.png" width="350"></p>
+<p><span class="math display">\[
+\int \e^x\sin 2x\d x=(\sin 2x-2\cos 2x)\e^x-4\int\e^{x}\sin 2x\d x,
+\]</span></p>
+<p>那么 <span class="math display">\[
+\text{原式}=\frac15(\sin 2x-2\cos2x)\e^x+C.
+\]</span></p>
+<hr>
+<p>或者积分被简化: <span class="math display">\[
+\int 2x\arctan x\d x
+\]</span> <img src="/file/xarctanx.png" width="250"></p>
+<p><span class="math display">\[
+\text{原式}=(x^2+1)\arctan x-\int 1\d x=(x^2+1)\arctan x-x+C.
+\]</span></p>
+]]></content>
+      <categories>
+        <category>数学</category>
+        <category>分析</category>
+        <category>微积分</category>
+        <category>单变量微积分</category>
+      </categories>
+  </entry>
+  <entry>
     <title>拉格朗日插值</title>
     <url>/posts/17585/</url>
     <content><![CDATA[<p><span class="math display">\[p(x)=\sum_{k=0}^n y_kl_k(x)\]</span></p>
@@ -1213,39 +1246,6 @@ p(x)={\sum_{k=0}^n{\lambda_k y_k\over x-x_k}\over\sum_{k=0}^n{\lambda_k\over x-x
       <categories>
         <category>数学</category>
         <category>数值分析</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>分部积分的表格法</title>
-    <url>/posts/42394/</url>
-    <content><![CDATA[<p><span class="math display">\[\int (x^2+x)\e^{2x}\d x\]</span> 第一行求导, 第二行积分, 直到求导结果为 0: <img src="/file/xex.png" width="400"> 正负交替相加: <span class="math display">\[
-\text{原式}=\left({x^2+x\over2}-{2x+1\over4}+\frac14\right)\e^{2x}=\frac12 x^2\e^{2x}+C.
-\]</span> <span id="more"></span></p>
-<hr>
-<p>若多次求导不能为 0, 需要在最后加一个积分项, 其符号与上一个相反. 比如出现循环:</p>
-<p><span class="math display">\[
-\int \e^{x}\sin 2x\d x
-\]</span></p>
-<p><img src="/file/sine.png" width="350"></p>
-<p><span class="math display">\[
-\int \e^x\sin 2x\d x=(\sin 2x-2\cos 2x)\e^x-4\int\e^{x}\sin 2x\d x,
-\]</span></p>
-<p>那么 <span class="math display">\[
-\text{原式}=\frac15(\sin 2x-2\cos2x)\e^x+C.
-\]</span></p>
-<hr>
-<p>或者积分被简化: <span class="math display">\[
-\int 2x\arctan x\d x
-\]</span> <img src="/file/xarctanx.png" width="250"></p>
-<p><span class="math display">\[
-\text{原式}=(x^2+1)\arctan x-\int 1\d x=(x^2+1)\arctan x-x+C.
-\]</span></p>
-]]></content>
-      <categories>
-        <category>数学</category>
-        <category>分析</category>
-        <category>微积分</category>
-        <category>单变量微积分</category>
       </categories>
   </entry>
   <entry>
@@ -1332,6 +1332,37 @@ p(x)={\sum_{k=0}^n{\lambda_k y_k\over x-x_k}\over\sum_{k=0}^n{\lambda_k\over x-x
       </categories>
   </entry>
   <entry>
+    <title>微分形式</title>
+    <url>/posts/12522/</url>
+    <content><![CDATA[<p>0 次形式: <span class="math inline">\(f\)</span></p>
+<p>1 次形式: <span class="math inline">\(P\d x+Q\d y+R\d z\)</span></p>
+<p>2 次形式: <span class="math inline">\(P\d y\land \d z+Q\d z\land \d x+R\d x\land \d y\)</span></p>
+<p>3 次形式: <span class="math inline">\(R\d x\land \d y\land \d z\)</span></p>
+<span id="more"></span>
+<h2 id="运算律">运算律</h2>
+<p><span class="math inline">\(\d x\land \d x=0\)</span> 等, <span class="math inline">\(\d x\land \d y=-\d y\land \d x\)</span> 等.</p>
+<h2 id="外微分运算">外微分运算</h2>
+<p><span class="math display">\[\d f={\partial f\over\partial x}\d x+{\partial f\over\partial y}\d y+{\partial f\over\partial z}\d z\]</span> <span class="math inline">\(w=P\d x+Q\d y+R\d z\)</span> 时</p>
+<p><span class="math display">\[\begin{aligned}
+\d w&amp;=(R_y'-Q_z')\d y\land \d z+(P_z'-R_x')\d z\land \d x+(Q_x'-P_y')\d x\land \d y\\
+&amp;=
+\begin{vmatrix}
+\d y\land \d z&amp;\d z\land \d x&amp;\d x\land \d y\\
+{\partial\over\partial x} &amp; {\partial\over\partial y} &amp; {\partial\over\partial z}\\
+P&amp;Q&amp;R
+\end{vmatrix}
+\end{aligned}\]</span></p>
+<p><span class="math inline">\(w=P\d y\land \d z+Q\d z\land \d x+R\d x\land \d y\)</span> 时</p>
+<p><span class="math display">\[\d w=(P_x'+Q_y'+R_z')\d x\land \d y\land \d z\]</span></p>
+]]></content>
+      <categories>
+        <category>数学</category>
+        <category>分析</category>
+        <category>微积分</category>
+        <category>多元微积分</category>
+      </categories>
+  </entry>
+  <entry>
     <title>数值积分</title>
     <url>/posts/24343/</url>
     <content><![CDATA[<p>Quadrature Rule 指的是形式 <span class="math display">\[Q(f)=\sum_{k=0}^nw_kf(x_k)\]</span></p>
@@ -1373,37 +1404,6 @@ M(h)=\sum_{k=0}^{n-1}hf\left(a+h\left(k+\frac12\right)\right)
       <categories>
         <category>数学</category>
         <category>数值分析</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>微分形式</title>
-    <url>/posts/12522/</url>
-    <content><![CDATA[<p>0 次形式: <span class="math inline">\(f\)</span></p>
-<p>1 次形式: <span class="math inline">\(P\d x+Q\d y+R\d z\)</span></p>
-<p>2 次形式: <span class="math inline">\(P\d y\land \d z+Q\d z\land \d x+R\d x\land \d y\)</span></p>
-<p>3 次形式: <span class="math inline">\(R\d x\land \d y\land \d z\)</span></p>
-<span id="more"></span>
-<h2 id="运算律">运算律</h2>
-<p><span class="math inline">\(\d x\land \d x=0\)</span> 等, <span class="math inline">\(\d x\land \d y=-\d y\land \d x\)</span> 等.</p>
-<h2 id="外微分运算">外微分运算</h2>
-<p><span class="math display">\[\d f={\partial f\over\partial x}\d x+{\partial f\over\partial y}\d y+{\partial f\over\partial z}\d z\]</span> <span class="math inline">\(w=P\d x+Q\d y+R\d z\)</span> 时</p>
-<p><span class="math display">\[\begin{aligned}
-\d w&amp;=(R_y'-Q_z')\d y\land \d z+(P_z'-R_x')\d z\land \d x+(Q_x'-P_y')\d x\land \d y\\
-&amp;=
-\begin{vmatrix}
-\d y\land \d z&amp;\d z\land \d x&amp;\d x\land \d y\\
-{\partial\over\partial x} &amp; {\partial\over\partial y} &amp; {\partial\over\partial z}\\
-P&amp;Q&amp;R
-\end{vmatrix}
-\end{aligned}\]</span></p>
-<p><span class="math inline">\(w=P\d y\land \d z+Q\d z\land \d x+R\d x\land \d y\)</span> 时</p>
-<p><span class="math display">\[\d w=(P_x'+Q_y'+R_z')\d x\land \d y\land \d z\]</span></p>
-]]></content>
-      <categories>
-        <category>数学</category>
-        <category>分析</category>
-        <category>微积分</category>
-        <category>多元微积分</category>
       </categories>
   </entry>
   <entry>
@@ -1899,18 +1899,6 @@ E_{ij}=\frac{X_{i\cdot}X_{\cdot j}}{n}
       </categories>
   </entry>
   <entry>
-    <title>回不去的夏天</title>
-    <url>/posts/59205/</url>
-    <content><![CDATA[<p>又是一年高考季. 清早起来, 大把的金光倾泻到身上, 让时间一下子变慢了.</p>
-<p>让我又想起了那个夏天, 那个完美的夏天, 那个打开教室后窗, 就有带着清香的槐花瓣飘落满地的五月. 窗边总有少年在惬意的清风中望着外面的世界, 而他身边总有熟悉的体温.</p>
-<p>我嗅到了阳光的味道, 那样浓烈而又炽热. 它带着莽撞, 带着悸动, 带着热血, 也带着青涩与迷茫.</p>
-<p>那是天空永远清朗的夏天, 有着池鱼, 鸣鸟, 蝉噪, 音乐, 冷饮的夏天; 有着汗水, 欢笑, 泪眼, 羁绊, 思念的夏天.</p>
-]]></content>
-      <categories>
-        <category>随笔</category>
-      </categories>
-  </entry>
-  <entry>
     <title>回家</title>
     <url>/posts/8368/</url>
     <content><![CDATA[<p>沁人的凉风和湛蓝中的云卷云舒，熟悉的楼房和那条街道，一簇簇与一丛丛，忽然让少年有了一丝归属，潮湿了眼眶。他颤抖着四肢，任每一个毛孔大肆呼吸着。 依稀在记忆中的水库，被荒草占据。大把的野草，湮没了少年心中，那未曾发出的约定。</p>
@@ -1949,6 +1937,18 @@ E_{ij}=\frac{X_{i\cdot}X_{\cdot j}}{n}
       <categories>
         <category>计算机</category>
         <category>算法</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>回不去的夏天</title>
+    <url>/posts/59205/</url>
+    <content><![CDATA[<p>又是一年高考季. 清早起来, 大把的金光倾泻到身上, 让时间一下子变慢了.</p>
+<p>让我又想起了那个夏天, 那个完美的夏天, 那个打开教室后窗, 就有带着清香的槐花瓣飘落满地的五月. 窗边总有少年在惬意的清风中望着外面的世界, 而他身边总有熟悉的体温.</p>
+<p>我嗅到了阳光的味道, 那样浓烈而又炽热. 它带着莽撞, 带着悸动, 带着热血, 也带着青涩与迷茫.</p>
+<p>那是天空永远清朗的夏天, 有着池鱼, 鸣鸟, 蝉噪, 音乐, 冷饮的夏天; 有着汗水, 欢笑, 泪眼, 羁绊, 思念的夏天.</p>
+]]></content>
+      <categories>
+        <category>随笔</category>
       </categories>
   </entry>
   <entry>
@@ -2131,16 +2131,6 @@ Q=\begin{bmatrix}1&amp;\\&amp;\frac12\end{bmatrix}\begin{bmatrix}0&amp;1\\1&amp;
       </categories>
   </entry>
   <entry>
-    <title>放学路上</title>
-    <url>/posts/61326/</url>
-    <content><![CDATA[<p>无法抑制去想，记不得那最后一次黄昏的放学路上。耳畔的空灵悠扬，橙红的落日夕阳，沁人的微风飘荡。脚下波光粼粼，眺望远方鹅黄的垂柳，爬上石阶的嫩草。如梦似幻。</p>
-<p>晚风，斜阳，音乐，白鹅，湖面，屋檐的金辉，静夜的虫鸣与群星。</p>
-]]></content>
-      <categories>
-        <category>随笔</category>
-      </categories>
-  </entry>
-  <entry>
     <title>排序</title>
     <url>/posts/37489/</url>
     <content><![CDATA[<h2 id="冒泡排序-bubble-sort">冒泡排序 (bubble sort)</h2>
@@ -2195,6 +2185,16 @@ Q=\begin{bmatrix}1&amp;\\&amp;\frac12\end{bmatrix}\begin{bmatrix}0&amp;1\\1&amp;
       </categories>
   </entry>
   <entry>
+    <title>放学路上</title>
+    <url>/posts/61326/</url>
+    <content><![CDATA[<p>无法抑制去想，记不得那最后一次黄昏的放学路上。耳畔的空灵悠扬，橙红的落日夕阳，沁人的微风飘荡。脚下波光粼粼，眺望远方鹅黄的垂柳，爬上石阶的嫩草。如梦似幻。</p>
+<p>晚风，斜阳，音乐，白鹅，湖面，屋檐的金辉，静夜的虫鸣与群星。</p>
+]]></content>
+      <categories>
+        <category>随笔</category>
+      </categories>
+  </entry>
+  <entry>
     <title>春天来了</title>
     <url>/posts/61668/</url>
     <content><![CDATA[<p>没有了过往的凛冽，风变得和煦轻柔起来，枝条上冒出了毛茸茸的骨朵。</p>
@@ -2213,18 +2213,18 @@ Q=\begin{bmatrix}1&amp;\\&amp;\frac12\end{bmatrix}\begin{bmatrix}0&amp;1\\1&amp;
       </categories>
   </entry>
   <entry>
-    <title>晴朗的校园</title>
-    <url>/posts/4892/</url>
-    <content><![CDATA[<p>今天的世界格外明朗。徐徐的清风，轻柔的阳光，点点嫩芽，热闹的人群。一切都还是那样平常，但仿佛和那些日漫中的理想校园，只差着几片飞舞的樱花瓣。</p>
+    <title>普达措</title>
+    <url>/posts/39803/</url>
+    <content><![CDATA[<p>彳彳亍亍，林雪风花，幽幽皑皑飒飒。 探探寻寻，湖鸟山虫，澹澹呖呖葱葱。</p>
 ]]></content>
       <categories>
         <category>随笔</category>
       </categories>
   </entry>
   <entry>
-    <title>普达措</title>
-    <url>/posts/39803/</url>
-    <content><![CDATA[<p>彳彳亍亍，林雪风花，幽幽皑皑飒飒。 探探寻寻，湖鸟山虫，澹澹呖呖葱葱。</p>
+    <title>晴朗的校园</title>
+    <url>/posts/4892/</url>
+    <content><![CDATA[<p>今天的世界格外明朗。徐徐的清风，轻柔的阳光，点点嫩芽，热闹的人群。一切都还是那样平常，但仿佛和那些日漫中的理想校园，只差着几片飞舞的樱花瓣。</p>
 ]]></content>
       <categories>
         <category>随笔</category>
@@ -2367,12 +2367,9 @@ Q=\begin{bmatrix}1&amp;\\&amp;\frac12\end{bmatrix}\begin{bmatrix}0&amp;1\\1&amp;
       </categories>
   </entry>
   <entry>
-    <title>树的路径和等于目标值</title>
-    <url>/posts/40717/</url>
-    <content><![CDATA[<h2 id="top-down">Top Down</h2>
-<figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">exist</span>(<span class="params">self, root, target</span>):</span></span><br><span class="line">        self.target = target</span><br><span class="line">        self.ret = <span class="literal">False</span></span><br><span class="line">        self.helper(root, <span class="number">0</span>)</span><br><span class="line">        <span class="keyword">return</span> self.ret</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">helper</span>(<span class="params">selr, root, current</span>):</span></span><br><span class="line">        <span class="keyword">if</span> root <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        <span class="keyword">if</span> root.left <span class="keyword">is</span> <span class="literal">None</span> <span class="keyword">and</span> root.right <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">            self.ret = self.ret <span class="keyword">or</span> current + root.val == self.target</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        <span class="keyword">if</span> self.ret == <span class="literal">True</span>:</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        self.helper(root.left, current + root.val)</span><br><span class="line">        self.helper(root.right, current + root.val)</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="top-down-bottom-up">Top Down + Bottom Up</h2>
-<figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">exist</span>(<span class="params">self, root, target</span>):</span></span><br><span class="line">        self.target = target</span><br><span class="line">        <span class="keyword">return</span> self.helper(root, <span class="number">0</span>)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">helper</span>(<span class="params">self, root, current</span>):</span></span><br><span class="line">        <span class="keyword">if</span> root <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        <span class="keyword">if</span> root.left <span class="keyword">is</span> <span class="literal">None</span> <span class="keyword">and</span> root.right <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">            <span class="keyword">return</span> current + root.val == self.target</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> self.helper(root.left, current + root.val) <span class="keyword">or</span> self.helper(root.right, current + root.val)</span><br></pre></td></tr></tbody></table></figure>
+    <title>检查 Binary search tree (BST)</title>
+    <url>/posts/32064/</url>
+    <content><![CDATA[<p>定义: 对每个节点, 左子树的值都比它小, 右子树的值都比它大. </p><figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">    10</span><br><span class="line">   /  \</span><br><span class="line">  5    15</span><br><span class="line"> / \   / \</span><br><span class="line">2   7 12 20</span><br></pre></td></tr></tbody></table></figure> <figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">BST</span>(<span class="params">root</span>):</span></span><br><span class="line">    <span class="keyword">if</span> root <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">    min_val = <span class="built_in">float</span>(<span class="string">'-inf'</span>)</span><br><span class="line">    max_val = <span class="built_in">float</span>(<span class="string">'inf'</span>)</span><br><span class="line">    <span class="keyword">return</span> isBST(root, min_val, max_val)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">isBST</span>(<span class="params">root, min_val, max_val</span>):</span></span><br><span class="line">    <span class="keyword">if</span> root <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">    <span class="keyword">if</span> root.val &lt;= min_val <span class="keyword">or</span> root.val &gt;= max_val:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">    <span class="keyword">return</span> isBST(root.left, min_val, root.val) <span class="keyword">and</span> isBST(root.right, root.val, max_val)</span><br></pre></td></tr></tbody></table></figure><p></p>
 ]]></content>
       <categories>
         <category>计算机</category>
@@ -2380,9 +2377,12 @@ Q=\begin{bmatrix}1&amp;\\&amp;\frac12\end{bmatrix}\begin{bmatrix}0&amp;1\\1&amp;
       </categories>
   </entry>
   <entry>
-    <title>检查 Binary search tree (BST)</title>
-    <url>/posts/32064/</url>
-    <content><![CDATA[<p>定义: 对每个节点, 左子树的值都比它小, 右子树的值都比它大. </p><figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">    10</span><br><span class="line">   /  \</span><br><span class="line">  5    15</span><br><span class="line"> / \   / \</span><br><span class="line">2   7 12 20</span><br></pre></td></tr></tbody></table></figure> <figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">BST</span>(<span class="params">root</span>):</span></span><br><span class="line">    <span class="keyword">if</span> root <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">    min_val = <span class="built_in">float</span>(<span class="string">'-inf'</span>)</span><br><span class="line">    max_val = <span class="built_in">float</span>(<span class="string">'inf'</span>)</span><br><span class="line">    <span class="keyword">return</span> isBST(root, min_val, max_val)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">isBST</span>(<span class="params">root, min_val, max_val</span>):</span></span><br><span class="line">    <span class="keyword">if</span> root <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">    <span class="keyword">if</span> root.val &lt;= min_val <span class="keyword">or</span> root.val &gt;= max_val:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">    <span class="keyword">return</span> isBST(root.left, min_val, root.val) <span class="keyword">and</span> isBST(root.right, root.val, max_val)</span><br></pre></td></tr></tbody></table></figure><p></p>
+    <title>树的路径和等于目标值</title>
+    <url>/posts/40717/</url>
+    <content><![CDATA[<h2 id="top-down">Top Down</h2>
+<figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">exist</span>(<span class="params">self, root, target</span>):</span></span><br><span class="line">        self.target = target</span><br><span class="line">        self.ret = <span class="literal">False</span></span><br><span class="line">        self.helper(root, <span class="number">0</span>)</span><br><span class="line">        <span class="keyword">return</span> self.ret</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">helper</span>(<span class="params">selr, root, current</span>):</span></span><br><span class="line">        <span class="keyword">if</span> root <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        <span class="keyword">if</span> root.left <span class="keyword">is</span> <span class="literal">None</span> <span class="keyword">and</span> root.right <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">            self.ret = self.ret <span class="keyword">or</span> current + root.val == self.target</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        <span class="keyword">if</span> self.ret == <span class="literal">True</span>:</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        self.helper(root.left, current + root.val)</span><br><span class="line">        self.helper(root.right, current + root.val)</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="top-down-bottom-up">Top Down + Bottom Up</h2>
+<figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">exist</span>(<span class="params">self, root, target</span>):</span></span><br><span class="line">        self.target = target</span><br><span class="line">        <span class="keyword">return</span> self.helper(root, <span class="number">0</span>)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">helper</span>(<span class="params">self, root, current</span>):</span></span><br><span class="line">        <span class="keyword">if</span> root <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        <span class="keyword">if</span> root.left <span class="keyword">is</span> <span class="literal">None</span> <span class="keyword">and</span> root.right <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">            <span class="keyword">return</span> current + root.val == self.target</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> self.helper(root.left, current + root.val) <span class="keyword">or</span> self.helper(root.right, current + root.val)</span><br></pre></td></tr></tbody></table></figure>
 ]]></content>
       <categories>
         <category>计算机</category>
@@ -2735,6 +2735,160 @@ E(\text{error})=\text{bias}^2+\text{Var}+\varepsilon.
 </tr>
 </tbody>
 </table>
+<table>
+<thead>
+<tr class="header">
+<th>venir</th>
+<th>-</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>je viens</td>
+<td>nous venons</td>
+</tr>
+<tr class="even">
+<td>tu viens</td>
+<td>vous venez</td>
+</tr>
+<tr class="odd">
+<td>il vient</td>
+<td>ils viennent</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr class="header">
+<th>descendre</th>
+<th>-</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>je descends</td>
+<td>nous descendons</td>
+</tr>
+<tr class="even">
+<td>tu descends</td>
+<td>vous descendez</td>
+</tr>
+<tr class="odd">
+<td>il descend</td>
+<td>ils descendent</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr class="header">
+<th>pouvoir</th>
+<th>-</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>je peux</td>
+<td>nous pouvons</td>
+</tr>
+<tr class="even">
+<td>tu peux</td>
+<td>vous pouvez</td>
+</tr>
+<tr class="odd">
+<td>il peut</td>
+<td>ils peuvent</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr class="header">
+<th>vouloir</th>
+<th>-</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>je peux</td>
+<td>nous voulons</td>
+</tr>
+<tr class="even">
+<td>tu peux</td>
+<td>vous voulez</td>
+</tr>
+<tr class="odd">
+<td>il peut</td>
+<td>ils veulent</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr class="header">
+<th>dire</th>
+<th>-</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>je dis</td>
+<td>nous disons</td>
+</tr>
+<tr class="even">
+<td>tu dis</td>
+<td>vous dites</td>
+</tr>
+<tr class="odd">
+<td>il dit</td>
+<td>ils disent</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr class="header">
+<th>savoir</th>
+<th>-</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>je sais</td>
+<td>nous savons</td>
+</tr>
+<tr class="even">
+<td>tu sais</td>
+<td>vous savez</td>
+</tr>
+<tr class="odd">
+<td>il sait</td>
+<td>ils savent</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr class="header">
+<th>devoir</th>
+<th>-</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>je dis</td>
+<td>nous disons</td>
+</tr>
+<tr class="even">
+<td>tu dis</td>
+<td>vous dites</td>
+</tr>
+<tr class="odd">
+<td>il dit</td>
+<td>ils disent</td>
+</tr>
+</tbody>
+</table>
 <h2 id="词汇">词汇</h2>
 <h3 id="方位">方位</h3>
 <p>se trouver 位于</p>
@@ -2919,6 +3073,20 @@ E(\text{error})=\text{bias}^2+\text{Var}+\varepsilon.
       </categories>
   </entry>
   <entry>
+    <title>科普是一项非常难的工作</title>
+    <url>/posts/20918/</url>
+    <content><![CDATA[<p>要想当一个好学生，只需要把知识学懂。</p>
+<p>要想当一个好老师，需要一些基础知识，还需要良好的性格和表达能力、心理学和教育学经验。</p>
+<p>要想当一个好教授，需要有专业知识、科研水平，只需要一般般的表达能力。</p>
+<p><strong>而要当一个好的科普工作者，需要有远超学生的理解能力，教授一样的专业水平，老师一样的教学功力，艺术家一样的审美，作家一样的文笔，诗人一样的清高，科学家一样对知识的热爱，艺人一样对大众心理的把控能力，运动员一样的毅力，还要有自身的人格魅力、抗压抗打击能力。</strong></p>
+<p>科普是一项非常难的工作，比讲课教书难得多。因为它面对的不是专业人士，而是乌合之众。这导致科普工作者必须用通俗语言来解释专业知识，却又不至于过于通俗而产生误导。稍微有一点漏洞就会被抓住攻击——有问题的科普比谣言更可怕，比迷信更害人。</p>
+<p>所以，科普工作者是一个神圣的标签，这个名号比想象中要严苛得多。</p>
+]]></content>
+      <categories>
+        <category>随笔</category>
+      </categories>
+  </entry>
+  <entry>
     <title>计算定积分</title>
     <url>/posts/46715/</url>
     <content><![CDATA[<p>计算定积分 <span class="math display">\[
@@ -2966,17 +3134,51 @@ I_n={(2n)!!\over(2n+1)!!}.
       </categories>
   </entry>
   <entry>
-    <title>科普是一项非常难的工作</title>
-    <url>/posts/20918/</url>
-    <content><![CDATA[<p>要想当一个好学生，只需要把知识学懂。</p>
-<p>要想当一个好老师，需要一些基础知识，还需要良好的性格和表达能力、心理学和教育学经验。</p>
-<p>要想当一个好教授，需要有专业知识、科研水平，只需要一般般的表达能力。</p>
-<p><strong>而要当一个好的科普工作者，需要有远超学生的理解能力，教授一样的专业水平，老师一样的教学功力，艺术家一样的审美，作家一样的文笔，诗人一样的清高，科学家一样对知识的热爱，艺人一样对大众心理的把控能力，运动员一样的毅力，还要有自身的人格魅力、抗压抗打击能力。</strong></p>
-<p>科普是一项非常难的工作，比讲课教书难得多。因为它面对的不是专业人士，而是乌合之众。这导致科普工作者必须用通俗语言来解释专业知识，却又不至于过于通俗而产生误导。稍微有一点漏洞就会被抓住攻击——有问题的科普比谣言更可怕，比迷信更害人。</p>
-<p>所以，科普工作者是一个神圣的标签，这个名号比想象中要严苛得多。</p>
+    <title>假设性检验</title>
+    <url>/posts/24350/</url>
+    <content><![CDATA[<p>假定原假设 <span class="math inline">\(H_0\)</span> 是正确的, 根据观测值决定是否推翻它.</p>
+<span id="more"></span>
+<p><img src="tails.png"></p>
+<p>在 <span class="math inline">\(H_0\)</span> 的假定下, 出现了当前的观测值 (或出现更极端的结果) 的概率被称为 <strong><span class="math inline">\(p\)</span> 值</strong>.</p>
+<ul>
+<li><p><strong>第一类错误</strong>: 拒绝了真的 <span class="math inline">\(H_0\)</span>. (冤案)</p></li>
+<li><p><strong>第二类错误</strong>: 未拒绝假的 <span class="math inline">\(H_0\)</span>. (漏网)</p></li>
+</ul>
+<p>可能同时避免两类错误, 不可能同时犯两类错误.</p>
+<hr>
+<p>犯第一类错误的概率为 <span class="math inline">\(\alpha\)</span>, 即显著性水平.</p>
+<p>犯第二类错误的概率为 <span class="math inline">\(\beta\)</span>.</p>
+<p><img src="H01.png" width="500"></p>
+<p>不犯第二类错误的概率, 即正确拒绝一个假的 <span class="math inline">\(H_0\)</span> 的概率为 <span class="math inline">\(1-\beta\)</span>, 被称为<strong>功效</strong> (power).</p>
+<h2 id="z-检验-已知总体的分布-或样本足够多"><span class="math inline">\(z\)</span> 检验: 已知总体的分布, 或样本足够多</h2>
+<h3 id="一个组">一个组</h3>
+<p>标准寿命为 <span class="math inline">\(10\)</span>. 抽取 <span class="math inline">\(100\)</span> 个样本, 样本均值为 <span class="math inline">\(11.2\)</span>, 样本方差为 <span class="math inline">\(0.25\)</span>. 是否可以判断样本的寿命比标准的长?</p>
+<blockquote>
+<p>样本容量超过 <span class="math inline">\(30\)</span>, 用样本方差来代替原方差.</p>
+</blockquote>
+<p><span class="math display">\[
+z = {11.2-10\over \sqrt{0.25/100}}=24
+\]</span></p>
+<p><span class="math inline">\(p\)</span> 值 <span class="math inline">\(=F_{\text {normal}}(-24)\ll 0.01\)</span>, 拒绝原假设.</p>
+<hr>
+<p>扔 <span class="math inline">\(10\)</span> 次硬币有 <span class="math inline">\(6\)</span> 次正面向上, 是否 biased?</p>
+<p><span class="math display">\[
+z = {0.6-0.5\over\sqrt{0.5\times(1-0.5)/10}} = 0.632
+\]</span></p>
+<p>不能拒绝原假设.</p>
+<h3 id="两个组">两个组</h3>
+<p><span class="math display">\[
+z = {\mu_1-\mu_2\over\sqrt{\sigma_1^2/n_1+\sigma_2^2/n_2}}
+\]</span> 第一组 <span class="math inline">\(1000\)</span> 个, 均值 <span class="math inline">\(1000\)</span>; 第二组 <span class="math inline">\(500\)</span> 个, 均值 <span class="math inline">\(600\)</span>. 哪一组均值更大?</p>
+<p><span class="math display">\[
+z = {p_1-p_2\over\sqrt{p(1-p)(1/n_1+1/n_2)}}
+\]</span> 第一组 <span class="math inline">\(1000\)</span> 个有 <span class="math inline">\(100\)</span> 次点击, 第二组 <span class="math inline">\(500\)</span> 个有 <span class="math inline">\(60\)</span> 次点击, 哪个转化率更高?</p>
+<h2 id="t-检验-未知总体方差-且样本少"><span class="math inline">\(t\)</span> 检验: 未知总体方差, 且样本少</h2>
+<p>样本量足够大时, <span class="math inline">\(t\)</span> 检验趋于 <span class="math inline">\(z\)</span> 检验.</p>
 ]]></content>
       <categories>
-        <category>随笔</category>
+        <category>数学</category>
+        <category>统计</category>
       </categories>
   </entry>
   <entry>
@@ -3082,54 +3284,6 @@ M=\frac{1}{\omega} D+L, \quad N=\frac{1-\omega}{\omega} D-U
 ]]></content>
       <categories>
         <category>随笔</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>假设性检验</title>
-    <url>/posts/24350/</url>
-    <content><![CDATA[<p>假定原假设 <span class="math inline">\(H_0\)</span> 是正确的, 根据观测值决定是否推翻它.</p>
-<span id="more"></span>
-<p><img src="tails.png"></p>
-<p>在 <span class="math inline">\(H_0\)</span> 的假定下, 出现了当前的观测值 (或出现更极端的结果) 的概率被称为 <strong><span class="math inline">\(p\)</span> 值</strong>.</p>
-<ul>
-<li><p><strong>第一类错误</strong>: 拒绝了真的 <span class="math inline">\(H_0\)</span>. (冤案)</p></li>
-<li><p><strong>第二类错误</strong>: 未拒绝假的 <span class="math inline">\(H_0\)</span>. (漏网)</p></li>
-</ul>
-<p>可能同时避免两类错误, 不可能同时犯两类错误.</p>
-<hr>
-<p>犯第一类错误的概率为 <span class="math inline">\(\alpha\)</span>, 即显著性水平.</p>
-<p>犯第二类错误的概率为 <span class="math inline">\(\beta\)</span>.</p>
-<p><img src="H01.png" width="500"></p>
-<p>不犯第二类错误的概率, 即正确拒绝一个假的 <span class="math inline">\(H_0\)</span> 的概率为 <span class="math inline">\(1-\beta\)</span>, 被称为<strong>功效</strong> (power).</p>
-<h2 id="z-检验-已知总体的分布-或样本足够多"><span class="math inline">\(z\)</span> 检验: 已知总体的分布, 或样本足够多</h2>
-<h3 id="一个组">一个组</h3>
-<p>标准寿命为 <span class="math inline">\(10\)</span>. 抽取 <span class="math inline">\(100\)</span> 个样本, 样本均值为 <span class="math inline">\(11.2\)</span>, 样本方差为 <span class="math inline">\(0.25\)</span>. 是否可以判断样本的寿命比标准的长?</p>
-<blockquote>
-<p>样本容量超过 <span class="math inline">\(30\)</span>, 用样本方差来代替原方差.</p>
-</blockquote>
-<p><span class="math display">\[
-z = {11.2-10\over \sqrt{0.25/100}}=24
-\]</span></p>
-<p><span class="math inline">\(p\)</span> 值 <span class="math inline">\(=F_{\text {normal}}(-24)\ll 0.01\)</span>, 拒绝原假设.</p>
-<hr>
-<p>扔 <span class="math inline">\(10\)</span> 次硬币有 <span class="math inline">\(6\)</span> 次正面向上, 是否 biased?</p>
-<p><span class="math display">\[
-z = {0.6-0.5\over\sqrt{0.5\times(1-0.5)/10}} = 0.632
-\]</span></p>
-<p>不能拒绝原假设.</p>
-<h3 id="两个组">两个组</h3>
-<p><span class="math display">\[
-z = {\mu_1-\mu_2\over\sqrt{\sigma_1^2/n_1+\sigma_2^2/n_2}}
-\]</span> 第一组 <span class="math inline">\(1000\)</span> 个, 均值 <span class="math inline">\(1000\)</span>; 第二组 <span class="math inline">\(500\)</span> 个, 均值 <span class="math inline">\(600\)</span>. 哪一组均值更大?</p>
-<p><span class="math display">\[
-z = {p_1-p_2\over\sqrt{p(1-p)(1/n_1+1/n_2)}}
-\]</span> 第一组 <span class="math inline">\(1000\)</span> 个有 <span class="math inline">\(100\)</span> 次点击, 第二组 <span class="math inline">\(500\)</span> 个有 <span class="math inline">\(60\)</span> 次点击, 哪个转化率更高?</p>
-<h2 id="t-检验-未知总体方差-且样本少"><span class="math inline">\(t\)</span> 检验: 未知总体方差, 且样本少</h2>
-<p>样本量足够大时, <span class="math inline">\(t\)</span> 检验趋于 <span class="math inline">\(z\)</span> 检验.</p>
-]]></content>
-      <categories>
-        <category>数学</category>
-        <category>统计</category>
       </categories>
   </entry>
   <entry>
@@ -3398,6 +3552,17 @@ a_n={n!\over(2n+1)!!}\cdot{1\over n+1}，
       </categories>
   </entry>
   <entry>
+    <title>逆波兰表达式</title>
+    <url>/posts/16754/</url>
+    <content><![CDATA[<p><code>1 2 + 3 * 4 /</code> 代表 <code>(1 + 2) * 3 / 4</code>.</p>
+<figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">evalRPN</span>(<span class="params">tokens</span>):</span></span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">len</span>(tokens) == <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">    stack = []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(tokens)):</span><br><span class="line">        <span class="keyword">if</span> tokens[i] == <span class="string">'+'</span>:</span><br><span class="line">            r = stack.pop()</span><br><span class="line">            l = stack.pop()</span><br><span class="line">            stack.append(l + r)</span><br><span class="line">        <span class="keyword">elif</span> tokens[i] == <span class="string">'-'</span>:</span><br><span class="line">            r = stack.pop()</span><br><span class="line">            l = stack.pop()</span><br><span class="line">            stack.append(l - r)</span><br><span class="line">        <span class="keyword">elif</span> tokens[i] == <span class="string">'*'</span>:</span><br><span class="line">            r = stack.pop()</span><br><span class="line">            l = stack.pop()</span><br><span class="line">            stack.append(l * r)</span><br><span class="line">        <span class="keyword">elif</span> tokens[i] == <span class="string">'/'</span>:</span><br><span class="line">            r = stack.pop()</span><br><span class="line">            l = stack.pop()</span><br><span class="line">            stack.append(l // r)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            stack.append(<span class="built_in">int</span>(tokens[i]))</span><br><span class="line">    <span class="keyword">return</span> stack.pop()</span><br></pre></td></tr></tbody></table></figure>
+]]></content>
+      <categories>
+        <category>计算机</category>
+        <category>算法</category>
+      </categories>
+  </entry>
+  <entry>
     <title>链表中点</title>
     <url>/posts/19136/</url>
     <content><![CDATA[<p>用快慢指针的方法找链表的中点.</p>
@@ -3419,17 +3584,6 @@ a_n={n!\over(2n+1)!!}\cdot{1\over n+1}，
     <url>/posts/57079/</url>
     <content><![CDATA[<p>比如 <code>8 -&gt; 5 -&gt; 8 -&gt; 8 -&gt; 1 -&gt; 8</code> 删除 <code>8</code>, 返回 <code>5 -&gt; 1</code>.</p>
 <figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">remove</span>(<span class="params">head, val</span>):</span></span><br><span class="line">    <span class="keyword">if</span> head <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">        <span class="keyword">return</span> head</span><br><span class="line"></span><br><span class="line">    fake = ListNode(<span class="literal">None</span>)</span><br><span class="line">    fake.<span class="built_in">next</span> = head</span><br><span class="line">    prev, cur = fake, head</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> cur:</span><br><span class="line">        <span class="keyword">if</span> cur.val == val:</span><br><span class="line">            prev.<span class="built_in">next</span> = cur.<span class="built_in">next</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            prev = cur    </span><br><span class="line">        cur = cur.<span class="built_in">next</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> fake.<span class="built_in">next</span></span><br></pre></td></tr></tbody></table></figure>
-]]></content>
-      <categories>
-        <category>计算机</category>
-        <category>算法</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>逆波兰表达式</title>
-    <url>/posts/16754/</url>
-    <content><![CDATA[<p><code>1 2 + 3 * 4 /</code> 代表 <code>(1 + 2) * 3 / 4</code>.</p>
-<figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">evalRPN</span>(<span class="params">tokens</span>):</span></span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">len</span>(tokens) == <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">    stack = []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(tokens)):</span><br><span class="line">        <span class="keyword">if</span> tokens[i] == <span class="string">'+'</span>:</span><br><span class="line">            r = stack.pop()</span><br><span class="line">            l = stack.pop()</span><br><span class="line">            stack.append(l + r)</span><br><span class="line">        <span class="keyword">elif</span> tokens[i] == <span class="string">'-'</span>:</span><br><span class="line">            r = stack.pop()</span><br><span class="line">            l = stack.pop()</span><br><span class="line">            stack.append(l - r)</span><br><span class="line">        <span class="keyword">elif</span> tokens[i] == <span class="string">'*'</span>:</span><br><span class="line">            r = stack.pop()</span><br><span class="line">            l = stack.pop()</span><br><span class="line">            stack.append(l * r)</span><br><span class="line">        <span class="keyword">elif</span> tokens[i] == <span class="string">'/'</span>:</span><br><span class="line">            r = stack.pop()</span><br><span class="line">            l = stack.pop()</span><br><span class="line">            stack.append(l // r)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            stack.append(<span class="built_in">int</span>(tokens[i]))</span><br><span class="line">    <span class="keyword">return</span> stack.pop()</span><br></pre></td></tr></tbody></table></figure>
 ]]></content>
       <categories>
         <category>计算机</category>
