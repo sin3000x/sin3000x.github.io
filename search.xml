@@ -163,6 +163,36 @@ f\colon[-L,L]\to\mathbb{R}
       </categories>
   </entry>
   <entry>
+    <title>常见的ODE解法</title>
+    <url>/posts/65228/</url>
+    <content><![CDATA[<h3 id="可分离变量-ypyqx">1. 可分离变量 <span class="math inline">\(y'=p(y)q(x)\)</span></h3>
+<p>分离变量后两边积分.</p>
+<h3 id="一阶齐次线性-ypxy0">2. 一阶齐次线性 <span class="math inline">\(y'+p(x)y=0\)</span></h3>
+<p><span class="math display">\[
+y=Ce^{-\int p(x)\d x}
+\]</span></p>
+<h3 id="一阶非齐次线性-ypxyqx">3. 一阶非齐次线性 <span class="math inline">\(y'+p(x)y=q(x)\)</span></h3>
+<ul>
+<li><p><span class="math inline">\(y=e^{-\int p(x)\d x}\left(C+\int q(x)e^{\int p(x)\d x}\d x\right)\)</span></p></li>
+<li><p>取积分因子 <span class="math inline">\(\mu(x)=e^{\int p(x)\d x}\)</span>.</p></li>
+</ul>
+<blockquote>
+<p>🌰 <span class="math inline">\(y'-2y/x=0\)</span>. <span class="math display">\[\begin{aligned}
+&amp;\mu(x)=e^{\int-\frac2x \d x}=e^{-2\ln x}=\frac{1}{x^2}\\
+&amp;\implies{1\over x^2}y'-{2\over x^3}y=0\\
+&amp;\implies\left({y\over x^2}\right)'=0\\
+&amp;\implies y=Cx^2
+\end{aligned}
+\]</span></p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>数学</category>
+        <category>分析</category>
+        <category>微分方程</category>
+      </categories>
+  </entry>
+  <entry>
     <title>Gauss 积分</title>
     <url>/posts/48382/</url>
     <content><![CDATA[<p>证明 <span class="math display">\[
@@ -293,80 +323,6 @@ f(z)-f(z+\tau)=\e^{-\frac{z^2}{2}}.
       </categories>
   </entry>
   <entry>
-    <title>常见的ODE解法</title>
-    <url>/posts/65228/</url>
-    <content><![CDATA[<h3 id="可分离变量-ypyqx">1. 可分离变量 <span class="math inline">\(y'=p(y)q(x)\)</span></h3>
-<p>分离变量后两边积分.</p>
-<h3 id="一阶齐次线性-ypxy0">2. 一阶齐次线性 <span class="math inline">\(y'+p(x)y=0\)</span></h3>
-<p><span class="math display">\[
-y=Ce^{-\int p(x)\d x}
-\]</span></p>
-<h3 id="一阶非齐次线性-ypxyqx">3. 一阶非齐次线性 <span class="math inline">\(y'+p(x)y=q(x)\)</span></h3>
-<ul>
-<li><p><span class="math inline">\(y=e^{-\int p(x)\d x}\left(C+\int q(x)e^{\int p(x)\d x}\d x\right)\)</span></p></li>
-<li><p>取积分因子 <span class="math inline">\(\mu(x)=e^{\int p(x)\d x}\)</span>.</p></li>
-</ul>
-<blockquote>
-<p>🌰 <span class="math inline">\(y'-2y/x=0\)</span>. <span class="math display">\[\begin{aligned}
-&amp;\mu(x)=e^{\int-\frac2x \d x}=e^{-2\ln x}=\frac{1}{x^2}\\
-&amp;\implies{1\over x^2}y'-{2\over x^3}y=0\\
-&amp;\implies\left({y\over x^2}\right)'=0\\
-&amp;\implies y=Cx^2
-\end{aligned}
-\]</span></p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>数学</category>
-        <category>分析</category>
-        <category>微分方程</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>OR-Tools 之 scheduling</title>
-    <url>/posts/52763/</url>
-    <content><![CDATA[<h2 id="倒班问题">倒班问题</h2>
-<h3 id="基础版">基础版</h3>
-<p>在一个 3 天的时间窗里, 每天有三班倒. 一共 4 名员工来安排倒班.</p>
-<p>每班只给一个人, 每天一个人最多做一班 (这个人也可以放假). <span id="more"></span></p>
-<hr>
-<p>准备工作... </p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> ortools.sat.python <span class="keyword">import</span> cp_model</span><br><span class="line"></span><br><span class="line">num_nurses = <span class="number">4</span></span><br><span class="line">num_shifts = <span class="number">3</span></span><br><span class="line">num_days = <span class="number">3</span></span><br><span class="line"></span><br><span class="line">all_nurses = <span class="built_in">range</span>(num_nurses)</span><br><span class="line">all_shifts = <span class="built_in">range</span>(num_shifts)</span><br><span class="line">all_days = <span class="built_in">range</span>(num_days)</span><br><span class="line"></span><br><span class="line"><span class="comment"># creat the model</span></span><br><span class="line">model = cp_model.CpModel()</span><br><span class="line"></span><br><span class="line"><span class="comment"># create the variables</span></span><br><span class="line">shifts = {}</span><br><span class="line"><span class="keyword">for</span> n <span class="keyword">in</span> all_nurses:</span><br><span class="line">    <span class="keyword">for</span> d <span class="keyword">in</span> all_days:</span><br><span class="line">        <span class="keyword">for</span> s <span class="keyword">in</span> all_shifts:</span><br><span class="line">            shifts[(n, d, s)] = model.NewBoolVar(<span class="string">'shift_n%id%is%i'</span> % (n, d, s))</span><br></pre></td></tr></tbody></table></figure> 约束: <figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># each shift is assigned to a single nurse per day</span></span><br><span class="line"><span class="keyword">for</span> d <span class="keyword">in</span> all_days:</span><br><span class="line">    <span class="keyword">for</span> s <span class="keyword">in</span> all_shifts:</span><br><span class="line">        model.AddExactlyOne(shifts[(n, d, s)] <span class="keyword">for</span> n <span class="keyword">in</span> all_nurses)</span><br><span class="line"></span><br><span class="line"><span class="comment"># each nurse works at most one shift per day</span></span><br><span class="line"><span class="keyword">for</span> n <span class="keyword">in</span> all_nurses:</span><br><span class="line">    <span class="keyword">for</span> d <span class="keyword">in</span> all_days:</span><br><span class="line">        model.AddAtMostOne(shifts[(n, d, s)] <span class="keyword">for</span> s <span class="keyword">in</span> all_shifts)</span><br><span class="line"></span><br><span class="line"><span class="comment"># distribute as evenly as possible</span></span><br><span class="line">min_shifts_per_nurse = (num_shifts * num_days) // num_nurses</span><br><span class="line"><span class="keyword">if</span> num_shifts * num_days % num_nurses == <span class="number">0</span>:</span><br><span class="line">    max_shifts_per_nurse = min_shifts_per_nurse</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    max_shifts_per_nurse = min_shifts_per_nurse + <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> n <span class="keyword">in</span> all_nurses:</span><br><span class="line">    num_shifts_worked = []</span><br><span class="line">    <span class="keyword">for</span> d <span class="keyword">in</span> all_days:</span><br><span class="line">        <span class="keyword">for</span> s <span class="keyword">in</span> all_shifts:</span><br><span class="line">            num_shifts_worked.append(shifts[(n, d, s)])</span><br><span class="line">    model.Add(min_shifts_per_nurse &lt;= <span class="built_in">sum</span>(num_shifts_worked))</span><br><span class="line">    model.Add(<span class="built_in">sum</span>(num_shifts_worked) &lt;= max_shifts_per_nurse)</span><br></pre></td></tr></tbody></table></figure> 模型参数设定... <figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># update solver para</span></span><br><span class="line">solver = cp_model.CpSolver()</span><br><span class="line">solver.parameters.linearization_level = <span class="number">0</span></span><br><span class="line"><span class="comment"># enumerate all solutions</span></span><br><span class="line">solver.parameters.enumerate_all_solutions = <span class="literal">True</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">NursesPartialSolutionPrinter</span>(<span class="params">cp_model.CpSolverSolutionCallback</span>):</span></span><br><span class="line">    <span class="string">"""Print intermediate solutions."""</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, shifts, num_nurses, num_days, num_shifts, limit</span>):</span></span><br><span class="line">        cp_model.CpSolverSolutionCallback.__init__(self)</span><br><span class="line">        self._shifts = shifts</span><br><span class="line">        self._num_nurses = num_nurses</span><br><span class="line">        self._num_days = num_days</span><br><span class="line">        self._num_shifts = num_shifts</span><br><span class="line">        self._solution_count = <span class="number">0</span></span><br><span class="line">        self._solution_limit = limit</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">on_solution_callback</span>(<span class="params">self</span>):</span></span><br><span class="line">        self._solution_count += <span class="number">1</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">'Solution %i'</span> % self._solution_count)</span><br><span class="line">        <span class="keyword">for</span> d <span class="keyword">in</span> <span class="built_in">range</span>(self._num_days):</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">'Day %i'</span> % d)</span><br><span class="line">            <span class="keyword">for</span> n <span class="keyword">in</span> <span class="built_in">range</span>(self._num_nurses):</span><br><span class="line">                is_working = <span class="literal">False</span></span><br><span class="line">                <span class="keyword">for</span> s <span class="keyword">in</span> <span class="built_in">range</span>(self._num_shifts):</span><br><span class="line">                    <span class="keyword">if</span> self.Value(self._shifts[(n, d, s)]):</span><br><span class="line">                        is_working = <span class="literal">True</span></span><br><span class="line">                        <span class="built_in">print</span>(<span class="string">'\tNurse %i works shift %i'</span> % (n, s))</span><br><span class="line">                <span class="keyword">if</span> <span class="keyword">not</span> is_working:</span><br><span class="line">                    <span class="built_in">print</span>(<span class="string">'\tNurse {} does not work'</span>.<span class="built_in">format</span>(n))</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">'='</span>*<span class="number">50</span>)</span><br><span class="line">        <span class="keyword">if</span> self._solution_count &gt;= self._solution_limit:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">'Stop search after %i solutions'</span> % self._solution_limit)</span><br><span class="line">            self.StopSearch()</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">solution_count</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="keyword">return</span> self._solution_count</span><br></pre></td></tr></tbody></table></figure> 求解与输出... <figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># Display the first five solutions.</span></span><br><span class="line">solution_limit = <span class="number">5</span></span><br><span class="line">solution_printer = NursesPartialSolutionPrinter(shifts, num_nurses,</span><br><span class="line">                                                num_days, num_shifts,</span><br><span class="line">                                                solution_limit)</span><br><span class="line"></span><br><span class="line"><span class="comment"># solve</span></span><br><span class="line">solver.Solve(model, solution_printer)</span><br></pre></td></tr></tbody></table></figure> 输出 <figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">Solution 1</span><br><span class="line">Day 0</span><br><span class="line">        Nurse 0 does not work</span><br><span class="line">        Nurse 1 works shift 0</span><br><span class="line">        Nurse 2 works shift 1</span><br><span class="line">        Nurse 3 works shift 2</span><br><span class="line">Day 1</span><br><span class="line">        Nurse 0 works shift 2</span><br><span class="line">        Nurse 1 does not work</span><br><span class="line">        Nurse 2 works shift 1</span><br><span class="line">        Nurse 3 works shift 0</span><br><span class="line">Day 2</span><br><span class="line">        Nurse 0 works shift 2</span><br><span class="line">        Nurse 1 works shift 1</span><br><span class="line">        Nurse 2 works shift 0</span><br><span class="line">        Nurse 3 does not work</span><br><span class="line">==================================================</span><br><span class="line">Solution 2</span><br><span class="line">Day 0</span><br><span class="line">        Nurse 0 works shift 0</span><br><span class="line">        Nurse 1 does not work</span><br><span class="line">        Nurse 2 works shift 1</span><br><span class="line">        Nurse 3 works shift 2</span><br><span class="line">Day 1</span><br><span class="line">        Nurse 0 does not work</span><br><span class="line">        Nurse 1 works shift 2</span><br><span class="line">        Nurse 2 works shift 1</span><br><span class="line">        Nurse 3 works shift 0</span><br><span class="line">Day 2</span><br><span class="line">        Nurse 0 works shift 2</span><br><span class="line">        Nurse 1 works shift 1</span><br><span class="line">        Nurse 2 works shift 0</span><br><span class="line">        Nurse 3 does not work</span><br><span class="line">==================================================</span><br><span class="line">Solution 3</span><br><span class="line">Day 0</span><br><span class="line">        Nurse 0 works shift 0</span><br><span class="line">        Nurse 1 does not work</span><br><span class="line">        Nurse 2 works shift 1</span><br><span class="line">        Nurse 3 works shift 2</span><br><span class="line">Day 1</span><br><span class="line">        Nurse 0 works shift 1</span><br><span class="line">        Nurse 1 works shift 2</span><br><span class="line">        Nurse 2 does not work</span><br><span class="line">        Nurse 3 works shift 0</span><br><span class="line">Day 2</span><br><span class="line">        Nurse 0 works shift 2</span><br><span class="line">        Nurse 1 works shift 1</span><br><span class="line">        Nurse 2 works shift 0</span><br><span class="line">        Nurse 3 does not work</span><br><span class="line">==================================================</span><br><span class="line">Solution 4</span><br><span class="line">Day 0</span><br><span class="line">        Nurse 0 works shift 0</span><br><span class="line">        Nurse 1 does not work</span><br><span class="line">        Nurse 2 works shift 1</span><br><span class="line">        Nurse 3 works shift 2</span><br><span class="line">Day 1</span><br><span class="line">        Nurse 0 works shift 2</span><br><span class="line">        Nurse 1 works shift 1</span><br><span class="line">        Nurse 2 does not work</span><br><span class="line">        Nurse 3 works shift 0</span><br><span class="line">Day 2</span><br><span class="line">        Nurse 0 works shift 2</span><br><span class="line">        Nurse 1 works shift 1</span><br><span class="line">        Nurse 2 works shift 0</span><br><span class="line">        Nurse 3 does not work</span><br><span class="line">==================================================</span><br><span class="line">Solution 5</span><br><span class="line">Day 0</span><br><span class="line">        Nurse 0 does not work</span><br><span class="line">        Nurse 1 works shift 0</span><br><span class="line">        Nurse 2 works shift 1</span><br><span class="line">        Nurse 3 works shift 2</span><br><span class="line">Day 1</span><br><span class="line">        Nurse 0 works shift 2</span><br><span class="line">        Nurse 1 works shift 1</span><br><span class="line">        Nurse 2 does not work</span><br><span class="line">        Nurse 3 works shift 0</span><br><span class="line">Day 2</span><br><span class="line">        Nurse 0 works shift 2</span><br><span class="line">        Nurse 1 works shift 1</span><br><span class="line">        Nurse 2 works shift 0</span><br><span class="line">        Nurse 3 does not work</span><br><span class="line">==================================================</span><br><span class="line">Stop search after 5 solutions</span><br></pre></td></tr></tbody></table></figure><p></p>
-<h3 id="进阶版">进阶版</h3>
-<p>上面的问题有很多组解, 这一节中引入一个 <code>request</code>, 也就是每一个护士的志愿.</p>
-<p>在下面的例子中, <code>shift_requests</code> 记录了 5 个护士的 7 天志愿, 比如 <code>[0, 0, 1]</code> 就表示希望这一天轮到第 3 班.</p>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">num_nurses = <span class="number">5</span></span><br><span class="line">num_shifts = <span class="number">3</span></span><br><span class="line">num_days = <span class="number">7</span></span><br><span class="line">all_nurses = <span class="built_in">range</span>(num_nurses)</span><br><span class="line">all_shifts = <span class="built_in">range</span>(num_shifts)</span><br><span class="line">all_days = <span class="built_in">range</span>(num_days)</span><br><span class="line">shift_requests = [[[<span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>], [<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>], [<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>], [<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>], [<span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>],</span><br><span class="line">                   [<span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>], [<span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>]],</span><br><span class="line">                  [[<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>], [<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>], [<span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>], [<span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>], [<span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>],</span><br><span class="line">                   [<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>], [<span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>]],</span><br><span class="line">                  [[<span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>], [<span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>], [<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>], [<span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>], [<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>],</span><br><span class="line">                   [<span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>], [<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>]],</span><br><span class="line">                  [[<span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>], [<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>], [<span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>], [<span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>], [<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>],</span><br><span class="line">                   [<span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>], [<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>]],</span><br><span class="line">                  [[<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>], [<span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>], [<span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>], [<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>], [<span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>],</span><br><span class="line">                   [<span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>], [<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>]]]</span><br></pre></td></tr></tbody></table></figure>
-<p>建模和约束是一样的... </p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># create model and variables</span></span><br><span class="line">model = cp_model.CpModel()</span><br><span class="line"></span><br><span class="line">shifts = {}</span><br><span class="line"><span class="keyword">for</span> n <span class="keyword">in</span> all_nurses:</span><br><span class="line">    <span class="keyword">for</span> d <span class="keyword">in</span> all_days:</span><br><span class="line">        <span class="keyword">for</span> s <span class="keyword">in</span> all_shifts:</span><br><span class="line">            shifts[(n, d, s)] = model.NewBoolVar(<span class="string">'shift_n%id%is%i'</span> % (n, d, s))</span><br><span class="line"></span><br><span class="line"><span class="comment"># constraints</span></span><br><span class="line"><span class="keyword">for</span> d <span class="keyword">in</span> all_days:</span><br><span class="line">    <span class="keyword">for</span> s <span class="keyword">in</span> all_shifts:</span><br><span class="line">        model.AddExactlyOne(shifts[(n, d, s)] <span class="keyword">for</span> n <span class="keyword">in</span> all_nurses)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> n <span class="keyword">in</span> all_nurses:</span><br><span class="line">    <span class="keyword">for</span> d <span class="keyword">in</span> all_days:</span><br><span class="line">        model.AddAtMostOne(shifts[(n, d, s)] <span class="keyword">for</span> s <span class="keyword">in</span> all_shifts)</span><br><span class="line"></span><br><span class="line"><span class="comment"># distribute the shifts evenly</span></span><br><span class="line">min_shifts_per_nurse = (num_shifts * num_days) // num_nurses</span><br><span class="line"><span class="keyword">if</span> num_shifts * num_days % num_nurses == <span class="number">0</span>:</span><br><span class="line">    max_shifts_per_nurse = min_shifts_per_nurse</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    max_shifts_per_nurse = min_shifts_per_nurse + <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> n <span class="keyword">in</span> all_nurses:</span><br><span class="line">    num_shifts_worked = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> d <span class="keyword">in</span> all_days:</span><br><span class="line">        <span class="keyword">for</span> s <span class="keyword">in</span> all_shifts:</span><br><span class="line">            num_shifts_worked += shifts[(n, d, s)]</span><br><span class="line">    model.Add(min_shifts_per_nurse &lt;= num_shifts_worked)</span><br><span class="line">    model.Add(num_shifts_worked &lt;= max_shifts_per_nurse)</span><br></pre></td></tr></tbody></table></figure> 不过现在有一个目标函数, 希望被满足的志愿最大化: <figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># objective</span></span><br><span class="line">model.Maximize(</span><br><span class="line">    <span class="built_in">sum</span>(</span><br><span class="line">        shift_requests[n][d][s] * shifts[(n, d, s)] </span><br><span class="line">        <span class="keyword">for</span> n <span class="keyword">in</span> all_nurses </span><br><span class="line">        <span class="keyword">for</span> d <span class="keyword">in</span> all_days </span><br><span class="line">        <span class="keyword">for</span> s <span class="keyword">in</span> all_shifts</span><br><span class="line">    )</span><br><span class="line">)</span><br></pre></td></tr></tbody></table></figure> 求解与输出... <figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">solver = cp_model.CpSolver()</span><br><span class="line">status = solver.Solve(model)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> status == cp_model.OPTIMAL:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'Solution:'</span>)</span><br><span class="line">    <span class="keyword">for</span> d <span class="keyword">in</span> all_days:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">'Day'</span>, d)</span><br><span class="line">        <span class="keyword">for</span> n <span class="keyword">in</span> all_nurses:</span><br><span class="line">            <span class="keyword">for</span> s <span class="keyword">in</span> all_shifts:</span><br><span class="line">                <span class="keyword">if</span> solver.Value(shifts[(n, d, s)]) == <span class="number">1</span>:</span><br><span class="line">                    <span class="keyword">if</span> shift_requests[n][d][s] == <span class="number">1</span>:</span><br><span class="line">                        <span class="built_in">print</span>(<span class="string">'Nurse'</span>, n, <span class="string">'works shift'</span>, s, <span class="string">'(requested).'</span>)</span><br><span class="line">                    <span class="keyword">else</span>:</span><br><span class="line">                        <span class="built_in">print</span>(<span class="string">'Nurse'</span>, n, <span class="string">'works shift'</span>, s, <span class="string">'(not requested).'</span>)</span><br><span class="line">        <span class="built_in">print</span>()</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f'Number of shift requests met = <span class="subst">{solver.ObjectiveValue()}</span>'</span>, <span class="string">f'(out of <span class="subst">{num_nurses*min_shifts_per_nurse}</span>)'</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'No optimal solution found.'</span>)</span><br></pre></td></tr></tbody></table></figure> 输出 <figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">Solution:</span><br><span class="line">Day 0</span><br><span class="line">Nurse 1 works shift 0 (not requested).</span><br><span class="line">Nurse 2 works shift 1 (requested).</span><br><span class="line">Nurse 3 works shift 2 (requested).</span><br><span class="line"></span><br><span class="line">Day 1</span><br><span class="line">Nurse 1 works shift 0 (not requested).</span><br><span class="line">Nurse 2 works shift 1 (requested).</span><br><span class="line">Nurse 4 works shift 2 (requested).</span><br><span class="line"></span><br><span class="line">Day 2</span><br><span class="line">Nurse 0 works shift 2 (not requested).</span><br><span class="line">Nurse 3 works shift 0 (requested).</span><br><span class="line">Nurse 4 works shift 1 (requested).</span><br><span class="line"></span><br><span class="line">Day 3</span><br><span class="line">Nurse 0 works shift 2 (not requested).</span><br><span class="line">Nurse 2 works shift 0 (requested).</span><br><span class="line">Nurse 3 works shift 1 (requested).</span><br><span class="line"></span><br><span class="line">Day 4</span><br><span class="line">Nurse 0 works shift 2 (requested).</span><br><span class="line">Nurse 1 works shift 1 (not requested).</span><br><span class="line">Nurse 4 works shift 0 (requested).</span><br><span class="line"></span><br><span class="line">Day 5</span><br><span class="line">Nurse 0 works shift 2 (not requested).</span><br><span class="line">Nurse 3 works shift 0 (requested).</span><br><span class="line">Nurse 4 works shift 1 (requested).</span><br><span class="line"></span><br><span class="line">Day 6</span><br><span class="line">Nurse 0 works shift 2 (requested).</span><br><span class="line">Nurse 1 works shift 1 (not requested).</span><br><span class="line">Nurse 2 works shift 0 (not requested).</span><br><span class="line"></span><br><span class="line">Number of shift requests met = 13.0 (out of 20)</span><br></pre></td></tr></tbody></table></figure><p></p>
-<h2 id="工程分配问题">工程分配问题</h2>
-<h3 id="背景">背景</h3>
-<p>一个 job 由几个 task 组成, 它们之间有先后次序的要求. 每个 task 有对应的机器, 其中一个机器只能一次完成一个 task.</p>
-<p>每个 task 有自己的完成时间, 而这个 task 一旦在机器上开始就必须做完.</p>
-<p>比如下面这个例子: </p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">job0 = [(<span class="number">0</span>, <span class="number">3</span>), (<span class="number">1</span>, <span class="number">2</span>), (<span class="number">2</span>, <span class="number">2</span>)]</span><br><span class="line">job1 = [(<span class="number">0</span>, <span class="number">2</span>), (<span class="number">2</span>, <span class="number">1</span>), (<span class="number">1</span>, <span class="number">4</span>)]</span><br><span class="line">job2 = [(<span class="number">1</span>, <span class="number">4</span>), (<span class="number">2</span>, <span class="number">3</span>)]</span><br></pre></td></tr></tbody></table></figure> 意思是 <code>job0</code> 由三个 task 组成, 第一个在机器 0 上完成, 需要 3 个时间单位; 第二个在机器 1 上完成, 需要 2 个时间单位; 第三个在机器 2 上完成, 需要 2 个时间单位. 同理对 <code>job1</code> 和 <code>job2</code>.<p></p>
-<p>一个可能的方案如图: <img src="schedule1.png"></p>
-<p>这个并不是最优解, 我们希望最小化总时间.</p>
-<h3 id="建模">建模</h3>
-<p>我们记 <span class="math inline">\(t_{i,j}\)</span> 为 task (i, j) 的开始时间, 其中 task (i, j) 指的是 job i 的第 j 个 task. 比如上面的例子中, task (0, 2) 对应的是 <code>(1, 2)</code>, task (0, 3) 对应的是 <code>(2, 2)</code>.</p>
-<p><strong>优先级约束</strong></p>
-<p>必须先完成 task (0, 2), 再开始 task (0, 3). 而 task (0, 2) 需要 2 个时间单位来完成, 所以有 <span class="math display">\[
-t_{0,2} + 2 \le t_{0,3}
-\]</span></p>
-<p><strong>不重叠约束</strong></p>
-<p>task (0, 2) 和 task (2, 1) 都在机器 1 上完成, 而工作时间分别为 2 和 4. 所以, 以下两个约束中的一个成立:</p>
-<p><span class="math display">\[
-t_{0,2} + 2 \le t_{2,1}
-\]</span> 或 <span class="math display">\[
-t_{2,1} + 4 \le t_{0,2}.
-\]</span></p>
-<p><strong>目标函数</strong></p>
-<p>最小化时间跨度, 也就是从最早的开始时间到最晚的结束时间.</p>
-<h3 id="求解">求解</h3>
-<p>导包与数据... </p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> collections</span><br><span class="line"><span class="keyword">from</span> ortools.sat.python <span class="keyword">import</span> cp_model</span><br><span class="line"></span><br><span class="line"><span class="comment"># data...</span></span><br><span class="line">jobs_data = [</span><br><span class="line">    [(<span class="number">0</span>, <span class="number">3</span>), (<span class="number">1</span>, <span class="number">2</span>), (<span class="number">2</span>, <span class="number">2</span>)],</span><br><span class="line">    [(<span class="number">0</span>, <span class="number">2</span>), (<span class="number">2</span>, <span class="number">1</span>), (<span class="number">1</span>, <span class="number">4</span>)],</span><br><span class="line">    [(<span class="number">1</span>, <span class="number">4</span>), (<span class="number">2</span>, <span class="number">3</span>)]</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line">machines_count = <span class="number">1</span> + <span class="built_in">max</span>(task[<span class="number">0</span>] <span class="keyword">for</span> job <span class="keyword">in</span> jobs_data <span class="keyword">for</span> task <span class="keyword">in</span> job)</span><br><span class="line">all_machines = <span class="built_in">range</span>(machines_count)</span><br><span class="line"><span class="comment"># the sum of all durations</span></span><br><span class="line">horizon = <span class="built_in">sum</span>(task[<span class="number">1</span>] <span class="keyword">for</span> job <span class="keyword">in</span> jobs_data <span class="keyword">for</span> task <span class="keyword">in</span> job)</span><br></pre></td></tr></tbody></table></figure> 建模与变量... <figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">model = cp_model.CpModel()</span><br><span class="line"></span><br><span class="line"><span class="comment"># variables...</span></span><br><span class="line">task_type = collections.namedtuple(<span class="string">'task_type'</span>, <span class="string">'start end interval'</span>)</span><br><span class="line">assigned_task_type = collections.namedtuple(<span class="string">'assigned_task_type'</span>, <span class="string">'start job index duration'</span>)</span><br><span class="line"></span><br><span class="line">all_tasks = {}</span><br><span class="line">machine_to_intervals = collections.defaultdict(<span class="built_in">list</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> job_id, job <span class="keyword">in</span> <span class="built_in">enumerate</span>(jobs_data):</span><br><span class="line">    <span class="keyword">for</span> task_id, task <span class="keyword">in</span> <span class="built_in">enumerate</span>(job):</span><br><span class="line">        machine = task[<span class="number">0</span>]</span><br><span class="line">        duration = task[<span class="number">1</span>]</span><br><span class="line">        suffix = <span class="string">'_%i_%i'</span> % (job_id, task_id)</span><br><span class="line">        start_var = model.NewIntVar(<span class="number">0</span>, horizon, <span class="string">'start'</span> + suffix)</span><br><span class="line">        end_var = model.NewIntVar(<span class="number">0</span>, horizon, <span class="string">'end'</span> + suffix)</span><br><span class="line">        interval_var = model.NewIntervalVar(start_var, duration, end_var, <span class="string">'interval'</span> + suffix)</span><br><span class="line">        all_tasks[job_id, task_id] = task_type(start=start_var, end=end_var, interval=interval_var)</span><br><span class="line">        machine_to_intervals[machine].append(interval_var)</span><br></pre></td></tr></tbody></table></figure> 约束... <figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># disjunctive constraints</span></span><br><span class="line"><span class="keyword">for</span> machine <span class="keyword">in</span> all_machines:</span><br><span class="line">    model.AddNoOverlap(machine_to_intervals[machine])</span><br><span class="line"></span><br><span class="line"><span class="comment"># precidences inside a job</span></span><br><span class="line"><span class="keyword">for</span> job_id, job <span class="keyword">in</span> <span class="built_in">enumerate</span>(jobs_data):</span><br><span class="line">    <span class="keyword">for</span> task_id <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(job)-<span class="number">1</span>):</span><br><span class="line">        model.Add(all_tasks[job_id, task_id+<span class="number">1</span>].start &gt;= all_tasks[job_id, task_id].end)</span><br></pre></td></tr></tbody></table></figure> 目标函数... <figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># objective...</span></span><br><span class="line">obj_var = model.NewIntVar(<span class="number">0</span>, horizon, <span class="string">'makespan'</span>)</span><br><span class="line">model.AddMaxEquality(obj_var, [</span><br><span class="line">    all_tasks[job_id, <span class="built_in">len</span>(job)-<span class="number">1</span>].end <span class="keyword">for</span> job_id, job <span class="keyword">in</span> <span class="built_in">enumerate</span>(jobs_data)</span><br><span class="line">])</span><br><span class="line"></span><br><span class="line">model.Minimize(obj_var)</span><br></pre></td></tr></tbody></table></figure> 求解与输出... <figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># solve...</span></span><br><span class="line">solver = cp_model.CpSolver()</span><br><span class="line">status = solver.Solve(model)</span><br><span class="line"></span><br><span class="line"><span class="comment"># results...</span></span><br><span class="line"><span class="keyword">if</span> status == cp_model.OPTIMAL <span class="keyword">or</span> status == cp_model.FEASIBLE:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'Solution:'</span>)</span><br><span class="line">    <span class="comment"># create one list of assigned tasks per machine</span></span><br><span class="line">    assigned_jobs = collections.defaultdict(<span class="built_in">list</span>)</span><br><span class="line">    <span class="keyword">for</span> job_id, job <span class="keyword">in</span> <span class="built_in">enumerate</span>(jobs_data):</span><br><span class="line">        <span class="keyword">for</span> task_id, task <span class="keyword">in</span> <span class="built_in">enumerate</span>(job):</span><br><span class="line">            machine = task[<span class="number">0</span>]</span><br><span class="line">            assigned_jobs[machine].append(</span><br><span class="line">                assigned_task_type(start=solver.Value(all_tasks[job_id, task_id].start),</span><br><span class="line">                job=job_id,</span><br><span class="line">                index=task_id,</span><br><span class="line">                duration=task[<span class="number">1</span>])</span><br><span class="line">            )</span><br><span class="line">    <span class="comment"># create per machine output lines</span></span><br><span class="line">    output = <span class="string">''</span></span><br><span class="line">    <span class="keyword">for</span> machine <span class="keyword">in</span> all_machines:</span><br><span class="line">        <span class="comment"># sort by starting time</span></span><br><span class="line">        assigned_jobs[machine].sort()</span><br><span class="line">        sol_line_tasks = <span class="string">'Machine '</span> + <span class="built_in">str</span>(machine) + <span class="string">': '</span></span><br><span class="line">        sol_line = <span class="string">'\t'</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> assigned_task <span class="keyword">in</span> assigned_jobs[machine]:</span><br><span class="line">            name = <span class="string">'job_%i_task_%i'</span> % (assigned_task.job, assigned_task.index)</span><br><span class="line">            <span class="comment"># align columns</span></span><br><span class="line">            sol_line_tasks += <span class="string">'%-15s'</span> % name</span><br><span class="line"></span><br><span class="line">            start = assigned_task.start</span><br><span class="line">            duration = assigned_task.duration</span><br><span class="line">            sol_tmp = <span class="string">'[%i, %i]'</span> % (start, start + duration)</span><br><span class="line">            <span class="comment"># align columns</span></span><br><span class="line">            sol_line += <span class="string">'%-15s'</span> % sol_tmp</span><br><span class="line"></span><br><span class="line">        sol_line += <span class="string">'\n'</span></span><br><span class="line">        sol_line_tasks += <span class="string">'\n'</span></span><br><span class="line">        output += sol_line_tasks</span><br><span class="line">        output += sol_line</span><br><span class="line"></span><br><span class="line">    <span class="comment"># print the solution</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f'Optimal Schedule Length: <span class="subst">{solver.ObjectiveValue()}</span>'</span>)</span><br><span class="line">    <span class="built_in">print</span>(output)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'No solution found.'</span>)</span><br></pre></td></tr></tbody></table></figure> 输出: <figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">Solution:</span><br><span class="line">Optimal Schedule Length: 11.0</span><br><span class="line">Machine 0: job_1_task_0   job_0_task_0   </span><br><span class="line">        [0, 2]         [2, 5]         </span><br><span class="line">Machine 1: job_2_task_0   job_0_task_1   job_1_task_2   </span><br><span class="line">        [0, 4]         [5, 7]         [7, 11]        </span><br><span class="line">Machine 2: job_1_task_1   job_2_task_1   job_0_task_2   </span><br><span class="line">        [2, 3]         [4, 7]         [7, 9]    </span><br></pre></td></tr></tbody></table></figure> <img src="schedule2.png"><p></p>
-]]></content>
-      <categories>
-        <category>计算机</category>
-        <category>OR-Tools</category>
-      </categories>
-  </entry>
-  <entry>
     <title>OR-Tools 入门</title>
     <url>/posts/59457/</url>
     <content><![CDATA[<p><span class="math display">\[
@@ -428,6 +384,50 @@ a_N &amp; b_N\\
       <categories>
         <category>数学</category>
         <category>统计</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>OR-Tools 之 scheduling</title>
+    <url>/posts/52763/</url>
+    <content><![CDATA[<h2 id="倒班问题">倒班问题</h2>
+<h3 id="基础版">基础版</h3>
+<p>在一个 3 天的时间窗里, 每天有三班倒. 一共 4 名员工来安排倒班.</p>
+<p>每班只给一个人, 每天一个人最多做一班 (这个人也可以放假). <span id="more"></span></p>
+<hr>
+<p>准备工作... </p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> ortools.sat.python <span class="keyword">import</span> cp_model</span><br><span class="line"></span><br><span class="line">num_nurses = <span class="number">4</span></span><br><span class="line">num_shifts = <span class="number">3</span></span><br><span class="line">num_days = <span class="number">3</span></span><br><span class="line"></span><br><span class="line">all_nurses = <span class="built_in">range</span>(num_nurses)</span><br><span class="line">all_shifts = <span class="built_in">range</span>(num_shifts)</span><br><span class="line">all_days = <span class="built_in">range</span>(num_days)</span><br><span class="line"></span><br><span class="line"><span class="comment"># creat the model</span></span><br><span class="line">model = cp_model.CpModel()</span><br><span class="line"></span><br><span class="line"><span class="comment"># create the variables</span></span><br><span class="line">shifts = {}</span><br><span class="line"><span class="keyword">for</span> n <span class="keyword">in</span> all_nurses:</span><br><span class="line">    <span class="keyword">for</span> d <span class="keyword">in</span> all_days:</span><br><span class="line">        <span class="keyword">for</span> s <span class="keyword">in</span> all_shifts:</span><br><span class="line">            shifts[(n, d, s)] = model.NewBoolVar(<span class="string">'shift_n%id%is%i'</span> % (n, d, s))</span><br></pre></td></tr></tbody></table></figure> 约束: <figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># each shift is assigned to a single nurse per day</span></span><br><span class="line"><span class="keyword">for</span> d <span class="keyword">in</span> all_days:</span><br><span class="line">    <span class="keyword">for</span> s <span class="keyword">in</span> all_shifts:</span><br><span class="line">        model.AddExactlyOne(shifts[(n, d, s)] <span class="keyword">for</span> n <span class="keyword">in</span> all_nurses)</span><br><span class="line"></span><br><span class="line"><span class="comment"># each nurse works at most one shift per day</span></span><br><span class="line"><span class="keyword">for</span> n <span class="keyword">in</span> all_nurses:</span><br><span class="line">    <span class="keyword">for</span> d <span class="keyword">in</span> all_days:</span><br><span class="line">        model.AddAtMostOne(shifts[(n, d, s)] <span class="keyword">for</span> s <span class="keyword">in</span> all_shifts)</span><br><span class="line"></span><br><span class="line"><span class="comment"># distribute as evenly as possible</span></span><br><span class="line">min_shifts_per_nurse = (num_shifts * num_days) // num_nurses</span><br><span class="line"><span class="keyword">if</span> num_shifts * num_days % num_nurses == <span class="number">0</span>:</span><br><span class="line">    max_shifts_per_nurse = min_shifts_per_nurse</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    max_shifts_per_nurse = min_shifts_per_nurse + <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> n <span class="keyword">in</span> all_nurses:</span><br><span class="line">    num_shifts_worked = []</span><br><span class="line">    <span class="keyword">for</span> d <span class="keyword">in</span> all_days:</span><br><span class="line">        <span class="keyword">for</span> s <span class="keyword">in</span> all_shifts:</span><br><span class="line">            num_shifts_worked.append(shifts[(n, d, s)])</span><br><span class="line">    model.Add(min_shifts_per_nurse &lt;= <span class="built_in">sum</span>(num_shifts_worked))</span><br><span class="line">    model.Add(<span class="built_in">sum</span>(num_shifts_worked) &lt;= max_shifts_per_nurse)</span><br></pre></td></tr></tbody></table></figure> 模型参数设定... <figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># update solver para</span></span><br><span class="line">solver = cp_model.CpSolver()</span><br><span class="line">solver.parameters.linearization_level = <span class="number">0</span></span><br><span class="line"><span class="comment"># enumerate all solutions</span></span><br><span class="line">solver.parameters.enumerate_all_solutions = <span class="literal">True</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">NursesPartialSolutionPrinter</span>(<span class="params">cp_model.CpSolverSolutionCallback</span>):</span></span><br><span class="line">    <span class="string">"""Print intermediate solutions."""</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, shifts, num_nurses, num_days, num_shifts, limit</span>):</span></span><br><span class="line">        cp_model.CpSolverSolutionCallback.__init__(self)</span><br><span class="line">        self._shifts = shifts</span><br><span class="line">        self._num_nurses = num_nurses</span><br><span class="line">        self._num_days = num_days</span><br><span class="line">        self._num_shifts = num_shifts</span><br><span class="line">        self._solution_count = <span class="number">0</span></span><br><span class="line">        self._solution_limit = limit</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">on_solution_callback</span>(<span class="params">self</span>):</span></span><br><span class="line">        self._solution_count += <span class="number">1</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">'Solution %i'</span> % self._solution_count)</span><br><span class="line">        <span class="keyword">for</span> d <span class="keyword">in</span> <span class="built_in">range</span>(self._num_days):</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">'Day %i'</span> % d)</span><br><span class="line">            <span class="keyword">for</span> n <span class="keyword">in</span> <span class="built_in">range</span>(self._num_nurses):</span><br><span class="line">                is_working = <span class="literal">False</span></span><br><span class="line">                <span class="keyword">for</span> s <span class="keyword">in</span> <span class="built_in">range</span>(self._num_shifts):</span><br><span class="line">                    <span class="keyword">if</span> self.Value(self._shifts[(n, d, s)]):</span><br><span class="line">                        is_working = <span class="literal">True</span></span><br><span class="line">                        <span class="built_in">print</span>(<span class="string">'\tNurse %i works shift %i'</span> % (n, s))</span><br><span class="line">                <span class="keyword">if</span> <span class="keyword">not</span> is_working:</span><br><span class="line">                    <span class="built_in">print</span>(<span class="string">'\tNurse {} does not work'</span>.<span class="built_in">format</span>(n))</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">'='</span>*<span class="number">50</span>)</span><br><span class="line">        <span class="keyword">if</span> self._solution_count &gt;= self._solution_limit:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">'Stop search after %i solutions'</span> % self._solution_limit)</span><br><span class="line">            self.StopSearch()</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">solution_count</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="keyword">return</span> self._solution_count</span><br></pre></td></tr></tbody></table></figure> 求解与输出... <figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># Display the first five solutions.</span></span><br><span class="line">solution_limit = <span class="number">5</span></span><br><span class="line">solution_printer = NursesPartialSolutionPrinter(shifts, num_nurses,</span><br><span class="line">                                                num_days, num_shifts,</span><br><span class="line">                                                solution_limit)</span><br><span class="line"></span><br><span class="line"><span class="comment"># solve</span></span><br><span class="line">solver.Solve(model, solution_printer)</span><br></pre></td></tr></tbody></table></figure> 输出 <figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">Solution 1</span><br><span class="line">Day 0</span><br><span class="line">        Nurse 0 does not work</span><br><span class="line">        Nurse 1 works shift 0</span><br><span class="line">        Nurse 2 works shift 1</span><br><span class="line">        Nurse 3 works shift 2</span><br><span class="line">Day 1</span><br><span class="line">        Nurse 0 works shift 2</span><br><span class="line">        Nurse 1 does not work</span><br><span class="line">        Nurse 2 works shift 1</span><br><span class="line">        Nurse 3 works shift 0</span><br><span class="line">Day 2</span><br><span class="line">        Nurse 0 works shift 2</span><br><span class="line">        Nurse 1 works shift 1</span><br><span class="line">        Nurse 2 works shift 0</span><br><span class="line">        Nurse 3 does not work</span><br><span class="line">==================================================</span><br><span class="line">Solution 2</span><br><span class="line">Day 0</span><br><span class="line">        Nurse 0 works shift 0</span><br><span class="line">        Nurse 1 does not work</span><br><span class="line">        Nurse 2 works shift 1</span><br><span class="line">        Nurse 3 works shift 2</span><br><span class="line">Day 1</span><br><span class="line">        Nurse 0 does not work</span><br><span class="line">        Nurse 1 works shift 2</span><br><span class="line">        Nurse 2 works shift 1</span><br><span class="line">        Nurse 3 works shift 0</span><br><span class="line">Day 2</span><br><span class="line">        Nurse 0 works shift 2</span><br><span class="line">        Nurse 1 works shift 1</span><br><span class="line">        Nurse 2 works shift 0</span><br><span class="line">        Nurse 3 does not work</span><br><span class="line">==================================================</span><br><span class="line">Solution 3</span><br><span class="line">Day 0</span><br><span class="line">        Nurse 0 works shift 0</span><br><span class="line">        Nurse 1 does not work</span><br><span class="line">        Nurse 2 works shift 1</span><br><span class="line">        Nurse 3 works shift 2</span><br><span class="line">Day 1</span><br><span class="line">        Nurse 0 works shift 1</span><br><span class="line">        Nurse 1 works shift 2</span><br><span class="line">        Nurse 2 does not work</span><br><span class="line">        Nurse 3 works shift 0</span><br><span class="line">Day 2</span><br><span class="line">        Nurse 0 works shift 2</span><br><span class="line">        Nurse 1 works shift 1</span><br><span class="line">        Nurse 2 works shift 0</span><br><span class="line">        Nurse 3 does not work</span><br><span class="line">==================================================</span><br><span class="line">Solution 4</span><br><span class="line">Day 0</span><br><span class="line">        Nurse 0 works shift 0</span><br><span class="line">        Nurse 1 does not work</span><br><span class="line">        Nurse 2 works shift 1</span><br><span class="line">        Nurse 3 works shift 2</span><br><span class="line">Day 1</span><br><span class="line">        Nurse 0 works shift 2</span><br><span class="line">        Nurse 1 works shift 1</span><br><span class="line">        Nurse 2 does not work</span><br><span class="line">        Nurse 3 works shift 0</span><br><span class="line">Day 2</span><br><span class="line">        Nurse 0 works shift 2</span><br><span class="line">        Nurse 1 works shift 1</span><br><span class="line">        Nurse 2 works shift 0</span><br><span class="line">        Nurse 3 does not work</span><br><span class="line">==================================================</span><br><span class="line">Solution 5</span><br><span class="line">Day 0</span><br><span class="line">        Nurse 0 does not work</span><br><span class="line">        Nurse 1 works shift 0</span><br><span class="line">        Nurse 2 works shift 1</span><br><span class="line">        Nurse 3 works shift 2</span><br><span class="line">Day 1</span><br><span class="line">        Nurse 0 works shift 2</span><br><span class="line">        Nurse 1 works shift 1</span><br><span class="line">        Nurse 2 does not work</span><br><span class="line">        Nurse 3 works shift 0</span><br><span class="line">Day 2</span><br><span class="line">        Nurse 0 works shift 2</span><br><span class="line">        Nurse 1 works shift 1</span><br><span class="line">        Nurse 2 works shift 0</span><br><span class="line">        Nurse 3 does not work</span><br><span class="line">==================================================</span><br><span class="line">Stop search after 5 solutions</span><br></pre></td></tr></tbody></table></figure><p></p>
+<h3 id="进阶版">进阶版</h3>
+<p>上面的问题有很多组解, 这一节中引入一个 <code>request</code>, 也就是每一个护士的志愿.</p>
+<p>在下面的例子中, <code>shift_requests</code> 记录了 5 个护士的 7 天志愿, 比如 <code>[0, 0, 1]</code> 就表示希望这一天轮到第 3 班.</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">num_nurses = <span class="number">5</span></span><br><span class="line">num_shifts = <span class="number">3</span></span><br><span class="line">num_days = <span class="number">7</span></span><br><span class="line">all_nurses = <span class="built_in">range</span>(num_nurses)</span><br><span class="line">all_shifts = <span class="built_in">range</span>(num_shifts)</span><br><span class="line">all_days = <span class="built_in">range</span>(num_days)</span><br><span class="line">shift_requests = [[[<span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>], [<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>], [<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>], [<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>], [<span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>],</span><br><span class="line">                   [<span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>], [<span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>]],</span><br><span class="line">                  [[<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>], [<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>], [<span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>], [<span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>], [<span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>],</span><br><span class="line">                   [<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>], [<span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>]],</span><br><span class="line">                  [[<span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>], [<span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>], [<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>], [<span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>], [<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>],</span><br><span class="line">                   [<span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>], [<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>]],</span><br><span class="line">                  [[<span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>], [<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>], [<span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>], [<span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>], [<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>],</span><br><span class="line">                   [<span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>], [<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>]],</span><br><span class="line">                  [[<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>], [<span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>], [<span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>], [<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>], [<span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>],</span><br><span class="line">                   [<span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>], [<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>]]]</span><br></pre></td></tr></tbody></table></figure>
+<p>建模和约束是一样的... </p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># create model and variables</span></span><br><span class="line">model = cp_model.CpModel()</span><br><span class="line"></span><br><span class="line">shifts = {}</span><br><span class="line"><span class="keyword">for</span> n <span class="keyword">in</span> all_nurses:</span><br><span class="line">    <span class="keyword">for</span> d <span class="keyword">in</span> all_days:</span><br><span class="line">        <span class="keyword">for</span> s <span class="keyword">in</span> all_shifts:</span><br><span class="line">            shifts[(n, d, s)] = model.NewBoolVar(<span class="string">'shift_n%id%is%i'</span> % (n, d, s))</span><br><span class="line"></span><br><span class="line"><span class="comment"># constraints</span></span><br><span class="line"><span class="keyword">for</span> d <span class="keyword">in</span> all_days:</span><br><span class="line">    <span class="keyword">for</span> s <span class="keyword">in</span> all_shifts:</span><br><span class="line">        model.AddExactlyOne(shifts[(n, d, s)] <span class="keyword">for</span> n <span class="keyword">in</span> all_nurses)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> n <span class="keyword">in</span> all_nurses:</span><br><span class="line">    <span class="keyword">for</span> d <span class="keyword">in</span> all_days:</span><br><span class="line">        model.AddAtMostOne(shifts[(n, d, s)] <span class="keyword">for</span> s <span class="keyword">in</span> all_shifts)</span><br><span class="line"></span><br><span class="line"><span class="comment"># distribute the shifts evenly</span></span><br><span class="line">min_shifts_per_nurse = (num_shifts * num_days) // num_nurses</span><br><span class="line"><span class="keyword">if</span> num_shifts * num_days % num_nurses == <span class="number">0</span>:</span><br><span class="line">    max_shifts_per_nurse = min_shifts_per_nurse</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    max_shifts_per_nurse = min_shifts_per_nurse + <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> n <span class="keyword">in</span> all_nurses:</span><br><span class="line">    num_shifts_worked = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> d <span class="keyword">in</span> all_days:</span><br><span class="line">        <span class="keyword">for</span> s <span class="keyword">in</span> all_shifts:</span><br><span class="line">            num_shifts_worked += shifts[(n, d, s)]</span><br><span class="line">    model.Add(min_shifts_per_nurse &lt;= num_shifts_worked)</span><br><span class="line">    model.Add(num_shifts_worked &lt;= max_shifts_per_nurse)</span><br></pre></td></tr></tbody></table></figure> 不过现在有一个目标函数, 希望被满足的志愿最大化: <figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># objective</span></span><br><span class="line">model.Maximize(</span><br><span class="line">    <span class="built_in">sum</span>(</span><br><span class="line">        shift_requests[n][d][s] * shifts[(n, d, s)] </span><br><span class="line">        <span class="keyword">for</span> n <span class="keyword">in</span> all_nurses </span><br><span class="line">        <span class="keyword">for</span> d <span class="keyword">in</span> all_days </span><br><span class="line">        <span class="keyword">for</span> s <span class="keyword">in</span> all_shifts</span><br><span class="line">    )</span><br><span class="line">)</span><br></pre></td></tr></tbody></table></figure> 求解与输出... <figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">solver = cp_model.CpSolver()</span><br><span class="line">status = solver.Solve(model)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> status == cp_model.OPTIMAL:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'Solution:'</span>)</span><br><span class="line">    <span class="keyword">for</span> d <span class="keyword">in</span> all_days:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">'Day'</span>, d)</span><br><span class="line">        <span class="keyword">for</span> n <span class="keyword">in</span> all_nurses:</span><br><span class="line">            <span class="keyword">for</span> s <span class="keyword">in</span> all_shifts:</span><br><span class="line">                <span class="keyword">if</span> solver.Value(shifts[(n, d, s)]) == <span class="number">1</span>:</span><br><span class="line">                    <span class="keyword">if</span> shift_requests[n][d][s] == <span class="number">1</span>:</span><br><span class="line">                        <span class="built_in">print</span>(<span class="string">'Nurse'</span>, n, <span class="string">'works shift'</span>, s, <span class="string">'(requested).'</span>)</span><br><span class="line">                    <span class="keyword">else</span>:</span><br><span class="line">                        <span class="built_in">print</span>(<span class="string">'Nurse'</span>, n, <span class="string">'works shift'</span>, s, <span class="string">'(not requested).'</span>)</span><br><span class="line">        <span class="built_in">print</span>()</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f'Number of shift requests met = <span class="subst">{solver.ObjectiveValue()}</span>'</span>, <span class="string">f'(out of <span class="subst">{num_nurses*min_shifts_per_nurse}</span>)'</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'No optimal solution found.'</span>)</span><br></pre></td></tr></tbody></table></figure> 输出 <figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">Solution:</span><br><span class="line">Day 0</span><br><span class="line">Nurse 1 works shift 0 (not requested).</span><br><span class="line">Nurse 2 works shift 1 (requested).</span><br><span class="line">Nurse 3 works shift 2 (requested).</span><br><span class="line"></span><br><span class="line">Day 1</span><br><span class="line">Nurse 1 works shift 0 (not requested).</span><br><span class="line">Nurse 2 works shift 1 (requested).</span><br><span class="line">Nurse 4 works shift 2 (requested).</span><br><span class="line"></span><br><span class="line">Day 2</span><br><span class="line">Nurse 0 works shift 2 (not requested).</span><br><span class="line">Nurse 3 works shift 0 (requested).</span><br><span class="line">Nurse 4 works shift 1 (requested).</span><br><span class="line"></span><br><span class="line">Day 3</span><br><span class="line">Nurse 0 works shift 2 (not requested).</span><br><span class="line">Nurse 2 works shift 0 (requested).</span><br><span class="line">Nurse 3 works shift 1 (requested).</span><br><span class="line"></span><br><span class="line">Day 4</span><br><span class="line">Nurse 0 works shift 2 (requested).</span><br><span class="line">Nurse 1 works shift 1 (not requested).</span><br><span class="line">Nurse 4 works shift 0 (requested).</span><br><span class="line"></span><br><span class="line">Day 5</span><br><span class="line">Nurse 0 works shift 2 (not requested).</span><br><span class="line">Nurse 3 works shift 0 (requested).</span><br><span class="line">Nurse 4 works shift 1 (requested).</span><br><span class="line"></span><br><span class="line">Day 6</span><br><span class="line">Nurse 0 works shift 2 (requested).</span><br><span class="line">Nurse 1 works shift 1 (not requested).</span><br><span class="line">Nurse 2 works shift 0 (not requested).</span><br><span class="line"></span><br><span class="line">Number of shift requests met = 13.0 (out of 20)</span><br></pre></td></tr></tbody></table></figure><p></p>
+<h2 id="工程分配问题">工程分配问题</h2>
+<h3 id="背景">背景</h3>
+<p>一个 job 由几个 task 组成, 它们之间有先后次序的要求. 每个 task 有对应的机器, 其中一个机器只能一次完成一个 task.</p>
+<p>每个 task 有自己的完成时间, 而这个 task 一旦在机器上开始就必须做完.</p>
+<p>比如下面这个例子: </p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">job0 = [(<span class="number">0</span>, <span class="number">3</span>), (<span class="number">1</span>, <span class="number">2</span>), (<span class="number">2</span>, <span class="number">2</span>)]</span><br><span class="line">job1 = [(<span class="number">0</span>, <span class="number">2</span>), (<span class="number">2</span>, <span class="number">1</span>), (<span class="number">1</span>, <span class="number">4</span>)]</span><br><span class="line">job2 = [(<span class="number">1</span>, <span class="number">4</span>), (<span class="number">2</span>, <span class="number">3</span>)]</span><br></pre></td></tr></tbody></table></figure> 意思是 <code>job0</code> 由三个 task 组成, 第一个在机器 0 上完成, 需要 3 个时间单位; 第二个在机器 1 上完成, 需要 2 个时间单位; 第三个在机器 2 上完成, 需要 2 个时间单位. 同理对 <code>job1</code> 和 <code>job2</code>.<p></p>
+<p>一个可能的方案如图: <img src="schedule1.png"></p>
+<p>这个并不是最优解, 我们希望最小化总时间.</p>
+<h3 id="建模">建模</h3>
+<p>我们记 <span class="math inline">\(t_{i,j}\)</span> 为 task (i, j) 的开始时间, 其中 task (i, j) 指的是 job i 的第 j 个 task. 比如上面的例子中, task (0, 2) 对应的是 <code>(1, 2)</code>, task (0, 3) 对应的是 <code>(2, 2)</code>.</p>
+<p><strong>优先级约束</strong></p>
+<p>必须先完成 task (0, 2), 再开始 task (0, 3). 而 task (0, 2) 需要 2 个时间单位来完成, 所以有 <span class="math display">\[
+t_{0,2} + 2 \le t_{0,3}
+\]</span></p>
+<p><strong>不重叠约束</strong></p>
+<p>task (0, 2) 和 task (2, 1) 都在机器 1 上完成, 而工作时间分别为 2 和 4. 所以, 以下两个约束中的一个成立:</p>
+<p><span class="math display">\[
+t_{0,2} + 2 \le t_{2,1}
+\]</span> 或 <span class="math display">\[
+t_{2,1} + 4 \le t_{0,2}.
+\]</span></p>
+<p><strong>目标函数</strong></p>
+<p>最小化时间跨度, 也就是从最早的开始时间到最晚的结束时间.</p>
+<h3 id="求解">求解</h3>
+<p>导包与数据... </p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> collections</span><br><span class="line"><span class="keyword">from</span> ortools.sat.python <span class="keyword">import</span> cp_model</span><br><span class="line"></span><br><span class="line"><span class="comment"># data...</span></span><br><span class="line">jobs_data = [</span><br><span class="line">    [(<span class="number">0</span>, <span class="number">3</span>), (<span class="number">1</span>, <span class="number">2</span>), (<span class="number">2</span>, <span class="number">2</span>)],</span><br><span class="line">    [(<span class="number">0</span>, <span class="number">2</span>), (<span class="number">2</span>, <span class="number">1</span>), (<span class="number">1</span>, <span class="number">4</span>)],</span><br><span class="line">    [(<span class="number">1</span>, <span class="number">4</span>), (<span class="number">2</span>, <span class="number">3</span>)]</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line">machines_count = <span class="number">1</span> + <span class="built_in">max</span>(task[<span class="number">0</span>] <span class="keyword">for</span> job <span class="keyword">in</span> jobs_data <span class="keyword">for</span> task <span class="keyword">in</span> job)</span><br><span class="line">all_machines = <span class="built_in">range</span>(machines_count)</span><br><span class="line"><span class="comment"># the sum of all durations</span></span><br><span class="line">horizon = <span class="built_in">sum</span>(task[<span class="number">1</span>] <span class="keyword">for</span> job <span class="keyword">in</span> jobs_data <span class="keyword">for</span> task <span class="keyword">in</span> job)</span><br></pre></td></tr></tbody></table></figure> 建模与变量... <figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">model = cp_model.CpModel()</span><br><span class="line"></span><br><span class="line"><span class="comment"># variables...</span></span><br><span class="line">task_type = collections.namedtuple(<span class="string">'task_type'</span>, <span class="string">'start end interval'</span>)</span><br><span class="line">assigned_task_type = collections.namedtuple(<span class="string">'assigned_task_type'</span>, <span class="string">'start job index duration'</span>)</span><br><span class="line"></span><br><span class="line">all_tasks = {}</span><br><span class="line">machine_to_intervals = collections.defaultdict(<span class="built_in">list</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> job_id, job <span class="keyword">in</span> <span class="built_in">enumerate</span>(jobs_data):</span><br><span class="line">    <span class="keyword">for</span> task_id, task <span class="keyword">in</span> <span class="built_in">enumerate</span>(job):</span><br><span class="line">        machine = task[<span class="number">0</span>]</span><br><span class="line">        duration = task[<span class="number">1</span>]</span><br><span class="line">        suffix = <span class="string">'_%i_%i'</span> % (job_id, task_id)</span><br><span class="line">        start_var = model.NewIntVar(<span class="number">0</span>, horizon, <span class="string">'start'</span> + suffix)</span><br><span class="line">        end_var = model.NewIntVar(<span class="number">0</span>, horizon, <span class="string">'end'</span> + suffix)</span><br><span class="line">        interval_var = model.NewIntervalVar(start_var, duration, end_var, <span class="string">'interval'</span> + suffix)</span><br><span class="line">        all_tasks[job_id, task_id] = task_type(start=start_var, end=end_var, interval=interval_var)</span><br><span class="line">        machine_to_intervals[machine].append(interval_var)</span><br></pre></td></tr></tbody></table></figure> 约束... <figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># disjunctive constraints</span></span><br><span class="line"><span class="keyword">for</span> machine <span class="keyword">in</span> all_machines:</span><br><span class="line">    model.AddNoOverlap(machine_to_intervals[machine])</span><br><span class="line"></span><br><span class="line"><span class="comment"># precidences inside a job</span></span><br><span class="line"><span class="keyword">for</span> job_id, job <span class="keyword">in</span> <span class="built_in">enumerate</span>(jobs_data):</span><br><span class="line">    <span class="keyword">for</span> task_id <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(job)-<span class="number">1</span>):</span><br><span class="line">        model.Add(all_tasks[job_id, task_id+<span class="number">1</span>].start &gt;= all_tasks[job_id, task_id].end)</span><br></pre></td></tr></tbody></table></figure> 目标函数... <figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># objective...</span></span><br><span class="line">obj_var = model.NewIntVar(<span class="number">0</span>, horizon, <span class="string">'makespan'</span>)</span><br><span class="line">model.AddMaxEquality(obj_var, [</span><br><span class="line">    all_tasks[job_id, <span class="built_in">len</span>(job)-<span class="number">1</span>].end <span class="keyword">for</span> job_id, job <span class="keyword">in</span> <span class="built_in">enumerate</span>(jobs_data)</span><br><span class="line">])</span><br><span class="line"></span><br><span class="line">model.Minimize(obj_var)</span><br></pre></td></tr></tbody></table></figure> 求解与输出... <figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># solve...</span></span><br><span class="line">solver = cp_model.CpSolver()</span><br><span class="line">status = solver.Solve(model)</span><br><span class="line"></span><br><span class="line"><span class="comment"># results...</span></span><br><span class="line"><span class="keyword">if</span> status == cp_model.OPTIMAL <span class="keyword">or</span> status == cp_model.FEASIBLE:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'Solution:'</span>)</span><br><span class="line">    <span class="comment"># create one list of assigned tasks per machine</span></span><br><span class="line">    assigned_jobs = collections.defaultdict(<span class="built_in">list</span>)</span><br><span class="line">    <span class="keyword">for</span> job_id, job <span class="keyword">in</span> <span class="built_in">enumerate</span>(jobs_data):</span><br><span class="line">        <span class="keyword">for</span> task_id, task <span class="keyword">in</span> <span class="built_in">enumerate</span>(job):</span><br><span class="line">            machine = task[<span class="number">0</span>]</span><br><span class="line">            assigned_jobs[machine].append(</span><br><span class="line">                assigned_task_type(start=solver.Value(all_tasks[job_id, task_id].start),</span><br><span class="line">                job=job_id,</span><br><span class="line">                index=task_id,</span><br><span class="line">                duration=task[<span class="number">1</span>])</span><br><span class="line">            )</span><br><span class="line">    <span class="comment"># create per machine output lines</span></span><br><span class="line">    output = <span class="string">''</span></span><br><span class="line">    <span class="keyword">for</span> machine <span class="keyword">in</span> all_machines:</span><br><span class="line">        <span class="comment"># sort by starting time</span></span><br><span class="line">        assigned_jobs[machine].sort()</span><br><span class="line">        sol_line_tasks = <span class="string">'Machine '</span> + <span class="built_in">str</span>(machine) + <span class="string">': '</span></span><br><span class="line">        sol_line = <span class="string">'\t'</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> assigned_task <span class="keyword">in</span> assigned_jobs[machine]:</span><br><span class="line">            name = <span class="string">'job_%i_task_%i'</span> % (assigned_task.job, assigned_task.index)</span><br><span class="line">            <span class="comment"># align columns</span></span><br><span class="line">            sol_line_tasks += <span class="string">'%-15s'</span> % name</span><br><span class="line"></span><br><span class="line">            start = assigned_task.start</span><br><span class="line">            duration = assigned_task.duration</span><br><span class="line">            sol_tmp = <span class="string">'[%i, %i]'</span> % (start, start + duration)</span><br><span class="line">            <span class="comment"># align columns</span></span><br><span class="line">            sol_line += <span class="string">'%-15s'</span> % sol_tmp</span><br><span class="line"></span><br><span class="line">        sol_line += <span class="string">'\n'</span></span><br><span class="line">        sol_line_tasks += <span class="string">'\n'</span></span><br><span class="line">        output += sol_line_tasks</span><br><span class="line">        output += sol_line</span><br><span class="line"></span><br><span class="line">    <span class="comment"># print the solution</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f'Optimal Schedule Length: <span class="subst">{solver.ObjectiveValue()}</span>'</span>)</span><br><span class="line">    <span class="built_in">print</span>(output)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">'No solution found.'</span>)</span><br></pre></td></tr></tbody></table></figure> 输出: <figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">Solution:</span><br><span class="line">Optimal Schedule Length: 11.0</span><br><span class="line">Machine 0: job_1_task_0   job_0_task_0   </span><br><span class="line">        [0, 2]         [2, 5]         </span><br><span class="line">Machine 1: job_2_task_0   job_0_task_1   job_1_task_2   </span><br><span class="line">        [0, 4]         [5, 7]         [7, 11]        </span><br><span class="line">Machine 2: job_1_task_1   job_2_task_1   job_0_task_2   </span><br><span class="line">        [2, 3]         [4, 7]         [7, 9]    </span><br></pre></td></tr></tbody></table></figure> <img src="schedule2.png"><p></p>
+]]></content>
+      <categories>
+        <category>计算机</category>
+        <category>OR-Tools</category>
       </categories>
   </entry>
   <entry>
@@ -655,6 +655,49 @@ z={p_1-p_2\over\sqrt{p(1-p)\left(\frac{1}{n_1}+\frac{1}{n_2}\right)}}
       </categories>
   </entry>
   <entry>
+    <title>$\arcsin^2x$的展开式</title>
+    <url>/posts/20316/</url>
+    <content><![CDATA[<p>证明 <span class="math display">\[
+\arcsin^2x=\frac12\sum_{n=1}^\infty{(2x)^{2n}\over n^2{2n\choose n}}.
+\]</span> <span id="more"></span></p>
+<p>先求导： <span class="math display">\[
+(\arcsin^2 x)'={2\arcsin x\over\sqrt{1-x^2}}
+\]</span> 利用恒等式<span class="math inline">\(\arcsin x=\arctan\left(x\over\sqrt{1-x^2}\right)\)</span>，有 <span class="math display">\[
+\begin{align*}
+{\arcsin x\over\sqrt{1-x^2}}&amp;={1\over\sqrt{1-x^2}}\arctan\left(x\over\sqrt{1-x^2}\right)\\
+&amp;=\frac1x\cdot{1\over\sqrt{1-x^2\over x^2}}\arctan\left({1\over\sqrt{1-x^2\over x^2}}\right)\\
+&amp;=\left.\frac1x\cdot{1\over\sqrt{1-x^2\over x^2}}\arctan\left({t\over\sqrt{1-x^2\over x^2}}\right)\right|_{t=0}^{t=1}\\
+&amp;=\frac1x\int_0^1{\mathrm dt\over t^2+{1-x^2\over x^2}}\\
+&amp;=x\int_0^1{\mathrm dt\over 1-x^2+x^2t^2}\\
+&amp;=x\int_0^1\sum_{n=0}^\infty(x^2-x^2t^2)^n\,\mathrm dt\\
+&amp;=\int_0^1\sum_{n=0}^\infty (1-t^2)^nx^{2n+1}\,\mathrm dt\\
+&amp;=\sum_{n=0}^\infty\left(\int_0^1(1-t^2)^n\,\mathrm dt\right) x^{2n+1}\\
+&amp;=\sum_{n=0}^\infty{(2n)!!\over(2n+1)!!}x^{2n+1}.
+\end{align*}
+\]</span> 其中我们利用了<a href="/posts/23548/" title="结论">结论</a>。</p>
+<p>于是积分： <span class="math display">\[
+\begin{align*}
+\arcsin^2x&amp;=\int_0^x(\arcsin^2t)'\,\mathrm dt\\
+&amp;=2\int_0^x{\arcsin t\over\sqrt{1-t^2}}\,\mathrm dt\\
+&amp;=2\int_0^x\sum_{n=0}^\infty{(2n)!!\over(2n+1)!!}t^{2n+1}\,\mathrm dt\\
+&amp;=2\sum_{n=0}^\infty{(2n)!!\over(2n+1)!!}\int_0^x t^{2n+1}\,\mathrm dt\\
+&amp;=2\sum_{n=0}^\infty{(2n)!!\over(2n+1)!!}\cdot{x^{2n+2}\over2n+2}\\
+&amp;=2\sum_{n=0}^\infty{(2^nn!)^2\over(2n+1)!}\cdot{x^{2n+2}\over2n+2}\\
+&amp;=2\sum_{n=0}^\infty{2^{2n}(n!)^2\over(2n+2)!}x^{2n+2}\\
+&amp;=2\sum_{n=0}^\infty{2^{2n+2}\left((n+1)!\right)^2\over2^2(n+1)^2(2n+2)!}x^{2n+2}\\
+&amp;=\frac12\sum_{n=0}^\infty{(2x)^{2n+2}\over(n+1)^2{2n+2\choose n+1}}\\
+&amp;=\frac12\sum_{n=1}^\infty{(2x)^{2n}\over n^2{2n\choose n}}.
+\end{align*}
+\]</span></p>
+]]></content>
+      <categories>
+        <category>数学</category>
+        <category>分析</category>
+        <category>微积分</category>
+        <category>级数</category>
+      </categories>
+  </entry>
+  <entry>
     <title>分块矩阵的行列式</title>
     <url>/posts/42453/</url>
     <content><![CDATA[<h2 id="结论">结论</h2>
@@ -801,49 +844,6 @@ f(\theta)=L(\theta)+\Omega(\theta)
       </categories>
   </entry>
   <entry>
-    <title>$\arcsin^2x$的展开式</title>
-    <url>/posts/20316/</url>
-    <content><![CDATA[<p>证明 <span class="math display">\[
-\arcsin^2x=\frac12\sum_{n=1}^\infty{(2x)^{2n}\over n^2{2n\choose n}}.
-\]</span> <span id="more"></span></p>
-<p>先求导： <span class="math display">\[
-(\arcsin^2 x)'={2\arcsin x\over\sqrt{1-x^2}}
-\]</span> 利用恒等式<span class="math inline">\(\arcsin x=\arctan\left(x\over\sqrt{1-x^2}\right)\)</span>，有 <span class="math display">\[
-\begin{align*}
-{\arcsin x\over\sqrt{1-x^2}}&amp;={1\over\sqrt{1-x^2}}\arctan\left(x\over\sqrt{1-x^2}\right)\\
-&amp;=\frac1x\cdot{1\over\sqrt{1-x^2\over x^2}}\arctan\left({1\over\sqrt{1-x^2\over x^2}}\right)\\
-&amp;=\left.\frac1x\cdot{1\over\sqrt{1-x^2\over x^2}}\arctan\left({t\over\sqrt{1-x^2\over x^2}}\right)\right|_{t=0}^{t=1}\\
-&amp;=\frac1x\int_0^1{\mathrm dt\over t^2+{1-x^2\over x^2}}\\
-&amp;=x\int_0^1{\mathrm dt\over 1-x^2+x^2t^2}\\
-&amp;=x\int_0^1\sum_{n=0}^\infty(x^2-x^2t^2)^n\,\mathrm dt\\
-&amp;=\int_0^1\sum_{n=0}^\infty (1-t^2)^nx^{2n+1}\,\mathrm dt\\
-&amp;=\sum_{n=0}^\infty\left(\int_0^1(1-t^2)^n\,\mathrm dt\right) x^{2n+1}\\
-&amp;=\sum_{n=0}^\infty{(2n)!!\over(2n+1)!!}x^{2n+1}.
-\end{align*}
-\]</span> 其中我们利用了<a href="/posts/23548/" title="结论">结论</a>。</p>
-<p>于是积分： <span class="math display">\[
-\begin{align*}
-\arcsin^2x&amp;=\int_0^x(\arcsin^2t)'\,\mathrm dt\\
-&amp;=2\int_0^x{\arcsin t\over\sqrt{1-t^2}}\,\mathrm dt\\
-&amp;=2\int_0^x\sum_{n=0}^\infty{(2n)!!\over(2n+1)!!}t^{2n+1}\,\mathrm dt\\
-&amp;=2\sum_{n=0}^\infty{(2n)!!\over(2n+1)!!}\int_0^x t^{2n+1}\,\mathrm dt\\
-&amp;=2\sum_{n=0}^\infty{(2n)!!\over(2n+1)!!}\cdot{x^{2n+2}\over2n+2}\\
-&amp;=2\sum_{n=0}^\infty{(2^nn!)^2\over(2n+1)!}\cdot{x^{2n+2}\over2n+2}\\
-&amp;=2\sum_{n=0}^\infty{2^{2n}(n!)^2\over(2n+2)!}x^{2n+2}\\
-&amp;=2\sum_{n=0}^\infty{2^{2n+2}\left((n+1)!\right)^2\over2^2(n+1)^2(2n+2)!}x^{2n+2}\\
-&amp;=\frac12\sum_{n=0}^\infty{(2x)^{2n+2}\over(n+1)^2{2n+2\choose n+1}}\\
-&amp;=\frac12\sum_{n=1}^\infty{(2x)^{2n}\over n^2{2n\choose n}}.
-\end{align*}
-\]</span></p>
-]]></content>
-      <categories>
-        <category>数学</category>
-        <category>分析</category>
-        <category>微积分</category>
-        <category>级数</category>
-      </categories>
-  </entry>
-  <entry>
     <title>dereference 与 shallow copy</title>
     <url>/posts/6370/</url>
     <content><![CDATA[<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">x = [<span class="number">0</span>]</span><br><span class="line">y = x</span><br></pre></td></tr></tbody></table></figure>
@@ -855,6 +855,35 @@ f(\theta)=L(\theta)+\Omega(\theta)
       <categories>
         <category>计算机</category>
         <category>Python</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>$f(A)$的特征值</title>
+    <url>/posts/3877/</url>
+    <content><![CDATA[<p><strong>引理 (Schur's Lemma): 若<span class="math inline">\(A\)</span>是数域<span class="math inline">\(F\)</span>上的<span class="math inline">\(n\)</span>阶方阵, 且<span class="math inline">\(A\)</span>的特征值都在<span class="math inline">\(F\)</span>中, 那么<span class="math inline">\(A\)</span>与一个上三角阵相似.</strong></p>
+<p><strong>证明: </strong></p>
+<p>归纳法. 当<span class="math inline">\(n=1\)</span>时显然成立: 此时<span class="math inline">\(A\)</span>本身是上三角阵.</p>
+<p>假设结论对<span class="math inline">\(n-1\)</span>阶方阵成立, 且<span class="math inline">\(A\in F^{n\times n}\)</span>的特征值都在<span class="math inline">\(F\)</span>中. 记特征向量<span class="math inline">\(v_1\)</span>对应的特征值是<span class="math inline">\(\lambda_1\in F\)</span>, 并把<span class="math inline">\(v_1\)</span>扩展为<span class="math inline">\(F^n\)</span>的一组基<span class="math inline">\(\mathcal B=(v_1,\ldots,v_n)\)</span>. 在这组基下, <span class="math inline">\(A\)</span>被相似变换为矩阵<span class="math display">\[[A]_\mathcal{B}=\begin{bmatrix}\lambda_1 &amp; *\\ 0 &amp; A_1\end{bmatrix},\]</span> 其中<span class="math inline">\(A_1\in F^{(n-1)\times (n-1)}\)</span>.</p>
+<span id="more"></span>
+<p>由于相似矩阵有相同的特征多项式, 于是<span class="math display">\[\det(xI-A)=\det(xI-[A]_\mathcal B)=(x-\lambda_1)\det(xI-A_1).\]</span> 又因为<span class="math inline">\(\det(xI-A)\)</span>的根都在<span class="math inline">\(F\)</span>中, 所以<span class="math inline">\(\det(xI-A_1)\)</span>的根也都在<span class="math inline">\(F\)</span>中, 这说明<span class="math inline">\(A_1\)</span>是特征值都在<span class="math inline">\(F\)</span>中的<span class="math inline">\(n-1\)</span>阶方阵.</p>
+<p>于是根据归纳假设, 存在可逆阵<span class="math inline">\(P\in F^{(n-1)\times(n-1)}\)</span>使得<span class="math display">\[U=PA_1P^{-1}\]</span>是上三角阵. 那么只需构造可逆阵<span class="math display">\[Q=\begin{bmatrix}1&amp;0\\0&amp;P\end{bmatrix},\]</span>便有<span class="math display">\[Q[A]_\mathcal B Q^{-1}=\begin{bmatrix}1&amp;0\\0&amp;P\end{bmatrix}\begin{bmatrix}\lambda_1&amp;*\\0&amp;A_1\end{bmatrix}\begin{bmatrix}1&amp;0\\0&amp;P^{-1}\end{bmatrix}=\begin{bmatrix}\lambda_1&amp;*\\0&amp;U\end{bmatrix}\]</span>是上三角阵.</p>
+<p>这说明<span class="math inline">\(A\)</span>与一个上三角阵相似, 归纳法完成.</p>
+<p><em>注: 一个更强的结论是Jordan标准型.</em></p>
+<hr>
+<p><strong>定理: 若<span class="math inline">\(A\)</span>是数域<span class="math inline">\(F\)</span>上的<span class="math inline">\(n\)</span>阶方阵, 且<span class="math inline">\(A\)</span>的特征值都在<span class="math inline">\(F\)</span>中. <span class="math inline">\(f\)</span>是<span class="math inline">\(F\)</span>上的多项式, 那么<span class="math inline">\(a\)</span>是<span class="math inline">\(f(A)\)</span>的特征值<span class="math inline">\(\iff\)</span><span class="math inline">\(a=f(\lambda)\)</span>, 其中<span class="math inline">\(\lambda\)</span>是<span class="math inline">\(A\)</span>的特征值.</strong></p>
+<p><strong>证明:</strong></p>
+<p><span class="math inline">\((\Longleftarrow)\)</span>容易, 略.</p>
+<p><span class="math inline">\((\Longrightarrow)\)</span>根据引理, <span class="math inline">\(A\)</span>与一个上三角阵<span class="math inline">\(T\)</span>相似: <span class="math display">\[
+A=Q^{-1}TQ.
+\]</span> 由于<span class="math inline">\(f\)</span>是多项式, 那么 <span class="math display">\[
+f(A)=f(Q^{-1}TQ)=Q^{-1}f(T)Q.
+\]</span> 根据上三角阵的性质, <span class="math inline">\(f(T)\)</span>也是上三角阵, 且<span class="math inline">\(f(T)\)</span>的对角元恰好是<span class="math inline">\(f(\lambda)\)</span>, 其中<span class="math inline">\(\lambda\)</span>是<span class="math inline">\(T\)</span>的对角元.</p>
+<p>因为相似矩阵有相同的特征值, 且上三角阵的对角元与其特征值对应, 于是<span class="math inline">\(f(A)\)</span>的特征值都是<span class="math inline">\(f(\lambda)\)</span>的形式, 其中<span class="math inline">\(\lambda\)</span>是<span class="math inline">\(A\)</span>的特征值.</p>
+]]></content>
+      <categories>
+        <category>数学</category>
+        <category>代数</category>
+        <category>线性代数</category>
       </categories>
   </entry>
   <entry>
@@ -975,35 +1004,6 @@ W_p^1\subseteq L^{p^*},\quad\text{其中 }{1\over p^*}=\frac1p-\frac1n.
       </categories>
   </entry>
   <entry>
-    <title>$f(A)$的特征值</title>
-    <url>/posts/3877/</url>
-    <content><![CDATA[<p><strong>引理 (Schur's Lemma): 若<span class="math inline">\(A\)</span>是数域<span class="math inline">\(F\)</span>上的<span class="math inline">\(n\)</span>阶方阵, 且<span class="math inline">\(A\)</span>的特征值都在<span class="math inline">\(F\)</span>中, 那么<span class="math inline">\(A\)</span>与一个上三角阵相似.</strong></p>
-<p><strong>证明: </strong></p>
-<p>归纳法. 当<span class="math inline">\(n=1\)</span>时显然成立: 此时<span class="math inline">\(A\)</span>本身是上三角阵.</p>
-<p>假设结论对<span class="math inline">\(n-1\)</span>阶方阵成立, 且<span class="math inline">\(A\in F^{n\times n}\)</span>的特征值都在<span class="math inline">\(F\)</span>中. 记特征向量<span class="math inline">\(v_1\)</span>对应的特征值是<span class="math inline">\(\lambda_1\in F\)</span>, 并把<span class="math inline">\(v_1\)</span>扩展为<span class="math inline">\(F^n\)</span>的一组基<span class="math inline">\(\mathcal B=(v_1,\ldots,v_n)\)</span>. 在这组基下, <span class="math inline">\(A\)</span>被相似变换为矩阵<span class="math display">\[[A]_\mathcal{B}=\begin{bmatrix}\lambda_1 &amp; *\\ 0 &amp; A_1\end{bmatrix},\]</span> 其中<span class="math inline">\(A_1\in F^{(n-1)\times (n-1)}\)</span>.</p>
-<span id="more"></span>
-<p>由于相似矩阵有相同的特征多项式, 于是<span class="math display">\[\det(xI-A)=\det(xI-[A]_\mathcal B)=(x-\lambda_1)\det(xI-A_1).\]</span> 又因为<span class="math inline">\(\det(xI-A)\)</span>的根都在<span class="math inline">\(F\)</span>中, 所以<span class="math inline">\(\det(xI-A_1)\)</span>的根也都在<span class="math inline">\(F\)</span>中, 这说明<span class="math inline">\(A_1\)</span>是特征值都在<span class="math inline">\(F\)</span>中的<span class="math inline">\(n-1\)</span>阶方阵.</p>
-<p>于是根据归纳假设, 存在可逆阵<span class="math inline">\(P\in F^{(n-1)\times(n-1)}\)</span>使得<span class="math display">\[U=PA_1P^{-1}\]</span>是上三角阵. 那么只需构造可逆阵<span class="math display">\[Q=\begin{bmatrix}1&amp;0\\0&amp;P\end{bmatrix},\]</span>便有<span class="math display">\[Q[A]_\mathcal B Q^{-1}=\begin{bmatrix}1&amp;0\\0&amp;P\end{bmatrix}\begin{bmatrix}\lambda_1&amp;*\\0&amp;A_1\end{bmatrix}\begin{bmatrix}1&amp;0\\0&amp;P^{-1}\end{bmatrix}=\begin{bmatrix}\lambda_1&amp;*\\0&amp;U\end{bmatrix}\]</span>是上三角阵.</p>
-<p>这说明<span class="math inline">\(A\)</span>与一个上三角阵相似, 归纳法完成.</p>
-<p><em>注: 一个更强的结论是Jordan标准型.</em></p>
-<hr>
-<p><strong>定理: 若<span class="math inline">\(A\)</span>是数域<span class="math inline">\(F\)</span>上的<span class="math inline">\(n\)</span>阶方阵, 且<span class="math inline">\(A\)</span>的特征值都在<span class="math inline">\(F\)</span>中. <span class="math inline">\(f\)</span>是<span class="math inline">\(F\)</span>上的多项式, 那么<span class="math inline">\(a\)</span>是<span class="math inline">\(f(A)\)</span>的特征值<span class="math inline">\(\iff\)</span><span class="math inline">\(a=f(\lambda)\)</span>, 其中<span class="math inline">\(\lambda\)</span>是<span class="math inline">\(A\)</span>的特征值.</strong></p>
-<p><strong>证明:</strong></p>
-<p><span class="math inline">\((\Longleftarrow)\)</span>容易, 略.</p>
-<p><span class="math inline">\((\Longrightarrow)\)</span>根据引理, <span class="math inline">\(A\)</span>与一个上三角阵<span class="math inline">\(T\)</span>相似: <span class="math display">\[
-A=Q^{-1}TQ.
-\]</span> 由于<span class="math inline">\(f\)</span>是多项式, 那么 <span class="math display">\[
-f(A)=f(Q^{-1}TQ)=Q^{-1}f(T)Q.
-\]</span> 根据上三角阵的性质, <span class="math inline">\(f(T)\)</span>也是上三角阵, 且<span class="math inline">\(f(T)\)</span>的对角元恰好是<span class="math inline">\(f(\lambda)\)</span>, 其中<span class="math inline">\(\lambda\)</span>是<span class="math inline">\(T\)</span>的对角元.</p>
-<p>因为相似矩阵有相同的特征值, 且上三角阵的对角元与其特征值对应, 于是<span class="math inline">\(f(A)\)</span>的特征值都是<span class="math inline">\(f(\lambda)\)</span>的形式, 其中<span class="math inline">\(\lambda\)</span>是<span class="math inline">\(A\)</span>的特征值.</p>
-]]></content>
-      <categories>
-        <category>数学</category>
-        <category>代数</category>
-        <category>线性代数</category>
-      </categories>
-  </entry>
-  <entry>
     <title>定积分性质例题</title>
     <url>/posts/5066/</url>
     <content><![CDATA[<p><strong>问题：在 <span class="math inline">\([0,\pi]\)</span> 上的连续函数 <span class="math inline">\(f\)</span> 满足</strong> <span class="math display">\[
@@ -1031,18 +1031,6 @@ F(x)=f(x)\sin(x-x_0)\leq0,~\forall x\in(0,\pi).
       </categories>
   </entry>
   <entry>
-    <title>Hexo 用法记录</title>
-    <url>/posts/16107/</url>
-    <content><![CDATA[<p>插入图片: </p><figure class="highlight html"><table><tbody><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"/file/*"</span> <span class="attr">width</span>=<span class="string">"250"</span> <span class="attr">height</span>=<span class="string">"250"</span>/&gt;</span></span><br><span class="line">{% asset_img image.jpg This is an image %}</span><br></pre></td></tr></tbody></table></figure><p></p>
-<p>嵌入 pdf: </p><figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">{% pdf /file/*.pdf %}</span><br></pre></td></tr></tbody></table></figure><p></p>
-<p>链接文章: </p><figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">{% post_link * 说明 %}</span><br></pre></td></tr></tbody></table></figure><p></p>
-]]></content>
-      <categories>
-        <category>计算机</category>
-        <category>hexo</category>
-      </categories>
-  </entry>
-  <entry>
     <title>Hesse 矩阵与Jacobi 矩阵</title>
     <url>/posts/44547/</url>
     <content><![CDATA[<p>Hessian 是<strong>数量场</strong>的二阶导: <span class="math display">\[H_{i,j}={\partial f\over\partial x_i\partial x_j}\]</span></p>
@@ -1055,6 +1043,66 @@ F(x)=f(x)\sin(x-x_0)\leq0,~\forall x\in(0,\pi).
 <li><span class="math inline">\(J(\nabla f)=J\left(\begin{bmatrix} 2x\\2y \end{bmatrix}\right)=\begin{bmatrix}2&amp;0\\0&amp;2\end{bmatrix}\)</span></li>
 </ul>
 </blockquote>
+]]></content>
+      <categories>
+        <category>数学</category>
+        <category>分析</category>
+        <category>微积分</category>
+        <category>多元微积分</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Hexo 用法记录</title>
+    <url>/posts/16107/</url>
+    <content><![CDATA[<p>插入图片: </p><figure class="highlight html"><table><tbody><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"/file/*"</span> <span class="attr">width</span>=<span class="string">"250"</span> <span class="attr">height</span>=<span class="string">"250"</span>/&gt;</span></span><br><span class="line">{% asset_img image.jpg This is an image %}</span><br></pre></td></tr></tbody></table></figure><p></p>
+<p>嵌入 pdf: </p><figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">{% pdf /file/*.pdf %}</span><br></pre></td></tr></tbody></table></figure><p></p>
+<p>链接文章: </p><figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">{% post_link * 说明 %}</span><br></pre></td></tr></tbody></table></figure><p></p>
+]]></content>
+      <categories>
+        <category>计算机</category>
+        <category>hexo</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>高维分部积分</title>
+    <url>/posts/22001/</url>
+    <content><![CDATA[<p><span class="math display">\[\boxed{
+\int_\Omega \nabla\cdot \bm u v\d x=\int_{\partial\Omega}v\boldsymbol{u}\cdot\boldsymbol{n}\d s-\int_\Omega\nabla v\cdot\boldsymbol{u}\d x}
+\]</span></p>
+<p><span class="math display">\[\boxed{
+\int_\Omega(\nabla\times\bm u)\cdot\bm v\d x=\int_\Omega(\nabla\times\bm v)\cdot \bm u\d x+\int_{\partial\Omega}(\bm u\times \bm v)\cdot\bm n\d s}
+\]</span></p>
+<span id="more"></span>
+<p>特殊情况 (Green's first identity):</p>
+<p><span class="math display">\[
+\int_\Omega\nabla u\cdot\nabla v\d x=\int_{\partial\Omega}v\nabla u\cdot\boldsymbol{n}\d s-\int_\Omega v\nabla^2u\d x
+\]</span></p>
+<p><span class="math display">\[
+\int_\Omega(\nabla\times\nabla\times\bm u)\cdot\bm v\d x=\int_\Omega (\nabla\times \bm u)\cdot(\nabla\times\bm v)\d x-\int_{\partial\Omega}(\bm v\times\nabla\times\bm u)\cdot n\d s
+\]</span></p>
+<hr>
+<p><span class="math inline">\(\nabla\)</span> 的性质:</p>
+<p><span class="math display">\[
+\begin{equation}\label{eq:div}
+\nabla\cdot(v\boldsymbol{u})=v\nabla\cdot \boldsymbol{u}+\nabla v\cdot \boldsymbol{u}
+\end{equation}
+\]</span></p>
+<p><span class="math display">\[
+\begin{equation}\label{eq:div-cross}
+\nabla\cdot(\bm {u}\times \bm{v})=(\nabla\times \bm u)\cdot \bm v-\bm u\cdot(\nabla\times \bm v)
+\end{equation}
+\]</span></p>
+<p>对 <span class="math inline">\((\ref{eq:div})\)</span> 和 <span class="math inline">\((\ref{eq:div-cross})\)</span> 两边积分即得前两个式子. 其中用到了散度定理.</p>
+<p>在 <span class="math inline">\((\ref{eq:div-cross})\)</span> 中取 <span class="math inline">\(\bm v\)</span> 和 <span class="math inline">\(\nabla\times\bm u\)</span> 得到 <span class="math display">\[
+\nabla\cdot(\bm v\times\nabla\times \bm u)=(\nabla\times\bm v)\cdot(\nabla\times\bm u)-\bm v\cdot(\nabla\times\nabla\times\bm u),
+\]</span> 两边积分即得 <span class="math display">\[
+\int_\Omega(\nabla\times\nabla\times\bm u)\cdot\bm v\d x=\int_\Omega (\nabla\times \bm u)\cdot(\nabla\times\bm v)\d x-\int_{\partial\Omega}(\bm v\times\nabla\times\bm u)\cdot \bm n\d s.
+\]</span></p>
+<p>其中根据混合积的性质, 后一项等于 <span class="math display">\[
+\begin{align*}
+\int_{\partial\Omega}\bm n\cdot(\bm v\times\nabla\times\bm u)\d s=\int_{\partial\Omega}\bm v\cdot(\nabla\times\bm u\times \bm n)\d s
+\end{align*}.
+\]</span></p>
 ]]></content>
       <categories>
         <category>数学</category>
@@ -1220,54 +1268,6 @@ H_A=0.5\times0.7219+0.5\times0.9710=0.8465
       <categories>
         <category>计算机</category>
         <category>机器学习</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>高维分部积分</title>
-    <url>/posts/22001/</url>
-    <content><![CDATA[<p><span class="math display">\[\boxed{
-\int_\Omega \nabla\cdot \bm u v\d x=\int_{\partial\Omega}v\boldsymbol{u}\cdot\boldsymbol{n}\d s-\int_\Omega\nabla v\cdot\boldsymbol{u}\d x}
-\]</span></p>
-<p><span class="math display">\[\boxed{
-\int_\Omega(\nabla\times\bm u)\cdot\bm v\d x=\int_\Omega(\nabla\times\bm v)\cdot \bm u\d x+\int_{\partial\Omega}(\bm u\times \bm v)\cdot\bm n\d s}
-\]</span></p>
-<span id="more"></span>
-<p>特殊情况 (Green's first identity):</p>
-<p><span class="math display">\[
-\int_\Omega\nabla u\cdot\nabla v\d x=\int_{\partial\Omega}v\nabla u\cdot\boldsymbol{n}\d s-\int_\Omega v\nabla^2u\d x
-\]</span></p>
-<p><span class="math display">\[
-\int_\Omega(\nabla\times\nabla\times\bm u)\cdot\bm v\d x=\int_\Omega (\nabla\times \bm u)\cdot(\nabla\times\bm v)\d x-\int_{\partial\Omega}(\bm v\times\nabla\times\bm u)\cdot n\d s
-\]</span></p>
-<hr>
-<p><span class="math inline">\(\nabla\)</span> 的性质:</p>
-<p><span class="math display">\[
-\begin{equation}\label{eq:div}
-\nabla\cdot(v\boldsymbol{u})=v\nabla\cdot \boldsymbol{u}+\nabla v\cdot \boldsymbol{u}
-\end{equation}
-\]</span></p>
-<p><span class="math display">\[
-\begin{equation}\label{eq:div-cross}
-\nabla\cdot(\bm {u}\times \bm{v})=(\nabla\times \bm u)\cdot \bm v-\bm u\cdot(\nabla\times \bm v)
-\end{equation}
-\]</span></p>
-<p>对 <span class="math inline">\((\ref{eq:div})\)</span> 和 <span class="math inline">\((\ref{eq:div-cross})\)</span> 两边积分即得前两个式子. 其中用到了散度定理.</p>
-<p>在 <span class="math inline">\((\ref{eq:div-cross})\)</span> 中取 <span class="math inline">\(\bm v\)</span> 和 <span class="math inline">\(\nabla\times\bm u\)</span> 得到 <span class="math display">\[
-\nabla\cdot(\bm v\times\nabla\times \bm u)=(\nabla\times\bm v)\cdot(\nabla\times\bm u)-\bm v\cdot(\nabla\times\nabla\times\bm u),
-\]</span> 两边积分即得 <span class="math display">\[
-\int_\Omega(\nabla\times\nabla\times\bm u)\cdot\bm v\d x=\int_\Omega (\nabla\times \bm u)\cdot(\nabla\times\bm v)\d x-\int_{\partial\Omega}(\bm v\times\nabla\times\bm u)\cdot \bm n\d s.
-\]</span></p>
-<p>其中根据混合积的性质, 后一项等于 <span class="math display">\[
-\begin{align*}
-\int_{\partial\Omega}\bm n\cdot(\bm v\times\nabla\times\bm u)\d s=\int_{\partial\Omega}\bm v\cdot(\nabla\times\bm u\times \bm n)\d s
-\end{align*}.
-\]</span></p>
-]]></content>
-      <categories>
-        <category>数学</category>
-        <category>分析</category>
-        <category>微积分</category>
-        <category>多元微积分</category>
       </categories>
   </entry>
   <entry>
@@ -1713,6 +1713,35 @@ y_{n+1}=\sum_{k=1}^l a_ky_{n+1-k}+h\sum_{k=0}^l b_k f_{n+1-k}
       </categories>
   </entry>
   <entry>
+    <title>为什么用开覆盖定义紧集</title>
+    <url>/posts/47720/</url>
+    <content><![CDATA[<p>【定义】一个集合是紧集的意思是，它的任何一个开覆盖都有有限子覆盖。</p>
+<p>【有限覆盖定理】这是说欧式空间中的有界闭集（一维情况下是<span class="math inline">\([a,b]\)</span>）都是紧集。</p>
+<p>【Heine-Borel定理】上面的逆命题，欧式空间中的紧集都是有界闭集。于是就说明了欧式空间中的紧集<span class="math inline">\(\iff\)</span>有界闭集。</p>
+<span id="more"></span>
+<h2 id="为什么用开覆盖而不是闭覆盖呢">为什么用开覆盖而不是闭覆盖呢？</h2>
+<p>简单地思考一下容易发现，如果用闭覆盖定义紧集一点也不好玩：</p>
+<p>我们知道单点集<span class="math inline">\(\{a\}\)</span>是闭集（更严谨地，在<span class="math inline">\(T_1\)</span>空间中），那么把集合<span class="math inline">\(A\)</span>中所有元素拿出来，这些单点集的总体构成一个闭覆盖。比如说对于区间<span class="math inline">\([0,1]\)</span>，这种闭覆盖就是 <span class="math display">\[
+\bigcup_{x\in[0,1]}\{x\}
+\]</span> 它有有限子覆盖吗？</p>
+<p>这个闭覆盖的有限成员都是有限个单点集<span class="math inline">\(\{x_1\},\ldots,\{x_n\}\)</span>，明显当<span class="math inline">\(A\)</span>是无限集的时候无法覆盖<span class="math inline">\(A\)</span>。所以按这种方式定义的紧集就是有限集，本质上没有提出新概念。</p>
+<h2 id="用开覆盖定义的紧集有什么用">用开覆盖定义的紧集有什么用？</h2>
+<p>在某种“良好的”集合上：</p>
+<ul>
+<li>连续函数总是一致连续的</li>
+<li>连续函数总是有界的</li>
+<li>连续函数总能取到最值</li>
+<li>任何数列都有收敛子列</li>
+</ul>
+<p>数学家花了一番功夫才发现，这种“良好的”集合其实就是紧集。紧集的定义也有很多等价刻画，比如在欧式空间中就可以简单地定义为有界闭集，在更一般的度量空间中可以定义为序列紧集等等。但是，这些好理解的定义也有局限性，它们只在某些结构良好的空间中成立。</p>
+<p>而在用开覆盖来定义的紧集，虽然抽象，但可以推广到一般的拓扑空间，成了现在使用最广的定义。</p>
+]]></content>
+      <categories>
+        <category>数学</category>
+        <category>几何</category>
+      </categories>
+  </entry>
+  <entry>
     <title>一些英文术语</title>
     <url>/posts/18686/</url>
     <content><![CDATA[<h2 id="分析与代数">分析与代数</h2>
@@ -1800,35 +1829,6 @@ y_{n+1}=\sum_{k=1}^l a_ky_{n+1-k}+h\sum_{k=0}^l b_k f_{n+1-k}
 ]]></content>
       <categories>
         <category>英语</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>为什么用开覆盖定义紧集</title>
-    <url>/posts/47720/</url>
-    <content><![CDATA[<p>【定义】一个集合是紧集的意思是，它的任何一个开覆盖都有有限子覆盖。</p>
-<p>【有限覆盖定理】这是说欧式空间中的有界闭集（一维情况下是<span class="math inline">\([a,b]\)</span>）都是紧集。</p>
-<p>【Heine-Borel定理】上面的逆命题，欧式空间中的紧集都是有界闭集。于是就说明了欧式空间中的紧集<span class="math inline">\(\iff\)</span>有界闭集。</p>
-<span id="more"></span>
-<h2 id="为什么用开覆盖而不是闭覆盖呢">为什么用开覆盖而不是闭覆盖呢？</h2>
-<p>简单地思考一下容易发现，如果用闭覆盖定义紧集一点也不好玩：</p>
-<p>我们知道单点集<span class="math inline">\(\{a\}\)</span>是闭集（更严谨地，在<span class="math inline">\(T_1\)</span>空间中），那么把集合<span class="math inline">\(A\)</span>中所有元素拿出来，这些单点集的总体构成一个闭覆盖。比如说对于区间<span class="math inline">\([0,1]\)</span>，这种闭覆盖就是 <span class="math display">\[
-\bigcup_{x\in[0,1]}\{x\}
-\]</span> 它有有限子覆盖吗？</p>
-<p>这个闭覆盖的有限成员都是有限个单点集<span class="math inline">\(\{x_1\},\ldots,\{x_n\}\)</span>，明显当<span class="math inline">\(A\)</span>是无限集的时候无法覆盖<span class="math inline">\(A\)</span>。所以按这种方式定义的紧集就是有限集，本质上没有提出新概念。</p>
-<h2 id="用开覆盖定义的紧集有什么用">用开覆盖定义的紧集有什么用？</h2>
-<p>在某种“良好的”集合上：</p>
-<ul>
-<li>连续函数总是一致连续的</li>
-<li>连续函数总是有界的</li>
-<li>连续函数总能取到最值</li>
-<li>任何数列都有收敛子列</li>
-</ul>
-<p>数学家花了一番功夫才发现，这种“良好的”集合其实就是紧集。紧集的定义也有很多等价刻画，比如在欧式空间中就可以简单地定义为有界闭集，在更一般的度量空间中可以定义为序列紧集等等。但是，这些好理解的定义也有局限性，它们只在某些结构良好的空间中成立。</p>
-<p>而在用开覆盖来定义的紧集，虽然抽象，但可以推广到一般的拓扑空间，成了现在使用最广的定义。</p>
-]]></content>
-      <categories>
-        <category>数学</category>
-        <category>几何</category>
       </categories>
   </entry>
   <entry>
@@ -2566,6 +2566,20 @@ E(\text{error})=\text{bias}^2+\text{Var}+\varepsilon.
       </categories>
   </entry>
   <entry>
+    <title>科普是一项非常难的工作</title>
+    <url>/posts/20918/</url>
+    <content><![CDATA[<p>要想当一个好学生，只需要把知识学懂。</p>
+<p>要想当一个好老师，需要一些基础知识，还需要良好的性格和表达能力、心理学和教育学经验。</p>
+<p>要想当一个好教授，需要有专业知识、科研水平，只需要一般般的表达能力。</p>
+<p><strong>而要当一个好的科普工作者，需要有远超学生的理解能力，教授一样的专业水平，老师一样的教学功力，艺术家一样的审美，作家一样的文笔，诗人一样的清高，科学家一样对知识的热爱，艺人一样对大众心理的把控能力，运动员一样的毅力，还要有自身的人格魅力、抗压抗打击能力。</strong></p>
+<p>科普是一项非常难的工作，比讲课教书难得多。因为它面对的不是专业人士，而是乌合之众。这导致科普工作者必须用通俗语言来解释专业知识，却又不至于过于通俗而产生误导。稍微有一点漏洞就会被抓住攻击——有问题的科普比谣言更可怕，比迷信更害人。</p>
+<p>所以，科普工作者是一个神圣的标签，这个名号比想象中要严苛得多。</p>
+]]></content>
+      <categories>
+        <category>随笔</category>
+      </categories>
+  </entry>
+  <entry>
     <title>用两个 stack 实现 queue</title>
     <url>/posts/27896/</url>
     <content><![CDATA[<figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Queue</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self</span>) -&gt; <span class="literal">None</span>:</span></span><br><span class="line">        self.s1 = []  <span class="comment"># entrance</span></span><br><span class="line">        self.s2 = []  <span class="comment"># exit</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">enqueue</span>(<span class="params">self, x</span>):</span></span><br><span class="line">        self.s1.append(x)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">dequeue</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> self.s2:</span><br><span class="line">            <span class="keyword">while</span> self.s1:</span><br><span class="line">                self.s2.append(self.s1.pop())</span><br><span class="line">        <span class="keyword">return</span> self.s2.pop()</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">is_empty</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">not</span> self.s1 <span class="keyword">and</span> <span class="keyword">not</span> self.s2</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">size</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">len</span>(self.s1) + <span class="built_in">len</span>(self.s2)</span><br></pre></td></tr></tbody></table></figure>
@@ -2578,20 +2592,6 @@ E(\text{error})=\text{bias}^2+\text{Var}+\varepsilon.
       <categories>
         <category>计算机</category>
         <category>算法</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>科普是一项非常难的工作</title>
-    <url>/posts/20918/</url>
-    <content><![CDATA[<p>要想当一个好学生，只需要把知识学懂。</p>
-<p>要想当一个好老师，需要一些基础知识，还需要良好的性格和表达能力、心理学和教育学经验。</p>
-<p>要想当一个好教授，需要有专业知识、科研水平，只需要一般般的表达能力。</p>
-<p><strong>而要当一个好的科普工作者，需要有远超学生的理解能力，教授一样的专业水平，老师一样的教学功力，艺术家一样的审美，作家一样的文笔，诗人一样的清高，科学家一样对知识的热爱，艺人一样对大众心理的把控能力，运动员一样的毅力，还要有自身的人格魅力、抗压抗打击能力。</strong></p>
-<p>科普是一项非常难的工作，比讲课教书难得多。因为它面对的不是专业人士，而是乌合之众。这导致科普工作者必须用通俗语言来解释专业知识，却又不至于过于通俗而产生误导。稍微有一点漏洞就会被抓住攻击——有问题的科普比谣言更可怕，比迷信更害人。</p>
-<p>所以，科普工作者是一个神圣的标签，这个名号比想象中要严苛得多。</p>
-]]></content>
-      <categories>
-        <category>随笔</category>
       </categories>
   </entry>
   <entry>
