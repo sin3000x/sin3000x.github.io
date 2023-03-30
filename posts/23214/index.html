@@ -21,12 +21,12 @@
     var CONFIG = {"hostname":"sin3000x.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="\(f_n\) 是 \(f(x_n,y_n)\) 的简记, \(y_n\) 是 \(y(x_n)\) 的估计.">
+  <meta name="description" content="$f_n$ 是 $f(x_n,y_n)$ 的简记, $y_n$ 是 $y(x_n)$ 的估计.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数值 ODE">
 <meta property="og:url" content="https://sin3000x.github.io/posts/23214/index.html">
 <meta property="og:site_name" content="记问之学，不足以为人师">
-<meta property="og:description" content="\(f_n\) 是 \(f(x_n,y_n)\) 的简记, \(y_n\) 是 \(y(x_n)\) 的估计.">
+<meta property="og:description" content="$f_n$ 是 $f(x_n,y_n)$ 的简记, $y_n$ 是 $y(x_n)$ 的估计.">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-01-26T08:19:10.000Z">
 <meta property="article:modified_time" content="2022-05-28T16:37:38.558Z">
@@ -251,57 +251,32 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p><span class="math inline">\(f_n\)</span> 是 <span class="math inline">\(f(x_n,y_n)\)</span> 的简记, <span class="math inline">\(y_n\)</span> 是 <span class="math inline">\(y(x_n)\)</span> 的估计.</p>
+        <p>$f_n$ 是 $f(x_n,y_n)$ 的简记, $y_n$ 是 $y(x_n)$ 的估计.</p>
 <span id="more"></span>
-<h2 id="one-step-methods">One-Step Methods</h2>
-<p>形式是 <span class="math display">\[y_{n+1}=y_n+h\Phi(x_n,y_n,h)\]</span></p>
-<p>local truncation error 指的是 <span class="math display">\[\tau(h)=y(x_{n+1})-y(x_n)-h\Phi(x_n,y(x_n),h)\]</span> 称方法的阶数为 <span class="math inline">\(p\)</span> 如果 <span class="math inline">\(\tau(h)=O(h^{p+1})\)</span>.</p>
-<p>global error 指的是 <span class="math display">\[e_n=y(x_n)-y_n\]</span></p>
+
+<h2 id="One-Step-Methods"><a href="#One-Step-Methods" class="headerlink" title="One-Step Methods"></a>One-Step Methods</h2><p>形式是<br>$$y_{n+1}=y_n+h\Phi(x_n,y_n,h)$$</p>
+<p>local truncation error 指的是 $$\tau(h)=y(x_{n+1})-y(x_n)-h\Phi(x_n,y(x_n),h)$$<br>称方法的阶数为 $p$ 如果 $\tau(h)=O(h^{p+1})$.</p>
+<p>global error 指的是 $$e_n=y(x_n)-y_n$$</p>
 <ul>
-<li>Euler's method 阶数为 <span class="math inline">\(1\)</span> <span class="math display">\[y_{n+1}=y_n+hf_n\]</span></li>
-<li>backward Euler method 阶数为 <span class="math inline">\(1\)</span> <span class="math display">\[y_{n+1}=y_n+hf(x_{n+1},y_{n+1})\]</span></li>
-<li>Trapezium method 阶数为 <span class="math inline">\(2\)</span> <span class="math display">\[y_{n+1}=y_n+\frac h2(f_n+f_{n+1})\]</span></li>
-<li>Heun's method 阶数为 <span class="math inline">\(2\)</span> <span class="math display">\[y_{n+1}=y_n+\frac h2\left(f_n+f(x_n+h,y_n+hf_n)\right)\]</span></li>
+<li>Euler’s method 阶数为 $1$ $$y_{n+1}=y_n+hf_n$$</li>
+<li>backward Euler method 阶数为 $1$ $$y_{n+1}=y_n+hf(x_{n+1},y_{n+1})$$</li>
+<li>Trapezium method 阶数为 $2$ $$y_{n+1}=y_n+\frac h2(f_n+f_{n+1})$$</li>
+<li>Heun’s method 阶数为 $2$ $$y_{n+1}=y_n+\frac h2\left(f_n+f(x_n+h,y_n+hf_n)\right)$$</li>
 </ul>
-<h2 id="runge-kutta-methods">Runge-Kutta methods</h2>
-<p><span class="math display">\[
-\begin{aligned}
-    k_1 &amp;= f(x_n,y_n)\\
-    k_2 &amp;= f(x_n+c_2h,y_n+ha_{21}k_1)\\
-    k_i&amp;=f(x_n+c_ih,y_n+h(a_{i1}k_1+\cdots+a_{i,i-1}k_{i-1})),\ i=3:m\\
-    y_{n+1} &amp;= y_n+h(b_1k_1+b_2k_2+\cdots+b_mk_m)
-\end{aligned}
-\]</span></p>
-<h3 id="stage-runge-kutta">2-stage Runge-Kutta</h3>
-<p><span class="math display">\[
-\begin{aligned}
-    k_1 &amp;= f(x_n,y_n)\\
-    k_2 &amp;= f(x_n+ch,y_n+hak_1)\\
-    y_{n+1} &amp;= y_n+h(b_1k_1+b_2k_2)
-\end{aligned}
-\]</span> 阶数是 <span class="math inline">\(2\)</span> 当 <span class="math display">\[
-\begin{aligned}
-    b_1+b_2&amp;=1\\
-    b_2c&amp;=\frac12\\
-    b_2a&amp;=\frac12
-\end{aligned}
-\]</span></p>
+<h2 id="Runge-Kutta-methods"><a href="#Runge-Kutta-methods" class="headerlink" title="Runge-Kutta methods"></a>Runge-Kutta methods</h2><p>$$<br>\begin{aligned}<br>    k_1 &amp;= f(x_n,y_n)\<br>    k_2 &amp;= f(x_n+c_2h,y_n+ha_{21}k_1)\<br>    k_i&amp;=f(x_n+c_ih,y_n+h(a_{i1}k_1+\cdots+a_{i,i-1}k_{i-1})),\ i=3:m\<br>    y_{n+1} &amp;= y_n+h(b_1k_1+b_2k_2+\cdots+b_mk_m)<br>\end{aligned}<br>$$</p>
+<h3 id="2-stage-Runge-Kutta"><a href="#2-stage-Runge-Kutta" class="headerlink" title="2-stage Runge-Kutta"></a>2-stage Runge-Kutta</h3><p>$$<br>\begin{aligned}<br>    k_1 &amp;= f(x_n,y_n)\<br>    k_2 &amp;= f(x_n+ch,y_n+hak_1)\<br>    y_{n+1} &amp;= y_n+h(b_1k_1+b_2k_2)<br>\end{aligned}<br>$$<br>阶数是 $2$ 当<br>$$<br>\begin{aligned}<br>    b_1+b_2&amp;=1\<br>    b_2c&amp;=\frac12\<br>    b_2a&amp;=\frac12<br>\end{aligned}<br>$$</p>
 <ul>
-<li><span class="math inline">\(c=1\)</span> 是 Huen's method</li>
-<li><span class="math inline">\(c=\frac{1}{2}\)</span> 是 explicit midpoint method</li>
-<li><span class="math inline">\(c=\frac23\)</span> 让局部误差最小</li>
+<li>$c=1$ 是 Huen’s method</li>
+<li>$c=\frac{1}{2}$ 是 explicit midpoint method</li>
+<li>$c=\frac23$ 让局部误差最小</li>
 </ul>
-<h2 id="linear-multistep-method">Linear Multistep Method</h2>
-<p><span class="math display">\[
-y_{n+1}=\sum_{k=1}^l a_ky_{n+1-k}+h\sum_{k=0}^l b_k f_{n+1-k}
-\]</span></p>
-<h3 id="adams-bashforth-methods">Adams-Bashforth Methods</h3>
-<p>用 <span class="math inline">\(f_n\)</span> 之前的 <span class="math inline">\(l\)</span> 个值做插值估计 <span class="math inline">\(f\)</span>, 阶数为 <span class="math inline">\(l\)</span>.</p>
+<h2 id="Linear-Multistep-Method"><a href="#Linear-Multistep-Method" class="headerlink" title="Linear Multistep Method"></a>Linear Multistep Method</h2><p>$$<br>y_{n+1}=\sum_{k=1}^l a_ky_{n+1-k}+h\sum_{k=0}^l b_k f_{n+1-k}<br>$$</p>
+<h3 id="Adams-Bashforth-Methods"><a href="#Adams-Bashforth-Methods" class="headerlink" title="Adams-Bashforth Methods"></a>Adams-Bashforth Methods</h3><p>用 $f_n$ 之前的 $l$ 个值做插值估计 $f$, 阶数为 $l$.</p>
 <ul>
-<li>1-step 就是 Euler's method <span class="math display">\[y_{n+1}=y_n+hf_n\]</span></li>
-<li>2-step 阶数为 2 <span class="math display">\[y_{n+1}=y_n+\frac{h}{2}(3f_n-f_{n-1})\]</span></li>
-<li>3-step <span class="math display">\[y_{n+1}=y_{n}+\frac{h}{12}\left(23 f_{n}-16 f_{n-1}+5 f_{n-2}\right)\]</span></li>
-<li>4-step <span class="math display">\[y_{n+1}=y_{n}+\frac{h}{24}\left(55 f_{n}-59 f_{n-1}+37 f_{n-2}-9 f_{n-3}\right)\]</span></li>
+<li>1-step 就是 Euler’s method $$y_{n+1}=y_n+hf_n$$</li>
+<li>2-step 阶数为 2 $$y_{n+1}=y_n+\frac{h}{2}(3f_n-f_{n-1})$$</li>
+<li>3-step $$y_{n+1}=y_{n}+\frac{h}{12}\left(23 f_{n}-16 f_{n-1}+5 f_{n-2}\right)$$</li>
+<li>4-step $$y_{n+1}=y_{n}+\frac{h}{24}\left(55 f_{n}-59 f_{n-1}+37 f_{n-2}-9 f_{n-3}\right)$$</li>
 </ul>
 
     </div>
@@ -383,7 +358,7 @@ y_{n+1}=\sum_{k=1}^l a_ky_{n+1-k}+h\sum_{k=0}^l b_k f_{n+1-k}
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#one-step-methods"><span class="nav-number">1.</span> <span class="nav-text">One-Step Methods</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#runge-kutta-methods"><span class="nav-number">2.</span> <span class="nav-text">Runge-Kutta methods</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#stage-runge-kutta"><span class="nav-number">2.1.</span> <span class="nav-text">2-stage Runge-Kutta</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#linear-multistep-method"><span class="nav-number">3.</span> <span class="nav-text">Linear Multistep Method</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#adams-bashforth-methods"><span class="nav-number">3.1.</span> <span class="nav-text">Adams-Bashforth Methods</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#One-Step-Methods"><span class="nav-number">1.</span> <span class="nav-text">One-Step Methods</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Runge-Kutta-methods"><span class="nav-number">2.</span> <span class="nav-text">Runge-Kutta methods</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-stage-Runge-Kutta"><span class="nav-number">2.1.</span> <span class="nav-text">2-stage Runge-Kutta</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Linear-Multistep-Method"><span class="nav-number">3.</span> <span class="nav-text">Linear Multistep Method</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Adams-Bashforth-Methods"><span class="nav-number">3.1.</span> <span class="nav-text">Adams-Bashforth Methods</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 

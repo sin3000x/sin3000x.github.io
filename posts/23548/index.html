@@ -21,12 +21,12 @@
     var CONFIG = {"hostname":"sin3000x.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="不定积分 \[\int\frac{1}{x^2+a^2} \,\mathrm{d}x&#x3D;\frac 1a\arctan\frac xa+C\] \[\int\frac{1}{x^2-a^2} \,\mathrm{d}x&#x3D;\frac {1}{2a}\ln\left|\frac{x-a}{x+a}\right|+C\] \[\int\frac{1}{\sqrt{x^2\pm a^2}} \,\mathr">
+  <meta name="description" content="不定积分$$\int\frac{1}{x^2+a^2} ,\mathrm{d}x&#x3D;\frac 1a\arctan\frac xa+C$$$$\int\frac{1}{x^2-a^2} ,\mathrm{d}x&#x3D;\frac {1}{2a}\ln\left|\frac{x-a}{x+a}\right|+C$$$$\int\frac{1}{\sqrt{x^2\pm a^2}} ,\mathrm{d}x&#x3D;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="常用积分">
 <meta property="og:url" content="https://sin3000x.github.io/posts/23548/index.html">
 <meta property="og:site_name" content="记问之学，不足以为人师">
-<meta property="og:description" content="不定积分 \[\int\frac{1}{x^2+a^2} \,\mathrm{d}x&#x3D;\frac 1a\arctan\frac xa+C\] \[\int\frac{1}{x^2-a^2} \,\mathrm{d}x&#x3D;\frac {1}{2a}\ln\left|\frac{x-a}{x+a}\right|+C\] \[\int\frac{1}{\sqrt{x^2\pm a^2}} \,\mathr">
+<meta property="og:description" content="不定积分$$\int\frac{1}{x^2+a^2} ,\mathrm{d}x&#x3D;\frac 1a\arctan\frac xa+C$$$$\int\frac{1}{x^2-a^2} ,\mathrm{d}x&#x3D;\frac {1}{2a}\ln\left|\frac{x-a}{x+a}\right|+C$$$$\int\frac{1}{\sqrt{x^2\pm a^2}} ,\mathrm{d}x&#x3D;">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-05-29T03:15:53.000Z">
 <meta property="article:modified_time" content="2022-10-07T11:36:59.270Z">
@@ -259,16 +259,16 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="不定积分">不定积分</h2>
-<p><span class="math display">\[\int\frac{1}{x^2+a^2} \,\mathrm{d}x=\frac 1a\arctan\frac xa+C\]</span> <span class="math display">\[\int\frac{1}{x^2-a^2} \,\mathrm{d}x=\frac {1}{2a}\ln\left|\frac{x-a}{x+a}\right|+C\]</span> <span class="math display">\[\int\frac{1}{\sqrt{x^2\pm a^2}} \,\mathrm{d}x=\ln\left|x+\sqrt{x^2\pm a^2}\right|+C\]</span> <span class="math display">\[\int\frac{1}{\sqrt{a^2-x^2}} \,\mathrm{d}x=\arcsin \frac xa+C\]</span> <span class="math display">\[\int\frac{1}{\sqrt{1+x^2}} \,\mathrm{d}x=\sinh^{-1}x+C\]</span></p>
+        <h2 id="不定积分"><a href="#不定积分" class="headerlink" title="不定积分"></a>不定积分</h2><p>$$\int\frac{1}{x^2+a^2} ,\mathrm{d}x=\frac 1a\arctan\frac xa+C$$<br>$$\int\frac{1}{x^2-a^2} ,\mathrm{d}x=\frac {1}{2a}\ln\left|\frac{x-a}{x+a}\right|+C$$<br>$$\int\frac{1}{\sqrt{x^2\pm a^2}} ,\mathrm{d}x=\ln\left|x+\sqrt{x^2\pm a^2}\right|+C$$<br>$$\int\frac{1}{\sqrt{a^2-x^2}} ,\mathrm{d}x=\arcsin \frac xa+C$$<br>$$\int\frac{1}{\sqrt{1+x^2}} ,\mathrm{d}x=\sinh^{-1}x+C$$</p>
 <span id="more"></span>
-<h2 id="定积分">定积分</h2>
-<p><span class="math display">\[\int_{-a}^af(x)\,\mathrm{d}x=\int_{0}^a\left(f(x)+f(-x)\right)\,\mathrm{d}x\]</span></p>
-<p><span class="math display">\[\int_{0}^{\pi}xf(\sin x)\,\mathrm{d}x=\frac\pi2\int_{0}^\pi f(\sin x)\,\mathrm{d}x\]</span></p>
+
+<h2 id="定积分"><a href="#定积分" class="headerlink" title="定积分"></a>定积分</h2><p>$$\int_{-a}^af(x),\mathrm{d}x=\int_{0}^a\left(f(x)+f(-x)\right),\mathrm{d}x$$</p>
+<p>$$\int_{0}^{\pi}xf(\sin x),\mathrm{d}x=\frac\pi2\int_{0}^\pi f(\sin x),\mathrm{d}x$$</p>
 <a href="/posts/46715/" title="$$\int_0^1(1-x^2)^n\d x={(2n)!!\over(2n+1)!!}$$">$$\int_0^1(1-x^2)^n\d x={(2n)!!\over(2n+1)!!}$$</a>
-<h2 id="反常积分">反常积分</h2>
-<a href="/posts/48382/" title="$$\int_{-\infty}^\infty \e^{-x^2}\d x=\sqrt\pi$$">$$\int_{-\infty}^\infty \e^{-x^2}\d x=\sqrt\pi$$</a>
-<p><span class="math display">\[\int_0^{\frac \pi2}\ln(\sin x)=\int_0^{\frac \pi2}\ln(\cos x)=-\frac\pi2\ln2\]</span></p>
+
+<h2 id="反常积分"><a href="#反常积分" class="headerlink" title="反常积分"></a>反常积分</h2><a href="/posts/48382/" title="$$\int_{-\infty}^\infty \e^{-x^2}\d x=\sqrt\pi$$">$$\int_{-\infty}^\infty \e^{-x^2}\d x=\sqrt\pi$$</a>
+
+<p>$$\int_0^{\frac \pi2}\ln(\sin x)=\int_0^{\frac \pi2}\ln(\cos x)=-\frac\pi2\ln2$$</p>
 
     </div>
 

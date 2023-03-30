@@ -241,10 +241,11 @@
 
       
           <figure class="highlight py"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Queue</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self</span>) -&gt; <span class="literal">None</span>:</span><br><span class="line">        self.s1 = []  <span class="comment"># entrance</span></span><br><span class="line">        self.s2 = []  <span class="comment"># exit</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">enqueue</span>(<span class="params">self, x</span>):</span><br><span class="line">        self.s1.append(x)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">dequeue</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> self.s2:</span><br><span class="line">            <span class="keyword">while</span> self.s1:</span><br><span class="line">                self.s2.append(self.s1.pop())</span><br><span class="line">        <span class="keyword">return</span> self.s2.pop()</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">is_empty</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">not</span> self.s1 <span class="keyword">and</span> <span class="keyword">not</span> self.s2</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">size</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">len</span>(self.s1) + <span class="built_in">len</span>(self.s2)</span><br></pre></td></tr></tbody></table></figure>
+
 <p>时间:</p>
 <ul>
-<li>入队 <span class="math inline">\(O(1)\)</span></li>
-<li>出队最差 <span class="math inline">\(O(n)\)</span>, amortized <span class="math inline">\(O(1)\)</span></li>
+<li>入队 $O(1)$</li>
+<li>出队最差 $O(n)$, amortized $O(1)$</li>
 </ul>
 
       
@@ -324,10 +325,13 @@
 
       
           <figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">    1            4</span><br><span class="line">   / \          / \</span><br><span class="line">  2   3   -&gt;   5   2</span><br><span class="line"> / \              / \</span><br><span class="line">4   5            3   1</span><br></pre></td></tr></tbody></table></figure>
-<p>单元: </p><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">  A          B</span><br><span class="line"> / \   -&gt;   / \</span><br><span class="line">B   C      C   A</span><br></pre></td></tr></tbody></table></figure> <figure class="highlight py"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">root.left.left = root.right</span><br><span class="line">root.left.right = root</span><br><span class="line">root.left = <span class="literal">None</span></span><br><span class="line">root.right = <span class="literal">None</span></span><br></pre></td></tr></tbody></table></figure><p></p>
+<p>单元:</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">  A          B</span><br><span class="line"> / \   -&gt;   / \</span><br><span class="line">B   C      C   A</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight py"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">root.left.left = root.right</span><br><span class="line">root.left.right = root</span><br><span class="line">root.left = <span class="literal">None</span></span><br><span class="line">root.right = <span class="literal">None</span></span><br></pre></td></tr></tbody></table></figure>
+
 <figure class="highlight py"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">upside</span>(<span class="params">root</span>):</span><br><span class="line">    <span class="keyword">if</span> root <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">        <span class="keyword">return</span> root</span><br><span class="line">    <span class="keyword">if</span> root.left <span class="keyword">is</span> <span class="literal">None</span> <span class="keyword">and</span> root.right <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">        <span class="keyword">return</span> root</span><br><span class="line">    new_root = upside(root.left)</span><br><span class="line">    root.left.left = root.right</span><br><span class="line">    root.left.right = root</span><br><span class="line">    root.left = <span class="literal">None</span></span><br><span class="line">    root.right = <span class="literal">None</span></span><br><span class="line">    <span class="keyword">return</span> new_root</span><br></pre></td></tr></tbody></table></figure>
-<p>时间: <span class="math inline">\(O(n/3)=O(n)\)</span></p>
-<p>空间: <span class="math inline">\(O(n/3)=O(n)\)</span></p>
+<p>时间: $O(n/3)=O(n)$</p>
+<p>空间: $O(n/3)=O(n)$</p>
 
       
     </div>
@@ -486,7 +490,6 @@
       
           <p>比如 <code>8 -&gt; 5 -&gt; 8 -&gt; 8 -&gt; 1 -&gt; 8</code> 删除 <code>8</code>, 返回 <code>5 -&gt; 1</code>.</p>
 <figure class="highlight py"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">remove</span>(<span class="params">head, val</span>):</span><br><span class="line">    <span class="keyword">if</span> head <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">        <span class="keyword">return</span> head</span><br><span class="line"></span><br><span class="line">    fake = ListNode(<span class="literal">None</span>)</span><br><span class="line">    fake.<span class="built_in">next</span> = head</span><br><span class="line">    prev, cur = fake, head</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> cur:</span><br><span class="line">        <span class="keyword">if</span> cur.val == val:</span><br><span class="line">            prev.<span class="built_in">next</span> = cur.<span class="built_in">next</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            prev = cur    </span><br><span class="line">        cur = cur.<span class="built_in">next</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> fake.<span class="built_in">next</span></span><br></pre></td></tr></tbody></table></figure>
-
       
     </div>
 
@@ -723,8 +726,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="type">type</h2>
-<ul>
+          <h2 id="type"><a href="#type" class="headerlink" title="type"></a>type</h2><ul>
 <li>exploratory analysis</li>
 <li>autocorrelation analysis</li>
 <li>spectral analysis</li>
@@ -816,25 +818,23 @@
           <p>对于二分类问题, 结果被分为真阳, 假阳, 真阴, 假阴四种情况.</p>
 <table>
 <thead>
-<tr class="header">
-<th style="text-align: center;"></th>
-<th style="text-align: center;">P</th>
-<th style="text-align: center;">N</th>
+<tr>
+<th align="center"></th>
+<th align="center">P</th>
+<th align="center">N</th>
 </tr>
 </thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;">Y</td>
-<td style="text-align: center;">TP</td>
-<td style="text-align: center;">FP</td>
+<tbody><tr>
+<td align="center">Y</td>
+<td align="center">TP</td>
+<td align="center">FP</td>
 </tr>
-<tr class="even">
-<td style="text-align: center;">N</td>
-<td style="text-align: center;">FN</td>
-<td style="text-align: center;">TN</td>
+<tr>
+<td align="center">N</td>
+<td align="center">FN</td>
+<td align="center">TN</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/posts/39658/#more" rel="contents">
@@ -919,9 +919,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>误差分解 <span class="math display">\[
-E(\text{error})=\text{bias}^2+\text{Var}+\varepsilon.
-\]</span></p>
+          <p>误差分解<br>$$<br>E(\text{error})=\text{bias}^2+\text{Var}+\varepsilon.<br>$$</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/posts/12469/#more" rel="contents">

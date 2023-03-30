@@ -313,8 +313,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>比如一个链表是 <code>1 -&gt; 2 -&gt; 3</code>, 一个是 <code>2 -&gt; 7</code>, 结果应该返回 <code>1 -&gt; 5 -&gt; 0</code>.</p>
-<p>因为 <span class="math inline">\(123+27=150\)</span>.</p>
+          <p>比如一个链表是 <code>1 -&gt; 2 -&gt; 3</code>, 一个是 <code>2 -&gt; 7</code>, 结果应该返回 <code>1 -&gt; 5 -&gt; 0</code>. </p>
+<p>因为 $123+27=150$.</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/posts/30822/#more" rel="contents">
@@ -469,8 +469,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="不可能假设">不可能假设</h2>
-<p>现在:</p>
+          <h2 id="不可能假设"><a href="#不可能假设" class="headerlink" title="不可能假设"></a>不可能假设</h2><p>现在:</p>
 <ul>
 <li>If I saw the rabbit now, I would bite him.</li>
 </ul>
@@ -651,9 +650,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="倒班问题">倒班问题</h2>
-<h3 id="基础版">基础版</h3>
-<p>在一个 3 天的时间窗里, 每天有三班倒. 一共 4 名员工来安排倒班.</p>
+          <h2 id="倒班问题"><a href="#倒班问题" class="headerlink" title="倒班问题"></a>倒班问题</h2><h3 id="基础版"><a href="#基础版" class="headerlink" title="基础版"></a>基础版</h3><p>在一个 3 天的时间窗里, 每天有三班倒. 一共 4 名员工来安排倒班.</p>
 <p>每班只给一个人, 每天一个人最多做一班 (这个人也可以放假).</p>
           <!--noindex-->
             <div class="post-button">
@@ -739,14 +736,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p><span class="math display">\[
-\max~ 3x+y,\quad
-\text{subject to}\ \begin{cases}
-0\le x\le 1\\
-0\le y\le 2\\
-x+y\le 2
-\end{cases}
-\]</span></p>
+          <p>$$<br>\max~ 3x+y,\quad<br>\text{subject to}\ \begin{cases}<br>0\le x\le 1\<br>0\le y\le 2\<br>x+y\le 2<br>\end{cases}<br>$$</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/posts/59457/#more" rel="contents">
@@ -826,8 +816,11 @@ x+y\le 2
 
       
           <figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">x = [<span class="number">0</span>]</span><br><span class="line">y = x</span><br></pre></td></tr></tbody></table></figure>
-<p>此时修改 <code>x</code> 或 <code>y</code> 不影响另一个变量: </p><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">x = [<span class="number">1</span>]</span><br><span class="line"><span class="built_in">print</span>(y)  <span class="comment"># [0]</span></span><br></pre></td></tr></tbody></table></figure><p></p>
-<p>如果有 dereference, 被修改: </p><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">x = [<span class="number">0</span>]</span><br><span class="line">y = x</span><br><span class="line"></span><br><span class="line">y[<span class="number">0</span>] = [<span class="number">1</span>]</span><br><span class="line"><span class="built_in">print</span>(x)  <span class="comment"># [1]</span></span><br></pre></td></tr></tbody></table></figure><p></p>
+<p>此时修改 <code>x</code> 或 <code>y</code> 不影响另一个变量:</p>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">x = [<span class="number">1</span>]</span><br><span class="line"><span class="built_in">print</span>(y)  <span class="comment"># [0]</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>如果有 dereference, 被修改:</p>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">x = [<span class="number">0</span>]</span><br><span class="line">y = x</span><br><span class="line"></span><br><span class="line">y[<span class="number">0</span>] = [<span class="number">1</span>]</span><br><span class="line"><span class="built_in">print</span>(x)  <span class="comment"># [1]</span></span><br></pre></td></tr></tbody></table></figure>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/posts/6370/#more" rel="contents">
@@ -997,9 +990,7 @@ x+y\le 2
     <div class="post-body" itemprop="articleBody">
 
       
-          <p><span class="math display">\[
-f\colon[-L,L]\to\mathbb{R}
-\]</span> <span class="math display">\[F(x)=a_0+\sum_{n=1}^\infty \left(a_n\cos\left(\frac{n\pi x}{L}\right)+b_n\sin\left(\frac{n\pi x}{L}\right)\right)\]</span> 其中 <span class="math display">\[a_0=\frac{1}{2L}\int_{-L}^Lf(x)\,\mathrm{d}x\]</span> <span class="math display">\[a_n=\frac{1}{L}\int_{-L}^Lf(x)\cos\left(\frac{n\pi x}{L}\right)\,\mathrm{d}x\]</span> <span class="math display">\[b_n=\frac{1}{L}\int_{-L}^Lf(x)\sin\left(\frac{n\pi x}{L}\right)\,\mathrm{d}x\]</span></p>
+          <p>$$<br>f\colon[-L,L]\to\mathbb{R}<br>$$<br>$$F(x)=a_0+\sum_{n=1}^\infty \left(a_n\cos\left(\frac{n\pi x}{L}\right)+b_n\sin\left(\frac{n\pi x}{L}\right)\right)$$<br>其中<br>$$a_0=\frac{1}{2L}\int_{-L}^Lf(x),\mathrm{d}x$$<br>$$a_n=\frac{1}{L}\int_{-L}^Lf(x)\cos\left(\frac{n\pi x}{L}\right),\mathrm{d}x$$<br>$$b_n=\frac{1}{L}\int_{-L}^Lf(x)\sin\left(\frac{n\pi x}{L}\right),\mathrm{d}x$$</p>
 
       
     </div>

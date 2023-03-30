@@ -21,12 +21,12 @@
     var CONFIG = {"hostname":"sin3000x.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="TF-IDF（Term Frequency, Inverse Document Frequency） \[ \text{IDF}&#x3D;\frac{1}{\text{document frequency}} \] 一个词在越多个文档中出现，说明它越不重要，对应的IDF越低。">
+  <meta name="description" content="TF-IDF（Term Frequency, Inverse Document Frequency）$$\text{IDF}&#x3D;\frac{1}{\text{document frequency}}$$ 一个词在越多个文档中出现，说明它越不重要，对应的IDF越低。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Search Engine Marketing">
 <meta property="og:url" content="https://sin3000x.github.io/posts/49742/index.html">
 <meta property="og:site_name" content="记问之学，不足以为人师">
-<meta property="og:description" content="TF-IDF（Term Frequency, Inverse Document Frequency） \[ \text{IDF}&#x3D;\frac{1}{\text{document frequency}} \] 一个词在越多个文档中出现，说明它越不重要，对应的IDF越低。">
+<meta property="og:description" content="TF-IDF（Term Frequency, Inverse Document Frequency）$$\text{IDF}&#x3D;\frac{1}{\text{document frequency}}$$ 一个词在越多个文档中出现，说明它越不重要，对应的IDF越低。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-03-18T09:53:02.000Z">
 <meta property="article:modified_time" content="2023-03-21T14:12:22.630Z">
@@ -247,47 +247,26 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="tf-idfterm-frequency-inverse-document-frequency">TF-IDF（Term Frequency, Inverse Document Frequency）</h2>
-<p><span class="math display">\[
-\text{IDF}=\frac{1}{\text{document frequency}}
-\]</span></p>
+        <h2 id="TF-IDF（Term-Frequency-Inverse-Document-Frequency）"><a href="#TF-IDF（Term-Frequency-Inverse-Document-Frequency）" class="headerlink" title="TF-IDF（Term Frequency, Inverse Document Frequency）"></a>TF-IDF（Term Frequency, Inverse Document Frequency）</h2><p>$$<br>\text{IDF}=\frac{1}{\text{document frequency}}<br>$$</p>
 <p>一个词在越多个文档中出现，说明它越不重要，对应的IDF越低。</p>
 <span id="more"></span>
+
 <p>比如用户查询 <code>croquets and bitterballen</code>，在我们所有文档中，有 2 个包含 <code>croquets</code>，100 个包含 <code>and</code>，2 个包含 <code>bitterballen</code>。那么它们对应的 IDF 就分别为 0.5，0.01，0.5。</p>
 <p>假设第一个文档中出现 8 次 <code>croquets</code>，10 次 <code>and</code>，2 次 <code>bitterballen</code>；第二个文档中只出现 100 次 <code>and</code>。</p>
-<p>那么第一个文档的评分为 <span class="math inline">\(8\times 0.5 + 10\times 0.01 + 2\times 0.5=5.1\)</span>，第二个文档的评分为 <span class="math inline">\(0.01\times 100=1\)</span>。</p>
+<p>那么第一个文档的评分为 $8\times 0.5 + 10\times 0.01 + 2\times 0.5=5.1$，第二个文档的评分为 $0.01\times 100=1$。</p>
 <p>这本质上就是利用 IDF 降低了一些无关词的权重。</p>
-<h2 id="google-ad-rank">Google Ad Rank</h2>
-<p><span class="math display">\[
-\text{ad rank}=\text{max cpc bid}\times\text{quality score}
-\]</span></p>
+<h2 id="Google-Ad-Rank"><a href="#Google-Ad-Rank" class="headerlink" title="Google Ad Rank"></a>Google Ad Rank</h2><p>$$<br>\text{ad rank}=\text{max cpc bid}\times\text{quality score}<br>$$</p>
 <p>前一项是广告商出价（CPC，cost per click），后一项是网站质量评分。</p>
 <p>还有一个 threshold 来决定广告的个数。</p>
-<h2 id="actual-cpc">Actual CPC</h2>
-<p><span class="math display">\[
-\text{Actual CPC}={\text{next ad rank}\over\text{your quality score}}+0.01
-\]</span></p>
-<h2 id="measurement">Measurement</h2>
-<p><span class="math display">\[
-\text{CTR (Click-Through Rate)}={\text{clicks}\over\text{impressions}}
-\]</span></p>
-<p><span class="math display">\[
-\text{Conversion Rate}=\frac{\text{conversion}}{\text{clicks}}
-\]</span></p>
-<p><span class="math display">\[
-\text{Cost Per Acquisition}=\frac{\text{total cost}}{\text{conversions}}
-\]</span></p>
-<h2 id="ab-testing">AB Testing</h2>
-<p>假设 A 有 30000 次 impression，CTR 为 0.1，点击量 3000；B 有 20000 次 impression，CTR 为 0.099，点击量为 1998 。如何比较 CTR？</p>
-<p>原假设：两个 CTR 相等。 <span class="math display">\[
-p={n_1p_1+n_2p_2\over n_1+n_2}
-\]</span></p>
-<p><span class="math display">\[
-z={p_1-p_2\over\sqrt{p(1-p)\left(\frac{1}{n_1}+\frac{1}{n_2}\right)}}
-\]</span></p>
+<h2 id="Actual-CPC"><a href="#Actual-CPC" class="headerlink" title="Actual CPC"></a>Actual CPC</h2><p>$$<br>\text{Actual CPC}={\text{next ad rank}\over\text{your quality score}}+0.01<br>$$</p>
+<h2 id="Measurement"><a href="#Measurement" class="headerlink" title="Measurement"></a>Measurement</h2><p>$$<br>\text{CTR (Click-Through Rate)}={\text{clicks}\over\text{impressions}}<br>$$</p>
+<p>$$<br>\text{Conversion Rate}=\frac{\text{conversion}}{\text{clicks}}<br>$$</p>
+<p>$$<br>\text{Cost Per Acquisition}=\frac{\text{total cost}}{\text{conversions}}<br>$$</p>
+<h2 id="AB-Testing"><a href="#AB-Testing" class="headerlink" title="AB Testing"></a>AB Testing</h2><p>假设 A 有 30000 次 impression，CTR 为 0.1，点击量 3000；B 有 20000 次 impression，CTR 为 0.099，点击量为 1998 。如何比较 CTR？</p>
+<p>原假设：两个 CTR 相等。<br>$$<br>p={n_1p_1+n_2p_2\over n_1+n_2}<br>$$</p>
+<p>$$<br>z={p_1-p_2\over\sqrt{p(1-p)\left(\frac{1}{n_1}+\frac{1}{n_2}\right)}}<br>$$</p>
 <p>见 <a href="/posts/24350/" title="假设性检验">假设性检验</a>。</p>
-<h2 id="customers-journey">Customer's Journey</h2>
-<ol type="1">
+<h2 id="Customer’s-Journey"><a href="#Customer’s-Journey" class="headerlink" title="Customer’s Journey"></a>Customer’s Journey</h2><ol>
 <li>Trigger：电视广告、朋友推荐等</li>
 <li>Initial Consideration Set：对比产品</li>
 <li>Zero Moment of Truth：根据信息调整结果</li>
@@ -375,7 +354,7 @@ z={p_1-p_2\over\sqrt{p(1-p)\left(\frac{1}{n_1}+\frac{1}{n_2}\right)}}
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#tf-idfterm-frequency-inverse-document-frequency"><span class="nav-number">1.</span> <span class="nav-text">TF-IDF（Term Frequency, Inverse Document Frequency）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#google-ad-rank"><span class="nav-number">2.</span> <span class="nav-text">Google Ad Rank</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#actual-cpc"><span class="nav-number">3.</span> <span class="nav-text">Actual CPC</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#measurement"><span class="nav-number">4.</span> <span class="nav-text">Measurement</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ab-testing"><span class="nav-number">5.</span> <span class="nav-text">AB Testing</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#customers-journey"><span class="nav-number">6.</span> <span class="nav-text">Customer&#39;s Journey</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#TF-IDF%EF%BC%88Term-Frequency-Inverse-Document-Frequency%EF%BC%89"><span class="nav-number">1.</span> <span class="nav-text">TF-IDF（Term Frequency, Inverse Document Frequency）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Google-Ad-Rank"><span class="nav-number">2.</span> <span class="nav-text">Google Ad Rank</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Actual-CPC"><span class="nav-number">3.</span> <span class="nav-text">Actual CPC</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Measurement"><span class="nav-number">4.</span> <span class="nav-text">Measurement</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AB-Testing"><span class="nav-number">5.</span> <span class="nav-text">AB Testing</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Customer%E2%80%99s-Journey"><span class="nav-number">6.</span> <span class="nav-text">Customer’s Journey</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 

@@ -21,12 +21,12 @@
     var CONFIG = {"hostname":"sin3000x.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="\(P\Rightarrow Q\) 的定义是真值表. &quot;如果 \(P\), 那么 \(Q\)&quot; 只是一种解释, 不是定义. 也就是说, \(P\) 和 \(Q\) 本身不需要有联系. 这里解释一下为什么定义是这样的: \(P\) 为假, \(P\Rightarrow Q\) 总为真.">
+  <meta name="description" content="$P\Rightarrow Q$ 的定义是真值表. “如果 $P$, 那么 $Q$” 只是一种解释, 不是定义. 也就是说, $P$ 和 $Q$ 本身不需要有联系. 这里解释一下为什么定义是这样的: $P$ 为假, $P\Rightarrow Q$ 总为真.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="为什么&quot;假推真&#x2F;假&quot;都为真">
 <meta property="og:url" content="https://sin3000x.github.io/posts/31827/index.html">
 <meta property="og:site_name" content="记问之学，不足以为人师">
-<meta property="og:description" content="\(P\Rightarrow Q\) 的定义是真值表. &quot;如果 \(P\), 那么 \(Q\)&quot; 只是一种解释, 不是定义. 也就是说, \(P\) 和 \(Q\) 本身不需要有联系. 这里解释一下为什么定义是这样的: \(P\) 为假, \(P\Rightarrow Q\) 总为真.">
+<meta property="og:description" content="$P\Rightarrow Q$ 的定义是真值表. “如果 $P$, 那么 $Q$” 只是一种解释, 不是定义. 也就是说, $P$ 和 $Q$ 本身不需要有联系. 这里解释一下为什么定义是这样的: $P$ 为假, $P\Rightarrow Q$ 总为真.">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-04-25T04:09:25.000Z">
 <meta property="article:modified_time" content="2022-04-26T16:06:11.427Z">
@@ -251,66 +251,62 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p><span class="math inline">\(P\Rightarrow Q\)</span> 的<strong>定义</strong>是真值表. "如果 <span class="math inline">\(P\)</span>, 那么 <span class="math inline">\(Q\)</span>" 只是一种解释, 不是定义. 也就是说, <span class="math inline">\(P\)</span> 和 <span class="math inline">\(Q\)</span> 本身不需要有联系. 这里解释一下为什么定义是这样的: <span class="math inline">\(P\)</span> 为假, <span class="math inline">\(P\Rightarrow Q\)</span> 总为真. <span id="more"></span></p>
-<p>"假推假"为真, 这看上去不符合直觉. 要弄清的是, 是这个逻辑为真, 而不是推出的命题为真.</p>
-<p><strong><span class="math inline">\(P\Rightarrow Q\)</span> 只有在真推假的时候才为假.</strong></p>
-<p>这是说, 论断 <span class="math inline">\(P\Rightarrow Q\)</span> 是正确的, 等价于, 永远不会从真命题推出假命题. 换言之, 如果你想说我的论断 <span class="math inline">\(P\Rightarrow Q\)</span> 是错的, 需要且只需要找到一个情况, 使得 <span class="math inline">\(P\)</span> 为真, <span class="math inline">\(Q\)</span> 为假, 其他情况都不管用.</p>
+        <p>$P\Rightarrow Q$ 的<strong>定义</strong>是真值表. “如果 $P$, 那么 $Q$” 只是一种解释, 不是定义. 也就是说, $P$ 和 $Q$ 本身不需要有联系. 这里解释一下为什么定义是这样的: $P$ 为假, $P\Rightarrow Q$ 总为真.</p>
+<span id="more"></span>
+
+<p>“假推假”为真, 这看上去不符合直觉. 要弄清的是, 是这个逻辑为真, 而不是推出的命题为真.</p>
+<p><strong>$P\Rightarrow Q$ 只有在真推假的时候才为假.</strong></p>
+<p>这是说, 论断 $P\Rightarrow Q$ 是正确的, 等价于, 永远不会从真命题推出假命题. 换言之, 如果你想说我的论断 $P\Rightarrow Q$ 是错的, 需要且只需要找到一个情况, 使得 $P$ 为真, $Q$ 为假, 其他情况都不管用.</p>
 <blockquote>
-<p><strong>"如果北京是中国的首都, 那么 <span class="math inline">\(1+1=2\)</span>." 这个论断正确吗? (真推真)</strong></p>
-<p>如果你想说我的论断错了, 那么只需要找到情况 "北京是中国的首都, <span class="math inline">\(1+1\ne2\)</span>". 没有这种情况 (真且假), 所以论断是对的.</p>
-<p><strong>"如果北京是中国的首都, 那么 <span class="math inline">\(1+1=3\)</span>." 这个论断正确吗? (真推假)</strong></p>
-<p>如果你想说我的论断错了, 那么只需要找到情况 "北京是中国的首都, <span class="math inline">\(1+1\ne3\)</span>". 有这种情况 (真且真), 所以论断是错的.</p>
-<p><strong>"如果猪会飞, 那么 <span class="math inline">\(1+1=2\)</span>." 这个论断正确吗? (假推真)</strong></p>
-<p>如果你想说我的论断错了, 那么只需要找到情况 "猪会飞, <span class="math inline">\(1+1\ne2\)</span>". 没有这种情况 (假且假), 所以论断是对的.</p>
-<p><strong>"如果猪会飞, 那么 <span class="math inline">\(1+1=3\)</span>." 这个论断正确吗? (假推假)</strong></p>
-<p>如果你想说我的论断错了, 那么只需要找到情况 "猪会飞, <span class="math inline">\(1+1\ne3\)</span>". 没有这种情况 (假且真), 所以论断是对的.</p>
+<p><strong>“如果北京是中国的首都, 那么 $1+1=2$.” 这个论断正确吗? (真推真)</strong></p>
+<p>如果你想说我的论断错了, 那么只需要找到情况 “北京是中国的首都, $1+1\ne2$”. 没有这种情况 (真且假), 所以论断是对的.</p>
+<p><strong>“如果北京是中国的首都, 那么 $1+1=3$.” 这个论断正确吗? (真推假)</strong></p>
+<p>如果你想说我的论断错了, 那么只需要找到情况 “北京是中国的首都, $1+1\ne3$”. 有这种情况 (真且真), 所以论断是错的.</p>
+<p><strong>“如果猪会飞, 那么 $1+1=2$.” 这个论断正确吗? (假推真)</strong></p>
+<p>如果你想说我的论断错了, 那么只需要找到情况 “猪会飞, $1+1\ne2$”. 没有这种情况 (假且假), 所以论断是对的.</p>
+<p><strong>“如果猪会飞, 那么 $1+1=3$.” 这个论断正确吗? (假推假)</strong></p>
+<p>如果你想说我的论断错了, 那么只需要找到情况 “猪会飞, $1+1\ne3$”. 没有这种情况 (假且真), 所以论断是对的.</p>
 </blockquote>
 <p><em>注: 可以看出, 猪会飞可以推出任何结论. 因为你找不到一只会飞的猪来反驳我.</em></p>
-<p>这里可以看出这个等价逻辑, <span class="math inline">\(P\Rightarrow Q\)</span> 等价于 <span class="math inline">\(\lnot (P\land\lnot Q)\)</span>. 后者同时又是 <span class="math inline">\(\lnot P\lor Q\)</span>, 这是说, 要想 <span class="math inline">\(P\Rightarrow Q\)</span> 逻辑正确, 要么前提是错的, 要么结论是对的.</p>
+<p>这里可以看出这个等价逻辑, $P\Rightarrow Q$ 等价于 $\lnot (P\land\lnot Q)$. 后者同时又是 $\lnot P\lor Q$, 这是说, 要想 $P\Rightarrow Q$ 逻辑正确, 要么前提是错的, 要么结论是对的.</p>
 <hr>
-<p>有时 <span class="math inline">\(P\Rightarrow Q\)</span> 的正确性比 <span class="math inline">\(Q\)</span> 的正确性更容易看出来. 我们已知推理正确, 那可以得出结论正确吗? 看真值表:</p>
+<p>有时 $P\Rightarrow Q$ 的正确性比 $Q$ 的正确性更容易看出来. 我们已知推理正确, 那可以得出结论正确吗?<br>看真值表:</p>
 <table>
 <thead>
-<tr class="header">
-<th style="text-align: center;"><span class="math inline">\(P\)</span></th>
-<th style="text-align: center;"><span class="math inline">\(Q\)</span></th>
-<th style="text-align: center;"><span class="math inline">\(P\Rightarrow Q\)</span></th>
+<tr>
+<th align="center">$P$</th>
+<th align="center">$Q$</th>
+<th align="center">$P\Rightarrow Q$</th>
 </tr>
 </thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;">F</td>
-<td style="text-align: center;">T</td>
-<td style="text-align: center;">T</td>
+<tbody><tr>
+<td align="center">F</td>
+<td align="center">T</td>
+<td align="center">T</td>
 </tr>
-<tr class="even">
-<td style="text-align: center;">F</td>
-<td style="text-align: center;">F</td>
-<td style="text-align: center;">T</td>
+<tr>
+<td align="center">F</td>
+<td align="center">F</td>
+<td align="center">T</td>
 </tr>
-</tbody>
-</table>
-<p>可以看出, 如果前提 (<span class="math inline">\(P\)</span>) 是错的, 即使我们做出了正确的推理, 也无法判断推出的结果 (<span class="math inline">\(Q\)</span>) 是否正确.</p>
+</tbody></table>
+<p>可以看出, 如果前提 ($P$) 是错的, 即使我们做出了正确的推理, 也无法判断推出的结果 ($Q$) 是否正确.</p>
 <blockquote>
-<p>如果 <span class="math inline">\(1&lt;10\)</span>, 那么 <span class="math inline">\(1&lt;100\)</span>.</p>
-<p>如果 <span class="math inline">\(50&lt;10\)</span>, 那么 <span class="math inline">\(50&lt;100\)</span>.</p>
-<p>如果 <span class="math inline">\(200&lt;10\)</span>, 那么 <span class="math inline">\(200&lt;100\)</span>.</p>
+<p>如果 $1&lt;10$, 那么 $1&lt;100$.</p>
+<p>如果 $50&lt;10$, 那么 $50&lt;100$.</p>
+<p>如果 $200&lt;10$, 那么 $200&lt;100$.</p>
 </blockquote>
 <p>这三个推理都是正确的. 第一个, 我们从正确的结论推出了正确的结论. 后两个, 我们从错误的结论分别推出了正确和错误的结论.</p>
 <hr>
 <p>逆否命题的角度:</p>
-<p><span class="math inline">\(P\Rightarrow Q\)</span> 等价于 <span class="math inline">\(\lnot Q\Rightarrow\lnot P\)</span>.</p>
-<p>于是当 <span class="math inline">\(P\)</span> 为假时, <span class="math inline">\(\lnot Q\Rightarrow\lnot P\)</span> 就是真/假推真, 总为真.</p>
+<p>$P\Rightarrow Q$ 等价于 $\lnot Q\Rightarrow\lnot P$.</p>
+<p>于是当 $P$ 为假时, $\lnot Q\Rightarrow\lnot P$ 就是真/假推真, 总为真.</p>
 <hr>
 <p>集合论的角度:</p>
-<p>把命题 <span class="math inline">\(P\)</span> 看成是 <span class="math inline">\(x\in P\)</span>, 此时把右边的 <span class="math inline">\(P\)</span> 看成是集合.</p>
-<p><span class="math inline">\(P\Rightarrow Q\)</span> 等价于 <span class="math inline">\(P\)</span> 对应的集合是 <span class="math inline">\(Q\)</span> 对应的集合的子集.</p>
-<p>比如, "下雨 <span class="math inline">\(\Rightarrow\)</span> 地面是湿的" 就是 <span class="math display">\[
-\{\text{下雨时}\}\subseteq\{\text{地面是湿的时}\}.
-\]</span></p>
-<p>"<span class="math inline">\(n\)</span> 是自然数 <span class="math inline">\(\Rightarrow\)</span> <span class="math inline">\(n\)</span> 是整数" 就是 <span class="math display">\[
-\mathbb{N}\subseteq\mathbb{Z}.
-\]</span></p>
+<p>把命题 $P$ 看成是 $x\in P$, 此时把右边的 $P$ 看成是集合.</p>
+<p>$P\Rightarrow Q$ 等价于 $P$ 对应的集合是 $Q$ 对应的集合的子集.</p>
+<p>比如, “下雨 $\Rightarrow$ 地面是湿的” 就是<br>$$<br>{\text{下雨时}}\subseteq{\text{地面是湿的时}}.<br>$$</p>
+<p>“$n$ 是自然数 $\Rightarrow$ $n$ 是整数” 就是<br>$$<br>\mathbb{N}\subseteq\mathbb{Z}.<br>$$</p>
 <p>一个假命题对应的集合是空集 (没有元素可以满足), 而空集是任何集合的子集. 所以假命题可以推出任何命题.</p>
 
     </div>

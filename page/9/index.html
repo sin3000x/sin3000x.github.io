@@ -244,10 +244,10 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p><strong>引理 (Schur's Lemma): 若<span class="math inline">\(A\)</span>是数域<span class="math inline">\(F\)</span>上的<span class="math inline">\(n\)</span>阶方阵, 且<span class="math inline">\(A\)</span>的特征值都在<span class="math inline">\(F\)</span>中, 那么<span class="math inline">\(A\)</span>与一个上三角阵相似.</strong></p>
-<p><strong>证明: </strong></p>
-<p>归纳法. 当<span class="math inline">\(n=1\)</span>时显然成立: 此时<span class="math inline">\(A\)</span>本身是上三角阵.</p>
-<p>假设结论对<span class="math inline">\(n-1\)</span>阶方阵成立, 且<span class="math inline">\(A\in F^{n\times n}\)</span>的特征值都在<span class="math inline">\(F\)</span>中. 记特征向量<span class="math inline">\(v_1\)</span>对应的特征值是<span class="math inline">\(\lambda_1\in F\)</span>, 并把<span class="math inline">\(v_1\)</span>扩展为<span class="math inline">\(F^n\)</span>的一组基<span class="math inline">\(\mathcal B=(v_1,\ldots,v_n)\)</span>. 在这组基下, <span class="math inline">\(A\)</span>被相似变换为矩阵<span class="math display">\[[A]_\mathcal{B}=\begin{bmatrix}\lambda_1 &amp; *\\ 0 &amp; A_1\end{bmatrix},\]</span> 其中<span class="math inline">\(A_1\in F^{(n-1)\times (n-1)}\)</span>.</p>
+          <p><strong>引理 (Schur’s Lemma): 若$A$是数域$F$上的$n$阶方阵, 且$A$的特征值都在$F$中, 那么$A$与一个上三角阵相似.</strong></p>
+<p>**证明: **</p>
+<p>归纳法. 当$n=1$时显然成立: 此时$A$本身是上三角阵.</p>
+<p>假设结论对$n-1$阶方阵成立, 且$A\in F^{n\times n}$的特征值都在$F$中. 记特征向量$v_1$对应的特征值是$\lambda_1\in F$, 并把$v_1$扩展为$F^n$的一组基$\mathcal B=(v_1,\ldots,v_n)$. 在这组基下, $A$被相似变换为矩阵$$[A]_\mathcal{B}=\begin{bmatrix}\lambda_1 &amp; *\ 0 &amp; A_1\end{bmatrix},$$ 其中$A_1\in F^{(n-1)\times (n-1)}$.</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/posts/3877/#more" rel="contents">
@@ -332,9 +332,14 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>插入图片: </p><figure class="highlight html"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"/file/*"</span> <span class="attr">width</span>=<span class="string">"250"</span> <span class="attr">height</span>=<span class="string">"250"</span>/&gt;</span></span><br><span class="line">{% asset_img image.jpg This is an image %}</span><br></pre></td></tr></tbody></table></figure><p></p>
-<p>嵌入 pdf: </p><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">{% pdf /file/*.pdf %}</span><br></pre></td></tr></tbody></table></figure><p></p>
-<p>链接文章: </p><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">{% post_link * 说明 %}</span><br></pre></td></tr></tbody></table></figure><p></p>
+          <p>插入图片:</p>
+<figure class="highlight html"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"/file/*"</span> <span class="attr">width</span>=<span class="string">"250"</span> <span class="attr">height</span>=<span class="string">"250"</span>/&gt;</span></span><br><span class="line">{% asset_img image.jpg This is an image %}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>嵌入 pdf:</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">{% pdf /file/*.pdf %}</span><br></pre></td></tr></tbody></table></figure>
+
+<p>链接文章:</p>
+<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">{% post_link * 说明 %}</span><br></pre></td></tr></tbody></table></figure>
 
       
     </div>
@@ -932,7 +937,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>满世界白茫茫的一片。 静谧而优雅。 惬意而自在。 踏着碎琼乱玉，咯吱咯吱的声音和触感。 沁凉的空气，明亮的阳光，反射着熠熠生辉。</p>
+          <p>满世界白茫茫的一片。<br>静谧而优雅。<br>惬意而自在。<br>踏着碎琼乱玉，咯吱咯吱的声音和触感。<br>沁凉的空气，明亮的阳光，反射着熠熠生辉。</p>
 
       
     </div>
