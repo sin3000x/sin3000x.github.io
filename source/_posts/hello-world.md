@@ -8,6 +8,7 @@ categories:
 插入图片:
 ```html
 <img src="/file/*" width="250" height="250"/>
+{% asset_img image.jpg This is an image %}
 ```
 
 嵌入 pdf:

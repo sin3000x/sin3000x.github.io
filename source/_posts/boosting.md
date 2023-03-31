@@ -1,12 +1,25 @@
 ---
 title: Boosting
 categories:
-  - 数学
+  - 计算机
+  - 机器学习
 mathjax: true
 typora-root-url: ./
 abbrlink: 1458
 date: 2022-10-02 09:50:39
 ---
+
+$$
+f(\theta)=L(\theta)+\Omega(\theta)
+$$
+
+其中 $L$ 是误差函数，衡量拟合程度；$\Omega$ 是正则项，衡量模型复杂度。
+
+> 复杂的模型（参数多）：神经网络
+>
+> 简单的模型：树、线性回归
+
+Tree 不需要正则化，因为不同属性之间不做比较。
 
 ## Adaptive Boosting
 

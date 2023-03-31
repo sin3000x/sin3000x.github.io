@@ -37,15 +37,15 @@ $n\times n$ 正定阵的 Cholesky 分解需要 $\dfrac{n^3}{3}$ 次运算.
 
 ## QR 分解
 
-记 $A$ 的 thin QR $$A=QR$$ 与 full QR 
-$$A=\begin{bmatrix}
-    Q\ Q_{\perp}
-\end{bmatrix}
-\begin{bmatrix}
-    R\\0
-\end{bmatrix}.$$
-于是
+- 记 $A$ 的 thin QR $$A=QR$$ 与 full QR
 
+  $$A=\begin{bmatrix}
+      Q\ Q_{\perp}
+  \end{bmatrix}
+  \begin{bmatrix}
+      R\\0
+  \end{bmatrix}.$$
+  于是
 $$
 \begin{aligned}
 \|Ax-b\|_2&=\left\lVert\begin{bmatrix}
@@ -62,17 +62,12 @@ $$
 \end{aligned}
 $$
 当 $Rx=Q^Tb$ 即 $x=R^{-1}Q^Tb$ 时取得最小值, 此时可见 $A^\dagger=R^{-1}Q.$
+- 从几何的角度, $A=QR$ 给出了投影算子 $P$ 的基: $P=QQ^T.$ 于是 $QRx=QQ^Tb$, 也得到了 $x=R^{-1}Q^Tb.$
 
----
+- 从正规方程的角度,
 
-从几何的角度, $A=QR$ 给出了投影算子 $P$ 的基: $P=QQ^T.$ 于是 $QRx=QQ^Tb$, 也得到了 $x=R^{-1}Q^Tb.$
-
----
-
-从正规方程的角度,
-
-$$A^TAx=A^Tb\implies R^TQ^TQRx=R^TQ^Tb\implies Rx=Q^Tb,$$
-殊途同归.
+  $$A^TAx=A^Tb\implies R^TQ^TQRx=R^TQ^Tb\implies Rx=Q^Tb,$$
+  殊途同归.
 
 > 1. 计算 reduced QR 分解 $A=QR$
 > 2. 计算 $Q^Tb$
