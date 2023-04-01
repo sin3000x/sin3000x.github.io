@@ -251,9 +251,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>定义: 对每个节点, 左子树的值都比它小, 右子树的值都比它大.</p>
-<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">    10</span><br><span class="line">   /  \</span><br><span class="line">  5    15</span><br><span class="line"> / \   / \</span><br><span class="line">2   7 12 20</span><br></pre></td></tr></tbody></table></figure>
-<figure class="highlight py"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">BST</span>(<span class="params">root</span>):</span><br><span class="line">    <span class="keyword">if</span> root <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">    min_val = <span class="built_in">float</span>(<span class="string">'-inf'</span>)</span><br><span class="line">    max_val = <span class="built_in">float</span>(<span class="string">'inf'</span>)</span><br><span class="line">    <span class="keyword">return</span> isBST(root, min_val, max_val)</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">isBST</span>(<span class="params">root, min_val, max_val</span>):</span><br><span class="line">    <span class="keyword">if</span> root <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">    <span class="keyword">if</span> root.val &lt;= min_val <span class="keyword">or</span> root.val &gt;= max_val:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">    <span class="keyword">return</span> isBST(root.left, min_val, root.val) <span class="keyword">and</span> isBST(root.right, root.val, max_val)</span><br></pre></td></tr></tbody></table></figure>
+        <p>定义: 对每个节点, 左子树的值都比它小, 右子树的值都比它大. </p><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">    10</span><br><span class="line">   /  \</span><br><span class="line">  5    15</span><br><span class="line"> / \   / \</span><br><span class="line">2   7 12 20</span><br></pre></td></tr></tbody></table></figure> <figure class="highlight py"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">BST</span>(<span class="params">root</span>):</span><br><span class="line">    <span class="keyword">if</span> root <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">    min_val = <span class="built_in">float</span>(<span class="string">'-inf'</span>)</span><br><span class="line">    max_val = <span class="built_in">float</span>(<span class="string">'inf'</span>)</span><br><span class="line">    <span class="keyword">return</span> isBST(root, min_val, max_val)</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">isBST</span>(<span class="params">root, min_val, max_val</span>):</span><br><span class="line">    <span class="keyword">if</span> root <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">    <span class="keyword">if</span> root.val &lt;= min_val <span class="keyword">or</span> root.val &gt;= max_val:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">    <span class="keyword">return</span> isBST(root.left, min_val, root.val) <span class="keyword">and</span> isBST(root.right, root.val, max_val)</span><br></pre></td></tr></tbody></table></figure><p></p>
+
     </div>
 
     
@@ -348,7 +347,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">105</span>
+          <span class="site-state-item-count">106</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -508,10 +507,13 @@ document.querySelectorAll('.pdfobject-container').forEach(element => {
         macros: {
           d: '{\\,\\mathrm{d}}',
           R: '{\\mathbb{R}}',
+          C: '{\\mathbb{C}}',
           bm: ["{\\boldsymbol #1}", 1],
           e: '\\mathrm{e}',
           i: '\\mathrm{i}',
           B: '\\mathrm{B}',
+          rank: '\\mathrm{rank}',
+          null: '\\mathrm{null}'
         },
         inlineMath: {'[+]': [['$', '$']]},
         tags: 'ams',

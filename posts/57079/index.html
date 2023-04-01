@@ -247,6 +247,7 @@
       
         <p>比如 <code>8 -&gt; 5 -&gt; 8 -&gt; 8 -&gt; 1 -&gt; 8</code> 删除 <code>8</code>, 返回 <code>5 -&gt; 1</code>.</p>
 <figure class="highlight py"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">remove</span>(<span class="params">head, val</span>):</span><br><span class="line">    <span class="keyword">if</span> head <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">        <span class="keyword">return</span> head</span><br><span class="line"></span><br><span class="line">    fake = ListNode(<span class="literal">None</span>)</span><br><span class="line">    fake.<span class="built_in">next</span> = head</span><br><span class="line">    prev, cur = fake, head</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> cur:</span><br><span class="line">        <span class="keyword">if</span> cur.val == val:</span><br><span class="line">            prev.<span class="built_in">next</span> = cur.<span class="built_in">next</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            prev = cur    </span><br><span class="line">        cur = cur.<span class="built_in">next</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> fake.<span class="built_in">next</span></span><br></pre></td></tr></tbody></table></figure>
+
     </div>
 
     
@@ -341,7 +342,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">105</span>
+          <span class="site-state-item-count">106</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -501,10 +502,13 @@ document.querySelectorAll('.pdfobject-container').forEach(element => {
         macros: {
           d: '{\\,\\mathrm{d}}',
           R: '{\\mathbb{R}}',
+          C: '{\\mathbb{C}}',
           bm: ["{\\boldsymbol #1}", 1],
           e: '\\mathrm{e}',
           i: '\\mathrm{i}',
           B: '\\mathrm{B}',
+          rank: '\\mathrm{rank}',
+          null: '\\mathrm{null}'
         },
         inlineMath: {'[+]': [['$', '$']]},
         tags: 'ams',

@@ -252,13 +252,10 @@
 
       
         <figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">    1            4</span><br><span class="line">   / \          / \</span><br><span class="line">  2   3   -&gt;   5   2</span><br><span class="line"> / \              / \</span><br><span class="line">4   5            3   1</span><br></pre></td></tr></tbody></table></figure>
-<p>单元:</p>
-<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">  A          B</span><br><span class="line"> / \   -&gt;   / \</span><br><span class="line">B   C      C   A</span><br></pre></td></tr></tbody></table></figure>
-<figure class="highlight py"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">root.left.left = root.right</span><br><span class="line">root.left.right = root</span><br><span class="line">root.left = <span class="literal">None</span></span><br><span class="line">root.right = <span class="literal">None</span></span><br></pre></td></tr></tbody></table></figure>
-
+<p>单元: </p><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">  A          B</span><br><span class="line"> / \   -&gt;   / \</span><br><span class="line">B   C      C   A</span><br></pre></td></tr></tbody></table></figure> <figure class="highlight py"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">root.left.left = root.right</span><br><span class="line">root.left.right = root</span><br><span class="line">root.left = <span class="literal">None</span></span><br><span class="line">root.right = <span class="literal">None</span></span><br></pre></td></tr></tbody></table></figure><p></p>
 <figure class="highlight py"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">upside</span>(<span class="params">root</span>):</span><br><span class="line">    <span class="keyword">if</span> root <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">        <span class="keyword">return</span> root</span><br><span class="line">    <span class="keyword">if</span> root.left <span class="keyword">is</span> <span class="literal">None</span> <span class="keyword">and</span> root.right <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">        <span class="keyword">return</span> root</span><br><span class="line">    new_root = upside(root.left)</span><br><span class="line">    root.left.left = root.right</span><br><span class="line">    root.left.right = root</span><br><span class="line">    root.left = <span class="literal">None</span></span><br><span class="line">    root.right = <span class="literal">None</span></span><br><span class="line">    <span class="keyword">return</span> new_root</span><br></pre></td></tr></tbody></table></figure>
-<p>时间: $O(n/3)=O(n)$</p>
-<p>空间: $O(n/3)=O(n)$</p>
+<p>时间: <span class="math inline">\(O(n/3)=O(n)\)</span></p>
+<p>空间: <span class="math inline">\(O(n/3)=O(n)\)</span></p>
 
     </div>
 
@@ -354,7 +351,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">105</span>
+          <span class="site-state-item-count">106</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -514,10 +511,13 @@ document.querySelectorAll('.pdfobject-container').forEach(element => {
         macros: {
           d: '{\\,\\mathrm{d}}',
           R: '{\\mathbb{R}}',
+          C: '{\\mathbb{C}}',
           bm: ["{\\boldsymbol #1}", 1],
           e: '\\mathrm{e}',
           i: '\\mathrm{i}',
           B: '\\mathrm{B}',
+          rank: '\\mathrm{rank}',
+          null: '\\mathrm{null}'
         },
         inlineMath: {'[+]': [['$', '$']]},
         tags: 'ams',

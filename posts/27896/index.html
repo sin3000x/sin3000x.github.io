@@ -252,11 +252,10 @@
 
       
         <figure class="highlight py"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Queue</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self</span>) -&gt; <span class="literal">None</span>:</span><br><span class="line">        self.s1 = []  <span class="comment"># entrance</span></span><br><span class="line">        self.s2 = []  <span class="comment"># exit</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">enqueue</span>(<span class="params">self, x</span>):</span><br><span class="line">        self.s1.append(x)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">dequeue</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> self.s2:</span><br><span class="line">            <span class="keyword">while</span> self.s1:</span><br><span class="line">                self.s2.append(self.s1.pop())</span><br><span class="line">        <span class="keyword">return</span> self.s2.pop()</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">is_empty</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">not</span> self.s1 <span class="keyword">and</span> <span class="keyword">not</span> self.s2</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">size</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">len</span>(self.s1) + <span class="built_in">len</span>(self.s2)</span><br></pre></td></tr></tbody></table></figure>
-
 <p>时间:</p>
 <ul>
-<li>入队 $O(1)$</li>
-<li>出队最差 $O(n)$, amortized $O(1)$</li>
+<li>入队 <span class="math inline">\(O(1)\)</span></li>
+<li>出队最差 <span class="math inline">\(O(n)\)</span>, amortized <span class="math inline">\(O(1)\)</span></li>
 </ul>
 
     </div>
@@ -353,7 +352,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">105</span>
+          <span class="site-state-item-count">106</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -513,10 +512,13 @@ document.querySelectorAll('.pdfobject-container').forEach(element => {
         macros: {
           d: '{\\,\\mathrm{d}}',
           R: '{\\mathbb{R}}',
+          C: '{\\mathbb{C}}',
           bm: ["{\\boldsymbol #1}", 1],
           e: '\\mathrm{e}',
           i: '\\mathrm{i}',
           B: '\\mathrm{B}',
+          rank: '\\mathrm{rank}',
+          null: '\\mathrm{null}'
         },
         inlineMath: {'[+]': [['$', '$']]},
         tags: 'ams',

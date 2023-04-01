@@ -245,8 +245,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p><code>abcabcbb</code> 返回 3, 因为任意长度为 4 的子串都有重复字符.</p>
-<figure class="highlight py"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> defaultdict</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">longest_substring</span>(<span class="params">s</span>):</span><br><span class="line">    result = <span class="number">0</span></span><br><span class="line">    occurred = defaultdict(<span class="built_in">int</span>)</span><br><span class="line">    left = <span class="number">0</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> right <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(s)):</span><br><span class="line">        occurred[s[right]] += <span class="number">1</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span> occurred[s[right]] &gt; <span class="number">1</span>:</span><br><span class="line">            occurred[s[left]] -= <span class="number">1</span></span><br><span class="line">            left += <span class="number">1</span></span><br><span class="line"></span><br><span class="line">        result = <span class="built_in">max</span>(result, right - left + <span class="number">1</span>)</span><br><span class="line">    <span class="keyword">return</span> result</span><br></pre></td></tr></tbody></table></figure>
+        <p><code>abcabcbb</code> 返回 3, 因为任意长度为 4 的子串都有重复字符. </p><figure class="highlight py"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> defaultdict</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">longest_substring</span>(<span class="params">s</span>):</span><br><span class="line">    result = <span class="number">0</span></span><br><span class="line">    occurred = defaultdict(<span class="built_in">int</span>)</span><br><span class="line">    left = <span class="number">0</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> right <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(s)):</span><br><span class="line">        occurred[s[right]] += <span class="number">1</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span> occurred[s[right]] &gt; <span class="number">1</span>:</span><br><span class="line">            occurred[s[left]] -= <span class="number">1</span></span><br><span class="line">            left += <span class="number">1</span></span><br><span class="line"></span><br><span class="line">        result = <span class="built_in">max</span>(result, right - left + <span class="number">1</span>)</span><br><span class="line">    <span class="keyword">return</span> result</span><br></pre></td></tr></tbody></table></figure><p></p>
+
     </div>
 
     
@@ -341,7 +341,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">105</span>
+          <span class="site-state-item-count">106</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -501,10 +501,13 @@ document.querySelectorAll('.pdfobject-container').forEach(element => {
         macros: {
           d: '{\\,\\mathrm{d}}',
           R: '{\\mathbb{R}}',
+          C: '{\\mathbb{C}}',
           bm: ["{\\boldsymbol #1}", 1],
           e: '\\mathrm{e}',
           i: '\\mathrm{i}',
           B: '\\mathrm{B}',
+          rank: '\\mathrm{rank}',
+          null: '\\mathrm{null}'
         },
         inlineMath: {'[+]': [['$', '$']]},
         tags: 'ams',
