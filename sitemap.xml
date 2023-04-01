@@ -983,13 +983,6 @@
   </url>
   
   <url>
-    <loc>https://sin3000x.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/</loc>
-    <lastmod>2023-04-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://sin3000x.github.io/categories/%E6%95%B0%E5%AD%A6/</loc>
     <lastmod>2023-04-01</lastmod>
     <changefreq>weekly</changefreq>
@@ -1004,14 +997,14 @@
   </url>
   
   <url>
-    <loc>https://sin3000x.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/OR-Tools/</loc>
+    <loc>https://sin3000x.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/</loc>
     <lastmod>2023-04-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://sin3000x.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/SQL/</loc>
+    <loc>https://sin3000x.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/OR-Tools/</loc>
     <lastmod>2023-04-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1025,6 +1018,20 @@
   </url>
   
   <url>
+    <loc>https://sin3000x.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/SQL/</loc>
+    <lastmod>2023-04-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://sin3000x.github.io/categories/%E6%95%B0%E5%AD%A6/%E7%BB%9F%E8%AE%A1/</loc>
+    <lastmod>2023-04-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://sin3000x.github.io/categories/%E6%95%B0%E5%AD%A6/%E9%80%BB%E8%BE%91/</loc>
     <lastmod>2023-04-01</lastmod>
     <changefreq>weekly</changefreq>
@@ -1032,14 +1039,14 @@
   </url>
   
   <url>
-    <loc>https://sin3000x.github.io/categories/%E6%95%B0%E5%AD%A6/%E4%BB%A3%E6%95%B0/</loc>
+    <loc>https://sin3000x.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/Python/</loc>
     <lastmod>2023-04-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://sin3000x.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/Python/</loc>
+    <loc>https://sin3000x.github.io/categories/%E6%95%B0%E5%AD%A6/%E4%BB%A3%E6%95%B0/</loc>
     <lastmod>2023-04-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1060,14 +1067,7 @@
   </url>
   
   <url>
-    <loc>https://sin3000x.github.io/categories/%E6%95%B0%E5%AD%A6/%E7%BB%9F%E8%AE%A1/</loc>
-    <lastmod>2023-04-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://sin3000x.github.io/categories/%E6%95%B0%E5%AD%A6/%E5%88%86%E6%9E%90/%E5%A4%8D%E5%8F%98%E5%87%BD%E6%95%B0/</loc>
+    <loc>https://sin3000x.github.io/categories/%E6%95%B0%E5%AD%A6/%E5%88%86%E6%9E%90/%E5%AE%9E%E5%8F%98%E5%87%BD%E6%95%B0/</loc>
     <lastmod>2023-04-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1081,14 +1081,14 @@
   </url>
   
   <url>
-    <loc>https://sin3000x.github.io/categories/%E6%95%B0%E5%AD%A6/%E5%88%9D%E7%AD%89%E6%95%B0%E5%AD%A6/</loc>
+    <loc>https://sin3000x.github.io/categories/%E6%95%B0%E5%AD%A6/%E5%88%86%E6%9E%90/%E5%A4%8D%E5%8F%98%E5%87%BD%E6%95%B0/</loc>
     <lastmod>2023-04-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://sin3000x.github.io/categories/%E8%8B%B1%E8%AF%AD/</loc>
+    <loc>https://sin3000x.github.io/categories/%E6%95%B0%E5%AD%A6/%E5%88%9D%E7%AD%89%E6%95%B0%E5%AD%A6/</loc>
     <lastmod>2023-04-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1102,7 +1102,14 @@
   </url>
   
   <url>
-    <loc>https://sin3000x.github.io/categories/%E6%95%B0%E5%AD%A6/%E5%88%86%E6%9E%90/%E5%AE%9E%E5%8F%98%E5%87%BD%E6%95%B0/</loc>
+    <loc>https://sin3000x.github.io/categories/%E6%95%B0%E5%AD%A6/%E5%88%86%E6%9E%90/%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/</loc>
+    <lastmod>2023-04-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://sin3000x.github.io/categories/%E8%8B%B1%E8%AF%AD/</loc>
     <lastmod>2023-04-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1130,7 +1137,7 @@
   </url>
   
   <url>
-    <loc>https://sin3000x.github.io/categories/%E6%95%B0%E5%AD%A6/%E5%88%86%E6%9E%90/%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/</loc>
+    <loc>https://sin3000x.github.io/categories/%E6%95%B0%E5%AD%A6/%E5%88%86%E6%9E%90/%E5%BE%AE%E7%A7%AF%E5%88%86/%E5%A4%9A%E5%85%83%E5%BE%AE%E7%A7%AF%E5%88%86/</loc>
     <lastmod>2023-04-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1145,13 +1152,6 @@
   
   <url>
     <loc>https://sin3000x.github.io/categories/%E6%95%B0%E5%AD%A6/%E5%88%86%E6%9E%90/%E5%BE%AE%E7%A7%AF%E5%88%86/%E5%8D%95%E5%8F%98%E9%87%8F%E5%BE%AE%E7%A7%AF%E5%88%86/</loc>
-    <lastmod>2023-04-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://sin3000x.github.io/categories/%E6%95%B0%E5%AD%A6/%E5%88%86%E6%9E%90/%E5%BE%AE%E7%A7%AF%E5%88%86/%E5%A4%9A%E5%85%83%E5%BE%AE%E7%A7%AF%E5%88%86/</loc>
     <lastmod>2023-04-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
