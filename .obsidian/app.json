@@ -1,0 +1,9 @@
+{
+  "userIgnoreFilters": [
+    "node_modules/"
+  ],
+  "spellcheck": true,
+  "newFileLocation": "folder",
+  "newFileFolderPath": "source/_posts",
+  "attachmentFolderPath": "/"
+}

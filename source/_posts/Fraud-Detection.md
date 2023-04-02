@@ -9,5 +9,5 @@ abbrlink: 22475
 date: 2023-03-29 20:08:09
 ---
 
-<iframe src="fraud.html" width="100%" height="14500"></iframe>
+<iframe src="/file/fraud.html" width="100%" height="11000"></iframe>
 
