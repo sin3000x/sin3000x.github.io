@@ -1,5 +1,5 @@
 ---
 title: {{title}}
-date: {{date}}
+date: {{date}} {{time}}
 mathjax: true
 ---
