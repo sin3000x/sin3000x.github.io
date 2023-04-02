@@ -21,16 +21,16 @@
     var CONFIG = {"hostname":"sin3000x.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="对于二分类问题, 结果被分为真阳, 假阳, 真阴, 假阴四种情况.     P N     Y TP FP   N FN TN">
+  <meta name="description" content="对于二分类问题, 结果被分为真阳, 假阳, 真阴, 假阴四种情况.     P N    Y TP FP   N FN TN">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Confusion Matrix">
 <meta property="og:url" content="https://sin3000x.github.io/posts/39658/index.html">
 <meta property="og:site_name" content="记问之学，不足以为人师">
-<meta property="og:description" content="对于二分类问题, 结果被分为真阳, 假阳, 真阴, 假阴四种情况.     P N     Y TP FP   N FN TN">
+<meta property="og:description" content="对于二分类问题, 结果被分为真阳, 假阳, 真阴, 假阴四种情况.     P N    Y TP FP   N FN TN">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://sin3000x.github.io/posts/39658/ROC_curve.png">
 <meta property="article:published_time" content="2022-07-31T03:59:01.000Z">
-<meta property="article:modified_time" content="2022-08-01T01:01:32.593Z">
+<meta property="article:modified_time" content="2023-04-02T09:04:03.285Z">
 <meta property="article:author" content="Jeremy Gu">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://sin3000x.github.io/posts/39658/ROC_curve.png">
@@ -219,7 +219,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-08-01 09:01:32" itemprop="dateModified" datetime="2022-08-01T09:01:32+08:00">2022-08-01</time>
+                <time title="修改时间：2023-04-02 17:04:03" itemprop="dateModified" datetime="2023-04-02T17:04:03+08:00">2023-04-02</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -256,47 +256,35 @@
         <p>对于二分类问题, 结果被分为真阳, 假阳, 真阴, 假阴四种情况.</p>
 <table>
 <thead>
-<tr class="header">
-<th style="text-align: center;"></th>
-<th style="text-align: center;">P</th>
-<th style="text-align: center;">N</th>
+<tr>
+<th align="center"></th>
+<th align="center">P</th>
+<th align="center">N</th>
 </tr>
 </thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;">Y</td>
-<td style="text-align: center;">TP</td>
-<td style="text-align: center;">FP</td>
+<tbody><tr>
+<td align="center">Y</td>
+<td align="center">TP</td>
+<td align="center">FP</td>
 </tr>
-<tr class="even">
-<td style="text-align: center;">N</td>
-<td style="text-align: center;">FN</td>
-<td style="text-align: center;">TN</td>
+<tr>
+<td align="center">N</td>
+<td align="center">FN</td>
+<td align="center">TN</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <span id="more"></span>
-<p><strong>accuracy</strong>: 有多少预测是正确的? <span class="math display">\[
-\text{accuracy}={TP+TN\over TP+FP+TN+FN}={T\over\text{all}}
-\]</span></p>
-<p><strong>precision</strong>: 所有的预测阳性中多少是真的? <span class="math display">\[
-\text{precision}={TP\over TP+FP}={TP\over Y}
-\]</span></p>
-<p><strong>recall</strong>: 所有的阳性中有多少被预测出来? <span class="math display">\[
-\text{recall}={TP\over TP+FN}={TP\over P}
-\]</span></p>
-<p><strong>F1 score</strong>: recall 和 precision 的调和平均. <span class="math display">\[
-\text{F}_1={2\over{1\over\text{recall}}+{1\over\text{precision}}}
-\]</span></p>
-<p><strong>FPR (False Positive Rate)</strong>: 假阳率, 假阳占阴性的比率. <span class="math display">\[
-\text{FPR}={FP\over N}
-\]</span></p>
-<p><strong>TPR (True Positive Rate)</strong>: 真阳率, 真阳占阳性的比率. <span class="math display">\[
-\text{TPR}={TP\over P}=\text{recall}
-\]</span></p>
+
+<p><strong>accuracy</strong>: 有多少预测是正确的?<br>$$<br>\text{accuracy}={TP+TN\over TP+FP+TN+FN}={T\over\text{all}}<br>$$</p>
+<p><strong>precision</strong>: 所有的预测阳性中多少是真的?<br>$$<br>\text{precision}={TP\over TP+FP}={TP\over Y}<br>$$</p>
+<p><strong>recall</strong>: 所有的阳性中有多少被预测出来?<br>$$<br>\text{recall}={TP\over TP+FN}={TP\over P}<br>$$</p>
+<p><strong>F1 score</strong>: recall 和 precision 的调和平均.<br>$$<br>\text{F}_1={2\over{1\over\text{recall}}+{1\over\text{precision}}}<br>$$</p>
+<p><strong>FPR (False Positive Rate)</strong>: 假阳率, 假阳占阴性的比率.<br>$$<br>\text{FPR}={FP\over N}<br>$$</p>
+<p><strong>TPR (True Positive Rate)</strong>: 真阳率, 真阳占阳性的比率.<br>$$<br>\text{TPR}={TP\over P}=\text{recall}<br>$$</p>
 <p><strong>ROC (Receiver Operating Characteristic) 曲线</strong>: TPR-FPR 图, 两者都随 threshold 变化.</p>
-<p><img src="/posts/39658/ROC_curve.png" width="50%"></p>
-<p><strong>AUC (Area Under Curve)</strong>: ROC 曲线下的面积, 取值范围 <span class="math inline">\([0,1]\)</span>.</p>
+<img src="/posts/39658/ROC_curve.png" width="50%">
+
+<p><strong>AUC (Area Under Curve)</strong>: ROC 曲线下的面积, 取值范围 $[0,1]$.</p>
 
     </div>
 
@@ -392,14 +380,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">106</span>
+          <span class="site-state-item-count">108</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">27</span>
+        <span class="site-state-item-count">19</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
   </nav>
@@ -558,6 +546,7 @@ document.querySelectorAll('.pdfobject-container').forEach(element => {
           i: '\\mathrm{i}',
           B: '\\mathrm{B}',
           rank: '\\mathrm{rank}',
+          range: '\\mathrm{range}',
           null: '\\mathrm{null}'
         },
         inlineMath: {'[+]': [['$', '$']]},

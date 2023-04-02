@@ -21,16 +21,16 @@
     var CONFIG = {"hostname":"sin3000x.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="误差分解 \[ E(\text{error})&#x3D;\text{bias}^2+\text{Var}+\varepsilon. \]">
+  <meta name="description" content="误差分解$$E(\text{error})&#x3D;\text{bias}^2+\text{Var}+\varepsilon.$$">
 <meta property="og:type" content="article">
 <meta property="og:title" content="模型误差与过拟合">
 <meta property="og:url" content="https://sin3000x.github.io/posts/12469/index.html">
 <meta property="og:site_name" content="记问之学，不足以为人师">
-<meta property="og:description" content="误差分解 \[ E(\text{error})&#x3D;\text{bias}^2+\text{Var}+\varepsilon. \]">
+<meta property="og:description" content="误差分解$$E(\text{error})&#x3D;\text{bias}^2+\text{Var}+\varepsilon.$$">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://sin3000x.github.io/posts/12469/error.png">
 <meta property="article:published_time" content="2022-07-29T02:20:59.000Z">
-<meta property="article:modified_time" content="2022-07-31T02:55:20.210Z">
+<meta property="article:modified_time" content="2023-04-02T09:04:03.285Z">
 <meta property="article:author" content="Jeremy Gu">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://sin3000x.github.io/posts/12469/error.png">
@@ -219,7 +219,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-07-31 10:55:20" itemprop="dateModified" datetime="2022-07-31T10:55:20+08:00">2022-07-31</time>
+                <time title="修改时间：2023-04-02 17:04:03" itemprop="dateModified" datetime="2023-04-02T17:04:03+08:00">2023-04-02</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -253,28 +253,14 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>误差分解 <span class="math display">\[
-E(\text{error})=\text{bias}^2+\text{Var}+\varepsilon.
-\]</span></p>
+        <p>误差分解<br>$$<br>E(\text{error})=\text{bias}^2+\text{Var}+\varepsilon.<br>$$</p>
 <span id="more"></span>
+
 <hr>
 <p>先定义:</p>
-<p>均方误差 <span class="math display">\[
-\text{MSE}(\hat\theta)=E[(\hat\theta-\theta)^2]
-\]</span> 偏差 <span class="math display">\[
-\text{bias}(\hat\theta,\theta)=E[\hat\theta]-\theta
-\]</span></p>
-<p>那么 <span class="math display">\[
-\begin{align*}
-\text{MSE}(\hat\theta)&amp;=E\left[\left(\hat\theta-\theta\right)^2\right]\\
-&amp;=E\left[\left(\hat\theta-E[\hat\theta]+E[\hat\theta]-\theta\right)^2\right]\\
-&amp;=E\left[\left(\hat\theta-E[\hat\theta]\right)^2+2\left(\hat\theta-E[\hat\theta]\right)\left(E[\hat\theta]-\theta\right)+\left(E[\hat\theta]-\theta\right)^2\right]\\
-&amp;=E\left[\left(\hat\theta-E[\hat\theta]\right)^2\right]+2E\left[\left(\hat\theta-E[\hat\theta]\right)\left(E[\hat\theta]-\theta\right)\right]+E\left[\left(E[\hat\theta]-\theta\right)^2\right]\\
-&amp;=\text{Var}(\hat\theta)+2\left(E[\hat\theta]-\theta\right)E\left[\left(\hat\theta-E[\hat\theta]\right)\right]+\left(E[\hat\theta]-\theta\right)^2\\
-&amp;=\text{Var}+\text{bias}^2
-\end{align*}
-\]</span></p>
-<p>随着模型复杂度的增加, bias 减少, variance 增加. 也就是说, 能力变强, 不稳定性变大. 那么总误差呈现一个先减后增的趋势: <img src="/posts/12469/error.png"> 这就是 bias-variance dilemma.</p>
+<p>均方误差<br>$$<br>\text{MSE}(\hat\theta)=E[(\hat\theta-\theta)^2]<br>$$<br>偏差<br>$$<br>\text{bias}(\hat\theta,\theta)=E[\hat\theta]-\theta<br>$$</p>
+<p>那么<br>$$<br>\begin{align*}<br>\text{MSE}(\hat\theta)&amp;=E\left[\left(\hat\theta-\theta\right)^2\right]\<br>&amp;=E\left[\left(\hat\theta-E[\hat\theta]+E[\hat\theta]-\theta\right)^2\right]\<br>&amp;=E\left[\left(\hat\theta-E[\hat\theta]\right)^2+2\left(\hat\theta-E[\hat\theta]\right)\left(E[\hat\theta]-\theta\right)+\left(E[\hat\theta]-\theta\right)^2\right]\<br>&amp;=E\left[\left(\hat\theta-E[\hat\theta]\right)^2\right]+2E\left[\left(\hat\theta-E[\hat\theta]\right)\left(E[\hat\theta]-\theta\right)\right]+E\left[\left(E[\hat\theta]-\theta\right)^2\right]\<br>&amp;=\text{Var}(\hat\theta)+2\left(E[\hat\theta]-\theta\right)E\left[\left(\hat\theta-E[\hat\theta]\right)\right]+\left(E[\hat\theta]-\theta\right)^2\<br>&amp;=\text{Var}+\text{bias}^2<br>\end{align*}<br>$$</p>
+<p>随着模型复杂度的增加, bias 减少, variance 增加. 也就是说, 能力变强, 不稳定性变大. 那么总误差呈现一个先减后增的趋势:<br><img src="/posts/12469/error.png"><br>这就是 bias-variance dilemma.</p>
 
     </div>
 
@@ -370,14 +356,14 @@ E(\text{error})=\text{bias}^2+\text{Var}+\varepsilon.
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">106</span>
+          <span class="site-state-item-count">108</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">27</span>
+        <span class="site-state-item-count">19</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
   </nav>
@@ -536,6 +522,7 @@ document.querySelectorAll('.pdfobject-container').forEach(element => {
           i: '\\mathrm{i}',
           B: '\\mathrm{B}',
           rank: '\\mathrm{rank}',
+          range: '\\mathrm{range}',
           null: '\\mathrm{null}'
         },
         inlineMath: {'[+]': [['$', '$']]},
