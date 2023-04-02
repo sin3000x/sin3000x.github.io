@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "source/_posts/Gauss-积分.md",
+                "file": "source/_posts/BST.md",
                 "mode": "source",
                 "source": false
               }
@@ -64,8 +64,17 @@
               "type": "starred",
               "state": {}
             }
+          },
+          {
+            "id": "811cb743c6c22210",
+            "type": "leaf",
+            "state": {
+              "type": "file-tree-view",
+              "state": {}
+            }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -85,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "source/_posts/Gauss-积分.md",
+                "file": "source/_posts/BST.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +111,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "source/_posts/Gauss-积分.md",
+                "file": "source/_posts/BST.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +134,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "source/_posts/Gauss-积分.md"
+                "file": "source/_posts/BST.md"
               }
             }
           },
@@ -152,13 +161,35 @@
       "canvas:新建白板": false,
       "daily-notes:打开/创建今天的日记": false,
       "templates:插入模板": false,
-      "command-palette:打开命令面板": false
+      "command-palette:打开命令面板": false,
+      "file-tree-alternative:File Tree Alternative Plugin": false
     }
   },
   "active": "0495d69b67934500",
   "lastOpenFiles": [
+    "node_modules/husky/lib/bin.d.ts",
+    "node_modules/husky/lib/index.js",
+    "node_modules/husky/lib/index.d.ts",
+    "node_modules/husky/lib/bin.js",
+    "node_modules/husky/husky.sh",
+    "node_modules/husky/lib",
+    "node_modules/husky/package.json",
+    "node_modules/husky/README.md",
+    "node_modules/husky/LICENSE",
+    "node_modules/husky",
+    "db.json",
+    "node_modules/hexo-auto-category/README.md",
+    "node_modules/hexo-auto-category/package.json",
+    "source/_posts/数学/分析/Gauss-积分/截屏2022-10-04 21.12.16.png",
+    "source/_posts/数学/分析/Gauss-积分/截屏2022-10-04 20.58.04.png",
+    "source/_posts/数学/分析/Gauss-积分.md",
+    "source/_posts/数学/Gauss-积分/截屏2022-10-04 21.12.16.png",
+    "source/_posts/数学/Gauss-积分/截屏2022-10-04 20.58.04.png",
+    "source/_posts/数学/Gauss-积分.md",
+    "source/_posts/数学/投影.md",
+    "source/_posts/Attribution-Model.md",
+    "source/_posts/Gauss-积分.md",
     "2023-04-02.md",
-    "source/_posts/投影.md",
-    "source/_posts/Gauss-积分.md"
+    "source/_posts/投影.md"
   ]
 }
