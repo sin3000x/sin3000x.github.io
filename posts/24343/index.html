@@ -21,12 +21,12 @@
     var CONFIG = {"hostname":"sin3000x.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="Quadrature Rule 指的是形式$$Q(f)&#x3D;\sum_{k&#x3D;0}^nw_kf(x_k)$$ 有时把 $f(x_k)$ 简写作 $f_k$.">
+  <meta name="description" content="Quadrature Rule 指的是形式 \[Q(f)&#x3D;\sum_{k&#x3D;0}^nw_kf(x_k)\] 有时把 \(f(x_k)\) 简写作 \(f_k\).">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数值积分">
 <meta property="og:url" content="https://sin3000x.github.io/posts/24343/index.html">
 <meta property="og:site_name" content="记问之学，不足以为人师">
-<meta property="og:description" content="Quadrature Rule 指的是形式$$Q(f)&#x3D;\sum_{k&#x3D;0}^nw_kf(x_k)$$ 有时把 $f(x_k)$ 简写作 $f_k$.">
+<meta property="og:description" content="Quadrature Rule 指的是形式 \[Q(f)&#x3D;\sum_{k&#x3D;0}^nw_kf(x_k)\] 有时把 \(f(x_k)\) 简写作 \(f_k\).">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-01-26T04:35:25.000Z">
 <meta property="article:modified_time" content="2023-04-02T09:40:58.004Z">
@@ -251,29 +251,41 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>Quadrature Rule 指的是形式<br>$$Q(f)=\sum_{k=0}^nw_kf(x_k)$$</p>
-<p>有时把 $f(x_k)$ 简写作 $f_k$.</p>
+        <p>Quadrature Rule 指的是形式 <span class="math display">\[Q(f)=\sum_{k=0}^nw_kf(x_k)\]</span></p>
+<p>有时把 <span class="math inline">\(f(x_k)\)</span> 简写作 <span class="math inline">\(f_k\)</span>.</p>
 <span id="more"></span>
-
-<h2 id="Interpolation-Rule"><a href="#Interpolation-Rule" class="headerlink" title="Interpolation Rule"></a>Interpolation Rule</h2><p>在插值多项式上求积分, 即 $$w_k=\int_a^b l_k(x)\d x$$</p>
-<h3 id="Midpoint-Rule"><a href="#Midpoint-Rule" class="headerlink" title="Midpoint Rule"></a>Midpoint Rule</h3><p>在中点处取 $0$ 次多项式.<br>$$Q(f)=(b-a)f(x_0),$$ 其中 $x_0$ 是区间中点. 精度为 $1$.</p>
-<h3 id="Newton-Cotes-Rules"><a href="#Newton-Cotes-Rules" class="headerlink" title="Newton-Cotes Rules"></a>Newton-Cotes Rules</h3><p>区间上的等距节点. $n$ 为奇数时精度为 $n$, 偶数时精度为 $n+1$.</p>
+<h2 id="interpolation-rule">Interpolation Rule</h2>
+<p>在插值多项式上求积分, 即 <span class="math display">\[w_k=\int_a^b l_k(x)\d x\]</span></p>
+<h3 id="midpoint-rule">Midpoint Rule</h3>
+<p>在中点处取 <span class="math inline">\(0\)</span> 次多项式. <span class="math display">\[Q(f)=(b-a)f(x_0),\]</span> 其中 <span class="math inline">\(x_0\)</span> 是区间中点. 精度为 <span class="math inline">\(1\)</span>.</p>
+<h3 id="newton-cotes-rules">Newton-Cotes Rules</h3>
+<p>区间上的等距节点. <span class="math inline">\(n\)</span> 为奇数时精度为 <span class="math inline">\(n\)</span>, 偶数时精度为 <span class="math inline">\(n+1\)</span>.</p>
 <ul>
-<li>$n=1$: trapezium rule 精度为 $1$ $$\frac h2(f_0+f_1)$$ 误差 $$I-Q=-\frac{1}{12}h^3 f’’(\xi),\ \xi\in(a,b)$$</li>
-<li>$n=2$: Simpson’s rule 精度为 $3$ $$\frac h3\left(f(x_0)+4f(x_1)+f(x_2)\right)$$ 误差 $$I-Q=-\frac{h^5}{90}f^{(4)}(\xi)=-\frac{(b-a)^5}{2880}f^{(4)}(\xi),\ \xi\in(a,b)$$</li>
+<li><span class="math inline">\(n=1\)</span>: trapezium rule 精度为 <span class="math inline">\(1\)</span> <span class="math display">\[\frac h2(f_0+f_1)\]</span> 误差 <span class="math display">\[I-Q=-\frac{1}{12}h^3 f''(\xi),\ \xi\in(a,b)\]</span></li>
+<li><span class="math inline">\(n=2\)</span>: Simpson's rule 精度为 <span class="math inline">\(3\)</span> <span class="math display">\[\frac h3\left(f(x_0)+4f(x_1)+f(x_2)\right)\]</span> 误差 <span class="math display">\[I-Q=-\frac{h^5}{90}f^{(4)}(\xi)=-\frac{(b-a)^5}{2880}f^{(4)}(\xi),\ \xi\in(a,b)\]</span></li>
 </ul>
-<h2 id="Gauss-Rule"><a href="#Gauss-Rule" class="headerlink" title="Gauss Rule"></a>Gauss Rule</h2><p>寻找关于权重 $w(x)$ 精度最高的节点, 实际上是关于 $w(x)$ 的正交多项式的零点. 精度是 $2n+1$.</p>
-<h3 id="Gauss-Legendre-Quadrature-w-x-x3D-1"><a href="#Gauss-Legendre-Quadrature-w-x-x3D-1" class="headerlink" title="Gauss-Legendre Quadrature $w(x)=1$"></a>Gauss-Legendre Quadrature $w(x)=1$</h3><ul>
-<li>$n=0$: $$\int_{-1}^1f(x)\d x\approx 2f(0)$$ 是中点法.</li>
-<li>$n=1$: $$\int_{-1}^1f(x)\d x\approx f\left(-\frac{1}{\sqrt 3}\right)+f\left(\frac{1}{\sqrt 3}\right)$$</li>
+<h2 id="gauss-rule">Gauss Rule</h2>
+<p>寻找关于权重 <span class="math inline">\(w(x)\)</span> 精度最高的节点, 实际上是关于 <span class="math inline">\(w(x)\)</span> 的正交多项式的零点. 精度是 <span class="math inline">\(2n+1\)</span>.</p>
+<h3 id="gauss-legendre-quadrature-wx1">Gauss-Legendre Quadrature <span class="math inline">\(w(x)=1\)</span></h3>
+<ul>
+<li><span class="math inline">\(n=0\)</span>: <span class="math display">\[\int_{-1}^1f(x)\d x\approx 2f(0)\]</span> 是中点法.</li>
+<li><span class="math inline">\(n=1\)</span>: <span class="math display">\[\int_{-1}^1f(x)\d x\approx f\left(-\frac{1}{\sqrt 3}\right)+f\left(\frac{1}{\sqrt 3}\right)\]</span></li>
 </ul>
-<h3 id="Gauss-Chebyshev-Quadrature-w-x-x3D-1-x-2-1-x2F-2"><a href="#Gauss-Chebyshev-Quadrature-w-x-x3D-1-x-2-1-x2F-2" class="headerlink" title="Gauss-Chebyshev Quadrature $w(x)=(1-x^2)^{-1/2}$"></a>Gauss-Chebyshev Quadrature $w(x)=(1-x^2)^{-1/2}$</h3><p>$x_0,\ldots,x_n$ 取 $T_{n+1}(x)$ 的零点, 即 Chebyshev 分点 $$x_k=\cos\left(\frac\pi2\frac{2k+1}{n+1}\right)$$</p>
-<p>此时权重都是 $\displaystyle w_k=\frac{\pi}{n+1}$</p>
-<h2 id="Composite-Quadrature-Rules"><a href="#Composite-Quadrature-Rules" class="headerlink" title="Composite Quadrature Rules"></a>Composite Quadrature Rules</h2><p>把区间等分后做积分.</p>
-<h3 id="Composite-Midpoint-Rule"><a href="#Composite-Midpoint-Rule" class="headerlink" title="Composite Midpoint Rule"></a>Composite Midpoint Rule</h3><p>$$<br>M(h)=\sum_{k=0}^{n-1}hf\left(a+h\left(k+\frac12\right)\right)<br>$$ 误差 $$I-M=\frac{h^2}{24}(b-a)f’’(\xi)$$</p>
-<h3 id="Composite-Trapezium-Rule"><a href="#Composite-Trapezium-Rule" class="headerlink" title="Composite Trapezium Rule"></a>Composite Trapezium Rule</h3><p>$$T(h)=\frac h2\left(f(t_0)+2f(t_1)+2f(t_2)+\cdots+2f(t_{n-1})+f(t_n)\right)$$ 误差 $$I-T=-\frac{h^2}{12}(b-a)f’’(\xi)$$</p>
-<h3 id="Composite-Simpson’s-Rule"><a href="#Composite-Simpson’s-Rule" class="headerlink" title="Composite Simpson’s Rule"></a>Composite Simpson’s Rule</h3><p>$$S(h)=\frac{h}{3}\left(f(t_0)+4f(t_1)+2f(t_2)+4f(t_3)+\cdots+2f(t_{2m-2})+4f(t_{2m-1})+f(t_{2m})\right)$$ 误差 $$I-S=-\frac{h^4}{180}(b-a)f^{(4)}(\xi)$$</p>
-<h2 id="Extrapolation"><a href="#Extrapolation" class="headerlink" title="Extrapolation"></a>Extrapolation</h2><p>做组合消除误差. 令 $T_{k,1}=T(h/2^{k-1})$ 并构造表 $$T_{i,j}={4^{j-1}T_{i,j-1}-T_{i-1,j-1}\over 4^{j-1}-1}$$<br>每向右一列误差 $\times h^2$.</p>
+<h3 id="gauss-chebyshev-quadrature-wx1-x2-12">Gauss-Chebyshev Quadrature <span class="math inline">\(w(x)=(1-x^2)^{-1/2}\)</span></h3>
+<p><span class="math inline">\(x_0,\ldots,x_n\)</span> 取 <span class="math inline">\(T_{n+1}(x)\)</span> 的零点, 即 Chebyshev 分点 <span class="math display">\[x_k=\cos\left(\frac\pi2\frac{2k+1}{n+1}\right)\]</span></p>
+<p>此时权重都是 <span class="math inline">\(\displaystyle w_k=\frac{\pi}{n+1}\)</span></p>
+<h2 id="composite-quadrature-rules">Composite Quadrature Rules</h2>
+<p>把区间等分后做积分.</p>
+<h3 id="composite-midpoint-rule">Composite Midpoint Rule</h3>
+<p><span class="math display">\[
+M(h)=\sum_{k=0}^{n-1}hf\left(a+h\left(k+\frac12\right)\right)
+\]</span> 误差 <span class="math display">\[I-M=\frac{h^2}{24}(b-a)f''(\xi)\]</span></p>
+<h3 id="composite-trapezium-rule">Composite Trapezium Rule</h3>
+<p><span class="math display">\[T(h)=\frac h2\left(f(t_0)+2f(t_1)+2f(t_2)+\cdots+2f(t_{n-1})+f(t_n)\right)\]</span> 误差 <span class="math display">\[I-T=-\frac{h^2}{12}(b-a)f''(\xi)\]</span></p>
+<h3 id="composite-simpsons-rule">Composite Simpson's Rule</h3>
+<p><span class="math display">\[S(h)=\frac{h}{3}\left(f(t_0)+4f(t_1)+2f(t_2)+4f(t_3)+\cdots+2f(t_{2m-2})+4f(t_{2m-1})+f(t_{2m})\right)\]</span> 误差 <span class="math display">\[I-S=-\frac{h^4}{180}(b-a)f^{(4)}(\xi)\]</span></p>
+<h2 id="extrapolation">Extrapolation</h2>
+<p>做组合消除误差. 令 <span class="math inline">\(T_{k,1}=T(h/2^{k-1})\)</span> 并构造表 <span class="math display">\[T_{i,j}={4^{j-1}T_{i,j-1}-T_{i-1,j-1}\over 4^{j-1}-1}\]</span> 每向右一列误差 <span class="math inline">\(\times h^2\)</span>.</p>
 
     </div>
 
@@ -354,7 +366,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Interpolation-Rule"><span class="nav-number">1.</span> <span class="nav-text">Interpolation Rule</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Midpoint-Rule"><span class="nav-number">1.1.</span> <span class="nav-text">Midpoint Rule</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Newton-Cotes-Rules"><span class="nav-number">1.2.</span> <span class="nav-text">Newton-Cotes Rules</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Gauss-Rule"><span class="nav-number">2.</span> <span class="nav-text">Gauss Rule</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Gauss-Legendre-Quadrature-w-x-x3D-1"><span class="nav-number">2.1.</span> <span class="nav-text">Gauss-Legendre Quadrature $w(x)&#x3D;1$</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Gauss-Chebyshev-Quadrature-w-x-x3D-1-x-2-1-x2F-2"><span class="nav-number">2.2.</span> <span class="nav-text">Gauss-Chebyshev Quadrature $w(x)&#x3D;(1-x^2)^{-1&#x2F;2}$</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Composite-Quadrature-Rules"><span class="nav-number">3.</span> <span class="nav-text">Composite Quadrature Rules</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Composite-Midpoint-Rule"><span class="nav-number">3.1.</span> <span class="nav-text">Composite Midpoint Rule</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Composite-Trapezium-Rule"><span class="nav-number">3.2.</span> <span class="nav-text">Composite Trapezium Rule</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Composite-Simpson%E2%80%99s-Rule"><span class="nav-number">3.3.</span> <span class="nav-text">Composite Simpson’s Rule</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Extrapolation"><span class="nav-number">4.</span> <span class="nav-text">Extrapolation</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#interpolation-rule"><span class="nav-number">1.</span> <span class="nav-text">Interpolation Rule</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#midpoint-rule"><span class="nav-number">1.1.</span> <span class="nav-text">Midpoint Rule</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#newton-cotes-rules"><span class="nav-number">1.2.</span> <span class="nav-text">Newton-Cotes Rules</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#gauss-rule"><span class="nav-number">2.</span> <span class="nav-text">Gauss Rule</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#gauss-legendre-quadrature-wx1"><span class="nav-number">2.1.</span> <span class="nav-text">Gauss-Legendre Quadrature \(w(x)&#x3D;1\)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#gauss-chebyshev-quadrature-wx1-x2-12"><span class="nav-number">2.2.</span> <span class="nav-text">Gauss-Chebyshev Quadrature \(w(x)&#x3D;(1-x^2)^{-1&#x2F;2}\)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#composite-quadrature-rules"><span class="nav-number">3.</span> <span class="nav-text">Composite Quadrature Rules</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#composite-midpoint-rule"><span class="nav-number">3.1.</span> <span class="nav-text">Composite Midpoint Rule</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#composite-trapezium-rule"><span class="nav-number">3.2.</span> <span class="nav-text">Composite Trapezium Rule</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#composite-simpsons-rule"><span class="nav-number">3.3.</span> <span class="nav-text">Composite Simpson&#39;s Rule</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#extrapolation"><span class="nav-number">4.</span> <span class="nav-text">Extrapolation</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -370,7 +382,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">108</span>
+          <span class="site-state-item-count">107</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>

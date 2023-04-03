@@ -182,85 +182,6 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://sin3000x.github.io/posts/26639/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/bunny.png">
-      <meta itemprop="name" content="Jeremy Gu">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="记问之学，不足以为人师">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/posts/26639/" class="post-title-link" itemprop="url">极坐标和球坐标换元</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2022-01-19 20:37:34" itemprop="dateCreated datePublished" datetime="2022-01-19T20:37:34+08:00">2022-01-19</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-04-02 17:41:49" itemprop="dateModified" datetime="2023-04-02T17:41:49+08:00">2023-04-02</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E5%AD%A6/" itemprop="url" rel="index"><span itemprop="name">数学</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E5%AD%A6/%E5%BE%AE%E7%A7%AF%E5%88%86/" itemprop="url" rel="index"><span itemprop="name">微积分</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>$$\iint_D F(x,y)\d x\d y=\iint_\Delta F(r\cos\theta,r\sin\theta)r\d r\d\theta$$</p>
-<p>$$\iiint_D F(x,y,z)\d x\d y\d z=\iiint_\Delta F(r\sin\theta\cos\phi,r\sin\theta\sin\phi,r\cos\theta)r^2\sin\theta\d r\d \theta\d \phi$$</p>
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Kugelkoord-lokale-Basis-s.svg/480px-Kugelkoord-lokale-Basis-s.svg.png" width="250" height="250">
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://sin3000x.github.io/posts/1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -396,8 +317,12 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>$$\boxed{<br>\int_\Omega \nabla\cdot \bm u v\d x=\int_{\partial\Omega}v\boldsymbol{u}\cdot\boldsymbol{n}\d s-\int_\Omega\nabla v\cdot\boldsymbol{u}\d x}<br>$$</p>
-<p>$$\boxed{<br>\int_\Omega(\nabla\times\bm u)\cdot\bm v\d x=\int_\Omega(\nabla\times\bm v)\cdot \bm u\d x+\int_{\partial\Omega}(\bm u\times \bm v)\cdot\bm n\d s}<br>$$</p>
+          <p><span class="math display">\[\boxed{
+\int_\Omega \nabla\cdot \bm u v\d x=\int_{\partial\Omega}v\boldsymbol{u}\cdot\boldsymbol{n}\d s-\int_\Omega\nabla v\cdot\boldsymbol{u}\d x}
+\]</span></p>
+<p><span class="math display">\[\boxed{
+\int_\Omega(\nabla\times\bm u)\cdot\bm v\d x=\int_\Omega(\nabla\times\bm v)\cdot \bm u\d x+\int_{\partial\Omega}(\bm u\times \bm v)\cdot\bm n\d s}
+\]</span></p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/posts/22001/#more" rel="contents">
@@ -482,7 +407,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>$$\lim_{n\to\infty}\int_S f_n ,d\mu=\int_S f,d\mu$$</p>
+          <p><span class="math display">\[\lim_{n\to\infty}\int_S f_n \,d\mu=\int_S f\,d\mu\]</span></p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/posts/34980/#more" rel="contents">
@@ -567,10 +492,11 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h2><p>设分块矩阵 $\Gamma=\begin{pmatrix}A&amp;B\C&amp;D\end{pmatrix}$, 那么</p>
+          <h2 id="结论">结论</h2>
+<p>设分块矩阵 <span class="math inline">\(\Gamma=\begin{pmatrix}A&amp;B\\C&amp;D\end{pmatrix}\)</span>, 那么</p>
 <ul>
-<li>$A$ 可逆时, $\det(\Gamma)=\det(A)\det(D-CA^{-1}B)$</li>
-<li>$D$ 可逆时, $\det(\Gamma)=\det(A-BD^{-1}C)\det(D)$</li>
+<li><span class="math inline">\(A\)</span> 可逆时, <span class="math inline">\(\det(\Gamma)=\det(A)\det(D-CA^{-1}B)\)</span></li>
+<li><span class="math inline">\(D\)</span> 可逆时, <span class="math inline">\(\det(\Gamma)=\det(A-BD^{-1}C)\det(D)\)</span></li>
 </ul>
           <!--noindex-->
             <div class="post-button">
@@ -656,16 +582,25 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h3 id="1-可分离变量-y’-x3D-p-y-q-x"><a href="#1-可分离变量-y’-x3D-p-y-q-x" class="headerlink" title="1. 可分离变量 $y’=p(y)q(x)$"></a>1. 可分离变量 $y’=p(y)q(x)$</h3><p>分离变量后两边积分.</p>
-<h3 id="2-一阶齐次线性-y’-p-x-y-x3D-0"><a href="#2-一阶齐次线性-y’-p-x-y-x3D-0" class="headerlink" title="2. 一阶齐次线性 $y’+p(x)y=0$"></a>2. 一阶齐次线性 $y’+p(x)y=0$</h3><p>$$<br>y=Ce^{-\int p(x)\d x}<br>$$</p>
-<h3 id="3-一阶非齐次线性-y’-p-x-y-x3D-q-x"><a href="#3-一阶非齐次线性-y’-p-x-y-x3D-q-x" class="headerlink" title="3. 一阶非齐次线性 $y’+p(x)y=q(x)$"></a>3. 一阶非齐次线性 $y’+p(x)y=q(x)$</h3><ul>
-<li><p>$y=e^{-\int p(x)\d x}\left(C+\int q(x)e^{\int p(x)\d x}\d x\right)$</p>
-</li>
-<li><p>取积分因子 $\mu(x)=e^{\int p(x)\d x}$.</p>
-</li>
+          <h3 id="可分离变量-ypyqx">1. 可分离变量 <span class="math inline">\(y'=p(y)q(x)\)</span></h3>
+<p>分离变量后两边积分.</p>
+<h3 id="一阶齐次线性-ypxy0">2. 一阶齐次线性 <span class="math inline">\(y'+p(x)y=0\)</span></h3>
+<p><span class="math display">\[
+y=Ce^{-\int p(x)\d x}
+\]</span></p>
+<h3 id="一阶非齐次线性-ypxyqx">3. 一阶非齐次线性 <span class="math inline">\(y'+p(x)y=q(x)\)</span></h3>
+<ul>
+<li><p><span class="math inline">\(y=e^{-\int p(x)\d x}\left(C+\int q(x)e^{\int p(x)\d x}\d x\right)\)</span></p></li>
+<li><p>取积分因子 <span class="math inline">\(\mu(x)=e^{\int p(x)\d x}\)</span>.</p></li>
 </ul>
 <blockquote>
-<p>🌰    $y’-2y/x=0$.<br>$$\begin{aligned}<br>    &amp;\mu(x)=e^{\int-\frac2x \d x}=e^{-2\ln x}=\frac{1}{x^2}\<br>    &amp;\implies{1\over x^2}y’-{2\over x^3}y=0\<br>    &amp;\implies\left({y\over x^2}\right)’=0\<br>    &amp;\implies y=Cx^2<br>\end{aligned}<br>$$</p>
+<p>🌰 <span class="math inline">\(y'-2y/x=0\)</span>. <span class="math display">\[\begin{aligned}
+&amp;\mu(x)=e^{\int-\frac2x \d x}=e^{-2\ln x}=\frac{1}{x^2}\\
+&amp;\implies{1\over x^2}y'-{2\over x^3}y=0\\
+&amp;\implies\left({y\over x^2}\right)'=0\\
+&amp;\implies y=Cx^2
+\end{aligned}
+\]</span></p>
 </blockquote>
 
       
@@ -745,8 +680,8 @@
 
       
           <p>【定义】一个集合是紧集的意思是，它的任何一个开覆盖都有有限子覆盖。</p>
-<p>【有限覆盖定理】这是说欧式空间中的有界闭集（一维情况下是$[a,b]$）都是紧集。</p>
-<p>【Heine-Borel定理】上面的逆命题，欧式空间中的紧集都是有界闭集。于是就说明了欧式空间中的紧集$\iff$有界闭集。</p>
+<p>【有限覆盖定理】这是说欧式空间中的有界闭集（一维情况下是<span class="math inline">\([a,b]\)</span>）都是紧集。</p>
+<p>【Heine-Borel定理】上面的逆命题，欧式空间中的紧集都是有界闭集。于是就说明了欧式空间中的紧集<span class="math inline">\(\iff\)</span>有界闭集。</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/posts/47720/#more" rel="contents">
@@ -831,7 +766,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>设对实对称阵 $A$ 满足 $Q^TAQ=\Lambda$，其中 $\Lambda$ 是 $A$ 的特征值组成的对角阵，问 $Q$ 是否正交。</p>
+          <p>设对实对称阵 <span class="math inline">\(A\)</span> 满足 <span class="math inline">\(Q^TAQ=\Lambda\)</span>，其中 <span class="math inline">\(\Lambda\)</span> 是 <span class="math inline">\(A\)</span> 的特征值组成的对角阵，问 <span class="math inline">\(Q\)</span> 是否正交。</p>
 <p>答案是否定的。</p>
           <!--noindex-->
             <div class="post-button">
@@ -917,7 +852,9 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>证明<br>$$<br>\arcsin^2x=\frac12\sum_{n=1}^\infty{(2x)^{2n}\over n^2{2n\choose n}}.<br>$$</p>
+          <p>证明 <span class="math display">\[
+\arcsin^2x=\frac12\sum_{n=1}^\infty{(2x)^{2n}\over n^2{2n\choose n}}.
+\]</span></p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/posts/20316/#more" rel="contents">
@@ -1002,10 +939,100 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>计算<br>$$<br>\sum_{n=1}^\infty<br>{n!\over(2n+1)!!}\cdot{1\over n+1}.<br>$$</p>
+          <p>计算 <span class="math display">\[
+\sum_{n=1}^\infty
+{n!\over(2n+1)!!}\cdot{1\over n+1}.
+\]</span></p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/posts/42963/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://sin3000x.github.io/posts/5066/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/bunny.png">
+      <meta itemprop="name" content="Jeremy Gu">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="记问之学，不足以为人师">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/posts/5066/" class="post-title-link" itemprop="url">定积分性质例题</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-09-10 18:09:49" itemprop="dateCreated datePublished" datetime="2021-09-10T18:09:49+08:00">2021-09-10</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2023-04-02 17:40:19" itemprop="dateModified" datetime="2023-04-02T17:40:19+08:00">2023-04-02</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E5%AD%A6/" itemprop="url" rel="index"><span itemprop="name">数学</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E5%AD%A6/%E5%BE%AE%E7%A7%AF%E5%88%86/" itemprop="url" rel="index"><span itemprop="name">微积分</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><strong>问题：在 <span class="math inline">\([0,\pi]\)</span> 上的连续函数 <span class="math inline">\(f\)</span> 满足</strong> <span class="math display">\[
+\int_0^\pi f(x)\sin x\,\mathrm dx=\int_0^\pi f(x)\cos x\,\mathrm dx=0,
+\]</span> <strong>证明 <span class="math inline">\(f\)</span> 在 <span class="math inline">\((0,\pi)\)</span> 内至少有两个零点.</strong></p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/posts/5066/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1096,7 +1123,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">108</span>
+          <span class="site-state-item-count">107</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
