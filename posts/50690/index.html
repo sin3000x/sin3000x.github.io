@@ -29,7 +29,7 @@
 <meta property="og:description" content="投影（projector）是一个幂等（idempotent）方阵： \[ P^2&#x3D;P. \]">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-04-01T12:02:53.000Z">
-<meta property="article:modified_time" content="2023-04-02T08:57:14.043Z">
+<meta property="article:modified_time" content="2023-04-05T07:44:48.710Z">
 <meta property="article:author" content="Jeremy Gu">
 <meta name="twitter:card" content="summary">
 
@@ -217,7 +217,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-04-02 16:57:14" itemprop="dateModified" datetime="2023-04-02T16:57:14+08:00">2023-04-02</time>
+                <time title="修改时间：2023-04-05 15:44:48" itemprop="dateModified" datetime="2023-04-05T15:44:48+08:00">2023-04-05</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -259,7 +259,7 @@ P^2=P.
 <p>那为什么要求 <span class="math inline">\(P\)</span> 幂等呢？不是任何矩阵都可以做到吗？这就是“影子”的性质了。如果地面上已经有影子了，它的影子是谁？是它自己嘛！假设 <span class="math inline">\(v\)</span> 已经在 <span class="math inline">\(P\)</span> 的值域中，我们不妨写作 <span class="math inline">\(v=Px\)</span>，于是根据 <span class="math inline">\(P\)</span> 的性质： <span class="math display">\[
 Pv=P(Px)=P^2x=Px=v.
 \]</span> 这就是说，<span class="math inline">\(v\)</span> 的影子还是 <span class="math inline">\(v\)</span>。只有 <span class="math inline">\(P\)</span> 满足了幂等性质，才会使得“影子的影子是自己”。换句话说，投影多少遍的效果和投影一遍的效果是一样的。</p>
-<h2 id="补投影">补投影</h2>
+<h2 id="补投影与直和分解">补投影与直和分解</h2>
 <p>如果 <span class="math inline">\(P\)</span> 是幂等的，那么 <span class="math inline">\(I-P\)</span> （被称为 complementary projector）也是幂等的： <span class="math display">\[
 (I-P)^2=I-2P+P^2=I-2P+P=I-P.
 \]</span> 它投向的子空间是 <span class="math inline">\(P\)</span> 的核（怎么证明？用互相包含）： <span class="math display">\[
@@ -272,7 +272,7 @@ Pv=P(Px)=P^2x=Px=v.
 \C^n=X\oplus Y,
 \]</span> 那么就存在一个投影 <span class="math inline">\(P\)</span> 使得 <span class="math inline">\(X=\text{range}(P)\)</span>，并且 <span class="math inline">\(Y=\text{null}(P)\)</span>。我们把 <span class="math inline">\(P\)</span> 叫做<strong>沿 <span class="math inline">\(Y\)</span> 至 <span class="math inline">\(X\)</span> 的投影</strong>。给定 <span class="math inline">\(v\in\C^n\)</span>，那么 <span class="math inline">\(Pv\)</span> 位于 <span class="math inline">\(X\)</span> 中，<span class="math inline">\((I-P)v\)</span> 位于 <span class="math inline">\(Y\)</span> 中。</p>
 <h2 id="正交投影">正交投影</h2>
-<p>正交投影指的是上文中 <span class="math inline">\(X\perp Y\)</span> 的情况。<strong>正交投影指的不是 <span class="math inline">\(P\)</span> 是正交矩阵！</strong></p>
+<p>正交投影指的是上文中 <span class="math inline">\(X\perp Y\)</span> 的情况。<strong>正交投影指的不是 <span class="math inline">\(P\)</span> 是正交矩阵！</strong>反而，它指的是 <span class="math inline">\(P\)</span> 对称。</p>
 <table>
 <colgroup>
 <col style="width: 100%">
@@ -288,6 +288,13 @@ Pv=P(Px)=P^2x=Px=v.
 </tr>
 </tbody>
 </table>
+<h2 id="标准正交基">标准正交基</h2>
+<p>在上文中我们得到了一个正交投影的 SVD 分解：<span class="math display">\[P=Q\Sigma Q^*=Q\begin{bmatrix}1 &amp;&amp;&amp;\\&amp;\ddots&amp;&amp;&amp;\\&amp;&amp;1&amp;&amp;\\&amp;&amp;&amp;0&amp;\\&amp;&amp;&amp;&amp;\ddots\end{bmatrix}Q^*,\]</span>我们可以自然地略去那些 0 奇异值：<span class="math display">\[\begin{equation}\label{orthonormal}\boxed{P=\tilde Q\tilde Q^*}\end{equation},\]</span>其中 <span class="math inline">\(\tilde Q\)</span> 是 <span class="math inline">\(Q\)</span> 的前 <span class="math inline">\(\rank(P)\)</span> 列组成的，它的列是单位正交的（此时称 <span class="math inline">\(\tilde Q\)</span> 是 orthonormal 的）。</p>
+<p>只要任给一个 orthonormal 的矩阵 <span class="math inline">\(\tilde Q^*\)</span>，总可以构成一个正交投影 <span class="math inline">\(\tilde Q\tilde Q^*\)</span>，它将所有向量投到 <span class="math inline">\(\range(\tilde Q)\)</span> 中。而它的补投影 <span class="math inline">\(I-\tilde Q\tilde Q^*\)</span> 也是一个正交投影（证明：它是 Hermitian 的），投至的空间正交于 <span class="math inline">\(\range(\tilde Q)\)</span>。</p>
+<p>一个特殊情况是 <span class="math inline">\(\tilde Q\)</span> 是（单位化的）列向量 <span class="math inline">\(q\)</span>，此时两个投影就是<span class="math display">\[P_q=qq^{*},\quad P_{\perp q}=I-qq^*.\]</span>它们在 Householder reflection 中起到了重要作用。</p>
+<h2 id="一般基">一般基</h2>
+<p>假设 <span class="math inline">\(\{a_1,\ldots,a_n\}\)</span> 是一个子空间的基，但不一定标准正交。记它们组成了矩阵 <span class="math inline">\(A\in\C^{m\times n}\)</span>，那么投入该子空间的正交投影是<span class="math display">\[\boxed{P=A(A^*A)^{-1}A^*}.\]</span>怎么得到的呢？</p>
+<p>设 <span class="math inline">\(v\)</span> 是空间中的向量，那么正交投影后的 <span class="math inline">\(Pv\)</span> 在 <span class="math inline">\(\range(A)\)</span> 中，剩下的分量 <span class="math inline">\(v-Pv\)</span> 正交于 <span class="math inline">\(\range(A)\)</span>：<span class="math display">\[A^*(v-Pv)=0.\]</span>记影子 <span class="math inline">\(Pv=x\)</span>，那么有<span class="math display">\[A^{*}(v-Ax)=0\implies x=(A^*A)^{-1}A^*v,\]</span>对比 <span class="math inline">\(x=Pv\)</span> 便得到了 <span class="math inline">\(P\)</span>。注意当 <span class="math inline">\(A\)</span> 的各列标准正交时，就退化成了 <span class="math inline">\(\eqref{orthonormal}\)</span>。</p>
 
     </div>
 
@@ -368,7 +375,7 @@ Pv=P(Px)=P^2x=Px=v.
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E9%87%8A"><span class="nav-number">1.</span> <span class="nav-text">解释</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A1%A5%E6%8A%95%E5%BD%B1"><span class="nav-number">2.</span> <span class="nav-text">补投影</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AD%A3%E4%BA%A4%E6%8A%95%E5%BD%B1"><span class="nav-number">3.</span> <span class="nav-text">正交投影</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E9%87%8A"><span class="nav-number">1.</span> <span class="nav-text">解释</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A1%A5%E6%8A%95%E5%BD%B1%E4%B8%8E%E7%9B%B4%E5%92%8C%E5%88%86%E8%A7%A3"><span class="nav-number">2.</span> <span class="nav-text">补投影与直和分解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AD%A3%E4%BA%A4%E6%8A%95%E5%BD%B1"><span class="nav-number">3.</span> <span class="nav-text">正交投影</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%87%E5%87%86%E6%AD%A3%E4%BA%A4%E5%9F%BA"><span class="nav-number">4.</span> <span class="nav-text">标准正交基</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E8%88%AC%E5%9F%BA"><span class="nav-number">5.</span> <span class="nav-text">一般基</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -549,9 +556,9 @@ document.querySelectorAll('.pdfobject-container').forEach(element => {
           e: '\\mathrm{e}',
           i: '\\mathrm{i}',
           B: '\\mathrm{B}',
-          rank: '\\mathrm{rank}',
-          range: '\\mathrm{range}',
-          null: '\\mathrm{null}'
+          rank: '\\operatorname{rank}',
+          range: '\\operatorname{range}',
+          null: '\\operatorname{null}'
         },
         inlineMath: {'[+]': [['$', '$']]},
         tags: 'ams',
