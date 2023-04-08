@@ -253,27 +253,29 @@
       
         <p>客户在从看到产品广告到完成购买经历了很多事件，怎么给这些事件的重要性分配 credit？</p>
 <span id="more"></span>
-
-<h2 id="Single-Source-Touch-Attribution"><a href="#Single-Source-Touch-Attribution" class="headerlink" title="Single Source (Touch) Attribution"></a>Single Source (Touch) Attribution</h2><p>把所有的 credit 分给一个事件。比如 3 days last touch：往回看三天，分给最近的 marketing vehicle 。</p>
+<h2 id="single-source-touch-attribution">Single Source (Touch) Attribution</h2>
+<p>把所有的 credit 分给一个事件。比如 3 days last touch：往回看三天，分给最近的 marketing vehicle 。</p>
 <p>缺点：</p>
 <ul>
 <li>鼓励频繁发邮件，长期不利</li>
 <li>一次折扣有帮助，长期不利</li>
 <li>新用户需要很多次点击才会购买，会忽视初始几次事件</li>
 </ul>
-<h2 id="Fractioned-Attribution"><a href="#Fractioned-Attribution" class="headerlink" title="Fractioned Attribution"></a>Fractioned Attribution</h2><p>多个事件有权重。比如：首末两个事件占 40%，中间的事件平分 20%。</p>
+<h2 id="fractioned-attribution">Fractioned Attribution</h2>
+<p>多个事件有权重。比如：首末两个事件占 40%，中间的事件平分 20%。</p>
 <p>缺点是难以确定最佳权重。</p>
-<h2 id="Machine-Learning"><a href="#Machine-Learning" class="headerlink" title="Machine Learning"></a>Machine Learning</h2><p>比如有两个 action，构建 feature：</p>
-<ol>
+<h2 id="machine-learning">Machine Learning</h2>
+<p>比如有两个 action，构建 feature：</p>
+<ol type="1">
 <li>action 1 出现的位置是 1</li>
 <li>action 1 出现的位置是 2</li>
 <li>action 2 出现的位置是 1</li>
 <li>action 2 出现的位置是 2</li>
 </ol>
-<p>如果一个顾客经历了 action 1 -&gt; action 2 后买了，那么 $x=(1, 0, 0, 1),\ y=1$。</p>
-<p>如果一个顾客经历了 action 2 就买了，那么 $x=(0, 0, 1, 0),\ y=0$。</p>
-<p>如果有 $n$ 个 action，就要有 $n^2$ 个 binary feature。</p>
-<p>逻辑回归之后，设它们的系数是 $k_1,\ldots,k_n$。那么 action 1 的 credit 就是 $\frac{k_1+\cdots+k_n}{\sum k_i}$，action 2 的 credit 就是 $\frac{k_{n+1}+\cdots+k_{2n}}{\sum k_i}$，以此类推。</p>
+<p>如果一个顾客经历了 action 1 -&gt; action 2 后买了，那么 <span class="math inline">\(x=(1, 0, 0, 1),\ y=1\)</span>。</p>
+<p>如果一个顾客经历了 action 2 就买了，那么 <span class="math inline">\(x=(0, 0, 1, 0),\ y=0\)</span>。</p>
+<p>如果有 <span class="math inline">\(n\)</span> 个 action，就要有 <span class="math inline">\(n^2\)</span> 个 binary feature。</p>
+<p>逻辑回归之后，设它们的系数是 <span class="math inline">\(k_1,\ldots,k_n\)</span>。那么 action 1 的 credit 就是 <span class="math inline">\(\frac{k_1+\cdots+k_n}{\sum k_i}\)</span>，action 2 的 credit 就是 <span class="math inline">\(\frac{k_{n+1}+\cdots+k_{2n}}{\sum k_i}\)</span>，以此类推。</p>
 
     </div>
 
@@ -354,7 +356,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Single-Source-Touch-Attribution"><span class="nav-number">1.</span> <span class="nav-text">Single Source (Touch) Attribution</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Fractioned-Attribution"><span class="nav-number">2.</span> <span class="nav-text">Fractioned Attribution</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Machine-Learning"><span class="nav-number">3.</span> <span class="nav-text">Machine Learning</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#single-source-touch-attribution"><span class="nav-number">1.</span> <span class="nav-text">Single Source (Touch) Attribution</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#fractioned-attribution"><span class="nav-number">2.</span> <span class="nav-text">Fractioned Attribution</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#machine-learning"><span class="nav-number">3.</span> <span class="nav-text">Machine Learning</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -370,7 +372,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">107</span>
+          <span class="site-state-item-count">106</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -593,7 +595,7 @@ document.querySelectorAll('.pdfobject-container').forEach(element => {
         <script>
             window.imageLazyLoadSetting = {
                 isSPA: false,
-                preloadRatio: 1,
+                preloadRatio: 3,
                 processImages: null,
             };
         </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(r){r.imageLazyLoadSetting.processImages=t;var e=r.imageLazyLoadSetting.isSPA,n=r.imageLazyLoadSetting.preloadRatio||1,c=a();function a(){var t=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")),e=Array.prototype.slice.call(document.querySelectorAll("[bg-lazy]"));return t.concat(e)}function t(){e&&(c=a());for(var t,o=0;o<c.length;o++)0<=(t=(t=c[o]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(r.innerHeight*n||document.documentElement.clientHeight*n)&&function(){var t,e,n,a,i=c[o];e=function(){c=c.filter(function(t){return i!==t}),r.imageLazyLoadSetting.onImageLoaded&&r.imageLazyLoadSetting.onImageLoaded(i)},(t=i).hasAttribute("bg-lazy")?(t.removeAttribute("bg-lazy"),e&&e()):(n=new Image,a=t.getAttribute("data-original"),n.onload=function(){t.src=a,t.removeAttribute("data-original"),e&&e()},t.src!==a&&(n.src=a))}()}function i(){clearTimeout(t.tId),t.tId=setTimeout(t,500)}t(),document.addEventListener("scroll",i),r.addEventListener("resize",i),r.addEventListener("orientationchange",i)}(this);</script></body>

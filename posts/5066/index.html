@@ -21,15 +21,15 @@
     var CONFIG = {"hostname":"sin3000x.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="问题：在 $[0,\pi]$ 上的连续函数 $f$ 满足$$\int_0^\pi f(x)\sin x,\mathrm dx&#x3D;\int_0^\pi f(x)\cos x,\mathrm dx&#x3D;0,$$证明 $f$ 在 $(0,\pi)$ 内至少有两个零点.">
+  <meta name="description" content="问题：在 \([0,\pi]\) 上的连续函数 \(f\) 满足 \[ \int_0^{\pi} f(x)\sin x\, \mathrm dx&#x3D;\int_0^\pi f(x)\cos x\,\mathrm dx&#x3D;0, \] 证明 \(f\) 在 \((0,\pi)\) 内至少有两个零点.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="定积分性质例题">
 <meta property="og:url" content="https://sin3000x.github.io/posts/5066/index.html">
 <meta property="og:site_name" content="记问之学，不足以为人师">
-<meta property="og:description" content="问题：在 $[0,\pi]$ 上的连续函数 $f$ 满足$$\int_0^\pi f(x)\sin x,\mathrm dx&#x3D;\int_0^\pi f(x)\cos x,\mathrm dx&#x3D;0,$$证明 $f$ 在 $(0,\pi)$ 内至少有两个零点.">
+<meta property="og:description" content="问题：在 \([0,\pi]\) 上的连续函数 \(f\) 满足 \[ \int_0^{\pi} f(x)\sin x\, \mathrm dx&#x3D;\int_0^\pi f(x)\cos x\,\mathrm dx&#x3D;0, \] 证明 \(f\) 在 \((0,\pi)\) 内至少有两个零点.">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-09-10T10:09:49.000Z">
-<meta property="article:modified_time" content="2023-04-02T09:40:19.638Z">
+<meta property="article:modified_time" content="2023-04-08T02:42:58.409Z">
 <meta property="article:author" content="Jeremy Gu">
 <meta name="twitter:card" content="summary">
 
@@ -217,7 +217,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-04-02 17:40:19" itemprop="dateModified" datetime="2023-04-02T17:40:19+08:00">2023-04-02</time>
+                <time title="修改时间：2023-04-08 10:42:58" itemprop="dateModified" datetime="2023-04-08T10:42:58+08:00">2023-04-08</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -251,14 +251,22 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p><strong>问题：在 $[0,\pi]$ 上的连续函数 $f$ 满足</strong><br>$$<br>\int_0^\pi f(x)\sin x,\mathrm dx=\int_0^\pi f(x)\cos x,\mathrm dx=0,<br>$$<br><strong>证明 $f$ 在 $(0,\pi)$ 内至少有两个零点.</strong></p>
+        <p><strong>问题：在 <span class="math inline">\([0,\pi]\)</span> 上的连续函数 <span class="math inline">\(f\)</span> 满足</strong> <span class="math display">\[
+\int_0^{\pi} f(x)\sin x\, \mathrm dx=\int_0^\pi f(x)\cos x\,\mathrm dx=0,
+\]</span> <strong>证明 <span class="math inline">\(f\)</span> 在 <span class="math inline">\((0,\pi)\)</span> 内至少有两个零点.</strong></p>
 <span id="more"></span>
-
 <p><strong>证明:</strong></p>
-<p>不妨设 $f$ 不恒为 0. </p>
-<p>若 $f(x)$ 在 $(0,\pi)$ 内无零点, 则不变号, 不妨设 $f(x)&gt;0$. 此时$$f(x)\sin x&gt;0,\forall x\in(0,\pi)\implies\int_0^1f(x)\sin x,\mathrm dx&gt;0,$$ 与条件矛盾. 于是 $f(x)$ 在 $(0,\pi)$ 上变号, 至少有一个零点.</p>
-<p>若只有一个变号零点 $x_0\in(0,\pi)$, 不妨设在 $(0,x_0)$ 上 $f(x)&gt;0$, $(x_0,\pi)$ 上 $f(x)&lt;0$. 那么<br>$$<br>F(x)=f(x)\sin(x-x_0)\leq0,<del>\forall x\in(0,\pi).<br>$$<br>又因为<br>$$<br>\begin{align*}\int_0^\pi F(x),\mathrm dx&amp;=\cos x_0\int_0^\pi f(x)\sin x,\mathrm dx-\sin x_0\int_0^\pi f(x)\cos x,\mathrm dx\<br>&amp;=\cos x_0\cdot0-\sin x_0\cdot 0\<br>&amp;=0,<br>\end{align*}<br>$$<br>故 $F(x)\equiv0$, 于是 $f(x)\equiv0,</del>\forall x\in(0,\pi)$, 矛盾.</p>
-<p>于是 $f(x)$ 在 $(0,\pi)$ 上至少有两个零点.</p>
+<p>不妨设 <span class="math inline">\(f\)</span> 不恒为 0.</p>
+<p>若 <span class="math inline">\(f(x)\)</span> 在 <span class="math inline">\((0,\pi)\)</span> 内无零点, 则不变号, 不妨设 <span class="math inline">\(f(x)&gt;0\)</span>. 此时<span class="math display">\[f(x)\sin x&gt;0,\forall x\in(0,\pi)\implies\int_0^1f(x)\sin x\,\mathrm dx&gt;0,\]</span> 与条件矛盾. 于是 <span class="math inline">\(f(x)\)</span> 在 <span class="math inline">\((0,\pi)\)</span> 上变号, 至少有一个零点.</p>
+<p>若只有一个变号零点 <span class="math inline">\(x_0\in(0,\pi)\)</span>, 不妨设在 <span class="math inline">\((0,x_0)\)</span> 上 <span class="math inline">\(f(x)&gt;0\)</span>, <span class="math inline">\((x_0,\pi)\)</span> 上 <span class="math inline">\(f(x)&lt;0\)</span>. 那么 <span class="math display">\[
+F(x)=f(x)\sin(x-x_0)\leq0,~\forall x\in(0,\pi).
+\]</span> 又因为 <span class="math display">\[
+\begin{align*}\int_0^\pi F(x)\,\mathrm dx&amp;=\cos x_0\int_0^\pi f(x)\sin x\,\mathrm dx-\sin x_0\int_0^\pi f(x)\cos x\,\mathrm dx\\
+&amp;=\cos x_0\cdot0-\sin x_0\cdot 0\\
+&amp;=0,
+\end{align*}
+\]</span> 故 <span class="math inline">\(F(x)\equiv0\)</span>, 于是 <span class="math inline">\(f(x)\equiv0,~\forall x\in(0,\pi)\)</span>, 矛盾.</p>
+<p>于是 <span class="math inline">\(f(x)\)</span> 在 <span class="math inline">\((0,\pi)\)</span> 上至少有两个零点.</p>
 
     </div>
 
@@ -354,7 +362,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">107</span>
+          <span class="site-state-item-count">106</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -577,7 +585,7 @@ document.querySelectorAll('.pdfobject-container').forEach(element => {
         <script>
             window.imageLazyLoadSetting = {
                 isSPA: false,
-                preloadRatio: 1,
+                preloadRatio: 3,
                 processImages: null,
             };
         </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(r){r.imageLazyLoadSetting.processImages=t;var e=r.imageLazyLoadSetting.isSPA,n=r.imageLazyLoadSetting.preloadRatio||1,c=a();function a(){var t=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")),e=Array.prototype.slice.call(document.querySelectorAll("[bg-lazy]"));return t.concat(e)}function t(){e&&(c=a());for(var t,o=0;o<c.length;o++)0<=(t=(t=c[o]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(r.innerHeight*n||document.documentElement.clientHeight*n)&&function(){var t,e,n,a,i=c[o];e=function(){c=c.filter(function(t){return i!==t}),r.imageLazyLoadSetting.onImageLoaded&&r.imageLazyLoadSetting.onImageLoaded(i)},(t=i).hasAttribute("bg-lazy")?(t.removeAttribute("bg-lazy"),e&&e()):(n=new Image,a=t.getAttribute("data-original"),n.onload=function(){t.src=a,t.removeAttribute("data-original"),e&&e()},t.src!==a&&(n.src=a))}()}function i(){clearTimeout(t.tId),t.tId=setTimeout(t,500)}t(),document.addEventListener("scroll",i),r.addEventListener("resize",i),r.addEventListener("orientationchange",i)}(this);</script></body>
