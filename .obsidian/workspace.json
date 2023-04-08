@@ -4,18 +4,30 @@
     "type": "split",
     "children": [
       {
-        "id": "fe05844483361163",
+        "id": "ef64eab3bde0e7a0",
         "type": "tabs",
         "children": [
           {
-            "id": "ce1abab24b985011",
+            "id": "064778de911c93b3",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "source/_posts/计算机/机器学习/amazonTV.md",
+                "file": "source/_posts/数学/线性代数/投影.md",
                 "mode": "source",
-                "source": true
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "1367bdad226e13a4",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "source/_posts/数学/线性代数/f-A-的特征值.md",
+                "mode": "source",
+                "source": false
               }
             }
           }
@@ -94,7 +106,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "source/_posts/计算机/机器学习/amazonTV.md",
+                "file": "source/_posts/数学/线性代数/投影.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -111,7 +123,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "source/_posts/计算机/机器学习/amazonTV.md",
+                "file": "source/_posts/数学/线性代数/投影.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -134,7 +146,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "source/_posts/计算机/机器学习/amazonTV.md"
+                "file": "source/_posts/数学/线性代数/投影.md"
               }
             }
           },
@@ -165,53 +177,54 @@
       "file-tree-alternative:File Tree Alternative Plugin": false
     }
   },
-  "active": "ce1abab24b985011",
+  "active": "064778de911c93b3",
   "lastOpenFiles": [
-    "source/_posts/计算机/机器学习/Attribution-Model.md",
-    "source/_posts/计算机/机器学习/amazonTV.md",
-    "source/_posts/计算机/机器学习/test.md",
-    "source/_posts/数学/统计/第一-二类错误.md",
-    "source/_posts/未命名.md",
-    "source/_posts/test.md",
-    "obsidian/post.md",
-    "obsidian",
-    "scaffolds/obsidian/post.md",
-    "scaffolds/obsidian",
-    "scaffolds/_obsidian/post.md",
-    "scaffolds/_obsidian",
-    "scaffolds/obsidian/obsidian.md",
-    "scaffolds/未命名文件夹",
-    "scaffolds/obsidian~.md",
-    "scaffolds/obsidian.md",
-    "scaffolds/post的副本.md",
-    "scaffolds/post~.md",
-    "source/_posts/数学/数值分析/numerical-integral.md",
-    "source/_posts/数学/terms.md",
-    "source/_posts/数学/初等数学/sin.md",
-    "source/_posts/数学/微积分/Gauss-积分/截屏2022-10-04 21.12.16.png",
-    "source/_posts/数学/微积分/Gauss-积分/截屏2022-10-04 20.58.04.png",
-    "source/_posts/数学/统计/卡方检验.md",
-    "source/_posts/数学/微积分/polar-spherical.md",
-    "source/_posts/计算机/机器学习/Search-Engine.md",
-    "source/_posts/计算机/hexo/hello-world.md",
+    "source/_posts/数学/线性代数/f-A-的特征值.md",
+    "source/_posts/数学/线性代数/投影.md",
+    "public/archives/2022/08/page/2/index 2.html",
+    "public/categories/计算机/机器学习/page/2/index 2.html",
+    "public/archives/2022/09/page/2/index 2.html",
+    "public/archives/2022/07/page/2/index 2.html",
+    "public/categories/随笔/page/3/index 2.html",
+    "public/archives/2022/01/page/2/index 2.html",
+    "public/categories/数学/微积分/page/2/index 2.html",
+    "public/categories/计算机/算法/page/2/index 2.html",
+    "public/posts/53822/index 2.html",
+    "public/categories/数学/page/2/index 2.html",
+    "source/_posts/数学/微积分/f在-0-pi-内有两个零点.md",
+    "public/file/gif/ComplementProj.gif",
+    "public/file/jpg/BG的副本.png",
+    "public/file/jpg/BG.png",
+    "public/file/gif/Proj.gif",
+    "public/file/gif/NotProj.gif",
+    "public/file/截屏2023-03-23 22.58.35.png",
+    "public/file/截屏2023-03-23 22.58.35 1.png",
+    "public/file/xex.png",
+    "public/file/xarctanx.png",
+    "public/file/sine.png",
+    "node_modules/hexo-neat/node_modules/uglify-js/README.md",
+    "node_modules/object-assign/readme.md",
+    "node_modules/html-minifier/README.md",
+    "node_modules/clean-css/README.md",
+    "node_modules/clean-css/History.md",
+    "node_modules/relateurl/README.md",
+    "node_modules/any-promise/README.md",
+    "node_modules/stream-to-array/README.md",
+    "node_modules/he/README.md",
+    "node_modules/hexo-neat/README.md",
+    "node_modules/param-case/node_modules/no-case/README.md",
+    "node_modules/param-case/node_modules/lower-case/README.md",
+    "node_modules/param-case/README.md",
+    "node_modules/html-minifier/node_modules/uglify-js/README.md",
+    "node_modules/html-minifier/node_modules/no-case/README.md",
+    "node_modules/html-minifier/node_modules/commander/Readme.md",
+    "node_modules/html-minifier/node_modules/commander/CHANGELOG.md",
+    "node_modules/html-minifier/node_modules/lower-case/README.md",
     "source/_posts/数学/微积分/Gauss-积分.md",
-    "source/_posts/数学/级数/arcsin-2.md",
-    "source/_posts/数学/微积分/int.md",
-    "source/_posts/计算机/算法/判断回文链表.md",
-    "source/_posts/计算机/算法/链表中点.md",
-    "db.json",
-    "source/_posts/数学/逻辑",
-    "source/_posts/数学/未命名文件夹",
-    "source/_posts/数学/初等数学",
-    "source/_posts/数学/微分方程",
-    "source/_posts/undefined/mac终端自动化",
-    "source/_posts/数学/统计/第一-二类错误/tails.png",
-    "source/_posts/数学/统计/第一-二类错误/H01.png",
-    "source/_posts/计算机/Python/OR-Tools-之-scheduling/schedule2.png",
-    "source/_posts/计算机/Python/OR-Tools-之-scheduling/schedule1.png",
-    "source/_posts/计算机/机器学习/Confusion-Matrix/ROC_curve.png",
-    "source/_posts/计算机/机器学习/模型误差/error.png",
-    "source/_posts/计算机/算法/反转链表/rev3.png",
-    "source/_posts/计算机/算法/反转链表/rev2.png"
+    "posts/26639/index.html.md",
+    "node_modules/hexo-link-obsidian/README.md",
+    "node_modules/axios/UPGRADE_GUIDE.md",
+    "node_modules/axios/SECURITY.md",
+    "未命名.canvas"
   ]
 }

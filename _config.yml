@@ -71,10 +71,13 @@ githubEmojis:
   styles: null
   customEmojis: null
 deploy:
-  type: git
-  repo: git@github.com:sin3000x/sin3000x.github.io.git
-  branch: gh-pages
-  repository: git@github.com:sin3000x/sin3000x.github.io.git
+  - type: git
+    repo: git@github.com:sin3000x/sin3000x.github.io.git
+    branch: gh-pages
+    repository: git@github.com:sin3000x/sin3000x.github.io.git
+  # - type: git
+  #   repository: git@e.coding.net:sin3000x/sin3000x/sin3000x.git
+  #   branch: master
 search:
   path: search.xml
   field: post
@@ -91,3 +94,35 @@ skip_render: file/*.html
 auto_category:
   enable: true
   depth:
+# add caption for iamges
+image_caption:
+  enable: true #false to disable
+  class_name: #if you wanna customize the style for the caption,you can assign a class name, default is 'image-caption'
+lazyload:
+  enable: true
+  onlypost: true # optional
+  loadingImg: # optional eg ./images/loading.gif
+  isSPA: false # optional
+  preloadRatio: 3 # optional, default is 1
+# hexo-neat 压缩
+neat_enable: true
+
+# 压缩html
+neat_html:
+  enable: true
+  exclude:
+# 压缩css  
+neat_css:
+  enable: true
+  exclude:
+    - '**/*.min.css'
+# 压缩js
+neat_js:
+  enable: true
+  mangle: true
+  output:
+  compress:
+  exclude:
+    - '**/*.min.js'
+    - '**/jquery.fancybox.pack.js'
+    - '**/index.js'

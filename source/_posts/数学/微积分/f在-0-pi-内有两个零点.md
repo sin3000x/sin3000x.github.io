@@ -10,7 +10,7 @@ date: 2021-09-10 18:09:49
 
 **问题：在 $[0,\pi]$ 上的连续函数 $f$ 满足**
 $$
-\int_0^\pi f(x)\sin x\,\mathrm dx=\int_0^\pi f(x)\cos x\,\mathrm dx=0,
+\int_0^{\pi} f(x)\sin x\, \mathrm dx=\int_0^\pi f(x)\cos x\,\mathrm dx=0,
 $$
 **证明 $f$ 在 $(0,\pi)$ 内至少有两个零点.**
 

@@ -1,10 +1,16 @@
 {
   "userIgnoreFilters": [
-    "node_modules/"
+    "node_modules/",
+    "scaffolds/",
+    "themes/"
   ],
   "spellcheck": true,
   "newFileLocation": "folder",
   "newFileFolderPath": "source/_posts",
-  "attachmentFolderPath": "/",
-  "promptDelete": false
+  "attachmentFolderPath": "./投影",
+  "promptDelete": false,
+  "newLinkFormat": "relative",
+  "useMarkdownLinks": true,
+  "alwaysUpdateLinks": true,
+  "autoPairMarkdown": false
 }
