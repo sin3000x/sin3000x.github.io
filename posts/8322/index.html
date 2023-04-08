@@ -254,13 +254,14 @@
         <figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">    3</span><br><span class="line">   / \</span><br><span class="line">  9  20</span><br><span class="line"> /  /  \</span><br><span class="line">3  15   7</span><br></pre></td></tr></tbody></table></figure>
 <p>输出 <code>[3, 9, 20, 3, 15, 7]</code>.</p>
 <span id="more"></span>
+
 <figure class="highlight py"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> deque</span><br><span class="line"></span><br><span class="line">queue = deque([root])</span><br><span class="line">result = []</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> queue:</span><br><span class="line">    node = queue.popleft()</span><br><span class="line">    result.append(node.val)</span><br><span class="line">    <span class="keyword">if</span> node.left:</span><br><span class="line">        queue.append(node.left)</span><br><span class="line">    <span class="keyword">if</span> node.right:</span><br><span class="line">        queue.append(node.right)</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="要求保存每一层">要求保存每一层</h2>
-<figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">    3</span><br><span class="line">   / \</span><br><span class="line">  9  20</span><br><span class="line"> /  /  \</span><br><span class="line">3  15   7</span><br><span class="line">  /  \</span><br><span class="line"> 21  22 </span><br></pre></td></tr></tbody></table></figure>
+
+<h2 id="要求保存每一层"><a href="#要求保存每一层" class="headerlink" title="要求保存每一层"></a>要求保存每一层</h2><figure class="highlight plaintext"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">    3</span><br><span class="line">   / \</span><br><span class="line">  9  20</span><br><span class="line"> /  /  \</span><br><span class="line">3  15   7</span><br><span class="line">  /  \</span><br><span class="line"> 21  22 </span><br></pre></td></tr></tbody></table></figure>
 <p>输出 <code>[[3], [9, 20], [3, 15, 7], [21, 22]]</code>.</p>
 <figure class="highlight py"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">queue = deque([root])</span><br><span class="line">result = []</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> queue:</span><br><span class="line">    count = <span class="built_in">len</span>(queue)  <span class="comment"># 当前层有几个值?</span></span><br><span class="line">    current_level = []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(count):</span><br><span class="line">        node = queue.popleft()</span><br><span class="line">        current_level.append(node.val)</span><br><span class="line">        <span class="keyword">if</span> node.left:</span><br><span class="line">            queue.append(node.left)</span><br><span class="line">        <span class="keyword">if</span> node.right:</span><br><span class="line">            queue.append(node.right)</span><br><span class="line">    result.append(current_level)</span><br></pre></td></tr></tbody></table></figure>
-<p>时间: <span class="math inline">\(O(n)\)</span></p>
-<p>空间: <span class="math inline">\(O(n)\)</span> (最宽的那一层)</p>
+<p>时间: $O(n)$</p>
+<p>空间: $O(n)$  (最宽的那一层)</p>
 
     </div>
 
@@ -570,5 +571,18 @@ document.querySelectorAll('.pdfobject-container').forEach(element => {
 
   
 
-</body>
+
+        <style>
+            [bg-lazy] {
+                background-image: none !important;
+                background-color: #eee !important;
+            }
+        </style>
+        <script>
+            window.imageLazyLoadSetting = {
+                isSPA: false,
+                preloadRatio: 1,
+                processImages: null,
+            };
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(r){r.imageLazyLoadSetting.processImages=t;var e=r.imageLazyLoadSetting.isSPA,n=r.imageLazyLoadSetting.preloadRatio||1,c=a();function a(){var t=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")),e=Array.prototype.slice.call(document.querySelectorAll("[bg-lazy]"));return t.concat(e)}function t(){e&&(c=a());for(var t,o=0;o<c.length;o++)0<=(t=(t=c[o]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(r.innerHeight*n||document.documentElement.clientHeight*n)&&function(){var t,e,n,a,i=c[o];e=function(){c=c.filter(function(t){return i!==t}),r.imageLazyLoadSetting.onImageLoaded&&r.imageLazyLoadSetting.onImageLoaded(i)},(t=i).hasAttribute("bg-lazy")?(t.removeAttribute("bg-lazy"),e&&e()):(n=new Image,a=t.getAttribute("data-original"),n.onload=function(){t.src=a,t.removeAttribute("data-original"),e&&e()},t.src!==a&&(n.src=a))}()}function i(){clearTimeout(t.tId),t.tId=setTimeout(t,500)}t(),document.addEventListener("scroll",i),r.addEventListener("resize",i),r.addEventListener("orientationchange",i)}(this);</script></body>
 </html>

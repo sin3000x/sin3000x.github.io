@@ -384,7 +384,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>满世界白茫茫的一片。 静谧而优雅。 惬意而自在。 踏着碎琼乱玉，咯吱咯吱的声音和触感。 沁凉的空气，明亮的阳光，反射着熠熠生辉。</p>
+          <p>满世界白茫茫的一片。<br>静谧而优雅。<br>惬意而自在。<br>踏着碎琼乱玉，咯吱咯吱的声音和触感。<br>沁凉的空气，明亮的阳光，反射着熠熠生辉。</p>
 
       
     </div>
@@ -458,7 +458,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>风起时，一片一片，金黄的，鹅黄的，浅绿的，接连着，打着卷地，在我噙着泪的眼前飘落，在地上挤成一团。 风住时，一棵一棵，笔挺的，有着优美线条和外形的，银杏，梧桐，在被悲伤吞噬了的我眼前伫立，宛若画中那么美，那么静。 风声，孩子们的说笑，木棍扫过落叶的沙沙声，喜鹊，麻雀，还有一个人，缓慢而轻轻的，脚步。</p>
+          <p>风起时，一片一片，金黄的，鹅黄的，浅绿的，接连着，打着卷地，在我噙着泪的眼前飘落，在地上挤成一团。<br>风住时，一棵一棵，笔挺的，有着优美线条和外形的，银杏，梧桐，在被悲伤吞噬了的我眼前伫立，宛若画中那么美，那么静。<br>风声，孩子们的说笑，木棍扫过落叶的沙沙声，喜鹊，麻雀，还有一个人，缓慢而轻轻的，脚步。</p>
 
       
     </div>
@@ -606,7 +606,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>今天我们学习检索，首先，文献分为以下几类，这几类有这样的联系，检索有以下几种方法，它们有这样那样的优缺点，这个检索是在这个时间由这家公司创办的。 下面我们做检索的练习，检索分为以下几个步骤，首先就是检索准备。要明确学科属性，弄清信息类型，明确信息要求。</p>
+          <p>今天我们学习检索，首先，文献分为以下几类，这几类有这样的联系，检索有以下几种方法，它们有这样那样的优缺点，这个检索是在这个时间由这家公司创办的。<br>下面我们做检索的练习，检索分为以下几个步骤，首先就是检索准备。要明确学科属性，弄清信息类型，明确信息要求。</p>
 
       
     </div>
@@ -1204,5 +1204,18 @@ document.querySelectorAll('.pdfobject-container').forEach(element => {
 
   
 
-</body>
+
+        <style>
+            [bg-lazy] {
+                background-image: none !important;
+                background-color: #eee !important;
+            }
+        </style>
+        <script>
+            window.imageLazyLoadSetting = {
+                isSPA: false,
+                preloadRatio: 1,
+                processImages: null,
+            };
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(r){r.imageLazyLoadSetting.processImages=t;var e=r.imageLazyLoadSetting.isSPA,n=r.imageLazyLoadSetting.preloadRatio||1,c=a();function a(){var t=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")),e=Array.prototype.slice.call(document.querySelectorAll("[bg-lazy]"));return t.concat(e)}function t(){e&&(c=a());for(var t,o=0;o<c.length;o++)0<=(t=(t=c[o]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(r.innerHeight*n||document.documentElement.clientHeight*n)&&function(){var t,e,n,a,i=c[o];e=function(){c=c.filter(function(t){return i!==t}),r.imageLazyLoadSetting.onImageLoaded&&r.imageLazyLoadSetting.onImageLoaded(i)},(t=i).hasAttribute("bg-lazy")?(t.removeAttribute("bg-lazy"),e&&e()):(n=new Image,a=t.getAttribute("data-original"),n.onload=function(){t.src=a,t.removeAttribute("data-original"),e&&e()},t.src!==a&&(n.src=a))}()}function i(){clearTimeout(t.tId),t.tId=setTimeout(t,500)}t(),document.addEventListener("scroll",i),r.addEventListener("resize",i),r.addEventListener("orientationchange",i)}(this);</script></body>
 </html>
