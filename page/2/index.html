@@ -407,9 +407,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>计算定积分 <span class="math display">\[
-I_n=\int_0^1(1-x^2)^n\d x.
-\]</span></p>
+          <p>计算定积分<br>$$<br>I_n=\int_0^1(1-x^2)^n\d x.<br>$$</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/posts/46715/#more" rel="contents">
@@ -494,9 +492,7 @@ I_n=\int_0^1(1-x^2)^n\d x.
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>证明 <span class="math display">\[
-I=\int_{-\infty}^\infty\e^{-x^2}\d x=\sqrt{\pi}.
-\]</span></p>
+          <p>证明<br>$$<br>I=\int_{-\infty}^\infty\e^{-x^2}\d x=\sqrt{\pi}.<br>$$</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/posts/48382/#more" rel="contents">
@@ -581,20 +577,16 @@ I=\int_{-\infty}^\infty\e^{-x^2}\d x=\sqrt{\pi}.
     <div class="post-body" itemprop="articleBody">
 
       
-          <p><span class="math display">\[
-f(\theta)=L(\theta)+\Omega(\theta)
-\]</span></p>
-<p>其中 <span class="math inline">\(L\)</span> 是误差函数，衡量拟合程度；<span class="math inline">\(\Omega\)</span> 是正则项，衡量模型复杂度。</p>
+          <p>$$<br>f(\theta)=L(\theta)+\Omega(\theta)<br>$$</p>
+<p>其中 $L$ 是误差函数，衡量拟合程度；$\Omega$ 是正则项，衡量模型复杂度。</p>
 <blockquote>
 <p>复杂的模型（参数多）：神经网络</p>
 <p>简单的模型：树、线性回归</p>
 </blockquote>
 <p>Tree 不需要正则化，因为不同属性之间不做比较。</p>
-<h2 id="adaptive-boosting">Adaptive Boosting</h2>
-<p>先训练第一个模型，增加预测错误的样本的权重，并减小预测正确的样本的权重，喂给第二个模型。</p>
+<h2 id="Adaptive-Boosting"><a href="#Adaptive-Boosting" class="headerlink" title="Adaptive Boosting"></a>Adaptive Boosting</h2><p> 先训练第一个模型，增加预测错误的样本的权重，并减小预测正确的样本的权重，喂给第二个模型。</p>
 <p>最终也会给每个弱模型自己的权重。</p>
-<h2 id="gradient-boosting">Gradient Boosting</h2>
-<p>通过梯度下降来最小化误差。在每一次迭代，通过现有集成模型的误差来训练当前的模型。</p>
+<h2 id="Gradient-Boosting"><a href="#Gradient-Boosting" class="headerlink" title="Gradient Boosting"></a>Gradient Boosting</h2><p> 通过梯度下降来最小化误差。在每一次迭代，通过现有集成模型的误差来训练当前的模型。</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/posts/1458/#more" rel="contents">
@@ -679,22 +671,19 @@ f(\theta)=L(\theta)+\Omega(\theta)
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="bagging">Bagging</h2>
-<ul>
+          <h2 id="Bagging"><a href="#Bagging" class="headerlink" title="Bagging"></a>Bagging</h2><ul>
 <li><strong>homogeneous</strong> weak learner</li>
 <li>learn each <strong>independently</strong> in parallel</li>
 <li>combine through averaging</li>
 <li>reduce variance</li>
 </ul>
-<h2 id="boosting">Boosting</h2>
-<ul>
+<h2 id="Boosting"><a href="#Boosting" class="headerlink" title="Boosting"></a>Boosting</h2><ul>
 <li><strong>homogeneous</strong> weak learner</li>
 <li>learn each <strong>sequentially</strong> in an adaptive way</li>
 <li>combine through deternimistic strategy</li>
 <li>reduce bias</li>
 </ul>
-<h2 id="stacking">Stacking</h2>
-<ul>
+<h2 id="Stacking"><a href="#Stacking" class="headerlink" title="Stacking"></a>Stacking</h2><ul>
 <li><strong>heterogeneous</strong> weak learner</li>
 <li>learn each <strong>independently</strong> in parallel</li>
 <li>combine on each prediction</li>
@@ -864,12 +853,12 @@ f(\theta)=L(\theta)+\Omega(\theta)
           <p>过拟合是因为模型过于复杂, 而学习数据有限.</p>
 <ul>
 <li>增加学习样本.</li>
-<li>避免过度训练.
-<ul>
-<li>减少特征: 相关性分析, PCA ...</li>
+<li>避免过度训练.<ul>
+<li>减少特征: 相关性分析, PCA …</li>
 <li>正则化.</li>
 <li>集成学习.</li>
-</ul></li>
+</ul>
+</li>
 </ul>
 
       
@@ -948,7 +937,7 @@ f(\theta)=L(\theta)+\Omega(\theta)
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>"降维" 是减少数据特征, 不是减少样本.</p>
+          <p>“降维” 是减少数据特征, 不是减少样本.</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/posts/4593/#more" rel="contents">
@@ -1033,11 +1022,11 @@ f(\theta)=L(\theta)+\Omega(\theta)
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="解法一">解法一</h2>
-<p>反向的中序遍历, 第二个节点就是第二大的. </p><figure class="highlight py"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">second_largest</span>(<span class="params">self</span>):</span><br><span class="line">        self.count = <span class="number">0</span></span><br><span class="line">        self.result = <span class="literal">None</span></span><br><span class="line">        self.traverse(root)</span><br><span class="line">        <span class="keyword">return</span> self.result</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">traverse</span>(<span class="params">self, root</span>):</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> root:</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        self.traverse(root.right)</span><br><span class="line">        self.count += <span class="number">1</span></span><br><span class="line">        <span class="keyword">if</span> self.count == <span class="number">2</span>:</span><br><span class="line">            self.result = root.val</span><br><span class="line">            <span class="keyword">return</span>       </span><br><span class="line">        <span class="keyword">if</span> self.count &gt; <span class="number">1</span>:</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        self.traverse(root.left)</span><br></pre></td></tr></tbody></table></figure> 时间: <span class="math inline">\(O(h)\)</span> 空间: <span class="math inline">\(O(h)\)</span><p></p>
-<h2 id="解法二">解法二</h2>
-<p>分类讨论. </p><figure class="highlight py"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">find_largest</span>(<span class="params">root</span>):</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> root:</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> root.right:  <span class="comment"># 没有右子树时, 根是最大的</span></span><br><span class="line">        <span class="keyword">return</span> root</span><br><span class="line">    <span class="keyword">return</span> find_largest(root.right)  <span class="comment"># 有右子树时, 找其中最大的</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">find_2nd_largest</span>(<span class="params">root</span>):</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> root:</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> root.right:  <span class="comment"># 没有右子树, 根最大; 左子树的最大就是第二大</span></span><br><span class="line">        <span class="keyword">return</span> find_largest(root.left)</span><br><span class="line">    <span class="comment"># 有右子树, 此时最大元素在右子树中</span></span><br><span class="line">    right = root.right</span><br><span class="line">    <span class="comment"># 右子树只有一个节点, 它是最大的, 根第二大</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> right.left <span class="keyword">and</span> <span class="keyword">not</span> right.right:  </span><br><span class="line">        <span class="keyword">return</span> root</span><br><span class="line">    <span class="comment"># 右子树还有子树, 在这里面找第二大的</span></span><br><span class="line">    <span class="keyword">return</span> find_2nd_largest(right)</span><br></pre></td></tr></tbody></table></figure><p></p>
-
+          <h2 id="解法一"><a href="#解法一" class="headerlink" title="解法一"></a>解法一</h2><p>反向的中序遍历, 第二个节点就是第二大的.</p>
+<figure class="highlight py"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">second_largest</span>(<span class="params">self</span>):</span><br><span class="line">        self.count = <span class="number">0</span></span><br><span class="line">        self.result = <span class="literal">None</span></span><br><span class="line">        self.traverse(root)</span><br><span class="line">        <span class="keyword">return</span> self.result</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">traverse</span>(<span class="params">self, root</span>):</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> root:</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        self.traverse(root.right)</span><br><span class="line">        self.count += <span class="number">1</span></span><br><span class="line">        <span class="keyword">if</span> self.count == <span class="number">2</span>:</span><br><span class="line">            self.result = root.val</span><br><span class="line">            <span class="keyword">return</span>       </span><br><span class="line">        <span class="keyword">if</span> self.count &gt; <span class="number">1</span>:</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        self.traverse(root.left)</span><br></pre></td></tr></tbody></table></figure>
+<p>时间: $O(h)$<br>空间: $O(h)$</p>
+<h2 id="解法二"><a href="#解法二" class="headerlink" title="解法二"></a>解法二</h2><p>分类讨论.</p>
+<figure class="highlight py"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">find_largest</span>(<span class="params">root</span>):</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> root:</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> root.right:  <span class="comment"># 没有右子树时, 根是最大的</span></span><br><span class="line">        <span class="keyword">return</span> root</span><br><span class="line">    <span class="keyword">return</span> find_largest(root.right)  <span class="comment"># 有右子树时, 找其中最大的</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">find_2nd_largest</span>(<span class="params">root</span>):</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> root:</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> root.right:  <span class="comment"># 没有右子树, 根最大; 左子树的最大就是第二大</span></span><br><span class="line">        <span class="keyword">return</span> find_largest(root.left)</span><br><span class="line">    <span class="comment"># 有右子树, 此时最大元素在右子树中</span></span><br><span class="line">    right = root.right</span><br><span class="line">    <span class="comment"># 右子树只有一个节点, 它是最大的, 根第二大</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> right.left <span class="keyword">and</span> <span class="keyword">not</span> right.right:  </span><br><span class="line">        <span class="keyword">return</span> root</span><br><span class="line">    <span class="comment"># 右子树还有子树, 在这里面找第二大的</span></span><br><span class="line">    <span class="keyword">return</span> find_2nd_largest(right)</span><br></pre></td></tr></tbody></table></figure>
       
     </div>
 
