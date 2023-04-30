@@ -187,6 +187,91 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://sin3000x.github.io/posts/56956/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/bunny.png">
+      <meta itemprop="name" content="Jeremy Gu">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="记问之学，不足以为人师">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/posts/56956/" class="post-title-link" itemprop="url">决策树的信息增益</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-07-22 10:37:36" itemprop="dateCreated datePublished" datetime="2022-07-22T10:37:36+08:00">2022-07-22</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2023-04-21 21:07:09" itemprop="dateModified" datetime="2023-04-21T21:07:09+08:00">2023-04-21</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/" itemprop="url" rel="index"><span itemprop="name">计算机</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">机器学习</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>基于熵减, 或者说信息增益, 来决定决策树的 feature 选择. ID3 算法优先 split 可以带来最大熵减的那个 feature, 也就是一种贪心算法.</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/posts/56956/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://sin3000x.github.io/posts/52763/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -245,7 +330,9 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="倒班问题"><a href="#倒班问题" class="headerlink" title="倒班问题"></a>倒班问题</h2><h3 id="基础版"><a href="#基础版" class="headerlink" title="基础版"></a>基础版</h3><p>在一个 3 天的时间窗里, 每天有三班倒. 一共 4 名员工来安排倒班.</p>
+          <h2 id="倒班问题">倒班问题</h2>
+<h3 id="基础版">基础版</h3>
+<p>在一个 3 天的时间窗里, 每天有三班倒. 一共 4 名员工来安排倒班.</p>
 <p>每班只给一个人, 每天一个人最多做一班 (这个人也可以放假).</p>
           <!--noindex-->
             <div class="post-button">
@@ -331,7 +418,14 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>$$<br>\max~ 3x+y,\quad<br>\text{subject to}\ \begin{cases}<br>0\le x\le 1\<br>0\le y\le 2\<br>x+y\le 2<br>\end{cases}<br>$$</p>
+          <p><span class="math display">\[
+\max~ 3x+y,\quad
+\text{subject to}\ \begin{cases}
+0\le x\le 1\\
+0\le y\le 2\\
+x+y\le 2
+\end{cases}
+\]</span></p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/posts/59457/#more" rel="contents">
@@ -417,11 +511,8 @@
 
       
           <figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">x = [<span class="number">0</span>]</span><br><span class="line">y = x</span><br></pre></td></tr></tbody></table></figure>
-<p>此时修改 <code>x</code> 或 <code>y</code> 不影响另一个变量:</p>
-<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">x = [<span class="number">1</span>]</span><br><span class="line"><span class="built_in">print</span>(y)  <span class="comment"># [0]</span></span><br></pre></td></tr></tbody></table></figure>
-
-<p>如果有 dereference, 被修改:</p>
-<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">x = [<span class="number">0</span>]</span><br><span class="line">y = x</span><br><span class="line"></span><br><span class="line">y[<span class="number">0</span>] = [<span class="number">1</span>]</span><br><span class="line"><span class="built_in">print</span>(x)  <span class="comment"># [1]</span></span><br></pre></td></tr></tbody></table></figure>
+<p>此时修改 <code>x</code> 或 <code>y</code> 不影响另一个变量: </p><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">x = [<span class="number">1</span>]</span><br><span class="line"><span class="built_in">print</span>(y)  <span class="comment"># [0]</span></span><br></pre></td></tr></tbody></table></figure><p></p>
+<p>如果有 dereference, 被修改: </p><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">x = [<span class="number">0</span>]</span><br><span class="line">y = x</span><br><span class="line"></span><br><span class="line">y[<span class="number">0</span>] = [<span class="number">1</span>]</span><br><span class="line"><span class="built_in">print</span>(x)  <span class="comment"># [1]</span></span><br></pre></td></tr></tbody></table></figure><p></p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/posts/6370/#more" rel="contents">
@@ -583,7 +674,9 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>$$<br>f\colon[-L,L]\to\mathbb{R}<br>$$<br>$$F(x)=a_0+\sum_{n=1}^\infty \left(a_n\cos\left(\frac{n\pi x}{L}\right)+b_n\sin\left(\frac{n\pi x}{L}\right)\right)$$<br>其中<br>$$a_0=\frac{1}{2L}\int_{-L}^Lf(x),\mathrm{d}x$$<br>$$a_n=\frac{1}{L}\int_{-L}^Lf(x)\cos\left(\frac{n\pi x}{L}\right),\mathrm{d}x$$<br>$$b_n=\frac{1}{L}\int_{-L}^Lf(x)\sin\left(\frac{n\pi x}{L}\right),\mathrm{d}x$$</p>
+          <p><span class="math display">\[
+f\colon[-L,L]\to\mathbb{R}
+\]</span> <span class="math display">\[F(x)=a_0+\sum_{n=1}^\infty \left(a_n\cos\left(\frac{n\pi x}{L}\right)+b_n\sin\left(\frac{n\pi x}{L}\right)\right)\]</span> 其中 <span class="math display">\[a_0=\frac{1}{2L}\int_{-L}^Lf(x)\,\mathrm{d}x\]</span> <span class="math display">\[a_n=\frac{1}{L}\int_{-L}^Lf(x)\cos\left(\frac{n\pi x}{L}\right)\,\mathrm{d}x\]</span> <span class="math display">\[b_n=\frac{1}{L}\int_{-L}^Lf(x)\sin\left(\frac{n\pi x}{L}\right)\,\mathrm{d}x\]</span></p>
 
       
     </div>
@@ -661,7 +754,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>$$\sum_{n=1}^\infty\frac{1}{n^2}=\frac{\pi^2}{6}$$</p>
+          <p><span class="math display">\[\sum_{n=1}^\infty\frac{1}{n^2}=\frac{\pi^2}{6}\]</span></p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/posts/56038/#more" rel="contents">
@@ -746,7 +839,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="不定积分"><a href="#不定积分" class="headerlink" title="不定积分"></a>不定积分</h2><p>$$\int\frac{1}{x^2+a^2} ,\mathrm{d}x=\frac 1a\arctan\frac xa+C$$<br>$$\int\frac{1}{x^2-a^2} ,\mathrm{d}x=\frac {1}{2a}\ln\left|\frac{x-a}{x+a}\right|+C$$<br>$$\int\frac{1}{\sqrt{x^2\pm a^2}} ,\mathrm{d}x=\ln\left|x+\sqrt{x^2\pm a^2}\right|+C$$<br>$$\int\frac{1}{\sqrt{a^2-x^2}} ,\mathrm{d}x=\arcsin \frac xa+C$$<br>$$\int\frac{1}{\sqrt{1+x^2}} ,\mathrm{d}x=\sinh^{-1}x+C$$</p>
+          <h2 id="不定积分">不定积分</h2>
+<p><span class="math display">\[\int\frac{1}{x^2+a^2} \,\mathrm{d}x=\frac 1a\arctan\frac xa+C\]</span> <span class="math display">\[\int\frac{1}{x^2-a^2} \,\mathrm{d}x=\frac {1}{2a}\ln\left|\frac{x-a}{x+a}\right|+C\]</span> <span class="math display">\[\int\frac{1}{\sqrt{x^2\pm a^2}} \,\mathrm{d}x=\ln\left|x+\sqrt{x^2\pm a^2}\right|+C\]</span> <span class="math display">\[\int\frac{1}{\sqrt{a^2-x^2}} \,\mathrm{d}x=\arcsin \frac xa+C\]</span> <span class="math display">\[\int\frac{1}{\sqrt{1+x^2}} \,\mathrm{d}x=\sinh^{-1}x+C\]</span></p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/posts/23548/#more" rel="contents">
@@ -831,10 +925,11 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="和差化积"><a href="#和差化积" class="headerlink" title="和差化积"></a>和差化积</h2><p>$$\sin\alpha+\sin\beta=2\sin\left(\frac{\alpha+\beta}{2}\right)\cos\left(\frac{\alpha-\beta}{2}\right)$$</p>
-<p>$$\sin\alpha-\sin\beta=2\cos\left(\frac{\alpha+\beta}{2}\right)\sin\left(\frac{\alpha-\beta}{2}\right)$$</p>
-<p>$$\cos\alpha+\cos\beta=2\cos\left(\frac{\alpha+\beta}{2}\right)\cos\left(\frac{\alpha-\beta}{2}\right)$$</p>
-<p>$$\cos\alpha-\cos\beta=-2\sin\left(\frac{\alpha+\beta}{2}\right)\sin\left(\frac{\alpha-\beta}{2}\right)$$</p>
+          <h2 id="和差化积">和差化积</h2>
+<p><span class="math display">\[\sin\alpha+\sin\beta=2\sin\left(\frac{\alpha+\beta}{2}\right)\cos\left(\frac{\alpha-\beta}{2}\right)\]</span></p>
+<p><span class="math display">\[\sin\alpha-\sin\beta=2\cos\left(\frac{\alpha+\beta}{2}\right)\sin\left(\frac{\alpha-\beta}{2}\right)\]</span></p>
+<p><span class="math display">\[\cos\alpha+\cos\beta=2\cos\left(\frac{\alpha+\beta}{2}\right)\cos\left(\frac{\alpha-\beta}{2}\right)\]</span></p>
+<p><span class="math display">\[\cos\alpha-\cos\beta=-2\sin\left(\frac{\alpha+\beta}{2}\right)\sin\left(\frac{\alpha-\beta}{2}\right)\]</span></p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/posts/26462/#more" rel="contents">
@@ -919,97 +1014,10 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>$P\Rightarrow Q$ 的<strong>定义</strong>是真值表. “如果 $P$, 那么 $Q$” 只是一种解释, 不是定义. 也就是说, $P$ 和 $Q$ 本身不需要有联系. 这里解释一下为什么定义是这样的: $P$ 为假, $P\Rightarrow Q$ 总为真.</p>
+          <p><span class="math inline">\(P\Rightarrow Q\)</span> 的<strong>定义</strong>是真值表. "如果 <span class="math inline">\(P\)</span>, 那么 <span class="math inline">\(Q\)</span>" 只是一种解释, 不是定义. 也就是说, <span class="math inline">\(P\)</span> 和 <span class="math inline">\(Q\)</span> 本身不需要有联系. 这里解释一下为什么定义是这样的: <span class="math inline">\(P\)</span> 为假, <span class="math inline">\(P\Rightarrow Q\)</span> 总为真.</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/posts/31827/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://sin3000x.github.io/posts/42394/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/bunny.png">
-      <meta itemprop="name" content="Jeremy Gu">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="记问之学，不足以为人师">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/posts/42394/" class="post-title-link" itemprop="url">分部积分的表格法</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2022-04-23 22:48:32" itemprop="dateCreated datePublished" datetime="2022-04-23T22:48:32+08:00">2022-04-23</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-04-10 22:38:19" itemprop="dateModified" datetime="2023-04-10T22:38:19+08:00">2023-04-10</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E5%AD%A6/" itemprop="url" rel="index"><span itemprop="name">数学</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E5%AD%A6/%E5%BE%AE%E7%A7%AF%E5%88%86/" itemprop="url" rel="index"><span itemprop="name">微积分</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>分部积分的计算非常令人头疼，尤其是涉及到多次分部的时候。表格法提供了一种简记的方法：原理没变，只是避免了繁琐地写积分号的过程。</p>
-<p>表格由两行组成，以被积函数的两个因子开头。第一行反复求导, 第二行反复积分, 直到求导结果为 0，表格结束。重点是要识别哪个因子被求导，哪个被积分。</p>
-<p>以<br>$$\int (x^2+x)\e^{2x}\d x$$为例，表格是这样的：<br><img src="https://s2.loli.net/2023/04/10/xVmTu5dts2BYbiz.png" width="400"><br>按照箭头的指示，将表格中的内容对应相乘，再按正负符号交替求和:<br>$$<br>\text{原式}=\left({x^2+x\over2}-{2x+1\over4}+\frac14\right)\e^{2x}=\frac12 x^2\e^{2x}+C.<br>$$</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/posts/42394/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1100,20 +1108,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">108</span>
+          <span class="site-state-item-count">109</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">19</span>
+        <span class="site-state-item-count">20</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">32</span>
+        <span class="site-state-item-count">33</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>

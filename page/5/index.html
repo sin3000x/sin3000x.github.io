@@ -187,6 +187,91 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://sin3000x.github.io/posts/42877/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/bunny.png">
+      <meta itemprop="name" content="Jeremy Gu">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="记问之学，不足以为人师">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/posts/42877/" class="post-title-link" itemprop="url">二分查找</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-08-06 15:33:39" itemprop="dateCreated datePublished" datetime="2022-08-06T15:33:39+08:00">2022-08-06</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2023-04-02 17:03:19" itemprop="dateModified" datetime="2023-04-02T17:03:19+08:00">2023-04-02</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/" itemprop="url" rel="index"><span itemprop="name">计算机</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">算法</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>二分查找的原始与变种问题.</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/posts/42877/">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://sin3000x.github.io/posts/37489/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -330,7 +415,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="type"><a href="#type" class="headerlink" title="type"></a>type</h2><ul>
+          <h2 id="type">type</h2>
+<ul>
 <li>exploratory analysis</li>
 <li>autocorrelation analysis</li>
 <li>spectral analysis</li>
@@ -422,23 +508,25 @@
           <p>对于二分类问题, 结果被分为真阳, 假阳, 真阴, 假阴四种情况.</p>
 <table>
 <thead>
-<tr>
-<th align="center"></th>
-<th align="center">P</th>
-<th align="center">N</th>
+<tr class="header">
+<th style="text-align: center;"></th>
+<th style="text-align: center;">P</th>
+<th style="text-align: center;">N</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="center">Y</td>
-<td align="center">TP</td>
-<td align="center">FP</td>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Y</td>
+<td style="text-align: center;">TP</td>
+<td style="text-align: center;">FP</td>
 </tr>
-<tr>
-<td align="center">N</td>
-<td align="center">FN</td>
-<td align="center">TN</td>
+<tr class="even">
+<td style="text-align: center;">N</td>
+<td style="text-align: center;">FN</td>
+<td style="text-align: center;">TN</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/posts/39658/#more" rel="contents">
@@ -523,7 +611,9 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>误差分解<br>$$<br>E(\text{error})=\text{bias}^2+\text{Var}+\varepsilon.<br>$$</p>
+          <p>误差分解 <span class="math display">\[
+E(\text{error})=\text{bias}^2+\text{Var}+\varepsilon.
+\]</span></p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/posts/12469/#more" rel="contents">
@@ -778,8 +868,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>比如一个链表是 <code>1 -&gt; 2 -&gt; 3</code>, 一个是 <code>2 -&gt; 7</code>, 结果应该返回 <code>1 -&gt; 5 -&gt; 0</code>. </p>
-<p>因为 $123+27=150$.</p>
+          <p>比如一个链表是 <code>1 -&gt; 2 -&gt; 3</code>, 一个是 <code>2 -&gt; 7</code>, 结果应该返回 <code>1 -&gt; 5 -&gt; 0</code>.</p>
+<p>因为 <span class="math inline">\(123+27=150\)</span>.</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/posts/30822/#more" rel="contents">
@@ -946,7 +1036,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="不可能假设"><a href="#不可能假设" class="headerlink" title="不可能假设"></a>不可能假设</h2><p>现在:</p>
+          <h2 id="不可能假设">不可能假设</h2>
+<p>现在:</p>
 <ul>
 <li>If I saw the rabbit now, I would bite him.</li>
 </ul>
@@ -961,91 +1052,6 @@
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/posts/22564/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://sin3000x.github.io/posts/56956/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/bunny.png">
-      <meta itemprop="name" content="Jeremy Gu">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="记问之学，不足以为人师">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/posts/56956/" class="post-title-link" itemprop="url">决策树的信息增益</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2022-07-22 10:37:36" itemprop="dateCreated datePublished" datetime="2022-07-22T10:37:36+08:00">2022-07-22</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-04-21 21:07:09" itemprop="dateModified" datetime="2023-04-21T21:07:09+08:00">2023-04-21</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/" itemprop="url" rel="index"><span itemprop="name">计算机</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">机器学习</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>基于熵减, 或者说信息增益, 来决定决策树的 feature 选择. ID3 算法优先 split 可以带来最大熵减的那个 feature, 也就是一种贪心算法.</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/posts/56956/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1136,20 +1142,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">108</span>
+          <span class="site-state-item-count">109</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">19</span>
+        <span class="site-state-item-count">20</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">32</span>
+        <span class="site-state-item-count">33</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
