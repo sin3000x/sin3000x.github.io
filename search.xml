@@ -54,96 +54,6 @@
       </categories>
   </entry>
   <entry>
-    <title>一些英文术语</title>
-    <url>/posts/18686/</url>
-    <content><![CDATA[<h2 id="分析与代数">分析与代数</h2>
-<table>
-<thead>
-<tr class="header">
-<th>中文</th>
-<th>英文</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>二次</td>
-<td>quadratic</td>
-</tr>
-<tr class="even">
-<td>三次</td>
-<td>cubic</td>
-</tr>
-<tr class="odd">
-<td>四次</td>
-<td>quartic</td>
-</tr>
-<tr class="even">
-<td>五次</td>
-<td>quintic</td>
-</tr>
-</tbody>
-</table>
-<h2 id="几何">几何</h2>
-<table>
-<thead>
-<tr class="header">
-<th>中文</th>
-<th>英文</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>四边形</td>
-<td>quadrilateral</td>
-</tr>
-<tr class="even">
-<td>五边形</td>
-<td>pentagon</td>
-</tr>
-<tr class="odd">
-<td>六边形</td>
-<td>hexagon</td>
-</tr>
-<tr class="even">
-<td>七边形</td>
-<td>heptagon</td>
-</tr>
-<tr class="odd">
-<td>八边形</td>
-<td>octagon</td>
-</tr>
-<tr class="even">
-<td>九边形</td>
-<td>nonagon</td>
-</tr>
-<tr class="odd">
-<td>十边形</td>
-<td>decagon</td>
-</tr>
-<tr class="even">
-<td>平行四边形</td>
-<td>parallelogram</td>
-</tr>
-<tr class="odd">
-<td>四面体 (三棱锥)</td>
-<td>tetrahedron</td>
-</tr>
-<tr class="even">
-<td>棱柱</td>
-<td>prism</td>
-</tr>
-<tr class="odd">
-<td>多面体</td>
-<td>polyhedron</td>
-</tr>
-</tbody>
-</table>
-]]></content>
-      <categories>
-        <category>数学</category>
-      </categories>
-  </entry>
-  <entry>
     <title>丽江</title>
     <url>/posts/23622/</url>
     <content><![CDATA[<p>清晨，冬风偏有着独特的和煦，暖暖的阳光洒下，轻吻着这个慵懒的小城。青石板的两侧，一簇红一簇粉的丛生，芬芳馥郁。清澄的流水，不急不缓地从家家户户门前流过，雀跃着一片两片的花瓣，抚动着缠绵的青荇，挑弄着披拂的藤蔓。</p>
@@ -185,19 +95,19 @@
       </categories>
   </entry>
   <entry>
-    <title>圣诞节</title>
-    <url>/posts/19175/</url>
-    <content><![CDATA[<p>圣诞树上挂满了忽闪忽闪的小彩灯，在富丽堂皇的商店里，在暖黄的水晶吊灯下，温柔地伫立。</p>
-<p>空气中弥漫着姜汁饼的甜美气息，耳畔回荡着童声喜乐、纯净的颂歌，以及驯鹿的铃儿叮当。黑漆漆的夜空中洒下鹅毛白的雪花，沁爽洁净的雪毯上，花白胡子的圣诞老人留下一道雪橇的印记。与可人儿相挽，踱步在礼品商城，柔情地看他趴着橱窗，瞪大了好奇的双眼。</p>
+    <title>秋心</title>
+    <url>/posts/38252/</url>
+    <content><![CDATA[<p>风起时，一片一片，金黄的，鹅黄的，浅绿的，接连着，打着卷地，在我噙着泪的眼前飘落，在地上挤成一团。 风住时，一棵一棵，笔挺的，有着优美线条和外形的，银杏，梧桐，在被悲伤吞噬了的我眼前伫立，宛若画中那么美，那么静。 风声，孩子们的说笑，木棍扫过落叶的沙沙声，喜鹊，麻雀，还有一个人，缓慢而轻轻的，脚步。</p>
 ]]></content>
       <categories>
         <category>随笔</category>
       </categories>
   </entry>
   <entry>
-    <title>秋心</title>
-    <url>/posts/38252/</url>
-    <content><![CDATA[<p>风起时，一片一片，金黄的，鹅黄的，浅绿的，接连着，打着卷地，在我噙着泪的眼前飘落，在地上挤成一团。 风住时，一棵一棵，笔挺的，有着优美线条和外形的，银杏，梧桐，在被悲伤吞噬了的我眼前伫立，宛若画中那么美，那么静。 风声，孩子们的说笑，木棍扫过落叶的沙沙声，喜鹊，麻雀，还有一个人，缓慢而轻轻的，脚步。</p>
+    <title>圣诞节</title>
+    <url>/posts/19175/</url>
+    <content><![CDATA[<p>圣诞树上挂满了忽闪忽闪的小彩灯，在富丽堂皇的商店里，在暖黄的水晶吊灯下，温柔地伫立。</p>
+<p>空气中弥漫着姜汁饼的甜美气息，耳畔回荡着童声喜乐、纯净的颂歌，以及驯鹿的铃儿叮当。黑漆漆的夜空中洒下鹅毛白的雪花，沁爽洁净的雪毯上，花白胡子的圣诞老人留下一道雪橇的印记。与可人儿相挽，踱步在礼品商城，柔情地看他趴着橱窗，瞪大了好奇的双眼。</p>
 ]]></content>
       <categories>
         <category>随笔</category>
@@ -298,6 +208,15 @@
       </categories>
   </entry>
   <entry>
+    <title>自习</title>
+    <url>/posts/12721/</url>
+    <content><![CDATA[<p>屋外的松树轻柔地律动，都贴到窗上来了。白茫茫的远空，不缓不急的阳光，飘香的槐花，清凉的音乐。</p>
+]]></content>
+      <categories>
+        <category>随笔</category>
+      </categories>
+  </entry>
+  <entry>
     <title>科普是一项非常难的工作</title>
     <url>/posts/20918/</url>
     <content><![CDATA[<p>要想当一个好学生，只需要把知识学懂。</p>
@@ -306,15 +225,6 @@
 <p><strong>而要当一个好的科普工作者，需要有远超学生的理解能力，教授一样的专业水平，老师一样的教学功力，艺术家一样的审美，作家一样的文笔，诗人一样的清高，科学家一样对知识的热爱，艺人一样对大众心理的把控能力，运动员一样的毅力，还要有自身的人格魅力、抗压抗打击能力。</strong></p>
 <p>科普是一项非常难的工作，比讲课教书难得多。因为它面对的不是专业人士，而是乌合之众。这导致科普工作者必须用通俗语言来解释专业知识，却又不至于过于通俗而产生误导。稍微有一点漏洞就会被抓住攻击——有问题的科普比谣言更可怕，比迷信更害人。</p>
 <p>所以，科普工作者是一个神圣的标签，这个名号比想象中要严苛得多。</p>
-]]></content>
-      <categories>
-        <category>随笔</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>自习</title>
-    <url>/posts/12721/</url>
-    <content><![CDATA[<p>屋外的松树轻柔地律动，都贴到窗上来了。白茫茫的远空，不缓不急的阳光，飘香的槐花，清凉的音乐。</p>
 ]]></content>
       <categories>
         <category>随笔</category>
@@ -350,18 +260,18 @@
       </categories>
   </entry>
   <entry>
-    <title>雪</title>
-    <url>/posts/47930/</url>
-    <content><![CDATA[<p>满世界白茫茫的一片。 静谧而优雅。 惬意而自在。 踏着碎琼乱玉，咯吱咯吱的声音和触感。 沁凉的空气，明亮的阳光，反射着熠熠生辉。</p>
+    <title>这种教育的意义就是磨灭所有人的学习热情</title>
+    <url>/posts/51371/</url>
+    <content><![CDATA[<p>今天我们学习检索，首先，文献分为以下几类，这几类有这样的联系，检索有以下几种方法，它们有这样那样的优缺点，这个检索是在这个时间由这家公司创办的。 下面我们做检索的练习，检索分为以下几个步骤，首先就是检索准备。要明确学科属性，弄清信息类型，明确信息要求。</p>
 ]]></content>
       <categories>
         <category>随笔</category>
       </categories>
   </entry>
   <entry>
-    <title>这种教育的意义就是磨灭所有人的学习热情</title>
-    <url>/posts/51371/</url>
-    <content><![CDATA[<p>今天我们学习检索，首先，文献分为以下几类，这几类有这样的联系，检索有以下几种方法，它们有这样那样的优缺点，这个检索是在这个时间由这家公司创办的。 下面我们做检索的练习，检索分为以下几个步骤，首先就是检索准备。要明确学科属性，弄清信息类型，明确信息要求。</p>
+    <title>雪</title>
+    <url>/posts/47930/</url>
+    <content><![CDATA[<p>满世界白茫茫的一片。 静谧而优雅。 惬意而自在。 踏着碎琼乱玉，咯吱咯吱的声音和触感。 沁凉的空气，明亮的阳光，反射着熠熠生辉。</p>
 ]]></content>
       <categories>
         <category>随笔</category>
@@ -379,6 +289,96 @@
 ]]></content>
       <categories>
         <category>随笔</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>一些英文术语</title>
+    <url>/posts/18686/</url>
+    <content><![CDATA[<h2 id="分析与代数">分析与代数</h2>
+<table>
+<thead>
+<tr class="header">
+<th>中文</th>
+<th>英文</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>二次</td>
+<td>quadratic</td>
+</tr>
+<tr class="even">
+<td>三次</td>
+<td>cubic</td>
+</tr>
+<tr class="odd">
+<td>四次</td>
+<td>quartic</td>
+</tr>
+<tr class="even">
+<td>五次</td>
+<td>quintic</td>
+</tr>
+</tbody>
+</table>
+<h2 id="几何">几何</h2>
+<table>
+<thead>
+<tr class="header">
+<th>中文</th>
+<th>英文</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>四边形</td>
+<td>quadrilateral</td>
+</tr>
+<tr class="even">
+<td>五边形</td>
+<td>pentagon</td>
+</tr>
+<tr class="odd">
+<td>六边形</td>
+<td>hexagon</td>
+</tr>
+<tr class="even">
+<td>七边形</td>
+<td>heptagon</td>
+</tr>
+<tr class="odd">
+<td>八边形</td>
+<td>octagon</td>
+</tr>
+<tr class="even">
+<td>九边形</td>
+<td>nonagon</td>
+</tr>
+<tr class="odd">
+<td>十边形</td>
+<td>decagon</td>
+</tr>
+<tr class="even">
+<td>平行四边形</td>
+<td>parallelogram</td>
+</tr>
+<tr class="odd">
+<td>四面体 (三棱锥)</td>
+<td>tetrahedron</td>
+</tr>
+<tr class="even">
+<td>棱柱</td>
+<td>prism</td>
+</tr>
+<tr class="odd">
+<td>多面体</td>
+<td>polyhedron</td>
+</tr>
+</tbody>
+</table>
+]]></content>
+      <categories>
+        <category>数学</category>
       </categories>
   </entry>
   <entry>
@@ -412,26 +412,6 @@
       <categories>
         <category>计算机</category>
         <category>SQL</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Hexo 用法记录</title>
-    <url>/posts/16107/</url>
-    <content><![CDATA[<h2 id="插入图片">插入图片</h2>
-<figure class="highlight html"><table><tbody><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"/file/*.jpg"</span> <span class="attr">width</span>=<span class="string">"250"</span> <span class="attr">height</span>=<span class="string">"250"</span>/&gt;</span></span><br></pre></td></tr></tbody></table></figure>
-<figure class="highlight markdown"><table><tbody><tr><td class="code"><pre><span class="line">{% asset<span class="emphasis">_img image.jpg This is an image %}</span></span><br></pre></td></tr></tbody></table></figure>
-<h2 id="插入多个图片仅限-next-主题">插入多个图片（仅限 next 主题）</h2>
-<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">{% gp 2-2 %}</span><br><span class="line">![caption](/file/*.jpg)</span><br><span class="line">![caption](/file/*.jpg)</span><br><span class="line">{% endgp %}</span><br></pre></td></tr></tbody></table></figure>
-<p>第一个数字表示图片数量，第二个数字表示布局选项。</p>
-<h2 id="嵌入-pdf">嵌入 pdf</h2>
-<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">{% pdf /file/*.pdf %}</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="链接文章">链接文章</h2>
-<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">{% post_link * 显示文字 %}</span><br></pre></td></tr></tbody></table></figure>
-<figure class="highlight markdown"><table><tbody><tr><td class="code"><pre><span class="line">[<span class="string">title</span>](<span class="link">/posts/***/index.html</span>)</span><br></pre></td></tr></tbody></table></figure>
-]]></content>
-      <categories>
-        <category>计算机</category>
-        <category>hexo</category>
       </categories>
   </entry>
   <entry>
@@ -510,6 +490,26 @@ x+y\le 2
       <categories>
         <category>计算机</category>
         <category>Python</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Hexo 用法记录</title>
+    <url>/posts/16107/</url>
+    <content><![CDATA[<h2 id="插入图片">插入图片</h2>
+<figure class="highlight html"><table><tbody><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"/file/*.jpg"</span> <span class="attr">width</span>=<span class="string">"250"</span> <span class="attr">height</span>=<span class="string">"250"</span>/&gt;</span></span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight markdown"><table><tbody><tr><td class="code"><pre><span class="line">{% asset<span class="emphasis">_img image.jpg This is an image %}</span></span><br></pre></td></tr></tbody></table></figure>
+<h2 id="插入多个图片仅限-next-主题">插入多个图片（仅限 next 主题）</h2>
+<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">{% gp 2-2 %}</span><br><span class="line">![caption](/file/*.jpg)</span><br><span class="line">![caption](/file/*.jpg)</span><br><span class="line">{% endgp %}</span><br></pre></td></tr></tbody></table></figure>
+<p>第一个数字表示图片数量，第二个数字表示布局选项。</p>
+<h2 id="嵌入-pdf">嵌入 pdf</h2>
+<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">{% pdf /file/*.pdf %}</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="链接文章">链接文章</h2>
+<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">{% post_link * 显示文字 %}</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight markdown"><table><tbody><tr><td class="code"><pre><span class="line">[<span class="string">title</span>](<span class="link">/posts/***/index.html</span>)</span><br></pre></td></tr></tbody></table></figure>
+]]></content>
+      <categories>
+        <category>计算机</category>
+        <category>hexo</category>
       </categories>
   </entry>
   <entry>
@@ -1219,22 +1219,6 @@ E(\text{error})=\text{bias}^2+\text{Var}+\varepsilon.
       </categories>
   </entry>
   <entry>
-    <title>BST中的第二大元素</title>
-    <url>/posts/32090/</url>
-    <content><![CDATA[<h2 id="解法一">解法一</h2>
-<p>反向的中序遍历, 第二个节点就是第二大的. </p><figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">second_largest</span>(<span class="params">self</span>):</span><br><span class="line">        self.count = <span class="number">0</span></span><br><span class="line">        self.result = <span class="literal">None</span></span><br><span class="line">        self.traverse(root)</span><br><span class="line">        <span class="keyword">return</span> self.result</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">traverse</span>(<span class="params">self, root</span>):</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> root:</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        self.traverse(root.right)</span><br><span class="line">        self.count += <span class="number">1</span></span><br><span class="line">        <span class="keyword">if</span> self.count == <span class="number">2</span>:</span><br><span class="line">            self.result = root.val</span><br><span class="line">            <span class="keyword">return</span>       </span><br><span class="line">        <span class="keyword">if</span> self.count &gt; <span class="number">1</span>:</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        self.traverse(root.left)</span><br></pre></td></tr></tbody></table></figure> 时间: <span class="math inline">\(O(h)\)</span> 空间: <span class="math inline">\(O(h)\)</span><p></p>
-<h2 id="解法二">解法二</h2>
-<p>分类讨论. </p><figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">find_largest</span>(<span class="params">root</span>):</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> root:</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> root.right:  <span class="comment"># 没有右子树时, 根是最大的</span></span><br><span class="line">        <span class="keyword">return</span> root</span><br><span class="line">    <span class="keyword">return</span> find_largest(root.right)  <span class="comment"># 有右子树时, 找其中最大的</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">find_2nd_largest</span>(<span class="params">root</span>):</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> root:</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> root.right:  <span class="comment"># 没有右子树, 根最大; 左子树的最大就是第二大</span></span><br><span class="line">        <span class="keyword">return</span> find_largest(root.left)</span><br><span class="line">    <span class="comment"># 有右子树, 此时最大元素在右子树中</span></span><br><span class="line">    right = root.right</span><br><span class="line">    <span class="comment"># 右子树只有一个节点, 它是最大的, 根第二大</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> right.left <span class="keyword">and</span> <span class="keyword">not</span> right.right:  </span><br><span class="line">        <span class="keyword">return</span> root</span><br><span class="line">    <span class="comment"># 右子树还有子树, 在这里面找第二大的</span></span><br><span class="line">    <span class="keyword">return</span> find_2nd_largest(right)</span><br></pre></td></tr></tbody></table></figure><p></p>
-]]></content>
-      <categories>
-        <category>计算机</category>
-        <category>算法</category>
-      </categories>
-      <tags>
-        <tag>树</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>BST</title>
     <url>/posts/7069/</url>
     <content><![CDATA[<h2 id="判断-中序遍历">判断: 中序遍历</h2>
@@ -1253,6 +1237,22 @@ E(\text{error})=\text{bias}^2+\text{Var}+\varepsilon.
 <figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">insert</span>(<span class="params">root, key</span>):</span><br><span class="line">    <span class="keyword">if</span> root <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">        <span class="keyword">return</span> Node(key)</span><br><span class="line">    <span class="keyword">if</span> key &lt; root.key:</span><br><span class="line">        root.left = insert(root.left, key)</span><br><span class="line">    <span class="keyword">elif</span> key &gt; root.key:</span><br><span class="line">        root.right = insert(root.right, key)</span><br><span class="line">    <span class="keyword">return</span> root</span><br></pre></td></tr></tbody></table></figure>
 <p>时间: <span class="math inline">\(O(h)\)</span></p>
 <p>空间: <span class="math inline">\(O(h)\)</span></p>
+]]></content>
+      <categories>
+        <category>计算机</category>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>树</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>BST中的第二大元素</title>
+    <url>/posts/32090/</url>
+    <content><![CDATA[<h2 id="解法一">解法一</h2>
+<p>反向的中序遍历, 第二个节点就是第二大的. </p><figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">second_largest</span>(<span class="params">self</span>):</span><br><span class="line">        self.count = <span class="number">0</span></span><br><span class="line">        self.result = <span class="literal">None</span></span><br><span class="line">        self.traverse(root)</span><br><span class="line">        <span class="keyword">return</span> self.result</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">traverse</span>(<span class="params">self, root</span>):</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> root:</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        self.traverse(root.right)</span><br><span class="line">        self.count += <span class="number">1</span></span><br><span class="line">        <span class="keyword">if</span> self.count == <span class="number">2</span>:</span><br><span class="line">            self.result = root.val</span><br><span class="line">            <span class="keyword">return</span>       </span><br><span class="line">        <span class="keyword">if</span> self.count &gt; <span class="number">1</span>:</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        self.traverse(root.left)</span><br></pre></td></tr></tbody></table></figure> 时间: <span class="math inline">\(O(h)\)</span> 空间: <span class="math inline">\(O(h)\)</span><p></p>
+<h2 id="解法二">解法二</h2>
+<p>分类讨论. </p><figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">find_largest</span>(<span class="params">root</span>):</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> root:</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> root.right:  <span class="comment"># 没有右子树时, 根是最大的</span></span><br><span class="line">        <span class="keyword">return</span> root</span><br><span class="line">    <span class="keyword">return</span> find_largest(root.right)  <span class="comment"># 有右子树时, 找其中最大的</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">find_2nd_largest</span>(<span class="params">root</span>):</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> root:</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> root.right:  <span class="comment"># 没有右子树, 根最大; 左子树的最大就是第二大</span></span><br><span class="line">        <span class="keyword">return</span> find_largest(root.left)</span><br><span class="line">    <span class="comment"># 有右子树, 此时最大元素在右子树中</span></span><br><span class="line">    right = root.right</span><br><span class="line">    <span class="comment"># 右子树只有一个节点, 它是最大的, 根第二大</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> right.left <span class="keyword">and</span> <span class="keyword">not</span> right.right:  </span><br><span class="line">        <span class="keyword">return</span> root</span><br><span class="line">    <span class="comment"># 右子树还有子树, 在这里面找第二大的</span></span><br><span class="line">    <span class="keyword">return</span> find_2nd_largest(right)</span><br></pre></td></tr></tbody></table></figure><p></p>
 ]]></content>
       <categories>
         <category>计算机</category>
@@ -1750,6 +1750,122 @@ E(\text{error})=\text{bias}^2+\text{Var}+\varepsilon.
       </tags>
   </entry>
   <entry>
+    <title>群</title>
+    <url>/posts/11457/</url>
+    <content><![CDATA[<p>群指的是满足「运算封闭、结合律成立、有单位元 <span class="math inline">\(e\)</span>、每个元素都有逆元」的集合。</p>
+<p>任何代数系统都有两个组成部分：</p>
+<ol type="1">
+<li>集合：讨论序关系、度量、拓扑等</li>
+<li>运算：讨论结合律、交换律、分配率等</li>
+</ol>
+<span id="more"></span>
+<h2 id="符号语言说明">符号、语言说明</h2>
+<ul>
+<li>本文用 <span class="math inline">\(&lt;\)</span> 表示子群，<span class="math inline">\(\lhd\)</span> 表示正规子群（不与 <span class="math inline">\(\leq\)</span>，<span class="math inline">\(\trianglelefteq\)</span> 作区分）</li>
+<li>用 <span class="math inline">\(\subseteq\)</span> 表示子集，<span class="math inline">\(\subset\)</span> 表示真子集</li>
+<li>单位元用 <span class="math inline">\(e\)</span> 或 1 表示，对于 Abel 群会用 0 表示</li>
+<li>如果关于映射的群未指明运算，那么默认是映射乘法（复合）</li>
+</ul>
+<h2 id="例子">例子</h2>
+<p>虽然群可以是任何东西的集合，但是最自然的想法是把它理解成各种<strong>变换</strong>的集合。</p>
+<ul>
+<li>一般线性群 <span class="math inline">\(GL_n(\R)\)</span>：实数域中 <span class="math inline">\(n\)</span> 阶可逆方阵，关于矩阵乘法构成的群</li>
+<li>对称群 <span class="math inline">\(S_n\)</span>：集合 <span class="math inline">\(\{1,2,\ldots,n\}\)</span> 到自身的双射构成的群；它的子群被称作置换群</li>
+<li>交错群 <span class="math inline">\(A_{n}&lt; S_n\)</span>：<span class="math inline">\(S_n\)</span> 中所有偶置换（偶数个对换的合成）的集合</li>
+<li>左乘变换群 <span class="math inline">\(L(G)&lt; S_G\)</span>：左乘变换 <span class="math inline">\(L_a(g)=ag\)</span> 的集合（其中 <span class="math inline">\(a\in G\)</span>）</li>
+<li>中心化子 <span class="math inline">\(C_{G}(H)&lt; G\)</span>：群 <span class="math inline">\(G\)</span> 中可以和非空子集 <span class="math inline">\(H\)</span> 所有元素交换的元素（<span class="math inline">\(gh=hg\)</span>）</li>
+<li>正规化子 <span class="math inline">\(N_{G}(H)&lt; G\)</span>：群 <span class="math inline">\(G\)</span> 中可以和非空子集 <span class="math inline">\(H\)</span> 交换的元素（<span class="math inline">\(gH=Hg\)</span>）</li>
+</ul>
+<h2 id="子群正规子群与商群">子群、正规子群与商群</h2>
+<p>研究清楚子结构是研究代数结构至关重要的一环。两个本质上相同的结构应该有相同的子结构。</p>
+<h3 id="定义">定义</h3>
+<p>如果群的子集关于它的运算也构成群，就被称为<strong>子群</strong>。<span class="math inline">\(\{e\}\)</span> 和这个群本身被称为<strong>平凡子群</strong>。</p>
+<p>若 <span class="math inline">\(H&lt; G\)</span>，那么不同的 <span class="math inline">\(gH\)</span>（左<strong>陪集</strong>）给出了 <span class="math inline">\(G\)</span> 的一个划分，它们的个数叫做 <span class="math inline">\(H\)</span> 在 <span class="math inline">\(G\)</span> 中的<strong>指数</strong> <span class="math inline">\(|G\colon H|\)</span>。</p>
+<p>一般的子群不能让陪集构成群，定义正规子群就是为了让陪集构成群。<span class="math inline">\(H\)</span> 是 <span class="math inline">\(G\)</span> 的<strong>正规子群</strong> <span class="math inline">\(H\lhd G\)</span> 指的是 <span class="math inline">\(H&lt; G\)</span> 且 <span class="math inline">\(gH=Hg\)</span>，它也等价于 <span class="math inline">\(N_G(H)=G\)</span>。一个判别法是 <span class="math inline">\(ghg^{-1}\in H\)</span>。</p>
+<p>如果 <span class="math inline">\(H\lhd G\)</span>，那么 <span class="math inline">\(H\)</span> 的陪集关于集合乘法构成的群就叫做 <span class="math inline">\(G\)</span> 关于 <span class="math inline">\(H\)</span> 的<strong>商群</strong>，记作 <span class="math inline">\(G/H\)</span>。</p>
+<p>如果一个群的正规子群只有平凡子群，称它是<strong>单群</strong>。素数阶群、<span class="math inline">\(n\ge5\)</span> 的 <span class="math inline">\(A_n\)</span> 都是单群。后者是证明 <span class="math inline">\(n\ge 5\)</span> 的多项式方程没有根式解的基石。</p>
+<h3 id="性质">性质</h3>
+<ul>
+<li>子群和群共享单位元</li>
+<li>子群的交还是子群</li>
+<li>子群的并一般不是子群，除非它们的并就是它们中的一个（有包含关系）</li>
+<li>子群的积 <span class="math inline">\(HK\)</span> 是子群等价于 <span class="math inline">\(HK=KH\)</span></li>
+<li>Lagrange 定理：<span class="math inline">\(|G|=|G\colon H||H|\)</span></li>
+<li>如果 <span class="math inline">\(H\lhd G\)</span>，<span class="math inline">\(K&lt;G\)</span>，那么 <span class="math inline">\(H\lhd HK&lt;G\)</span></li>
+</ul>
+<h3 id="例子-1">例子</h3>
+<ul>
+<li>指数为 2 的子群（如 <span class="math inline">\(A_{n}\lhd S_n\)</span>）</li>
+<li>指数唯一的子群（如平凡子群），这是因为 <span class="math inline">\(gHg^{-1}\)</span> 和 <span class="math inline">\(H\)</span> 是指数相同的子群</li>
+<li><span class="math inline">\(C(G)\)</span></li>
+<li>交换群的任意子群</li>
+</ul>
+<h2 id="同态与同构">同态与同构</h2>
+<p>引入这一部分是为了作类比。两个代数系统可以通过某种关系对应起来，那它们本质上就是一样的，具有相同的结构和性质。</p>
+<p>同态指的是两个群之间保持运算的映射，同构指的是双射的情况。</p>
+<p>群 <span class="math inline">\(G\)</span> 到自身的所有同态组成的集合被称为自同态群 <span class="math inline">\(\End(G)\)</span>，所有同构组成的集合被称为自同构群 <span class="math inline">\(\Aut(G)\)</span>。</p>
+<h3 id="例子-2">例子</h3>
+<ul>
+<li>自然同态 <span class="math inline">\(\pi\colon G\to G / H,\ g\to gH\)</span></li>
+<li>内自同构 <span class="math inline">\(\mathrm{ad}_{g}\colon G\to G,\ x\to gxg^{-1}\)</span></li>
+</ul>
+<h3 id="性质-1">性质</h3>
+<ul>
+<li>同态把 1 映射为 1</li>
+<li>逆的像是像的逆</li>
+<li>子群的像、原像都是子群</li>
+</ul>
+<h4 id="群同态基本定理">群同态基本定理</h4>
+<p>设 <span class="math inline">\(\phi\)</span> 是 <span class="math inline">\(G\to G'\)</span> 的同态，那么 <span class="math inline">\(G / \Ker\phi\cong \Im\phi\)</span>。</p>
+<p>【证明】直接构造同构映射，把 <span class="math inline">\(g\Ker\phi\)</span> 映射成 <span class="math inline">\(\phi(g)\)</span>。</p>
+<h4 id="群的第一同构定理">群的第一同构定理</h4>
+<p>设 <span class="math inline">\(H\lhd G\)</span>，<span class="math inline">\(K&lt;G\)</span>，那么 <span class="math inline">\(K / (K\cap H)\cong (HK) / H\)</span>。</p>
+<p>【证明】构造满同态 <span class="math inline">\(\phi\colon K\to (HK) / H\)</span>，把 <span class="math inline">\(k\)</span> 变成 <span class="math inline">\(kH\)</span>。</p>
+<h4 id="群的第二同构定理">群的第二同构定理</h4>
+<p>设 <span class="math inline">\(H,K\lhd G\)</span>，<span class="math inline">\(H\subseteq K\)</span>，那么 <span class="math inline">\((G / H) / (K / H)\cong G / K\)</span>。</p>
+<p>【证明】构造满同态 <span class="math inline">\(\phi\colon G / H\to G / K\)</span>，把 <span class="math inline">\(gH\)</span> 变成 <span class="math inline">\(gK\)</span>。</p>
+<h4 id="cayley-定理">Cayley 定理</h4>
+<p>任何一个群都与一个变换群同构。推论：任何一个有限群都与一个置换群同构。</p>
+<p>【证明】构造同构 <span class="math inline">\(\phi\colon G\to L(G)\)</span>，把 <span class="math inline">\(g\)</span> 变成 <span class="math inline">\(L_g\)</span> 。</p>
+]]></content>
+      <categories>
+        <category>数学</category>
+        <category>代数</category>
+      </categories>
+      <tags>
+        <tag>群论</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>常见的ODE解法</title>
+    <url>/posts/65228/</url>
+    <content><![CDATA[<h3 id="可分离变量-ypyqx">1. 可分离变量 <span class="math inline">\(y'=p(y)q(x)\)</span></h3>
+<p>分离变量后两边积分.</p>
+<h3 id="一阶齐次线性-ypxy0">2. 一阶齐次线性 <span class="math inline">\(y'+p(x)y=0\)</span></h3>
+<p><span class="math display">\[
+y=Ce^{-\int p(x)\d x}
+\]</span></p>
+<h3 id="一阶非齐次线性-ypxyqx">3. 一阶非齐次线性 <span class="math inline">\(y'+p(x)y=q(x)\)</span></h3>
+<ul>
+<li><p><span class="math inline">\(y=e^{-\int p(x)\d x}\left(C+\int q(x)e^{\int p(x)\d x}\d x\right)\)</span></p></li>
+<li><p>取积分因子 <span class="math inline">\(\mu(x)=e^{\int p(x)\d x}\)</span>.</p></li>
+</ul>
+<blockquote>
+<p>🌰 <span class="math inline">\(y'-2y/x=0\)</span>. <span class="math display">\[\begin{aligned}
+&amp;\mu(x)=e^{\int-\frac2x \d x}=e^{-2\ln x}=\frac{1}{x^2}\\
+&amp;\implies{1\over x^2}y'-{2\over x^3}y=0\\
+&amp;\implies\left({y\over x^2}\right)'=0\\
+&amp;\implies y=Cx^2
+\end{aligned}
+\]</span></p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>数学</category>
+        <category>微分方程</category>
+      </categories>
+  </entry>
+  <entry>
     <title>三角函数</title>
     <url>/posts/26462/</url>
     <content><![CDATA[<h2 id="和差化积">和差化积</h2>
@@ -1778,71 +1894,6 @@ E(\text{error})=\text{bias}^2+\text{Var}+\varepsilon.
         <category>数学</category>
         <category>初等数学</category>
       </categories>
-  </entry>
-  <entry>
-    <title>群</title>
-    <url>/posts/11457/</url>
-    <content><![CDATA[<p>群指的是满足「运算封闭、结合律成立、有单位元 <span class="math inline">\(e\)</span>、每个元素都有逆元」的集合。</p>
-<p>群 <span class="math inline">\((G,\cdot)\)</span> 有两个构成部分：</p>
-<ol type="1">
-<li>集合：讨论序关系、度量、拓扑等</li>
-<li>运算：讨论结合律、交换律、分配率等</li>
-</ol>
-<span id="more"></span>
-<h2 id="符号说明">符号说明</h2>
-<ul>
-<li>本文用 <span class="math inline">\(&lt;\)</span> 表示子群，<span class="math inline">\(\lhd\)</span> 表示正规子群（并不特殊地指真子结构，等同于 <span class="math inline">\(\leq\)</span>，<span class="math inline">\(\trianglelefteq\)</span> ）</li>
-<li>用 <span class="math inline">\(\subseteq\)</span> 表示子集，<span class="math inline">\(\subset\)</span> 表示真子集</li>
-<li>单位元用 <span class="math inline">\(e\)</span> 或 1 表示，对于 Abel 群会用 0 表示</li>
-</ul>
-<h2 id="例子">例子</h2>
-<ul>
-<li>一般线性群 <span class="math inline">\(GL_n(\R)\)</span>：实数域中 <span class="math inline">\(n\)</span> 阶可逆方阵，关于矩阵乘法构成的群</li>
-<li>对称群 <span class="math inline">\(S_n\)</span>：集合 <span class="math inline">\(\{1,2,\ldots,n\}\)</span> 到自身的双射，关于映射复合构成的群；它的子群被称作置换群</li>
-<li>交错群 <span class="math inline">\(A_{n}&lt; S_n\)</span>：<span class="math inline">\(S_n\)</span> 中所有偶置换（偶数个对换的合成）的集合</li>
-<li>左乘变换群 <span class="math inline">\(L(G)&lt; S_G\)</span>：左乘变换 <span class="math inline">\(L_a(g)=ag\)</span> 的集合（其中 <span class="math inline">\(a\in G\)</span>），关于映射复合构成的群</li>
-<li>中心化子 <span class="math inline">\(C_{G}(H)&lt; G\)</span>：群 <span class="math inline">\(G\)</span> 中可以和非空子集 <span class="math inline">\(H\)</span> 所有元素交换的元素（<span class="math inline">\(gh=hg\)</span>）</li>
-<li>正规化子 <span class="math inline">\(N_{G}(H)&lt; G\)</span>：群 <span class="math inline">\(G\)</span> 中可以和非空子集 <span class="math inline">\(H\)</span> 交换的元素（<span class="math inline">\(gH=Hg\)</span>）</li>
-</ul>
-<h2 id="子群正规子群与商群">子群、正规子群与商群</h2>
-<h3 id="定义与性质">定义与性质</h3>
-<p>子群是群的子结构，它在集合上是群的子集，并且使用相同的运算。</p>
-<p>子群和群共享单位元。子群的交还是子群，子群的并是子群等价于它们有包含关系。子群的积 <span class="math inline">\(HK\)</span> 是子群等价于 <span class="math inline">\(HK=KH\)</span>。</p>
-<p>陪集是对于子群而言的。若 <span class="math inline">\(H&lt; G\)</span>，那么不同的 <span class="math inline">\(gH\)</span>（左陪集）给出了 <span class="math inline">\(G\)</span> 的一个划分，它们的个数叫做 <span class="math inline">\(H\)</span> 在 <span class="math inline">\(G\)</span> 中的指数 <span class="math inline">\(|G\colon H|\)</span>。</p>
-<p><span class="math display">\[\boxed{\text{Lagrange 定理：}|G|=|G\colon H||H|}.\]</span></p>
-<p>一般的子群不能让陪集构成群，定义正规子群就是为了让陪集构成群。<span class="math inline">\(H\)</span> 是 <span class="math inline">\(G\)</span> 的正规子群 <span class="math inline">\(H\lhd G\)</span> 指的是 <span class="math inline">\(H&lt; G\)</span> 且 <span class="math inline">\(gH=Hg\)</span>，一个判别法是 <span class="math inline">\(ghg^{-1}\in H\)</span>。此时陪集关于集合乘法构成的群就叫做 <span class="math inline">\(G\)</span> 关于 <span class="math inline">\(H\)</span> 的商群 <span class="math inline">\(G/H\)</span>。</p>
-<p>如果 <span class="math inline">\(H\lhd G\)</span>，<span class="math inline">\(K&lt;G\)</span>，那么 <span class="math inline">\(H\lhd HK&lt;G\)</span>。</p>
-<h3 id="例子-1">例子</h3>
-<ul>
-<li>指数为 2 的子群（如 <span class="math inline">\(A_{n}\lhd S_n\)</span>）</li>
-<li>指数唯一的子群（如平凡子群），这是因为 <span class="math inline">\(gHg^{-1}\)</span> 和 <span class="math inline">\(H\)</span> 是指数相同的子群</li>
-<li><span class="math inline">\(C(G)\)</span></li>
-<li>交换群的任意子群</li>
-</ul>
-<h3 id="单群">单群</h3>
-<p>如果一个群的正规子群只有平凡子群，称它是单群。</p>
-<p>素数阶群、<span class="math inline">\(n\ge5\)</span> 的 <span class="math inline">\(A_n\)</span> 都是单群。后者是证明 <span class="math inline">\(n\ge 5\)</span> 的多项式方程没有根式解的基石。</p>
-<h2 id="同态与同构">同态与同构</h2>
-<p>同态指的是两个群之间保持运算的映射，同构指的是双射的情况。根据定义可以推出同态把 1 映射为 1，逆的像是像的逆，子群的像、原像都是子群。</p>
-<p>群 <span class="math inline">\(G\)</span> 到自身的所有同态组成的集合被称为自同态 <span class="math inline">\(\End(G)\)</span>，所有同构组成的集合被称为自同构 <span class="math inline">\(\Aut(G)\)</span>。</p>
-<h3 id="例子-2">例子</h3>
-<ul>
-<li>自然同态 <span class="math inline">\(\pi\colon G\to G / H,\ g\to gH\)</span></li>
-<li>内自同构 <span class="math inline">\(\mathrm{ad}_{g}\colon G\to G,\ x\to gxg^{-1}\)</span></li>
-</ul>
-<h3 id="定理">定理</h3>
-<h4 id="群同态基本定理">群同态基本定理</h4>
-<p>设 <span class="math inline">\(\phi\)</span> 是 <span class="math inline">\(G\to G'\)</span> 的同态，那么 <span class="math inline">\(G / \Ker\phi\cong \Im\phi\)</span>。</p>
-<p>证明：直接构造同构映射，把 <span class="math inline">\(g\Ker\phi\)</span> 映射成 <span class="math inline">\(\phi(g)\)</span>。</p>
-<h4 id="群的第一同构定理">群的第一同构定理</h4>
-]]></content>
-      <categories>
-        <category>数学</category>
-        <category>代数</category>
-      </categories>
-      <tags>
-        <tag>群论</tag>
-      </tags>
   </entry>
   <entry>
     <title>双曲函数</title>
@@ -1898,35 +1949,6 @@ E(\text{error})=\text{bias}^2+\text{Var}+\varepsilon.
       <categories>
         <category>数学</category>
         <category>初等数学</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>常见的ODE解法</title>
-    <url>/posts/65228/</url>
-    <content><![CDATA[<h3 id="可分离变量-ypyqx">1. 可分离变量 <span class="math inline">\(y'=p(y)q(x)\)</span></h3>
-<p>分离变量后两边积分.</p>
-<h3 id="一阶齐次线性-ypxy0">2. 一阶齐次线性 <span class="math inline">\(y'+p(x)y=0\)</span></h3>
-<p><span class="math display">\[
-y=Ce^{-\int p(x)\d x}
-\]</span></p>
-<h3 id="一阶非齐次线性-ypxyqx">3. 一阶非齐次线性 <span class="math inline">\(y'+p(x)y=q(x)\)</span></h3>
-<ul>
-<li><p><span class="math inline">\(y=e^{-\int p(x)\d x}\left(C+\int q(x)e^{\int p(x)\d x}\d x\right)\)</span></p></li>
-<li><p>取积分因子 <span class="math inline">\(\mu(x)=e^{\int p(x)\d x}\)</span>.</p></li>
-</ul>
-<blockquote>
-<p>🌰 <span class="math inline">\(y'-2y/x=0\)</span>. <span class="math display">\[\begin{aligned}
-&amp;\mu(x)=e^{\int-\frac2x \d x}=e^{-2\ln x}=\frac{1}{x^2}\\
-&amp;\implies{1\over x^2}y'-{2\over x^3}y=0\\
-&amp;\implies\left({y\over x^2}\right)'=0\\
-&amp;\implies y=Cx^2
-\end{aligned}
-\]</span></p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>数学</category>
-        <category>微分方程</category>
       </categories>
   </entry>
   <entry>
@@ -3007,16 +3029,6 @@ f\colon[-L,L]\to\mathbb{R}
       </categories>
   </entry>
   <entry>
-    <title>常用级数</title>
-    <url>/posts/56038/</url>
-    <content><![CDATA[<p><span class="math display">\[\sum_{n=1}^\infty\frac{1}{n^2}=\frac{\pi^2}{6}\]</span> <span id="more"></span> <span class="math display">\[\sum_{n=1}^\infty\frac{(-1)^{n-1}}{n^2}=\frac{\pi^2}{12}\]</span> <span class="math display">\[\sum_{n=1}^\infty\frac{1}{(2n-1)^2}=\frac{\pi^2}{8}\]</span> <span class="math display">\[\sum_{n=1}^\infty\frac{1}{n^4}=\frac{\pi^4}{90}\]</span> <span class="math display">\[\sum_{n=1}^\infty\frac{(-1)^{n-1}}{n^4}=\frac{7\pi^4}{720}\]</span> <span class="math display">\[1-\frac13+\frac15-\frac17+\cdots=\frac\pi4\]</span> <span class="math display">\[1-\frac12+\frac13-\frac14+\cdots=\ln2\]</span></p>
-]]></content>
-      <categories>
-        <category>数学</category>
-        <category>级数</category>
-      </categories>
-  </entry>
-  <entry>
     <title>计算级数</title>
     <url>/posts/42963/</url>
     <content><![CDATA[<p>计算 <span class="math display">\[
@@ -3105,6 +3117,16 @@ a_n={n!\over(2n+1)!!}\cdot{1\over n+1}，
 \]</span> 最终， <span class="math display">\[
 \sum_{n=1}^\infty a_n=-a_0+\sum_{n=0}^\infty a_n={\pi^2\over8}-1.
 \]</span></p>
+]]></content>
+      <categories>
+        <category>数学</category>
+        <category>级数</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>常用级数</title>
+    <url>/posts/56038/</url>
+    <content><![CDATA[<p><span class="math display">\[\sum_{n=1}^\infty\frac{1}{n^2}=\frac{\pi^2}{6}\]</span> <span id="more"></span> <span class="math display">\[\sum_{n=1}^\infty\frac{(-1)^{n-1}}{n^2}=\frac{\pi^2}{12}\]</span> <span class="math display">\[\sum_{n=1}^\infty\frac{1}{(2n-1)^2}=\frac{\pi^2}{8}\]</span> <span class="math display">\[\sum_{n=1}^\infty\frac{1}{n^4}=\frac{\pi^4}{90}\]</span> <span class="math display">\[\sum_{n=1}^\infty\frac{(-1)^{n-1}}{n^4}=\frac{7\pi^4}{720}\]</span> <span class="math display">\[1-\frac13+\frac15-\frac17+\cdots=\frac\pi4\]</span> <span class="math display">\[1-\frac12+\frac13-\frac14+\cdots=\ln2\]</span></p>
 ]]></content>
       <categories>
         <category>数学</category>
@@ -3351,6 +3373,76 @@ Pv=P(Px)=P^2x=Px=v.
       </tags>
   </entry>
   <entry>
+    <title>为什么&quot;假推真/假&quot;都为真</title>
+    <url>/posts/31827/</url>
+    <content><![CDATA[<p><span class="math inline">\(P\Rightarrow Q\)</span> 的<strong>定义</strong>是真值表. "如果 <span class="math inline">\(P\)</span>, 那么 <span class="math inline">\(Q\)</span>" 只是一种解释, 不是定义. 也就是说, <span class="math inline">\(P\)</span> 和 <span class="math inline">\(Q\)</span> 本身不需要有联系. 这里解释一下为什么定义是这样的: <span class="math inline">\(P\)</span> 为假, <span class="math inline">\(P\Rightarrow Q\)</span> 总为真. <span id="more"></span></p>
+<p>"假推假"为真, 这看上去不符合直觉. 要弄清的是, 是这个逻辑为真, 而不是推出的命题为真.</p>
+<p><strong><span class="math inline">\(P\Rightarrow Q\)</span> 只有在真推假的时候才为假.</strong></p>
+<p>这是说, 论断 <span class="math inline">\(P\Rightarrow Q\)</span> 是正确的, 等价于, 永远不会从真命题推出假命题. 换言之, 如果你想说我的论断 <span class="math inline">\(P\Rightarrow Q\)</span> 是错的, 需要且只需要找到一个情况, 使得 <span class="math inline">\(P\)</span> 为真, <span class="math inline">\(Q\)</span> 为假, 其他情况都不管用.</p>
+<blockquote>
+<p><strong>"如果北京是中国的首都, 那么 <span class="math inline">\(1+1=2\)</span>." 这个论断正确吗? (真推真)</strong></p>
+<p>如果你想说我的论断错了, 那么只需要找到情况 "北京是中国的首都, <span class="math inline">\(1+1\ne2\)</span>". 没有这种情况 (真且假), 所以论断是对的.</p>
+<p><strong>"如果北京是中国的首都, 那么 <span class="math inline">\(1+1=3\)</span>." 这个论断正确吗? (真推假)</strong></p>
+<p>如果你想说我的论断错了, 那么只需要找到情况 "北京是中国的首都, <span class="math inline">\(1+1\ne3\)</span>". 有这种情况 (真且真), 所以论断是错的.</p>
+<p><strong>"如果猪会飞, 那么 <span class="math inline">\(1+1=2\)</span>." 这个论断正确吗? (假推真)</strong></p>
+<p>如果你想说我的论断错了, 那么只需要找到情况 "猪会飞, <span class="math inline">\(1+1\ne2\)</span>". 没有这种情况 (假且假), 所以论断是对的.</p>
+<p><strong>"如果猪会飞, 那么 <span class="math inline">\(1+1=3\)</span>." 这个论断正确吗? (假推假)</strong></p>
+<p>如果你想说我的论断错了, 那么只需要找到情况 "猪会飞, <span class="math inline">\(1+1\ne3\)</span>". 没有这种情况 (假且真), 所以论断是对的.</p>
+</blockquote>
+<p><em>注: 可以看出, 猪会飞可以推出任何结论. 因为你找不到一只会飞的猪来反驳我.</em></p>
+<p>这里可以看出这个等价逻辑, <span class="math inline">\(P\Rightarrow Q\)</span> 等价于 <span class="math inline">\(\lnot (P\land\lnot Q)\)</span>. 后者同时又是 <span class="math inline">\(\lnot P\lor Q\)</span>, 这是说, 要想 <span class="math inline">\(P\Rightarrow Q\)</span> 逻辑正确, 要么前提是错的, 要么结论是对的.</p>
+<hr>
+<p>有时 <span class="math inline">\(P\Rightarrow Q\)</span> 的正确性比 <span class="math inline">\(Q\)</span> 的正确性更容易看出来. 我们已知推理正确, 那可以得出结论正确吗? 看真值表:</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;"><span class="math inline">\(P\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(Q\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(P\Rightarrow Q\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">F</td>
+<td style="text-align: center;">T</td>
+<td style="text-align: center;">T</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">F</td>
+<td style="text-align: center;">F</td>
+<td style="text-align: center;">T</td>
+</tr>
+</tbody>
+</table>
+<p>可以看出, 如果前提 (<span class="math inline">\(P\)</span>) 是错的, 即使我们做出了正确的推理, 也无法判断推出的结果 (<span class="math inline">\(Q\)</span>) 是否正确.</p>
+<blockquote>
+<p>如果 <span class="math inline">\(1&lt;10\)</span>, 那么 <span class="math inline">\(1&lt;100\)</span>.</p>
+<p>如果 <span class="math inline">\(50&lt;10\)</span>, 那么 <span class="math inline">\(50&lt;100\)</span>.</p>
+<p>如果 <span class="math inline">\(200&lt;10\)</span>, 那么 <span class="math inline">\(200&lt;100\)</span>.</p>
+</blockquote>
+<p>这三个推理都是正确的. 第一个, 我们从正确的结论推出了正确的结论. 后两个, 我们从错误的结论分别推出了正确和错误的结论.</p>
+<hr>
+<p>逆否命题的角度:</p>
+<p><span class="math inline">\(P\Rightarrow Q\)</span> 等价于 <span class="math inline">\(\lnot Q\Rightarrow\lnot P\)</span>.</p>
+<p>于是当 <span class="math inline">\(P\)</span> 为假时, <span class="math inline">\(\lnot Q\Rightarrow\lnot P\)</span> 就是真/假推真, 总为真.</p>
+<hr>
+<p>集合论的角度:</p>
+<p>把命题 <span class="math inline">\(P\)</span> 看成是 <span class="math inline">\(x\in P\)</span>, 此时把右边的 <span class="math inline">\(P\)</span> 看成是集合.</p>
+<p><span class="math inline">\(P\Rightarrow Q\)</span> 等价于 <span class="math inline">\(P\)</span> 对应的集合是 <span class="math inline">\(Q\)</span> 对应的集合的子集.</p>
+<p>比如, "下雨 <span class="math inline">\(\Rightarrow\)</span> 地面是湿的" 就是 <span class="math display">\[
+\{\text{下雨时}\}\subseteq\{\text{地面是湿的时}\}.
+\]</span></p>
+<p>"<span class="math inline">\(n\)</span> 是自然数 <span class="math inline">\(\Rightarrow\)</span> <span class="math inline">\(n\)</span> 是整数" 就是 <span class="math display">\[
+\mathbb{N}\subseteq\mathbb{Z}.
+\]</span></p>
+<p>一个假命题对应的集合是空集 (没有元素可以满足), 而空集是任何集合的子集. 所以假命题可以推出任何命题.</p>
+]]></content>
+      <categories>
+        <category>数学</category>
+        <category>逻辑</category>
+      </categories>
+  </entry>
+  <entry>
     <title>Time Series</title>
     <url>/posts/23857/</url>
     <content><![CDATA[<h2 id="type">type</h2>
@@ -3500,76 +3592,6 @@ z = {p_1-p_2\over\sqrt{p(1-p)(1/n_1+1/n_2)}}
       <categories>
         <category>数学</category>
         <category>统计</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>为什么&quot;假推真/假&quot;都为真</title>
-    <url>/posts/31827/</url>
-    <content><![CDATA[<p><span class="math inline">\(P\Rightarrow Q\)</span> 的<strong>定义</strong>是真值表. "如果 <span class="math inline">\(P\)</span>, 那么 <span class="math inline">\(Q\)</span>" 只是一种解释, 不是定义. 也就是说, <span class="math inline">\(P\)</span> 和 <span class="math inline">\(Q\)</span> 本身不需要有联系. 这里解释一下为什么定义是这样的: <span class="math inline">\(P\)</span> 为假, <span class="math inline">\(P\Rightarrow Q\)</span> 总为真. <span id="more"></span></p>
-<p>"假推假"为真, 这看上去不符合直觉. 要弄清的是, 是这个逻辑为真, 而不是推出的命题为真.</p>
-<p><strong><span class="math inline">\(P\Rightarrow Q\)</span> 只有在真推假的时候才为假.</strong></p>
-<p>这是说, 论断 <span class="math inline">\(P\Rightarrow Q\)</span> 是正确的, 等价于, 永远不会从真命题推出假命题. 换言之, 如果你想说我的论断 <span class="math inline">\(P\Rightarrow Q\)</span> 是错的, 需要且只需要找到一个情况, 使得 <span class="math inline">\(P\)</span> 为真, <span class="math inline">\(Q\)</span> 为假, 其他情况都不管用.</p>
-<blockquote>
-<p><strong>"如果北京是中国的首都, 那么 <span class="math inline">\(1+1=2\)</span>." 这个论断正确吗? (真推真)</strong></p>
-<p>如果你想说我的论断错了, 那么只需要找到情况 "北京是中国的首都, <span class="math inline">\(1+1\ne2\)</span>". 没有这种情况 (真且假), 所以论断是对的.</p>
-<p><strong>"如果北京是中国的首都, 那么 <span class="math inline">\(1+1=3\)</span>." 这个论断正确吗? (真推假)</strong></p>
-<p>如果你想说我的论断错了, 那么只需要找到情况 "北京是中国的首都, <span class="math inline">\(1+1\ne3\)</span>". 有这种情况 (真且真), 所以论断是错的.</p>
-<p><strong>"如果猪会飞, 那么 <span class="math inline">\(1+1=2\)</span>." 这个论断正确吗? (假推真)</strong></p>
-<p>如果你想说我的论断错了, 那么只需要找到情况 "猪会飞, <span class="math inline">\(1+1\ne2\)</span>". 没有这种情况 (假且假), 所以论断是对的.</p>
-<p><strong>"如果猪会飞, 那么 <span class="math inline">\(1+1=3\)</span>." 这个论断正确吗? (假推假)</strong></p>
-<p>如果你想说我的论断错了, 那么只需要找到情况 "猪会飞, <span class="math inline">\(1+1\ne3\)</span>". 没有这种情况 (假且真), 所以论断是对的.</p>
-</blockquote>
-<p><em>注: 可以看出, 猪会飞可以推出任何结论. 因为你找不到一只会飞的猪来反驳我.</em></p>
-<p>这里可以看出这个等价逻辑, <span class="math inline">\(P\Rightarrow Q\)</span> 等价于 <span class="math inline">\(\lnot (P\land\lnot Q)\)</span>. 后者同时又是 <span class="math inline">\(\lnot P\lor Q\)</span>, 这是说, 要想 <span class="math inline">\(P\Rightarrow Q\)</span> 逻辑正确, 要么前提是错的, 要么结论是对的.</p>
-<hr>
-<p>有时 <span class="math inline">\(P\Rightarrow Q\)</span> 的正确性比 <span class="math inline">\(Q\)</span> 的正确性更容易看出来. 我们已知推理正确, 那可以得出结论正确吗? 看真值表:</p>
-<table>
-<thead>
-<tr class="header">
-<th style="text-align: center;"><span class="math inline">\(P\)</span></th>
-<th style="text-align: center;"><span class="math inline">\(Q\)</span></th>
-<th style="text-align: center;"><span class="math inline">\(P\Rightarrow Q\)</span></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;">F</td>
-<td style="text-align: center;">T</td>
-<td style="text-align: center;">T</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">F</td>
-<td style="text-align: center;">F</td>
-<td style="text-align: center;">T</td>
-</tr>
-</tbody>
-</table>
-<p>可以看出, 如果前提 (<span class="math inline">\(P\)</span>) 是错的, 即使我们做出了正确的推理, 也无法判断推出的结果 (<span class="math inline">\(Q\)</span>) 是否正确.</p>
-<blockquote>
-<p>如果 <span class="math inline">\(1&lt;10\)</span>, 那么 <span class="math inline">\(1&lt;100\)</span>.</p>
-<p>如果 <span class="math inline">\(50&lt;10\)</span>, 那么 <span class="math inline">\(50&lt;100\)</span>.</p>
-<p>如果 <span class="math inline">\(200&lt;10\)</span>, 那么 <span class="math inline">\(200&lt;100\)</span>.</p>
-</blockquote>
-<p>这三个推理都是正确的. 第一个, 我们从正确的结论推出了正确的结论. 后两个, 我们从错误的结论分别推出了正确和错误的结论.</p>
-<hr>
-<p>逆否命题的角度:</p>
-<p><span class="math inline">\(P\Rightarrow Q\)</span> 等价于 <span class="math inline">\(\lnot Q\Rightarrow\lnot P\)</span>.</p>
-<p>于是当 <span class="math inline">\(P\)</span> 为假时, <span class="math inline">\(\lnot Q\Rightarrow\lnot P\)</span> 就是真/假推真, 总为真.</p>
-<hr>
-<p>集合论的角度:</p>
-<p>把命题 <span class="math inline">\(P\)</span> 看成是 <span class="math inline">\(x\in P\)</span>, 此时把右边的 <span class="math inline">\(P\)</span> 看成是集合.</p>
-<p><span class="math inline">\(P\Rightarrow Q\)</span> 等价于 <span class="math inline">\(P\)</span> 对应的集合是 <span class="math inline">\(Q\)</span> 对应的集合的子集.</p>
-<p>比如, "下雨 <span class="math inline">\(\Rightarrow\)</span> 地面是湿的" 就是 <span class="math display">\[
-\{\text{下雨时}\}\subseteq\{\text{地面是湿的时}\}.
-\]</span></p>
-<p>"<span class="math inline">\(n\)</span> 是自然数 <span class="math inline">\(\Rightarrow\)</span> <span class="math inline">\(n\)</span> 是整数" 就是 <span class="math display">\[
-\mathbb{N}\subseteq\mathbb{Z}.
-\]</span></p>
-<p>一个假命题对应的集合是空集 (没有元素可以满足), 而空集是任何集合的子集. 所以假命题可以推出任何命题.</p>
-]]></content>
-      <categories>
-        <category>数学</category>
-        <category>逻辑</category>
       </categories>
   </entry>
   <entry>
