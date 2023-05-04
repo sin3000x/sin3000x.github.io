@@ -29,7 +29,7 @@
 <meta property="og:description" content="群指的是满足「运算封闭、结合律成立、有单位元 \(e\)、每个元素都有逆元」的集合。 任何代数系统都有两个组成部分：  集合：讨论序关系、度量、拓扑等 运算：讨论结合律、交换律、分配率等">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-04-30T08:59:00.000Z">
-<meta property="article:modified_time" content="2023-05-02T11:00:06.023Z">
+<meta property="article:modified_time" content="2023-05-04T14:39:59.377Z">
 <meta property="article:author" content="Jeremy Rabbit">
 <meta property="article:tag" content="群论">
 <meta name="twitter:card" content="summary">
@@ -223,7 +223,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-05-02 19:00:06" itemprop="dateModified" datetime="2023-05-02T19:00:06+08:00">2023-05-02</time>
+                <time title="修改时间：2023-05-04 22:39:59" itemprop="dateModified" datetime="2023-05-04T22:39:59+08:00">2023-05-04</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -269,7 +269,8 @@
 <li>本文用 <span class="math inline">\(&lt;\)</span> 表示子群，<span class="math inline">\(\lhd\)</span> 表示正规子群（不与 <span class="math inline">\(\leq\)</span>，<span class="math inline">\(\trianglelefteq\)</span> 作区分）</li>
 <li>用 <span class="math inline">\(\subseteq\)</span> 表示子集，<span class="math inline">\(\subset\)</span> 表示真子集</li>
 <li>单位元用 <span class="math inline">\(e\)</span> 或 1 表示，对于 Abel 群会用 0 表示</li>
-<li>如果关于映射的群未指明运算，那么默认是映射乘法（复合）</li>
+<li>如果关于映射的群未指明运算，那么默认运算是映射乘法（复合）</li>
+<li>用大写字母表示集合，对应的小写字母表示其中的任意元素，群 <span class="math inline">\(G\)</span> 的任意元素会用 <span class="math inline">\(g\)</span> 或 <span class="math inline">\(a\)</span> 表示</li>
 </ul>
 <h2 id="例子">例子</h2>
 <p>虽然群可以是任何东西的集合，但是最自然的想法是把它理解成各种<strong>变换</strong>的集合。</p>
@@ -277,7 +278,7 @@
 <li>一般线性群 <span class="math inline">\(GL_n(\R)\)</span>：实数域中 <span class="math inline">\(n\)</span> 阶可逆方阵，关于矩阵乘法构成的群</li>
 <li>对称群 <span class="math inline">\(S_n\)</span>：集合 <span class="math inline">\(\{1,2,\ldots,n\}\)</span> 到自身的双射构成的群；它的子群被称作置换群</li>
 <li>交错群 <span class="math inline">\(A_{n}&lt; S_n\)</span>：<span class="math inline">\(S_n\)</span> 中所有偶置换（偶数个对换的合成）的集合</li>
-<li>左乘变换群 <span class="math inline">\(L(G)&lt; S_G\)</span>：左乘变换 <span class="math inline">\(L_a(g)=ag\)</span> 的集合（其中 <span class="math inline">\(a\in G\)</span>）</li>
+<li>左乘变换群 <span class="math inline">\(L(G)&lt; S_G\)</span>：左乘变换 <span class="math inline">\(L_a(g)=ag\)</span> 的集合</li>
 <li>中心化子 <span class="math inline">\(C_{G}(H)&lt; G\)</span>：群 <span class="math inline">\(G\)</span> 中可以和非空子集 <span class="math inline">\(H\)</span> 所有元素交换的元素（<span class="math inline">\(gh=hg\)</span>）</li>
 <li>正规化子 <span class="math inline">\(N_{G}(H)&lt; G\)</span>：群 <span class="math inline">\(G\)</span> 中可以和非空子集 <span class="math inline">\(H\)</span> 交换的元素（<span class="math inline">\(gH=Hg\)</span>）</li>
 </ul>
@@ -332,6 +333,38 @@
 <h4 id="cayley-定理">Cayley 定理</h4>
 <p>任何一个群都与一个变换群同构。推论：任何一个有限群都与一个置换群同构。</p>
 <p>【证明】构造同构 <span class="math inline">\(\phi\colon G\to L(G)\)</span>，把 <span class="math inline">\(g\)</span> 变成 <span class="math inline">\(L_g\)</span> 。</p>
+<h2 id="循环群与阶">循环群与阶</h2>
+<p>循环群是由一个元素生成的群 <span class="math inline">\(\langle a\rangle=\{\cdots,a^{-1},a^0,a,a^2,\cdots\}\)</span>，无限循环群同构于整数加法群 <span class="math inline">\(\Z\)</span>，<span class="math inline">\(n\)</span> 阶有限循环群同构于剩余类加法群 <span class="math inline">\(\Z_n\)</span> 。</p>
+<p>对任何一个群，一个元素经过最少 <span class="math inline">\(n\)</span> 次幂后得到了单位元，称这个元素的<strong>阶</strong>为 <span class="math inline">\(n\)</span>。若不存在这样的最小正整数，称这个元素是无限阶的。</p>
+<h3 id="性质-2">性质</h3>
+<p>本节中的 <span class="math inline">\(r\)</span> 指正整数。</p>
+<ul>
+<li>若 <span class="math inline">\(a\)</span> 是群 <span class="math inline">\(G\)</span> 的 <span class="math inline">\(n\)</span> 阶元素，那么
+<ul>
+<li><span class="math inline">\(a^k=1\)</span> 等价于 <span class="math inline">\(k\)</span> 是 <span class="math inline">\(n\)</span> 的倍数</li>
+<li>如果 <span class="math inline">\(G\)</span> 是有限群，那么 <span class="math inline">\(a^{|G|}=1\)</span></li>
+<li><span class="math inline">\(a^r\)</span> 的阶是 <span class="math inline">\(\frac{n}{(n,r)}\)</span></li>
+<li>如果 <span class="math inline">\(r|n\)</span>，那么 <span class="math inline">\(a^{\frac{n}{r}}\)</span> 的阶是 <span class="math inline">\(r\)</span></li>
+<li>如果 <span class="math inline">\(b\)</span> 是 <span class="math inline">\(m\)</span> 阶元素，<span class="math inline">\((m,n)=1\)</span> 且 <span class="math inline">\(ab=ba\)</span>，那么 <span class="math inline">\(ab\)</span> 的阶为 <span class="math inline">\(nm\)</span></li>
+</ul></li>
+<li>素数阶群是循环群</li>
+<li>无限循环群 <span class="math inline">\(\langle a\rangle\)</span> 有且只有两个生成元 <span class="math inline">\(a\)</span> 和 <span class="math inline">\(a^{-1}\)</span></li>
+<li><span class="math inline">\(\langle a\rangle\)</span> 的生成元是 <span class="math inline">\(a^r\)</span>，其中 <span class="math inline">\(r\)</span> 与群的阶互素</li>
+<li>如果 <span class="math inline">\(r\)</span> 整除群的阶数，那么只有一个 <span class="math inline">\(r\)</span> 阶循环子群</li>
+<li>循环群的子群是循环群</li>
+</ul>
+<h2 id="群的作用与sylow-定理">群的作用与Sylow 定理</h2>
+<p>对于一个非空集合 <span class="math inline">\(S\)</span> 和群 <span class="math inline">\(G\)</span>，如果有 <span class="math inline">\(G\times S\to S\)</span> 上的映射 <span class="math inline">\((g,s)\mapsto g(s)\)</span> 使得 <span class="math inline">\(g_1g_2(s)=g_1\left(g_2(s)\right)\)</span> 而且 <span class="math inline">\(e(s)=s\)</span>，就称 <span class="math inline">\(S\)</span> 是 <span class="math inline">\(G\)</span>-集，这个映射被称为群 <span class="math inline">\(G\)</span> 在集合 <span class="math inline">\(S\)</span> 上的<strong>作用</strong>。</p>
+<p>此时，让 <span class="math inline">\(s\)</span> 保持不变的变换 <span class="math inline">\(g\)</span> 全体组成了 <span class="math inline">\(G\)</span> 的一个子群 <span class="math inline">\(G_{s}=\{g\in G \mid gs=s\}\)</span>，它被称为 <span class="math inline">\(s\)</span> 的<strong>稳定子群</strong>（<strong>迷向子群</strong>），<span class="math inline">\(s\)</span> 是 <span class="math inline">\(G_s\)</span> 中所有变换的不动点。</p>
+<p><span class="math inline">\(s\)</span> 在各种作用下能到达的位置被称为 <span class="math inline">\(s\)</span> 的<strong>轨道</strong> <span class="math inline">\(\bar x=Gs\)</span>。</p>
+<h3 id="性质-3">性质</h3>
+<ul>
+<li><p>所有的 <span class="math inline">\(\bar s\)</span> 构成了 <span class="math inline">\(S\)</span> 的一个划分</p></li>
+<li><p><span class="math inline">\(|\bar s|=|G:G_s|\)</span></p></li>
+<li><p><span class="math inline">\(|S|=\sum\limits_{s\in I}|\bar s|=\sum\limits_{s\in I}|G:G_s|\)</span>，其中 <span class="math inline">\(I\)</span> 是各轨道代表元的集合 ### 例子</p></li>
+<li><p><span class="math inline">\((g,a)\mapsto ga\)</span> 是 <span class="math inline">\(G\)</span> 在自身上的（左乘）作用</p></li>
+<li><p><span class="math inline">\((g,a)\mapsto gag^{-1}\)</span> 是 <span class="math inline">\(G\)</span> 在自身上的（共轭）作用</p></li>
+</ul>
 
     </div>
 
@@ -412,7 +445,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%A6%E5%8F%B7%E8%AF%AD%E8%A8%80%E8%AF%B4%E6%98%8E"><span class="nav-number">1.</span> <span class="nav-text">符号、语言说明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BE%8B%E5%AD%90"><span class="nav-number">2.</span> <span class="nav-text">例子</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%90%E7%BE%A4%E6%AD%A3%E8%A7%84%E5%AD%90%E7%BE%A4%E4%B8%8E%E5%95%86%E7%BE%A4"><span class="nav-number">3.</span> <span class="nav-text">子群、正规子群与商群</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89"><span class="nav-number">3.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%A7%E8%B4%A8"><span class="nav-number">3.2.</span> <span class="nav-text">性质</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BE%8B%E5%AD%90-1"><span class="nav-number">3.3.</span> <span class="nav-text">例子</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%8C%E6%80%81%E4%B8%8E%E5%90%8C%E6%9E%84"><span class="nav-number">4.</span> <span class="nav-text">同态与同构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BE%8B%E5%AD%90-2"><span class="nav-number">4.1.</span> <span class="nav-text">例子</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%A7%E8%B4%A8-1"><span class="nav-number">4.2.</span> <span class="nav-text">性质</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BE%A4%E5%90%8C%E6%80%81%E5%9F%BA%E6%9C%AC%E5%AE%9A%E7%90%86"><span class="nav-number">4.2.1.</span> <span class="nav-text">群同态基本定理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BE%A4%E7%9A%84%E7%AC%AC%E4%B8%80%E5%90%8C%E6%9E%84%E5%AE%9A%E7%90%86"><span class="nav-number">4.2.2.</span> <span class="nav-text">群的第一同构定理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BE%A4%E7%9A%84%E7%AC%AC%E4%BA%8C%E5%90%8C%E6%9E%84%E5%AE%9A%E7%90%86"><span class="nav-number">4.2.3.</span> <span class="nav-text">群的第二同构定理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#cayley-%E5%AE%9A%E7%90%86"><span class="nav-number">4.2.4.</span> <span class="nav-text">Cayley 定理</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%A6%E5%8F%B7%E8%AF%AD%E8%A8%80%E8%AF%B4%E6%98%8E"><span class="nav-number">1.</span> <span class="nav-text">符号、语言说明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BE%8B%E5%AD%90"><span class="nav-number">2.</span> <span class="nav-text">例子</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%90%E7%BE%A4%E6%AD%A3%E8%A7%84%E5%AD%90%E7%BE%A4%E4%B8%8E%E5%95%86%E7%BE%A4"><span class="nav-number">3.</span> <span class="nav-text">子群、正规子群与商群</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89"><span class="nav-number">3.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%A7%E8%B4%A8"><span class="nav-number">3.2.</span> <span class="nav-text">性质</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BE%8B%E5%AD%90-1"><span class="nav-number">3.3.</span> <span class="nav-text">例子</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%8C%E6%80%81%E4%B8%8E%E5%90%8C%E6%9E%84"><span class="nav-number">4.</span> <span class="nav-text">同态与同构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BE%8B%E5%AD%90-2"><span class="nav-number">4.1.</span> <span class="nav-text">例子</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%A7%E8%B4%A8-1"><span class="nav-number">4.2.</span> <span class="nav-text">性质</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BE%A4%E5%90%8C%E6%80%81%E5%9F%BA%E6%9C%AC%E5%AE%9A%E7%90%86"><span class="nav-number">4.2.1.</span> <span class="nav-text">群同态基本定理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BE%A4%E7%9A%84%E7%AC%AC%E4%B8%80%E5%90%8C%E6%9E%84%E5%AE%9A%E7%90%86"><span class="nav-number">4.2.2.</span> <span class="nav-text">群的第一同构定理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BE%A4%E7%9A%84%E7%AC%AC%E4%BA%8C%E5%90%8C%E6%9E%84%E5%AE%9A%E7%90%86"><span class="nav-number">4.2.3.</span> <span class="nav-text">群的第二同构定理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#cayley-%E5%AE%9A%E7%90%86"><span class="nav-number">4.2.4.</span> <span class="nav-text">Cayley 定理</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BE%AA%E7%8E%AF%E7%BE%A4%E4%B8%8E%E9%98%B6"><span class="nav-number">5.</span> <span class="nav-text">循环群与阶</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%A7%E8%B4%A8-2"><span class="nav-number">5.1.</span> <span class="nav-text">性质</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BE%A4%E7%9A%84%E4%BD%9C%E7%94%A8%E4%B8%8Esylow-%E5%AE%9A%E7%90%86"><span class="nav-number">6.</span> <span class="nav-text">群的作用与Sylow 定理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%A7%E8%B4%A8-3"><span class="nav-number">6.1.</span> <span class="nav-text">性质</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -596,6 +629,7 @@ document.querySelectorAll('.pdfobject-container').forEach(element => {
           R: '{\\mathbb{R}}',
           C: '{\\mathbb{C}}',
           N: '{\\mathbb{N}}',
+          Z: '{\\mathbb{Z}}',
           bm: ["{\\boldsymbol #1}", 1],
           e: '\\mathrm{e}',
           i: '\\mathrm{i}',
