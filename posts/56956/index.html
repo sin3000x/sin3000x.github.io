@@ -259,141 +259,154 @@
       
         <p>基于熵减, 或者说信息增益, 来决定决策树的 feature 选择. ID3 算法优先 split 可以带来最大熵减的那个 feature, 也就是一种贪心算法.</p>
 <span id="more"></span>
-
-<p>如果一件事情的发生概率为 $p$, 它带来的 entropy 被定义为 $-\log_2 p$: 它的概率越小, 给系统带来的扰动就越大, 熵趋于无穷; 它的概率为 1 时, 没有任何不确定性, 熵为 0. 可以按不同的事件划分做加权平均. 在下面的例子中, A, B, C 为 feature, U 为 label.</p>
+<p>如果一件事情的发生概率为 <span class="math inline">\(p\)</span>, 它带来的 entropy 被定义为 <span class="math inline">\(-\log_2 p\)</span>: 它的概率越小, 给系统带来的扰动就越大, 熵趋于无穷; 它的概率为 1 时, 没有任何不确定性, 熵为 0. 可以按不同的事件划分做加权平均. 在下面的例子中, A, B, C 为 feature, U 为 label.</p>
 <table>
 <thead>
-<tr>
+<tr class="header">
 <th>Real Avatar(A)</th>
 <th>Friends(B)</th>
 <th>Blog(C)</th>
 <th>Real User Account (U)</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr class="odd">
 <td>N</td>
 <td>S</td>
 <td>S</td>
 <td>N</td>
 </tr>
-<tr>
+<tr class="even">
 <td>Y</td>
 <td>L</td>
 <td>S</td>
 <td>Y</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>Y</td>
 <td>M</td>
 <td>L</td>
 <td>Y</td>
 </tr>
-<tr>
+<tr class="even">
 <td>Y</td>
 <td>M</td>
 <td>M</td>
 <td>Y</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>Y</td>
-<td>M</td>
-<td>L</td>
-<td>Y</td>
-</tr>
-<tr>
-<td>N</td>
-<td>L</td>
-<td>M</td>
-<td>Y</td>
-</tr>
-<tr>
-<td>N</td>
-<td>S</td>
-<td>M</td>
-<td>N</td>
-</tr>
-<tr>
-<td>N</td>
 <td>M</td>
 <td>L</td>
 <td>Y</td>
 </tr>
-<tr>
+<tr class="even">
+<td>N</td>
+<td>L</td>
+<td>M</td>
+<td>Y</td>
+</tr>
+<tr class="odd">
+<td>N</td>
+<td>S</td>
+<td>M</td>
+<td>N</td>
+</tr>
+<tr class="even">
+<td>N</td>
+<td>M</td>
+<td>L</td>
+<td>Y</td>
+</tr>
+<tr class="odd">
 <td>N</td>
 <td>S</td>
 <td>M</td>
 <td>Y</td>
 </tr>
-<tr>
+<tr class="even">
 <td>Y</td>
 <td>S</td>
 <td>S</td>
 <td>N</td>
 </tr>
-</tbody></table>
-<p>一共有 10 条数据, Y 占 7 条, N 占 3 条. 那么本身的熵为<br>$$<br>H=-0.7\times\log_20.7-0.3\times\log_20.3=0.8813<br>$$</p>
-<p><strong>以计算 A 为例…</strong></p>
+</tbody>
+</table>
+<p>一共有 10 条数据, Y 占 7 条, N 占 3 条. 那么本身的熵为 <span class="math display">\[
+H=-0.7\times\log_20.7-0.3\times\log_20.3=0.8813
+\]</span></p>
+<p><strong>以计算 A 为例...</strong></p>
 <p>A 把数据分成了两类. 对 Y 类:</p>
 <table>
 <thead>
-<tr>
+<tr class="header">
 <th>Real Avatar(A)</th>
 <th>Real User Account (U)</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr class="odd">
 <td>Y</td>
 <td>Y</td>
 </tr>
-<tr>
+<tr class="even">
 <td>Y</td>
 <td>Y</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>Y</td>
 <td>Y</td>
 </tr>
-<tr>
+<tr class="even">
 <td>Y</td>
 <td>Y</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>Y</td>
 <td>N</td>
 </tr>
-</tbody></table>
-<p>熵为<br>$$<br>-0.8\times\log_20.8-0.2\times\log_20.2=0.7219<br>$$<br>对 N 类:</p>
+</tbody>
+</table>
+<p>熵为 <span class="math display">\[
+-0.8\times\log_20.8-0.2\times\log_20.2=0.7219
+\]</span> 对 N 类:</p>
 <table>
 <thead>
-<tr>
+<tr class="header">
 <th>Real Avatar(A)</th>
 <th>Real User Account (U)</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr class="odd">
 <td>N</td>
 <td>N</td>
 </tr>
-<tr>
+<tr class="even">
 <td>N</td>
 <td>Y</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>N</td>
 <td>N</td>
 </tr>
-<tr>
+<tr class="even">
 <td>N</td>
 <td>Y</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>N</td>
 <td>Y</td>
 </tr>
-</tbody></table>
-<p>熵为<br>$$<br>-0.6\times\log_20.6-0.4\times\log_20.4=0.9710<br>$$</p>
-<p>对整体进行加权平均, 就是按 A 分类带来的熵:<br>$$<br>H_A=0.5\times0.7219+0.5\times0.9710=0.8465<br>$$</p>
-<p>按 A 分类带来的熵减就是 $0.8813-0.8465=0.0348$.</p>
+</tbody>
+</table>
+<p>熵为 <span class="math display">\[
+-0.6\times\log_20.6-0.4\times\log_20.4=0.9710
+\]</span></p>
+<p>对整体进行加权平均, 就是按 A 分类带来的熵: <span class="math display">\[
+H_A=0.5\times0.7219+0.5\times0.9710=0.8465
+\]</span></p>
+<p>按 A 分类带来的熵减就是 <span class="math inline">\(0.8813-0.8465=0.0348\)</span>.</p>
 
     </div>
 
