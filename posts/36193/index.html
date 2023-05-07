@@ -259,49 +259,42 @@
       
         <p>高数中的一些定义涉及了复杂的逻辑，这里梳理一下应该怎么否定它们。</p>
 <span id="more"></span>
-<h2 id="准备工作">准备工作</h2>
-<h3 id="蕴含的否定">蕴含的否定</h3>
-<p>首先需要解决的是【<span class="math inline">\(A\implies B\)</span>】的否定是什么，答案是【<span class="math inline">\(A\land\lnot B\)</span>】。因为这样就恰好否定了蕴含的逻辑：前提和结论的否定同时出现，就说明前提推不出结论。</p>
+
+<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><h3 id="蕴含的否定"><a href="#蕴含的否定" class="headerlink" title="蕴含的否定"></a>蕴含的否定</h3><p>首先需要解决的是【$A\implies B$】的否定是什么，答案是【$A\land\lnot B$】。因为这样就恰好否定了蕴含的逻辑：前提和结论的否定同时出现，就说明前提推不出结论。</p>
 <blockquote>
 <p>【<strong>如果</strong>我在北京，<strong>那么</strong>我在中国】的否定是【我在北京，<strong>并且</strong>我不在中国】</p>
-<p>【<strong>如果</strong>今天下雨，<strong>那么</strong> <span class="math inline">\(1+1=2\)</span>】的否定是【今天下雨，<strong>并且</strong> <span class="math inline">\(1+1\ne2\)</span>】</p>
+<p>【<strong>如果</strong>今天下雨，<strong>那么</strong> $1+1=2$】的否定是【今天下雨，<strong>并且</strong> $1+1\ne2$】</p>
 </blockquote>
 <p>怎么强调都不过分：【如果……，那么……】的否定不再是这个句式，而是【……，并且不……】。更多的逻辑分析写在了<a href="/posts/31827/index.html">这里</a>。</p>
-<h3 id="全称存在量词的否定">全称、存在量词的否定</h3>
-<p>这里的逻辑高中接触过，要否定【对于任意】的命题，说明【存在】一个反例就好；要否定【存在】的命题，需要说明【对于任意】都不成立。</p>
+<h3 id="全称、存在量词的否定"><a href="#全称、存在量词的否定" class="headerlink" title="全称、存在量词的否定"></a>全称、存在量词的否定</h3><p>这里的逻辑高中接触过，要否定【对于任意】的命题，说明【存在】一个反例就好；要否定【存在】的命题，需要说明【对于任意】都不成立。</p>
 <blockquote>
 <p>【所有的猪都不会飞】的否定是【存在一头猪会飞】</p>
 <p>【存在一个属猫的人】的否定是【任何人都不属猫】</p>
 </blockquote>
 <p>用逻辑的语言：</p>
 <ul>
-<li>【<span class="math inline">\(\forall x\in A,\ p(x)\)</span>】的否定是【<span class="math inline">\(\exists x\in A,\ \lnot p(x)\)</span>】</li>
-<li>【<span class="math inline">\(\exists x\in A,\ p(x)\)</span>】的否定是【<span class="math inline">\(\forall x\in A,\ \lnot p(x)\)</span>】</li>
+<li>【$\forall x\in A,\ p(x)$】的否定是【$\exists x\in A,\ \lnot p(x)$】</li>
+<li>【$\exists x\in A,\ p(x)$】的否定是【$\forall x\in A,\ \lnot p(x)$】</li>
 </ul>
-<h2 id="极限">极限</h2>
-<h3 id="函数极限">函数极限</h3>
-<p>首先我们否定 <span class="math inline">\(\lim_{x\to a}f(x)=L\)</span>。把它写成定义：<span class="math display">\[\boxed{\forall\varepsilon&gt;0,\ \exists\delta&gt;0,\ \forall x\in\R,\ 0&lt;|x-a|&lt;\delta\implies |f(x)-L|&lt;\varepsilon}.\]</span>也就是说，只要 <span class="math inline">\(x\)</span> 离 <span class="math inline">\(a\)</span> 足够近，就可以让 <span class="math inline">\(f(x)\)</span> 离 <span class="math inline">\(L\)</span> 任意接近。</p>
+<h2 id="极限"><a href="#极限" class="headerlink" title="极限"></a>极限</h2><h3 id="函数极限"><a href="#函数极限" class="headerlink" title="函数极限"></a>函数极限</h3><p>首先我们否定 $\lim_{x\to a}f(x)=L$。把它写成定义：$$\boxed{\forall\varepsilon&gt;0,\ \exists\delta&gt;0,\ \forall x\in\R,\ 0&lt;|x-a|&lt;\delta\implies |f(x)-L|&lt;\varepsilon}.$$也就是说，只要 $x$ 离 $a$ 足够近，就可以让 $f(x)$ 离 $L$ 任意接近。</p>
 <blockquote>
-<p>注意：我们把后半部分写成了一个蕴含的逻辑：它通常被表述为【对于任意满足 <span class="math inline">\(0&lt;|x-a|&lt;\delta\)</span> 的 <span class="math inline">\(x\)</span>，都有 <span class="math inline">\(|f(x)-L|&lt;\varepsilon\)</span>】。</p>
+<p>注意：我们把后半部分写成了一个蕴含的逻辑：它通常被表述为【对于任意满足 $0&lt;|x-a|&lt;\delta$ 的 $x$，都有 $|f(x)-L|&lt;\varepsilon$】。</p>
 </blockquote>
-<p>按照上面的分析，它的否定【<span class="math inline">\(f(x)\)</span> 在 <span class="math inline">\(a\)</span> 处不以 <span class="math inline">\(L\)</span> 为极限】就是：<span class="math display">\[\boxed{\exists\varepsilon&gt;0,\ \forall\delta&gt;0,\ \exists x\in\R,\ 0&lt;|x-a|&lt;\delta~\text{并且}~|f(x)-L|\ge\varepsilon}.\]</span>也就是说，不管离 <span class="math inline">\(a\)</span> 多近，总能找到 <span class="math inline">\(x\)</span>，使得 <span class="math inline">\(f(x)\)</span> 离 <span class="math inline">\(L\)</span> 有一个正距离。</p>
+<p>按照上面的分析，它的否定【$f(x)$ 在 $a$ 处不以 $L$ 为极限】就是：$$\boxed{\exists\varepsilon&gt;0,\ \forall\delta&gt;0,\ \exists x\in\R,\ 0&lt;|x-a|&lt;\delta<del>\text{并且}</del>|f(x)-L|\ge\varepsilon}.$$也就是说，不管离 $a$ 多近，总能找到 $x$，使得 $f(x)$ 离 $L$ 有一个正距离。</p>
 <blockquote>
-<p>注意：这个否定既包括了 <span class="math inline">\(f(x)\)</span> 在 <span class="math inline">\(a\)</span> 处的极限不是 <span class="math inline">\(L\)</span>，也包括了 <span class="math inline">\(f(x)\)</span> 在 <span class="math inline">\(a\)</span> 处极限不存在。</p>
+<p>注意：这个否定既包括了 $f(x)$ 在 $a$ 处的极限不是 $L$，也包括了 $f(x)$ 在 $a$ 处极限不存在。</p>
 </blockquote>
 <blockquote>
-<p>在反证法中，我们通常通过这个条件找矛盾。由于这里的 <span class="math inline">\(\delta\)</span> 是任取的，我们让它越来越小（同时 <span class="math inline">\(x\)</span> 越来越接近 <span class="math inline">\(a\)</span>），还能总满足 <span class="math inline">\(|f(x)-L|\ge\varepsilon\)</span> 就会出问题。只要取一列趋于 0 的 <span class="math inline">\(\delta_n\)</span>，就会让 <span class="math inline">\(x\to a\)</span>。通常我们显式地取 <span class="math inline">\(\delta_n=\frac1n\)</span>，因为这是最简单的趋于 0 的数列。</p>
+<p>在反证法中，我们通常通过这个条件找矛盾。由于这里的 $\delta$ 是任取的，我们让它越来越小（同时 $x$ 越来越接近 $a$），还能总满足 $|f(x)-L|\ge\varepsilon$ 就会出问题。只要取一列趋于 0 的 $\delta_n$，就会让 $x\to a$。通常我们显式地取 $\delta_n=\frac1n$，因为这是最简单的趋于 0 的数列。</p>
 </blockquote>
-<h3 id="数列极限">数列极限</h3>
-<p>接下来我们否定 <span class="math inline">\(\lim_{n\to\infty} a_n=a\)</span>，和上面本质上是一样的：<span class="math display">\[\boxed{\forall\varepsilon&gt;0,\ \exists N\in\mathbb{N},\ \forall n\in\mathbb{N},\ n\ge N\implies |a_n-a|&lt;\varepsilon}.\]</span>否定：<span class="math display">\[\boxed{\exists\varepsilon&gt;0,\ \forall N\in\mathbb{N},\ \exists n\in\mathbb{N},\ n\ge N~\text{并且}~|a_n-a|\ge\varepsilon}.\]</span></p>
-<h3 id="升级版">升级版</h3>
-<p>这次我们否定【数列 <span class="math inline">\(\{a_n\}\)</span> 收敛】。这样就多了一个条件：存在某个数 <span class="math inline">\(a\)</span>，让数列收敛到 <span class="math inline">\(a\)</span>。<span class="math display">\[\boxed{\exists a\in\R,\ \forall\varepsilon&gt;0,\ \exists N\in\mathbb{N},\ \forall n\ge N\implies |a_n-a|&lt;\varepsilon}.\]</span>那么【数列 <span class="math inline">\(\{a_n\}\)</span> 发散】写起来就是：<span class="math display">\[\boxed{\forall a\in\R,\ \exists\varepsilon&gt;0,\ \forall N\in\mathbb{N},\ \exists n\ge N,\ \text{使得}~|a_{n}-a|\ge\varepsilon}.\]</span>也就是说，对于任何的实数 <span class="math inline">\(a\)</span>，<span class="math inline">\(a_n\)</span> 都不收敛到 <span class="math inline">\(a\)</span>。</p>
+<h3 id="数列极限"><a href="#数列极限" class="headerlink" title="数列极限"></a>数列极限</h3><p>接下来我们否定 $\lim_{n\to\infty} a_n=a$，和上面本质上是一样的：$$\boxed{\forall\varepsilon&gt;0,\ \exists N\in\mathbb{N},\ \forall n\in\mathbb{N},\ n\ge N\implies |a_n-a|&lt;\varepsilon}.$$否定：$$\boxed{\exists\varepsilon&gt;0,\ \forall N\in\mathbb{N},\ \exists n\in\mathbb{N},\ n\ge N<del>\text{并且}</del>|a_n-a|\ge\varepsilon}.$$</p>
+<h3 id="升级版"><a href="#升级版" class="headerlink" title="升级版"></a>升级版</h3><p>这次我们否定【数列 ${a_n}$ 收敛】。这样就多了一个条件：存在某个数 $a$，让数列收敛到 $a$。$$\boxed{\exists a\in\R,\ \forall\varepsilon&gt;0,\ \exists N\in\mathbb{N},\ \forall n\ge N\implies |a_n-a|&lt;\varepsilon}.$$那么【数列 ${a_n}$ 发散】写起来就是：$$\boxed{\forall a\in\R,\ \exists\varepsilon&gt;0,\ \forall N\in\mathbb{N},\ \exists n\ge N,\ \text{使得}~|a_{n}-a|\ge\varepsilon}.$$也就是说，对于任何的实数 $a$，$a_n$ 都不收敛到 $a$。</p>
 <blockquote>
-<p>注意：在上面的一行我们把【<span class="math inline">\(\forall n\in\mathbb{N},\ n\ge\mathbb{N}\)</span>】简写成了【<span class="math inline">\(\forall n\ge N\)</span>】；在下面的一行我们把【<span class="math inline">\(\exists n\in\mathbb{N},\ n\ge N\)</span> 并且】简写成了【<span class="math inline">\(\exists n\ge N\)</span> 使得】。这并不是严谨的逻辑语言，但这样写更为简洁。</p>
+<p>注意：在上面的一行我们把【$\forall n\in\mathbb{N},\ n\ge\mathbb{N}$】简写成了【$\forall n\ge N$】；在下面的一行我们把【$\exists n\in\mathbb{N},\ n\ge N$ 并且】简写成了【$\exists n\ge N$ 使得】。这并不是严谨的逻辑语言，但这样写更为简洁。</p>
 </blockquote>
-<h2 id="一致收敛和逐点收敛">一致收敛和逐点收敛</h2>
-<p>函数列 <span class="math inline">\(\{f_n\}\)</span> 一致收敛到 <span class="math inline">\(f\)</span> 的定义是<span class="math display">\[\boxed{\forall\eps&gt;0,\ \exists N\in\N,\ \forall x\in I,\ \forall n&gt;N\implies |f_n(x)-f(x)|&lt;\eps}.\]</span>否定是（按逻辑写好定义后，否定可以机械地写出来）<span class="math display">\[\boxed{\exists\eps&gt;0,\ \forall N\in\N,\ \exists x\in I,\ \exists n&gt;N~\text{使得}~|f_n(x)-f(x)|\ge\eps}.\]</span>也就是说，不管取了多靠后的一项 <span class="math inline">\(f_n\)</span>，总有一个点 <span class="math inline">\(x\)</span> 让 <span class="math inline">\(f_n(x)\)</span> 跑出 <span class="math inline">\(f(x)\)</span> 的邻域。</p>
+<h2 id="一致收敛和逐点收敛"><a href="#一致收敛和逐点收敛" class="headerlink" title="一致收敛和逐点收敛"></a>一致收敛和逐点收敛</h2><p>函数列 ${f_n}$ 一致收敛到 $f$ 的定义是$$\boxed{\forall\eps&gt;0,\ \exists N\in\N,\ \forall x\in I,\ \forall n&gt;N\implies |f_n(x)-f(x)|&lt;\eps}.$$否定是（按逻辑写好定义后，否定可以机械地写出来）$$\boxed{\exists\eps&gt;0,\ \forall N\in\N,\ \exists x\in I,\ \exists n&gt;N<del>\text{使得}</del>|f_n(x)-f(x)|\ge\eps}.$$也就是说，不管取了多靠后的一项 $f_n$，总有一个点 $x$ 让 $f_n(x)$ 跑出 $f(x)$ 的邻域。</p>
 <hr>
-<p>逐点收敛的定义是<span class="math display">\[\boxed{\forall x\in I,\ \forall\eps&gt;0,\ \exists N\in\N,\ \forall n&gt;N\implies |f_n(x)-f(x)|&lt;\eps}.\]</span>否定是<span class="math display">\[\boxed{\exists x\in I,\ \exists\eps&gt;0,\ \forall N\in\N,\ \exists n&gt;N~\text{使得}~|f_n(x)-f(x)|\ge\eps}.\]</span>这是说，存在着一个点 <span class="math inline">\(x\)</span>，在此处 <span class="math inline">\(f_n(x)\)</span> 不收敛到 <span class="math inline">\(f(x)\)</span>。</p>
+<p>逐点收敛的定义是$$\boxed{\forall x\in I,\ \forall\eps&gt;0,\ \exists N\in\N,\ \forall n&gt;N\implies |f_n(x)-f(x)|&lt;\eps}.$$否定是$$\boxed{\exists x\in I,\ \exists\eps&gt;0,\ \forall N\in\N,\ \exists n&gt;N<del>\text{使得}</del>|f_n(x)-f(x)|\ge\eps}.$$这是说，存在着一个点 $x$，在此处 $f_n(x)$ 不收敛到 $f(x)$。</p>
 
     </div>
 
@@ -385,7 +378,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="nav-number">1.</span> <span class="nav-text">准备工作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%95%B4%E5%90%AB%E7%9A%84%E5%90%A6%E5%AE%9A"><span class="nav-number">1.1.</span> <span class="nav-text">蕴含的否定</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%A8%E7%A7%B0%E5%AD%98%E5%9C%A8%E9%87%8F%E8%AF%8D%E7%9A%84%E5%90%A6%E5%AE%9A"><span class="nav-number">1.2.</span> <span class="nav-text">全称、存在量词的否定</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9E%81%E9%99%90"><span class="nav-number">2.</span> <span class="nav-text">极限</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%87%BD%E6%95%B0%E6%9E%81%E9%99%90"><span class="nav-number">2.1.</span> <span class="nav-text">函数极限</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E5%88%97%E6%9E%81%E9%99%90"><span class="nav-number">2.2.</span> <span class="nav-text">数列极限</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8D%87%E7%BA%A7%E7%89%88"><span class="nav-number">2.3.</span> <span class="nav-text">升级版</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E8%87%B4%E6%94%B6%E6%95%9B%E5%92%8C%E9%80%90%E7%82%B9%E6%94%B6%E6%95%9B"><span class="nav-number">3.</span> <span class="nav-text">一致收敛和逐点收敛</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="nav-number">1.</span> <span class="nav-text">准备工作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%95%B4%E5%90%AB%E7%9A%84%E5%90%A6%E5%AE%9A"><span class="nav-number">1.1.</span> <span class="nav-text">蕴含的否定</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%A8%E7%A7%B0%E3%80%81%E5%AD%98%E5%9C%A8%E9%87%8F%E8%AF%8D%E7%9A%84%E5%90%A6%E5%AE%9A"><span class="nav-number">1.2.</span> <span class="nav-text">全称、存在量词的否定</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9E%81%E9%99%90"><span class="nav-number">2.</span> <span class="nav-text">极限</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%87%BD%E6%95%B0%E6%9E%81%E9%99%90"><span class="nav-number">2.1.</span> <span class="nav-text">函数极限</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E5%88%97%E6%9E%81%E9%99%90"><span class="nav-number">2.2.</span> <span class="nav-text">数列极限</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8D%87%E7%BA%A7%E7%89%88"><span class="nav-number">2.3.</span> <span class="nav-text">升级版</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E8%87%B4%E6%94%B6%E6%95%9B%E5%92%8C%E9%80%90%E7%82%B9%E6%94%B6%E6%95%9B"><span class="nav-number">3.</span> <span class="nav-text">一致收敛和逐点收敛</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 

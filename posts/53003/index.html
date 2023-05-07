@@ -258,29 +258,27 @@
       
         <p>客户在从看到产品广告到完成购买经历了很多事件，怎么给这些事件的重要性分配 credit？</p>
 <span id="more"></span>
-<h2 id="single-source-touch-attribution">Single Source (Touch) Attribution</h2>
-<p>把所有的 credit 分给一个事件。比如 3 days last touch：往回看三天，分给最近的 marketing vehicle 。</p>
+
+<h2 id="Single-Source-Touch-Attribution"><a href="#Single-Source-Touch-Attribution" class="headerlink" title="Single Source (Touch) Attribution"></a>Single Source (Touch) Attribution</h2><p>把所有的 credit 分给一个事件。比如 3 days last touch：往回看三天，分给最近的 marketing vehicle 。</p>
 <p>缺点：</p>
 <ul>
 <li>鼓励频繁发邮件，长期不利</li>
 <li>一次折扣有帮助，长期不利</li>
 <li>新用户需要很多次点击才会购买，会忽视初始几次事件</li>
 </ul>
-<h2 id="fractioned-attribution">Fractioned Attribution</h2>
-<p>多个事件有权重。比如：首末两个事件占 40%，中间的事件平分 20%。</p>
+<h2 id="Fractioned-Attribution"><a href="#Fractioned-Attribution" class="headerlink" title="Fractioned Attribution"></a>Fractioned Attribution</h2><p>多个事件有权重。比如：首末两个事件占 40%，中间的事件平分 20%。</p>
 <p>缺点是难以确定最佳权重。</p>
-<h2 id="machine-learning">Machine Learning</h2>
-<p>比如有两个 action，构建 feature：</p>
-<ol type="1">
+<h2 id="Machine-Learning"><a href="#Machine-Learning" class="headerlink" title="Machine Learning"></a>Machine Learning</h2><p>比如有两个 action，构建 feature：</p>
+<ol>
 <li>action 1 出现的位置是 1</li>
 <li>action 1 出现的位置是 2</li>
 <li>action 2 出现的位置是 1</li>
 <li>action 2 出现的位置是 2</li>
 </ol>
-<p>如果一个顾客经历了 action 1 -&gt; action 2 后买了，那么 <span class="math inline">\(x=(1, 0, 0, 1),\ y=1\)</span>。</p>
-<p>如果一个顾客经历了 action 2 就买了，那么 <span class="math inline">\(x=(0, 0, 1, 0),\ y=0\)</span>。</p>
-<p>如果有 <span class="math inline">\(n\)</span> 个 action，就要有 <span class="math inline">\(n^2\)</span> 个 binary feature。</p>
-<p>逻辑回归之后，设它们的系数是 <span class="math inline">\(k_1,\ldots,k_n\)</span>。那么 action 1 的 credit 就是 <span class="math inline">\(\frac{k_1+\cdots+k_n}{\sum k_i}\)</span>，action 2 的 credit 就是 <span class="math inline">\(\frac{k_{n+1}+\cdots+k_{2n}}{\sum k_i}\)</span>，以此类推。</p>
+<p>如果一个顾客经历了 action 1 -&gt; action 2 后买了，那么 $x=(1, 0, 0, 1),\ y=1$。</p>
+<p>如果一个顾客经历了 action 2 就买了，那么 $x=(0, 0, 1, 0),\ y=0$。</p>
+<p>如果有 $n$ 个 action，就要有 $n^2$ 个 binary feature。</p>
+<p>逻辑回归之后，设它们的系数是 $k_1,\ldots,k_n$。那么 action 1 的 credit 就是 $\frac{k_1+\cdots+k_n}{\sum k_i}$，action 2 的 credit 就是 $\frac{k_{n+1}+\cdots+k_{2n}}{\sum k_i}$，以此类推。</p>
 
     </div>
 
@@ -361,7 +359,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#single-source-touch-attribution"><span class="nav-number">1.</span> <span class="nav-text">Single Source (Touch) Attribution</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#fractioned-attribution"><span class="nav-number">2.</span> <span class="nav-text">Fractioned Attribution</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#machine-learning"><span class="nav-number">3.</span> <span class="nav-text">Machine Learning</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Single-Source-Touch-Attribution"><span class="nav-number">1.</span> <span class="nav-text">Single Source (Touch) Attribution</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Fractioned-Attribution"><span class="nav-number">2.</span> <span class="nav-text">Fractioned Attribution</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Machine-Learning"><span class="nav-number">3.</span> <span class="nav-text">Machine Learning</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
