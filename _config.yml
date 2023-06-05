@@ -2,7 +2,7 @@ title: 记问之学，不足以为人师
 subtitle: ''
 description: ''
 keywords: null
-author: Jeremy Gu
+author: Jeremy Rabbit
 language: zh-CN
 timezone: ''
 url: https://sin3000x.github.io
@@ -12,7 +12,7 @@ pretty_urls:
   trailing_index: true
   trailing_html: true
 permalink_pinyin:
-  enable: true
+  enable: false
   separator: '-'
 source_dir: source
 public_dir: public
@@ -23,14 +23,14 @@ code_dir: downloads/code
 i18n_dir: ':lang'
 new_post_name: ':category/:title.md'
 default_layout: post
-titlecase: false
+titlecase: true
 external_link:
   enable: true
   field: site
   exclude: ''
 filename_case: 0
 render_drafts: false
-post_asset_folder: true
+post_asset_folder: false
 relative_link: false
 future: true
 highlight:
@@ -105,21 +105,21 @@ lazyload:
   isSPA: false # optional
   preloadRatio: 3 # optional, default is 1
 # hexo-neat 压缩
-neat_enable: true
+neat_enable: false
 
 # 压缩html
 neat_html:
-  enable: true
+  enable: false
   exclude:
 # 压缩css  
 neat_css:
-  enable: true
+  enable: false
   exclude:
     - '**/*.min.css'
 # 压缩js
 neat_js:
-  enable: true
-  mangle: true
+  enable: false
+  mangle: false
   output:
   compress:
   exclude:

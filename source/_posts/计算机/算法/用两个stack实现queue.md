@@ -3,6 +3,8 @@ title: 用两个 stack 实现 queue
 categories:
   - 计算机
   - 算法
+tags:
+  - 栈
 mathjax: true
 abbrlink: 27896
 date: 2022-08-15 20:34:20

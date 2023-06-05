@@ -3,6 +3,8 @@ title: Gauss 积分
 categories:
   - 数学
   - 微积分
+tags:
+  - 无穷积分
 mathjax: true
 abbrlink: 48382
 date: 2022-10-04 18:57:32
@@ -175,7 +177,7 @@ f(z)-f(z+\tau)=\e^{-\frac{z^2}{2}}.
 $$
 $f$ 的奇点落在 $y=x$ 上，围道与奇点如图：
 
-![](截屏2022-10-04 21.12.16.png)
+![](https://s2.loli.net/2023/05/07/4tUkAx8eXVyBpvP.png)
 
 由留数定理，可得
 $$

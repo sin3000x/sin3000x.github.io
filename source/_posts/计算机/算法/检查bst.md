@@ -3,6 +3,8 @@ title: 检查 Binary search tree (BST)
 categories:
   - 计算机
   - 算法
+tags:
+  - 树
 mathjax: true
 abbrlink: 32064
 date: 2022-08-19 21:36:02

@@ -7,7 +7,7 @@
   "spellcheck": true,
   "newFileLocation": "folder",
   "newFileFolderPath": "source/_posts",
-  "attachmentFolderPath": "./投影",
+  "attachmentFolderPath": "./least-square",
   "promptDelete": false,
   "newLinkFormat": "relative",
   "useMarkdownLinks": true,

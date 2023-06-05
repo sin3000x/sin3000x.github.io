@@ -3,6 +3,8 @@ title: BST
 categories:
   - 计算机
   - 算法
+tags:
+  - 树
 mathjax: true
 abbrlink: 7069
 description: '二叉搜索树的判断, 查询, 插入.'

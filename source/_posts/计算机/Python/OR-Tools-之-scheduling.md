@@ -3,6 +3,8 @@ title: OR-Tools 之 scheduling
 categories:
   - 计算机
   - Python
+tags:
+  - ortools
 mathjax: true
 abbrlink: 52763
 date: 2022-07-03 16:44:07
@@ -355,7 +357,7 @@ job2 = [(1, 4), (2, 3)]
 意思是 `job0` 由三个 task 组成, 第一个在机器 0 上完成, 需要 3 个时间单位; 第二个在机器 1 上完成, 需要 2 个时间单位; 第三个在机器 2 上完成, 需要 2 个时间单位. 同理对 `job1` 和 `job2`. 
 
 一个可能的方案如图:
-<img src="schedule1.png"/>
+![](https://s2.loli.net/2023/04/21/R9ih65I4yPTNQco.png)
 
 这个并不是最优解, 我们希望最小化总时间.
 
@@ -507,4 +509,4 @@ Machine 1: job_2_task_0   job_0_task_1   job_1_task_2
 Machine 2: job_1_task_1   job_2_task_1   job_0_task_2   
         [2, 3]         [4, 7]         [7, 9]    
 ```
-<img src='schedule2.png'>
+![](https://s2.loli.net/2023/04/21/GenOdly3LsITXif.png)

@@ -13,25 +13,50 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "source/_posts/数学/线性代数/投影.md",
+                "file": "source/_posts/计算机/算法/反转链表.md",
+                "mode": "source",
+                "source": true
+              }
+            }
+          },
+          {
+            "id": "c15c7a2836fb6be4",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "source/_posts/数学/微积分/利用积分下求导计算无穷积分.md",
                 "mode": "source",
                 "source": false
               }
             }
           },
           {
-            "id": "1367bdad226e13a4",
+            "id": "a19424cb0432eedc",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "source/_posts/数学/线性代数/f-A-的特征值.md",
+                "file": "source/_posts/计算机/机器学习/异常值检测.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "3f52d559bc9e5b20",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "source/_posts/数学/线性代数/投影.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -60,7 +85,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "链表",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -82,6 +107,14 @@
             "type": "leaf",
             "state": {
               "type": "file-tree-view",
+              "state": {}
+            }
+          },
+          {
+            "id": "e370b228d510db36",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
               "state": {}
             }
           }
@@ -106,7 +139,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "source/_posts/数学/线性代数/投影.md",
+                "file": "source/_posts/数学/微积分/利用积分下求导计算无穷积分.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -123,7 +156,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "source/_posts/数学/线性代数/投影.md",
+                "file": "source/_posts/数学/微积分/利用积分下求导计算无穷积分.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -146,7 +179,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "source/_posts/数学/线性代数/投影.md"
+                "file": "source/_posts/数学/微积分/利用积分下求导计算无穷积分.md"
               }
             }
           },
@@ -159,12 +192,11 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -177,54 +209,54 @@
       "file-tree-alternative:File Tree Alternative Plugin": false
     }
   },
-  "active": "064778de911c93b3",
+  "active": "c15c7a2836fb6be4",
   "lastOpenFiles": [
-    "source/_posts/数学/线性代数/f-A-的特征值.md",
-    "source/_posts/数学/线性代数/投影.md",
-    "public/archives/2022/08/page/2/index 2.html",
-    "public/categories/计算机/机器学习/page/2/index 2.html",
-    "public/archives/2022/09/page/2/index 2.html",
-    "public/archives/2022/07/page/2/index 2.html",
-    "public/categories/随笔/page/3/index 2.html",
-    "public/archives/2022/01/page/2/index 2.html",
-    "public/categories/数学/微积分/page/2/index 2.html",
-    "public/categories/计算机/算法/page/2/index 2.html",
-    "public/posts/53822/index 2.html",
-    "public/categories/数学/page/2/index 2.html",
-    "source/_posts/数学/微积分/f在-0-pi-内有两个零点.md",
-    "public/file/gif/ComplementProj.gif",
-    "public/file/jpg/BG的副本.png",
-    "public/file/jpg/BG.png",
-    "public/file/gif/Proj.gif",
-    "public/file/gif/NotProj.gif",
-    "public/file/截屏2023-03-23 22.58.35.png",
-    "public/file/截屏2023-03-23 22.58.35 1.png",
-    "public/file/xex.png",
-    "public/file/xarctanx.png",
-    "public/file/sine.png",
-    "node_modules/hexo-neat/node_modules/uglify-js/README.md",
-    "node_modules/object-assign/readme.md",
-    "node_modules/html-minifier/README.md",
-    "node_modules/clean-css/README.md",
-    "node_modules/clean-css/History.md",
-    "node_modules/relateurl/README.md",
-    "node_modules/any-promise/README.md",
-    "node_modules/stream-to-array/README.md",
-    "node_modules/he/README.md",
-    "node_modules/hexo-neat/README.md",
-    "node_modules/param-case/node_modules/no-case/README.md",
-    "node_modules/param-case/node_modules/lower-case/README.md",
-    "node_modules/param-case/README.md",
-    "node_modules/html-minifier/node_modules/uglify-js/README.md",
-    "node_modules/html-minifier/node_modules/no-case/README.md",
-    "node_modules/html-minifier/node_modules/commander/Readme.md",
-    "node_modules/html-minifier/node_modules/commander/CHANGELOG.md",
-    "node_modules/html-minifier/node_modules/lower-case/README.md",
+    "db.json",
+    "public/file/visualization.html",
+    "public/file/OutlierDetection.html",
+    "public/file/fraud.html",
+    "public/file/amazon_cvt.html",
+    "public/lib/font-awesome/css/all.min.css",
+    "public/lib/anime.min.js",
+    "public/lib/font-awesome/webfonts/fa-brands-400.woff2",
+    "public/lib/font-awesome/webfonts/fa-solid-900.woff2",
+    "public/lib/font-awesome/webfonts/fa-regular-400.woff2",
+    "public/js/next-boot.js",
+    "public/images/favicon-32x32-next.png",
+    "public/images/logo.svg",
+    "public/images/favicon-16x16-next.png",
+    "public/images/cc-zero.svg",
+    "public/images/cc-by-sa.svg",
+    "public/images/cc-by.svg",
+    "public/images/cc-by-nd.svg",
+    "public/images/cc-by-nc.svg",
+    "public/images/cc-by-nc-sa.svg",
+    "public/images/cc-by-nc-nd.svg",
+    "source/_posts/数学/代数/群.md",
     "source/_posts/数学/微积分/Gauss-积分.md",
-    "posts/26639/index.html.md",
-    "node_modules/hexo-link-obsidian/README.md",
-    "node_modules/axios/UPGRADE_GUIDE.md",
-    "node_modules/axios/SECURITY.md",
+    "source/_posts/数学/数值分析/lagrange-interp.md",
+    "source/_posts/计算机/算法/反转链表.md",
+    "source/_posts/数学/线性代数/投影.md",
+    "source/_posts/计算机/机器学习/异常值检测.md",
+    "source/_posts/语言/法语A1.md",
+    "source/_posts/语言/法语A2.md",
+    "source/_posts/计算机/机器学习/Fraud-Detection.md",
+    "source/_posts/计算机/机器学习/数据可视化.md",
+    "source/_posts/计算机/mac终端自动化.md",
+    "source/_posts/计算机/算法/找到离原点第k近的点.md",
+    "source/_posts/计算机/算法/排序.md",
+    "source/_posts/计算机/机器学习/id3.md",
+    "source/_posts/计算机/算法/链表相加.md",
+    "source/_posts/计算机/算法/链表中点.md",
+    "source/_posts/计算机/算法/二叉树.md",
+    "source/_posts/计算机/SQL/SQL-基础.md",
+    "source/_posts/计算机/算法/BST.md",
+    "source/_posts/计算机/算法/树的最小高度.md",
+    "source/_posts/计算机/算法/逆波兰表达式.md",
+    "source/_posts/计算机/算法/字符串去重.md",
+    "source/_posts/计算机/算法/树的按层遍历-BFS.md",
+    "source/_posts/计算机/算法/树的最大路径和.md",
+    "source/_posts/计算机/算法/树的路径和等于目标值.md",
     "未命名.canvas"
   ]
 }

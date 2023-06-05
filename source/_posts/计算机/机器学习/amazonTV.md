@@ -3,6 +3,8 @@ title: Amazon TV Convert Rate Prediction
 categories:
   - 计算机
   - 机器学习
+tags:
+  - pandas
 mathjax: true
 abbrlink: 44648
 description: 完整的数据分析与处理、建模与评估的过程。

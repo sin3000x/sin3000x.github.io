@@ -3,6 +3,8 @@ title: PCA
 categories:
   - 计算机
   - 机器学习
+tags:
+  - 矩阵分解
 mathjax: true
 abbrlink: 4593
 date: 2022-09-12 11:03:06

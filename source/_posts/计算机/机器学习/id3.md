@@ -3,6 +3,8 @@ title: 决策树的信息增益
 categories:
   - 计算机
   - 机器学习
+tags:
+  - 决策树
 mathjax: true
 abbrlink: 56956
 date: 2022-07-22 10:37:36

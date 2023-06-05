@@ -3,6 +3,8 @@ title: 极坐标和球坐标换元
 categories:
   - 数学
   - 微积分
+tags:
+  - 多元微积分
 abbrlink: 26639
 mathjax: true
 date: 2022-01-19 20:37:34

@@ -5,6 +5,9 @@ mathjax: true
 categories:
   - 数学
   - 数值分析
+tags:
+  - 多项式插值
+  - 误差分析
 date: 2022-01-23 13:19:31
 ---
 $$p(x)=\sum_{k=0}^n y_kl_k(x)$$
@@ -30,7 +33,7 @@ $$
 
 它实际上就是一个特殊的多项式. 比如这是给定 $x_{0}:x_4=-2:2$, 在 $x_3$ 处取 $1$ 的基函数 $$l_3(x)=\frac{(x+2)(x+1)x(x-2)}{(1+2)(1+1)\cdot1\cdot(1-2)}$$
 
-<img src="/file/l_basis.svg"/>
+![](https://s2.loli.net/2023/04/10/R71SXIkVCmwZPsl.png)
 
 定义节点函数 $$l(x)=\prod_{k=0}^n(x-x_k),$$ 可以得到基函数 $$l_j(x)={l(x)\over l'(x_j)(x-x_j)}$$
 

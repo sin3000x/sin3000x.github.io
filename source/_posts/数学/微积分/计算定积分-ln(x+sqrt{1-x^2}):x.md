@@ -4,6 +4,8 @@ abbrlink: 45803
 categories:
   - 数学
   - 微积分
+tags:
+  - 瑕积分
 mathjax: true
 date: 2021-09-10 10:54:58
 ---

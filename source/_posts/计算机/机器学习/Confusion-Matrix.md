@@ -3,6 +3,8 @@ title: Confusion Matrix
 categories:
   - 计算机
   - 机器学习
+tags:
+  - 二分类
 mathjax: true
 abbrlink: 39658
 date: 2022-07-31 11:59:01
@@ -48,6 +50,6 @@ $$
 
 **ROC (Receiver Operating Characteristic) 曲线**: TPR-FPR 图, 两者都随 threshold 变化.
 
-<img src="ROC_curve.png" width="50%">
+<img src="https://s2.loli.net/2023/04/16/JRG3FyS2TdEPjrc.png" width="70%">
 
 **AUC (Area Under Curve)**: ROC 曲线下的面积, 取值范围 $[0,1]$.

@@ -3,6 +3,8 @@ title: BST中的第二大元素
 categories:
   - 计算机
   - 算法
+tags:
+  - 树
 mathjax: true
 abbrlink: 32090
 date: 2022-09-10 13:16:34

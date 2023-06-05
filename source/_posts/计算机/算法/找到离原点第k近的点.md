@@ -3,6 +3,8 @@ title: 找到离原点第k近的点
 categories:
   - 计算机
   - 算法
+tags:
+  - 堆
 mathjax: true
 abbrlink: 38610
 date: 2022-09-10 12:11:41

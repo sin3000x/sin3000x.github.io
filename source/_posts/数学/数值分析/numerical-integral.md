@@ -4,6 +4,8 @@ mathjax: true
 categories:
   - 数学
   - 数值分析
+tags:
+  - 数值积分
 abbrlink: 24343
 date: 2022-01-26 12:35:25
 ---

@@ -4,6 +4,9 @@ mathjax: true
 categories:
   - 数学
   - 微积分
+tags:
+  - 多元微积分
+  - 分部积分
 abbrlink: 22001
 date: 2022-01-18 21:20:20
 ---

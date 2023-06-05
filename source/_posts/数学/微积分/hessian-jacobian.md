@@ -3,6 +3,8 @@ title: Hesse 矩阵与Jacobi 矩阵
 categories:
   - 数学
   - 微积分
+tags:
+  - 多元微积分
 abbrlink: 44547
 mathjax: true
 date: 2022-01-21 17:10:59

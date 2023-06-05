@@ -1,7 +1,9 @@
 [
   "obsidian-git",
   "file-tree-alternative",
-  "obsidian-custom-attachment-location",
   "quick-latex",
-  "obsidian-latex"
+  "obsidian-latex",
+  "shortcuts-extender",
+  "obsidian-image-auto-upload-plugin",
+  "obsidian-tikzjax"
 ]
