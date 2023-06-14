@@ -76,9 +76,9 @@
       
         <tags>
             
-            <tag> 数值线性代数 </tag>
-            
             <tag> 误差分析 </tag>
+            
+            <tag> 数值线性代数 </tag>
             
             <tag> 条件数 </tag>
             
@@ -1715,11 +1715,11 @@
       
         <tags>
             
-            <tag> 矩阵分解 </tag>
-            
             <tag> 数值线性代数 </tag>
             
             <tag> 最小二乘法 </tag>
+            
+            <tag> 矩阵分解 </tag>
             
             <tag> 投影 </tag>
             
