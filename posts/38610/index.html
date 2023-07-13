@@ -257,7 +257,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>利用大根堆: </p><figure class="highlight py"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> heapq</span><br><span class="line"><span class="keyword">from</span> numpy.linalg <span class="keyword">import</span> norm</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">k_closest</span>(<span class="params">points, k</span>):</span><br><span class="line">    h = []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(points)):</span><br><span class="line">        dist = - norm(points[i])</span><br><span class="line">        heapq.heappush(h, (dist, i))</span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">len</span>(h) &gt; k:</span><br><span class="line">            heapq.heappop(h)  <span class="comment"># 把最远的 pop 出去了</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> [points[item[<span class="number">1</span>]] <span class="keyword">for</span> item <span class="keyword">in</span> h]</span><br></pre></td></tr></tbody></table></figure><p></p>
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>利用大根堆: </p><figure class="highlight py"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> heapq</span><br><span class="line"><span class="keyword">from</span> numpy.linalg <span class="keyword">import</span> norm</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">k_closest</span>(<span class="params">points, k</span>):</span><br><span class="line">    h = []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(points)):</span><br><span class="line">        dist = - norm(points[i])</span><br><span class="line">        heapq.heappush(h, (dist, i))</span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">len</span>(h) &gt; k:</span><br><span class="line">            heapq.heappop(h)  <span class="comment"># 把最远的 pop 出去了</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> [points[item[<span class="number">1</span>]] <span class="keyword">for</span> item <span class="keyword">in</span> h]</span><br></pre></td></tr></tbody></table></figure><p></p>
 
     </div>
 
@@ -356,20 +356,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">109</span>
+          <span class="site-state-item-count">110</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">20</span>
+        <span class="site-state-item-count">21</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">33</span>
+        <span class="site-state-item-count">36</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>

@@ -257,7 +257,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="解法一">解法一</h2>
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="解法一">解法一</h2>
 <p>反向的中序遍历, 第二个节点就是第二大的. </p><figure class="highlight py"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">second_largest</span>(<span class="params">self</span>):</span><br><span class="line">        self.count = <span class="number">0</span></span><br><span class="line">        self.result = <span class="literal">None</span></span><br><span class="line">        self.traverse(root)</span><br><span class="line">        <span class="keyword">return</span> self.result</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">traverse</span>(<span class="params">self, root</span>):</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> root:</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        self.traverse(root.right)</span><br><span class="line">        self.count += <span class="number">1</span></span><br><span class="line">        <span class="keyword">if</span> self.count == <span class="number">2</span>:</span><br><span class="line">            self.result = root.val</span><br><span class="line">            <span class="keyword">return</span>       </span><br><span class="line">        <span class="keyword">if</span> self.count &gt; <span class="number">1</span>:</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        self.traverse(root.left)</span><br></pre></td></tr></tbody></table></figure> 时间: <span class="math inline">\(O(h)\)</span> 空间: <span class="math inline">\(O(h)\)</span><p></p>
 <h2 id="解法二">解法二</h2>
 <p>分类讨论. </p><figure class="highlight py"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">find_largest</span>(<span class="params">root</span>):</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> root:</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> root.right:  <span class="comment"># 没有右子树时, 根是最大的</span></span><br><span class="line">        <span class="keyword">return</span> root</span><br><span class="line">    <span class="keyword">return</span> find_largest(root.right)  <span class="comment"># 有右子树时, 找其中最大的</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">find_2nd_largest</span>(<span class="params">root</span>):</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> root:</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> root.right:  <span class="comment"># 没有右子树, 根最大; 左子树的最大就是第二大</span></span><br><span class="line">        <span class="keyword">return</span> find_largest(root.left)</span><br><span class="line">    <span class="comment"># 有右子树, 此时最大元素在右子树中</span></span><br><span class="line">    right = root.right</span><br><span class="line">    <span class="comment"># 右子树只有一个节点, 它是最大的, 根第二大</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> right.left <span class="keyword">and</span> <span class="keyword">not</span> right.right:  </span><br><span class="line">        <span class="keyword">return</span> root</span><br><span class="line">    <span class="comment"># 右子树还有子树, 在这里面找第二大的</span></span><br><span class="line">    <span class="keyword">return</span> find_2nd_largest(right)</span><br></pre></td></tr></tbody></table></figure><p></p>
@@ -360,20 +360,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">109</span>
+          <span class="site-state-item-count">110</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">20</span>
+        <span class="site-state-item-count">21</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">33</span>
+        <span class="site-state-item-count">36</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
