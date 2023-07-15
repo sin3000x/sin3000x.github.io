@@ -21,12 +21,12 @@
     var CONFIG = {"hostname":"sin3000x.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="Hessian 是数量场的二阶导: \[H_{i,j}&#x3D;{\partial f\over\partial x_i\partial x_j}\] Jacobian 是向量场的一阶导: \[J_{i,j}&#x3D;{\partial\bm{f_i}\over\partial x_j}\] 二者的关系: Hessian 是数量场梯度的 Jacobian, 即 \(H(f)&#x3D;J(\nabla f)\).  🌰">
+  <meta name="description" content="Hessian 是数量场的二阶导: $$H_{i,j}&#x3D;{\partial f\over\partial x_i\partial x_j}$$ Jacobian 是向量场的一阶导: $$J_{i,j}&#x3D;{\partial\bm{f_i}\over\partial x_j}$$ 二者的关系: Hessian 是数量场梯度的 Jacobian, 即 $H(f)&#x3D;J(\nabla f)$.  🌰 $f">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hesse 矩阵与Jacobi 矩阵">
 <meta property="og:url" content="https://sin3000x.github.io/posts/44547/index.html">
 <meta property="og:site_name" content="记问之学，不足以为人师">
-<meta property="og:description" content="Hessian 是数量场的二阶导: \[H_{i,j}&#x3D;{\partial f\over\partial x_i\partial x_j}\] Jacobian 是向量场的一阶导: \[J_{i,j}&#x3D;{\partial\bm{f_i}\over\partial x_j}\] 二者的关系: Hessian 是数量场梯度的 Jacobian, 即 \(H(f)&#x3D;J(\nabla f)\).  🌰">
+<meta property="og:description" content="Hessian 是数量场的二阶导: $$H_{i,j}&#x3D;{\partial f\over\partial x_i\partial x_j}$$ Jacobian 是向量场的一阶导: $$J_{i,j}&#x3D;{\partial\bm{f_i}\over\partial x_j}$$ 二者的关系: Hessian 是数量场梯度的 Jacobian, 即 $H(f)&#x3D;J(\nabla f)$.  🌰 $f">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-01-21T09:10:59.000Z">
 <meta property="article:modified_time" content="2023-04-21T12:58:13.322Z">
@@ -257,14 +257,14 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>Hessian 是<strong>数量场</strong>的二阶导: <span class="math display">\[H_{i,j}={\partial f\over\partial x_i\partial x_j}\]</span></p>
-<p>Jacobian 是<strong>向量场</strong>的一阶导: <span class="math display">\[J_{i,j}={\partial\bm{f_i}\over\partial x_j}\]</span></p>
-<p>二者的关系: Hessian 是数量场梯度的 Jacobian, 即 <span class="math inline">\(H(f)=J(\nabla f)\)</span>.</p>
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>Hessian 是<strong>数量场</strong>的二阶导: $$H_{i,j}={\partial f\over\partial x_i\partial x_j}$$</p>
+<p>Jacobian 是<strong>向量场</strong>的一阶导: $$J_{i,j}={\partial\bm{f_i}\over\partial x_j}$$</p>
+<p>二者的关系: Hessian 是数量场梯度的 Jacobian, 即 $H(f)=J(\nabla f)$.</p>
 <blockquote>
-<p>🌰 <span class="math inline">\(f(x,y)=x^2+y^2\)</span></p>
+<p>🌰 $f(x,y)=x^2+y^2$</p>
 <ul>
-<li><span class="math inline">\(H(f)=\begin{bmatrix}2&amp;0\\0&amp;2\end{bmatrix}\)</span></li>
-<li><span class="math inline">\(J(\nabla f)=J\left(\begin{bmatrix} 2x\\2y \end{bmatrix}\right)=\begin{bmatrix}2&amp;0\\0&amp;2\end{bmatrix}\)</span></li>
+<li>$H(f)=\begin{bmatrix}2&amp;0\0&amp;2\end{bmatrix}$</li>
+<li>$J(\nabla f)=J\left(\begin{bmatrix}<br>  2x\2y<br>\end{bmatrix}\right)=\begin{bmatrix}2&amp;0\0&amp;2\end{bmatrix}$</li>
 </ul>
 </blockquote>
 
@@ -535,6 +535,8 @@ document.querySelectorAll('.pdfobject-container').forEach(element => {
           N: '{\\mathbb{N}}',
           Z: '{\\mathbb{Z}}',
           bm: ["{\\boldsymbol #1}", 1],
+          vx: '{\\boldsymbol x}',
+          vy: '{\\boldsymbol y}',
           e: '\\mathrm{e}',
           i: '\\mathrm{i}',
           B: '\\mathrm{B}',

@@ -21,12 +21,12 @@
     var CONFIG = {"hostname":"sin3000x.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="一个著名的结论是  如果 \(\lambda\) 是矩阵 \(A\) 的特征值，那么 \(f(\lambda)\) 也是 \(f(A)\) 的特征值，其中 \(f\) 是多项式。  这里要解决的问题是反过来的逻辑，即  任何 \(f(A)\) 的特征值 \(\alpha\) 是否都是 \(f(\lambda)\) 的形式？  对于复数域中的矩阵，结论是肯定的。">
+  <meta name="description" content="一个著名的结论是  如果 $\lambda$ 是矩阵 $A$ 的特征值，那么 $f(\lambda)$ 也是 $f(A)$ 的特征值，其中 $f$ 是多项式。  这里要解决的问题是反过来的逻辑，即  任何 $f(A)$ 的特征值 $\alpha$ 是否都是 $f(\lambda)$ 的形式？  对于复数域中的矩阵，结论是肯定的。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="$f(A)$ 的特征值">
 <meta property="og:url" content="https://sin3000x.github.io/posts/3877/index.html">
 <meta property="og:site_name" content="记问之学，不足以为人师">
-<meta property="og:description" content="一个著名的结论是  如果 \(\lambda\) 是矩阵 \(A\) 的特征值，那么 \(f(\lambda)\) 也是 \(f(A)\) 的特征值，其中 \(f\) 是多项式。  这里要解决的问题是反过来的逻辑，即  任何 \(f(A)\) 的特征值 \(\alpha\) 是否都是 \(f(\lambda)\) 的形式？  对于复数域中的矩阵，结论是肯定的。">
+<meta property="og:description" content="一个著名的结论是  如果 $\lambda$ 是矩阵 $A$ 的特征值，那么 $f(\lambda)$ 也是 $f(A)$ 的特征值，其中 $f$ 是多项式。  这里要解决的问题是反过来的逻辑，即  任何 $f(A)$ 的特征值 $\alpha$ 是否都是 $f(\lambda)$ 的形式？  对于复数域中的矩阵，结论是肯定的。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-09-09T02:31:27.000Z">
 <meta property="article:modified_time" content="2023-04-21T12:51:02.897Z">
@@ -260,61 +260,60 @@
       
         <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>一个著名的结论是</p>
 <blockquote>
-<p>如果 <span class="math inline">\(\lambda\)</span> 是矩阵 <span class="math inline">\(A\)</span> 的特征值，那么 <span class="math inline">\(f(\lambda)\)</span> 也是 <span class="math inline">\(f(A)\)</span> 的特征值，其中 <span class="math inline">\(f\)</span> 是多项式。</p>
+<p>如果 $\lambda$ 是矩阵 $A$ 的特征值，那么 $f(\lambda)$ 也是 $f(A)$ 的特征值，其中 $f$ 是多项式。</p>
 </blockquote>
 <p>这里要解决的问题是反过来的逻辑，即</p>
 <blockquote>
-<p>任何 <span class="math inline">\(f(A)\)</span> 的特征值 <span class="math inline">\(\alpha\)</span> 是否都是 <span class="math inline">\(f(\lambda)\)</span> 的形式？</p>
+<p>任何 $f(A)$ 的特征值 $\alpha$ 是否都是 $f(\lambda)$ 的形式？</p>
 </blockquote>
 <p>对于复数域中的矩阵，结论是肯定的。</p>
 <span id="more"></span>
+
 <table>
-<colgroup>
-<col style="width: 100%">
-</colgroup>
 <thead>
-<tr class="header">
-<th>引理 (Schur's Lemma): 若 <span class="math inline">\(A\)</span> 是数域 <span class="math inline">\(F\)</span> 上的 <span class="math inline">\(n\)</span> 阶方阵, 且 <span class="math inline">\(A\)</span> 的特征值都在 <span class="math inline">\(F\)</span> 中, 那么 <span class="math inline">\(A\)</span> 与一个上三角阵相似.</th>
+<tr>
+<th>引理 (Schur’s Lemma): 若 $A$ 是数域 $F$ 上的 $n$ 阶方阵, 且 $A$ 的特征值都在 $F$ 中, 那么 $A$ 与一个上三角阵相似.</th>
 </tr>
 </thead>
-<tbody>
-<tr class="odd">
-<td>归纳法. 当 <span class="math inline">\(n=1\)</span> 时显然成立: 此时一阶矩阵 <span class="math inline">\(A\)</span> 本身是上三角阵.</td>
+<tbody><tr>
+<td>归纳法. 当 $n=1$ 时显然成立: 此时一阶矩阵 $A$ 本身是上三角阵.</td>
 </tr>
-<tr class="even">
-<td>假设结论对 <span class="math inline">\(n-1\)</span> 阶方阵成立, 且 <span class="math inline">\(A\in F^{n\times n}\)</span> 的特征值都在 <span class="math inline">\(F\)</span> 中. 记特征向量 <span class="math inline">\(v_1\)</span> 对应的特征值是 <span class="math inline">\(\lambda_1\in F\)</span>, 并把 <span class="math inline">\(v_1\)</span> 扩展为 <span class="math inline">\(F^n\)</span> 的一组基 <span class="math inline">\(\mathcal B=(v_1,\ldots,v_n)\)</span>. 在这组基下, <span class="math inline">\(A\)</span> 被相似变换为矩阵<span class="math display">\[[A]_\mathcal{B}=\begin{bmatrix}\lambda_1 &amp; *\\ 0 &amp; A_1\end{bmatrix},\]</span> 其中 <span class="math inline">\(A_1\in F^{(n-1)\times (n-1)}\)</span>. 由于相似矩阵有相同的特征多项式, 于是<span class="math display">\[\det(xI-A)=\det(xI-[A]_\mathcal B)=(x-\lambda_1)\det(xI-A_1).\]</span> 又因为 <span class="math inline">\(\det(xI-A)\)</span> 的根都在 <span class="math inline">\(F\)</span> 中, 所以 <span class="math inline">\(\det(xI-A_1)\)</span> 的根也都在 <span class="math inline">\(F\)</span> 中, 这说明 <span class="math inline">\(A_1\)</span> 是特征值都在 <span class="math inline">\(F\)</span> 中的 <span class="math inline">\(n-1\)</span> 阶方阵. 于是根据归纳假设, 存在可逆阵 <span class="math inline">\(P\in F^{(n-1)\times(n-1)}\)</span> 使得<span class="math display">\[U=PA_1P^{-1}\]</span>是上三角阵.</td>
+<tr>
+<td>假设结论对 $n-1$ 阶方阵成立, 且 $A\in F^{n\times n}$  的特征值都在 $F$ 中. 记特征向量 $v_1$ 对应的特征值是 $\lambda_1\in F$, 并把 $v_1$ 扩展为 $F^n$ 的一组基 $\mathcal B=(v_1,\ldots,v_n)$. 在这组基下, $A$ 被相似变换为矩阵$$[A]_\mathcal{B}=\begin{bmatrix}\lambda_1 &amp; *\ 0 &amp; A_1\end{bmatrix},$$ 其中 $A_1\in F^{(n-1)\times (n-1)}$. 由于相似矩阵有相同的特征多项式, 于是$$\det(xI-A)=\det(xI-[A]_\mathcal B)=(x-\lambda_1)\det(xI-A_1).$$ 又因为 $\det(xI-A)$ 的根都在 $F$ 中, 所以 $\det(xI-A_1)$ 的根也都在 $F$ 中, 这说明 $A_1$ 是特征值都在 $F$ 中的 $n-1$ 阶方阵. 于是根据归纳假设, 存在可逆阵 $P\in F^{(n-1)\times(n-1)}$ 使得$$U=PA_1P^{-1}$$是上三角阵.</td>
 </tr>
-<tr class="odd">
-<td>那么只需构造可逆阵<span class="math display">\[Q=\begin{bmatrix}1&amp;0\\0&amp;P\end{bmatrix},\]</span>便有<span class="math display">\[Q[A]_\mathcal B Q^{-1}=\begin{bmatrix}1&amp;0\\0&amp;P\end{bmatrix}\begin{bmatrix}\lambda_1&amp;*\\0&amp;A_1\end{bmatrix}\begin{bmatrix}1&amp;0\\0&amp;P^{-1}\end{bmatrix}=\begin{bmatrix}\lambda_1&amp;*\\0&amp;U\end{bmatrix}\]</span>是上三角阵. 这说明 <span class="math inline">\(A\)</span> 与一个上三角阵相似, 归纳法完成.</td>
+<tr>
+<td>那么只需构造可逆阵$$Q=\begin{bmatrix}1&amp;0\0&amp;P\end{bmatrix},$$便有$$Q[A]_\mathcal B Q^{-1}=\begin{bmatrix}1&amp;0\0&amp;P\end{bmatrix}\begin{bmatrix}\lambda_1&amp;*\0&amp;A_1\end{bmatrix}\begin{bmatrix}1&amp;0\0&amp;P^{-1}\end{bmatrix}=\begin{bmatrix}\lambda_1&amp;*\0&amp;U\end{bmatrix}$$是上三角阵. 这说明 $A$ 与一个上三角阵相似, 归纳法完成.</td>
 </tr>
-<tr class="even">
+<tr>
 <td><em>注: 一个更强的结论是 Jordan 标准型.</em></td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <hr>
 <table>
-<colgroup>
-<col style="width: 100%">
-</colgroup>
 <thead>
-<tr class="header">
-<th>定理: 若 <span class="math inline">\(A\)</span> 是数域 <span class="math inline">\(F\)</span> 上的 <span class="math inline">\(n\)</span> 阶方阵, 且 <span class="math inline">\(A\)</span> 的特征值都在 <span class="math inline">\(F\)</span> 中. <span class="math inline">\(f\)</span> 是 <span class="math inline">\(F\)</span> 上的多项式, 那么 <span class="math inline">\(\alpha\)</span> 是 <span class="math inline">\(f(A)\)</span> 的特征值<span class="math inline">\(\iff\)</span><span class="math inline">\(\alpha=f(\lambda)\)</span>, 其中 <span class="math inline">\(\lambda\)</span> 是 <span class="math inline">\(A\)</span> 的某个特征值.</th>
+<tr>
+<th>定理: 若 $A$ 是数域 $F$ 上的 $n$ 阶方阵, 且 $A$ 的特征值都在 $F$ 中. $f$ 是 $F$ 上的多项式, 那么 $\alpha$ 是 $f(A)$ 的特征值$\iff$$\alpha=f(\lambda)$, 其中 $\lambda$ 是 $A$ 的某个特征值.</th>
 </tr>
 </thead>
-<tbody>
-<tr class="odd">
-<td><span class="math inline">\((\Longleftarrow)\)</span>简单地验证定义即可.</td>
+<tbody><tr>
+<td>$(\Longleftarrow)$简单地验证定义即可.</td>
 </tr>
-<tr class="even">
-<td><span class="math inline">\((\Longrightarrow)\)</span>根据引理, <span class="math inline">\(A\)</span> 与一个上三角阵 <span class="math inline">\(T\)</span> 相似:<span class="math display">\[
-A=Q^{-1}TQ.
-\]</span>其中 <span class="math inline">\(Q\)</span> 是一个可逆阵. 由于 <span class="math inline">\(f\)</span> 是多项式, 那么<span class="math display">\[
-f(A)=f(Q^{-1}TQ)=Q^{-1}f(T)Q.
-\]</span>根据上三角阵间乘法的性质, <span class="math inline">\(f(T)\)</span> 也是上三角阵, 且 <span class="math inline">\(f(T)\)</span> 的对角元恰好是 <span class="math inline">\(f(\lambda)\)</span>, 其中 <span class="math inline">\(\lambda\)</span> 是 <span class="math inline">\(T\)</span> 的对角元. <br>因为相似矩阵有相同的特征值, 且上三角阵的对角元与其特征值对应, 于是 <span class="math inline">\(f(A)\)</span> 的特征值都是 <span class="math inline">\(f(\lambda)\)</span> 的形式, 其中 <span class="math inline">\(\lambda\)</span> 是 <span class="math inline">\(A\)</span> 的某个特征值.</td>
+<tr>
+<td>$(\Longrightarrow)$根据引理, $A$ 与一个上三角阵 $T$ 相似:$$</td>
 </tr>
-</tbody>
-</table>
+<tr>
+<td>A=Q^{-1}TQ.</td>
+</tr>
+<tr>
+<td>$$其中 $Q$ 是一个可逆阵. 由于 $f$ 是多项式, 那么$$</td>
+</tr>
+<tr>
+<td>f(A)=f(Q^{-1}TQ)=Q^{-1}f(T)Q.</td>
+</tr>
+<tr>
+<td>$$根据上三角阵间乘法的性质, $f(T)$ 也是上三角阵, 且 $f(T)$ 的对角元恰好是 $f(\lambda)$, 其中 $\lambda$ 是 $T$ 的对角元. <br>因为相似矩阵有相同的特征值, 且上三角阵的对角元与其特征值对应, 于是 $f(A)$ 的特征值都是 $f(\lambda)$ 的形式, 其中 $\lambda$ 是 $A$ 的某个特征值.</td>
+</tr>
+</tbody></table>
 
     </div>
 
@@ -584,6 +583,8 @@ document.querySelectorAll('.pdfobject-container').forEach(element => {
           N: '{\\mathbb{N}}',
           Z: '{\\mathbb{Z}}',
           bm: ["{\\boldsymbol #1}", 1],
+          vx: '{\\boldsymbol x}',
+          vy: '{\\boldsymbol y}',
           e: '\\mathrm{e}',
           i: '\\mathrm{i}',
           B: '\\mathrm{B}',
