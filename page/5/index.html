@@ -247,6 +247,7 @@
       
           <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>比如 <code>8 -&gt; 5 -&gt; 8 -&gt; 8 -&gt; 1 -&gt; 8</code> 删除 <code>8</code>, 返回 <code>5 -&gt; 1</code>.</p>
 <figure class="highlight py"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">remove</span>(<span class="params">head, val</span>):</span><br><span class="line">    <span class="keyword">if</span> head <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">        <span class="keyword">return</span> head</span><br><span class="line"></span><br><span class="line">    fake = ListNode(<span class="literal">None</span>)</span><br><span class="line">    fake.<span class="built_in">next</span> = head</span><br><span class="line">    prev, cur = fake, head</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> cur:</span><br><span class="line">        <span class="keyword">if</span> cur.val == val:</span><br><span class="line">            prev.<span class="built_in">next</span> = cur.<span class="built_in">next</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            prev = cur    </span><br><span class="line">        cur = cur.<span class="built_in">next</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> fake.<span class="built_in">next</span></span><br></pre></td></tr></tbody></table></figure>
+
       
     </div>
 
@@ -493,7 +494,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="type"><a href="#type" class="headerlink" title="type"></a>type</h2><ul>
+          <h2 id="type">type</h2>
+<ul>
 <li>exploratory analysis</li>
 <li>autocorrelation analysis</li>
 <li>spectral analysis</li>
@@ -585,23 +587,25 @@
           <p>对于二分类问题, 结果被分为真阳, 假阳, 真阴, 假阴四种情况.</p>
 <table>
 <thead>
-<tr>
-<th align="center"></th>
-<th align="center">P</th>
-<th align="center">N</th>
+<tr class="header">
+<th style="text-align: center;"></th>
+<th style="text-align: center;">P</th>
+<th style="text-align: center;">N</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="center">Y</td>
-<td align="center">TP</td>
-<td align="center">FP</td>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Y</td>
+<td style="text-align: center;">TP</td>
+<td style="text-align: center;">FP</td>
 </tr>
-<tr>
-<td align="center">N</td>
-<td align="center">FN</td>
-<td align="center">TN</td>
+<tr class="even">
+<td style="text-align: center;">N</td>
+<td style="text-align: center;">FN</td>
+<td style="text-align: center;">TN</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/posts/39658/#more" rel="contents">
@@ -686,7 +690,9 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>误差分解<br>$$<br>E(\text{error})=\text{bias}^2+\text{Var}+\varepsilon.<br>$$</p>
+          <p>误差分解 <span class="math display">\[
+E(\text{error})=\text{bias}^2+\text{Var}+\varepsilon.
+\]</span></p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/posts/12469/#more" rel="contents">
@@ -941,8 +947,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>比如一个链表是 <code>1 -&gt; 2 -&gt; 3</code>, 一个是 <code>2 -&gt; 7</code>, 结果应该返回 <code>1 -&gt; 5 -&gt; 0</code>. </p>
-<p>因为 $123+27=150$.</p>
+          <p>比如一个链表是 <code>1 -&gt; 2 -&gt; 3</code>, 一个是 <code>2 -&gt; 7</code>, 结果应该返回 <code>1 -&gt; 5 -&gt; 0</code>.</p>
+<p>因为 <span class="math inline">\(123+27=150\)</span>.</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/posts/30822/#more" rel="contents">

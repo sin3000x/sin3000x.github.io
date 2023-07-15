@@ -21,12 +21,12 @@
     var CONFIG = {"hostname":"sin3000x.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="计算定积分$$I_n&#x3D;\int_0^1(1-x^2)^n\d x.$$">
+  <meta name="description" content="计算定积分 \[ I_n&#x3D;\int_0^1(1-x^2)^n\d x. \]">
 <meta property="og:type" content="article">
 <meta property="og:title" content="计算定积分">
 <meta property="og:url" content="https://sin3000x.github.io/posts/46715/index.html">
 <meta property="og:site_name" content="记问之学，不足以为人师">
-<meta property="og:description" content="计算定积分$$I_n&#x3D;\int_0^1(1-x^2)^n\d x.$$">
+<meta property="og:description" content="计算定积分 \[ I_n&#x3D;\int_0^1(1-x^2)^n\d x. \]">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-10-07T11:24:14.000Z">
 <meta property="article:modified_time" content="2023-04-02T09:05:51.322Z">
@@ -256,12 +256,42 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>计算定积分<br>$$<br>I_n=\int_0^1(1-x^2)^n\d x.<br>$$</p>
-<span id="more"></span>
-
-<h2 id="递推"><a href="#递推" class="headerlink" title="递推"></a>递推</h2><p>$$<br>\begin{align*}<br>I_n&amp;=\int_0^1(1-x^2)^n,\mathrm dx\<br>&amp;=\int_0^1(1-x^2)(1-x^2)^{n-1},\mathrm dx\<br>&amp;=\int_0^1(1-x^2)^{n-1},\mathrm dx-\int_0^1x^2(1-x^2)^{n-1},\mathrm dx\<br>&amp;=I_{n-1}+\frac{1}{2n}\int_0^1x,\mathrm d(1-x^2)^{n}\<br>&amp;=I_{n-1}+\frac{1}{2n}\left.x(1-x^2)^n\right|<em>0^1-\frac{1}{2n}\int_0^1(1-x^2)^n,\mathrm dx\<br>&amp;=I</em>{n-1}-\frac{1}{2n}I_n\<br>&amp;={2n\over2n+1}I_{n-1},<br>%&amp;=\left.t(1-t^2)\right|<em>{0}^1-n\int_0^1t(1-t^2)^{n-1},\mathrm dt\<br>%&amp;=-n\left(\left.t^2(1-t^2)^{n-1}\right|<em>0^1-\int_0^1\left((1-t^2)^{n-1}-2(n-1)t^2(1-t^2)^{n-2}\right),\mathrm dt\right)\<br>%&amp;=n\int_0^1(1-t^2)^{n-1},\mathrm dt+2n(n-1)\int_0^1t^2(1-t^2)^{n-2},\mathrm dt<br>%&amp;=\int_0^1\sum</em>{k=0}^n{n\choose k}(-t^2)^k,\mathrm dt\<br>%&amp;=\int_0^1\sum</em>{k=0}^n{n\choose k}(-1)^kt^{2k},\mathrm dt\<br>%&amp;=\sum_{k=0}^n{n\choose k}(-1)^k\int_0^1t^{2k},\mathrm dt\<br>%&amp;=\sum_{k=0}^n{(-1)^k{n\choose k}\over 2k+1}<br>\end{align*}<br>$$</p>
-<p>利用 $I_0=1$ 递推可得<br>$$<br>I_n={(2n)!!\over(2n+1)!!}.<br>$$</p>
-<h2 id="Gamma-函数"><a href="#Gamma-函数" class="headerlink" title="Gamma 函数"></a>Gamma 函数</h2><p>作代换 $x=\sqrt{t}$，可得<br>$$<br>\begin{align*}<br>\int_0^1(1-x^2)^n\d x &amp;= \frac12\int_0^1 (1-t)^n t^{-\frac12}\d t\<br>&amp;= \frac12 \B\left(n+1, \frac12\right)\<br>&amp;= \frac12 {\Gamma(n+1)\Gamma\left(\frac12\right)\over\Gamma\left(n+\frac32\right)}\<br>&amp;=\frac12{n!\cdot\Gamma\left(\frac12\right)\over\frac{2n+1}{2}\times\cdots\times\frac32\times\frac12 \Gamma\left(\frac12\right)}\<br>&amp;= {2^nn!\over (2n+1)!!}\<br>&amp;={(2n)!!\over (2n+1)!!}.<br>\end{align*}<br>$$</p>
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>计算定积分 <span class="math display">\[
+I_n=\int_0^1(1-x^2)^n\d x.
+\]</span> <span id="more"></span></p>
+<h2 id="递推">递推</h2>
+<p><span class="math display">\[
+\begin{align*}
+I_n&amp;=\int_0^1(1-x^2)^n\,\mathrm dx\\
+&amp;=\int_0^1(1-x^2)(1-x^2)^{n-1}\,\mathrm dx\\
+&amp;=\int_0^1(1-x^2)^{n-1}\,\mathrm dx-\int_0^1x^2(1-x^2)^{n-1}\,\mathrm dx\\
+&amp;=I_{n-1}+\frac{1}{2n}\int_0^1x\,\mathrm d(1-x^2)^{n}\\
+&amp;=I_{n-1}+\frac{1}{2n}\left.x(1-x^2)^n\right|_0^1-\frac{1}{2n}\int_0^1(1-x^2)^n\,\mathrm dx\\
+&amp;=I_{n-1}-\frac{1}{2n}I_n\\
+&amp;={2n\over2n+1}I_{n-1},
+%&amp;=\left.t(1-t^2)\right|_{0}^1-n\int_0^1t(1-t^2)^{n-1}\,\mathrm dt\\
+%&amp;=-n\left(\left.t^2(1-t^2)^{n-1}\right|_0^1-\int_0^1\left((1-t^2)^{n-1}-2(n-1)t^2(1-t^2)^{n-2}\right)\,\mathrm dt\right)\\
+%&amp;=n\int_0^1(1-t^2)^{n-1}\,\mathrm dt+2n(n-1)\int_0^1t^2(1-t^2)^{n-2}\,\mathrm dt
+%&amp;=\int_0^1\sum_{k=0}^n{n\choose k}(-t^2)^k\,\mathrm dt\\
+%&amp;=\int_0^1\sum_{k=0}^n{n\choose k}(-1)^kt^{2k}\,\mathrm dt\\
+%&amp;=\sum_{k=0}^n{n\choose k}(-1)^k\int_0^1t^{2k}\,\mathrm dt\\
+%&amp;=\sum_{k=0}^n{(-1)^k{n\choose k}\over 2k+1}
+\end{align*}
+\]</span></p>
+<p>利用 <span class="math inline">\(I_0=1\)</span> 递推可得 <span class="math display">\[
+I_n={(2n)!!\over(2n+1)!!}.
+\]</span></p>
+<h2 id="gamma-函数">Gamma 函数</h2>
+<p>作代换 <span class="math inline">\(x=\sqrt{t}\)</span>，可得 <span class="math display">\[
+\begin{align*}
+\int_0^1(1-x^2)^n\d x &amp;= \frac12\int_0^1 (1-t)^n t^{-\frac12}\d t\\
+&amp;= \frac12 \B\left(n+1, \frac12\right)\\
+&amp;= \frac12 {\Gamma(n+1)\Gamma\left(\frac12\right)\over\Gamma\left(n+\frac32\right)}\\
+&amp;=\frac12{n!\cdot\Gamma\left(\frac12\right)\over\frac{2n+1}{2}\times\cdots\times\frac32\times\frac12 \Gamma\left(\frac12\right)}\\
+&amp;= {2^nn!\over (2n+1)!!}\\
+&amp;={(2n)!!\over (2n+1)!!}.
+\end{align*}
+\]</span></p>
 
     </div>
 
@@ -342,7 +372,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%92%E6%8E%A8"><span class="nav-number">1.</span> <span class="nav-text">递推</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Gamma-%E5%87%BD%E6%95%B0"><span class="nav-number">2.</span> <span class="nav-text">Gamma 函数</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%92%E6%8E%A8"><span class="nav-number">1.</span> <span class="nav-text">递推</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#gamma-%E5%87%BD%E6%95%B0"><span class="nav-number">2.</span> <span class="nav-text">Gamma 函数</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 

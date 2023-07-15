@@ -21,20 +21,20 @@
     var CONFIG = {"hostname":"sin3000x.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="最小二乘法是为了解决过度约束的方程 $Ax&#x3D;b$，其中 $A$ 的行数多于列数（一个瘦高型的矩阵）。通常是无解的，问题弱化为求$$\min|Ax-b|_2,$$其中 $A\in\R^{m\times n}$, $x\in\R^n$, $b\in\R^m$。">
+  <meta name="description" content="最小二乘法是为了解决过度约束的方程 \(Ax&#x3D;b\)，其中 \(A\) 的行数多于列数（一个瘦高型的矩阵）。通常是无解的，问题弱化为求 \[\min\|Ax-b\|_2,\] 其中 \(A\in\R^{m\times n}\), \(x\in\R^n\), \(b\in\R^m\)。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="最小二乘法">
 <meta property="og:url" content="https://sin3000x.github.io/posts/36991/index.html">
 <meta property="og:site_name" content="记问之学，不足以为人师">
-<meta property="og:description" content="最小二乘法是为了解决过度约束的方程 $Ax&#x3D;b$，其中 $A$ 的行数多于列数（一个瘦高型的矩阵）。通常是无解的，问题弱化为求$$\min|Ax-b|_2,$$其中 $A\in\R^{m\times n}$, $x\in\R^n$, $b\in\R^m$。">
+<meta property="og:description" content="最小二乘法是为了解决过度约束的方程 \(Ax&#x3D;b\)，其中 \(A\) 的行数多于列数（一个瘦高型的矩阵）。通常是无解的，问题弱化为求 \[\min\|Ax-b\|_2,\] 其中 \(A\in\R^{m\times n}\), \(x\in\R^n\), \(b\in\R^m\)。">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAMAAABOo35HAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAC9UExURVlZWdPT07KysmRkZIWFhfT09JmZmWZmZm9vb39/fxkZGUxMTDMzM3p6epCQkKamppubm729venp6cjIyN7e3tbW1s/Pz8LCwnx8fLS0tFZWVoiIiI+Pj6GhoeTk5Glpabu7u93d3evr66CgoJSUlKqqqsnJyeDg4Hd3d8PDw+Xl5bi4uNHR0dvb26Ojo6urq+fn51hYWDg4OCgoKHBwcK2traenp0FBQe7u7vHx8U5OTre3t8zMzHV1df///7GrnpQAAAA/dFJOU///////////////////////////////////////////////////////////////////////////////////AI4mfBcAAAUGSURBVHja7NoJb6M4GMZxY0NCD64kve/pMZ2d3Z297+X7f6zFNmBAMUXa6URl/q9UJSWPUPzrizFWRUlNLgEBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYYIEFAVhggQUWWGBBABZYYIEFFlgQgAUWWGCBBRYEYIEFFlhggQUBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYn6cCIcRXgvX/h9qcIVBqDdbEM8RCxGCB9QqXYRwHYDHBgwXWl8eKZKiESHI3Ba1kWs3fKixcaJUl1YyeBm7Ocq+yLItUiVBGnXxenSHJolIKEcwHq6ikbOX1YGVzQCTN8LPmSLreghUl9sN4Uw7yajMrLC0TZ1ImzqY6FEop0+pIaEN5HaoOxVuwEqFyc4I46uSlzOLqgxlh6UaR9l3VYWl9Fdoxb1Q90KJtu41pwwFW/WHhTtW8i7TafLCqRsk6bsGw63L9qurXRmuIlbT9lDQnlXU+nBFW1Q2qnZbDprWa2tjR90LZFqx1/+Td/HpGWLlrLDvIwTcx6dQ1Vrntbig68cDms3JwbA5Y1azs1ger6sNV/bbIw1jU81MvNAGrl58RVn8ozW+btF08iGFoAlYvP3csfVur1gJBEIA1uBmue5dhZDOyO2epbmgCVi8/I6x0MMHH9pjsTfBhNzQBq5uPZoQlB0uH3DZG4EZqQ26fL3sZq5uf09Ih6qw3i/pm6BZO0qZX7rrUS68Xsbr5ZE4rePMk08pk9aUZugfqppvs6AM1Acvlo/StP+6EbW06z8hJqxbYp2BZPQUnFsLsKuhQdaHqn5ewbF7KXIn0jWO5MqOQ7RaNLPtbNMmmhimj0GUmYLl8Gs0Lq4wyPbTu1l2QKqHSouzs3OlDIslW5SQsnY/NXmFplyNvEuuLV/Tau9BzwiraDUSwXmysztYWWNtL1psXeumgIrDGaqXvBfUuvtqUYI3V2t1wk1e2msFluJJm6zDJXv/fIfjPP7DAAgsssCiwwAILLLDAosACCyywwAKLAgsssMACC6zt9fDz/v75tyOB+98PD2+ORgKffjw4OP1uJPDxl+Xy8v1I4MPF3t7VNyOB4/vF4uzdzrG+39f1kz/w66Guv/yBvw90KX/gZKkr8Qf+2dOV+gNHC12/7RxrabD2/a31bLAO/a11YbAO/K21MFhLf2s9Gqw9f2vdGqzFu11jnVusE2/gxmI9eQOnFuvYG7i0WH7uK4t15w2cWazrXWP9a7H8f/bQYvm/6IPF+sF/pVssf19Ii/WH/0K2WH/uGuvEWC39gSdj9Twy+Rqri5EZx1gt/IE7Y/XoD1wbq9vd3w1PlufnD2OBp+ebm/uxwPHF6emnscDR4vLy41jg7vHq6sNY4Pr27OyYdRaLUrDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssL6u+k+AAQCR9eHtLKvLfwAAAABJRU5ErkJggg==">
 <meta property="article:published_time" content="2022-01-22T12:13:28.000Z">
 <meta property="article:modified_time" content="2023-04-21T12:55:32.634Z">
 <meta property="article:author" content="Jeremy Rabbit">
-<meta property="article:tag" content="矩阵分解">
 <meta property="article:tag" content="数值线性代数">
 <meta property="article:tag" content="最小二乘法">
+<meta property="article:tag" content="矩阵分解">
 <meta property="article:tag" content="投影">
 <meta property="article:tag" content="线性方程组">
 <meta name="twitter:card" content="summary">
@@ -263,62 +263,80 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>最小二乘法是为了解决过度约束的方程 $Ax=b$，其中 $A$ 的行数多于列数（一个瘦高型的矩阵）。通常是无解的，问题弱化为求<br>$$\min|Ax-b|_2,$$<br>其中 $A\in\R^{m\times n}$, $x\in\R^n$, $b\in\R^m$。</p>
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>最小二乘法是为了解决过度约束的方程 <span class="math inline">\(Ax=b\)</span>，其中 <span class="math inline">\(A\)</span> 的行数多于列数（一个瘦高型的矩阵）。通常是无解的，问题弱化为求 <span class="math display">\[\min\|Ax-b\|_2,\]</span> 其中 <span class="math inline">\(A\in\R^{m\times n}\)</span>, <span class="math inline">\(x\in\R^n\)</span>, <span class="math inline">\(b\in\R^m\)</span>。</p>
 <span id="more"></span>
-
-<h2 id="投影和正规方程"><a href="#投影和正规方程" class="headerlink" title="投影和正规方程"></a>投影和正规方程</h2><p>这实际上是在找 $\range(A)$ 中离 $b$ 最近的向量 $Ax$。从几何上来说，只需要残差 $b-Ax$ 和 $\range(A)$ 垂直。我们要利用 $\range(A)$ 上的<a href="/posts/50690/index.html">正交投影</a> $P=A(A^TA)^{-1}A^T$，沿着正交于 $\range(A)$ 的方向把 $b$ 投影进 $\range(A)$：$$Pb=Ax.$$<img alt="$\range(A)$ 中的解 $Ax$ 离 $b$ 最近，需要残差 $b-Ax$ 和 $\range(A)$ 垂直" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAMAAABOo35HAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAC9UExURVlZWdPT07KysmRkZIWFhfT09JmZmWZmZm9vb39/fxkZGUxMTDMzM3p6epCQkKamppubm729venp6cjIyN7e3tbW1s/Pz8LCwnx8fLS0tFZWVoiIiI+Pj6GhoeTk5Glpabu7u93d3evr66CgoJSUlKqqqsnJyeDg4Hd3d8PDw+Xl5bi4uNHR0dvb26Ojo6urq+fn51hYWDg4OCgoKHBwcK2traenp0FBQe7u7vHx8U5OTre3t8zMzHV1df///7GrnpQAAAA/dFJOU///////////////////////////////////////////////////////////////////////////////////AI4mfBcAAAUGSURBVHja7NoJb6M4GMZxY0NCD64kve/pMZ2d3Z297+X7f6zFNmBAMUXa6URl/q9UJSWPUPzrizFWRUlNLgEBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYYIEFAVhggQUWWGBBABZYYIEFFlgQgAUWWGCBBRYEYIEFFlhggQUBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYn6cCIcRXgvX/h9qcIVBqDdbEM8RCxGCB9QqXYRwHYDHBgwXWl8eKZKiESHI3Ba1kWs3fKixcaJUl1YyeBm7Ocq+yLItUiVBGnXxenSHJolIKEcwHq6ikbOX1YGVzQCTN8LPmSLreghUl9sN4Uw7yajMrLC0TZ1ImzqY6FEop0+pIaEN5HaoOxVuwEqFyc4I46uSlzOLqgxlh6UaR9l3VYWl9Fdoxb1Q90KJtu41pwwFW/WHhTtW8i7TafLCqRsk6bsGw63L9qurXRmuIlbT9lDQnlXU+nBFW1Q2qnZbDprWa2tjR90LZFqx1/+Td/HpGWLlrLDvIwTcx6dQ1Vrntbig68cDms3JwbA5Y1azs1ger6sNV/bbIw1jU81MvNAGrl58RVn8ozW+btF08iGFoAlYvP3csfVur1gJBEIA1uBmue5dhZDOyO2epbmgCVi8/I6x0MMHH9pjsTfBhNzQBq5uPZoQlB0uH3DZG4EZqQ26fL3sZq5uf09Ih6qw3i/pm6BZO0qZX7rrUS68Xsbr5ZE4rePMk08pk9aUZugfqppvs6AM1Acvlo/StP+6EbW06z8hJqxbYp2BZPQUnFsLsKuhQdaHqn5ewbF7KXIn0jWO5MqOQ7RaNLPtbNMmmhimj0GUmYLl8Gs0Lq4wyPbTu1l2QKqHSouzs3OlDIslW5SQsnY/NXmFplyNvEuuLV/Tau9BzwiraDUSwXmysztYWWNtL1psXeumgIrDGaqXvBfUuvtqUYI3V2t1wk1e2msFluJJm6zDJXv/fIfjPP7DAAgsssCiwwAILLLDAosACCyywwAKLAgsssMACC6zt9fDz/v75tyOB+98PD2+ORgKffjw4OP1uJPDxl+Xy8v1I4MPF3t7VNyOB4/vF4uzdzrG+39f1kz/w66Guv/yBvw90KX/gZKkr8Qf+2dOV+gNHC12/7RxrabD2/a31bLAO/a11YbAO/K21MFhLf2s9Gqw9f2vdGqzFu11jnVusE2/gxmI9eQOnFuvYG7i0WH7uK4t15w2cWazrXWP9a7H8f/bQYvm/6IPF+sF/pVssf19Ii/WH/0K2WH/uGuvEWC39gSdj9Twy+Rqri5EZx1gt/IE7Y/XoD1wbq9vd3w1PlufnD2OBp+ebm/uxwPHF6emnscDR4vLy41jg7vHq6sNY4Pr27OyYdRaLUrDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssL6u+k+AAQCR9eHtLKvLfwAAAABJRU5ErkJggg==" data-original="https://s2.loli.net/2023/04/11/ZTQuMUVl8exwdik.png" width="70%"><p class="image-caption">$\range(A)$ 中的解 $Ax$ 离 $b$ 最近，需要残差 $b-Ax$ 和 $\range(A)$ 垂直</p></p>
-<p>这等价于解<strong>【正规方程】</strong><br>$$\boxed{A^TAx=A^Tb},$$<br>当且仅当 $A$ 满秩时有唯一解 $x=(A^TA)^{-1}A^Tb.$ 可以利用伪逆写成 $x=A^\dagger b.$ </p>
+<h2 id="投影和正规方程">投影和正规方程</h2>
+<p>这实际上是在找 <span class="math inline">\(\range(A)\)</span> 中离 <span class="math inline">\(b\)</span> 最近的向量 <span class="math inline">\(Ax\)</span>。从几何上来说，只需要残差 <span class="math inline">\(b-Ax\)</span> 和 <span class="math inline">\(\range(A)\)</span> 垂直。我们要利用 <span class="math inline">\(\range(A)\)</span> 上的<a href="/posts/50690/index.html">正交投影</a> <span class="math inline">\(P=A(A^TA)^{-1}A^T\)</span>，沿着正交于 <span class="math inline">\(\range(A)\)</span> 的方向把 <span class="math inline">\(b\)</span> 投影进 <span class="math inline">\(\range(A)\)</span>：<span class="math display">\[Pb=Ax.\]</span><img alt="$\range(A)$ 中的解 $Ax$ 离 $b$ 最近，需要残差 $b-Ax$ 和 $\range(A)$ 垂直" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAMAAABOo35HAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAC9UExURVlZWdPT07KysmRkZIWFhfT09JmZmWZmZm9vb39/fxkZGUxMTDMzM3p6epCQkKamppubm729venp6cjIyN7e3tbW1s/Pz8LCwnx8fLS0tFZWVoiIiI+Pj6GhoeTk5Glpabu7u93d3evr66CgoJSUlKqqqsnJyeDg4Hd3d8PDw+Xl5bi4uNHR0dvb26Ojo6urq+fn51hYWDg4OCgoKHBwcK2traenp0FBQe7u7vHx8U5OTre3t8zMzHV1df///7GrnpQAAAA/dFJOU///////////////////////////////////////////////////////////////////////////////////AI4mfBcAAAUGSURBVHja7NoJb6M4GMZxY0NCD64kve/pMZ2d3Z297+X7f6zFNmBAMUXa6URl/q9UJSWPUPzrizFWRUlNLgEBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYYIEFAVhggQUWWGBBABZYYIEFFlgQgAUWWGCBBRYEYIEFFlhggQUBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYn6cCIcRXgvX/h9qcIVBqDdbEM8RCxGCB9QqXYRwHYDHBgwXWl8eKZKiESHI3Ba1kWs3fKixcaJUl1YyeBm7Ocq+yLItUiVBGnXxenSHJolIKEcwHq6ikbOX1YGVzQCTN8LPmSLreghUl9sN4Uw7yajMrLC0TZ1ImzqY6FEop0+pIaEN5HaoOxVuwEqFyc4I46uSlzOLqgxlh6UaR9l3VYWl9Fdoxb1Q90KJtu41pwwFW/WHhTtW8i7TafLCqRsk6bsGw63L9qurXRmuIlbT9lDQnlXU+nBFW1Q2qnZbDprWa2tjR90LZFqx1/+Td/HpGWLlrLDvIwTcx6dQ1Vrntbig68cDms3JwbA5Y1azs1ger6sNV/bbIw1jU81MvNAGrl58RVn8ozW+btF08iGFoAlYvP3csfVur1gJBEIA1uBmue5dhZDOyO2epbmgCVi8/I6x0MMHH9pjsTfBhNzQBq5uPZoQlB0uH3DZG4EZqQ26fL3sZq5uf09Ih6qw3i/pm6BZO0qZX7rrUS68Xsbr5ZE4rePMk08pk9aUZugfqppvs6AM1Acvlo/StP+6EbW06z8hJqxbYp2BZPQUnFsLsKuhQdaHqn5ewbF7KXIn0jWO5MqOQ7RaNLPtbNMmmhimj0GUmYLl8Gs0Lq4wyPbTu1l2QKqHSouzs3OlDIslW5SQsnY/NXmFplyNvEuuLV/Tau9BzwiraDUSwXmysztYWWNtL1psXeumgIrDGaqXvBfUuvtqUYI3V2t1wk1e2msFluJJm6zDJXv/fIfjPP7DAAgsssCiwwAILLLDAosACCyywwAKLAgsssMACC6zt9fDz/v75tyOB+98PD2+ORgKffjw4OP1uJPDxl+Xy8v1I4MPF3t7VNyOB4/vF4uzdzrG+39f1kz/w66Guv/yBvw90KX/gZKkr8Qf+2dOV+gNHC12/7RxrabD2/a31bLAO/a11YbAO/K21MFhLf2s9Gqw9f2vdGqzFu11jnVusE2/gxmI9eQOnFuvYG7i0WH7uK4t15w2cWazrXWP9a7H8f/bQYvm/6IPF+sF/pVssf19Ii/WH/0K2WH/uGuvEWC39gSdj9Twy+Rqri5EZx1gt/IE7Y/XoD1wbq9vd3w1PlufnD2OBp+ebm/uxwPHF6emnscDR4vLy41jg7vHq6sNY4Pr27OyYdRaLUrDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssL6u+k+AAQCR9eHtLKvLfwAAAABJRU5ErkJggg==" data-original="https://s2.loli.net/2023/04/11/ZTQuMUVl8exwdik.png" width="70%"><p class="image-caption">$\range(A)$ 中的解 $Ax$ 离 $b$ 最近，需要残差 $b-Ax$ 和 $\range(A)$ 垂直</p></p>
+<p>这等价于解<strong>【正规方程】</strong> <span class="math display">\[\boxed{A^TAx=A^Tb},\]</span> 当且仅当 <span class="math inline">\(A\)</span> 满秩时有唯一解 <span class="math inline">\(x=(A^TA)^{-1}A^Tb.\)</span> 可以利用伪逆写成 <span class="math inline">\(x=A^\dagger b.\)</span></p>
 <hr>
-<p>正规方程也可以通过分析的角度得到：设 $$f(x)=\lVert Ax-b\rVert_2^2=(Ax-b)^T(Ax-b)=x^TA^TAx-2b^TAx+b^Tb,$$那么原问题的最小值点对应 $f(x)$ 的最小值点。后者是一个凸函数，那么最小值点对应驻点：$$\nabla f(x)=2A^TAx-2A^{T}b=0\implies A^TAx=A^Tb.$$</p>
-<h2 id="计算方法"><a href="#计算方法" class="headerlink" title="计算方法"></a>计算方法</h2><h3 id="解正规方程"><a href="#解正规方程" class="headerlink" title="解正规方程"></a>解正规方程</h3><p>用 Gauss 消元法解正规方程是不被推荐的，因为系数矩阵的<a href="/posts/37593/index.html">条件数</a>很大：$\kappa(A^TA)=\kappa(A)^2$。幸好它是半正定的，我们可以利用 <a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Ag411M76G/">Cholesky 分解</a>, 解方程组 $R^TRx=A^Tb$.</p>
+<p>正规方程也可以通过分析的角度得到：设 <span class="math display">\[f(x)=\lVert Ax-b\rVert_2^2=(Ax-b)^T(Ax-b)=x^TA^TAx-2b^TAx+b^Tb,\]</span>那么原问题的最小值点对应 <span class="math inline">\(f(x)\)</span> 的最小值点。后者是一个凸函数，那么最小值点对应驻点：<span class="math display">\[\nabla f(x)=2A^TAx-2A^{T}b=0\implies A^TAx=A^Tb.\]</span></p>
+<h2 id="计算方法">计算方法</h2>
+<h3 id="解正规方程">解正规方程</h3>
+<p>用 Gauss 消元法解正规方程是不被推荐的，因为系数矩阵的<a href="/posts/37593/index.html">条件数</a>很大：<span class="math inline">\(\kappa(A^TA)=\kappa(A)^2\)</span>。幸好它是半正定的，我们可以利用 <a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Ag411M76G/">Cholesky 分解</a>, 解方程组 <span class="math inline">\(R^TRx=A^Tb\)</span>.</p>
 <blockquote>
-<ol>
-<li>计算矩阵 $A^TA$ 和向量 $A^Tb$</li>
-<li>计算 $A^TA$ 的 Cholesky 分解: $A^TA=R^TR$</li>
-<li>解方程组 $R^Ty=A^Tb$</li>
-<li>解方程组 $Rx=y$</li>
+<ol type="1">
+<li>计算矩阵 <span class="math inline">\(A^TA\)</span> 和向量 <span class="math inline">\(A^Tb\)</span></li>
+<li>计算 <span class="math inline">\(A^TA\)</span> 的 Cholesky 分解: <span class="math inline">\(A^TA=R^TR\)</span></li>
+<li>解方程组 <span class="math inline">\(R^Ty=A^Tb\)</span></li>
+<li>解方程组 <span class="math inline">\(Rx=y\)</span></li>
 </ol>
 </blockquote>
-<p>$A^T\in\R^{n\times m}$, $A\in\R^{m\times n}$, $A^TA$ 正常需要 $2mn^2$ 次运算, 但可以利用对称性减少为 $mn^2$.</p>
-<p>$n\times n$ 正定阵的 Cholesky 分解需要 $\dfrac{n^3}{3}$ 次运算.</p>
-<p>共需要 $mn^2+\dfrac13 n^3$ 次运算.</p>
-<h3 id="QR-分解"><a href="#QR-分解" class="headerlink" title="QR 分解"></a>QR 分解</h3><ul>
-<li><p>记 $A$ 的 thin QR $$A=QR$$ 与 full QR</p>
-<p>$$A=\begin{bmatrix}<br>Q\ Q_{\perp}<br>\end{bmatrix}<br>\begin{bmatrix}<br>R\0<br>\end{bmatrix}.$$<br>于是</p>
-</li>
-</ul>
-<p>$$<br>\begin{aligned}<br>|Ax-b|_2&amp;=\left\lVert\begin{bmatrix}<br>    Q^T\Q_\perp^T<br>\end{bmatrix}(Ax-b)\right\rVert_2\<br>&amp;=\left\lVert\begin{bmatrix}<br>    Q^T\Q_\perp^T<br>\end{bmatrix}(QRx-b)\right\rVert_2\<br>&amp;=\left\lVert\begin{bmatrix}<br>    R\0<br>\end{bmatrix}x-\begin{bmatrix}<br>    Q^Tb\Q_\perp^Tb<br>\end{bmatrix}\right\rVert_2\<br>\end{aligned}<br>$$<br>当 $Rx=Q^Tb$ 即 $x=R^{-1}Q^Tb$ 时取得最小值, 此时可见 $A^\dagger=R^{-1}Q.$</p>
+<p><span class="math inline">\(A^T\in\R^{n\times m}\)</span>, <span class="math inline">\(A\in\R^{m\times n}\)</span>, <span class="math inline">\(A^TA\)</span> 正常需要 <span class="math inline">\(2mn^2\)</span> 次运算, 但可以利用对称性减少为 <span class="math inline">\(mn^2\)</span>.</p>
+<p><span class="math inline">\(n\times n\)</span> 正定阵的 Cholesky 分解需要 <span class="math inline">\(\dfrac{n^3}{3}\)</span> 次运算.</p>
+<p>共需要 <span class="math inline">\(mn^2+\dfrac13 n^3\)</span> 次运算.</p>
+<h3 id="qr-分解">QR 分解</h3>
 <ul>
-<li><p>从几何的角度, $A=QR$ 给出了投影算子 $P$ 的基: $P=QQ^T.$ 于是 $QRx=QQ^Tb$, 也得到了 $x=R^{-1}Q^Tb.$</p>
-</li>
+<li><p>记 <span class="math inline">\(A\)</span> 的 thin QR <span class="math display">\[A=QR\]</span> 与 full QR</p>
+<p><span class="math display">\[A=\begin{bmatrix}
+    Q\ Q_{\perp}
+\end{bmatrix}
+\begin{bmatrix}
+    R\\0
+\end{bmatrix}.\]</span> 于是 <span class="math display">\[
+\begin{aligned}
+\|Ax-b\|_2&amp;=\left\lVert\begin{bmatrix}
+  Q^T\\Q_\perp^T
+\end{bmatrix}(Ax-b)\right\rVert_2\\
+&amp;=\left\lVert\begin{bmatrix}
+  Q^T\\Q_\perp^T
+\end{bmatrix}(QRx-b)\right\rVert_2\\
+&amp;=\left\lVert\begin{bmatrix}
+  R\\0
+\end{bmatrix}x-\begin{bmatrix}
+  Q^Tb\\Q_\perp^Tb
+\end{bmatrix}\right\rVert_2\\
+\end{aligned}
+\]</span> 当 <span class="math inline">\(Rx=Q^Tb\)</span> 即 <span class="math inline">\(x=R^{-1}Q^Tb\)</span> 时取得最小值, 此时可见 <span class="math inline">\(A^\dagger=R^{-1}Q.\)</span></p></li>
+<li><p>从几何的角度, <span class="math inline">\(A=QR\)</span> 给出了投影算子 <span class="math inline">\(P\)</span> 的基: <span class="math inline">\(P=QQ^T.\)</span> 于是 <span class="math inline">\(QRx=QQ^Tb\)</span>, 也得到了 <span class="math inline">\(x=R^{-1}Q^Tb.\)</span></p></li>
 <li><p>从正规方程的角度,</p>
-<p>$$A^TAx=A^Tb\implies R^TQ^TQRx=R^TQ^Tb\implies Rx=Q^Tb,$$<br>殊途同归.</p>
-</li>
+<p><span class="math display">\[A^TAx=A^Tb\implies R^TQ^TQRx=R^TQ^Tb\implies Rx=Q^Tb,\]</span> 殊途同归.</p></li>
 </ul>
 <blockquote>
-<ol>
-<li>计算 reduced QR 分解 $A=QR$</li>
-<li>计算 $Q^Tb$</li>
-<li>解方程组 $Rx=Q^Tb$</li>
+<ol type="1">
+<li>计算 reduced QR 分解 <span class="math inline">\(A=QR\)</span></li>
+<li>计算 <span class="math inline">\(Q^Tb\)</span></li>
+<li>解方程组 <span class="math inline">\(Rx=Q^Tb\)</span></li>
 </ol>
 </blockquote>
-<p>主要计算量在于 QR 分解, 它需要 $2mn^2-\dfrac{2}{3}n^3$ 次运算.</p>
-<h3 id="SVD"><a href="#SVD" class="headerlink" title="SVD"></a>SVD</h3><p>$A=U\Sigma V^T$ 也给出了 $P$ 的基: $P=UU^T$, 根据 $U\Sigma V^Tx=UU^Tb$ 可以得到 $x=V\Sigma^{-1}U^Tb$. 此时也得到了 $A^\dagger=V\Sigma^{-1}U^T.$</p>
+<p>主要计算量在于 QR 分解, 它需要 <span class="math inline">\(2mn^2-\dfrac{2}{3}n^3\)</span> 次运算.</p>
+<h3 id="svd">SVD</h3>
+<p><span class="math inline">\(A=U\Sigma V^T\)</span> 也给出了 <span class="math inline">\(P\)</span> 的基: <span class="math inline">\(P=UU^T\)</span>, 根据 <span class="math inline">\(U\Sigma V^Tx=UU^Tb\)</span> 可以得到 <span class="math inline">\(x=V\Sigma^{-1}U^Tb\)</span>. 此时也得到了 <span class="math inline">\(A^\dagger=V\Sigma^{-1}U^T.\)</span></p>
 <blockquote>
-<ol>
-<li>计算 reduced SVD $A=U\Sigma V^T$</li>
-<li>计算 $U^Tb$</li>
-<li>解方程组 $\Sigma y=U^Tb$</li>
-<li>计算 $x=Vy$</li>
+<ol type="1">
+<li>计算 reduced SVD <span class="math inline">\(A=U\Sigma V^T\)</span></li>
+<li>计算 <span class="math inline">\(U^Tb\)</span></li>
+<li>解方程组 <span class="math inline">\(\Sigma y=U^Tb\)</span></li>
+<li>计算 <span class="math inline">\(x=Vy\)</span></li>
 </ol>
 </blockquote>
 <p>其中的方程组比 QR 方法的三角型更容易解, 是对角型的.</p>
 <hr>
-<p>同样可以利用正规方程: $$A^TAx=A^Tb\implies V\Sigma^TU^TU\Sigma V^Tx=V\Sigma^T U^Tb\implies \Sigma V^Tx=U^Tb$$</p>
-<p>计算量主要在于 SVD, 当 $m\gg n$ 时和 QR 差不多, 当 $m\approx n$ 时计算量更大. 典型估计是 $2mn^2+11n^3$ 次运算.</p>
-<h2 id="伪逆"><a href="#伪逆" class="headerlink" title="伪逆"></a>伪逆</h2><ul>
-<li>$A$ 列满秩: $A^\dagger=(A^TA)^{-1}A^T$</li>
-<li>$A$ 行满秩: $A^\dagger=A^T(AA^T)^{-1}$</li>
+<p>同样可以利用正规方程: <span class="math display">\[A^TAx=A^Tb\implies V\Sigma^TU^TU\Sigma V^Tx=V\Sigma^T U^Tb\implies \Sigma V^Tx=U^Tb\]</span></p>
+<p>计算量主要在于 SVD, 当 <span class="math inline">\(m\gg n\)</span> 时和 QR 差不多, 当 <span class="math inline">\(m\approx n\)</span> 时计算量更大. 典型估计是 <span class="math inline">\(2mn^2+11n^3\)</span> 次运算.</p>
+<h2 id="伪逆">伪逆</h2>
+<ul>
+<li><span class="math inline">\(A\)</span> 列满秩: <span class="math inline">\(A^\dagger=(A^TA)^{-1}A^T\)</span></li>
+<li><span class="math inline">\(A\)</span> 行满秩: <span class="math inline">\(A^\dagger=A^T(AA^T)^{-1}\)</span></li>
 </ul>
 
     </div>
@@ -329,9 +347,9 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/%E7%9F%A9%E9%98%B5%E5%88%86%E8%A7%A3/" rel="tag"># 矩阵分解</a>
               <a href="/tags/%E6%95%B0%E5%80%BC%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/" rel="tag"># 数值线性代数</a>
               <a href="/tags/%E6%9C%80%E5%B0%8F%E4%BA%8C%E4%B9%98%E6%B3%95/" rel="tag"># 最小二乘法</a>
+              <a href="/tags/%E7%9F%A9%E9%98%B5%E5%88%86%E8%A7%A3/" rel="tag"># 矩阵分解</a>
               <a href="/tags/%E6%8A%95%E5%BD%B1/" rel="tag"># 投影</a>
               <a href="/tags/%E7%BA%BF%E6%80%A7%E6%96%B9%E7%A8%8B%E7%BB%84/" rel="tag"># 线性方程组</a>
           </div>
@@ -407,7 +425,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8A%95%E5%BD%B1%E5%92%8C%E6%AD%A3%E8%A7%84%E6%96%B9%E7%A8%8B"><span class="nav-number">1.</span> <span class="nav-text">投影和正规方程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E6%96%B9%E6%B3%95"><span class="nav-number">2.</span> <span class="nav-text">计算方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%A3%E6%AD%A3%E8%A7%84%E6%96%B9%E7%A8%8B"><span class="nav-number">2.1.</span> <span class="nav-text">解正规方程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#QR-%E5%88%86%E8%A7%A3"><span class="nav-number">2.2.</span> <span class="nav-text">QR 分解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SVD"><span class="nav-number">2.3.</span> <span class="nav-text">SVD</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BC%AA%E9%80%86"><span class="nav-number">3.</span> <span class="nav-text">伪逆</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8A%95%E5%BD%B1%E5%92%8C%E6%AD%A3%E8%A7%84%E6%96%B9%E7%A8%8B"><span class="nav-number">1.</span> <span class="nav-text">投影和正规方程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E6%96%B9%E6%B3%95"><span class="nav-number">2.</span> <span class="nav-text">计算方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%A3%E6%AD%A3%E8%A7%84%E6%96%B9%E7%A8%8B"><span class="nav-number">2.1.</span> <span class="nav-text">解正规方程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#qr-%E5%88%86%E8%A7%A3"><span class="nav-number">2.2.</span> <span class="nav-text">QR 分解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#svd"><span class="nav-number">2.3.</span> <span class="nav-text">SVD</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BC%AA%E9%80%86"><span class="nav-number">3.</span> <span class="nav-text">伪逆</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
