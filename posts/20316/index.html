@@ -21,12 +21,12 @@
     var CONFIG = {"hostname":"sin3000x.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="证明 \[ \arcsin^2x&#x3D;\frac12\sum_{n&#x3D;1}^\infty{(2x)^{2n}\over n^2{2n\choose n}}. \]">
+  <meta name="description" content="证明$$\arcsin^2x&#x3D;\frac12\sum_{n&#x3D;1}^\infty{(2x)^{2n}\over n^2{2n\choose n}}.$$">
 <meta property="og:type" content="article">
 <meta property="og:title" content="$\Arcsin^2x$的展开式">
 <meta property="og:url" content="https://sin3000x.github.io/posts/20316/index.html">
 <meta property="og:site_name" content="记问之学，不足以为人师">
-<meta property="og:description" content="证明 \[ \arcsin^2x&#x3D;\frac12\sum_{n&#x3D;1}^\infty{(2x)^{2n}\over n^2{2n\choose n}}. \]">
+<meta property="og:description" content="证明$$\arcsin^2x&#x3D;\frac12\sum_{n&#x3D;1}^\infty{(2x)^{2n}\over n^2{2n\choose n}}.$$">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-09-28T13:58:15.000Z">
 <meta property="article:modified_time" content="2023-04-02T11:29:05.766Z">
@@ -256,38 +256,11 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>证明 <span class="math display">\[
-\arcsin^2x=\frac12\sum_{n=1}^\infty{(2x)^{2n}\over n^2{2n\choose n}}.
-\]</span> <span id="more"></span></p>
-<p>先求导： <span class="math display">\[
-(\arcsin^2 x)'={2\arcsin x\over\sqrt{1-x^2}}
-\]</span> 利用恒等式<span class="math inline">\(\arcsin x=\arctan\left(x\over\sqrt{1-x^2}\right)\)</span>，有 <span class="math display">\[
-\begin{align*}
-{\arcsin x\over\sqrt{1-x^2}}&amp;={1\over\sqrt{1-x^2}}\arctan\left(x\over\sqrt{1-x^2}\right)\\
-&amp;=\frac1x\cdot{1\over\sqrt{1-x^2\over x^2}}\arctan\left({1\over\sqrt{1-x^2\over x^2}}\right)\\
-&amp;=\left.\frac1x\cdot{1\over\sqrt{1-x^2\over x^2}}\arctan\left({t\over\sqrt{1-x^2\over x^2}}\right)\right|_{t=0}^{t=1}\\
-&amp;=\frac1x\int_0^1{\mathrm dt\over t^2+{1-x^2\over x^2}}\\
-&amp;=x\int_0^1{\mathrm dt\over 1-x^2+x^2t^2}\\
-&amp;=x\int_0^1\sum_{n=0}^\infty(x^2-x^2t^2)^n\,\mathrm dt\\
-&amp;=\int_0^1\sum_{n=0}^\infty (1-t^2)^nx^{2n+1}\,\mathrm dt\\
-&amp;=\sum_{n=0}^\infty\left(\int_0^1(1-t^2)^n\,\mathrm dt\right) x^{2n+1}\\
-&amp;=\sum_{n=0}^\infty{(2n)!!\over(2n+1)!!}x^{2n+1}.
-\end{align*}
-\]</span> 其中我们利用了<a href="/posts/46715/index.html">结论</a>。</p>
-<p>于是积分： <span class="math display">\[
-\begin{align*}
-\arcsin^2x&amp;=\int_0^x(\arcsin^2t)'\,\mathrm dt\\
-&amp;=2\int_0^x{\arcsin t\over\sqrt{1-t^2}}\,\mathrm dt\\
-&amp;=2\int_0^x\sum_{n=0}^\infty{(2n)!!\over(2n+1)!!}t^{2n+1}\,\mathrm dt\\
-&amp;=2\sum_{n=0}^\infty{(2n)!!\over(2n+1)!!}\int_0^x t^{2n+1}\,\mathrm dt\\
-&amp;=2\sum_{n=0}^\infty{(2n)!!\over(2n+1)!!}\cdot{x^{2n+2}\over2n+2}\\
-&amp;=2\sum_{n=0}^\infty{(2^nn!)^2\over(2n+1)!}\cdot{x^{2n+2}\over2n+2}\\
-&amp;=2\sum_{n=0}^\infty{2^{2n}(n!)^2\over(2n+2)!}x^{2n+2}\\
-&amp;=2\sum_{n=0}^\infty{2^{2n+2}\left((n+1)!\right)^2\over2^2(n+1)^2(2n+2)!}x^{2n+2}\\
-&amp;=\frac12\sum_{n=0}^\infty{(2x)^{2n+2}\over(n+1)^2{2n+2\choose n+1}}\\
-&amp;=\frac12\sum_{n=1}^\infty{(2x)^{2n}\over n^2{2n\choose n}}.
-\end{align*}
-\]</span></p>
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>证明<br>$$<br>\arcsin^2x=\frac12\sum_{n=1}^\infty{(2x)^{2n}\over n^2{2n\choose n}}.<br>$$</p>
+<span id="more"></span>
+
+<p>先求导：<br>$$<br>(\arcsin^2 x)’={2\arcsin x\over\sqrt{1-x^2}}<br>$$<br>利用恒等式$\arcsin x=\arctan\left(x\over\sqrt{1-x^2}\right)$，有<br>$$<br>\begin{align*}<br>{\arcsin x\over\sqrt{1-x^2}}&amp;={1\over\sqrt{1-x^2}}\arctan\left(x\over\sqrt{1-x^2}\right)\<br>&amp;=\frac1x\cdot{1\over\sqrt{1-x^2\over x^2}}\arctan\left({1\over\sqrt{1-x^2\over x^2}}\right)\<br>&amp;=\left.\frac1x\cdot{1\over\sqrt{1-x^2\over x^2}}\arctan\left({t\over\sqrt{1-x^2\over x^2}}\right)\right|<em>{t=0}^{t=1}\<br>&amp;=\frac1x\int_0^1{\mathrm dt\over t^2+{1-x^2\over x^2}}\<br>&amp;=x\int_0^1{\mathrm dt\over 1-x^2+x^2t^2}\<br>&amp;=x\int_0^1\sum</em>{n=0}^\infty(x^2-x^2t^2)^n,\mathrm dt\<br>&amp;=\int_0^1\sum_{n=0}^\infty (1-t^2)^nx^{2n+1},\mathrm dt\<br>&amp;=\sum_{n=0}^\infty\left(\int_0^1(1-t^2)^n,\mathrm dt\right) x^{2n+1}\<br>&amp;=\sum_{n=0}^\infty{(2n)!!\over(2n+1)!!}x^{2n+1}.<br>\end{align*}<br>$$<br>其中我们利用了<a href="/posts/46715/index.html">结论</a>。</p>
+<p>于是积分：<br>$$<br>\begin{align*}<br>\arcsin^2x&amp;=\int_0^x(\arcsin^2t)’,\mathrm dt\<br>&amp;=2\int_0^x{\arcsin t\over\sqrt{1-t^2}},\mathrm dt\<br>&amp;=2\int_0^x\sum_{n=0}^\infty{(2n)!!\over(2n+1)!!}t^{2n+1},\mathrm dt\<br>&amp;=2\sum_{n=0}^\infty{(2n)!!\over(2n+1)!!}\int_0^x t^{2n+1},\mathrm dt\<br>&amp;=2\sum_{n=0}^\infty{(2n)!!\over(2n+1)!!}\cdot{x^{2n+2}\over2n+2}\<br>&amp;=2\sum_{n=0}^\infty{(2^nn!)^2\over(2n+1)!}\cdot{x^{2n+2}\over2n+2}\<br>&amp;=2\sum_{n=0}^\infty{2^{2n}(n!)^2\over(2n+2)!}x^{2n+2}\<br>&amp;=2\sum_{n=0}^\infty{2^{2n+2}\left((n+1)!\right)^2\over2^2(n+1)^2(2n+2)!}x^{2n+2}\<br>&amp;=\frac12\sum_{n=0}^\infty{(2x)^{2n+2}\over(n+1)^2{2n+2\choose n+1}}\<br>&amp;=\frac12\sum_{n=1}^\infty{(2x)^{2n}\over n^2{2n\choose n}}.<br>\end{align*}<br>$$</p>
 
     </div>
 
