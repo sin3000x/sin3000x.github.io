@@ -245,7 +245,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>$P\Rightarrow Q$ 的<strong>定义</strong>是真值表. “如果 $P$, 那么 $Q$” 只是一种解释, 不是定义. 也就是说, $P$ 和 $Q$ 本身不需要有联系. 这里解释一下为什么定义是这样的: $P$ 为假, $P\Rightarrow Q$ 总为真.</p>
+          <p><span class="math inline">\(P\Rightarrow Q\)</span> 的<strong>定义</strong>是真值表. "如果 <span class="math inline">\(P\)</span>, 那么 <span class="math inline">\(Q\)</span>" 只是一种解释, 不是定义. 也就是说, <span class="math inline">\(P\)</span> 和 <span class="math inline">\(Q\)</span> 本身不需要有联系. 这里解释一下为什么定义是这样的: <span class="math inline">\(P\)</span> 为假, <span class="math inline">\(P\Rightarrow Q\)</span> 总为真.</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/posts/31827/#more" rel="contents">
@@ -332,7 +332,9 @@
       
           <p>分部积分的计算非常令人头疼，尤其是涉及到多次分部的时候。表格法提供了一种简记的方法：原理没变，只是避免了繁琐地写积分号的过程。</p>
 <p>表格由两行组成，以被积函数的两个因子开头。第一行反复求导, 第二行反复积分, 直到求导结果为 0，表格结束。重点是要识别哪个因子被求导，哪个被积分。</p>
-<p>以<br>$$\int (x^2+x)\e^{2x}\d x$$为例，表格是这样的：<br><img src="https://s2.loli.net/2023/04/10/xVmTu5dts2BYbiz.png" width="400"><br>按照箭头的指示，将表格中的内容对应相乘，再按正负符号交替求和:<br>$$<br>\text{原式}=\left({x^2+x\over2}-{2x+1\over4}+\frac14\right)\e^{2x}=\frac12 x^2\e^{2x}+C.<br>$$</p>
+<p>以 <span class="math display">\[\int (x^2+x)\e^{2x}\d x\]</span>为例，表格是这样的： <img src="https://s2.loli.net/2023/04/10/xVmTu5dts2BYbiz.png" width="400"> 按照箭头的指示，将表格中的内容对应相乘，再按正负符号交替求和: <span class="math display">\[
+\text{原式}=\left({x^2+x\over2}-{2x+1\over4}+\frac14\right)\e^{2x}=\frac12 x^2\e^{2x}+C.
+\]</span></p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/posts/42394/#more" rel="contents">
@@ -417,14 +419,18 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><ol>
-<li>在分式 $f=g/h$ 中, 若分母有简单零点 $z_0$ 而分子没有, 那么 $f$ 在 $z_0$ 处的留数为<br>$$<br>\frac{g(z_0)}{h’(z_0)}<br>$$</li>
+          <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><ol type="1">
+<li>在分式 <span class="math inline">\(f=g/h\)</span> 中, 若分母有简单零点 <span class="math inline">\(z_0\)</span> 而分子没有, 那么 <span class="math inline">\(f\)</span> 在 <span class="math inline">\(z_0\)</span> 处的留数为 <span class="math display">\[
+\frac{g(z_0)}{h'(z_0)}
+\]</span></li>
 </ol>
 <blockquote>
-<p>$\dfrac{1}{z^4-1}$ 在 $\i$ 处的留数为 $${1\over \left.4z^3\right|_{z=\i}}={1\over-4\i}=\frac\i4.$$</p>
+<p><span class="math inline">\(\dfrac{1}{z^4-1}\)</span> 在 <span class="math inline">\(\i\)</span> 处的留数为 <span class="math display">\[{1\over \left.4z^3\right|_{z=\i}}={1\over-4\i}=\frac\i4.\]</span></p>
 </blockquote>
-<ol start="2">
-<li>假设 $z_0$ 是 $n$ 阶极点, 那么该点处的留数为<br>$$<br> \frac{1}{(n-1)!}\left(\left(\frac{\d}{\d z}\right)^{n-1}(z-z_0)^n f(z)\right)_{z=z_0}<br>$$</li>
+<ol start="2" type="1">
+<li>假设 <span class="math inline">\(z_0\)</span> 是 <span class="math inline">\(n\)</span> 阶极点, 那么该点处的留数为 <span class="math display">\[
+ \frac{1}{(n-1)!}\left(\left(\frac{\d}{\d z}\right)^{n-1}(z-z_0)^n f(z)\right)_{z=z_0}
+\]</span></li>
 </ol>
 
       
@@ -584,10 +590,11 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>$$\sinh(x)=\frac{\e^x-\e^{-x}}{2}$$</p>
-<p>$$\cosh(x)=\frac{\e^x+\e^{-x}}{2}$$</p>
-<p>$$\tanh(x)=\frac{\e^x-\e^{-x}}{\e^x+\e^{-x}},\ \coth(x)=\frac{1}{\tanh(x)}$$</p>
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Sinh_cosh_tanh.svg/440px-Sinh_cosh_tanh.svg.png" width="300" height="300">
+          <h2 id="定义">定义</h2>
+<p><span class="math display">\[\sinh(x)=\frac{\e^x-\e^{-x}}{2}\]</span></p>
+<p><span class="math display">\[\cosh(x)=\frac{\e^x+\e^{-x}}{2}\]</span></p>
+<p><span class="math display">\[\tanh(x)=\frac{\e^x-\e^{-x}}{\e^x+\e^{-x}},\ \coth(x)=\frac{1}{\tanh(x)}\]</span></p>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Sinh_cosh_tanh.svg/440px-Sinh_cosh_tanh.svg.png" width="300" height="300"></p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/posts/12845/#more" rel="contents">
@@ -672,7 +679,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>$f_n$ 是 $f(x_n,y_n)$ 的简记, $y_n$ 是 $y(x_n)$ 的估计.</p>
+          <p><span class="math inline">\(f_n\)</span> 是 <span class="math inline">\(f(x_n,y_n)\)</span> 的简记, <span class="math inline">\(y_n\)</span> 是 <span class="math inline">\(y(x_n)\)</span> 的估计.</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/posts/23214/#more" rel="contents">
@@ -757,8 +764,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>Quadrature Rule 指的是形式<br>$$Q(f)=\sum_{k=0}^nw_kf(x_k)$$</p>
-<p>有时把 $f(x_k)$ 简写作 $f_k$.</p>
+          <p>Quadrature Rule 指的是形式 <span class="math display">\[Q(f)=\sum_{k=0}^nw_kf(x_k)\]</span></p>
+<p>有时把 <span class="math inline">\(f(x_k)\)</span> 简写作 <span class="math inline">\(f_k\)</span>.</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/posts/24343/#more" rel="contents">
@@ -843,7 +850,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>思路: 在线性方程组 $$Ax=b$$ 中把 $A$ 写成 $M-N$, 就启发我们得到了迭代形式 $$\begin{equation}\label{iter}Mx^{(k+1)}=Nx^{(k)}+b\end{equation}$$ 易见迭代收敛时极限就是解.</p>
+          <p>思路: 在线性方程组 <span class="math display">\[Ax=b\]</span> 中把 <span class="math inline">\(A\)</span> 写成 <span class="math inline">\(M-N\)</span>, 就启发我们得到了迭代形式 <span class="math display">\[\begin{equation}\label{iter}Mx^{(k+1)}=Nx^{(k)}+b\end{equation}\]</span> 易见迭代收敛时极限就是解.</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/posts/57010/#more" rel="contents">
@@ -928,10 +935,12 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="曲线积分"><a href="#曲线积分" class="headerlink" title="曲线积分"></a>曲线积分</h2><h3 id="第一型曲线积分-displaystyle-int-Gamma-f-bm-r-d-s"><a href="#第一型曲线积分-displaystyle-int-Gamma-f-bm-r-d-s" class="headerlink" title="第一型曲线积分 $\displaystyle\int_\Gamma f(\bm{r})\d s$"></a>第一型曲线积分 $\displaystyle\int_\Gamma f(\bm{r})\d s$</h3><ol>
-<li>求 $\Gamma$ 的向量参数方程 $\bm{r}=\bm{r}(t)$</li>
-<li>计算弧元 $\d s=|\bm{r}’(t)|\d t$</li>
-<li>计算定积分 $\displaystyle\int_\alpha^\beta f(\bm{r}(t))|\bm{r}’(t)|\d t$</li>
+          <h2 id="曲线积分">曲线积分</h2>
+<h3 id="第一型曲线积分-displaystyleint_gamma-fbmrd-s">第一型曲线积分 <span class="math inline">\(\displaystyle\int_\Gamma f(\bm{r})\d s\)</span></h3>
+<ol type="1">
+<li>求 <span class="math inline">\(\Gamma\)</span> 的向量参数方程 <span class="math inline">\(\bm{r}=\bm{r}(t)\)</span></li>
+<li>计算弧元 <span class="math inline">\(\d s=\|\bm{r}'(t)\|\d t\)</span></li>
+<li>计算定积分 <span class="math inline">\(\displaystyle\int_\alpha^\beta f(\bm{r}(t))\|\bm{r}'(t)\|\d t\)</span></li>
 </ol>
           <!--noindex-->
             <div class="post-button">
@@ -1017,8 +1026,12 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>$$p(x)=\sum_{k=0}^n y_kl_k(x)$$</p>
-<h2 id="基函数"><a href="#基函数" class="headerlink" title="基函数"></a>基函数</h2><p>给定点 $x_0,\ldots,x_n$. 问题归结于寻找<strong>基函数</strong> $$l_k(x_j)=\begin{cases}<br>    1\quad j=k\<br>    0\quad j\ne k<br>\end{cases},$$<br>因为插值多项式可以写成它们的线性组合.</p>
+          <p><span class="math display">\[p(x)=\sum_{k=0}^n y_kl_k(x)\]</span></p>
+<h2 id="基函数">基函数</h2>
+<p>给定点 <span class="math inline">\(x_0,\ldots,x_n\)</span>. 问题归结于寻找<strong>基函数</strong> <span class="math display">\[l_k(x_j)=\begin{cases}
+    1\quad j=k\\
+    0\quad j\ne k
+\end{cases},\]</span> 因为插值多项式可以写成它们的线性组合.</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/posts/17585/#more" rel="contents">

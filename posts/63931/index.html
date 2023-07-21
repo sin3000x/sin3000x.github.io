@@ -21,12 +21,12 @@
     var CONFIG = {"hostname":"sin3000x.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="背景应用场景 金融 账户安全性 客户真实性 欺诈检测（保险，审计，刷单，骗购，刷评论）   计算机安全检测，网络流量异常检测 调查可靠性，查询安全性 硬件检测（数据中心，云服务） 药品检测">
+  <meta name="description" content="背景 应用场景  金融  账户安全性 客户真实性 欺诈检测（保险，审计，刷单，骗购，刷评论）  计算机安全检测，网络流量异常检测 调查可靠性，查询安全性 硬件检测（数据中心，云服务） 药品检测">
 <meta property="og:type" content="article">
 <meta property="og:title" content="异常值检测">
 <meta property="og:url" content="https://sin3000x.github.io/posts/63931/index.html">
 <meta property="og:site_name" content="记问之学，不足以为人师">
-<meta property="og:description" content="背景应用场景 金融 账户安全性 客户真实性 欺诈检测（保险，审计，刷单，骗购，刷评论）   计算机安全检测，网络流量异常检测 调查可靠性，查询安全性 硬件检测（数据中心，云服务） 药品检测">
+<meta property="og:description" content="背景 应用场景  金融  账户安全性 客户真实性 欺诈检测（保险，审计，刷单，骗购，刷评论）  计算机安全检测，网络流量异常检测 调查可靠性，查询安全性 硬件检测（数据中心，云服务） 药品检测">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-03-26T10:14:45.000Z">
 <meta property="article:modified_time" content="2023-04-21T13:14:38.299Z">
@@ -258,66 +258,89 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><h3 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h3><ol>
-<li>金融<ol>
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="背景">背景</h2>
+<h3 id="应用场景">应用场景</h3>
+<ol type="1">
+<li>金融
+<ol type="1">
 <li>账户安全性</li>
 <li>客户真实性</li>
 <li>欺诈检测（保险，审计，刷单，骗购，刷评论）</li>
-</ol>
-</li>
+</ol></li>
 <li>计算机安全检测，网络流量异常检测</li>
 <li>调查可靠性，查询安全性</li>
 <li>硬件检测（数据中心，云服务）</li>
 <li>药品检测</li>
 </ol>
 <span id="more"></span>
-
-<h3 id="难点"><a href="#难点" class="headerlink" title="难点"></a>难点</h3><ul>
+<h3 id="难点">难点</h3>
+<ul>
 <li>确定正常状态的范围非常困难。通常，正常和异常的边界很模糊，边界附近的点容易误判。</li>
 <li>异常可能被伪装。</li>
 <li>缺乏标记数据。</li>
 <li>数据通常含有噪音。</li>
 </ul>
-<h2 id="不同类型"><a href="#不同类型" class="headerlink" title="不同类型"></a>不同类型</h2><h3 id="点异常（Point-Anomalies）"><a href="#点异常（Point-Anomalies）" class="headerlink" title="点异常（Point Anomalies）"></a>点异常（Point Anomalies）</h3><p>大多数情况。与其他数据相比，单个数据的异常。</p>
+<h2 id="不同类型">不同类型</h2>
+<h3 id="点异常point-anomalies">点异常（Point Anomalies）</h3>
+<p>大多数情况。与其他数据相比，单个数据的异常。</p>
 <blockquote>
 <p>一大笔交易在一些小额交易中是异常。</p>
 </blockquote>
-<h3 id="上下文异常（Contextual-Anomalies）"><a href="#上下文异常（Contextual-Anomalies）" class="headerlink" title="上下文异常（Contextual Anomalies）"></a>上下文异常（Contextual Anomalies）</h3><p>数据在特定上下文中是异常的，在不同的上下文中可能不是异常。</p>
+<h3 id="上下文异常contextual-anomalies">上下文异常（Contextual Anomalies）</h3>
+<p>数据在特定上下文中是异常的，在不同的上下文中可能不是异常。</p>
 <blockquote>
 <p>26°C 在冬天是异常，但在夏天是正常。</p>
 <p>一大笔消费在工作时间是异常，但在促销季是正常。</p>
 </blockquote>
-<h3 id="集合异常（Collective-Anomalies）"><a href="#集合异常（Collective-Anomalies）" class="headerlink" title="集合异常（Collective Anomalies）"></a>集合异常（Collective Anomalies）</h3><p>不常见，难以检测（可能从未发生过）。数据的集合在整个数据集中异常，但单个值不是异常。</p>
+<h3 id="集合异常collective-anomalies">集合异常（Collective Anomalies）</h3>
+<p>不常见，难以检测（可能从未发生过）。数据的集合在整个数据集中异常，但单个值不是异常。</p>
 <blockquote>
 <p>大量地购买 iPhone 是异常，但购买一部不是。</p>
 <p>同时购买高压锅、背包和钉子是异常。</p>
 </blockquote>
-<h2 id="模型"><a href="#模型" class="headerlink" title="模型"></a>模型</h2><h3 id="固定阈值模型"><a href="#固定阈值模型" class="headerlink" title="固定阈值模型"></a>固定阈值模型</h3><p>超过阈值认为异常。怎么定阈值？</p>
+<h2 id="模型">模型</h2>
+<h3 id="固定阈值模型">固定阈值模型</h3>
+<p>超过阈值认为异常。怎么定阈值？</p>
 <ul>
 <li>预先学习过的数据（top k，分位数）</li>
 <li>SLA（Service Level Agreement），用户要求</li>
 </ul>
 <p>优势：简单、广泛、恒定</p>
 <p>缺陷：不适用于周期、趋势、季节性数据</p>
-<h3 id="移动阈值模型"><a href="#移动阈值模型" class="headerlink" title="移动阈值模型"></a>移动阈值模型</h3><p>阈值是输入的函数。比如，当前阈值是前 60 个值的中位数的 $k$ 倍。</p>
-<h3 id="时间序列模型"><a href="#时间序列模型" class="headerlink" title="时间序列模型"></a>时间序列模型</h3><p>AR，MA，ARIMA</p>
-<h3 id="百分位模型"><a href="#百分位模型" class="headerlink" title="百分位模型"></a>百分位模型</h3><p>比如，一个顾客的消费异常，如果它超过了相似顾客消费中位数的 $k%$。</p>
-<h3 id="统计模型"><a href="#统计模型" class="headerlink" title="统计模型"></a>统计模型</h3><h4 id="一维"><a href="#一维" class="headerlink" title="一维"></a>一维</h4><p>在正态分布假设下，$3\sigma$ 包含了 $99.7%$ 的数据。</p>
-<p>箱线图分析：最小 $Q_1-k(Q_3-Q_1)$，最大 $Q_3+k(Q_3-Q_1)$ 。</p>
-<h4 id="高维"><a href="#高维" class="headerlink" title="高维"></a>高维</h4><p>在每维特征独立同高斯分布的假设下，<br>$$<br>p(x)=\prod_{j=1}^n{1\over\sqrt{2\pi}\sigma_j}\exp\left(-\frac{(x_j-\mu_j)^2}{2\sigma_j^2}\right).<br>$$<br>报异常如果 $p(x)&lt;\varepsilon$ 。</p>
-<h3 id="无监督模型"><a href="#无监督模型" class="headerlink" title="无监督模型"></a>无监督模型</h3><h4 id="K-means"><a href="#K-means" class="headerlink" title="K-means"></a>K-means</h4><h4 id="Isolation-Forest"><a href="#Isolation-Forest" class="headerlink" title="Isolation Forest"></a>Isolation Forest</h4><p>binary tree 的集合，随机分裂。异常值更容易被分到叶子结点上，正常值更深。</p>
-<h4 id="LOF（Local-Outlier-Factor）"><a href="#LOF（Local-Outlier-Factor）" class="headerlink" title="LOF（Local Outlier Factor）"></a>LOF（Local Outlier Factor）</h4><p>对每个数据点，计算到其他点的距离，找到 kNN，计算分数。思想是计算相对密度，如果一个点的相对密度很低，认为是异常值。</p>
+<h3 id="移动阈值模型">移动阈值模型</h3>
+<p>阈值是输入的函数。比如，当前阈值是前 60 个值的中位数的 <span class="math inline">\(k\)</span> 倍。</p>
+<h3 id="时间序列模型">时间序列模型</h3>
+<p>AR，MA，ARIMA</p>
+<h3 id="百分位模型">百分位模型</h3>
+<p>比如，一个顾客的消费异常，如果它超过了相似顾客消费中位数的 <span class="math inline">\(k\%\)</span>。</p>
+<h3 id="统计模型">统计模型</h3>
+<h4 id="一维">一维</h4>
+<p>在正态分布假设下，<span class="math inline">\(3\sigma\)</span> 包含了 <span class="math inline">\(99.7\%\)</span> 的数据。</p>
+<p>箱线图分析：最小 <span class="math inline">\(Q_1-k(Q_3-Q_1)\)</span>，最大 <span class="math inline">\(Q_3+k(Q_3-Q_1)\)</span> 。</p>
+<h4 id="高维">高维</h4>
+<p>在每维特征独立同高斯分布的假设下， <span class="math display">\[
+p(x)=\prod_{j=1}^n{1\over\sqrt{2\pi}\sigma_j}\exp\left(-\frac{(x_j-\mu_j)^2}{2\sigma_j^2}\right).
+\]</span> 报异常如果 <span class="math inline">\(p(x)&lt;\varepsilon\)</span> 。</p>
+<h3 id="无监督模型">无监督模型</h3>
+<h4 id="k-means">K-means</h4>
+<h4 id="isolation-forest">Isolation Forest</h4>
+<p>binary tree 的集合，随机分裂。异常值更容易被分到叶子结点上，正常值更深。</p>
+<h4 id="loflocal-outlier-factor">LOF（Local Outlier Factor）</h4>
+<p>对每个数据点，计算到其他点的距离，找到 kNN，计算分数。思想是计算相对密度，如果一个点的相对密度很低，认为是异常值。</p>
 <p>不适用于大数据集（计算距离、排序很耗时），参数选择困难。</p>
-<h2 id="一个例子"><a href="#一个例子" class="headerlink" title="一个例子"></a>一个例子</h2><p>假设有 10000 个正常硬盘、20 个损坏硬盘的数据。我们把数据分成三组：</p>
+<h2 id="一个例子">一个例子</h2>
+<p>假设有 10000 个正常硬盘、20 个损坏硬盘的数据。我们把数据分成三组：</p>
 <p>train：6000 个正常硬盘</p>
 <p>test：2000个正常硬盘，10 个损坏硬盘</p>
 <p>validation：2000 个正常硬盘，10 个损坏硬盘</p>
-<ol>
-<li>用 train 构建 $p(x)$。</li>
-<li>在 validation 上尝试不同的 $\varepsilon$，根据 $F_1$ 或查准率等来选择阈值。</li>
-<li>在 test 上做预测，计算 $F_1$，precision，recall 等。</li>
+<ol type="1">
+<li>用 train 构建 <span class="math inline">\(p(x)\)</span>。</li>
+<li>在 validation 上尝试不同的 <span class="math inline">\(\varepsilon\)</span>，根据 <span class="math inline">\(F_1\)</span> 或查准率等来选择阈值。</li>
+<li>在 test 上做预测，计算 <span class="math inline">\(F_1\)</span>，precision，recall 等。</li>
 </ol>
-<iframe src="/file/OutlierDetection.html" width="100%" height="7000"></iframe>
+<iframe src="/file/OutlierDetection.html" width="100%" height="7000">
+</iframe>
+
     </div>
 
     
@@ -401,7 +424,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%83%8C%E6%99%AF"><span class="nav-number">1.</span> <span class="nav-text">背景</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="nav-number">1.1.</span> <span class="nav-text">应用场景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9A%BE%E7%82%B9"><span class="nav-number">1.2.</span> <span class="nav-text">难点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8D%E5%90%8C%E7%B1%BB%E5%9E%8B"><span class="nav-number">2.</span> <span class="nav-text">不同类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%82%B9%E5%BC%82%E5%B8%B8%EF%BC%88Point-Anomalies%EF%BC%89"><span class="nav-number">2.1.</span> <span class="nav-text">点异常（Point Anomalies）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%8A%E4%B8%8B%E6%96%87%E5%BC%82%E5%B8%B8%EF%BC%88Contextual-Anomalies%EF%BC%89"><span class="nav-number">2.2.</span> <span class="nav-text">上下文异常（Contextual Anomalies）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9B%86%E5%90%88%E5%BC%82%E5%B8%B8%EF%BC%88Collective-Anomalies%EF%BC%89"><span class="nav-number">2.3.</span> <span class="nav-text">集合异常（Collective Anomalies）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A8%A1%E5%9E%8B"><span class="nav-number">3.</span> <span class="nav-text">模型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%BA%E5%AE%9A%E9%98%88%E5%80%BC%E6%A8%A1%E5%9E%8B"><span class="nav-number">3.1.</span> <span class="nav-text">固定阈值模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A7%BB%E5%8A%A8%E9%98%88%E5%80%BC%E6%A8%A1%E5%9E%8B"><span class="nav-number">3.2.</span> <span class="nav-text">移动阈值模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97%E6%A8%A1%E5%9E%8B"><span class="nav-number">3.3.</span> <span class="nav-text">时间序列模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%99%BE%E5%88%86%E4%BD%8D%E6%A8%A1%E5%9E%8B"><span class="nav-number">3.4.</span> <span class="nav-text">百分位模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%9F%E8%AE%A1%E6%A8%A1%E5%9E%8B"><span class="nav-number">3.5.</span> <span class="nav-text">统计模型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%80%E7%BB%B4"><span class="nav-number">3.5.1.</span> <span class="nav-text">一维</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%AB%98%E7%BB%B4"><span class="nav-number">3.5.2.</span> <span class="nav-text">高维</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%97%A0%E7%9B%91%E7%9D%A3%E6%A8%A1%E5%9E%8B"><span class="nav-number">3.6.</span> <span class="nav-text">无监督模型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#K-means"><span class="nav-number">3.6.1.</span> <span class="nav-text">K-means</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Isolation-Forest"><span class="nav-number">3.6.2.</span> <span class="nav-text">Isolation Forest</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#LOF%EF%BC%88Local-Outlier-Factor%EF%BC%89"><span class="nav-number">3.6.3.</span> <span class="nav-text">LOF（Local Outlier Factor）</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E4%B8%AA%E4%BE%8B%E5%AD%90"><span class="nav-number">4.</span> <span class="nav-text">一个例子</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%83%8C%E6%99%AF"><span class="nav-number">1.</span> <span class="nav-text">背景</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="nav-number">1.1.</span> <span class="nav-text">应用场景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9A%BE%E7%82%B9"><span class="nav-number">1.2.</span> <span class="nav-text">难点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8D%E5%90%8C%E7%B1%BB%E5%9E%8B"><span class="nav-number">2.</span> <span class="nav-text">不同类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%82%B9%E5%BC%82%E5%B8%B8point-anomalies"><span class="nav-number">2.1.</span> <span class="nav-text">点异常（Point Anomalies）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%8A%E4%B8%8B%E6%96%87%E5%BC%82%E5%B8%B8contextual-anomalies"><span class="nav-number">2.2.</span> <span class="nav-text">上下文异常（Contextual Anomalies）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9B%86%E5%90%88%E5%BC%82%E5%B8%B8collective-anomalies"><span class="nav-number">2.3.</span> <span class="nav-text">集合异常（Collective Anomalies）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A8%A1%E5%9E%8B"><span class="nav-number">3.</span> <span class="nav-text">模型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%BA%E5%AE%9A%E9%98%88%E5%80%BC%E6%A8%A1%E5%9E%8B"><span class="nav-number">3.1.</span> <span class="nav-text">固定阈值模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A7%BB%E5%8A%A8%E9%98%88%E5%80%BC%E6%A8%A1%E5%9E%8B"><span class="nav-number">3.2.</span> <span class="nav-text">移动阈值模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97%E6%A8%A1%E5%9E%8B"><span class="nav-number">3.3.</span> <span class="nav-text">时间序列模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%99%BE%E5%88%86%E4%BD%8D%E6%A8%A1%E5%9E%8B"><span class="nav-number">3.4.</span> <span class="nav-text">百分位模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%9F%E8%AE%A1%E6%A8%A1%E5%9E%8B"><span class="nav-number">3.5.</span> <span class="nav-text">统计模型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%80%E7%BB%B4"><span class="nav-number">3.5.1.</span> <span class="nav-text">一维</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%AB%98%E7%BB%B4"><span class="nav-number">3.5.2.</span> <span class="nav-text">高维</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%97%A0%E7%9B%91%E7%9D%A3%E6%A8%A1%E5%9E%8B"><span class="nav-number">3.6.</span> <span class="nav-text">无监督模型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#k-means"><span class="nav-number">3.6.1.</span> <span class="nav-text">K-means</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#isolation-forest"><span class="nav-number">3.6.2.</span> <span class="nav-text">Isolation Forest</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#loflocal-outlier-factor"><span class="nav-number">3.6.3.</span> <span class="nav-text">LOF（Local Outlier Factor）</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E4%B8%AA%E4%BE%8B%E5%AD%90"><span class="nav-number">4.</span> <span class="nav-text">一个例子</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
