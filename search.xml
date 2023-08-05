@@ -1,25 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Mac终端自动化</title>
-    <url>/posts/25777/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>删除所有空文件夹：</p>
-<figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line">find ./ -<span class="built_in">type</span> d -empty -delete</span><br></pre></td></tr></tbody></table></figure>
+    <title>虚拟语气</title>
+    <url>/posts/22564/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="不可能假设">不可能假设</h2>
+<p>现在:</p>
+<ul>
+<li>If I saw the rabbit now, I would bite him.</li>
+</ul>
+<p>将来:</p>
+<ul>
+<li>If I should (were to) see the rabbit tomorrow, I would bite him.</li>
+</ul>
+<p>过去:</p>
+<ul>
+<li>If I had seen the rabbit yesterday, I would have bitten him.</li>
+</ul>
+<span id="more"></span>
+<h2 id="愿望">愿望</h2>
+<p>现在:</p>
+<ul>
+<li><p>I wish (that) I were a rabbit.</p></li>
+<li><p>I would rather you didn't eat the carrot.</p></li>
+<li><p>I suggest/insist/order/demand that you (should) give me a carrot.</p></li>
+<li><p>It is (high) time that you ate a carrot.</p></li>
+</ul>
+<p>过去:</p>
+<ul>
+<li><p>I wish I had eaten the carrot.</p></li>
+<li><p>I would rather you hadn't eaten the carrot.</p></li>
+<li><p>I suggested/insisted/ordered/demanded that you (should) give me a carrot.</p></li>
+</ul>
+<p>将来:</p>
+<ul>
+<li>I wish I could eat the carrot.</li>
+</ul>
 ]]></content>
       <categories>
-        <category>计算机</category>
-      </categories>
-      <tags>
-        <tag>bash</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>午后</title>
-    <url>/posts/6636/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>阳光从不吝啬，海风亦从未疲倦。歌声随时慵懒，每个下午，均可惬意。</p>
-]]></content>
-      <categories>
-        <category>随笔</category>
+        <category>语言</category>
       </categories>
   </entry>
   <entry>
@@ -113,6 +131,28 @@
       </categories>
   </entry>
   <entry>
+    <title>Mac终端自动化</title>
+    <url>/posts/25777/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>删除所有空文件夹：</p>
+<figure class="highlight sh"><table><tbody><tr><td class="code"><pre><span class="line">find ./ -<span class="built_in">type</span> d -empty -delete</span><br></pre></td></tr></tbody></table></figure>
+]]></content>
+      <categories>
+        <category>计算机</category>
+      </categories>
+      <tags>
+        <tag>bash</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>午后</title>
+    <url>/posts/6636/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>阳光从不吝啬，海风亦从未疲倦。歌声随时慵懒，每个下午，均可惬意。</p>
+]]></content>
+      <categories>
+        <category>随笔</category>
+      </categories>
+  </entry>
+  <entry>
     <title>丽江</title>
     <url>/posts/23622/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>清晨，冬风偏有着独特的和煦，暖暖的阳光洒下，轻吻着这个慵懒的小城。青石板的两侧，一簇红一簇粉的丛生，芬芳馥郁。清澄的流水，不急不缓地从家家户户门前流过，雀跃着一片两片的花瓣，抚动着缠绵的青荇，挑弄着披拂的藤蔓。</p>
@@ -136,19 +176,19 @@
       </categories>
   </entry>
   <entry>
-    <title>圣诞节</title>
-    <url>/posts/19175/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>圣诞树上挂满了忽闪忽闪的小彩灯，在富丽堂皇的商店里，在暖黄的水晶吊灯下，温柔地伫立。</p>
-<p>空气中弥漫着姜汁饼的甜美气息，耳畔回荡着童声喜乐、纯净的颂歌，以及驯鹿的铃儿叮当。黑漆漆的夜空中洒下鹅毛白的雪花，沁爽洁净的雪毯上，花白胡子的圣诞老人留下一道雪橇的印记。与可人儿相挽，踱步在礼品商城，柔情地看他趴着橱窗，瞪大了好奇的双眼。</p>
+    <title>回家</title>
+    <url>/posts/8368/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>沁人的凉风和湛蓝中的云卷云舒，熟悉的楼房和那条街道，一簇簇与一丛丛，忽然让少年有了一丝归属，潮湿了眼眶。他颤抖着四肢，任每一个毛孔大肆呼吸着。 依稀在记忆中的水库，被荒草占据。大把的野草，湮没了少年心中，那未曾发出的约定。</p>
 ]]></content>
       <categories>
         <category>随笔</category>
       </categories>
   </entry>
   <entry>
-    <title>回家</title>
-    <url>/posts/8368/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>沁人的凉风和湛蓝中的云卷云舒，熟悉的楼房和那条街道，一簇簇与一丛丛，忽然让少年有了一丝归属，潮湿了眼眶。他颤抖着四肢，任每一个毛孔大肆呼吸着。 依稀在记忆中的水库，被荒草占据。大把的野草，湮没了少年心中，那未曾发出的约定。</p>
+    <title>圣诞节</title>
+    <url>/posts/19175/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>圣诞树上挂满了忽闪忽闪的小彩灯，在富丽堂皇的商店里，在暖黄的水晶吊灯下，温柔地伫立。</p>
+<p>空气中弥漫着姜汁饼的甜美气息，耳畔回荡着童声喜乐、纯净的颂歌，以及驯鹿的铃儿叮当。黑漆漆的夜空中洒下鹅毛白的雪花，沁爽洁净的雪毯上，花白胡子的圣诞老人留下一道雪橇的印记。与可人儿相挽，踱步在礼品商城，柔情地看他趴着橱窗，瞪大了好奇的双眼。</p>
 ]]></content>
       <categories>
         <category>随笔</category>
@@ -173,18 +213,20 @@
       </categories>
   </entry>
   <entry>
-    <title>春天来了</title>
-    <url>/posts/61668/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>没有了过往的凛冽，风变得和煦轻柔起来，枝条上冒出了毛茸茸的骨朵。</p>
+    <title>廿四</title>
+    <url>/posts/38636/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>优秀的高中很多，但能如她这般，令学子们痴恋深情到每每想起她时，心中的温暖都会澎湃良久，恐怕少之又少。</p>
+<p>交付给廿四的青春，是完美的，是不容置辩的无悔无憾。对她的回眸，是噙着泪的仰望。真正在这里拼搏过的人，才会懂得何为傲、霸、狂，在这里受过挫的人，才会明白何为忍、毅、刚。什么是创造与梦想，什么是起伏和跌宕，什么令我们热泪盈眶，什么又是我们所说的，一生的荣光。</p>
+<p>不论结果，只凭你在这里留下的青春，就够你荣耀一生，就是你最优秀的铁证。遗憾不属于廿四人，挺起胸来，面对你要的梦想和创造，失败和成功。</p>
 ]]></content>
       <categories>
         <category>随笔</category>
       </categories>
   </entry>
   <entry>
-    <title>春雨</title>
-    <url>/posts/27822/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>春雨吵醒了一簇簇的红艳，沾湿了一树树的花香。</p>
+    <title>春天来了</title>
+    <url>/posts/61668/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>没有了过往的凛冽，风变得和煦轻柔起来，枝条上冒出了毛茸茸的骨朵。</p>
 ]]></content>
       <categories>
         <category>随笔</category>
@@ -201,11 +243,9 @@
       </categories>
   </entry>
   <entry>
-    <title>廿四</title>
-    <url>/posts/38636/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>优秀的高中很多，但能如她这般，令学子们痴恋深情到每每想起她时，心中的温暖都会澎湃良久，恐怕少之又少。</p>
-<p>交付给廿四的青春，是完美的，是不容置辩的无悔无憾。对她的回眸，是噙着泪的仰望。真正在这里拼搏过的人，才会懂得何为傲、霸、狂，在这里受过挫的人，才会明白何为忍、毅、刚。什么是创造与梦想，什么是起伏和跌宕，什么令我们热泪盈眶，什么又是我们所说的，一生的荣光。</p>
-<p>不论结果，只凭你在这里留下的青春，就够你荣耀一生，就是你最优秀的铁证。遗憾不属于廿四人，挺起胸来，面对你要的梦想和创造，失败和成功。</p>
+    <title>春雨</title>
+    <url>/posts/27822/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>春雨吵醒了一簇簇的红艳，沾湿了一树树的花香。</p>
 ]]></content>
       <categories>
         <category>随笔</category>
@@ -221,18 +261,18 @@
       </categories>
   </entry>
   <entry>
-    <title>林中漫步</title>
-    <url>/posts/16963/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>林风拂幽径，鸟鸣惊落花</p>
+    <title>晴朗的校园</title>
+    <url>/posts/4892/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>今天的世界格外明朗。徐徐的清风，轻柔的阳光，点点嫩芽，热闹的人群。一切都还是那样平常，但仿佛和那些日漫中的理想校园，只差着几片飞舞的樱花瓣。</p>
 ]]></content>
       <categories>
         <category>随笔</category>
       </categories>
   </entry>
   <entry>
-    <title>晴朗的校园</title>
-    <url>/posts/4892/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>今天的世界格外明朗。徐徐的清风，轻柔的阳光，点点嫩芽，热闹的人群。一切都还是那样平常，但仿佛和那些日漫中的理想校园，只差着几片飞舞的樱花瓣。</p>
+    <title>林中漫步</title>
+    <url>/posts/16963/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>林风拂幽径，鸟鸣惊落花</p>
 ]]></content>
       <categories>
         <category>随笔</category>
@@ -258,15 +298,6 @@
       </categories>
   </entry>
   <entry>
-    <title>自习</title>
-    <url>/posts/12721/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>屋外的松树轻柔地律动，都贴到窗上来了。白茫茫的远空，不缓不急的阳光，飘香的槐花，清凉的音乐。</p>
-]]></content>
-      <categories>
-        <category>随笔</category>
-      </categories>
-  </entry>
-  <entry>
     <title>科普是一项非常难的工作</title>
     <url>/posts/20918/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>要想当一个好学生，只需要把知识学懂。</p>
@@ -281,20 +312,19 @@
       </categories>
   </entry>
   <entry>
-    <title>自然</title>
-    <url>/posts/28624/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>傍晚的热闹休闲沙滩，午夜的萤火魔幻森林，与异域篝火、冬不拉。</p>
-<p>人从自然中来，回不到自然中去。那对山幽鸟虫鸣的向往，会因为几声平凡不过的响动，转为惶恐。</p>
+    <title>自习</title>
+    <url>/posts/12721/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>屋外的松树轻柔地律动，都贴到窗上来了。白茫茫的远空，不缓不急的阳光，飘香的槐花，清凉的音乐。</p>
 ]]></content>
       <categories>
         <category>随笔</category>
       </categories>
   </entry>
   <entry>
-    <title>英国的上午</title>
-    <url>/posts/34132/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>我看见透蓝的天空，茵绿的草地，金黄的落叶。我闻到湿润的泥土，幽香的野花，沁凉的空气。我看见喜鹊圆滚的肚子和松鼠蓬松的尾巴。</p>
-<p>我看见倾洒下来的阳光和摇曳的树影。</p>
+    <title>自然</title>
+    <url>/posts/28624/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>傍晚的热闹休闲沙滩，午夜的萤火魔幻森林，与异域篝火、冬不拉。</p>
+<p>人从自然中来，回不到自然中去。那对山幽鸟虫鸣的向往，会因为几声平凡不过的响动，转为惶恐。</p>
 ]]></content>
       <categories>
         <category>随笔</category>
@@ -328,6 +358,16 @@
       </categories>
   </entry>
   <entry>
+    <title>英国的上午</title>
+    <url>/posts/34132/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>我看见透蓝的天空，茵绿的草地，金黄的落叶。我闻到湿润的泥土，幽香的野花，沁凉的空气。我看见喜鹊圆滚的肚子和松鼠蓬松的尾巴。</p>
+<p>我看见倾洒下来的阳光和摇曳的树影。</p>
+]]></content>
+      <categories>
+        <category>随笔</category>
+      </categories>
+  </entry>
+  <entry>
     <title>青春万岁</title>
     <url>/posts/9178/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>所有的日子，所有的日子都来吧</p>
@@ -339,66 +379,6 @@
 ]]></content>
       <categories>
         <category>随笔</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>虚拟语气</title>
-    <url>/posts/22564/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="不可能假设">不可能假设</h2>
-<p>现在:</p>
-<ul>
-<li>If I saw the rabbit now, I would bite him.</li>
-</ul>
-<p>将来:</p>
-<ul>
-<li>If I should (were to) see the rabbit tomorrow, I would bite him.</li>
-</ul>
-<p>过去:</p>
-<ul>
-<li>If I had seen the rabbit yesterday, I would have bitten him.</li>
-</ul>
-<span id="more"></span>
-<h2 id="愿望">愿望</h2>
-<p>现在:</p>
-<ul>
-<li><p>I wish (that) I were a rabbit.</p></li>
-<li><p>I would rather you didn't eat the carrot.</p></li>
-<li><p>I suggest/insist/order/demand that you (should) give me a carrot.</p></li>
-<li><p>It is (high) time that you ate a carrot.</p></li>
-</ul>
-<p>过去:</p>
-<ul>
-<li><p>I wish I had eaten the carrot.</p></li>
-<li><p>I would rather you hadn't eaten the carrot.</p></li>
-<li><p>I suggested/insisted/ordered/demanded that you (should) give me a carrot.</p></li>
-</ul>
-<p>将来:</p>
-<ul>
-<li>I wish I could eat the carrot.</li>
-</ul>
-]]></content>
-      <categories>
-        <category>语言</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Hexo 用法记录</title>
-    <url>/posts/16107/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="插入图片">插入图片</h2>
-<figure class="highlight html"><table><tbody><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"/file/*.jpg"</span> <span class="attr">width</span>=<span class="string">"250"</span> <span class="attr">height</span>=<span class="string">"250"</span>/&gt;</span></span><br></pre></td></tr></tbody></table></figure>
-<figure class="highlight markdown"><table><tbody><tr><td class="code"><pre><span class="line">{% asset<span class="emphasis">_img image.jpg This is an image %}</span></span><br></pre></td></tr></tbody></table></figure>
-<h2 id="插入多个图片仅限-next-主题">插入多个图片（仅限 next 主题）</h2>
-<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">{% gp 2-2 %}</span><br><span class="line">![caption](/file/*.jpg)</span><br><span class="line">![caption](/file/*.jpg)</span><br><span class="line">{% endgp %}</span><br></pre></td></tr></tbody></table></figure>
-<p>第一个数字表示图片数量，第二个数字表示布局选项。</p>
-<h2 id="嵌入-pdf">嵌入 pdf</h2>
-<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">{% pdf /file/*.pdf %}</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="链接文章">链接文章</h2>
-<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">{% post_link * 显示文字 %}</span><br></pre></td></tr></tbody></table></figure>
-<figure class="highlight markdown"><table><tbody><tr><td class="code"><pre><span class="line">[<span class="string">title</span>](<span class="link">/posts/***/index.html</span>)</span><br></pre></td></tr></tbody></table></figure>
-]]></content>
-      <categories>
-        <category>计算机</category>
-        <category>hexo</category>
       </categories>
   </entry>
   <entry>
@@ -480,36 +460,23 @@ x+y\le 2
       </categories>
   </entry>
   <entry>
-    <title>SQL 基础</title>
-    <url>/posts/19528/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="select">SELECT</h2>
-<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="built_in">COUNT</span>(<span class="keyword">DISTINCT</span> Country) <span class="keyword">FROM</span> Customers;</span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> Customers <span class="keyword">WHERE</span> <span class="keyword">not</span> (Country<span class="operator">=</span><span class="string">'Germany'</span> <span class="keyword">and</span> city<span class="operator">=</span><span class="string">'Berlin'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> Customers <span class="keyword">WHERE</span> Country <span class="keyword">IN</span> (<span class="keyword">SELECT</span> Country <span class="keyword">FROM</span> Suppliers);</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="like">LIKE</h2>
-<p><code>%</code>: zero, one or multiple char</p>
-<p><code>_</code>: a single char </p><figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> Customers <span class="keyword">WHERE</span> <span class="built_in">lower</span>(CustomerName) <span class="keyword">LIKE</span> <span class="string">'a%'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> Customers <span class="keyword">WHERE</span> city <span class="keyword">LIKE</span> <span class="string">'____'</span>;</span><br></pre></td></tr></tbody></table></figure><p></p>
-<h2 id="group-by">GROUP BY</h2>
-<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> ...</span><br><span class="line"><span class="keyword">FROM</span> ...</span><br><span class="line"><span class="keyword">WHERE</span> ...</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> ...</span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> ... <span class="keyword">ASC</span> <span class="operator">/</span> <span class="keyword">DESC</span>;</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="aggregate-functions">Aggregate functions</h2>
-<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="built_in">Min</span>(), <span class="built_in">Max</span>(), <span class="built_in">Count</span>(), <span class="built_in">Sum</span>(), <span class="built_in">Avg</span>()</span><br></pre></td></tr></tbody></table></figure>
-<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="built_in">avg</span>(sum_id) <span class="keyword">as</span> avg_spend_per_orderid</span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">(<span class="keyword">SELECT</span> order_id, <span class="built_in">sum</span>(spend) <span class="keyword">as</span> sum_id</span><br><span class="line"><span class="keyword">FROM</span> example</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> <span class="number">1</span>)</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="having">HAVING</h2>
-<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> ...</span><br><span class="line"><span class="keyword">FROM</span> ...</span><br><span class="line"><span class="keyword">WHERE</span> ...</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> ...</span><br><span class="line"><span class="keyword">HAVING</span> ...</span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> ...</span><br></pre></td></tr></tbody></table></figure>
-<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> Country, <span class="built_in">count</span>(CustomerID)</span><br><span class="line"><span class="keyword">FROM</span> Customers</span><br><span class="line"><span class="keyword">WHERE</span> Country <span class="keyword">in</span> (<span class="string">'Brazil'</span>, <span class="string">'France'</span>, <span class="string">'USA'</span>)</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> Country</span><br><span class="line"><span class="keyword">HAVING</span> <span class="built_in">count</span>(CustomerID) <span class="operator">&gt;</span> <span class="number">5</span>;</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="union">UNION</h2>
-<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> Country <span class="keyword">FROM</span> Customers</span><br><span class="line"><span class="keyword">UNION</span> (<span class="keyword">ALL</span>)</span><br><span class="line"><span class="keyword">SELECT</span> Country <span class="keyword">FROM</span> Suppliers</span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> <span class="number">1</span>;</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="with">WITH</h2>
-<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">WITH</span> cate15 <span class="keyword">as</span> (</span><br><span class="line">  <span class="keyword">SELECT</span> categoryid, productid</span><br><span class="line">  <span class="keyword">FROM</span> products</span><br><span class="line">  <span class="keyword">WHERE</span> categoryid <span class="keyword">BETWEEN</span> <span class="number">1</span> <span class="keyword">and</span> <span class="number">5</span></span><br><span class="line">),</span><br><span class="line">od15 <span class="keyword">as</span> (</span><br><span class="line">  <span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> orderdetails</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> od15 </span><br><span class="line"><span class="keyword">WHERE</span> productid <span class="keyword">in</span> (<span class="keyword">SELECT</span> productid <span class="keyword">from</span> cate15)</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="windows-function">Windows function</h2>
-<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="built_in">row_number</span>() <span class="keyword">over</span>(<span class="keyword">partition</span> <span class="keyword">by</span> ... <span class="keyword">order</span> <span class="keyword">by</span> ...)</span><br></pre></td></tr></tbody></table></figure>
-<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> category, product, sales, row_num</span><br><span class="line"><span class="keyword">FROM</span> (</span><br><span class="line">  <span class="keyword">SELECT</span> category, product, sales, </span><br><span class="line">  <span class="built_in">row_number</span>() <span class="keyword">over</span>(<span class="keyword">partition</span> <span class="keyword">by</span> category <span class="keyword">order</span> <span class="keyword">by</span> sales <span class="keyword">desc</span>) <span class="keyword">as</span> row_num</span><br><span class="line">  <span class="keyword">FROM</span> tab</span><br><span class="line">)</span><br><span class="line"><span class="keyword">WHERE</span> row_num <span class="operator">&lt;=</span> <span class="number">2</span></span><br></pre></td></tr></tbody></table></figure>
-<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> </span><br><span class="line">categoryid, productid, price, </span><br><span class="line"><span class="built_in">sum</span>(price) <span class="keyword">over</span>(<span class="keyword">partition</span> <span class="keyword">by</span> categoryid <span class="keyword">order</span> <span class="keyword">by</span> productid) <span class="keyword">as</span> cum_sum</span><br><span class="line"><span class="keyword">FROM</span> products</span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span> <span class="number">1</span>,<span class="number">2</span>;</span><br></pre></td></tr></tbody></table></figure>
-<p><code>lag()</code>: above, <code>lead()</code>: below </p><figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span>,</span><br><span class="line"><span class="built_in">lag</span>(birthdate, <span class="number">1</span>) <span class="keyword">over</span>(<span class="keyword">order</span> <span class="keyword">by</span> birthdate),</span><br><span class="line"><span class="built_in">lead</span>(birthdate, <span class="number">2</span>) <span class="keyword">over</span>(<span class="keyword">order</span> <span class="keyword">by</span> birthdate)</span><br><span class="line"><span class="keyword">FROM</span> employees;</span><br></pre></td></tr></tbody></table></figure><p></p>
-<h2 id="case-when">CASE WHEN</h2>
-<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> Country,</span><br><span class="line">       <span class="keyword">case</span> <span class="keyword">when</span> country <span class="keyword">in</span> (<span class="string">'USA'</span>) <span class="keyword">then</span> <span class="string">'America'</span></span><br><span class="line">            <span class="keyword">when</span> country <span class="keyword">in</span> (<span class="string">'Mexico'</span>) <span class="keyword">then</span> <span class="string">'emerging markets'</span></span><br><span class="line">            <span class="keyword">else</span> <span class="string">'other markets'</span> <span class="keyword">end</span> <span class="keyword">as</span> country_flag</span><br><span class="line"><span class="keyword">FROM</span> customers;</span><br></pre></td></tr></tbody></table></figure>
+    <title>Hexo 用法记录</title>
+    <url>/posts/16107/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="插入图片">插入图片</h2>
+<figure class="highlight html"><table><tbody><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"/file/*.jpg"</span> <span class="attr">width</span>=<span class="string">"250"</span> <span class="attr">height</span>=<span class="string">"250"</span>/&gt;</span></span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight markdown"><table><tbody><tr><td class="code"><pre><span class="line">{% asset<span class="emphasis">_img image.jpg This is an image %}</span></span><br></pre></td></tr></tbody></table></figure>
+<h2 id="插入多个图片仅限-next-主题">插入多个图片（仅限 next 主题）</h2>
+<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">{% gp 2-2 %}</span><br><span class="line">![caption](/file/*.jpg)</span><br><span class="line">![caption](/file/*.jpg)</span><br><span class="line">{% endgp %}</span><br></pre></td></tr></tbody></table></figure>
+<p>第一个数字表示图片数量，第二个数字表示布局选项。</p>
+<h2 id="嵌入-pdf">嵌入 pdf</h2>
+<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">{% pdf /file/*.pdf %}</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="链接文章">链接文章</h2>
+<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">{% post_link * 显示文字 %}</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight markdown"><table><tbody><tr><td class="code"><pre><span class="line">[<span class="string">title</span>](<span class="link">/posts/***/index.html</span>)</span><br></pre></td></tr></tbody></table></figure>
 ]]></content>
       <categories>
         <category>计算机</category>
-        <category>SQL</category>
+        <category>hexo</category>
       </categories>
   </entry>
   <entry>
@@ -544,6 +511,39 @@ x+y\le 2
       <categories>
         <category>计算机</category>
         <category>机器学习</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>SQL 基础</title>
+    <url>/posts/19528/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="select">SELECT</h2>
+<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="built_in">COUNT</span>(<span class="keyword">DISTINCT</span> Country) <span class="keyword">FROM</span> Customers;</span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> Customers <span class="keyword">WHERE</span> <span class="keyword">not</span> (Country<span class="operator">=</span><span class="string">'Germany'</span> <span class="keyword">and</span> city<span class="operator">=</span><span class="string">'Berlin'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> Customers <span class="keyword">WHERE</span> Country <span class="keyword">IN</span> (<span class="keyword">SELECT</span> Country <span class="keyword">FROM</span> Suppliers);</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="like">LIKE</h2>
+<p><code>%</code>: zero, one or multiple char</p>
+<p><code>_</code>: a single char </p><figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> Customers <span class="keyword">WHERE</span> <span class="built_in">lower</span>(CustomerName) <span class="keyword">LIKE</span> <span class="string">'a%'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> Customers <span class="keyword">WHERE</span> city <span class="keyword">LIKE</span> <span class="string">'____'</span>;</span><br></pre></td></tr></tbody></table></figure><p></p>
+<h2 id="group-by">GROUP BY</h2>
+<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> ...</span><br><span class="line"><span class="keyword">FROM</span> ...</span><br><span class="line"><span class="keyword">WHERE</span> ...</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> ...</span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> ... <span class="keyword">ASC</span> <span class="operator">/</span> <span class="keyword">DESC</span>;</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="aggregate-functions">Aggregate functions</h2>
+<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="built_in">Min</span>(), <span class="built_in">Max</span>(), <span class="built_in">Count</span>(), <span class="built_in">Sum</span>(), <span class="built_in">Avg</span>()</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="built_in">avg</span>(sum_id) <span class="keyword">as</span> avg_spend_per_orderid</span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">(<span class="keyword">SELECT</span> order_id, <span class="built_in">sum</span>(spend) <span class="keyword">as</span> sum_id</span><br><span class="line"><span class="keyword">FROM</span> example</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> <span class="number">1</span>)</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="having">HAVING</h2>
+<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> ...</span><br><span class="line"><span class="keyword">FROM</span> ...</span><br><span class="line"><span class="keyword">WHERE</span> ...</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> ...</span><br><span class="line"><span class="keyword">HAVING</span> ...</span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> ...</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> Country, <span class="built_in">count</span>(CustomerID)</span><br><span class="line"><span class="keyword">FROM</span> Customers</span><br><span class="line"><span class="keyword">WHERE</span> Country <span class="keyword">in</span> (<span class="string">'Brazil'</span>, <span class="string">'France'</span>, <span class="string">'USA'</span>)</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> Country</span><br><span class="line"><span class="keyword">HAVING</span> <span class="built_in">count</span>(CustomerID) <span class="operator">&gt;</span> <span class="number">5</span>;</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="union">UNION</h2>
+<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> Country <span class="keyword">FROM</span> Customers</span><br><span class="line"><span class="keyword">UNION</span> (<span class="keyword">ALL</span>)</span><br><span class="line"><span class="keyword">SELECT</span> Country <span class="keyword">FROM</span> Suppliers</span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> <span class="number">1</span>;</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="with">WITH</h2>
+<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">WITH</span> cate15 <span class="keyword">as</span> (</span><br><span class="line">  <span class="keyword">SELECT</span> categoryid, productid</span><br><span class="line">  <span class="keyword">FROM</span> products</span><br><span class="line">  <span class="keyword">WHERE</span> categoryid <span class="keyword">BETWEEN</span> <span class="number">1</span> <span class="keyword">and</span> <span class="number">5</span></span><br><span class="line">),</span><br><span class="line">od15 <span class="keyword">as</span> (</span><br><span class="line">  <span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> orderdetails</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> od15 </span><br><span class="line"><span class="keyword">WHERE</span> productid <span class="keyword">in</span> (<span class="keyword">SELECT</span> productid <span class="keyword">from</span> cate15)</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="windows-function">Windows function</h2>
+<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="built_in">row_number</span>() <span class="keyword">over</span>(<span class="keyword">partition</span> <span class="keyword">by</span> ... <span class="keyword">order</span> <span class="keyword">by</span> ...)</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> category, product, sales, row_num</span><br><span class="line"><span class="keyword">FROM</span> (</span><br><span class="line">  <span class="keyword">SELECT</span> category, product, sales, </span><br><span class="line">  <span class="built_in">row_number</span>() <span class="keyword">over</span>(<span class="keyword">partition</span> <span class="keyword">by</span> category <span class="keyword">order</span> <span class="keyword">by</span> sales <span class="keyword">desc</span>) <span class="keyword">as</span> row_num</span><br><span class="line">  <span class="keyword">FROM</span> tab</span><br><span class="line">)</span><br><span class="line"><span class="keyword">WHERE</span> row_num <span class="operator">&lt;=</span> <span class="number">2</span></span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> </span><br><span class="line">categoryid, productid, price, </span><br><span class="line"><span class="built_in">sum</span>(price) <span class="keyword">over</span>(<span class="keyword">partition</span> <span class="keyword">by</span> categoryid <span class="keyword">order</span> <span class="keyword">by</span> productid) <span class="keyword">as</span> cum_sum</span><br><span class="line"><span class="keyword">FROM</span> products</span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span> <span class="number">1</span>,<span class="number">2</span>;</span><br></pre></td></tr></tbody></table></figure>
+<p><code>lag()</code>: above, <code>lead()</code>: below </p><figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span>,</span><br><span class="line"><span class="built_in">lag</span>(birthdate, <span class="number">1</span>) <span class="keyword">over</span>(<span class="keyword">order</span> <span class="keyword">by</span> birthdate),</span><br><span class="line"><span class="built_in">lead</span>(birthdate, <span class="number">2</span>) <span class="keyword">over</span>(<span class="keyword">order</span> <span class="keyword">by</span> birthdate)</span><br><span class="line"><span class="keyword">FROM</span> employees;</span><br></pre></td></tr></tbody></table></figure><p></p>
+<h2 id="case-when">CASE WHEN</h2>
+<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> Country,</span><br><span class="line">       <span class="keyword">case</span> <span class="keyword">when</span> country <span class="keyword">in</span> (<span class="string">'USA'</span>) <span class="keyword">then</span> <span class="string">'America'</span></span><br><span class="line">            <span class="keyword">when</span> country <span class="keyword">in</span> (<span class="string">'Mexico'</span>) <span class="keyword">then</span> <span class="string">'emerging markets'</span></span><br><span class="line">            <span class="keyword">else</span> <span class="string">'other markets'</span> <span class="keyword">end</span> <span class="keyword">as</span> country_flag</span><br><span class="line"><span class="keyword">FROM</span> customers;</span><br></pre></td></tr></tbody></table></figure>
+]]></content>
+      <categories>
+        <category>计算机</category>
+        <category>SQL</category>
       </categories>
   </entry>
   <entry>
@@ -1263,6 +1263,35 @@ E(\text{error})=\text{bias}^2+\text{Var}+\varepsilon.
       </tags>
   </entry>
   <entry>
+    <title>二分查找</title>
+    <url>/posts/42877/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="原始问题-找到返回下标-找不到返回空">原始问题: 找到返回下标, 找不到返回空</h2>
+<figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">binary_search</span>(<span class="params">array, target</span>):</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> array:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line">        </span><br><span class="line">    left, right = <span class="number">0</span>, <span class="built_in">len</span>(array)-<span class="number">1</span></span><br><span class="line">    <span class="keyword">while</span> left &lt;= right:</span><br><span class="line">        mid = (left + right) // <span class="number">2</span></span><br><span class="line">        <span class="keyword">if</span> array[mid] &gt; target:</span><br><span class="line">            right = mid - <span class="number">1</span></span><br><span class="line">        <span class="keyword">elif</span> array[mid] &lt; target:</span><br><span class="line">            left = mid + <span class="number">1</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span> mid</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">None</span></span><br></pre></td></tr></tbody></table></figure>
+<p>时间: <span class="math inline">\(O(\log N)\)</span></p>
+<p>空间: <span class="math inline">\(O(1)\)</span></p>
+<h2 id="变种-有序矩阵">变种: 有序矩阵</h2>
+<p>比如在下面的矩阵中找 10 </p><figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">1  2  3  4</span><br><span class="line">5  6  7  8</span><br><span class="line">9  10 11 12</span><br></pre></td></tr></tbody></table></figure> 应该返回 <code>(2, 1)</code>. 设矩阵是 <code>M*N</code> 的.<p></p>
+<p>关键就在于压平后的下标和行标, 列标之间的关系.</p>
+<ul>
+<li><code>idx = row_idx * N + col_idx</code></li>
+<li><code>row_idx = idx // N</code></li>
+<li><code>col_idx = idx % N</code></li>
+</ul>
+<figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">binary_search_2d</span>(<span class="params">matrix, target</span>):</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> matrix:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line">    M, N = <span class="built_in">len</span>(matrix), <span class="built_in">len</span>(matrix[<span class="number">0</span>])</span><br><span class="line">    left, right = <span class="number">0</span>, M*N-<span class="number">1</span></span><br><span class="line">    <span class="keyword">while</span> left &lt;= right:</span><br><span class="line">        mid = (left + right) // <span class="number">2</span></span><br><span class="line">        row = mid // N</span><br><span class="line">        col = mid % N</span><br><span class="line">        <span class="keyword">if</span> matrix[row][col] &gt; target:</span><br><span class="line">            right = mid - <span class="number">1</span></span><br><span class="line">        <span class="keyword">elif</span> matrix[row][col] &lt; target:</span><br><span class="line">            left = mid + <span class="number">1</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span> (row, col)</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">None</span></span><br></pre></td></tr></tbody></table></figure>
+<p>时间: <span class="math inline">\(\log(MN)\)</span></p>
+<h2 id="变种-找最近的数">变种: 找最近的数</h2>
+<p>比如在 <code>[1, 2, 5, 9]</code> 中找 <code>3</code>, 应该返回下标 <code>1</code>. </p><figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">find_closest</span>(<span class="params">array, target</span>):</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> array:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line">    left, right = <span class="number">0</span>, <span class="built_in">len</span>(array)-<span class="number">1</span></span><br><span class="line">    <span class="keyword">while</span> left &lt; right - <span class="number">1</span>:</span><br><span class="line">        mid = (left + right) // <span class="number">2</span></span><br><span class="line">        <span class="keyword">if</span> array[mid] &gt; target:</span><br><span class="line">            right = mid</span><br><span class="line">        <span class="keyword">elif</span> array[mid] &lt; target:</span><br><span class="line">            left = mid</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span> mid</span><br><span class="line">    <span class="keyword">return</span> left <span class="keyword">if</span> <span class="built_in">abs</span>(target - array[left]) &lt; <span class="built_in">abs</span>(target - array[right]) <span class="keyword">else</span> right</span><br></pre></td></tr></tbody></table></figure><p></p>
+<h2 id="变种-找第一次出现的下标">变种: 找第一次出现的下标</h2>
+<figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">find_first</span>(<span class="params">array, target</span>):</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> array:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line">    left, right = <span class="number">0</span>, <span class="built_in">len</span>(array)-<span class="number">1</span></span><br><span class="line">    <span class="keyword">while</span> left &lt; right - <span class="number">1</span>:</span><br><span class="line">        mid = (left + right) // <span class="number">2</span></span><br><span class="line">        <span class="keyword">if</span> array[mid] &gt; target:</span><br><span class="line">            right = mid - <span class="number">1</span></span><br><span class="line">        <span class="keyword">elif</span> array[mid] &lt; target:</span><br><span class="line">            left = mid + <span class="number">1</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            right = mid</span><br><span class="line">    <span class="keyword">if</span> array[left] == target:</span><br><span class="line">        <span class="keyword">return</span> left</span><br><span class="line">    <span class="keyword">if</span> array[right] == target:</span><br><span class="line">        <span class="keyword">return</span> right</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">None</span></span><br></pre></td></tr></tbody></table></figure>
+<h2 id="变种-找最后一次出现的下标">变种: 找最后一次出现的下标</h2>
+<figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">find_last</span>(<span class="params">array, target</span>):</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> array:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line">    left, right = <span class="number">0</span>, <span class="built_in">len</span>(array)-<span class="number">1</span></span><br><span class="line">    <span class="keyword">while</span> left &lt; right - <span class="number">1</span>:</span><br><span class="line">        mid = (left + right) // <span class="number">2</span></span><br><span class="line">        <span class="keyword">if</span> array[mid] &gt; target:</span><br><span class="line">            right = mid - <span class="number">1</span></span><br><span class="line">        <span class="keyword">elif</span> array[mid] &lt; target:</span><br><span class="line">            left = mid + <span class="number">1</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            left = mid</span><br><span class="line">    <span class="keyword">if</span> array[right] == target:</span><br><span class="line">        <span class="keyword">return</span> right</span><br><span class="line">    <span class="keyword">if</span> array[left] == target:</span><br><span class="line">        <span class="keyword">return</span> left</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">None</span></span><br></pre></td></tr></tbody></table></figure>
+]]></content>
+      <categories>
+        <category>计算机</category>
+        <category>算法</category>
+      </categories>
+  </entry>
+  <entry>
     <title>二叉树的一些遍历</title>
     <url>/posts/47437/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">TreeNode</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, val</span>) -&gt; <span class="literal">None</span>:</span><br><span class="line">        self.val = val</span><br><span class="line">        self.left = <span class="literal">None</span></span><br><span class="line">        self.right = <span class="literal">None</span></span><br></pre></td></tr></tbody></table></figure>
@@ -1295,35 +1324,6 @@ E(\text{error})=\text{bias}^2+\text{Var}+\varepsilon.
       <tags>
         <tag>树</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>二分查找</title>
-    <url>/posts/42877/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="原始问题-找到返回下标-找不到返回空">原始问题: 找到返回下标, 找不到返回空</h2>
-<figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">binary_search</span>(<span class="params">array, target</span>):</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> array:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line">        </span><br><span class="line">    left, right = <span class="number">0</span>, <span class="built_in">len</span>(array)-<span class="number">1</span></span><br><span class="line">    <span class="keyword">while</span> left &lt;= right:</span><br><span class="line">        mid = (left + right) // <span class="number">2</span></span><br><span class="line">        <span class="keyword">if</span> array[mid] &gt; target:</span><br><span class="line">            right = mid - <span class="number">1</span></span><br><span class="line">        <span class="keyword">elif</span> array[mid] &lt; target:</span><br><span class="line">            left = mid + <span class="number">1</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span> mid</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">None</span></span><br></pre></td></tr></tbody></table></figure>
-<p>时间: <span class="math inline">\(O(\log N)\)</span></p>
-<p>空间: <span class="math inline">\(O(1)\)</span></p>
-<h2 id="变种-有序矩阵">变种: 有序矩阵</h2>
-<p>比如在下面的矩阵中找 10 </p><figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">1  2  3  4</span><br><span class="line">5  6  7  8</span><br><span class="line">9  10 11 12</span><br></pre></td></tr></tbody></table></figure> 应该返回 <code>(2, 1)</code>. 设矩阵是 <code>M*N</code> 的.<p></p>
-<p>关键就在于压平后的下标和行标, 列标之间的关系.</p>
-<ul>
-<li><code>idx = row_idx * N + col_idx</code></li>
-<li><code>row_idx = idx // N</code></li>
-<li><code>col_idx = idx % N</code></li>
-</ul>
-<figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">binary_search_2d</span>(<span class="params">matrix, target</span>):</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> matrix:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line">    M, N = <span class="built_in">len</span>(matrix), <span class="built_in">len</span>(matrix[<span class="number">0</span>])</span><br><span class="line">    left, right = <span class="number">0</span>, M*N-<span class="number">1</span></span><br><span class="line">    <span class="keyword">while</span> left &lt;= right:</span><br><span class="line">        mid = (left + right) // <span class="number">2</span></span><br><span class="line">        row = mid // N</span><br><span class="line">        col = mid % N</span><br><span class="line">        <span class="keyword">if</span> matrix[row][col] &gt; target:</span><br><span class="line">            right = mid - <span class="number">1</span></span><br><span class="line">        <span class="keyword">elif</span> matrix[row][col] &lt; target:</span><br><span class="line">            left = mid + <span class="number">1</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span> (row, col)</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">None</span></span><br></pre></td></tr></tbody></table></figure>
-<p>时间: <span class="math inline">\(\log(MN)\)</span></p>
-<h2 id="变种-找最近的数">变种: 找最近的数</h2>
-<p>比如在 <code>[1, 2, 5, 9]</code> 中找 <code>3</code>, 应该返回下标 <code>1</code>. </p><figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">find_closest</span>(<span class="params">array, target</span>):</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> array:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line">    left, right = <span class="number">0</span>, <span class="built_in">len</span>(array)-<span class="number">1</span></span><br><span class="line">    <span class="keyword">while</span> left &lt; right - <span class="number">1</span>:</span><br><span class="line">        mid = (left + right) // <span class="number">2</span></span><br><span class="line">        <span class="keyword">if</span> array[mid] &gt; target:</span><br><span class="line">            right = mid</span><br><span class="line">        <span class="keyword">elif</span> array[mid] &lt; target:</span><br><span class="line">            left = mid</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span> mid</span><br><span class="line">    <span class="keyword">return</span> left <span class="keyword">if</span> <span class="built_in">abs</span>(target - array[left]) &lt; <span class="built_in">abs</span>(target - array[right]) <span class="keyword">else</span> right</span><br></pre></td></tr></tbody></table></figure><p></p>
-<h2 id="变种-找第一次出现的下标">变种: 找第一次出现的下标</h2>
-<figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">find_first</span>(<span class="params">array, target</span>):</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> array:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line">    left, right = <span class="number">0</span>, <span class="built_in">len</span>(array)-<span class="number">1</span></span><br><span class="line">    <span class="keyword">while</span> left &lt; right - <span class="number">1</span>:</span><br><span class="line">        mid = (left + right) // <span class="number">2</span></span><br><span class="line">        <span class="keyword">if</span> array[mid] &gt; target:</span><br><span class="line">            right = mid - <span class="number">1</span></span><br><span class="line">        <span class="keyword">elif</span> array[mid] &lt; target:</span><br><span class="line">            left = mid + <span class="number">1</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            right = mid</span><br><span class="line">    <span class="keyword">if</span> array[left] == target:</span><br><span class="line">        <span class="keyword">return</span> left</span><br><span class="line">    <span class="keyword">if</span> array[right] == target:</span><br><span class="line">        <span class="keyword">return</span> right</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">None</span></span><br></pre></td></tr></tbody></table></figure>
-<h2 id="变种-找最后一次出现的下标">变种: 找最后一次出现的下标</h2>
-<figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">find_last</span>(<span class="params">array, target</span>):</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> array:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line">    left, right = <span class="number">0</span>, <span class="built_in">len</span>(array)-<span class="number">1</span></span><br><span class="line">    <span class="keyword">while</span> left &lt; right - <span class="number">1</span>:</span><br><span class="line">        mid = (left + right) // <span class="number">2</span></span><br><span class="line">        <span class="keyword">if</span> array[mid] &gt; target:</span><br><span class="line">            right = mid - <span class="number">1</span></span><br><span class="line">        <span class="keyword">elif</span> array[mid] &lt; target:</span><br><span class="line">            left = mid + <span class="number">1</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            left = mid</span><br><span class="line">    <span class="keyword">if</span> array[right] == target:</span><br><span class="line">        <span class="keyword">return</span> right</span><br><span class="line">    <span class="keyword">if</span> array[left] == target:</span><br><span class="line">        <span class="keyword">return</span> left</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">None</span></span><br></pre></td></tr></tbody></table></figure>
-]]></content>
-      <categories>
-        <category>计算机</category>
-        <category>算法</category>
-      </categories>
   </entry>
   <entry>
     <title>判断回文链表</title>
@@ -1457,19 +1457,6 @@ E(\text{error})=\text{bias}^2+\text{Var}+\varepsilon.
       </tags>
   </entry>
   <entry>
-    <title>找到离原点第K近的点</title>
-    <url>/posts/38610/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>利用大根堆: </p><figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> heapq</span><br><span class="line"><span class="keyword">from</span> numpy.linalg <span class="keyword">import</span> norm</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">k_closest</span>(<span class="params">points, k</span>):</span><br><span class="line">    h = []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(points)):</span><br><span class="line">        dist = - norm(points[i])</span><br><span class="line">        heapq.heappush(h, (dist, i))</span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">len</span>(h) &gt; k:</span><br><span class="line">            heapq.heappop(h)  <span class="comment"># 把最远的 pop 出去了</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> [points[item[<span class="number">1</span>]] <span class="keyword">for</span> item <span class="keyword">in</span> h]</span><br></pre></td></tr></tbody></table></figure><p></p>
-]]></content>
-      <categories>
-        <category>计算机</category>
-        <category>算法</category>
-      </categories>
-      <tags>
-        <tag>堆</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>排序</title>
     <url>/posts/37489/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="冒泡排序-bubble-sort">冒泡排序 (bubble sort)</h2>
@@ -1522,6 +1509,19 @@ E(\text{error})=\text{bias}^2+\text{Var}+\varepsilon.
         <category>计算机</category>
         <category>算法</category>
       </categories>
+  </entry>
+  <entry>
+    <title>找到离原点第K近的点</title>
+    <url>/posts/38610/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>利用大根堆: </p><figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> heapq</span><br><span class="line"><span class="keyword">from</span> numpy.linalg <span class="keyword">import</span> norm</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">k_closest</span>(<span class="params">points, k</span>):</span><br><span class="line">    h = []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(points)):</span><br><span class="line">        dist = - norm(points[i])</span><br><span class="line">        heapq.heappush(h, (dist, i))</span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">len</span>(h) &gt; k:</span><br><span class="line">            heapq.heappop(h)  <span class="comment"># 把最远的 pop 出去了</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> [points[item[<span class="number">1</span>]] <span class="keyword">for</span> item <span class="keyword">in</span> h]</span><br></pre></td></tr></tbody></table></figure><p></p>
+]]></content>
+      <categories>
+        <category>计算机</category>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>堆</tag>
+      </tags>
   </entry>
   <entry>
     <title>最长无重复子串的长度</title>
@@ -1585,12 +1585,12 @@ E(\text{error})=\text{bias}^2+\text{Var}+\varepsilon.
       </tags>
   </entry>
   <entry>
-    <title>树的路径和等于目标值</title>
-    <url>/posts/40717/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="top-down">Top Down</h2>
-<figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">exist</span>(<span class="params">self, root, target</span>):</span><br><span class="line">        self.target = target</span><br><span class="line">        self.ret = <span class="literal">False</span></span><br><span class="line">        self.helper(root, <span class="number">0</span>)</span><br><span class="line">        <span class="keyword">return</span> self.ret</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">helper</span>(<span class="params">selr, root, current</span>):</span><br><span class="line">        <span class="keyword">if</span> root <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        <span class="keyword">if</span> root.left <span class="keyword">is</span> <span class="literal">None</span> <span class="keyword">and</span> root.right <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">            self.ret = self.ret <span class="keyword">or</span> current + root.val == self.target</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        <span class="keyword">if</span> self.ret == <span class="literal">True</span>:</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        self.helper(root.left, current + root.val)</span><br><span class="line">        self.helper(root.right, current + root.val)</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="top-down-bottom-up">Top Down + Bottom Up</h2>
-<figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">exist</span>(<span class="params">self, root, target</span>):</span><br><span class="line">        self.target = target</span><br><span class="line">        <span class="keyword">return</span> self.helper(root, <span class="number">0</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">helper</span>(<span class="params">self, root, current</span>):</span><br><span class="line">        <span class="keyword">if</span> root <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        <span class="keyword">if</span> root.left <span class="keyword">is</span> <span class="literal">None</span> <span class="keyword">and</span> root.right <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">            <span class="keyword">return</span> current + root.val == self.target</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> self.helper(root.left, current + root.val) <span class="keyword">or</span> self.helper(root.right, current + root.val)</span><br></pre></td></tr></tbody></table></figure>
+    <title>树的最小高度</title>
+    <url>/posts/64764/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="bottom-up">Bottom Up</h2>
+<figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">minDepth</span>(<span class="params">root</span>):</span><br><span class="line">    <span class="keyword">if</span> root <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">    <span class="keyword">return</span> helper(root)</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">helper</span>(<span class="params">root</span>):</span><br><span class="line">    <span class="keyword">if</span> root <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">float</span>(<span class="string">'inf'</span>)  <span class="comment"># 如果只有一个孩子, 返回该孩子处的高度</span></span><br><span class="line">    <span class="keyword">if</span> root.left <span class="keyword">is</span> <span class="literal">None</span> <span class="keyword">and</span> root.right <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">    l = helper(root.left)</span><br><span class="line">    r = helper(root.right)</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">min</span>(l, r) + <span class="number">1</span></span><br></pre></td></tr></tbody></table></figure>
+<h2 id="top-down">Top Down</h2>
+<figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">minDepth</span>(<span class="params">self, root</span>):</span><br><span class="line">        <span class="keyword">if</span> root <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        self.ret = <span class="built_in">float</span>(<span class="string">'inf'</span>)</span><br><span class="line">        self.helper(root, <span class="number">1</span>)</span><br><span class="line">        <span class="keyword">return</span> self.ret</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">helper</span>(<span class="params">self, root, depth</span>):</span><br><span class="line">        <span class="keyword">if</span> root <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        <span class="keyword">if</span> root.left <span class="keyword">is</span> <span class="literal">None</span> <span class="keyword">and</span> root.right <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">            self.ret = <span class="built_in">min</span>(self.ret, depth)</span><br><span class="line">        </span><br><span class="line">        self.helper(root.left, depth + <span class="number">1</span>)</span><br><span class="line">        self.helper(root.right, depth + <span class="number">1</span>)</span><br><span class="line">        <span class="keyword">return</span></span><br></pre></td></tr></tbody></table></figure>
 ]]></content>
       <categories>
         <category>计算机</category>
@@ -1601,12 +1601,12 @@ E(\text{error})=\text{bias}^2+\text{Var}+\varepsilon.
       </tags>
   </entry>
   <entry>
-    <title>树的最小高度</title>
-    <url>/posts/64764/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="bottom-up">Bottom Up</h2>
-<figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">minDepth</span>(<span class="params">root</span>):</span><br><span class="line">    <span class="keyword">if</span> root <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">    <span class="keyword">return</span> helper(root)</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">helper</span>(<span class="params">root</span>):</span><br><span class="line">    <span class="keyword">if</span> root <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">float</span>(<span class="string">'inf'</span>)  <span class="comment"># 如果只有一个孩子, 返回该孩子处的高度</span></span><br><span class="line">    <span class="keyword">if</span> root.left <span class="keyword">is</span> <span class="literal">None</span> <span class="keyword">and</span> root.right <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">    l = helper(root.left)</span><br><span class="line">    r = helper(root.right)</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">min</span>(l, r) + <span class="number">1</span></span><br></pre></td></tr></tbody></table></figure>
-<h2 id="top-down">Top Down</h2>
-<figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">minDepth</span>(<span class="params">self, root</span>):</span><br><span class="line">        <span class="keyword">if</span> root <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        self.ret = <span class="built_in">float</span>(<span class="string">'inf'</span>)</span><br><span class="line">        self.helper(root, <span class="number">1</span>)</span><br><span class="line">        <span class="keyword">return</span> self.ret</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">helper</span>(<span class="params">self, root, depth</span>):</span><br><span class="line">        <span class="keyword">if</span> root <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        <span class="keyword">if</span> root.left <span class="keyword">is</span> <span class="literal">None</span> <span class="keyword">and</span> root.right <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">            self.ret = <span class="built_in">min</span>(self.ret, depth)</span><br><span class="line">        </span><br><span class="line">        self.helper(root.left, depth + <span class="number">1</span>)</span><br><span class="line">        self.helper(root.right, depth + <span class="number">1</span>)</span><br><span class="line">        <span class="keyword">return</span></span><br></pre></td></tr></tbody></table></figure>
+    <title>树的路径和等于目标值</title>
+    <url>/posts/40717/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="top-down">Top Down</h2>
+<figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">exist</span>(<span class="params">self, root, target</span>):</span><br><span class="line">        self.target = target</span><br><span class="line">        self.ret = <span class="literal">False</span></span><br><span class="line">        self.helper(root, <span class="number">0</span>)</span><br><span class="line">        <span class="keyword">return</span> self.ret</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">helper</span>(<span class="params">selr, root, current</span>):</span><br><span class="line">        <span class="keyword">if</span> root <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        <span class="keyword">if</span> root.left <span class="keyword">is</span> <span class="literal">None</span> <span class="keyword">and</span> root.right <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">            self.ret = self.ret <span class="keyword">or</span> current + root.val == self.target</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        <span class="keyword">if</span> self.ret == <span class="literal">True</span>:</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        self.helper(root.left, current + root.val)</span><br><span class="line">        self.helper(root.right, current + root.val)</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="top-down-bottom-up">Top Down + Bottom Up</h2>
+<figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">exist</span>(<span class="params">self, root, target</span>):</span><br><span class="line">        self.target = target</span><br><span class="line">        <span class="keyword">return</span> self.helper(root, <span class="number">0</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">helper</span>(<span class="params">self, root, current</span>):</span><br><span class="line">        <span class="keyword">if</span> root <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        <span class="keyword">if</span> root.left <span class="keyword">is</span> <span class="literal">None</span> <span class="keyword">and</span> root.right <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">            <span class="keyword">return</span> current + root.val == self.target</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> self.helper(root.left, current + root.val) <span class="keyword">or</span> self.helper(root.right, current + root.val)</span><br></pre></td></tr></tbody></table></figure>
 ]]></content>
       <categories>
         <category>计算机</category>
@@ -1719,13 +1719,10 @@ E(\text{error})=\text{bias}^2+\text{Var}+\varepsilon.
       </tags>
   </entry>
   <entry>
-    <title>链表相加</title>
-    <url>/posts/30822/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>比如一个链表是 <code>1 -&gt; 2 -&gt; 3</code>, 一个是 <code>2 -&gt; 7</code>, 结果应该返回 <code>1 -&gt; 5 -&gt; 0</code>.</p>
-<p>因为 <span class="math inline">\(123+27=150\)</span>.</p>
-<span id="more"></span>
-<p>有一个加法右对齐的问题, 因为给出两个 head 之后链表是左对齐的. 为了方便起见, 先进行<a href="/posts/967/index.html">反转链表</a>的操作.</p>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">add_list</span>(<span class="params">head1, head2</span>):</span><br><span class="line">    <span class="comment"># 反转两个链表</span></span><br><span class="line">    head1 = reverse(head1)</span><br><span class="line">    head2 = reverse(head2)</span><br><span class="line">    <span class="comment"># dummy head</span></span><br><span class="line">    fake = ListNode(<span class="literal">None</span>)</span><br><span class="line">    cur = fake</span><br><span class="line"></span><br><span class="line">    carry = <span class="number">0</span> <span class="comment"># 存储进位</span></span><br><span class="line">    <span class="comment"># 只要两个链表有一个没到结尾, 就可以继续</span></span><br><span class="line">    <span class="keyword">while</span> head1 <span class="keyword">or</span> head2: </span><br><span class="line">        tmp = carry <span class="comment"># 存储该位置的和, 完整的和是 head1.val + head2.val + carry</span></span><br><span class="line">        <span class="comment"># 分情况讨论, 哪个节点有值就加上哪个节点</span></span><br><span class="line">        <span class="comment"># 如果两个节点都有值就都加, 没有 else 的关系</span></span><br><span class="line">        <span class="keyword">if</span> head1:</span><br><span class="line">            tmp += head1.val</span><br><span class="line">            head1 = head1.<span class="built_in">next</span></span><br><span class="line">        <span class="keyword">if</span> head2:</span><br><span class="line">            tmp += head2.val</span><br><span class="line">            head2 = head2.<span class="built_in">next</span></span><br><span class="line">        <span class="comment"># 下一位应该是临时和的个位</span></span><br><span class="line">        cur.<span class="built_in">next</span> = ListNode(tmp % <span class="number">10</span>)</span><br><span class="line">        <span class="comment"># 进位是临时和的十位</span></span><br><span class="line">        carry = tmp // <span class="number">10</span></span><br><span class="line">        cur = cur.<span class="built_in">next</span></span><br><span class="line">    <span class="comment"># 如果遍历完成之后还有进位, 还要多一位</span></span><br><span class="line">    <span class="keyword">if</span> carry &gt; <span class="number">0</span>:</span><br><span class="line">        cur.<span class="built_in">next</span> = ListNode(carry)</span><br><span class="line">    <span class="keyword">return</span> reverse(fake.<span class="built_in">next</span>)</span><br></pre></td></tr></tbody></table></figure>
+    <title>链表删除值</title>
+    <url>/posts/57079/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>比如 <code>8 -&gt; 5 -&gt; 8 -&gt; 8 -&gt; 1 -&gt; 8</code> 删除 <code>8</code>, 返回 <code>5 -&gt; 1</code>.</p>
+<figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">remove</span>(<span class="params">head, val</span>):</span><br><span class="line">    <span class="keyword">if</span> head <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">        <span class="keyword">return</span> head</span><br><span class="line"></span><br><span class="line">    fake = ListNode(<span class="literal">None</span>)</span><br><span class="line">    fake.<span class="built_in">next</span> = head</span><br><span class="line">    prev, cur = fake, head</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> cur:</span><br><span class="line">        <span class="keyword">if</span> cur.val == val:</span><br><span class="line">            prev.<span class="built_in">next</span> = cur.<span class="built_in">next</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            prev = cur    </span><br><span class="line">        cur = cur.<span class="built_in">next</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> fake.<span class="built_in">next</span></span><br></pre></td></tr></tbody></table></figure>
 ]]></content>
       <categories>
         <category>计算机</category>
@@ -1736,10 +1733,13 @@ E(\text{error})=\text{bias}^2+\text{Var}+\varepsilon.
       </tags>
   </entry>
   <entry>
-    <title>链表删除值</title>
-    <url>/posts/57079/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>比如 <code>8 -&gt; 5 -&gt; 8 -&gt; 8 -&gt; 1 -&gt; 8</code> 删除 <code>8</code>, 返回 <code>5 -&gt; 1</code>.</p>
-<figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">remove</span>(<span class="params">head, val</span>):</span><br><span class="line">    <span class="keyword">if</span> head <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">        <span class="keyword">return</span> head</span><br><span class="line"></span><br><span class="line">    fake = ListNode(<span class="literal">None</span>)</span><br><span class="line">    fake.<span class="built_in">next</span> = head</span><br><span class="line">    prev, cur = fake, head</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> cur:</span><br><span class="line">        <span class="keyword">if</span> cur.val == val:</span><br><span class="line">            prev.<span class="built_in">next</span> = cur.<span class="built_in">next</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            prev = cur    </span><br><span class="line">        cur = cur.<span class="built_in">next</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> fake.<span class="built_in">next</span></span><br></pre></td></tr></tbody></table></figure>
+    <title>链表相加</title>
+    <url>/posts/30822/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>比如一个链表是 <code>1 -&gt; 2 -&gt; 3</code>, 一个是 <code>2 -&gt; 7</code>, 结果应该返回 <code>1 -&gt; 5 -&gt; 0</code>.</p>
+<p>因为 <span class="math inline">\(123+27=150\)</span>.</p>
+<span id="more"></span>
+<p>有一个加法右对齐的问题, 因为给出两个 head 之后链表是左对齐的. 为了方便起见, 先进行<a href="/posts/967/index.html">反转链表</a>的操作.</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">add_list</span>(<span class="params">head1, head2</span>):</span><br><span class="line">    <span class="comment"># 反转两个链表</span></span><br><span class="line">    head1 = reverse(head1)</span><br><span class="line">    head2 = reverse(head2)</span><br><span class="line">    <span class="comment"># dummy head</span></span><br><span class="line">    fake = ListNode(<span class="literal">None</span>)</span><br><span class="line">    cur = fake</span><br><span class="line"></span><br><span class="line">    carry = <span class="number">0</span> <span class="comment"># 存储进位</span></span><br><span class="line">    <span class="comment"># 只要两个链表有一个没到结尾, 就可以继续</span></span><br><span class="line">    <span class="keyword">while</span> head1 <span class="keyword">or</span> head2: </span><br><span class="line">        tmp = carry <span class="comment"># 存储该位置的和, 完整的和是 head1.val + head2.val + carry</span></span><br><span class="line">        <span class="comment"># 分情况讨论, 哪个节点有值就加上哪个节点</span></span><br><span class="line">        <span class="comment"># 如果两个节点都有值就都加, 没有 else 的关系</span></span><br><span class="line">        <span class="keyword">if</span> head1:</span><br><span class="line">            tmp += head1.val</span><br><span class="line">            head1 = head1.<span class="built_in">next</span></span><br><span class="line">        <span class="keyword">if</span> head2:</span><br><span class="line">            tmp += head2.val</span><br><span class="line">            head2 = head2.<span class="built_in">next</span></span><br><span class="line">        <span class="comment"># 下一位应该是临时和的个位</span></span><br><span class="line">        cur.<span class="built_in">next</span> = ListNode(tmp % <span class="number">10</span>)</span><br><span class="line">        <span class="comment"># 进位是临时和的十位</span></span><br><span class="line">        carry = tmp // <span class="number">10</span></span><br><span class="line">        cur = cur.<span class="built_in">next</span></span><br><span class="line">    <span class="comment"># 如果遍历完成之后还有进位, 还要多一位</span></span><br><span class="line">    <span class="keyword">if</span> carry &gt; <span class="number">0</span>:</span><br><span class="line">        cur.<span class="built_in">next</span> = ListNode(carry)</span><br><span class="line">    <span class="keyword">return</span> reverse(fake.<span class="built_in">next</span>)</span><br></pre></td></tr></tbody></table></figure>
 ]]></content>
       <categories>
         <category>计算机</category>
@@ -1890,6 +1890,147 @@ E(\text{error})=\text{bias}^2+\text{Var}+\varepsilon.
       </tags>
   </entry>
   <entry>
+    <title>双曲神经网络</title>
+    <url>/posts/61728/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>欧式空间是符合人们直觉的空间，在这里面做运算也十分方便，在这里构建神经网络也是一种偷懒的做法。然而一些复杂的数据展示出了明显的非欧特征（比如图结构），在欧式空间中研究非常费劲，但在非欧空间中研究就非常简洁。</p>
+<span id="more"></span>
+<p>比如一棵树的两个实际距离很远的叶子节点，在二维欧式空间（平面）中却看上去离得很近。增加欧式空间的维数可以缓解这个问题，但是有定理证明，要想尽量保持树中的距离，需要非常高维的欧式空间（维数甚至无界）。然而在双曲空间中，只用二维嵌入就可以解决这个问题：庞加莱（Poincaré）圆盘越靠近边界的空间密度越大，看上去有限的一个圆实际上容量很大——它就很适合刻画一棵树。而且，靠近边缘的叶子节点看上去（欧式）距离很近，但在双曲空间中的距离却很远。</p>
+<p>之所以不怎么在非欧空间中研究神经网络，是因为很多基础操作（如向量加法、数乘、内积，矩阵-向量乘法）在其中很难写出一个清楚确定的公式来推广。这里我们研究一种简单的空间：有着负常数曲率的空间，即双曲空间。</p>
+<p>这篇博客参考 2018 年的论文<sup id="fnref:1"><a href="#fn:1" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="Ganea, O., Bécigneul, G. and Hofmann, T., 2018. Hyperbolic neural networks.&nbsp;*Advances in Neural Information Processing Systems*,&nbsp;31.">[1]</span></a></sup>，会补充铺垫一些必要的概念。</p>
+<h2 id="推广距离庞加莱球">推广距离：庞加莱球</h2>
+<p>两个点的“距离”定义为，它们之间各种路线的最短长度。</p>
+<h3 id="欧氏距离">欧氏距离</h3>
+<p>在欧式几何中，这个最短的路线就是连接它们的直线段——因为任何连接它们的曲线都会比这条线段长。但曲线长度又是怎么定义的？</p>
+<p>如果一条曲线 <span class="math inline">\(\Gamma\)</span> 足够光滑，可以用参数方程 <span class="math inline">\(\begin{cases} x=x(t) \\ y=y(t) \end{cases}\)</span> 来表示的话，这条曲线的长度就是 <span class="math inline">\(\int_\Gamma\d s\)</span>，其中 <span class="math display">\[\boxed{\d s=\sqrt{x'(t)^2+y'(t)^2}\d t}.\]</span></p>
+<p>举个例子：从 <span class="math inline">\((-\frac12, 0)\)</span> 到 <span class="math inline">\((\frac12, 0)\)</span> 有一条路径是走半圆： <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAMAAABOo35HAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAC9UExURVlZWdPT07KysmRkZIWFhfT09JmZmWZmZm9vb39/fxkZGUxMTDMzM3p6epCQkKamppubm729venp6cjIyN7e3tbW1s/Pz8LCwnx8fLS0tFZWVoiIiI+Pj6GhoeTk5Glpabu7u93d3evr66CgoJSUlKqqqsnJyeDg4Hd3d8PDw+Xl5bi4uNHR0dvb26Ojo6urq+fn51hYWDg4OCgoKHBwcK2traenp0FBQe7u7vHx8U5OTre3t8zMzHV1df///7GrnpQAAAA/dFJOU///////////////////////////////////////////////////////////////////////////////////AI4mfBcAAAUGSURBVHja7NoJb6M4GMZxY0NCD64kve/pMZ2d3Z297+X7f6zFNmBAMUXa6URl/q9UJSWPUPzrizFWRUlNLgEBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYYIEFAVhggQUWWGBBABZYYIEFFlgQgAUWWGCBBRYEYIEFFlhggQUBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYn6cCIcRXgvX/h9qcIVBqDdbEM8RCxGCB9QqXYRwHYDHBgwXWl8eKZKiESHI3Ba1kWs3fKixcaJUl1YyeBm7Ocq+yLItUiVBGnXxenSHJolIKEcwHq6ikbOX1YGVzQCTN8LPmSLreghUl9sN4Uw7yajMrLC0TZ1ImzqY6FEop0+pIaEN5HaoOxVuwEqFyc4I46uSlzOLqgxlh6UaR9l3VYWl9Fdoxb1Q90KJtu41pwwFW/WHhTtW8i7TafLCqRsk6bsGw63L9qurXRmuIlbT9lDQnlXU+nBFW1Q2qnZbDprWa2tjR90LZFqx1/+Td/HpGWLlrLDvIwTcx6dQ1Vrntbig68cDms3JwbA5Y1azs1ger6sNV/bbIw1jU81MvNAGrl58RVn8ozW+btF08iGFoAlYvP3csfVur1gJBEIA1uBmue5dhZDOyO2epbmgCVi8/I6x0MMHH9pjsTfBhNzQBq5uPZoQlB0uH3DZG4EZqQ26fL3sZq5uf09Ih6qw3i/pm6BZO0qZX7rrUS68Xsbr5ZE4rePMk08pk9aUZugfqppvs6AM1Acvlo/StP+6EbW06z8hJqxbYp2BZPQUnFsLsKuhQdaHqn5ewbF7KXIn0jWO5MqOQ7RaNLPtbNMmmhimj0GUmYLl8Gs0Lq4wyPbTu1l2QKqHSouzs3OlDIslW5SQsnY/NXmFplyNvEuuLV/Tau9BzwiraDUSwXmysztYWWNtL1psXeumgIrDGaqXvBfUuvtqUYI3V2t1wk1e2msFluJJm6zDJXv/fIfjPP7DAAgsssCiwwAILLLDAosACCyywwAKLAgsssMACC6zt9fDz/v75tyOB+98PD2+ORgKffjw4OP1uJPDxl+Xy8v1I4MPF3t7VNyOB4/vF4uzdzrG+39f1kz/w66Guv/yBvw90KX/gZKkr8Qf+2dOV+gNHC12/7RxrabD2/a31bLAO/a11YbAO/K21MFhLf2s9Gqw9f2vdGqzFu11jnVusE2/gxmI9eQOnFuvYG7i0WH7uK4t15w2cWazrXWP9a7H8f/bQYvm/6IPF+sF/pVssf19Ii/WH/0K2WH/uGuvEWC39gSdj9Twy+Rqri5EZx1gt/IE7Y/XoD1wbq9vd3w1PlufnD2OBp+ebm/uxwPHF6emnscDR4vLy41jg7vHq6sNY4Pr27OyYdRaLUrDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssL6u+k+AAQCR9eHtLKvLfwAAAABJRU5ErkJggg==" data-original="https://s2.loli.net/2023/07/14/XU4NsAHELoue2Z9.png" width="70%"> 那我们可以选参数方程 <span class="math inline">\(\begin{cases}x(t)=\frac12\cos t\\ y(t)=\frac12\sin t\end{cases}\)</span>，其中 <span class="math inline">\(t\in[0,\pi]\)</span>。于是 <span class="math display">\[\d s=\sqrt{\left(-\frac12\sin t\right)^{2}+\left(\frac12\cos t\right)^2} \d t=\frac12\d t，\]</span>这条路径的长度就是 <span class="math inline">\(\int_0^{\pi}\frac12\d t=\frac\pi2\)</span>。用同样的方法可以算出走直线段的长度是 <span class="math inline">\(1\)</span>。</p>
+<p>通过一些方法（比如变分法中的欧拉-拉格朗日方程）可以证明，在这个距离定义下，走直线段是最短的。也就是说，不存在比 <span class="math inline">\(1\)</span> 更短的路径长度。</p>
+<h3 id="双曲距离与庞加莱圆盘">双曲距离与庞加莱圆盘</h3>
+<p>非欧几何就是推广了 <span class="math inline">\(\d s=\sqrt{x'^2+y'^2}\d t\)</span> 这个关系。双曲几何有很多种等价的模型，在我们要讨论的庞加莱圆盘中，这个弧长微元被定义为 <span class="math display">\[\begin{equation}\label{eq:dshb}
+\boxed{\d s = \frac{2}{1-x^{2}-y^{2}} \sqrt{x'^2+y'^2} \d t}.\end{equation}
+\]</span> 整个空间就是一个单位圆，而且可以看出越靠近圆的边界 <span class="math inline">\(\d s\)</span> 越大（因为此时 <span class="math inline">\(x^2+y^2\)</span> 靠近 1）：在欧式空间中看起来一样长的曲线，越靠近边界，它实际上越长。</p>
+<p>举个例子：我们算 <span class="math inline">\((0,0)\to(0,0.01)\)</span> 的直线段长度。一个参数方程是 <span class="math inline">\(\begin{cases}x(t)=0.01t\\ y(t)=0\end{cases}\)</span>，其中 <span class="math inline">\(0\leq t\leq1\)</span>，可以算出<span class="math display">\[
+\d s=\frac{2}{1-(0.01t)^2-0^2}\sqrt{0.01^2+0^2}\d t=\frac{0.02}{1-(0.01t)^2}\d t.
+\]</span> 于是这条线段的长度就是 <span class="math inline">\(\int_0^1\frac{0.02}{1-(0.01t)^2}\d t\approx0.020\)</span>。 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAMAAABOo35HAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAC9UExURVlZWdPT07KysmRkZIWFhfT09JmZmWZmZm9vb39/fxkZGUxMTDMzM3p6epCQkKamppubm729venp6cjIyN7e3tbW1s/Pz8LCwnx8fLS0tFZWVoiIiI+Pj6GhoeTk5Glpabu7u93d3evr66CgoJSUlKqqqsnJyeDg4Hd3d8PDw+Xl5bi4uNHR0dvb26Ojo6urq+fn51hYWDg4OCgoKHBwcK2traenp0FBQe7u7vHx8U5OTre3t8zMzHV1df///7GrnpQAAAA/dFJOU///////////////////////////////////////////////////////////////////////////////////AI4mfBcAAAUGSURBVHja7NoJb6M4GMZxY0NCD64kve/pMZ2d3Z297+X7f6zFNmBAMUXa6URl/q9UJSWPUPzrizFWRUlNLgEBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYYIEFAVhggQUWWGBBABZYYIEFFlgQgAUWWGCBBRYEYIEFFlhggQUBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYn6cCIcRXgvX/h9qcIVBqDdbEM8RCxGCB9QqXYRwHYDHBgwXWl8eKZKiESHI3Ba1kWs3fKixcaJUl1YyeBm7Ocq+yLItUiVBGnXxenSHJolIKEcwHq6ikbOX1YGVzQCTN8LPmSLreghUl9sN4Uw7yajMrLC0TZ1ImzqY6FEop0+pIaEN5HaoOxVuwEqFyc4I46uSlzOLqgxlh6UaR9l3VYWl9Fdoxb1Q90KJtu41pwwFW/WHhTtW8i7TafLCqRsk6bsGw63L9qurXRmuIlbT9lDQnlXU+nBFW1Q2qnZbDprWa2tjR90LZFqx1/+Td/HpGWLlrLDvIwTcx6dQ1Vrntbig68cDms3JwbA5Y1azs1ger6sNV/bbIw1jU81MvNAGrl58RVn8ozW+btF08iGFoAlYvP3csfVur1gJBEIA1uBmue5dhZDOyO2epbmgCVi8/I6x0MMHH9pjsTfBhNzQBq5uPZoQlB0uH3DZG4EZqQ26fL3sZq5uf09Ih6qw3i/pm6BZO0qZX7rrUS68Xsbr5ZE4rePMk08pk9aUZugfqppvs6AM1Acvlo/StP+6EbW06z8hJqxbYp2BZPQUnFsLsKuhQdaHqn5ewbF7KXIn0jWO5MqOQ7RaNLPtbNMmmhimj0GUmYLl8Gs0Lq4wyPbTu1l2QKqHSouzs3OlDIslW5SQsnY/NXmFplyNvEuuLV/Tau9BzwiraDUSwXmysztYWWNtL1psXeumgIrDGaqXvBfUuvtqUYI3V2t1wk1e2msFluJJm6zDJXv/fIfjPP7DAAgsssCiwwAILLLDAosACCyywwAKLAgsssMACC6zt9fDz/v75tyOB+98PD2+ORgKffjw4OP1uJPDxl+Xy8v1I4MPF3t7VNyOB4/vF4uzdzrG+39f1kz/w66Guv/yBvw90KX/gZKkr8Qf+2dOV+gNHC12/7RxrabD2/a31bLAO/a11YbAO/K21MFhLf2s9Gqw9f2vdGqzFu11jnVusE2/gxmI9eQOnFuvYG7i0WH7uK4t15w2cWazrXWP9a7H8f/bQYvm/6IPF+sF/pVssf19Ii/WH/0K2WH/uGuvEWC39gSdj9Twy+Rqri5EZx1gt/IE7Y/XoD1wbq9vd3w1PlufnD2OBp+ebm/uxwPHF6emnscDR4vLy41jg7vHq6sNY4Pr27OyYdRaLUrDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssL6u+k+AAQCR9eHtLKvLfwAAAABJRU5ErkJggg==" data-original="https://s2.loli.net/2023/07/20/inACwyZgGeRQc3b.png" width="70%" alt="庞加莱圆盘中，越靠近边界，空间密度越大"><p class="image-caption">庞加莱圆盘中，越靠近边界，空间密度越大</p></p>
+<p>我们再算 <span class="math inline">\((0.98, 0)\to(0.99, 0)\)</span> 的直线段长度。一个参数方程是 <span class="math inline">\(\begin{cases}x(t)=0.98+0.01t\\ y(t)=0\end{cases}\)</span>，其中 <span class="math inline">\(0\leq t\leq 1\)</span>。它的长度就是<span class="math display">\[
+\int_0^1\frac{2}{1-(0.98+0.01t)^2}\sqrt{0.01^2}\d t\approx0.698,
+\]</span>比靠近圆心的那段看上去一样长的线段长了 30 多倍。</p>
+<p>在这个曲线长度的定义下，两个点之间的最短路线就不是线段了——有一条曲线比直着走更短。这条路线不那么显然，不过可以证明，这条路线实际上是穿越这两个点的一个圆弧。</p>
+<p>两个点没法确定唯一的一个圆，但这条路线还有一个限制把它确定下来了：它必须和庞加莱圆的边界正交。换句话说，这条圆弧必须垂直地穿入、穿出庞加莱圆的边界。它是欧式空间中“直线”的推广，被称为测地线（geodesic）。</p>
+<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAMAAABOo35HAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAC9UExURVlZWdPT07KysmRkZIWFhfT09JmZmWZmZm9vb39/fxkZGUxMTDMzM3p6epCQkKamppubm729venp6cjIyN7e3tbW1s/Pz8LCwnx8fLS0tFZWVoiIiI+Pj6GhoeTk5Glpabu7u93d3evr66CgoJSUlKqqqsnJyeDg4Hd3d8PDw+Xl5bi4uNHR0dvb26Ojo6urq+fn51hYWDg4OCgoKHBwcK2traenp0FBQe7u7vHx8U5OTre3t8zMzHV1df///7GrnpQAAAA/dFJOU///////////////////////////////////////////////////////////////////////////////////AI4mfBcAAAUGSURBVHja7NoJb6M4GMZxY0NCD64kve/pMZ2d3Z297+X7f6zFNmBAMUXa6URl/q9UJSWPUPzrizFWRUlNLgEBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYYIEFAVhggQUWWGBBABZYYIEFFlgQgAUWWGCBBRYEYIEFFlhggQUBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYn6cCIcRXgvX/h9qcIVBqDdbEM8RCxGCB9QqXYRwHYDHBgwXWl8eKZKiESHI3Ba1kWs3fKixcaJUl1YyeBm7Ocq+yLItUiVBGnXxenSHJolIKEcwHq6ikbOX1YGVzQCTN8LPmSLreghUl9sN4Uw7yajMrLC0TZ1ImzqY6FEop0+pIaEN5HaoOxVuwEqFyc4I46uSlzOLqgxlh6UaR9l3VYWl9Fdoxb1Q90KJtu41pwwFW/WHhTtW8i7TafLCqRsk6bsGw63L9qurXRmuIlbT9lDQnlXU+nBFW1Q2qnZbDprWa2tjR90LZFqx1/+Td/HpGWLlrLDvIwTcx6dQ1Vrntbig68cDms3JwbA5Y1azs1ger6sNV/bbIw1jU81MvNAGrl58RVn8ozW+btF08iGFoAlYvP3csfVur1gJBEIA1uBmue5dhZDOyO2epbmgCVi8/I6x0MMHH9pjsTfBhNzQBq5uPZoQlB0uH3DZG4EZqQ26fL3sZq5uf09Ih6qw3i/pm6BZO0qZX7rrUS68Xsbr5ZE4rePMk08pk9aUZugfqppvs6AM1Acvlo/StP+6EbW06z8hJqxbYp2BZPQUnFsLsKuhQdaHqn5ewbF7KXIn0jWO5MqOQ7RaNLPtbNMmmhimj0GUmYLl8Gs0Lq4wyPbTu1l2QKqHSouzs3OlDIslW5SQsnY/NXmFplyNvEuuLV/Tau9BzwiraDUSwXmysztYWWNtL1psXeumgIrDGaqXvBfUuvtqUYI3V2t1wk1e2msFluJJm6zDJXv/fIfjPP7DAAgsssCiwwAILLLDAosACCyywwAKLAgsssMACC6zt9fDz/v75tyOB+98PD2+ORgKffjw4OP1uJPDxl+Xy8v1I4MPF3t7VNyOB4/vF4uzdzrG+39f1kz/w66Guv/yBvw90KX/gZKkr8Qf+2dOV+gNHC12/7RxrabD2/a31bLAO/a11YbAO/K21MFhLf2s9Gqw9f2vdGqzFu11jnVusE2/gxmI9eQOnFuvYG7i0WH7uK4t15w2cWazrXWP9a7H8f/bQYvm/6IPF+sF/pVssf19Ii/WH/0K2WH/uGuvEWC39gSdj9Twy+Rqri5EZx1gt/IE7Y/XoD1wbq9vd3w1PlufnD2OBp+ebm/uxwPHF6emnscDR4vLy41jg7vHq6sNY4Pr27OyYdRaLUrDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssL6u+k+AAQCR9eHtLKvLfwAAAABJRU5ErkJggg==" data-original="https://s2.loli.net/2023/07/15/BHWPyAhXjMUiCt6.png" width="60%" alt="庞加莱圆盘中的“直线”：任何两点之间的最短路就是这种圆弧的一部分"><p class="image-caption">庞加莱圆盘中的“直线”：任何两点之间的最短路就是这种圆弧的一部分</p></p>
+<h3 id="高维推广">高维推广</h3>
+<p>庞加莱圆盘是一个二维的双曲空间，我们可以把它推广到高维，核心还是推广弧长微元 <span class="math inline">\(\d s\)</span>。</p>
+<p>在二维空间中，<span class="math inline">\(\d s^2\)</span> 实际上就是一个二次式。只要我们留意到根号里面的东西是一个关于 <span class="math inline">\(x'\)</span> 和 <span class="math inline">\(y'\)</span> 的二次型，就容易推广了。欧式空间中，<span class="math inline">\(x'^2+y'^2\)</span> 对应的二次型矩阵是单位阵<span class="math display">\[\begin{bmatrix}1&amp;0\\ 0&amp;1\end{bmatrix}.\]</span> 而在庞加莱圆盘中， <span class="math inline">\(\eqref{eq:dshb}\)</span> 根号下的二次型矩阵是<span class="math display">\[
+\left(\frac{2}{1-x^2-y^2}\right)^2\begin{bmatrix}1&amp;0\\ 0&amp;1\end{bmatrix},
+\]</span>注意我们把根号外的常数提进来了。</p>
+<p>从而，在 <span class="math inline">\(n\)</span> 维空间中，欧式空间对应的二次型矩阵就是单位阵 <span class="math inline">\(I_n\)</span>，而庞加莱球在某点 <span class="math inline">\(\vx\)</span> 的二次型矩阵就是<span class="math display">\[
+\left(\frac{2}{1-\lVert\vx\rVert^2}\right)^2 I_n.
+\]</span> 其中 <span class="math inline">\(\lVert\cdot\rVert\)</span> 是欧式空间中的 <a href="https://www.bilibili.com/video/BV1GM4y1c78K">2-范数</a>。</p>
+<h3 id="黎曼几何">黎曼几何</h3>
+<p>双曲几何对 <span class="math inline">\(\d s\)</span> 的推广只是一种特殊的实现。实际上，这个二次型矩阵可以是任何一个对称、正定的矩阵。它所诱导的向量内积被称为黎曼度量，而黎曼几何就是研究装备了黎曼度量的高维曲面（流形）的。</p>
+<h2 id="推广线性空间möbius-运算">推广线性空间：Möbius 运算</h2>
+<p>如果在庞加莱圆盘下，我们还像欧式线性空间中那样简单地定义向量数乘、加法等，很容易就会让结果跑出这个单位圆。陀螺向量空间（Gyrovector space）是欧式线性空间在双曲几何下的推广，可以保证这些运算结果还在圆盘内。</p>
+<p>注意：<strong>线性空间中只需要向量加法和数乘运算</strong>。我们在陀螺向量空间中只需要定义这两种运算，还没有提供向量内积、矩阵-向量乘法这种良好的结构。它们被放在下一节。</p>
+<p>一些相对论模型会采用这种空间，保证不管速度怎样相加，都不会超过光速。假定光速为 <span class="math inline">\(c\)</span>，那么我们记 <span class="math inline">\(\mathbb{D}_c^n\)</span> 为一个以原点为球心，半径为 <span class="math inline">\(\frac{1}{\sqrt c}\)</span> 的 <span class="math inline">\(n\)</span> 维开球。陀螺向量空间就是在这里面做向量运算的。当光速为 0 时，这个空间就是欧式空间。当光速为 1 时，它就是庞加莱球。</p>
+<p>可见陀螺向量空间是对庞加莱球的进一步推广。我们需要的性质是<strong><span class="math inline">\(c\to0\)</span> 时，这个空间要趋于欧式空间。</strong></p>
+<h3 id="möbius-加法">Möbius 加法</h3>
+<p>在 <span class="math inline">\(\mathbb D_c^n\)</span> 中，定义两个向量的加法 <span class="math display">\[
+\boxed{x\oplus_cy=\frac{(1+2c\langle x,y\rangle+c\lVert y\rVert^2)x+(1-c\lVert x\rVert^2)y}{1+2c\langle x,y\rangle+c^2\lVert x\rVert^2\lVert y\rVert^2}}.
+\]</span></p>
+<p>当 <span class="math inline">\(c=0\)</span> 时我们就得到了 <span class="math inline">\(x\oplus_0y=x+y\)</span>，但更一般地，这种运算既不满足交换律，也不满足结合律。但它确实满足一些性质：</p>
+<ul>
+<li><span class="math inline">\(x\oplus_c0=0\oplus_c x=0\)</span></li>
+<li><span class="math inline">\((-x)\oplus_c x=x\oplus_c(-x)=0\)</span></li>
+<li><span class="math inline">\((-x)\oplus_c(x\oplus_c y)=y\)</span></li>
+</ul>
+<p><strong>莫比乌斯减法</strong>被定义为<span class="math display">\[\boxed{
+x\ominus_cy=x\oplus_c(-y)}.
+\]</span></p>
+<h3 id="möbius-数乘">Möbius 数乘</h3>
+<p>取实数 <span class="math inline">\(r\)</span>，定义它和向量 <span class="math inline">\(x\)</span> 的数乘<span class="math display">\[\begin{equation}\label{eq:rx}\boxed{
+r\otimes_c x=\frac{1}{\sqrt c}\tanh\left(r\tanh^{-1}\left(\sqrt c\lVert x\rVert\right) \right) \frac{x}{\lVert x\rVert}}.\end{equation}
+\]</span>当 <span class="math inline">\(x=0\)</span> 时，我们补充定义数乘结果为 0 。当 <span class="math inline">\(c\to0\)</span> 时，确实有 <span class="math inline">\(r\otimes_c x\to rx\)</span>。它还满足（以下省略下标 <span class="math inline">\(c\)</span>）：</p>
+<ul>
+<li><span class="math inline">\(n\)</span>-加法：<span class="math inline">\(n\otimes x=x\oplus x\oplus\cdots\oplus x\)</span></li>
+<li>数量分配率：<span class="math inline">\((r+r')\otimes x=r\otimes x\oplus r'\otimes x\)</span></li>
+<li>数量结合律：<span class="math inline">\((rr')\otimes x=r\otimes (r'\otimes x)\)</span></li>
+<li>缩放性：<span class="math inline">\(\frac{|r|\otimes x}{\lVert r\otimes x\rVert}= \frac{x}{\lVert x\rVert}\)</span></li>
+</ul>
+<h3 id="距离">距离</h3>
+<p>陀螺向量空间中的向量 <span class="math inline">\(x\)</span> 和 <span class="math inline">\(y\)</span> 之间被黎曼度量诱导的距离为<span class="math display">\[
+\frac{2}{\sqrt{c}}\tanh^{-1} \left(\sqrt c\lVert -x\oplus_c y \rVert\right),
+\]</span> 此处和下文中的 <span class="math inline">\(-x\oplus_c y\)</span> 指的都是 <span class="math inline">\((-x)\oplus_c y\)</span> 而不是 <span class="math inline">\(-(x\oplus_c y)\)</span>。当 <span class="math inline">\(c\to0\)</span> 时，这个距离确实趋于 <span class="math inline">\(2\lVert x-y\rVert\)</span>（为了让双曲空间的曲率为 <span class="math inline">\(-1\)</span>，通常习惯加一个因子 <span class="math inline">\(2\)</span>，这在前面的弧长微元里也有体现）。</p>
+<h2 id="推广神经网络在庞加莱球中进行-möbius-运算">推广神经网络：在庞加莱球中进行 Möbius 运算</h2>
+<p>神经网络无非是一些基础操作的复合（矩阵-向量乘法，向量平移，激活函数等），我们将在这一节利用 Möbius 运算推广将这些操作推广到双曲空间。上面关于向量加法和数乘的运算定义很不自然，不过确实有发展历史和几何直觉。这里没法详尽解释，不过可以验证的是它们在庞加莱球中确实非常方便。</p>
+<p>比如：在陀螺向量空间中给定点 <span class="math inline">\(x\)</span>，给它一个小偏移 <span class="math inline">\(dx\)</span>，陀螺线微元 <span class="math inline">\(ds\)</span> 被定义为 <span class="math inline">\((x+dx)\ominus_c x\)</span>。可以计算得到<span class="math display">\[
+\lVert ds\rVert=\frac{\lVert dx\rVert}{1-c\lVert x\rVert^2},
+\]</span> 和我们前面得到的庞加莱球中的曲线微元是一样的（只差了个常数）。</p>
+<h3 id="指数映射和对数映射">指数映射和对数映射</h3>
+<p>给定曲面上的一个点 <span class="math inline">\(x\)</span> 和沿着这个点的切向量 <span class="math inline">\(v\)</span>（位于切平面内），有办法把这个切向量映射成曲面上的一个新的点。怎么做呢？因为这个切平面是 <span class="math inline">\(x\)</span> 处对曲面的局部近似，所以只要沿着 <span class="math inline">\(v\)</span> 走一小步，就近似还在曲面中。再多走几个小步就能把 <span class="math inline">\(v\)</span> 走完，此时的终点比 <span class="math inline">\(x+v\)</span> 更加接近曲面。如果我们不断地减少步长、增加步数，最终的终点就会落在曲面上，走过的路径就是这个曲面上的一条测地线。</p>
+<p>这个步骤很像指数函数的思想，联想到<span class="math display">\[
+\e^x=\lim_{n\to\infty}\left(1+\frac{x}{n}\right)^n
+\]</span>的意义就是把 <span class="math inline">\(x\)</span> 这个作用拆成很多小份，再重复这么多次。所以我们把这样把 <span class="math inline">\(v\)</span> 映射到曲面上的映射称为<strong>指数映射</strong>（exponential map）。它被叫做这个名字不是因为有指数函数的形状，只是这个思想可以类比。</p>
+<p>在黎曼几何中，给定流形 <span class="math inline">\(\mathcal M\)</span> 上的一个点 <span class="math inline">\(q\)</span> 和一个扰动向量 <span class="math inline">\(v\)</span>（位于切空间 <span class="math inline">\(T_q\mathcal M\)</span> 中），指数映射 <span class="math inline">\(\exp_q\)</span> 把 <span class="math inline">\(v\)</span> 映射到 <span class="math inline">\(\mathcal M\)</span>（见下图 <sup id="fnref:2"><a href="#fn:2" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="Zimmermann, R., 2020. Hermite interpolation and data processing errors on Riemannian matrix manifolds.&nbsp;*SIAM Journal on Scientific Computing*,&nbsp;42(5), pp.A2593-A2619.
+</font>">[2]</span></a></sup>）。曲线 <span class="math inline">\(\gamma(t)=\exp_q(tv)\)</span>，其中 <span class="math inline">\(0\leq t\leq 1\)</span>，是一条连接 <span class="math inline">\(q\)</span> 和 <span class="math inline">\(\exp_q(v)\)</span> 的测地线。在欧式空间中，<span class="math inline">\(\exp_x(v)=x+v\)</span>。</p>
+<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAMAAABOo35HAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAC9UExURVlZWdPT07KysmRkZIWFhfT09JmZmWZmZm9vb39/fxkZGUxMTDMzM3p6epCQkKamppubm729venp6cjIyN7e3tbW1s/Pz8LCwnx8fLS0tFZWVoiIiI+Pj6GhoeTk5Glpabu7u93d3evr66CgoJSUlKqqqsnJyeDg4Hd3d8PDw+Xl5bi4uNHR0dvb26Ojo6urq+fn51hYWDg4OCgoKHBwcK2traenp0FBQe7u7vHx8U5OTre3t8zMzHV1df///7GrnpQAAAA/dFJOU///////////////////////////////////////////////////////////////////////////////////AI4mfBcAAAUGSURBVHja7NoJb6M4GMZxY0NCD64kve/pMZ2d3Z297+X7f6zFNmBAMUXa6URl/q9UJSWPUPzrizFWRUlNLgEBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYYIEFAVhggQUWWGBBABZYYIEFFlgQgAUWWGCBBRYEYIEFFlhggQUBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYn6cCIcRXgvX/h9qcIVBqDdbEM8RCxGCB9QqXYRwHYDHBgwXWl8eKZKiESHI3Ba1kWs3fKixcaJUl1YyeBm7Ocq+yLItUiVBGnXxenSHJolIKEcwHq6ikbOX1YGVzQCTN8LPmSLreghUl9sN4Uw7yajMrLC0TZ1ImzqY6FEop0+pIaEN5HaoOxVuwEqFyc4I46uSlzOLqgxlh6UaR9l3VYWl9Fdoxb1Q90KJtu41pwwFW/WHhTtW8i7TafLCqRsk6bsGw63L9qurXRmuIlbT9lDQnlXU+nBFW1Q2qnZbDprWa2tjR90LZFqx1/+Td/HpGWLlrLDvIwTcx6dQ1Vrntbig68cDms3JwbA5Y1azs1ger6sNV/bbIw1jU81MvNAGrl58RVn8ozW+btF08iGFoAlYvP3csfVur1gJBEIA1uBmue5dhZDOyO2epbmgCVi8/I6x0MMHH9pjsTfBhNzQBq5uPZoQlB0uH3DZG4EZqQ26fL3sZq5uf09Ih6qw3i/pm6BZO0qZX7rrUS68Xsbr5ZE4rePMk08pk9aUZugfqppvs6AM1Acvlo/StP+6EbW06z8hJqxbYp2BZPQUnFsLsKuhQdaHqn5ewbF7KXIn0jWO5MqOQ7RaNLPtbNMmmhimj0GUmYLl8Gs0Lq4wyPbTu1l2QKqHSouzs3OlDIslW5SQsnY/NXmFplyNvEuuLV/Tau9BzwiraDUSwXmysztYWWNtL1psXeumgIrDGaqXvBfUuvtqUYI3V2t1wk1e2msFluJJm6zDJXv/fIfjPP7DAAgsssCiwwAILLLDAosACCyywwAKLAgsssMACC6zt9fDz/v75tyOB+98PD2+ORgKffjw4OP1uJPDxl+Xy8v1I4MPF3t7VNyOB4/vF4uzdzrG+39f1kz/w66Guv/yBvw90KX/gZKkr8Qf+2dOV+gNHC12/7RxrabD2/a31bLAO/a11YbAO/K21MFhLf2s9Gqw9f2vdGqzFu11jnVusE2/gxmI9eQOnFuvYG7i0WH7uK4t15w2cWazrXWP9a7H8f/bQYvm/6IPF+sF/pVssf19Ii/WH/0K2WH/uGuvEWC39gSdj9Twy+Rqri5EZx1gt/IE7Y/XoD1wbq9vd3w1PlufnD2OBp+ebm/uxwPHF6emnscDR4vLy41jg7vHq6sNY4Pr27OyYdRaLUrDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssL6u+k+AAQCR9eHtLKvLfwAAAABJRU5ErkJggg==" data-original="https://s2.loli.net/2023/07/19/Sle1g6fwvt2bDZz.png" alt="指数映射把过 $q$ 的切向量 $v$ 映射到流形上的 $p$"><p class="image-caption">指数映射把过 $q$ 的切向量 $v$ 映射到流形上的 $p$</p></p>
+<p>给定曲面上的点 <span class="math inline">\(x\)</span> 和作用于它的切向量 <span class="math inline">\(v\)</span>，可以给出指数映射的一个表达式。欧式空间中的结果有另一种解读：从 <span class="math inline">\(x\)</span> 出发，沿着 <span class="math inline">\(v\)</span> 的方向，以单位速度走过 <span class="math inline">\(\lVert v\rVert\)</span> 的时间到达的地方。这时走过的路径是直线，那么在黎曼几何中就是走测地线。</p>
+<p>记黎曼度量诱导的范数为 <span class="math inline">\(\lVert\cdot\rVert_g\)</span>，单位化的 <span class="math inline">\(v\)</span>（即 <span class="math inline">\(\frac{v}{\lVert v\rVert_g}\)</span>）为 <span class="math inline">\(\hat v\)</span>，那么在 <span class="math inline">\(0\)</span> 处取值为 <span class="math inline">\(x\)</span>、导数为 <span class="math inline">\(\hat v\)</span> 的测地线 <span class="math inline">\(\gamma(t)\)</span> 被称为<strong>单位速度测地线</strong>（unit-speed geodesic）。沿着这条测地线走过时间 <span class="math inline">\(\lVert v\rVert_g\)</span> 就到达了 <span class="math inline">\(v\)</span> 在指数映射下的结果，即 <span class="math inline">\(\exp_x(v)=\gamma(\lVert v\rVert_g)\)</span>。</p>
+<p>在 <span class="math inline">\(\mathbb{D}_c^n\)</span> 中，可以算出单位速度测地线为<span class="math display">\[
+\gamma(t)=x \oplus_c\left(\tanh \left(\sqrt{c} \frac{t}{2}\right) \frac{\hat v}{\sqrt{c}\lVert\hat v\rVert}\right).
+\]</span>此时有 <span class="math display">\[\lVert v\rVert_g=\frac{2}{1-c\lVert x\rVert^2}\lVert v\rVert.\]</span>记其中的因子 <span class="math inline">\(\frac{2}{1-c\lVert x\rVert^2}\)</span> 为 <span class="math inline">\(\lambda_x^c\)</span>，于是可以写出指数映射的显示表达： <span class="math display">\[
+\boxed{\exp _x^c(v)=x \oplus_c\left(\tanh \left(\sqrt{c} \frac{\lambda_x^c\lVert v\rVert}{2}\right) \frac{v}{\sqrt{c}\lVert v\rVert}\right)}.
+\]</span> <strong>对数映射</strong>（logarithmic map）是它的逆映射，即给定流形上的起点 <span class="math inline">\(x\)</span> 和指数映射后得到的终点 <span class="math inline">\(y\)</span>，求那个作用的切向量： <span class="math display">\[\boxed{
+\log _x^c(y)=\frac{2}{\sqrt{c} \lambda_x^c} \tanh ^{-1}\left(\sqrt{c}\lVert -x \oplus_c y\rVert\right) \frac{-x \oplus_c y}{\left\lVert-x \oplus_c y\right\rVert}
+}.
+\]</span> 当 <span class="math inline">\(c\to0\)</span> 时，可以验证 <span class="math inline">\(\exp_x^c(v)=x+v\)</span>，<span class="math inline">\(\log_x^c(y)=y-x\)</span>。</p>
+<p>在后面的推广中，我们主要用 <span class="math inline">\(x\)</span> 在原点处的情形，此时两种运算简化为：<span class="math display">\[\boxed{\begin{gather*}\exp_0^c(v)=\tanh\left(\sqrt{c}\lVert v\rVert\right){v\over\sqrt{c}\lVert v\Vert}\\[1em]
+\log_0^c(y)=\tanh^{-1}\left(\sqrt{c}\lVert y\rVert\right){y\over \sqrt{c}\lVert y\rVert}\end{gather*}}\]</span></p>
+<p>再强调一下：指数映射从切空间映射到曲面上，对数映射从曲面映射到切空间。</p>
+<h3 id="向量数乘">向量数乘</h3>
+<p>利用指数和对数映射，可以得到向量数乘 <span class="math inline">\(\eqref{eq:rx}\)</span> 的一个等价表述：<span class="math display">\[\boxed{r\otimes_c x=\exp_0^c\left(r\log_0^c(x)\right)},\]</span>其中 <span class="math inline">\(r\)</span> 是实数，<span class="math inline">\(x\)</span> 是庞加莱球中的向量。这个式子的意义要明显得多：把 <span class="math inline">\(x\)</span> 对数映射到原点处的切空间里，做一个 <span class="math inline">\(r\)</span> 的伸缩，再通过那里的指数映射回到庞加莱球中。</p>
+<h3 id="一般映射">一般映射</h3>
+<p>上面这个式子很有启发性——它首先把 <span class="math inline">\(x\)</span> 映射到了切空间中，也就是我们熟悉的欧式空间。在这里，我们可以做任何熟悉的运算。这种思想便于我们推广一般映射。</p>
+<p>给定一个从 <span class="math inline">\(\R^n\to\R^m\)</span> 的映射 <span class="math inline">\(f\)</span>，我们可以定义它的 <strong>Möbius 版本</strong>：<span class="math display">\[\boxed{f^{\otimes_c}(x)=\exp_0^c\left(f\left(\log_0^c(x)\right)\right)},\]</span>其中 <span class="math inline">\(\log\)</span> 把 <span class="math inline">\(x\)</span> 从 <span class="math inline">\(n\)</span> 维庞加莱球映射到 <span class="math inline">\(n\)</span> 维欧式空间，<span class="math inline">\(f\)</span> 把结果映射到 <span class="math inline">\(m\)</span> 维欧式空间，<span class="math inline">\(\exp\)</span> 再把结果映射到 <span class="math inline">\(m\)</span> 维庞加莱球。所以 <span class="math inline">\(f^{\otimes_c}\)</span> 就是一个从 <span class="math inline">\(\mathbb{D}_c^n\)</span> 到 <span class="math inline">\(\mathbb{D}_m^n\)</span> 的映射。</p>
+<p>这样定义确实得到了几个美妙的性质：</p>
+<ul>
+<li>在 <span class="math inline">\(c\to0\)</span> 时，<span class="math inline">\(f^{\otimes_c}(x)=f(x)\)</span></li>
+<li>保持态射：<span class="math inline">\(\left(f\circ g\right)^{\otimes_c}=f^{\otimes_c}\circ g^{\otimes_c}\)</span></li>
+<li>保持方向：<span class="math inline">\(\frac{f^{\otimes_c}(x)}{\lVert f^{\otimes_c}(x)\rVert}=\frac{f(x)}{\lVert f(x)\rVert}\)</span></li>
+</ul>
+<h3 id="矩阵-向量乘法">矩阵-向量乘法</h3>
+<p>这个是 <span class="math inline">\(f\)</span> 为线性映射的特殊情况，即给定一个 <span class="math inline">\(n\)</span> 维向量 <span class="math inline">\(x\)</span>，<span class="math inline">\(f(x)=Mx\)</span> 把它变成了一个 <span class="math inline">\(m\)</span> 维向量，其中 <span class="math inline">\(M\)</span> 是一个 <span class="math inline">\(m\times n\)</span> 的矩阵。</p>
+<p>利用上面的定义，矩阵-向量乘法的 Möbius 版本为：<span class="math display">\[\boxed{\begin{align*}M^{\otimes_c}(x)&amp;=\exp_0^c\left(M\log_0^c(x)\right)\\[1em]
+&amp;=\frac{1}{\sqrt c}\tanh\left({\lVert Mx\rVert\over\lVert x\rVert}\tanh^{-1}\left(\sqrt{c}\lVert x\rVert\right)\right){Mx\over\lVert Mx\rVert}\end{align*}}\]</span>当 <span class="math inline">\(Mx=0\)</span> 时补充定义结果为 <span class="math inline">\(0\)</span>。我们不妨把 Möbius 矩阵-向量乘法直接定义成这个：<span class="math display">\[M\otimes_c x=M^{\otimes_c}x,\]</span>得到的性质为：</p>
+<ul>
+<li>矩阵结合律：<span class="math inline">\((AB)\otimes_c x=A\otimes_c(B\otimes_c x)\)</span></li>
+<li>数量-矩阵结合律：<span class="math inline">\((rM)\otimes_c x=r\otimes_c(M\otimes_c x)\)</span></li>
+<li>保持旋转：对正交矩阵 <span class="math inline">\(M\)</span>，有 <span class="math inline">\(M\otimes_c x=Mx\)</span></li>
+</ul>
+<p><font size="2"></font></p><font size="2">
+</font><div id="footnotes"><font size="2">
+<hr>
+</font><div id="footnotelist"><font size="2">
+</font><ol style="list-style: none; padding-left: 0; margin-left: 40px"><font size="2">
+<li id="fn:1">
+<span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">Ganea, O., Bécigneul, G. and Hofmann, T., 2018. Hyperbolic neural networks.&nbsp;<em>Advances in Neural Information Processing Systems</em>,&nbsp;31.<a href="#fnref:1" rev="footnote"> ↩︎</a></span>
+</li>
+</font><li id="fn:2"><font size="2">
+<span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">2.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">Zimmermann, R., 2020. Hermite interpolation and data processing errors on Riemannian matrix manifolds.&nbsp;<em>SIAM Journal on Scientific Computing</em>,&nbsp;42(5), pp.A2593-A2619. </span></font><a href="#fnref:2" rev="footnote"> ↩︎</a>
+</li>
+</ol>
+</div>
+</div>
+]]></content>
+      <categories>
+        <category>数学</category>
+        <category>几何</category>
+      </categories>
+      <tags>
+        <tag>双曲几何</tag>
+        <tag>机器学习</tag>
+        <tag>深度学习</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>三角函数</title>
     <url>/posts/26462/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="和差化积">和差化积</h2>
@@ -1918,124 +2059,6 @@ E(\text{error})=\text{bias}^2+\text{Var}+\varepsilon.
         <category>数学</category>
         <category>初等数学</category>
       </categories>
-  </entry>
-  <entry>
-    <title>双曲神经网络</title>
-    <url>/posts/61728/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>欧式空间是符合人们直觉的空间，在这里面做运算也十分方便，在这里构建神经网络也是一种偷懒的做法。然而一些复杂的数据展示出了明显的非欧特征（比如图结构），在欧式空间中研究非常费劲，但在非欧空间中研究就非常简洁。</p>
-<span id="more"></span>
-<p>比如一棵树的两个实际距离很远的叶子节点，在二维欧式空间（平面）中却看上去离得很近。增加欧式空间的维数可以缓解这个问题，但是有定理证明，要想尽量保持树中的距离，需要非常高维的欧式空间（维数甚至无界）。然而在双曲空间中，只用二维嵌入就可以解决这个问题：庞加莱（Poincaré）圆盘越靠近边界的空间密度越大，看上去有限的一个圆实际上容量很大——它就很适合刻画一棵树。而且，靠近边缘的叶子节点看上去（欧式）距离很近，但在双曲空间中的距离却很远。</p>
-<p>之所以不怎么在非欧空间中研究神经网络，是因为很多基础操作（如向量加法、数乘、内积，矩阵-向量乘法）在其中很难写出一个清楚确定的公式来推广。这里我们研究一种简单的空间：有着负常数曲率的空间，即双曲空间。</p>
-<p>这篇博客参考 2018 年的论文<sup id="fnref:1"><a href="#fn:1" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="Ganea, O., Bécigneul, G. and Hofmann, T., 2018. Hyperbolic neural networks.&nbsp;*Advances in Neural Information Processing Systems*,&nbsp;31.">[1]</span></a></sup>，会补充铺垫一些必要的概念。</p>
-<h2 id="推广距离庞加莱球">推广距离：庞加莱球</h2>
-<p>两个点的“距离”定义为，它们之间各种路线的最短长度。</p>
-<h3 id="欧氏距离">欧氏距离</h3>
-<p>在欧式几何中，这个最短的路线就是连接它们的直线段——因为任何连接它们的曲线都会比这条线段长。但曲线长度又是怎么定义的？</p>
-<p>如果一条曲线 <span class="math inline">\(\Gamma\)</span> 足够光滑，可以用参数方程 <span class="math inline">\(\begin{cases} x=x(t) \\\\ y=y(t) \end{cases}\)</span> 来表示的话，这条曲线的长度就是 <span class="math inline">\(\int_\Gamma\d s\)</span>，其中 <span class="math display">\[\boxed{\d s=\sqrt{x'(t)^2+y'(t)^2}\d t}.\]</span></p>
-<p>举个例子：从 <span class="math inline">\((-\frac12, 0)\)</span> 到 <span class="math inline">\((\frac12, 0)\)</span> 有一条路径是走半圆： <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAMAAABOo35HAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAC9UExURVlZWdPT07KysmRkZIWFhfT09JmZmWZmZm9vb39/fxkZGUxMTDMzM3p6epCQkKamppubm729venp6cjIyN7e3tbW1s/Pz8LCwnx8fLS0tFZWVoiIiI+Pj6GhoeTk5Glpabu7u93d3evr66CgoJSUlKqqqsnJyeDg4Hd3d8PDw+Xl5bi4uNHR0dvb26Ojo6urq+fn51hYWDg4OCgoKHBwcK2traenp0FBQe7u7vHx8U5OTre3t8zMzHV1df///7GrnpQAAAA/dFJOU///////////////////////////////////////////////////////////////////////////////////AI4mfBcAAAUGSURBVHja7NoJb6M4GMZxY0NCD64kve/pMZ2d3Z297+X7f6zFNmBAMUXa6URl/q9UJSWPUPzrizFWRUlNLgEBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYYIEFAVhggQUWWGBBABZYYIEFFlgQgAUWWGCBBRYEYIEFFlhggQUBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYn6cCIcRXgvX/h9qcIVBqDdbEM8RCxGCB9QqXYRwHYDHBgwXWl8eKZKiESHI3Ba1kWs3fKixcaJUl1YyeBm7Ocq+yLItUiVBGnXxenSHJolIKEcwHq6ikbOX1YGVzQCTN8LPmSLreghUl9sN4Uw7yajMrLC0TZ1ImzqY6FEop0+pIaEN5HaoOxVuwEqFyc4I46uSlzOLqgxlh6UaR9l3VYWl9Fdoxb1Q90KJtu41pwwFW/WHhTtW8i7TafLCqRsk6bsGw63L9qurXRmuIlbT9lDQnlXU+nBFW1Q2qnZbDprWa2tjR90LZFqx1/+Td/HpGWLlrLDvIwTcx6dQ1Vrntbig68cDms3JwbA5Y1azs1ger6sNV/bbIw1jU81MvNAGrl58RVn8ozW+btF08iGFoAlYvP3csfVur1gJBEIA1uBmue5dhZDOyO2epbmgCVi8/I6x0MMHH9pjsTfBhNzQBq5uPZoQlB0uH3DZG4EZqQ26fL3sZq5uf09Ih6qw3i/pm6BZO0qZX7rrUS68Xsbr5ZE4rePMk08pk9aUZugfqppvs6AM1Acvlo/StP+6EbW06z8hJqxbYp2BZPQUnFsLsKuhQdaHqn5ewbF7KXIn0jWO5MqOQ7RaNLPtbNMmmhimj0GUmYLl8Gs0Lq4wyPbTu1l2QKqHSouzs3OlDIslW5SQsnY/NXmFplyNvEuuLV/Tau9BzwiraDUSwXmysztYWWNtL1psXeumgIrDGaqXvBfUuvtqUYI3V2t1wk1e2msFluJJm6zDJXv/fIfjPP7DAAgsssCiwwAILLLDAosACCyywwAKLAgsssMACC6zt9fDz/v75tyOB+98PD2+ORgKffjw4OP1uJPDxl+Xy8v1I4MPF3t7VNyOB4/vF4uzdzrG+39f1kz/w66Guv/yBvw90KX/gZKkr8Qf+2dOV+gNHC12/7RxrabD2/a31bLAO/a11YbAO/K21MFhLf2s9Gqw9f2vdGqzFu11jnVusE2/gxmI9eQOnFuvYG7i0WH7uK4t15w2cWazrXWP9a7H8f/bQYvm/6IPF+sF/pVssf19Ii/WH/0K2WH/uGuvEWC39gSdj9Twy+Rqri5EZx1gt/IE7Y/XoD1wbq9vd3w1PlufnD2OBp+ebm/uxwPHF6emnscDR4vLy41jg7vHq6sNY4Pr27OyYdRaLUrDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssL6u+k+AAQCR9eHtLKvLfwAAAABJRU5ErkJggg==" data-original="https://s2.loli.net/2023/07/14/XU4NsAHELoue2Z9.png" width="70%"> 那我们可以选参数方程 <span class="math inline">\(\begin{cases}x(t)=\frac12\cos t\\\\ y(t)=\frac12\sin t\end{cases}\)</span>，其中 <span class="math inline">\(t\in[0,\pi]\)</span>。于是 <span class="math display">\[\d s=\sqrt{\left(-\frac12\sin t\right)^{2}+\left(\frac12\cos t\right)^2} \d t=\frac12\d t，\]</span>这条路径的长度就是 <span class="math inline">\(\int_0^{\pi}\frac12\d t=\frac\pi2\)</span>。用同样的方法可以算出走直线段的长度是 <span class="math inline">\(1\)</span>。</p>
-<p>通过一些方法（比如变分法中的欧拉-拉格朗日方程）可以证明，在这个距离定义下，走直线段是最短的。也就是说，不存在比 <span class="math inline">\(1\)</span> 更短的路径长度。</p>
-<h3 id="双曲距离与庞加莱圆盘">双曲距离与庞加莱圆盘</h3>
-<p>非欧几何就是推广了 <span class="math inline">\(\d s=\sqrt{x'^2+y'^2}\d t\)</span> 这个关系。双曲几何有很多种等价的模型，在我们要讨论的庞加莱圆盘中，这个弧长微元被定义为 <span class="math display">\[\begin{equation}\label{eq:dshb}
-\boxed{\d s = \frac{2}{1-x^{2}-y^{2}} \sqrt{x'^2+y'^2} \d t}.\end{equation}
-\]</span> 整个空间就是一个单位圆，而且可以看出越靠近圆的边界 <span class="math inline">\(\d s\)</span> 越大（因为此时 <span class="math inline">\(x^2+y^2\)</span> 靠近 1）：在欧式空间中看起来一样长的曲线，越靠近边界，它实际上越长。</p>
-<p>举个例子：我们算 <span class="math inline">\((0,0)\to(0,0.01)\)</span> 的直线段长度。一个参数方程是 <span class="math inline">\(\begin{cases}x(t)=0.01t\\ y(t)=0\end{cases}\)</span>，其中 <span class="math inline">\(0\leq t\leq1\)</span>，可以算出<span class="math display">\[
-\d s=\frac{2}{1-(0.01t)^2-0^2}\sqrt{0.01^2+0^2}\d t=\frac{0.02}{1-(0.01t)^2}\d t.
-\]</span> 于是这条线段的长度就是 <span class="math inline">\(\int_0^1\frac{0.02}{1-(0.01t)^2}\d t\approx0.020\)</span>。 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAMAAABOo35HAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAC9UExURVlZWdPT07KysmRkZIWFhfT09JmZmWZmZm9vb39/fxkZGUxMTDMzM3p6epCQkKamppubm729venp6cjIyN7e3tbW1s/Pz8LCwnx8fLS0tFZWVoiIiI+Pj6GhoeTk5Glpabu7u93d3evr66CgoJSUlKqqqsnJyeDg4Hd3d8PDw+Xl5bi4uNHR0dvb26Ojo6urq+fn51hYWDg4OCgoKHBwcK2traenp0FBQe7u7vHx8U5OTre3t8zMzHV1df///7GrnpQAAAA/dFJOU///////////////////////////////////////////////////////////////////////////////////AI4mfBcAAAUGSURBVHja7NoJb6M4GMZxY0NCD64kve/pMZ2d3Z297+X7f6zFNmBAMUXa6URl/q9UJSWPUPzrizFWRUlNLgEBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYYIEFAVhggQUWWGBBABZYYIEFFlgQgAUWWGCBBRYEYIEFFlhggQUBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYn6cCIcRXgvX/h9qcIVBqDdbEM8RCxGCB9QqXYRwHYDHBgwXWl8eKZKiESHI3Ba1kWs3fKixcaJUl1YyeBm7Ocq+yLItUiVBGnXxenSHJolIKEcwHq6ikbOX1YGVzQCTN8LPmSLreghUl9sN4Uw7yajMrLC0TZ1ImzqY6FEop0+pIaEN5HaoOxVuwEqFyc4I46uSlzOLqgxlh6UaR9l3VYWl9Fdoxb1Q90KJtu41pwwFW/WHhTtW8i7TafLCqRsk6bsGw63L9qurXRmuIlbT9lDQnlXU+nBFW1Q2qnZbDprWa2tjR90LZFqx1/+Td/HpGWLlrLDvIwTcx6dQ1Vrntbig68cDms3JwbA5Y1azs1ger6sNV/bbIw1jU81MvNAGrl58RVn8ozW+btF08iGFoAlYvP3csfVur1gJBEIA1uBmue5dhZDOyO2epbmgCVi8/I6x0MMHH9pjsTfBhNzQBq5uPZoQlB0uH3DZG4EZqQ26fL3sZq5uf09Ih6qw3i/pm6BZO0qZX7rrUS68Xsbr5ZE4rePMk08pk9aUZugfqppvs6AM1Acvlo/StP+6EbW06z8hJqxbYp2BZPQUnFsLsKuhQdaHqn5ewbF7KXIn0jWO5MqOQ7RaNLPtbNMmmhimj0GUmYLl8Gs0Lq4wyPbTu1l2QKqHSouzs3OlDIslW5SQsnY/NXmFplyNvEuuLV/Tau9BzwiraDUSwXmysztYWWNtL1psXeumgIrDGaqXvBfUuvtqUYI3V2t1wk1e2msFluJJm6zDJXv/fIfjPP7DAAgsssCiwwAILLLDAosACCyywwAKLAgsssMACC6zt9fDz/v75tyOB+98PD2+ORgKffjw4OP1uJPDxl+Xy8v1I4MPF3t7VNyOB4/vF4uzdzrG+39f1kz/w66Guv/yBvw90KX/gZKkr8Qf+2dOV+gNHC12/7RxrabD2/a31bLAO/a11YbAO/K21MFhLf2s9Gqw9f2vdGqzFu11jnVusE2/gxmI9eQOnFuvYG7i0WH7uK4t15w2cWazrXWP9a7H8f/bQYvm/6IPF+sF/pVssf19Ii/WH/0K2WH/uGuvEWC39gSdj9Twy+Rqri5EZx1gt/IE7Y/XoD1wbq9vd3w1PlufnD2OBp+ebm/uxwPHF6emnscDR4vLy41jg7vHq6sNY4Pr27OyYdRaLUrDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssL6u+k+AAQCR9eHtLKvLfwAAAABJRU5ErkJggg==" data-original="https://s2.loli.net/2023/07/20/inACwyZgGeRQc3b.png" width="70%" alt="庞加莱圆盘中，越靠近边界，空间密度越大"><p class="image-caption">庞加莱圆盘中，越靠近边界，空间密度越大</p></p>
-<p>我们再算 <span class="math inline">\((0.98, 0)\to(0.99, 0)\)</span> 的直线段长度。一个参数方程是 <span class="math inline">\(\begin{cases}x(t)=0.98+0.01t\\\\ y(t)=0\end{cases}\)</span>，其中 <span class="math inline">\(0\leq t\leq 1\)</span>。它的长度就是<span class="math display">\[
-\int_0^1\frac{2}{1-(0.98+0.01t)^2}\sqrt{0.01^2}\d t\approx0.698,
-\]</span>比靠近圆心的那段看上去一样长的线段长了 30 多倍。</p>
-<p>在这个曲线长度的定义下，两个点之间的最短路线就不是线段了——有一条曲线比直着走更短。这条路线不那么显然，不过可以证明，这条路线实际上是穿越这两个点的一个圆弧。</p>
-<p>两个点没法确定唯一的一个圆，但这条路线还有一个限制把它确定下来了：它必须和庞加莱圆的边界正交。换句话说，这条圆弧必须垂直地穿入、穿出庞加莱圆的边界。它是欧式空间中“直线”的推广，被称为测地线（geodesic）。</p>
-<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAMAAABOo35HAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAC9UExURVlZWdPT07KysmRkZIWFhfT09JmZmWZmZm9vb39/fxkZGUxMTDMzM3p6epCQkKamppubm729venp6cjIyN7e3tbW1s/Pz8LCwnx8fLS0tFZWVoiIiI+Pj6GhoeTk5Glpabu7u93d3evr66CgoJSUlKqqqsnJyeDg4Hd3d8PDw+Xl5bi4uNHR0dvb26Ojo6urq+fn51hYWDg4OCgoKHBwcK2traenp0FBQe7u7vHx8U5OTre3t8zMzHV1df///7GrnpQAAAA/dFJOU///////////////////////////////////////////////////////////////////////////////////AI4mfBcAAAUGSURBVHja7NoJb6M4GMZxY0NCD64kve/pMZ2d3Z297+X7f6zFNmBAMUXa6URl/q9UJSWPUPzrizFWRUlNLgEBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYYIEFAVhggQUWWGBBABZYYIEFFlgQgAUWWGCBBRYEYIEFFlhggQUBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYn6cCIcRXgvX/h9qcIVBqDdbEM8RCxGCB9QqXYRwHYDHBgwXWl8eKZKiESHI3Ba1kWs3fKixcaJUl1YyeBm7Ocq+yLItUiVBGnXxenSHJolIKEcwHq6ikbOX1YGVzQCTN8LPmSLreghUl9sN4Uw7yajMrLC0TZ1ImzqY6FEop0+pIaEN5HaoOxVuwEqFyc4I46uSlzOLqgxlh6UaR9l3VYWl9Fdoxb1Q90KJtu41pwwFW/WHhTtW8i7TafLCqRsk6bsGw63L9qurXRmuIlbT9lDQnlXU+nBFW1Q2qnZbDprWa2tjR90LZFqx1/+Td/HpGWLlrLDvIwTcx6dQ1Vrntbig68cDms3JwbA5Y1azs1ger6sNV/bbIw1jU81MvNAGrl58RVn8ozW+btF08iGFoAlYvP3csfVur1gJBEIA1uBmue5dhZDOyO2epbmgCVi8/I6x0MMHH9pjsTfBhNzQBq5uPZoQlB0uH3DZG4EZqQ26fL3sZq5uf09Ih6qw3i/pm6BZO0qZX7rrUS68Xsbr5ZE4rePMk08pk9aUZugfqppvs6AM1Acvlo/StP+6EbW06z8hJqxbYp2BZPQUnFsLsKuhQdaHqn5ewbF7KXIn0jWO5MqOQ7RaNLPtbNMmmhimj0GUmYLl8Gs0Lq4wyPbTu1l2QKqHSouzs3OlDIslW5SQsnY/NXmFplyNvEuuLV/Tau9BzwiraDUSwXmysztYWWNtL1psXeumgIrDGaqXvBfUuvtqUYI3V2t1wk1e2msFluJJm6zDJXv/fIfjPP7DAAgsssCiwwAILLLDAosACCyywwAKLAgsssMACC6zt9fDz/v75tyOB+98PD2+ORgKffjw4OP1uJPDxl+Xy8v1I4MPF3t7VNyOB4/vF4uzdzrG+39f1kz/w66Guv/yBvw90KX/gZKkr8Qf+2dOV+gNHC12/7RxrabD2/a31bLAO/a11YbAO/K21MFhLf2s9Gqw9f2vdGqzFu11jnVusE2/gxmI9eQOnFuvYG7i0WH7uK4t15w2cWazrXWP9a7H8f/bQYvm/6IPF+sF/pVssf19Ii/WH/0K2WH/uGuvEWC39gSdj9Twy+Rqri5EZx1gt/IE7Y/XoD1wbq9vd3w1PlufnD2OBp+ebm/uxwPHF6emnscDR4vLy41jg7vHq6sNY4Pr27OyYdRaLUrDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssL6u+k+AAQCR9eHtLKvLfwAAAABJRU5ErkJggg==" data-original="https://s2.loli.net/2023/07/15/BHWPyAhXjMUiCt6.png" width="60%" alt="庞加莱圆盘中的“直线”：任何两点之间的最短路就是这种圆弧的一部分"><p class="image-caption">庞加莱圆盘中的“直线”：任何两点之间的最短路就是这种圆弧的一部分</p></p>
-<h3 id="高维推广">高维推广</h3>
-<p>庞加莱圆盘是一个二维的双曲空间，我们可以把它推广到高维，核心还是推广弧长微元 <span class="math inline">\(\d s\)</span>。</p>
-<p>在二维空间中，<span class="math inline">\(\d s^2\)</span> 实际上就是一个二次式。只要我们留意到根号里面的东西是一个关于 <span class="math inline">\(x'\)</span> 和 <span class="math inline">\(y'\)</span> 的二次型，就容易推广了。欧式空间中，<span class="math inline">\(x'^2+y'^2\)</span> 对应的二次型矩阵是单位阵<span class="math display">\[\begin{bmatrix}1&amp;0\\\\ 0&amp;1\end{bmatrix}.\]</span> 而在庞加莱圆盘中， <span class="math inline">\(\eqref{eq:dshb}\)</span> 根号下的二次型矩阵是<span class="math display">\[
-\left(\frac{2}{1-x^2-y^2}\right)^2\begin{bmatrix}1&amp;0\\\\ 0&amp;1\end{bmatrix},
-\]</span>注意我们把根号外的常数提进来了。</p>
-<p>从而，在 <span class="math inline">\(n\)</span> 维空间中，欧式空间对应的二次型矩阵就是单位阵 <span class="math inline">\(I_n\)</span>，而庞加莱球在某点 <span class="math inline">\(\vx\)</span> 的二次型矩阵就是<span class="math display">\[
-\left(\frac{2}{1-\lVert\vx\rVert^2}\right)^2 I_n.
-\]</span> 其中 <span class="math inline">\(\lVert\cdot\rVert\)</span> 是欧式空间中的 <a href="https://www.bilibili.com/video/BV1GM4y1c78K">2-范数</a>。</p>
-<h3 id="黎曼几何">黎曼几何</h3>
-<p>双曲几何对 <span class="math inline">\(\d s\)</span> 的推广只是一种特殊的实现。实际上，这个二次型矩阵可以是任何一个对称、正定的矩阵。它所诱导的向量内积被称为黎曼度量，而黎曼几何就是研究装备了黎曼度量的高维曲面（流形）的。</p>
-<h2 id="推广线性空间陀螺向量空间">推广线性空间：陀螺向量空间</h2>
-<p>如果在庞加莱圆盘下，我们还像欧式线性空间中那样简单地定义向量数乘、加法等，很容易就会让结果跑出这个单位圆。陀螺向量空间（Gyrovector space）是欧式线性空间在双曲几何下的推广，可以保证这些运算结果还在圆盘内。</p>
-<p>一些相对论模型会采用这种空间，保证不管速度怎样相加，都不会超过光速。假定光速为 <span class="math inline">\(c\)</span>，那么我们记 <span class="math inline">\(\mathbb{D}_c^n\)</span> 为一个以原点为球心，半径为 <span class="math inline">\(\frac{1}{\sqrt c}\)</span> 的 <span class="math inline">\(n\)</span> 维开球。陀螺向量空间就是在这里面做向量运算的。当光速为 0 时，这个空间就是欧式空间。当光速为 1 时，它就是庞加莱球。</p>
-<p>可见陀螺向量空间是对庞加莱球的进一步推广。我们需要的性质是<strong><span class="math inline">\(c\to0\)</span> 时，这个空间要趋于欧式空间。</strong></p>
-<h3 id="möbius-加法">Möbius 加法</h3>
-<p>在 <span class="math inline">\(\mathbb D_c^n\)</span> 中，定义两个向量的加法 <span class="math display">\[
-\boxed{x\oplus_cy=\frac{(1+2c\langle x,y\rangle+c\lVert y\rVert^2)x+(1-c\lVert x\rVert^2)y}{1+2c\langle x,y\rangle+c^2\lVert x\rVert^2\lVert y\rVert^2}}.
-\]</span></p>
-<p>当 <span class="math inline">\(c=0\)</span> 时我们就得到了 <span class="math inline">\(x\oplus_0y=x+y\)</span>，但更一般地，这种运算既不满足交换律，也不满足结合律。但它确实满足一些性质：</p>
-<ul>
-<li><span class="math inline">\(x\oplus_c0=0\oplus_c x=0\)</span></li>
-<li><span class="math inline">\((-x)\oplus_c x=x\oplus_c(-x)=0\)</span></li>
-<li><span class="math inline">\((-x)\oplus_c(x\oplus_c y)=y\)</span></li>
-</ul>
-<p><strong>莫比乌斯减法</strong>被定义为<span class="math display">\[\boxed{
-x\ominus_cy=x\oplus_c(-y)}.
-\]</span></p>
-<h3 id="möbius-数乘">Möbius 数乘</h3>
-<p>取实数 <span class="math inline">\(r\)</span>，定义它和向量 <span class="math inline">\(x\)</span> 的数乘<span class="math display">\[\boxed{
-r\otimes_c x=\frac{1}{\sqrt c}\tanh\left(r\tanh^{-1}\left(\sqrt c\lVert x\rVert\right) \right) \frac{x}{\lVert x\rVert}}.
-\]</span>当 <span class="math inline">\(x=0\)</span> 时，我们补充定义数乘结果为 0 。当 <span class="math inline">\(c\to0\)</span> 时，确实有 <span class="math inline">\(r\otimes_c x\to rx\)</span>。它还满足（以下省略下标 <span class="math inline">\(c\)</span>）：</p>
-<ul>
-<li><span class="math inline">\(n\)</span>-加法：<span class="math inline">\(n\otimes x=x\oplus x\oplus\cdots\oplus x\)</span></li>
-<li>数量分配率：<span class="math inline">\((r+r')\otimes x=r\otimes x\oplus r'\otimes x\)</span></li>
-<li>数量结合律：<span class="math inline">\((rr')\otimes x=r\otimes (r'\otimes x)\)</span></li>
-<li>缩放性：<span class="math inline">\(\frac{|r|\otimes x}{\lVert r\otimes x\rVert}= \frac{x}{\lVert x\rVert}\)</span></li>
-</ul>
-<h3 id="距离">距离</h3>
-<p>陀螺向量空间中的向量 <span class="math inline">\(x\)</span> 和 <span class="math inline">\(y\)</span> 之间的距离为<span class="math display">\[
-\frac{2}{\sqrt{c}}\tanh^{-1} \left(\sqrt c\lVert -x\oplus_c y \rVert\right),
-\]</span> 此处和下文中的 <span class="math inline">\(-x\oplus_c y\)</span> 指的都是 <span class="math inline">\((-x)\oplus_c y\)</span> 而不是 <span class="math inline">\(-(x\oplus_c y)\)</span>。当 <span class="math inline">\(c\to0\)</span> 时，这个距离确实趋于 <span class="math inline">\(2\lVert x-y\rVert\)</span>（为了让空间的曲率为 <span class="math inline">\(-1\)</span>，通常习惯加一个因子 <span class="math inline">\(2\)</span>）。</p>
-<h2 id="在庞加莱球中进行-möbius-运算">在庞加莱球中进行 Möbius 运算</h2>
-<p>上面的定义很不自然，不过确实有发展历史和几何直觉。这里没法详尽解释，不过可以验证的是 Möbius 运算在庞加莱球中确实非常方便。</p>
-<p>在陀螺向量空间中给定点 <span class="math inline">\(x\)</span>，给它一个小偏移 <span class="math inline">\(dx\)</span>，陀螺线微元 <span class="math inline">\(ds\)</span> 被定义为 <span class="math inline">\((x+dx)\ominus_c x\)</span>。可以计算得到<span class="math display">\[
-\lVert ds\rVert=\frac{\lVert dx\rVert}{1-c\lVert x\rVert^2},
-\]</span> 和我们前面得到的庞加莱球中的曲线微元是一样的（只差了个常数）。</p>
-<h3 id="指数映射和对数映射">指数映射和对数映射</h3>
-<p>给定曲面上的一个点 <span class="math inline">\(x\)</span> 和沿着这个点的切向量 <span class="math inline">\(v\)</span>（位于切平面内），有办法把这个切向量映射成曲面上的一个新的点。怎么做呢？因为这个切平面是 <span class="math inline">\(x\)</span> 处对曲面的局部近似，所以只要沿着 <span class="math inline">\(v\)</span> 走一小步，就近似还在曲面中。再多走几个小步就能把 <span class="math inline">\(v\)</span> 走完，此时的终点比 <span class="math inline">\(x+v\)</span> 更加接近曲面。如果我们不断地减少步长、增加步数，最终的终点就会落在曲面上，走过的路径就是这个曲面上的一条测地线。</p>
-<p>这个步骤很像指数函数的思想，联想到<span class="math display">\[
-\e^x=\lim_{n\to\infty}\left(1+\frac{x}{n}\right)^n
-\]</span>的意义就是把 <span class="math inline">\(x\)</span> 这个作用拆成很多小份，再重复这么多次。所以我们把这样把 <span class="math inline">\(v\)</span> 映射到曲面上的映射称为<strong>指数映射</strong>。它被叫做这个名字不是因为有指数函数的形状，只是这个思想可以类比。</p>
-<p>在黎曼几何中，给定流形 <span class="math inline">\(\mathcal M\)</span> 上的一个点 <span class="math inline">\(x\)</span> 和一个扰动向量 <span class="math inline">\(v\)</span>（位于切空间 <span class="math inline">\(T_x\mathcal M\)</span> 中），指数映射 <span class="math inline">\(\exp_x\)</span> 把 <span class="math inline">\(v\)</span> 映射到 <span class="math inline">\(\mathcal M\)</span>（见下图 <sup id="fnref:2"><a href="#fn:2" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="Zimmermann, R., 2020. Hermite interpolation and data processing errors on Riemannian matrix manifolds.&nbsp;**SIAM Journal on Scientific Computing**,&nbsp;42(5), pp.A2593-A2619.
-</font>
-">[2]</span></a></sup>）。曲线 <span class="math inline">\(\gamma(t)=\exp_x(tv)\)</span>，其中 <span class="math inline">\(0\leq t\leq 1\)</span>，是一条连接 <span class="math inline">\(x\)</span> 和 <span class="math inline">\(\exp_x(v)\)</span> 的测地线。在欧式空间中，<span class="math inline">\(\exp_x(v)=x+v\)</span>。</p>
-<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAEsCAMAAABOo35HAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAC9UExURVlZWdPT07KysmRkZIWFhfT09JmZmWZmZm9vb39/fxkZGUxMTDMzM3p6epCQkKamppubm729venp6cjIyN7e3tbW1s/Pz8LCwnx8fLS0tFZWVoiIiI+Pj6GhoeTk5Glpabu7u93d3evr66CgoJSUlKqqqsnJyeDg4Hd3d8PDw+Xl5bi4uNHR0dvb26Ojo6urq+fn51hYWDg4OCgoKHBwcK2traenp0FBQe7u7vHx8U5OTre3t8zMzHV1df///7GrnpQAAAA/dFJOU///////////////////////////////////////////////////////////////////////////////////AI4mfBcAAAUGSURBVHja7NoJb6M4GMZxY0NCD64kve/pMZ2d3Z297+X7f6zFNmBAMUXa6URl/q9UJSWPUPzrizFWRUlNLgEBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYYIEFAVhggQUWWGBBABZYYIEFFlgQgAUWWGCBBRYEYIEFFlhggQUBWGCBBRZYYEEAFlhggQUWWBCABRZYYIEFFgRggQUWWGCBBQFYYIEFFlhgQQAWWGCBBRZYEIAFFlhggQUWBGCBBRZYn6cCIcRXgvX/h9qcIVBqDdbEM8RCxGCB9QqXYRwHYDHBgwXWl8eKZKiESHI3Ba1kWs3fKixcaJUl1YyeBm7Ocq+yLItUiVBGnXxenSHJolIKEcwHq6ikbOX1YGVzQCTN8LPmSLreghUl9sN4Uw7yajMrLC0TZ1ImzqY6FEop0+pIaEN5HaoOxVuwEqFyc4I46uSlzOLqgxlh6UaR9l3VYWl9Fdoxb1Q90KJtu41pwwFW/WHhTtW8i7TafLCqRsk6bsGw63L9qurXRmuIlbT9lDQnlXU+nBFW1Q2qnZbDprWa2tjR90LZFqx1/+Td/HpGWLlrLDvIwTcx6dQ1Vrntbig68cDms3JwbA5Y1azs1ger6sNV/bbIw1jU81MvNAGrl58RVn8ozW+btF08iGFoAlYvP3csfVur1gJBEIA1uBmue5dhZDOyO2epbmgCVi8/I6x0MMHH9pjsTfBhNzQBq5uPZoQlB0uH3DZG4EZqQ26fL3sZq5uf09Ih6qw3i/pm6BZO0qZX7rrUS68Xsbr5ZE4rePMk08pk9aUZugfqppvs6AM1Acvlo/StP+6EbW06z8hJqxbYp2BZPQUnFsLsKuhQdaHqn5ewbF7KXIn0jWO5MqOQ7RaNLPtbNMmmhimj0GUmYLl8Gs0Lq4wyPbTu1l2QKqHSouzs3OlDIslW5SQsnY/NXmFplyNvEuuLV/Tau9BzwiraDUSwXmysztYWWNtL1psXeumgIrDGaqXvBfUuvtqUYI3V2t1wk1e2msFluJJm6zDJXv/fIfjPP7DAAgsssCiwwAILLLDAosACCyywwAKLAgsssMACC6zt9fDz/v75tyOB+98PD2+ORgKffjw4OP1uJPDxl+Xy8v1I4MPF3t7VNyOB4/vF4uzdzrG+39f1kz/w66Guv/yBvw90KX/gZKkr8Qf+2dOV+gNHC12/7RxrabD2/a31bLAO/a11YbAO/K21MFhLf2s9Gqw9f2vdGqzFu11jnVusE2/gxmI9eQOnFuvYG7i0WH7uK4t15w2cWazrXWP9a7H8f/bQYvm/6IPF+sF/pVssf19Ii/WH/0K2WH/uGuvEWC39gSdj9Twy+Rqri5EZx1gt/IE7Y/XoD1wbq9vd3w1PlufnD2OBp+ebm/uxwPHF6emnscDR4vLy41jg7vHq6sNY4Pr27OyYdRaLUrDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssMCiwAILLLDAAosCCyywwAILLAossMACCyywKLDAAgsssL6u+k+AAQCR9eHtLKvLfwAAAABJRU5ErkJggg==" data-original="https://s2.loli.net/2023/07/19/Sle1g6fwvt2bDZz.png" alt="指数映射把过 $q$ 的切向量 $v$ 映射到流形上的 $p$"><p class="image-caption">指数映射把过 $q$ 的切向量 $v$ 映射到流形上的 $p$</p></p>
-<p>给定曲面上的点 <span class="math inline">\(x\)</span> 和作用于它的切向量 <span class="math inline">\(v\)</span>，可以给出指数映射的一个表达式。欧式空间中的结果有另一种解读：从 <span class="math inline">\(x\)</span> 出发，沿着 <span class="math inline">\(v\)</span> 的方向，以单位速度走过 <span class="math inline">\(\lVert v\rVert\)</span> 的距离到达的地方。这时走过的路径是直线，那么在黎曼几何中就是走测地线。</p>
-<p>记黎曼度量诱导的范数为 <span class="math inline">\(\lVert\cdot\rVert_g\)</span>，单位化的 <span class="math inline">\(v\)</span>（即 <span class="math inline">\(\frac{v}{\lVert v\rVert_g}\)</span>）为 <span class="math inline">\(\hat v\)</span>，那么在 <span class="math inline">\(0\)</span> 处取值为 <span class="math inline">\(x\)</span>、导数为 <span class="math inline">\(\hat v\)</span> 的测地线 <span class="math inline">\(\gamma(t)\)</span> 被称为<strong>单位速度测地线</strong>（unit-speed geodesic）。沿着这条测地线走过时间 <span class="math inline">\(\lVert v\rVert_g\)</span> 就到达了 <span class="math inline">\(v\)</span> 在指数映射下的结果，即 <span class="math inline">\(\exp_x(v)=\gamma(\lVert v\rVert_g)\)</span>。</p>
-<p>在 <span class="math inline">\(\mathbb{D}_c^n\)</span> 中，可以算出单位速度测地线为<span class="math display">\[
-\gamma(t)=x \oplus_c\left(\tanh \left(\sqrt{c} \frac{t}{2}\right) \frac{\hat v}{\sqrt{c}\lVert\hat v\rVert}\right).
-\]</span>此时有 <span class="math display">\[\lVert v\rVert_g=\frac{2}{1-c\lVert x\rVert^2}\lVert v\rVert.\]</span>记其中的因子 <span class="math inline">\(\frac{2}{1-c\lVert x\rVert^2}\)</span> 为 <span class="math inline">\(\lambda_x^c\)</span>，于是可以写出指数映射的显示表达： <span class="math display">\[
-\boxed{\exp _x^c(v)=x \oplus_c\left(\tanh \left(\sqrt{c} \frac{\lambda_x^c\lVert v\rVert}{2}\right) \frac{v}{\sqrt{c}\lVert v\rVert}\right)}.
-\]</span> 对数映射是它的逆映射： <span class="math display">\[\boxed{
-\log _x^c(y)=\frac{2}{\sqrt{c} \lambda_x^c} \tanh ^{-1}\left(\sqrt{c}\lVert -x \oplus_c y\rVert\right) \frac{-x \oplus_c y}{\left\lVert-x \oplus_c y\right\rVert}
-}.
-\]</span></p>
-<p><font size="2"></font></p><font size="2">
-</font><div id="footnotes"><font size="2">
-<hr>
-</font><div id="footnotelist"><font size="2">
-</font><ol style="list-style: none; padding-left: 0; margin-left: 40px"><font size="2">
-<li id="fn:1">
-<span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">Ganea, O., Bécigneul, G. and Hofmann, T., 2018. Hyperbolic neural networks.&nbsp;<em>Advances in Neural Information Processing Systems</em>,&nbsp;31.<a href="#fnref:1" rev="footnote"> ↩︎</a></span>
-</li>
-</font><li id="fn:2"><font size="2">
-<span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">2.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;">Zimmermann, R., 2020. Hermite interpolation and data processing errors on Riemannian matrix manifolds.&nbsp;<strong>SIAM Journal on Scientific Computing</strong>,&nbsp;42(5), pp.A2593-A2619. </span></font><a href="#fnref:2" rev="footnote"> ↩︎</a>
-</li>
-</ol>
-</div>
-</div>
-]]></content>
-      <categories>
-        <category>数学</category>
-        <category>几何</category>
-      </categories>
-      <tags>
-        <tag>双曲几何</tag>
-        <tag>机器学习</tag>
-        <tag>深度学习</tag>
-      </tags>
   </entry>
   <entry>
     <title>双曲函数</title>
@@ -2146,31 +2169,6 @@ y=Ce^{-\int p(x)\d x}
       <tags>
         <tag>实变函数</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>定积分性质例题</title>
-    <url>/posts/5066/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p><strong>问题：在 <span class="math inline">\([0,\pi]\)</span> 上的连续函数 <span class="math inline">\(f\)</span> 满足</strong> <span class="math display">\[
-\int_0^{\pi} f(x)\sin x\, \mathrm dx=\int_0^\pi f(x)\cos x\,\mathrm dx=0,
-\]</span> <strong>证明 <span class="math inline">\(f\)</span> 在 <span class="math inline">\((0,\pi)\)</span> 内至少有两个零点.</strong></p>
-<span id="more"></span>
-<p><strong>证明:</strong></p>
-<p>不妨设 <span class="math inline">\(f\)</span> 不恒为 0.</p>
-<p>若 <span class="math inline">\(f(x)\)</span> 在 <span class="math inline">\((0,\pi)\)</span> 内无零点, 则不变号, 不妨设 <span class="math inline">\(f(x)&gt;0\)</span>. 此时<span class="math display">\[f(x)\sin x&gt;0,\forall x\in(0,\pi)\implies\int_0^1f(x)\sin x\,\mathrm dx&gt;0,\]</span> 与条件矛盾. 于是 <span class="math inline">\(f(x)\)</span> 在 <span class="math inline">\((0,\pi)\)</span> 上变号, 至少有一个零点.</p>
-<p>若只有一个变号零点 <span class="math inline">\(x_0\in(0,\pi)\)</span>, 不妨设在 <span class="math inline">\((0,x_0)\)</span> 上 <span class="math inline">\(f(x)&gt;0\)</span>, <span class="math inline">\((x_0,\pi)\)</span> 上 <span class="math inline">\(f(x)&lt;0\)</span>. 那么 <span class="math display">\[
-F(x)=f(x)\sin(x-x_0)\leq0,~\forall x\in(0,\pi).
-\]</span> 又因为 <span class="math display">\[
-\begin{align*}\int_0^\pi F(x)\,\mathrm dx&amp;=\cos x_0\int_0^\pi f(x)\sin x\,\mathrm dx-\sin x_0\int_0^\pi f(x)\cos x\,\mathrm dx\\
-&amp;=\cos x_0\cdot0-\sin x_0\cdot 0\\
-&amp;=0,
-\end{align*}
-\]</span> 故 <span class="math inline">\(F(x)\equiv0\)</span>, 于是 <span class="math inline">\(f(x)\equiv0,~\forall x\in(0,\pi)\)</span>, 矛盾.</p>
-<p>于是 <span class="math inline">\(f(x)\)</span> 在 <span class="math inline">\((0,\pi)\)</span> 上至少有两个零点.</p>
-]]></content>
-      <categories>
-        <category>数学</category>
-        <category>微积分</category>
-      </categories>
   </entry>
   <entry>
     <title>Gauss 积分</title>
@@ -2304,6 +2302,31 @@ f(z)-f(z+\tau)=\e^{-\frac{z^2}{2}}.
       </tags>
   </entry>
   <entry>
+    <title>定积分性质例题</title>
+    <url>/posts/5066/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p><strong>问题：在 <span class="math inline">\([0,\pi]\)</span> 上的连续函数 <span class="math inline">\(f\)</span> 满足</strong> <span class="math display">\[
+\int_0^{\pi} f(x)\sin x\, \mathrm dx=\int_0^\pi f(x)\cos x\,\mathrm dx=0,
+\]</span> <strong>证明 <span class="math inline">\(f\)</span> 在 <span class="math inline">\((0,\pi)\)</span> 内至少有两个零点.</strong></p>
+<span id="more"></span>
+<p><strong>证明:</strong></p>
+<p>不妨设 <span class="math inline">\(f\)</span> 不恒为 0.</p>
+<p>若 <span class="math inline">\(f(x)\)</span> 在 <span class="math inline">\((0,\pi)\)</span> 内无零点, 则不变号, 不妨设 <span class="math inline">\(f(x)&gt;0\)</span>. 此时<span class="math display">\[f(x)\sin x&gt;0,\forall x\in(0,\pi)\implies\int_0^1f(x)\sin x\,\mathrm dx&gt;0,\]</span> 与条件矛盾. 于是 <span class="math inline">\(f(x)\)</span> 在 <span class="math inline">\((0,\pi)\)</span> 上变号, 至少有一个零点.</p>
+<p>若只有一个变号零点 <span class="math inline">\(x_0\in(0,\pi)\)</span>, 不妨设在 <span class="math inline">\((0,x_0)\)</span> 上 <span class="math inline">\(f(x)&gt;0\)</span>, <span class="math inline">\((x_0,\pi)\)</span> 上 <span class="math inline">\(f(x)&lt;0\)</span>. 那么 <span class="math display">\[
+F(x)=f(x)\sin(x-x_0)\leq0,~\forall x\in(0,\pi).
+\]</span> 又因为 <span class="math display">\[
+\begin{align*}\int_0^\pi F(x)\,\mathrm dx&amp;=\cos x_0\int_0^\pi f(x)\sin x\,\mathrm dx-\sin x_0\int_0^\pi f(x)\cos x\,\mathrm dx\\
+&amp;=\cos x_0\cdot0-\sin x_0\cdot 0\\
+&amp;=0,
+\end{align*}
+\]</span> 故 <span class="math inline">\(F(x)\equiv0\)</span>, 于是 <span class="math inline">\(f(x)\equiv0,~\forall x\in(0,\pi)\)</span>, 矛盾.</p>
+<p>于是 <span class="math inline">\(f(x)\)</span> 在 <span class="math inline">\((0,\pi)\)</span> 上至少有两个零点.</p>
+]]></content>
+      <categories>
+        <category>数学</category>
+        <category>微积分</category>
+      </categories>
+  </entry>
+  <entry>
     <title>Hesse 矩阵与Jacobi 矩阵</title>
     <url>/posts/44547/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>Hessian 是<strong>数量场</strong>的二阶导: <span class="math display">\[H_{i,j}={\partial f\over\partial x_i\partial x_j}\]</span></p>
@@ -2376,6 +2399,25 @@ f(z)-f(z+\tau)=\e^{-\frac{z^2}{2}}.
       </tags>
   </entry>
   <entry>
+    <title>常用积分</title>
+    <url>/posts/23548/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="不定积分">不定积分</h2>
+<p><span class="math display">\[\int\frac{1}{x^2+a^2} \,\mathrm{d}x=\frac 1a\arctan\frac xa+C\]</span> <span class="math display">\[\int\frac{1}{x^2-a^2} \,\mathrm{d}x=\frac {1}{2a}\ln\left|\frac{x-a}{x+a}\right|+C\]</span> <span class="math display">\[\int\frac{1}{\sqrt{x^2\pm a^2}} \,\mathrm{d}x=\ln\left|x+\sqrt{x^2\pm a^2}\right|+C\]</span> <span class="math display">\[\int\frac{1}{\sqrt{a^2-x^2}} \,\mathrm{d}x=\arcsin \frac xa+C\]</span> <span class="math display">\[\int\frac{1}{\sqrt{1+x^2}} \,\mathrm{d}x=\sinh^{-1}x+C\]</span></p>
+<span id="more"></span>
+<h2 id="定积分">定积分</h2>
+<p><span class="math display">\[\int_{-a}^af(x)\,\mathrm{d}x=\int_{0}^a\left(f(x)+f(-x)\right)\,\mathrm{d}x\]</span></p>
+<p><span class="math display">\[\int_{0}^{\pi}xf(\sin x)\,\mathrm{d}x=\frac\pi2\int_{0}^\pi f(\sin x)\,\mathrm{d}x\]</span></p>
+<p><a href="/posts/46715/index.html"><span class="math display">\[\int_0^1(1-x^2)^n\d x={(2n)!!\over(2n+1)!!}\]</span></a></p>
+<h2 id="反常积分">反常积分</h2>
+<p><a href="/posts/48382/index.html"><span class="math display">\[\int_{-\infty}^\infty \e^{-x^2}\d x=\sqrt\pi\]</span></a></p>
+<p><span class="math display">\[\int_0^{\frac \pi2}\ln(\sin x)=\int_0^{\frac \pi2}\ln(\cos x)=-\frac\pi2\ln2\]</span></p>
+]]></content>
+      <categories>
+        <category>数学</category>
+        <category>微积分</category>
+      </categories>
+  </entry>
+  <entry>
     <title>分部积分的表格法</title>
     <url>/posts/42394/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>分部积分的计算非常令人头疼，尤其是涉及到多次分部的时候。表格法提供了一种简记的方法：原理没变，只是避免了繁琐地写积分号的过程。</p>
@@ -2411,25 +2453,6 @@ f(z)-f(z+\tau)=\e^{-\frac{z^2}{2}}.
       </tags>
   </entry>
   <entry>
-    <title>常用积分</title>
-    <url>/posts/23548/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="不定积分">不定积分</h2>
-<p><span class="math display">\[\int\frac{1}{x^2+a^2} \,\mathrm{d}x=\frac 1a\arctan\frac xa+C\]</span> <span class="math display">\[\int\frac{1}{x^2-a^2} \,\mathrm{d}x=\frac {1}{2a}\ln\left|\frac{x-a}{x+a}\right|+C\]</span> <span class="math display">\[\int\frac{1}{\sqrt{x^2\pm a^2}} \,\mathrm{d}x=\ln\left|x+\sqrt{x^2\pm a^2}\right|+C\]</span> <span class="math display">\[\int\frac{1}{\sqrt{a^2-x^2}} \,\mathrm{d}x=\arcsin \frac xa+C\]</span> <span class="math display">\[\int\frac{1}{\sqrt{1+x^2}} \,\mathrm{d}x=\sinh^{-1}x+C\]</span></p>
-<span id="more"></span>
-<h2 id="定积分">定积分</h2>
-<p><span class="math display">\[\int_{-a}^af(x)\,\mathrm{d}x=\int_{0}^a\left(f(x)+f(-x)\right)\,\mathrm{d}x\]</span></p>
-<p><span class="math display">\[\int_{0}^{\pi}xf(\sin x)\,\mathrm{d}x=\frac\pi2\int_{0}^\pi f(\sin x)\,\mathrm{d}x\]</span></p>
-<p><a href="/posts/46715/index.html"><span class="math display">\[\int_0^1(1-x^2)^n\d x={(2n)!!\over(2n+1)!!}\]</span></a></p>
-<h2 id="反常积分">反常积分</h2>
-<p><a href="/posts/48382/index.html"><span class="math display">\[\int_{-\infty}^\infty \e^{-x^2}\d x=\sqrt\pi\]</span></a></p>
-<p><span class="math display">\[\int_0^{\frac \pi2}\ln(\sin x)=\int_0^{\frac \pi2}\ln(\cos x)=-\frac\pi2\ln2\]</span></p>
-]]></content>
-      <categories>
-        <category>数学</category>
-        <category>微积分</category>
-      </categories>
-  </entry>
-  <entry>
     <title>极坐标和球坐标换元</title>
     <url>/posts/26639/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p><span class="math display">\[\iint_D F(x,y)\d x\d y=\iint_\Delta F(r\cos\theta,r\sin\theta)r\d r\d\theta\]</span></p>
@@ -2442,23 +2465,6 @@ f(z)-f(z+\tau)=\e^{-\frac{z^2}{2}}.
       </categories>
       <tags>
         <tag>多元微积分</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>利用积分下求导计算无穷积分</title>
-    <url>/posts/30510/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>计算 <span class="math display">\[
-\int_{-\infty}^{+\infty}{x\sin x\over (x^2+a^2)(x^2+b^2)}\,\mathrm dx.
-\]</span> 其实是测试一下内嵌pdf.</p>
-<span id="more"></span>
-<div class="pdfobject-container" data-target="/file/integrate.pdf" data-height="500px"></div>
-]]></content>
-      <categories>
-        <category>数学</category>
-        <category>微积分</category>
-      </categories>
-      <tags>
-        <tag>无穷积分</tag>
       </tags>
   </entry>
   <entry>
@@ -2487,49 +2493,21 @@ f(z)-f(z+\tau)=\e^{-\frac{z^2}{2}}.
       </tags>
   </entry>
   <entry>
-    <title>计算定积分</title>
-    <url>/posts/46715/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>计算定积分 <span class="math display">\[
-I_n=\int_0^1(1-x^2)^n\d x.
-\]</span> <span id="more"></span></p>
-<h2 id="递推">递推</h2>
-<p><span class="math display">\[
-\begin{align*}
-I_n&amp;=\int_0^1(1-x^2)^n\,\mathrm dx\\
-&amp;=\int_0^1(1-x^2)(1-x^2)^{n-1}\,\mathrm dx\\
-&amp;=\int_0^1(1-x^2)^{n-1}\,\mathrm dx-\int_0^1x^2(1-x^2)^{n-1}\,\mathrm dx\\
-&amp;=I_{n-1}+\frac{1}{2n}\int_0^1x\,\mathrm d(1-x^2)^{n}\\
-&amp;=I_{n-1}+\frac{1}{2n}\left.x(1-x^2)^n\right|_0^1-\frac{1}{2n}\int_0^1(1-x^2)^n\,\mathrm dx\\
-&amp;=I_{n-1}-\frac{1}{2n}I_n\\
-&amp;={2n\over2n+1}I_{n-1},
-%&amp;=\left.t(1-t^2)\right|_{0}^1-n\int_0^1t(1-t^2)^{n-1}\,\mathrm dt\\
-%&amp;=-n\left(\left.t^2(1-t^2)^{n-1}\right|_0^1-\int_0^1\left((1-t^2)^{n-1}-2(n-1)t^2(1-t^2)^{n-2}\right)\,\mathrm dt\right)\\
-%&amp;=n\int_0^1(1-t^2)^{n-1}\,\mathrm dt+2n(n-1)\int_0^1t^2(1-t^2)^{n-2}\,\mathrm dt
-%&amp;=\int_0^1\sum_{k=0}^n{n\choose k}(-t^2)^k\,\mathrm dt\\
-%&amp;=\int_0^1\sum_{k=0}^n{n\choose k}(-1)^kt^{2k}\,\mathrm dt\\
-%&amp;=\sum_{k=0}^n{n\choose k}(-1)^k\int_0^1t^{2k}\,\mathrm dt\\
-%&amp;=\sum_{k=0}^n{(-1)^k{n\choose k}\over 2k+1}
-\end{align*}
-\]</span></p>
-<p>利用 <span class="math inline">\(I_0=1\)</span> 递推可得 <span class="math display">\[
-I_n={(2n)!!\over(2n+1)!!}.
-\]</span></p>
-<h2 id="gamma-函数">Gamma 函数</h2>
-<p>作代换 <span class="math inline">\(x=\sqrt{t}\)</span>，可得 <span class="math display">\[
-\begin{align*}
-\int_0^1(1-x^2)^n\d x &amp;= \frac12\int_0^1 (1-t)^n t^{-\frac12}\d t\\
-&amp;= \frac12 \B\left(n+1, \frac12\right)\\
-&amp;= \frac12 {\Gamma(n+1)\Gamma\left(\frac12\right)\over\Gamma\left(n+\frac32\right)}\\
-&amp;=\frac12{n!\cdot\Gamma\left(\frac12\right)\over\frac{2n+1}{2}\times\cdots\times\frac32\times\frac12 \Gamma\left(\frac12\right)}\\
-&amp;= {2^nn!\over (2n+1)!!}\\
-&amp;={(2n)!!\over (2n+1)!!}.
-\end{align*}
-\]</span></p>
+    <title>利用积分下求导计算无穷积分</title>
+    <url>/posts/30510/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>计算 <span class="math display">\[
+\int_{-\infty}^{+\infty}{x\sin x\over (x^2+a^2)(x^2+b^2)}\,\mathrm dx.
+\]</span> 其实是测试一下内嵌pdf.</p>
+<span id="more"></span>
+<div class="pdfobject-container" data-target="/file/integrate.pdf" data-height="500px"></div>
 ]]></content>
       <categories>
         <category>数学</category>
         <category>微积分</category>
       </categories>
+      <tags>
+        <tag>无穷积分</tag>
+      </tags>
   </entry>
   <entry>
     <title>曲线积分和曲面积分</title>
@@ -2590,6 +2568,51 @@ I_n={(2n)!!\over(2n+1)!!}.
       <tags>
         <tag>多元微积分</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>计算定积分</title>
+    <url>/posts/46715/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>计算定积分 <span class="math display">\[
+I_n=\int_0^1(1-x^2)^n\d x.
+\]</span> <span id="more"></span></p>
+<h2 id="递推">递推</h2>
+<p><span class="math display">\[
+\begin{align*}
+I_n&amp;=\int_0^1(1-x^2)^n\,\mathrm dx\\
+&amp;=\int_0^1(1-x^2)(1-x^2)^{n-1}\,\mathrm dx\\
+&amp;=\int_0^1(1-x^2)^{n-1}\,\mathrm dx-\int_0^1x^2(1-x^2)^{n-1}\,\mathrm dx\\
+&amp;=I_{n-1}+\frac{1}{2n}\int_0^1x\,\mathrm d(1-x^2)^{n}\\
+&amp;=I_{n-1}+\frac{1}{2n}\left.x(1-x^2)^n\right|_0^1-\frac{1}{2n}\int_0^1(1-x^2)^n\,\mathrm dx\\
+&amp;=I_{n-1}-\frac{1}{2n}I_n\\
+&amp;={2n\over2n+1}I_{n-1},
+%&amp;=\left.t(1-t^2)\right|_{0}^1-n\int_0^1t(1-t^2)^{n-1}\,\mathrm dt\\
+%&amp;=-n\left(\left.t^2(1-t^2)^{n-1}\right|_0^1-\int_0^1\left((1-t^2)^{n-1}-2(n-1)t^2(1-t^2)^{n-2}\right)\,\mathrm dt\right)\\
+%&amp;=n\int_0^1(1-t^2)^{n-1}\,\mathrm dt+2n(n-1)\int_0^1t^2(1-t^2)^{n-2}\,\mathrm dt
+%&amp;=\int_0^1\sum_{k=0}^n{n\choose k}(-t^2)^k\,\mathrm dt\\
+%&amp;=\int_0^1\sum_{k=0}^n{n\choose k}(-1)^kt^{2k}\,\mathrm dt\\
+%&amp;=\sum_{k=0}^n{n\choose k}(-1)^k\int_0^1t^{2k}\,\mathrm dt\\
+%&amp;=\sum_{k=0}^n{(-1)^k{n\choose k}\over 2k+1}
+\end{align*}
+\]</span></p>
+<p>利用 <span class="math inline">\(I_0=1\)</span> 递推可得 <span class="math display">\[
+I_n={(2n)!!\over(2n+1)!!}.
+\]</span></p>
+<h2 id="gamma-函数">Gamma 函数</h2>
+<p>作代换 <span class="math inline">\(x=\sqrt{t}\)</span>，可得 <span class="math display">\[
+\begin{align*}
+\int_0^1(1-x^2)^n\d x &amp;= \frac12\int_0^1 (1-t)^n t^{-\frac12}\d t\\
+&amp;= \frac12 \B\left(n+1, \frac12\right)\\
+&amp;= \frac12 {\Gamma(n+1)\Gamma\left(\frac12\right)\over\Gamma\left(n+\frac32\right)}\\
+&amp;=\frac12{n!\cdot\Gamma\left(\frac12\right)\over\frac{2n+1}{2}\times\cdots\times\frac32\times\frac12 \Gamma\left(\frac12\right)}\\
+&amp;= {2^nn!\over (2n+1)!!}\\
+&amp;={(2n)!!\over (2n+1)!!}.
+\end{align*}
+\]</span></p>
+]]></content>
+      <categories>
+        <category>数学</category>
+        <category>微积分</category>
+      </categories>
   </entry>
   <entry>
     <title>计算定积分</title>
@@ -2750,53 +2773,6 @@ p(x)={\sum_{k=0}^n{\lambda_k y_k\over x-x_k}\over\sum_{k=0}^n{\lambda_k\over x-x
       </tags>
   </entry>
   <entry>
-    <title>数值积分</title>
-    <url>/posts/24343/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>Quadrature Rule 指的是形式 <span class="math display">\[Q(f)=\sum_{k=0}^nw_kf(x_k)\]</span></p>
-<p>有时把 <span class="math inline">\(f(x_k)\)</span> 简写作 <span class="math inline">\(f_k\)</span>.</p>
-<span id="more"></span>
-<h2 id="interpolation-rule">Interpolation Rule</h2>
-<p>在插值多项式上求积分, 即 <span class="math display">\[w_k=\int_a^b l_k(x)\d x\]</span></p>
-<h3 id="midpoint-rule">Midpoint Rule</h3>
-<p>在中点处取 <span class="math inline">\(0\)</span> 次多项式. <span class="math display">\[Q(f)=(b-a)f(x_0),\]</span> 其中 <span class="math inline">\(x_0\)</span> 是区间中点. 精度为 <span class="math inline">\(1\)</span>.</p>
-<h3 id="newton-cotes-rules">Newton-Cotes Rules</h3>
-<p>区间上的等距节点. <span class="math inline">\(n\)</span> 为奇数时精度为 <span class="math inline">\(n\)</span>, 偶数时精度为 <span class="math inline">\(n+1\)</span>.</p>
-<ul>
-<li><span class="math inline">\(n=1\)</span>: trapezium rule 精度为 <span class="math inline">\(1\)</span> <span class="math display">\[\frac h2(f_0+f_1)\]</span> 误差 <span class="math display">\[I-Q=-\frac{1}{12}h^3 f''(\xi),\ \xi\in(a,b)\]</span></li>
-<li><span class="math inline">\(n=2\)</span>: Simpson's rule 精度为 <span class="math inline">\(3\)</span> <span class="math display">\[\frac h3\left(f(x_0)+4f(x_1)+f(x_2)\right)\]</span> 误差 <span class="math display">\[I-Q=-\frac{h^5}{90}f^{(4)}(\xi)=-\frac{(b-a)^5}{2880}f^{(4)}(\xi),\ \xi\in(a,b)\]</span></li>
-</ul>
-<h2 id="gauss-rule">Gauss Rule</h2>
-<p>寻找关于权重 <span class="math inline">\(w(x)\)</span> 精度最高的节点, 实际上是关于 <span class="math inline">\(w(x)\)</span> 的正交多项式的零点. 精度是 <span class="math inline">\(2n+1\)</span>.</p>
-<h3 id="gauss-legendre-quadrature-wx1">Gauss-Legendre Quadrature <span class="math inline">\(w(x)=1\)</span></h3>
-<ul>
-<li><span class="math inline">\(n=0\)</span>: <span class="math display">\[\int_{-1}^1f(x)\d x\approx 2f(0)\]</span> 是中点法.</li>
-<li><span class="math inline">\(n=1\)</span>: <span class="math display">\[\int_{-1}^1f(x)\d x\approx f\left(-\frac{1}{\sqrt 3}\right)+f\left(\frac{1}{\sqrt 3}\right)\]</span></li>
-</ul>
-<h3 id="gauss-chebyshev-quadrature-wx1-x2-12">Gauss-Chebyshev Quadrature <span class="math inline">\(w(x)=(1-x^2)^{-1/2}\)</span></h3>
-<p><span class="math inline">\(x_0,\ldots,x_n\)</span> 取 <span class="math inline">\(T_{n+1}(x)\)</span> 的零点, 即 Chebyshev 分点 <span class="math display">\[x_k=\cos\left(\frac\pi2\frac{2k+1}{n+1}\right)\]</span></p>
-<p>此时权重都是 <span class="math inline">\(\displaystyle w_k=\frac{\pi}{n+1}\)</span></p>
-<h2 id="composite-quadrature-rules">Composite Quadrature Rules</h2>
-<p>把区间等分后做积分.</p>
-<h3 id="composite-midpoint-rule">Composite Midpoint Rule</h3>
-<p><span class="math display">\[
-M(h)=\sum_{k=0}^{n-1}hf\left(a+h\left(k+\frac12\right)\right)
-\]</span> 误差 <span class="math display">\[I-M=\frac{h^2}{24}(b-a)f''(\xi)\]</span></p>
-<h3 id="composite-trapezium-rule">Composite Trapezium Rule</h3>
-<p><span class="math display">\[T(h)=\frac h2\left(f(t_0)+2f(t_1)+2f(t_2)+\cdots+2f(t_{n-1})+f(t_n)\right)\]</span> 误差 <span class="math display">\[I-T=-\frac{h^2}{12}(b-a)f''(\xi)\]</span></p>
-<h3 id="composite-simpsons-rule">Composite Simpson's Rule</h3>
-<p><span class="math display">\[S(h)=\frac{h}{3}\left(f(t_0)+4f(t_1)+2f(t_2)+4f(t_3)+\cdots+2f(t_{2m-2})+4f(t_{2m-1})+f(t_{2m})\right)\]</span> 误差 <span class="math display">\[I-S=-\frac{h^4}{180}(b-a)f^{(4)}(\xi)\]</span></p>
-<h2 id="extrapolation">Extrapolation</h2>
-<p>做组合消除误差. 令 <span class="math inline">\(T_{k,1}=T(h/2^{k-1})\)</span> 并构造表 <span class="math display">\[T_{i,j}={4^{j-1}T_{i,j-1}-T_{i-1,j-1}\over 4^{j-1}-1}\]</span> 每向右一列误差 <span class="math inline">\(\times h^2\)</span>.</p>
-]]></content>
-      <categories>
-        <category>数学</category>
-        <category>数值分析</category>
-      </categories>
-      <tags>
-        <tag>数值积分</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>最小二乘法</title>
     <url>/posts/36991/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>最小二乘法是为了解决过度约束的方程 <span class="math inline">\(Ax=b\)</span>，其中 <span class="math inline">\(A\)</span> 的行数多于列数（一个瘦高型的矩阵）。通常是无解的，问题弱化为求 <span class="math display">\[\min\|Ax-b\|_2,\]</span> 其中 <span class="math inline">\(A\in\R^{m\times n}\)</span>, <span class="math inline">\(x\in\R^n\)</span>, <span class="math inline">\(b\in\R^m\)</span>。</p>
@@ -2885,6 +2861,53 @@ M(h)=\sum_{k=0}^{n-1}hf\left(a+h\left(k+\frac12\right)\right)
         <tag>最小二乘法</tag>
         <tag>投影</tag>
         <tag>线性方程组</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>数值积分</title>
+    <url>/posts/24343/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>Quadrature Rule 指的是形式 <span class="math display">\[Q(f)=\sum_{k=0}^nw_kf(x_k)\]</span></p>
+<p>有时把 <span class="math inline">\(f(x_k)\)</span> 简写作 <span class="math inline">\(f_k\)</span>.</p>
+<span id="more"></span>
+<h2 id="interpolation-rule">Interpolation Rule</h2>
+<p>在插值多项式上求积分, 即 <span class="math display">\[w_k=\int_a^b l_k(x)\d x\]</span></p>
+<h3 id="midpoint-rule">Midpoint Rule</h3>
+<p>在中点处取 <span class="math inline">\(0\)</span> 次多项式. <span class="math display">\[Q(f)=(b-a)f(x_0),\]</span> 其中 <span class="math inline">\(x_0\)</span> 是区间中点. 精度为 <span class="math inline">\(1\)</span>.</p>
+<h3 id="newton-cotes-rules">Newton-Cotes Rules</h3>
+<p>区间上的等距节点. <span class="math inline">\(n\)</span> 为奇数时精度为 <span class="math inline">\(n\)</span>, 偶数时精度为 <span class="math inline">\(n+1\)</span>.</p>
+<ul>
+<li><span class="math inline">\(n=1\)</span>: trapezium rule 精度为 <span class="math inline">\(1\)</span> <span class="math display">\[\frac h2(f_0+f_1)\]</span> 误差 <span class="math display">\[I-Q=-\frac{1}{12}h^3 f''(\xi),\ \xi\in(a,b)\]</span></li>
+<li><span class="math inline">\(n=2\)</span>: Simpson's rule 精度为 <span class="math inline">\(3\)</span> <span class="math display">\[\frac h3\left(f(x_0)+4f(x_1)+f(x_2)\right)\]</span> 误差 <span class="math display">\[I-Q=-\frac{h^5}{90}f^{(4)}(\xi)=-\frac{(b-a)^5}{2880}f^{(4)}(\xi),\ \xi\in(a,b)\]</span></li>
+</ul>
+<h2 id="gauss-rule">Gauss Rule</h2>
+<p>寻找关于权重 <span class="math inline">\(w(x)\)</span> 精度最高的节点, 实际上是关于 <span class="math inline">\(w(x)\)</span> 的正交多项式的零点. 精度是 <span class="math inline">\(2n+1\)</span>.</p>
+<h3 id="gauss-legendre-quadrature-wx1">Gauss-Legendre Quadrature <span class="math inline">\(w(x)=1\)</span></h3>
+<ul>
+<li><span class="math inline">\(n=0\)</span>: <span class="math display">\[\int_{-1}^1f(x)\d x\approx 2f(0)\]</span> 是中点法.</li>
+<li><span class="math inline">\(n=1\)</span>: <span class="math display">\[\int_{-1}^1f(x)\d x\approx f\left(-\frac{1}{\sqrt 3}\right)+f\left(\frac{1}{\sqrt 3}\right)\]</span></li>
+</ul>
+<h3 id="gauss-chebyshev-quadrature-wx1-x2-12">Gauss-Chebyshev Quadrature <span class="math inline">\(w(x)=(1-x^2)^{-1/2}\)</span></h3>
+<p><span class="math inline">\(x_0,\ldots,x_n\)</span> 取 <span class="math inline">\(T_{n+1}(x)\)</span> 的零点, 即 Chebyshev 分点 <span class="math display">\[x_k=\cos\left(\frac\pi2\frac{2k+1}{n+1}\right)\]</span></p>
+<p>此时权重都是 <span class="math inline">\(\displaystyle w_k=\frac{\pi}{n+1}\)</span></p>
+<h2 id="composite-quadrature-rules">Composite Quadrature Rules</h2>
+<p>把区间等分后做积分.</p>
+<h3 id="composite-midpoint-rule">Composite Midpoint Rule</h3>
+<p><span class="math display">\[
+M(h)=\sum_{k=0}^{n-1}hf\left(a+h\left(k+\frac12\right)\right)
+\]</span> 误差 <span class="math display">\[I-M=\frac{h^2}{24}(b-a)f''(\xi)\]</span></p>
+<h3 id="composite-trapezium-rule">Composite Trapezium Rule</h3>
+<p><span class="math display">\[T(h)=\frac h2\left(f(t_0)+2f(t_1)+2f(t_2)+\cdots+2f(t_{n-1})+f(t_n)\right)\]</span> 误差 <span class="math display">\[I-T=-\frac{h^2}{12}(b-a)f''(\xi)\]</span></p>
+<h3 id="composite-simpsons-rule">Composite Simpson's Rule</h3>
+<p><span class="math display">\[S(h)=\frac{h}{3}\left(f(t_0)+4f(t_1)+2f(t_2)+4f(t_3)+\cdots+2f(t_{2m-2})+4f(t_{2m-1})+f(t_{2m})\right)\]</span> 误差 <span class="math display">\[I-S=-\frac{h^4}{180}(b-a)f^{(4)}(\xi)\]</span></p>
+<h2 id="extrapolation">Extrapolation</h2>
+<p>做组合消除误差. 令 <span class="math inline">\(T_{k,1}=T(h/2^{k-1})\)</span> 并构造表 <span class="math display">\[T_{i,j}={4^{j-1}T_{i,j-1}-T_{i-1,j-1}\over 4^{j-1}-1}\]</span> 每向右一列误差 <span class="math inline">\(\times h^2\)</span>.</p>
+]]></content>
+      <categories>
+        <category>数学</category>
+        <category>数值分析</category>
+      </categories>
+      <tags>
+        <tag>数值积分</tag>
       </tags>
   </entry>
   <entry>
@@ -3095,59 +3118,6 @@ M=\frac{1}{\omega} D+L, \quad N=\frac{1-\omega}{\omega} D-U
       </categories>
   </entry>
   <entry>
-    <title>$\Arcsin^2x$的展开式</title>
-    <url>/posts/20316/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>证明 <span class="math display">\[
-\arcsin^2x=\frac12\sum_{n=1}^\infty{(2x)^{2n}\over n^2{2n\choose n}}.
-\]</span> <span id="more"></span></p>
-<p>先求导： <span class="math display">\[
-(\arcsin^2 x)'={2\arcsin x\over\sqrt{1-x^2}}
-\]</span> 利用恒等式<span class="math inline">\(\arcsin x=\arctan\left(x\over\sqrt{1-x^2}\right)\)</span>，有 <span class="math display">\[
-\begin{align*}
-{\arcsin x\over\sqrt{1-x^2}}&amp;={1\over\sqrt{1-x^2}}\arctan\left(x\over\sqrt{1-x^2}\right)\\
-&amp;=\frac1x\cdot{1\over\sqrt{1-x^2\over x^2}}\arctan\left({1\over\sqrt{1-x^2\over x^2}}\right)\\
-&amp;=\left.\frac1x\cdot{1\over\sqrt{1-x^2\over x^2}}\arctan\left({t\over\sqrt{1-x^2\over x^2}}\right)\right|_{t=0}^{t=1}\\
-&amp;=\frac1x\int_0^1{\mathrm dt\over t^2+{1-x^2\over x^2}}\\
-&amp;=x\int_0^1{\mathrm dt\over 1-x^2+x^2t^2}\\
-&amp;=x\int_0^1\sum_{n=0}^\infty(x^2-x^2t^2)^n\,\mathrm dt\\
-&amp;=\int_0^1\sum_{n=0}^\infty (1-t^2)^nx^{2n+1}\,\mathrm dt\\
-&amp;=\sum_{n=0}^\infty\left(\int_0^1(1-t^2)^n\,\mathrm dt\right) x^{2n+1}\\
-&amp;=\sum_{n=0}^\infty{(2n)!!\over(2n+1)!!}x^{2n+1}.
-\end{align*}
-\]</span> 其中我们利用了<a href="/posts/46715/index.html">结论</a>。</p>
-<p>于是积分： <span class="math display">\[
-\begin{align*}
-\arcsin^2x&amp;=\int_0^x(\arcsin^2t)'\,\mathrm dt\\
-&amp;=2\int_0^x{\arcsin t\over\sqrt{1-t^2}}\,\mathrm dt\\
-&amp;=2\int_0^x\sum_{n=0}^\infty{(2n)!!\over(2n+1)!!}t^{2n+1}\,\mathrm dt\\
-&amp;=2\sum_{n=0}^\infty{(2n)!!\over(2n+1)!!}\int_0^x t^{2n+1}\,\mathrm dt\\
-&amp;=2\sum_{n=0}^\infty{(2n)!!\over(2n+1)!!}\cdot{x^{2n+2}\over2n+2}\\
-&amp;=2\sum_{n=0}^\infty{(2^nn!)^2\over(2n+1)!}\cdot{x^{2n+2}\over2n+2}\\
-&amp;=2\sum_{n=0}^\infty{2^{2n}(n!)^2\over(2n+2)!}x^{2n+2}\\
-&amp;=2\sum_{n=0}^\infty{2^{2n+2}\left((n+1)!\right)^2\over2^2(n+1)^2(2n+2)!}x^{2n+2}\\
-&amp;=\frac12\sum_{n=0}^\infty{(2x)^{2n+2}\over(n+1)^2{2n+2\choose n+1}}\\
-&amp;=\frac12\sum_{n=1}^\infty{(2x)^{2n}\over n^2{2n\choose n}}.
-\end{align*}
-\]</span></p>
-]]></content>
-      <categories>
-        <category>数学</category>
-        <category>级数</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Fourier 级数</title>
-    <url>/posts/22351/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p><span class="math display">\[
-f\colon[-L,L]\to\mathbb{R}
-\]</span> <span class="math display">\[F(x)=a_0+\sum_{n=1}^\infty \left(a_n\cos\left(\frac{n\pi x}{L}\right)+b_n\sin\left(\frac{n\pi x}{L}\right)\right)\]</span> 其中 <span class="math display">\[a_0=\frac{1}{2L}\int_{-L}^Lf(x)\,\mathrm{d}x\]</span> <span class="math display">\[a_n=\frac{1}{L}\int_{-L}^Lf(x)\cos\left(\frac{n\pi x}{L}\right)\,\mathrm{d}x\]</span> <span class="math display">\[b_n=\frac{1}{L}\int_{-L}^Lf(x)\sin\left(\frac{n\pi x}{L}\right)\,\mathrm{d}x\]</span></p>
-]]></content>
-      <categories>
-        <category>数学</category>
-        <category>级数</category>
-      </categories>
-  </entry>
-  <entry>
     <title>泛函基础</title>
     <url>/posts/64221;/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="banach-空间">Banach 空间</h2>
@@ -3264,6 +3234,59 @@ W_p^1\subseteq L^{p^*},\quad\text{其中 }{1\over p^*}=\frac1p-\frac1n.
       </categories>
   </entry>
   <entry>
+    <title>Fourier 级数</title>
+    <url>/posts/22351/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p><span class="math display">\[
+f\colon[-L,L]\to\mathbb{R}
+\]</span> <span class="math display">\[F(x)=a_0+\sum_{n=1}^\infty \left(a_n\cos\left(\frac{n\pi x}{L}\right)+b_n\sin\left(\frac{n\pi x}{L}\right)\right)\]</span> 其中 <span class="math display">\[a_0=\frac{1}{2L}\int_{-L}^Lf(x)\,\mathrm{d}x\]</span> <span class="math display">\[a_n=\frac{1}{L}\int_{-L}^Lf(x)\cos\left(\frac{n\pi x}{L}\right)\,\mathrm{d}x\]</span> <span class="math display">\[b_n=\frac{1}{L}\int_{-L}^Lf(x)\sin\left(\frac{n\pi x}{L}\right)\,\mathrm{d}x\]</span></p>
+]]></content>
+      <categories>
+        <category>数学</category>
+        <category>级数</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>$\Arcsin^2x$的展开式</title>
+    <url>/posts/20316/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>证明 <span class="math display">\[
+\arcsin^2x=\frac12\sum_{n=1}^\infty{(2x)^{2n}\over n^2{2n\choose n}}.
+\]</span> <span id="more"></span></p>
+<p>先求导： <span class="math display">\[
+(\arcsin^2 x)'={2\arcsin x\over\sqrt{1-x^2}}
+\]</span> 利用恒等式<span class="math inline">\(\arcsin x=\arctan\left(x\over\sqrt{1-x^2}\right)\)</span>，有 <span class="math display">\[
+\begin{align*}
+{\arcsin x\over\sqrt{1-x^2}}&amp;={1\over\sqrt{1-x^2}}\arctan\left(x\over\sqrt{1-x^2}\right)\\
+&amp;=\frac1x\cdot{1\over\sqrt{1-x^2\over x^2}}\arctan\left({1\over\sqrt{1-x^2\over x^2}}\right)\\
+&amp;=\left.\frac1x\cdot{1\over\sqrt{1-x^2\over x^2}}\arctan\left({t\over\sqrt{1-x^2\over x^2}}\right)\right|_{t=0}^{t=1}\\
+&amp;=\frac1x\int_0^1{\mathrm dt\over t^2+{1-x^2\over x^2}}\\
+&amp;=x\int_0^1{\mathrm dt\over 1-x^2+x^2t^2}\\
+&amp;=x\int_0^1\sum_{n=0}^\infty(x^2-x^2t^2)^n\,\mathrm dt\\
+&amp;=\int_0^1\sum_{n=0}^\infty (1-t^2)^nx^{2n+1}\,\mathrm dt\\
+&amp;=\sum_{n=0}^\infty\left(\int_0^1(1-t^2)^n\,\mathrm dt\right) x^{2n+1}\\
+&amp;=\sum_{n=0}^\infty{(2n)!!\over(2n+1)!!}x^{2n+1}.
+\end{align*}
+\]</span> 其中我们利用了<a href="/posts/46715/index.html">结论</a>。</p>
+<p>于是积分： <span class="math display">\[
+\begin{align*}
+\arcsin^2x&amp;=\int_0^x(\arcsin^2t)'\,\mathrm dt\\
+&amp;=2\int_0^x{\arcsin t\over\sqrt{1-t^2}}\,\mathrm dt\\
+&amp;=2\int_0^x\sum_{n=0}^\infty{(2n)!!\over(2n+1)!!}t^{2n+1}\,\mathrm dt\\
+&amp;=2\sum_{n=0}^\infty{(2n)!!\over(2n+1)!!}\int_0^x t^{2n+1}\,\mathrm dt\\
+&amp;=2\sum_{n=0}^\infty{(2n)!!\over(2n+1)!!}\cdot{x^{2n+2}\over2n+2}\\
+&amp;=2\sum_{n=0}^\infty{(2^nn!)^2\over(2n+1)!}\cdot{x^{2n+2}\over2n+2}\\
+&amp;=2\sum_{n=0}^\infty{2^{2n}(n!)^2\over(2n+2)!}x^{2n+2}\\
+&amp;=2\sum_{n=0}^\infty{2^{2n+2}\left((n+1)!\right)^2\over2^2(n+1)^2(2n+2)!}x^{2n+2}\\
+&amp;=\frac12\sum_{n=0}^\infty{(2x)^{2n+2}\over(n+1)^2{2n+2\choose n+1}}\\
+&amp;=\frac12\sum_{n=1}^\infty{(2x)^{2n}\over n^2{2n\choose n}}.
+\end{align*}
+\]</span></p>
+]]></content>
+      <categories>
+        <category>数学</category>
+        <category>级数</category>
+      </categories>
+  </entry>
+  <entry>
     <title>常用级数</title>
     <url>/posts/56038/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p><span class="math display">\[\sum_{n=1}^\infty\frac{1}{n^2}=\frac{\pi^2}{6}\]</span> <span id="more"></span> <span class="math display">\[\sum_{n=1}^\infty\frac{(-1)^{n-1}}{n^2}=\frac{\pi^2}{12}\]</span> <span class="math display">\[\sum_{n=1}^\infty\frac{1}{(2n-1)^2}=\frac{\pi^2}{8}\]</span> <span class="math display">\[\sum_{n=1}^\infty\frac{1}{n^4}=\frac{\pi^4}{90}\]</span> <span class="math display">\[\sum_{n=1}^\infty\frac{(-1)^{n-1}}{n^4}=\frac{7\pi^4}{720}\]</span> <span class="math display">\[1-\frac13+\frac15-\frac17+\cdots=\frac\pi4\]</span> <span class="math display">\[1-\frac12+\frac13-\frac14+\cdots=\ln2\]</span></p>
@@ -3369,6 +3392,72 @@ a_n={n!\over(2n+1)!!}\cdot{1\over n+1}，
       </categories>
   </entry>
   <entry>
+    <title>分块矩阵的行列式</title>
+    <url>/posts/42453/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="结论">结论</h2>
+<p>设分块矩阵 <span class="math inline">\(\Gamma=\begin{pmatrix}A&amp;B\\C&amp;D\end{pmatrix}\)</span>, 那么</p>
+<ul>
+<li><span class="math inline">\(A\)</span> 可逆时, <span class="math inline">\(\det(\Gamma)=\det(A)\det(D-CA^{-1}B)\)</span></li>
+<li><span class="math inline">\(D\)</span> 可逆时, <span class="math inline">\(\det(\Gamma)=\det(A-BD^{-1}C)\det(D)\)</span></li>
+</ul>
+<span id="more"></span>
+<h2 id="特殊情况">特殊情况</h2>
+<ul>
+<li><p><span class="math inline">\(\begin{equation}\det\begin{pmatrix}  A&amp;0\\ C&amp;D \end{pmatrix}=\det(A)\det(D)\label{lower}\end{equation}\)</span></p></li>
+<li><p><span class="math inline">\(\begin{equation}\label{upper}\det\begin{pmatrix}  A&amp;B\\ 0&amp;D \end{pmatrix}=\det(A)\det(D)\end{equation}\)</span></p></li>
+<li><p><span class="math inline">\(\begin{equation}\label{diag}\det\begin{pmatrix}  A&amp;0\\ 0&amp;D \end{pmatrix}=\det(A)\det(D)\end{equation}\)</span></p></li>
+<li><p><span class="math inline">\(\begin{equation}\label{commute}\text{当 $CD=DC$ 时, }\det(\Gamma)=\det(AD-BC)\end{equation}\)</span></p></li>
+<li><p><span class="math inline">\(\begin{equation}\label{AB}\det\begin{pmatrix} A&amp;B\\B&amp;A \end{pmatrix}=\det(A+B)\det(A-B)\end{equation}\)</span></p></li>
+</ul>
+<h2 id="证明">证明</h2>
+<p>先证 <span class="math inline">\(\eqref{lower}\)</span> : 对 <span class="math inline">\(A\)</span> 部分进行(倍加)<strong>行变换</strong>化为下三角阵, 再对 <span class="math inline">\(D\)</span> 部分进行<strong>列变换</strong>化为下三角阵. 这并不影响 <span class="math inline">\(A\)</span> , <span class="math inline">\(D\)</span> 和分块矩阵的行列式, 且都化为了对角线的乘积. 结论显然.</p>
+<p><span class="math inline">\(\eqref{upper}\)</span> 的证明可以通过取转置得到, <span class="math inline">\(\eqref{diag}\)</span> 是一种特殊情况.</p>
+<p>对于一般情况, 需要利用 <span class="math display">\[\begin{pmatrix}
+    A&amp;B\\C&amp;D
+\end{pmatrix}\begin{pmatrix}
+    I&amp;0\\ -D^{-1}C&amp;I
+\end{pmatrix}=\begin{pmatrix}
+    A-BD^{-1}C&amp;B\\0&amp;D
+\end{pmatrix}.\]</span> 可以把它想成是一种列变换: 把第二列右乘 <span class="math inline">\(-D^{-1}C\)</span> 加到第一列. 两边取行列式并利用 <span class="math inline">\(\det(AB)=\det(A)\det(B)\)</span> 和 <span class="math inline">\(\eqref{upper}\)</span> , 就得到了 <span class="math inline">\(\det(\Gamma)=\det(A-BD^{-1}C)\det(D)\)</span> . 另外一个结论可以利用行变换类似得到.</p>
+<hr>
+<p>下面证 <span class="math inline">\(\eqref{commute}\)</span> . 注意已知 <span class="math inline">\(CD=DC\)</span>.</p>
+<p>我们可以利用 <span class="math display">\[\begin{pmatrix}
+    A&amp;B\\C&amp;D
+\end{pmatrix}\begin{pmatrix}
+    D&amp;0\\-C&amp;I
+\end{pmatrix}=\begin{pmatrix}
+    AD-BC&amp;B\\0&amp;D
+\end{pmatrix}.\]</span> 两边取行列式就得到了 <span class="math display">\[\det(\Gamma)\det(D)=\det(AD-BC)\det(D).\]</span> 如果 <span class="math inline">\(\det(D)\ne0\)</span> , 那么消去 <span class="math inline">\(\det(D)\)</span> 即得结论.</p>
+<p>也可以利用开头的结论<span class="math display">\[\begin{aligned}
+    \det(\Gamma)
+    &amp;=\det(A-BD^{-1}C)\det(D)\\
+    &amp;=\det(AD-BD^{-1}CD)\\
+    &amp;=\det(AD-BD^{-1}DC)\\
+    &amp;=\det(AD-BC).\\
+\end{aligned}\]</span></p>
+<p>当 <span class="math inline">\(\det(D)=0\)</span> 时, 可以给 <span class="math inline">\(D\)</span> 一个扰动. 也就是说, 我们用 <span class="math inline">\(D_\varepsilon=D+\varepsilon I\)</span> 代替 <span class="math inline">\(D\)</span> , 其中 <span class="math inline">\(D_\varepsilon\)</span> 可逆且 <span class="math inline">\(\varepsilon\)</span> 是可以任意小的正数. 这个结论可以利用特征值的性质证明, 也可以利用关于<span class="math inline">\(\varepsilon\)</span>的多项式 <span class="math inline">\(\det(D_\varepsilon)\)</span> 只在有限个点上取 <span class="math inline">\(0\)</span>.</p>
+<p>不难看到 <span class="math inline">\(D_\varepsilon\)</span> 仍然是与 <span class="math inline">\(C\)</span> 可交换的. 然后利用上面的方法可以得到<span class="math display">\[\det(\Gamma)=\det(AD_\varepsilon-BC).\]</span> 令 <span class="math inline">\(\varepsilon\to0\)</span> 便得到了 <span class="math inline">\(\det(\Gamma)=\det(AD-BC).\)</span></p>
+<p>这是由于等号右边是关于 <span class="math inline">\(\varepsilon\)</span> 的多项式, 所以连续, 而 <span class="math inline">\(D_0=D\)</span>.</p>
+<hr>
+<p>对 <span class="math inline">\(\eqref{AB}\)</span>, 只需要对<span class="math display">\[\begin{pmatrix}
+    I&amp;0\\-I&amp;I
+\end{pmatrix}\begin{pmatrix}
+    A&amp;B\\B&amp;A
+\end{pmatrix}\begin{pmatrix}
+    I&amp;0\\I&amp;I
+\end{pmatrix}=\begin{pmatrix}
+    A+B&amp;B\\0&amp;A-B
+\end{pmatrix}\]</span>两边取行列式.</p>
+]]></content>
+      <categories>
+        <category>数学</category>
+        <category>线性代数</category>
+      </categories>
+      <tags>
+        <tag>行列式</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>$f(A)$ 的特征值</title>
     <url>/posts/3877/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>一个著名的结论是</p>
@@ -3439,70 +3528,35 @@ f(A)=f(Q^{-1}TQ)=Q^{-1}f(T)Q.
       </tags>
   </entry>
   <entry>
-    <title>分块矩阵的行列式</title>
-    <url>/posts/42453/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="结论">结论</h2>
-<p>设分块矩阵 <span class="math inline">\(\Gamma=\begin{pmatrix}A&amp;B\\C&amp;D\end{pmatrix}\)</span>, 那么</p>
-<ul>
-<li><span class="math inline">\(A\)</span> 可逆时, <span class="math inline">\(\det(\Gamma)=\det(A)\det(D-CA^{-1}B)\)</span></li>
-<li><span class="math inline">\(D\)</span> 可逆时, <span class="math inline">\(\det(\Gamma)=\det(A-BD^{-1}C)\det(D)\)</span></li>
-</ul>
+    <title>实对称阵的合同对角化</title>
+    <url>/posts/5692/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>设对实对称阵 <span class="math inline">\(A\)</span> 满足 <span class="math inline">\(Q^TAQ=\Lambda\)</span>，其中 <span class="math inline">\(\Lambda\)</span> 是 <span class="math inline">\(A\)</span> 的特征值组成的对角阵，问 <span class="math inline">\(Q\)</span> 是否正交。</p>
+<p>答案是否定的。</p>
 <span id="more"></span>
-<h2 id="特殊情况">特殊情况</h2>
-<ul>
-<li><p><span class="math inline">\(\begin{equation}\det\begin{pmatrix}  A&amp;0\\ C&amp;D \end{pmatrix}=\det(A)\det(D)\label{lower}\end{equation}\)</span></p></li>
-<li><p><span class="math inline">\(\begin{equation}\label{upper}\det\begin{pmatrix}  A&amp;B\\ 0&amp;D \end{pmatrix}=\det(A)\det(D)\end{equation}\)</span></p></li>
-<li><p><span class="math inline">\(\begin{equation}\label{diag}\det\begin{pmatrix}  A&amp;0\\ 0&amp;D \end{pmatrix}=\det(A)\det(D)\end{equation}\)</span></p></li>
-<li><p><span class="math inline">\(\begin{equation}\label{commute}\text{当 $CD=DC$ 时, }\det(\Gamma)=\det(AD-BC)\end{equation}\)</span></p></li>
-<li><p><span class="math inline">\(\begin{equation}\label{AB}\det\begin{pmatrix} A&amp;B\\B&amp;A \end{pmatrix}=\det(A+B)\det(A-B)\end{equation}\)</span></p></li>
-</ul>
-<h2 id="证明">证明</h2>
-<p>先证 <span class="math inline">\(\eqref{lower}\)</span> : 对 <span class="math inline">\(A\)</span> 部分进行(倍加)<strong>行变换</strong>化为下三角阵, 再对 <span class="math inline">\(D\)</span> 部分进行<strong>列变换</strong>化为下三角阵. 这并不影响 <span class="math inline">\(A\)</span> , <span class="math inline">\(D\)</span> 和分块矩阵的行列式, 且都化为了对角线的乘积. 结论显然.</p>
-<p><span class="math inline">\(\eqref{upper}\)</span> 的证明可以通过取转置得到, <span class="math inline">\(\eqref{diag}\)</span> 是一种特殊情况.</p>
-<p>对于一般情况, 需要利用 <span class="math display">\[\begin{pmatrix}
-    A&amp;B\\C&amp;D
-\end{pmatrix}\begin{pmatrix}
-    I&amp;0\\ -D^{-1}C&amp;I
-\end{pmatrix}=\begin{pmatrix}
-    A-BD^{-1}C&amp;B\\0&amp;D
-\end{pmatrix}.\]</span> 可以把它想成是一种列变换: 把第二列右乘 <span class="math inline">\(-D^{-1}C\)</span> 加到第一列. 两边取行列式并利用 <span class="math inline">\(\det(AB)=\det(A)\det(B)\)</span> 和 <span class="math inline">\(\eqref{upper}\)</span> , 就得到了 <span class="math inline">\(\det(\Gamma)=\det(A-BD^{-1}C)\det(D)\)</span> . 另外一个结论可以利用行变换类似得到.</p>
-<hr>
-<p>下面证 <span class="math inline">\(\eqref{commute}\)</span> . 注意已知 <span class="math inline">\(CD=DC\)</span>.</p>
-<p>我们可以利用 <span class="math display">\[\begin{pmatrix}
-    A&amp;B\\C&amp;D
-\end{pmatrix}\begin{pmatrix}
-    D&amp;0\\-C&amp;I
-\end{pmatrix}=\begin{pmatrix}
-    AD-BC&amp;B\\0&amp;D
-\end{pmatrix}.\]</span> 两边取行列式就得到了 <span class="math display">\[\det(\Gamma)\det(D)=\det(AD-BC)\det(D).\]</span> 如果 <span class="math inline">\(\det(D)\ne0\)</span> , 那么消去 <span class="math inline">\(\det(D)\)</span> 即得结论.</p>
-<p>也可以利用开头的结论<span class="math display">\[\begin{aligned}
-    \det(\Gamma)
-    &amp;=\det(A-BD^{-1}C)\det(D)\\
-    &amp;=\det(AD-BD^{-1}CD)\\
-    &amp;=\det(AD-BD^{-1}DC)\\
-    &amp;=\det(AD-BC).\\
-\end{aligned}\]</span></p>
-<p>当 <span class="math inline">\(\det(D)=0\)</span> 时, 可以给 <span class="math inline">\(D\)</span> 一个扰动. 也就是说, 我们用 <span class="math inline">\(D_\varepsilon=D+\varepsilon I\)</span> 代替 <span class="math inline">\(D\)</span> , 其中 <span class="math inline">\(D_\varepsilon\)</span> 可逆且 <span class="math inline">\(\varepsilon\)</span> 是可以任意小的正数. 这个结论可以利用特征值的性质证明, 也可以利用关于<span class="math inline">\(\varepsilon\)</span>的多项式 <span class="math inline">\(\det(D_\varepsilon)\)</span> 只在有限个点上取 <span class="math inline">\(0\)</span>.</p>
-<p>不难看到 <span class="math inline">\(D_\varepsilon\)</span> 仍然是与 <span class="math inline">\(C\)</span> 可交换的. 然后利用上面的方法可以得到<span class="math display">\[\det(\Gamma)=\det(AD_\varepsilon-BC).\]</span> 令 <span class="math inline">\(\varepsilon\to0\)</span> 便得到了 <span class="math inline">\(\det(\Gamma)=\det(AD-BC).\)</span></p>
-<p>这是由于等号右边是关于 <span class="math inline">\(\varepsilon\)</span> 的多项式, 所以连续, 而 <span class="math inline">\(D_0=D\)</span>.</p>
-<hr>
-<p>对 <span class="math inline">\(\eqref{AB}\)</span>, 只需要对<span class="math display">\[\begin{pmatrix}
-    I&amp;0\\-I&amp;I
-\end{pmatrix}\begin{pmatrix}
-    A&amp;B\\B&amp;A
-\end{pmatrix}\begin{pmatrix}
-    I&amp;0\\I&amp;I
-\end{pmatrix}=\begin{pmatrix}
-    A+B&amp;B\\0&amp;A-B
-\end{pmatrix}\]</span>两边取行列式.</p>
+<h2 id="分析">分析</h2>
+<p>构造反例时为了方便，可以直接取 <span class="math inline">\(A\)</span> 为对角阵 <span class="math inline">\(\Lambda\)</span>，因为对角阵的对角元就是特征值。</p>
+<p>问题化为：找非正交阵 <span class="math inline">\(Q\)</span>，满足 <span class="math inline">\(Q^T\Lambda Q=\Lambda\)</span>。下面尝试把 <span class="math inline">\(\Lambda\)</span> 写成 <span class="math inline">\(Q^T\Lambda Q\)</span> 的形式： <span class="math display">\[
+\begin{align*}
+\Lambda&amp;=(\Lambda^{\frac12}\Lambda^{-\frac12})\Lambda(\Lambda^{-\frac12}\Lambda^{\frac12})\\
+&amp;=(\Lambda^{\frac12}V^T\Lambda^{-\frac12})\Lambda(\Lambda^{-\frac12}V\Lambda^{\frac12})\\
+&amp;=Q^T\Lambda Q,
+\end{align*}
+\]</span> 其中引入了正交阵 <span class="math inline">\(V\)</span>，可见 <span class="math inline">\(Q=\Lambda^{-\frac12}V\Lambda^{\frac12}\)</span> 是一种选择。什么时候 <span class="math inline">\(Q\)</span> 不正交呢？</p>
+<p>正交矩阵的一个性质是元素的绝对值都不超过1，所以我们选择合适的 <span class="math inline">\(\Lambda\)</span> 和 <span class="math inline">\(V\)</span>，使 <span class="math inline">\(Q\)</span> 中有元素绝对值大于1即可。实际上 <span class="math display">\[
+q_{ij}=v_{ij}\sqrt{\frac{\lambda_j}{\lambda_i}}，
+\]</span> <span class="math inline">\(i\)</span> 和 <span class="math inline">\(j\)</span> 不能相等，因为 <span class="math inline">\(|q_{ii}|=|v_{ii}|\leq1\)</span>。</p>
+<p>所以构造步骤为：取正交阵 <span class="math inline">\(V\)</span>，需要其中某个非对角元 <span class="math inline">\(v_{ij}\ne0\)</span>。然后取对角阵<span class="math inline">\(\Lambda\)</span>，其中 <span class="math inline">\(\lambda_j/\lambda_i\)</span> 足够大，使得 <span class="math inline">\(\left|v_{ij}\sqrt{\frac{\lambda_j}{\lambda_i}}\right|&gt;1\)</span>。再构造 <span class="math inline">\(Q=\Lambda^{-\frac12}V\Lambda^{\frac12}\)</span>，那么 <span class="math inline">\(Q\)</span> 不是正交阵，而 <span class="math inline">\(Q^T\Lambda Q=\Lambda\)</span>。</p>
+<h2 id="一个具体的例子">一个具体的例子</h2>
+<p>取 <span class="math display">\[
+V=\begin{bmatrix}0&amp;1\\1&amp;0\end{bmatrix},\ \Lambda=\begin{bmatrix}1 &amp;\\&amp; 4\end{bmatrix},
+\]</span> 那么 <span class="math display">\[
+Q=\begin{bmatrix}1&amp;\\&amp;\frac12\end{bmatrix}\begin{bmatrix}0&amp;1\\1&amp;0\end{bmatrix}\begin{bmatrix}1&amp;\\&amp;2\end{bmatrix}=\begin{bmatrix}0&amp;2\\\frac12&amp;0\end{bmatrix}\ \text{不是正交阵},
+\]</span> 而<span class="math inline">\(Q^T\Lambda Q=\Lambda\)</span>。</p>
 ]]></content>
       <categories>
         <category>数学</category>
         <category>线性代数</category>
       </categories>
-      <tags>
-        <tag>行列式</tag>
-      </tags>
   </entry>
   <entry>
     <title>投影</title>
@@ -3577,85 +3631,6 @@ Pv=P(Px)=P^2x=Px=v.
       </tags>
   </entry>
   <entry>
-    <title>实对称阵的合同对角化</title>
-    <url>/posts/5692/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>设对实对称阵 <span class="math inline">\(A\)</span> 满足 <span class="math inline">\(Q^TAQ=\Lambda\)</span>，其中 <span class="math inline">\(\Lambda\)</span> 是 <span class="math inline">\(A\)</span> 的特征值组成的对角阵，问 <span class="math inline">\(Q\)</span> 是否正交。</p>
-<p>答案是否定的。</p>
-<span id="more"></span>
-<h2 id="分析">分析</h2>
-<p>构造反例时为了方便，可以直接取 <span class="math inline">\(A\)</span> 为对角阵 <span class="math inline">\(\Lambda\)</span>，因为对角阵的对角元就是特征值。</p>
-<p>问题化为：找非正交阵 <span class="math inline">\(Q\)</span>，满足 <span class="math inline">\(Q^T\Lambda Q=\Lambda\)</span>。下面尝试把 <span class="math inline">\(\Lambda\)</span> 写成 <span class="math inline">\(Q^T\Lambda Q\)</span> 的形式： <span class="math display">\[
-\begin{align*}
-\Lambda&amp;=(\Lambda^{\frac12}\Lambda^{-\frac12})\Lambda(\Lambda^{-\frac12}\Lambda^{\frac12})\\
-&amp;=(\Lambda^{\frac12}V^T\Lambda^{-\frac12})\Lambda(\Lambda^{-\frac12}V\Lambda^{\frac12})\\
-&amp;=Q^T\Lambda Q,
-\end{align*}
-\]</span> 其中引入了正交阵 <span class="math inline">\(V\)</span>，可见 <span class="math inline">\(Q=\Lambda^{-\frac12}V\Lambda^{\frac12}\)</span> 是一种选择。什么时候 <span class="math inline">\(Q\)</span> 不正交呢？</p>
-<p>正交矩阵的一个性质是元素的绝对值都不超过1，所以我们选择合适的 <span class="math inline">\(\Lambda\)</span> 和 <span class="math inline">\(V\)</span>，使 <span class="math inline">\(Q\)</span> 中有元素绝对值大于1即可。实际上 <span class="math display">\[
-q_{ij}=v_{ij}\sqrt{\frac{\lambda_j}{\lambda_i}}，
-\]</span> <span class="math inline">\(i\)</span> 和 <span class="math inline">\(j\)</span> 不能相等，因为 <span class="math inline">\(|q_{ii}|=|v_{ii}|\leq1\)</span>。</p>
-<p>所以构造步骤为：取正交阵 <span class="math inline">\(V\)</span>，需要其中某个非对角元 <span class="math inline">\(v_{ij}\ne0\)</span>。然后取对角阵<span class="math inline">\(\Lambda\)</span>，其中 <span class="math inline">\(\lambda_j/\lambda_i\)</span> 足够大，使得 <span class="math inline">\(\left|v_{ij}\sqrt{\frac{\lambda_j}{\lambda_i}}\right|&gt;1\)</span>。再构造 <span class="math inline">\(Q=\Lambda^{-\frac12}V\Lambda^{\frac12}\)</span>，那么 <span class="math inline">\(Q\)</span> 不是正交阵，而 <span class="math inline">\(Q^T\Lambda Q=\Lambda\)</span>。</p>
-<h2 id="一个具体的例子">一个具体的例子</h2>
-<p>取 <span class="math display">\[
-V=\begin{bmatrix}0&amp;1\\1&amp;0\end{bmatrix},\ \Lambda=\begin{bmatrix}1 &amp;\\&amp; 4\end{bmatrix},
-\]</span> 那么 <span class="math display">\[
-Q=\begin{bmatrix}1&amp;\\&amp;\frac12\end{bmatrix}\begin{bmatrix}0&amp;1\\1&amp;0\end{bmatrix}\begin{bmatrix}1&amp;\\&amp;2\end{bmatrix}=\begin{bmatrix}0&amp;2\\\frac12&amp;0\end{bmatrix}\ \text{不是正交阵},
-\]</span> 而<span class="math inline">\(Q^T\Lambda Q=\Lambda\)</span>。</p>
-]]></content>
-      <categories>
-        <category>数学</category>
-        <category>线性代数</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>卡方检验</title>
-    <url>/posts/7261/</url>
-    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>原假设: 两个 (binary) 变量独立.</p>
-<table>
-<thead>
-<tr class="header">
-<th></th>
-<th><span class="math inline">\(Y=0\)</span></th>
-<th><span class="math inline">\(Y=1\)</span></th>
-<th>total</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><span class="math inline">\(Z=0\)</span></td>
-<td><span class="math inline">\(X_{00}\)</span></td>
-<td><span class="math inline">\(X_{01}\)</span></td>
-<td><span class="math inline">\(X_{0\cdot}\)</span></td>
-</tr>
-<tr class="even">
-<td><span class="math inline">\(Z=1\)</span></td>
-<td><span class="math inline">\(X_{10}\)</span></td>
-<td><span class="math inline">\(X_{11}\)</span></td>
-<td><span class="math inline">\(X_{1\cdot}\)</span></td>
-</tr>
-<tr class="odd">
-<td>total</td>
-<td><span class="math inline">\(X_{\cdot0}\)</span></td>
-<td><span class="math inline">\(X_{\cdot1}\)</span></td>
-<td><span class="math inline">\(X_{\cdot\cdot}=n\)</span></td>
-</tr>
-</tbody>
-</table>
-<p><span class="math display">\[
-U = \sum_{i=0}^1\sum_{j=0}^1\frac{(X_{ij}-E_{ij})^2}{E_{ij}},
-\]</span> 其中 <span class="math display">\[
-E_{ij}=\frac{X_{i\cdot}X_{\cdot j}}{n}
-\]</span> 含义是原假设下该单元格的期望值.</p>
-<p>在原假设下, <span class="math inline">\(U\sim \chi_1^2\)</span>. 其中自由度为 <span class="math inline">\((I-1)(J-1)\)</span>.</p>
-<figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> scipy.stats <span class="keyword">import</span> chi2_contingency</span><br><span class="line"></span><br><span class="line">table = [[<span class="number">90</span>, <span class="number">165</span>], [<span class="number">84</span>, <span class="number">307</span>]]</span><br><span class="line">U, p, dof, expected = chi2_contingency(table, correction=<span class="literal">False</span>)</span><br></pre></td></tr></tbody></table></figure>
-<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">U = 14.95864355957614</span><br><span class="line">p = 0.00010989348314654599</span><br><span class="line">dof = 1</span><br><span class="line">expected = [[ 68.68421053 186.31578947]</span><br><span class="line">            [105.31578947 285.68421053]]</span><br></pre></td></tr></tbody></table></figure>
-]]></content>
-      <categories>
-        <category>数学</category>
-        <category>统计</category>
-      </categories>
-  </entry>
-  <entry>
     <title>Time Series</title>
     <url>/posts/23857/</url>
     <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><h2 id="type">type</h2>
@@ -3705,6 +3680,54 @@ E_{ij}=\frac{X_{i\cdot}X_{\cdot j}}{n}
 <p><span class="math display">\[\phi(B)X_t=\theta(B)Z_t\]</span></p>
 <h3 id="arimad-p-q">ARIMA(d, p, q)</h3>
 <p><span class="math display">\[\phi(B)(1-B)^dX_t=\theta(B)Z_t\]</span></p>
+]]></content>
+      <categories>
+        <category>数学</category>
+        <category>统计</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>卡方检验</title>
+    <url>/posts/7261/</url>
+    <content><![CDATA[<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>原假设: 两个 (binary) 变量独立.</p>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th><span class="math inline">\(Y=0\)</span></th>
+<th><span class="math inline">\(Y=1\)</span></th>
+<th>total</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(Z=0\)</span></td>
+<td><span class="math inline">\(X_{00}\)</span></td>
+<td><span class="math inline">\(X_{01}\)</span></td>
+<td><span class="math inline">\(X_{0\cdot}\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(Z=1\)</span></td>
+<td><span class="math inline">\(X_{10}\)</span></td>
+<td><span class="math inline">\(X_{11}\)</span></td>
+<td><span class="math inline">\(X_{1\cdot}\)</span></td>
+</tr>
+<tr class="odd">
+<td>total</td>
+<td><span class="math inline">\(X_{\cdot0}\)</span></td>
+<td><span class="math inline">\(X_{\cdot1}\)</span></td>
+<td><span class="math inline">\(X_{\cdot\cdot}=n\)</span></td>
+</tr>
+</tbody>
+</table>
+<p><span class="math display">\[
+U = \sum_{i=0}^1\sum_{j=0}^1\frac{(X_{ij}-E_{ij})^2}{E_{ij}},
+\]</span> 其中 <span class="math display">\[
+E_{ij}=\frac{X_{i\cdot}X_{\cdot j}}{n}
+\]</span> 含义是原假设下该单元格的期望值.</p>
+<p>在原假设下, <span class="math inline">\(U\sim \chi_1^2\)</span>. 其中自由度为 <span class="math inline">\((I-1)(J-1)\)</span>.</p>
+<figure class="highlight py"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> scipy.stats <span class="keyword">import</span> chi2_contingency</span><br><span class="line"></span><br><span class="line">table = [[<span class="number">90</span>, <span class="number">165</span>], [<span class="number">84</span>, <span class="number">307</span>]]</span><br><span class="line">U, p, dof, expected = chi2_contingency(table, correction=<span class="literal">False</span>)</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight plaintext"><table><tbody><tr><td class="code"><pre><span class="line">U = 14.95864355957614</span><br><span class="line">p = 0.00010989348314654599</span><br><span class="line">dof = 1</span><br><span class="line">expected = [[ 68.68421053 186.31578947]</span><br><span class="line">            [105.31578947 285.68421053]]</span><br></pre></td></tr></tbody></table></figure>
 ]]></content>
       <categories>
         <category>数学</category>
