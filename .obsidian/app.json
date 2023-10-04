@@ -12,5 +12,6 @@
   "newLinkFormat": "relative",
   "useMarkdownLinks": true,
   "alwaysUpdateLinks": true,
-  "autoPairMarkdown": false
+  "autoPairMarkdown": false,
+  "vimMode": true
 }

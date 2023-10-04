@@ -8,26 +8,24 @@
         "type": "tabs",
         "children": [
           {
-            "id": "064778de911c93b3",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "source/_posts/计算机/算法/反转链表.md",
-                "mode": "source",
-                "source": true
-              }
-            }
-          },
-          {
             "id": "c15c7a2836fb6be4",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "source/_posts/数学/微积分/利用积分下求导计算无穷积分.md",
+                "file": "source/_posts/数学/运筹优化/mip_tricks.md",
                 "mode": "source",
                 "source": false
+              }
+            }
+          },
+          {
+            "id": "f7505a02131bfe1e",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.3.5"
               }
             }
           },
@@ -55,8 +53,7 @@
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -85,7 +82,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "链表",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -139,8 +136,8 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "source/_posts/数学/微积分/利用积分下求导计算无穷积分.md",
-                "collapseAll": false,
+                "file": "source/_posts/数学/运筹优化/mip_tricks.md",
+                "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
                 "showSearch": false,
@@ -156,7 +153,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "source/_posts/数学/微积分/利用积分下求导计算无穷积分.md",
+                "file": "source/_posts/数学/运筹优化/mip_tricks.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -179,7 +176,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "source/_posts/数学/微积分/利用积分下求导计算无穷积分.md"
+                "file": "source/_posts/数学/运筹优化/mip_tricks.md"
               }
             }
           },
@@ -196,7 +193,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -213,50 +211,50 @@
   "lastOpenFiles": [
     "db.json",
     "public/file/visualization.html",
-    "public/file/OutlierDetection.html",
+    "public/lib/pdf/build/pdf.worker.js.map",
     "public/file/fraud.html",
+    "public/lib/pdf/build/pdf.worker.js",
+    "public/lib/pdf/build/pdf.js.map",
     "public/file/amazon_cvt.html",
-    "public/lib/font-awesome/css/all.min.css",
-    "public/lib/anime.min.js",
-    "public/lib/font-awesome/webfonts/fa-brands-400.woff2",
-    "public/lib/font-awesome/webfonts/fa-solid-900.woff2",
-    "public/lib/font-awesome/webfonts/fa-regular-400.woff2",
-    "public/js/next-boot.js",
-    "public/images/favicon-32x32-next.png",
-    "public/images/logo.svg",
-    "public/images/favicon-16x16-next.png",
-    "public/images/cc-zero.svg",
-    "public/images/cc-by-sa.svg",
-    "public/images/cc-by.svg",
-    "public/images/cc-by-nd.svg",
-    "public/images/cc-by-nc.svg",
-    "public/images/cc-by-nc-sa.svg",
-    "public/images/cc-by-nc-nd.svg",
-    "source/_posts/数学/代数/群.md",
-    "source/_posts/数学/微积分/Gauss-积分.md",
-    "source/_posts/数学/数值分析/lagrange-interp.md",
-    "source/_posts/计算机/算法/反转链表.md",
+    "public/lib/pdf/web/compressed.tracemonkey-pldi-09.pdf",
+    "public/lib/pdf/web/viewer.js.map",
+    "public/file/OutlierDetection.html",
+    "public/lib/pdf/build/pdf.sandbox.js",
+    "public/lib/pdf/web/images/findbarButton-next@2x.png",
+    "public/lib/pdf/web/images/cursor-editorFreeText.svg",
+    "public/lib/pdf/web/images/cursor-editorInk.svg",
+    "public/lib/pdf/web/images/findbarButton-next.svg",
+    "public/lib/pdf/web/images/gv-toolbarButton-download.svg",
+    "public/lib/pdf/web/images/loading-small.png",
+    "public/lib/pdf/web/images/gv-toolbarButton-openinapp.svg",
+    "public/lib/pdf/web/images/findbarButton-previous@2x.png",
+    "public/lib/pdf/web/images/loading-icon.gif",
+    "public/lib/pdf/web/images/loading-dark.svg",
+    "source/_posts/未命名.md",
+    "source/_posts/数学/运筹优化/mip_tricks.md",
+    "source/_posts/数学/几何/hbnn.md",
+    "source/_posts/数学/数值分析/least-square.md",
     "source/_posts/数学/线性代数/投影.md",
-    "source/_posts/计算机/机器学习/异常值检测.md",
-    "source/_posts/语言/法语A1.md",
-    "source/_posts/语言/法语A2.md",
-    "source/_posts/计算机/机器学习/Fraud-Detection.md",
-    "source/_posts/计算机/机器学习/数据可视化.md",
-    "source/_posts/计算机/mac终端自动化.md",
-    "source/_posts/计算机/算法/找到离原点第k近的点.md",
-    "source/_posts/计算机/算法/排序.md",
-    "source/_posts/计算机/机器学习/id3.md",
-    "source/_posts/计算机/算法/链表相加.md",
-    "source/_posts/计算机/算法/链表中点.md",
-    "source/_posts/计算机/算法/二叉树.md",
-    "source/_posts/计算机/SQL/SQL-基础.md",
-    "source/_posts/计算机/算法/BST.md",
-    "source/_posts/计算机/算法/树的最小高度.md",
-    "source/_posts/计算机/算法/逆波兰表达式.md",
-    "source/_posts/计算机/算法/字符串去重.md",
-    "source/_posts/计算机/算法/树的按层遍历-BFS.md",
-    "source/_posts/计算机/算法/树的最大路径和.md",
-    "source/_posts/计算机/算法/树的路径和等于目标值.md",
+    "source/_posts/数学/代数/群.md",
+    "node_modules/hexo-reference/node_modules/highlight.js/README.md",
+    "node_modules/hexo-reference/README.md",
+    "node_modules/mdurl/CHANGELOG.md",
+    "node_modules/linkify-it/README.md",
+    "node_modules/uc.micro/README.md",
+    "node_modules/linkify-it/CHANGELOG.md",
+    "node_modules/uc.micro/CHANGELOG.md",
+    "node_modules/mdurl/README.md",
+    "node_modules/markdown-it/node_modules/sprintf-js/README.md",
+    "node_modules/markdown-it/node_modules/entities/readme.md",
+    "node_modules/markdown-it/node_modules/argparse/README.md",
+    "node_modules/markdown-it/node_modules/argparse/CHANGELOG.md",
+    "node_modules/markdown-it/README.md",
+    "node_modules/markdown-it/CHANGELOG.md",
+    "node_modules/hexo-reference/node_modules/which/README.md",
+    "node_modules/hexo-reference/node_modules/which/CHANGELOG.md",
+    "node_modules/hexo-reference/node_modules/no-case/README.md",
+    "node_modules/hexo-reference/node_modules/lower-case/README.md",
+    "node_modules/hexo-reference/node_modules/hexo-util/README.md",
     "未命名.canvas"
   ]
 }

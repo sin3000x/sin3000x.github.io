@@ -87,7 +87,9 @@ sitemap:
   path: sitemap.xml
 baidusitemap:
   path: baidusitemap.xml
-skip_render: file/*.html
+skip_render: 
+  - file/*.html
+  - lib/**/*
 # Generate categories from directory-tree
 # Dependencies: https://github.com/xu-song/hexo-auto-category
 # depth: the depth of directory-tree you want to generate, should > 0
