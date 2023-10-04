@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="hE-oGYfu7WjK9DlbOY85ASJ39UwDLh8AqT4zW5UY6X4">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Ma Shan Zheng:300,300italic,400,400italic,700,700italic|Poppins:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"sin3000x.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="整数规划非常有技巧性，本文简单总结逻辑约束、非线性约束的线性化技巧。 不加说明的 \(M\) 指一个足够大的正数，\(B\) 指集合 \(\{0,1\}\)。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="整数规划建模">
+<meta property="og:url" content="https://sin3000x.github.io/posts/53868/index.html">
+<meta property="og:site_name" content="记问之学，不足以为人师">
+<meta property="og:description" content="整数规划非常有技巧性，本文简单总结逻辑约束、非线性约束的线性化技巧。 不加说明的 \(M\) 指一个足够大的正数，\(B\) 指集合 \(\{0,1\}\)。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-10-01T05:46:00.000Z">
+<meta property="article:modified_time" content="2023-10-04T08:45:58.771Z">
+<meta property="article:author" content="Jeremy Rabbit">
+<meta property="article:tag" content="运筹">
+<meta property="article:tag" content="数学规划">
+<meta property="article:tag" content="整数规划">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://sin3000x.github.io/posts/53868/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>整数规划建模 | 记问之学，不足以为人师</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">记问之学，不足以为人师</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://sin3000x.github.io/posts/53868/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/bunny.png">
+      <meta itemprop="name" content="Jeremy Rabbit">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="记问之学，不足以为人师">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          整数规划建模
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2023-10-01 13:46:00" itemprop="dateCreated datePublished" datetime="2023-10-01T13:46:00+08:00">2023-10-01</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2023-10-04 16:45:58" itemprop="dateModified" datetime="2023-10-04T16:45:58+08:00">2023-10-04</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E5%AD%A6/" itemprop="url" rel="index"><span itemprop="name">数学</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E5%AD%A6/%E8%BF%90%E7%AD%B9%E4%BC%98%E5%8C%96/" itemprop="url" rel="index"><span itemprop="name">运筹优化</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/hint.css/2.4.1/hint.min.css"><p>整数规划非常有技巧性，本文简单总结逻辑约束、非线性约束的线性化技巧。</p>
+<p>不加说明的 <span class="math inline">\(M\)</span> 指一个足够大的正数，<span class="math inline">\(B\)</span> 指集合 <span class="math inline">\(\{0,1\}\)</span>。</p>
+<span id="more"></span>
+<h2 id="二选一约束">二选一约束</h2>
+<p>想保证以下两个约束至少成立一个：<span class="math display">\[
+\begin{gathered}f(x_1, x_2, \ldots, x_n)\leq0\\
+g(x_1, x_2, \ldots, x_n) \leq 0
+\end{gathered}
+\]</span>可以引入 0-1 变量 <span class="math inline">\(y\)</span>，并约束<span class="math display">\[
+\begin{aligned}f(x_1, x_2, \ldots, x_n)&amp;\leq My \\
+g(x_1, x_2, \ldots, x_n) &amp;\leq M(1-y)
+\end{aligned}
+\]</span> 在 Gurobi 中，要实现 <span class="math inline">\(y=\mathrm{and}(x_1, x_2, x_3)\)</span>, 可以写 </p><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">model.addGenConstrAnd(y, [x1, x2, x3])</span><br></pre></td></tr></tbody></table></figure> 或利用重载运算符： <figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">model.addConstr(y == and_([x1, x2, x3]))</span><br></pre></td></tr></tbody></table></figure><p></p>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">model.addConstr(y == and_(x1, x2, x3))</span><br></pre></td></tr></tbody></table></figure>
+<p>对于 or 同理。</p>
+<h2 id="指示约束">指示约束</h2>
+<p>想加入约束：<span class="math display">\[
+f(\vx) &gt;0 \implies g(\vx)\geq0,
+\]</span>可以引入 0-1 变量 <span class="math inline">\(y\)</span>，并约束<span class="math display">\[
+\begin{align*}
+-g(\vx) &amp;\leq My\\
+f(\vx) &amp;\leq M(1-y)
+\end{align*}
+\]</span> 这是因为 <span class="math inline">\(f(\vx)&gt;0\)</span> 时保证了 <span class="math inline">\(y=0\)</span>，进而 <span class="math inline">\(-g(\vx)\leq0\)</span>。</p>
+<p>在 Gurobi 中，可以采用重载运算符实现： </p><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">model.addConstr((y == <span class="number">1</span>) &gt;&gt; (x1 + <span class="number">2</span> * x2 + x3 == <span class="number">1</span>))</span><br></pre></td></tr></tbody></table></figure><p></p>
+<h2 id="分段函数">分段函数</h2>
+<p>若 <span class="math inline">\(y=f(x)\)</span> 是一个分段线性函数，<span class="math inline">\(x\)</span> 轴分段点为 <code>[0, 2, 3]</code>，<span class="math inline">\(y\)</span> 轴分段点为 <code>[1, 4, 3]</code>，那么在 Gurobi 中可以添加约束： </p><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">model.addGenConstrPWL(x, y, [<span class="number">0</span>, <span class="number">2</span>, <span class="number">3</span>], [<span class="number">1</span>, <span class="number">4</span>, <span class="number">3</span>])</span><br></pre></td></tr></tbody></table></figure><p></p>
+<p>对于 <span class="math inline">\(\e^x, \sin x\)</span> 等非线性函数可以通过分段来近似，可以用 <code>addGenConstrExp</code> 等方法实现。</p>
+<h2 id="绝对值">绝对值</h2>
+<p>对于任意变量 <span class="math inline">\(x\)</span>，我们定义它的正部和负部（注意它们都是非负的）：<span class="math display">\[
+x^+=\max(0, x)\quad x^-=\max(0, -x).
+\]</span> 也就是说，当 <span class="math inline">\(x\)</span> 为正时，<span class="math inline">\(x^+=x,~x^-=0\)</span>；当 <span class="math inline">\(x\)</span> 为负时，<span class="math inline">\(x^+=0,~x^-=-x\)</span>。此时一个很有用的性质是：<span class="math display">\[
+|x|=x^++x^-,\quad x=x^+-x^-.
+\]</span> 所以，问题<span class="math display">\[
+\begin{align*}
+\min~|x_1|+|x_2|\\
+x_1,x_2\in\R
+\end{align*}
+\]</span> 可以转化为<span class="math display">\[
+\begin{align*}
+\min~&amp;x_1^++x_1^-+x_2^++x_2^-\\
+&amp;x_1=x_1^+-x_1^-\\
+&amp;x_2=x_2^+-x_2^-\\
+&amp;x_1^+,x_1^-, x_2^+, x_2^-\geq0
+\end{align*}
+\]</span> 在 Gurobi 中，可以使用 <code>model.addConstr(y == abs_(x))</code> 来定义绝对值关系。</p>
+<h2 id="乘积-min-x_1x_2">乘积： <span class="math inline">\(\min~ x_1x_2\)</span></h2>
+<h3 id="x_1x_2in-b"><span class="math inline">\(x_1,x_2\in B\)</span></h3>
+<p>等价于 <span class="math display">\[
+\begin{align*}
+\min\quad&amp;y\\
+\text{s.t.}\quad &amp;y\leq x_1\\
+&amp;y\leq x_2\\
+&amp;y\geq x_1+x_2-1\\
+&amp;x_1, x_2, y\in B
+\end{align*}
+\]</span>这里 <span class="math inline">\(y\)</span> 也是一个 0-1 变量，是 <span class="math inline">\(x_1, x_2\)</span> 的“与”操作。只有当它们都取 1 时，才会激活 <span class="math inline">\(y\geq1\)</span>。</p>
+<h3 id="x_1in-b-x_2in-0-u"><span class="math inline">\(x_1\in B, x_2\in [0, u]\)</span></h3>
+<p>等价于<span class="math display">\[
+\begin{align*}
+\min\quad&amp; y\\
+\text{s.t.}\quad&amp; y\leq ux_1\\
+&amp; y\leq x_2\\
+&amp; y\geq x_2-u(1-x_1)\\
+&amp; x_1\in B,~x_2,y\in[0, u]
+\end{align*}
+\]</span> 这个乘积实际上是逻辑约束，若 <span class="math inline">\(x_1=0\)</span> 那么 <span class="math inline">\(y=0\)</span>，若 <span class="math inline">\(x_1=1\)</span> 那么 <span class="math inline">\(y=x_2\)</span>。</p>
+<h3 id="x_1in-b-x_2inl-u"><span class="math inline">\(x_1\in B, x_2\in[l, u]\)</span></h3>
+<p>等价于<span class="math display">\[
+\begin{align*}
+\min\quad &amp;y\\
+\text{s.t.} \quad&amp;lx_1\leq y\leq ux_1\\
+&amp; y\leq x_2\\
+&amp;y\geq x_2-u(1-x_1)\\
+&amp;x_1\in B,~x_2\in[l, u],~y\in[0, u]
+\end{align*}
+\]</span></p>
+<h3 id="x_1x_2inr"><span class="math inline">\(x_1,x_2\in\R\)</span></h3>
+<h2 id="分式">分式</h2>
+<p>原问题：<span class="math display">\[
+\begin{align*}
+\min\quad&amp;{\sum\limits_i(c_ix_i+\alpha)\over\sum\limits_i (d_ix_i+\beta)}\\[.5em]
+\text{s.t.}\quad&amp;\sum\limits_i a_{ij}x_i\leq b_j\\
+&amp;\sum\limits_i d_ix_i+\beta&gt;0\\
+&amp;x_i\geq0
+\end{align*}
+\]</span> 作代换<span class="math display">\[y={1\over\sum\limits_i(d_ix_i+\beta)}&gt;0,\]</span> 并进一步 <span class="math inline">\(z_i=x_iy\)</span>，可得线性化问题<span class="math display">\[
+\begin{align*}
+\min \quad &amp;\sum\limits_i(c_iz_i+\alpha y)\\
+\text{s.t.} \quad &amp;\sum\limits_i a_{ij} z_i \leq b_j y\\
+&amp;\sum\limits_i d_iz_i+ \beta y=1\\
+&amp;y&gt;0,~ z_i\geq0
+\end{align*}
+\]</span></p>
+<h2 id="最大值最小值">最大值/最小值</h2>
+<p>若有 <span class="math inline">\(z=\max(x, y, 3)\)</span>, 可添加约束：<span class="math display">\[
+\begin{gathered}
+x\leq z,~y\leq z,~3\leq z\\
+x\geq z-M(1-u_1)\\
+y\geq z-M(1-u_2)\\
+3\geq z-M(1-u_3)\\
+u_1+u_2+u_3\geq1\\
+u_1,u_2,u_3\in B
+\end{gathered}
+\]</span> 意思是说，<span class="math inline">\(z\)</span> 不小于 <span class="math inline">\(x,y,3\)</span> 中的任何一个， 又不大于它们中的至少一个。</p>
+<p>在 Gurobi 中，可以利用重载函数 <code>max_</code> 或 <code>min_</code>：</p>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">model.addConstr(y == max_([x1, x2, x3, <span class="number">10.0</span>]))</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">model.addConstr(y == max_(x1, x2, x3, <span class="number">10.0</span>))</span><br></pre></td></tr></tbody></table></figure>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E8%BF%90%E7%AD%B9/" rel="tag"># 运筹</a>
+              <a href="/tags/%E6%95%B0%E5%AD%A6%E8%A7%84%E5%88%92/" rel="tag"># 数学规划</a>
+              <a href="/tags/%E6%95%B4%E6%95%B0%E8%A7%84%E5%88%92/" rel="tag"># 整数规划</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/posts/61728/" rel="prev" title="双曲神经网络">
+      <i class="fa fa-chevron-left"></i> 双曲神经网络
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/posts/1/" rel="next" title="">
+       <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E9%80%89%E4%B8%80%E7%BA%A6%E6%9D%9F"><span class="nav-number">1.</span> <span class="nav-text">二选一约束</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8C%87%E7%A4%BA%E7%BA%A6%E6%9D%9F"><span class="nav-number">2.</span> <span class="nav-text">指示约束</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%86%E6%AE%B5%E5%87%BD%E6%95%B0"><span class="nav-number">3.</span> <span class="nav-text">分段函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%9D%E5%AF%B9%E5%80%BC"><span class="nav-number">4.</span> <span class="nav-text">绝对值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B9%98%E7%A7%AF-min-x_1x_2"><span class="nav-number">5.</span> <span class="nav-text">乘积： \(\min~ x_1x_2\)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#x_1x_2in-b"><span class="nav-number">5.1.</span> <span class="nav-text">\(x_1,x_2\in B\)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#x_1in-b-x_2in-0-u"><span class="nav-number">5.2.</span> <span class="nav-text">\(x_1\in B, x_2\in [0, u]\)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#x_1in-b-x_2inl-u"><span class="nav-number">5.3.</span> <span class="nav-text">\(x_1\in B, x_2\in[l, u]\)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#x_1x_2inr"><span class="nav-number">5.4.</span> <span class="nav-text">\(x_1,x_2\in\R\)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%86%E5%BC%8F"><span class="nav-number">6.</span> <span class="nav-text">分式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%80%E5%A4%A7%E5%80%BC%E6%9C%80%E5%B0%8F%E5%80%BC"><span class="nav-number">7.</span> <span class="nav-text">最大值&#x2F;最小值</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Jeremy Rabbit"
+      src="/images/bunny.png">
+  <p class="site-author-name" itemprop="name">Jeremy Rabbit</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">112</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">22</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">39</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="mailto:sin3000x@outlook.com" title="E-Mail → mailto:sin3000x@outlook.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://space.bilibili.com/20883932" title="Bilibili → https:&#x2F;&#x2F;space.bilibili.com&#x2F;20883932" rel="noopener" target="_blank"><i class="fab fa-youtube fa-fw"></i>Bilibili</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Jeremy Rabbit</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+<script>
+document.querySelectorAll('.pdfobject-container').forEach(element => {
+  let url = element.dataset.target;
+  let pdfOpenParams = {
+    navpanes : 0,
+    toolbar  : 0,
+    statusbar: 0,
+    pagemode : 'thumbs',
+    view     : 'FitH'
+  };
+  let pdfOpenFragment = '#' + Object.entries(pdfOpenParams).map(([key, value]) => `${key}=${encodeURIComponent(value)}`).join('&');
+  let fullURL = `/lib/pdf/web/viewer.html?file=${encodeURIComponent(url)}${pdfOpenFragment}`;
+
+  if (NexT.utils.supportsPDFs()) {
+    element.innerHTML = `<embed class="pdfobject" src="${url + pdfOpenFragment}" type="application/pdf" style="height: ${element.dataset.height};">`;
+  } else {
+    element.innerHTML = `<iframe src="${fullURL}" style="height: ${element.dataset.height};" frameborder="0"></iframe>`;
+  }
+});
+</script>
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        macros: {
+          d: '{\\,\\mathrm{d}}',
+          R: '{\\mathbb{R}}',
+          C: '{\\mathbb{C}}',
+          N: '{\\mathbb{N}}',
+          Z: '{\\mathbb{Z}}',
+          bm: ["{\\boldsymbol #1}", 1],
+          vx: '{\\boldsymbol x}',
+          vy: '{\\boldsymbol y}',
+          e: '\\mathrm{e}',
+          i: '\\mathrm{i}',
+          B: '\\mathrm{B}',
+          eps: '\\varepsilon',
+          rank: '\\operatorname{rank}',
+          range: '\\operatorname{range}',
+          null: '\\operatorname{null}',
+          End: '\\operatorname{End}',
+          Aut: '\\operatorname{Aut}',
+          Ker: '\\operatorname{Ker}',
+          Im: '\\operatorname{Im}'
+        },
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams',
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+
+        <style>
+            [bg-lazy] {
+                background-image: none !important;
+                background-color: #eee !important;
+            }
+        </style>
+        <script>
+            window.imageLazyLoadSetting = {
+                isSPA: false,
+                preloadRatio: 3,
+                processImages: null,
+            };
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(r){r.imageLazyLoadSetting.processImages=t;var e=r.imageLazyLoadSetting.isSPA,n=r.imageLazyLoadSetting.preloadRatio||1,c=a();function a(){var t=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")),e=Array.prototype.slice.call(document.querySelectorAll("[bg-lazy]"));return t.concat(e)}function t(){e&&(c=a());for(var t,o=0;o<c.length;o++)0<=(t=(t=c[o]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(r.innerHeight*n||document.documentElement.clientHeight*n)&&function(){var t,e,n,a,i=c[o];e=function(){c=c.filter(function(t){return i!==t}),r.imageLazyLoadSetting.onImageLoaded&&r.imageLazyLoadSetting.onImageLoaded(i)},(t=i).hasAttribute("bg-lazy")?(t.removeAttribute("bg-lazy"),e&&e()):(n=new Image,a=t.getAttribute("data-original"),n.onload=function(){t.src=a,t.removeAttribute("data-original"),e&&e()},t.src!==a&&(n.src=a))}()}function i(){clearTimeout(t.tId),t.tId=setTimeout(t,500)}t(),document.addEventListener("scroll",i),r.addEventListener("resize",i),r.addEventListener("orientationchange",i)}(this);</script></body>
+</html>
